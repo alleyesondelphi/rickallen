@@ -136,9 +136,9 @@ img, figure {
   text-align: center;
 }
 .rickallenstice-wrapper {
-	width: 80%;
-	margin: auto;
-	padding: 5%;
+  width: 80%;
+  margin: auto;
+  padding: 5%;
 }
 #rickallenjustice h2 {
   font-size: 1.8rem;
@@ -226,27 +226,6 @@ header h2 {
 header p {
   color: #aeb3bd;
   font-size: 1.8rem;
-}
-/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE #ticker STYLES ------ ******/
-#ticker {
-	width: 100%;
-}
-.ticker-wrapper {
-	text-align: center;
-	width: 80%;
-	margin: auto;
-	padding: 5% 0;
-}
-.ticker-wrapper p {
-	font-size: 1.5rem;
-	color: darkslategrey;
-	padding: 2%;
-}
-.ticker-wrapper a {
-	font-size: 1.5rem;
-	color: cadetblue;
-	text-decoration: underline;
-	text-transform: lowercase;
 }
 /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE #CCS STYLES ------ ******/
 #ccs {
@@ -349,7 +328,7 @@ footer p {
     font-size: 2.2rem;
   }
   header h1 {
-    font-size: 3.3rem;
+    font-size: 3rem;
   }
   .name-plate {
     width: 40%;
@@ -368,15 +347,28 @@ footer p {
     display: block;
   }
   header p {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
-/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #ticker STYLES ------ ******/
-.ticker-wrapper p {
-	font-size: 2.1rem;
-}
-.ticker-wrapper a {
-	font-size: 2.1rem;
-}	
+  /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #rickallenjustice  ------ ******/
+  #rickallenjustice {
+    width: 100%;
+    padding: 5% 0%;
+  }
+  .rickallenstice-wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 0%;
+  }
+  #rickallenjustice h2 {
+    font-size: 1.8rem;
+    padding: 5% 3% 3% 5%;
+    width: 60%;
+  }
+  #rickallenjustice p {
+    font-size: 1.3rem;
+    padding: 0% 3% 5% 5%;
+    width: 60%;
+  }
   /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #CCS SECTION STYLES ------ ******/
   #ccs {
     padding: 7% 0;
@@ -404,7 +396,7 @@ footer p {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 6%;
   }
   .email-footer {
@@ -418,46 +410,28 @@ footer p {
   .footer-navbar {
     width: 50%;
     text-align: right;
+    padding-top: 3%;
+  }
+  .footer-navbar h5 {
+    font-size: 1.5rem;
   }
   .footer-navar-items {
-    margin-top: 2%;
+    margin-top: 5%;
+  }
+  .footer-navbar-items {
+    margin-top: 5%;
+  }
+  .footer-navbar-items li {
+    display: inline;
+    padding: 3%;
+  }
+  footer p {
+    padding: 3% 0% 0% 0%;
+  }
+  .delphidocs a {
+    font-size: 1.5rem;
   }
 }
-/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ LAPTOP MEDIA QUERIES ------ ******/
-@media (min-width: 992px) {
-  body {
-    max-width: 1199px;
-  }
-  .content-wrapper {
-    width: 80%;
-  }
-  header {
-    height: 600px;
-  }
-	/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ LAPTOP #ccs STYLES ------ ******/
-  .ccs-container {
-    gap: 5%;
-  }
-  #ccs h3 {
-    font-size: 3rem;
-  }
-  #ccs p {
-    width: 95%;
-    font-size: 1.9rem;
-  }
-}
-/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ DESKTOP MEDIA QUERIES ------ ******/
-/*@media (min-width: 1200px) {
-  body {
-    max-width: 1366px;
-  }
-  .content-wrapper {
-    width: 75%;
-  }
-	  .ccs-container {
-    gap: 7%;
-  }
-}*/
 /* ==========================================================================
      Helper classes
      ========================================================================== */
