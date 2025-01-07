@@ -126,7 +126,7 @@ img, figure {
   max-width: 100%;
   height: auto;
 }
-/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ NEXT STEPS  ------ ******/
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE NEXT STEPS  ------ ******/
 #rickallenjustice {
   width: 100%;
   margin: auto;
@@ -135,7 +135,7 @@ img, figure {
   padding: 10% 0%;
   text-align: center;
 }
-.rickallenstice-wrapper {
+.rickallenjustice-wrapper {
   width: 80%;
   margin: auto;
   padding: 5%;
@@ -251,7 +251,7 @@ header p {
 }
 /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE FOOTER STYLES ------ ******/
 footer {
-  padding: 5% 0;
+  padding: 3% 0;
   text-align: center;
   background: url("../../CCS/img/contact-img.pn");
   background-size: cover;
@@ -260,15 +260,17 @@ footer {
   background-color: #5e5d5e;
   color: lightgray;
 }
+.email-footer h5,
+.footer-navbar h5,
+.other-places h5 {
+  font-size: 1.8rem;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
 .email-footer {
   width: 90%;
   margin: auto;
 }
-.email {
-  margin-top: 1%;
-  margin-bottom: 3%;
-}
-#contact h5 {}
 #envelope {
   margin-top: -1%;
   margin-right: 1%;
@@ -278,11 +280,10 @@ footer a {
   color: lightgray;
 }
 .footer-navbar {
-  width: 70%;
+  width: 90%;
   margin: auto;
 }
 .footer-navbar-items {
-  margin-top: 5%;
   align-items: center;
 }
 .footer-navbar-items li {
@@ -292,12 +293,26 @@ footer a {
 footer p {
   padding: 5%;
 }
-.delphidocs a {
+.other-places {
+  width: 90%;
+  margin: auto;
+  padding: 3%;
+}
+.other-places a {
   color: cadetblue;
-  font-size: 1.8rem;
   font-weight: 700;
   text-decoration: underline;
 }
+.delphidocs-delphicase li {
+display: inline;
+padding: 3%;
+}
+.delphidocs-delphicase a {
+  color: cadetblue;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MEDIA QUERIES ------ ******/
 /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET MEDIA QUERIES ------ ******/
 @media (min-width: 767px) {
