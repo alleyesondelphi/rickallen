@@ -387,26 +387,8 @@ padding: 3%;
     width: 60%;
   }
   /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #CCS SECTION STYLES ------ ******/
-  #ccs {
-    padding: 7% 0;
-  }
-  .ccs-container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 3%;
-  }
-  .list {
-    flex: auto;
-    margin: 0;
-  }
-  #ccs h3 {
-    font-size: 2rem;
-  }
   #ccs p {
-    width: 90%;
-    font-size: 1.4rem;
+    width: 35%;
   }
   /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET FOOTER STYLES ------ ******/
   .footer-flex-container {
