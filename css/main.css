@@ -117,7 +117,7 @@ a {
   font-size: 1.6rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: #727172;
+  color:cadetblue;/*#727172;*/
 }
 li {
   list-style: none;
@@ -239,6 +239,7 @@ header p {
 }
 #ccs a {
   text-decoration: underline;
+  color: cadetblue;
 }
 #ccs h3 {
   margin: 5% 0;
