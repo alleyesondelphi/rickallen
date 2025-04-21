@@ -250,6 +250,9 @@ header p {
   width: 60%;
   margin: auto;
 }
+#expenses a {
+  text-transform: lowercase;
+}
 /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE FOOTER STYLES ------ ******/
 footer {
   text-align: center;
