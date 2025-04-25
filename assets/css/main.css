@@ -5,9 +5,6 @@
 .exhibit-container {
 padding: 8%;
 }
-/*.exhibit-explainer p, ul, li {
-  font-size:smaller;
-}*/
 #caveat ul {
   display:list-item;
 }
@@ -17,18 +14,9 @@ padding: 8%;
   margin: 0 0.5%;
 }
 
-
-/**
-* Template Name: iPortfolio
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
+# font & color variables
+# https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -37,27 +25,27 @@ padding: 8%;
   --nav-font: "Poppins",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #ffffff; /* background color, including individual sections */
+  --default-color: #272829; /* default color for most of text content */
+  --heading-color: #050d18; /* color for headings, subheadings and title */
+  --accent-color: #149ddd; /* accent color for buttons, links, and other stand out elements */
+  --surface-color: #ffffff; /* surface color used as background of boxed elements within sections (i.e., cards, icon boxes, or other elements that require a visual separation from global background */
+  --contrast-color: #ffffff; /* contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors - used specifically for the navigation menu, separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #a8a9b4;  /* default color of main navmenu links */
+  --nav-hover-color: #ffffff; /* applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #a8a9b4; /* used for navigation links of the dropdown items in the navigation menu */
+  --nav-dropdown-hover-color: #ffffff; /* similar to --nav-hover-color, applied to dropdown navigation links when they are hovered over */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Color Presets - these classes override global colors when applied to any section or element, providing reuse of the same color scheme */
 
 .light-background {
   --background-color: #f4fafd;
@@ -570,10 +558,10 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  /*background-image:url('../img/blinders.png');
+  background-image:url('../img/aeod.png');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;*/
+  background-size: cover;
 }
 
 .hero img {
