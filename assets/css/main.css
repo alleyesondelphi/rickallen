@@ -551,11 +551,11 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  
+
 }
 .hero {
   width: 100%;
-  min-height: 115vh;
+  min-height: 100vh;
   position: relative;
   /*padding: 80px 0;*/
   display: flex;
@@ -564,7 +564,7 @@ section,
   background-image:url('../img/blinders.png');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:contain;
 }
 .rickallen-justice-link {
   text-transform: lowercase;
@@ -595,11 +595,13 @@ section,
   margin: 0;
   font-size: 64px;
   font-weight: 700;
+  padding-left: 10%;
 }
 
 .hero p {
   margin: 5px 0 0 0;
   font-size: 26px;
+  padding-left: 10%;
 }
 
 .hero p span {
