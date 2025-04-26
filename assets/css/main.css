@@ -13,7 +13,11 @@ padding: 8%;
   font-weight: 500;
   margin: 0 0.5%;
 }
-
+html,
+body {
+  max-width: 1200px;
+  margin: auto;
+}
 /*--------------------------------------------------------------
 # font & color variables
 # https://bootstrapmade.com/color-system/
@@ -753,12 +757,18 @@ section,
   border-left: 2px solid var(--accent-color);
   position: relative;
 }
-
+.resume-item {
+  width: 100%;
+}
+.row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 .resume .resume-item h4 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
-  text-transform: uppercase;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
 }
@@ -777,6 +787,7 @@ section,
 
 .resume .resume-item ul li {
   padding-bottom: 10px;
+  text-align: justify;
 }
 
 .resume .resume-item:last-child {
