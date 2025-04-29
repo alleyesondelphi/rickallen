@@ -5,6 +5,10 @@
 .exhibit-container {
 padding: 8%;
 }
+.exhibit-container a {
+  font-weight: 500;
+  text-decoration: underline;
+}
 #caveat ul {
   display:list-item;
 }
@@ -919,6 +923,10 @@ section,
   transform: scale(1.1);
 }
 
+.portfolio-info a {
+  font-weight: 500;
+  text-decoration: underline;
+}
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
