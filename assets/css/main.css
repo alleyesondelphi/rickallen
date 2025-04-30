@@ -569,10 +569,11 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image:url('../img/blinders.png');
+  /*background-image:url('../img/blinders.png');*/
+  background-image:url('../img/hero-img.jpg');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size: cover;
 }
 .rickallen-justice-link {
   text-transform: lowercase;
@@ -580,11 +581,11 @@ section,
   text-decoration: underline;
 }
 .hero img {
-  position: absolute;
+  /*position: absolute;
   inset: 0;
   display: block;
   object-fit: cover;
-  z-index: 1;
+  z-index: 1;*/
 }
 .hero:before {
   content: "";
