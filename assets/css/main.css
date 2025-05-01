@@ -65,10 +65,13 @@ padding: 8%;
   font-weight: 600;
 }
 .audio-transcripts {
-  width: 80%;
+  width: 100%;
   height: auto;
   padding: 0;
   margin: auto;
+}
+.audio-transcripts h5 {
+  margin-top: 4%;
 }
 .expenses-container {
   width: 95%;
