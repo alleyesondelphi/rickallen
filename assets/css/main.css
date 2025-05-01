@@ -70,6 +70,30 @@ padding: 8%;
   padding: 0;
   margin: auto;
 }
+.expenses-container {
+  width: 95%;
+  margin: auto;
+  padding: 5%;
+}
+.expenses {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.expenses-container h4 {
+  padding: 4% 0;
+}
+.expenses h5 {
+  padding: 1% 0;
+  font-weight: 600;
+}
+.expenses-container a {
+  text-decoration: underline;
+}
+
+.expenses iframe {
+  border: 2px solid black;
+  margin-bottom: 5%;
+}
 html,
 body {
   max-width: 1200px;
