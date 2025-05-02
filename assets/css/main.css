@@ -3,7 +3,7 @@
   padding-bottom: 3%;
 }
 .exhibit-container {
-padding: 8%;
+  padding: 8%;
 }
 .exhibit-container a {
   font-weight: 500;
@@ -38,7 +38,6 @@ padding: 8%;
   margin: auto;
 }
 .videos {
-  padding: 5%;
   width: 100%;
   aspect-ratio: 16 / 9;
 }
@@ -100,12 +99,7 @@ padding: 8%;
   width: 80%;
   margin: auto;
 }
-.case-against-rick-allen {
-  width: 95%;
-  padding: 5%;
-  aspect-ratio: 16 / 9;
-  margin: auto;
-}
+
 html,
 body {
   max-width: 1200px;
