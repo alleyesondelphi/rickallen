@@ -100,6 +100,11 @@ padding: 8%;
   width: 80%;
   margin: auto;
 }
+.case-against-rick-allen {
+  padding: 5%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
 html,
 body {
   max-width: 1200px;
