@@ -99,7 +99,15 @@
   width: 80%;
   margin: auto;
 }
-
+.portfolio-info {
+  margin-bottom: 3%;
+}
+.timeline-item li a {
+  font-weight: 400;
+}
+.timeline-item li {
+  text-align: justify;
+}
 html,
 body {
   max-width: 1200px;
