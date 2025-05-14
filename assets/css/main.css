@@ -29,6 +29,9 @@
   font-weight: 500;
   text-decoration: underline;
 }
+.numbers {
+  margin: 0;
+}
 .box,
 .pdf {
     width: 100%;
