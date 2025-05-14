@@ -13,6 +13,10 @@
   font-weight: 500;
   text-decoration: underline;
 }
+.col-lg-4 {
+  width: 95%;
+  margin: auto;
+}
 #caveat ul {
   display:list-item;
 }
@@ -101,6 +105,7 @@
 }
 .portfolio-info {
   margin-bottom: 3%;
+  
 }
 .timeline-item li a {
   font-weight: 400;
