@@ -1,0 +1,569 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */ ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+   * A better looking default horizontal rule
+   */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+/*
+   * Remove default fieldset styles.
+   */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+   * Allow only vertical resizing of textareas.
+   */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ AUTHOR'S CUSTOM STYLES ------ ******/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  color: #5e5d5e;
+  min-width: 375px;
+  max-width: 767px;
+  margin: 0 auto;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE GRID STYLES ------ ******/
+h1 {
+  font-weight: 300;
+  font-size: 2.6rem;
+  width: 100%;
+  color: #c5cbd6;
+  font-style: italic;
+}
+h3 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  width: 100%;
+}
+h4 {
+  font-weight: 600;
+  font-size: 2rem;
+  width: 100%;
+}
+h5 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  width: 100%;
+}
+p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  width: 100%;
+}
+a {
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color:cadetblue;/*#727172;*/
+}
+li {
+  list-style: none;
+}
+img, figure {
+  max-width: 100%;
+  height: auto;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE NEXT STEPS  ------ ******/
+#rickallenjustice {
+  width: 100%;
+  margin: auto;
+  background-color: #ddd;
+  color: #333;
+  padding: 10% 0%;
+  text-align: center;
+}
+.rickallenjustice-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+}
+#rickallenjustice h2 {
+  font-size: 1.8rem;
+  margin: auto;
+  padding: 5% 3% 5% 5%;
+  text-align: left;
+  width: 90%;
+}
+#rickallenjustice p {
+  font-size: 1.3rem;
+  margin: auto;
+  padding: 0% 3% 5% 5%;
+  width: 90%;
+  text-align: justify;
+}
+#rickallenjustice a {
+  color: cadetblue;
+  font-size: 1.3rem;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE GRID STYLES ------ ******/
+header, main, footer {
+  width: 100%;
+}
+#ccs {
+  width: 100%;
+}
+.content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE HEADER STYLES ------ ******/
+header {
+  padding: 5% 0;
+  text-align: center;
+  background: url("../../rickallen/img/monon-high-bridge.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+}
+.name-plate {
+  width: 100%;
+  margin: auto;
+}
+header h2 {
+  color: cadetblue;
+  margin-bottom: 5%;
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+.navbar {
+  width: 100%;
+  margin: auto;
+}
+.navbar-items {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-items li {
+  flex: 1;
+}
+.navbar-items a {
+  color: #aeb3bd;
+  font-size: 1rem;
+}
+.mobile-tagline {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding-top: 7%;
+  font-size: 3.3rem;
+  margin-bottom: 10%;
+}
+.responsive-tagline {
+  display: none;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding-top: 9%;
+  font-size: 3.3rem;
+  margin-bottom: 5%;
+}
+header p {
+  color: #aeb3bd;
+  font-size: 1.8rem;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE #CCS STYLES ------ ******/
+#ccs {
+  background-color: #f5f5f5;
+  padding: 10% 0;
+  text-align: center;
+}
+.list {
+  margin: 5% 0;
+  width: 100%;
+}
+#ccs a {
+  text-decoration: underline;
+  color: cadetblue;
+}
+#ccs h3 {
+  margin: 5% 0;
+  font-weight: 700;
+}
+#ccs p {
+  text-align: justify;
+  width: 60%;
+  margin: auto;
+}
+#expenses a {
+  text-transform: lowercase;
+}
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MOBILE FOOTER STYLES ------ ******/
+footer {
+  text-align: center;
+  background: url("../../CCS/img/contact-img.pn");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #5e5d5e;
+  color: lightgray;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.footer-flex-container {
+  padding: 1%;
+}
+.email-footer h5,
+.footer-navbar h5,
+.other-places h5 {
+  font-size: 1.8rem;
+  padding: 3%;
+}
+.email-footer a {
+  color: cadetblue;
+  text-decoration: underline;
+}
+.email-footer {
+  width: 90%;
+  margin: auto;
+}
+#envelope {
+  margin-top: -1%;
+  margin-right: 1%;
+}
+footer a {
+  text-transform: none;
+  color: lightgray;
+}
+.footer-navbar {
+  width: 90%;
+  margin: auto;
+}
+.footer-navbar-items {
+  align-items: center;
+}
+.footer-navbar-items li {
+  display: inline;
+  padding: 3%;
+}
+.other-places {
+  width: 90%;
+  margin: auto;
+  padding: 5%;
+}
+.delphidocs-delphicase li {
+display: inline;
+padding: 3%;
+}
+.delphidocs-delphicase a {
+  color: cadetblue;
+  font-weight: 700;
+  text-decoration: underline;
+  color: cadetblue;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ MEDIA QUERIES ------ ******/
+/****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET MEDIA QUERIES ------ ******/
+@media (min-width: 767px) {
+  body {
+    max-width: 991px;
+  }
+  .content-wrapper {
+    width: 80%;
+  }
+  /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET HEADER STYLES ------ ******/
+  header {
+    height: 500px;
+  }
+  .header-flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+  }
+  .name-plate {
+    width: 40%;
+    text-align: left;
+  }
+  header h2 {
+    margin-bottom: 3%;
+    font-weight: 400;
+    font-size: 2.2rem;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  .name-plate {
+    width: 40%;
+  }
+  .navbar {
+    width: 95%;
+    text-align: right;
+  }
+  .navbar-items a {
+    font-size: 1.4rem;
+  }
+  .mobile-tagline {
+    display: none;
+  }
+  .responsive-tagline {
+    display: block;
+  }
+  header p {
+    font-size: 2rem;
+  }
+  /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #rickallenjustice  ------ ******/
+  #rickallenjustice {
+    width: 100%;
+    padding: 5% 0%;
+  }
+  .rickallenstice-wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 0%;
+  }
+  #rickallenjustice h2 {
+    font-size: 1.8rem;
+    padding: 5% 3% 3% 5%;
+    width: 60%;
+  }
+  #rickallenjustice p {
+    font-size: 1.3rem;
+    padding: 0% 3% 5% 5%;
+    width: 60%;
+  }
+  /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET #CCS SECTION STYLES ------ ******/
+  #ccs p {
+    width: 35%;
+  }
+  /****** ------ ****** ------ ****** ------ ****** ------ ****** ------ ****** ------ TABLET FOOTER STYLES ------ ******/
+  .footer-flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 6%;
+  }
+  .email-footer {
+    width: 50%;
+    text-align: left;
+  }
+  .email {
+    margin-top: 2%;
+    margin-bottom: 0;
+  }
+  .footer-navbar {
+    width: 50%;
+    text-align: right;
+    padding-top: 3%;
+  }
+  .footer-navbar h5 {
+    font-size: 1.5rem;
+  }
+  .footer-navar-items {
+    margin-top: 5%;
+  }
+  .footer-navbar-items {
+    margin-top: 5%;
+  }
+  .footer-navbar-items li {
+    display: inline;
+    padding: 3%;
+  }
+  footer p {
+    padding: 3% 0% 0% 0%;
+  }
+  .delphidocs a {
+    font-size: 1.5rem;
+  }
+}
+/* ==========================================================================
+     Helper classes
+     ========================================================================== */
+/*
+   * Hide visually and from screen readers
+   */
+.hidden, [hidden] {
+  display: none !important;
+}
+/*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+/*
+   * Extends the .sr-only class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+.sr-only.focusable:active, .sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+/*
+   * Hide visually and from screen readers, but maintain layout
+   */
+.invisible {
+  visibility: hidden;
+}
+/*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+/* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+@media print {
+  *, *::before, *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a, a:visited {
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: " ("attr(href) ")";
+  }
+  abbr[title]::after {
+    content: " ("attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]::after, a[href^="javascript:"]::after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr, img {
+    page-break-inside: avoid;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
