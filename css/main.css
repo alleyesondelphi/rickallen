@@ -173,7 +173,8 @@ header, main, footer {
 header {
   padding: 5% 0;
   text-align: center;
-  background: url("../../rickallen/img/monon-high-bridge.png");
+  /*background: url("../../rickallen/img/monon-high-bridge.png");*/
+  background: url("../../rickallen/assets/img/social-preview.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
