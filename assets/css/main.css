@@ -8,6 +8,10 @@
 .delphi-transcript-fund p {
   padding: 3% 0;
 }
+.fund-preview a {
+  font-weight: 500;
+  text-decoration: underline;
+}
 .delphi-transcript-fund a {
   font-weight: 500;
   text-decoration: underline;
