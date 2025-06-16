@@ -8,6 +8,10 @@
 .delphi-transcript-fund p {
   padding: 3% 0;
 }
+.delphi-transcript-fund a {
+  font-weight: 500;
+  text-decoration: underline;
+}
 .delphi-transcript-fund-links {
   width: 100%;
   display: flex;
@@ -35,6 +39,15 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size:cover;
+}
+
+.gif {
+  aspect-ratio: 16 / 9;
+  /*padding: 80px 0;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 .goal-image {
   width: 99%;
