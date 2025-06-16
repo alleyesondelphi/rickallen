@@ -42,12 +42,11 @@
   background-image:url('../img/fund-preview.jpg');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
 }
-
 .gif {
   aspect-ratio: 16 / 9;
-  /*padding: 80px 0;*/
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
