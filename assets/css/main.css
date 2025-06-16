@@ -23,6 +23,19 @@
   padding: 2%;
   font-size: 14px;
 }
+.fund-preview {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  /*padding: 80px 0;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-image:url('../img/blinders.png');*/
+  background-image:url('../img/fund-preview.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
 .goal-image {
   width: 99%;
   margin: auto;
