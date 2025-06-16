@@ -5,6 +5,9 @@
 .delphi-transcript-fund {
   width: 100%;
 }
+.delphi-transcript-fund p {
+  padding: 3% 0;
+}
 .delphi-transcript-fund-links {
   width: 100%;
   display: flex;
@@ -18,14 +21,16 @@
   display: inline-flex;
   flex-wrap: nowrap;
   padding: 3%;
+  font-size: 16px;
 }
 .goal-image {
   width: 99%;
   margin: auto;
+  padding-top: 3%;
 }
 .delphi-transcript-fund h5 {
   font-weight: 700;
-  padding-top: 5%;
+  padding-top: 7%;
   padding-bottom: 2%;
   color: black;
 }
