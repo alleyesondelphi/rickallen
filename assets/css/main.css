@@ -1,5 +1,33 @@
-#social-preview {
-  
+#delphi-transcript-fund-container {
+  width: 80%;
+  margin: auto;
+}
+.delphi-transcript-fund {
+  width: 100%;
+}
+.delphi-transcript-fund-links {
+  width: 100%;
+  display: flex;
+}
+.delphi-transcript-fund-links {
+  justify-content: center;
+}
+.delphi-transcript-fund-links a {
+  font-weight: 700;
+  text-decoration: underline;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  padding: 3%;
+}
+.goal-image {
+  width: 99%;
+  margin: auto;
+}
+.delphi-transcript-fund h5 {
+  font-weight: 700;
+  padding-top: 5%;
+  padding-bottom: 2%;
+  color: black;
 }
 .container p {
   text-align:justify;
