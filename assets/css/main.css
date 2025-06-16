@@ -20,8 +20,8 @@
   text-decoration: underline;
   display: inline-flex;
   flex-wrap: nowrap;
-  padding: 2%;
-  font-size: 18px;
+  padding: 1%;
+  font-size: 16px;
 }
 .goal-image {
   width: 99%;
