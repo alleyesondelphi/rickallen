@@ -1,3 +1,11 @@
+#fund-preview-img-container {
+  width: 80%;
+  margin: auto;
+}
+.fund-preview-img {
+  width: 80%;
+  margin: auto;
+}
 #delphi-transcript-fund-container {
   width: 80%;
   margin: auto;
