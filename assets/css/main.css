@@ -1,3 +1,29 @@
+.nik-stream {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.nik-stream h5 {
+  padding: 1% 0;
+  font-weight: 600;
+  text-align: justify;
+}
+.nik-stream p {
+  text-align: justify;
+}
+.nik-vid {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.gif {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
 #fund-preview-img-container {
   width: 80%;
   margin: auto;
@@ -55,14 +81,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.gif {
-  aspect-ratio: 16 / 9;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
 }
 .goal-image {
   width: 99%;
