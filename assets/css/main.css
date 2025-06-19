@@ -10,6 +10,10 @@
 .nik-stream p {
   text-align: justify;
 }
+.nik-stream a {
+  font-weight: 500;
+  text-decoration: underline;
+}
 .nik-vid {
   justify-content: center;
   align-items: center;
