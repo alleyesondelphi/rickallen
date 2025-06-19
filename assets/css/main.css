@@ -6,6 +6,10 @@
   width: 80%;
   margin: auto;
 }
+.videos h5 {
+  font-weight: 500;
+  text-align: justify;
+}
 #delphi-transcript-fund-container {
   width: 80%;
   margin: auto;
