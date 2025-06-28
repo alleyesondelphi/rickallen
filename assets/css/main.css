@@ -214,6 +214,9 @@
   width: 80%;
   margin: auto;
 }
+.transcripts a {
+  text-decoration: underline;
+}
 .portfolio-info {
   margin-bottom: 3%;
   
