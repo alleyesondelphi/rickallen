@@ -213,6 +213,7 @@
 .transcripts {
   width: 80%;
   margin: auto;
+  text-align: justify;
 }
 .fund-link a {
   text-decoration: underline;
