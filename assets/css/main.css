@@ -1,3 +1,9 @@
+.timeline-container {
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+}
+
 .nik-stream {
   width: 100%;
   aspect-ratio: 16 / 9;
