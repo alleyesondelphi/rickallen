@@ -187,6 +187,8 @@
 .phone-data {
   width: 100%;
   aspect-ratio: 4 / 5;
+  border-top: 15px solid black;
+  border-bottom: 15px solid black;
 }
 .phone-data a {
   font-weight: 500;
