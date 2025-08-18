@@ -186,7 +186,7 @@
 }
 .phone-data {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
 }
 .phone-data h5 {
   padding: 4% 0;
