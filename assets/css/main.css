@@ -2,10 +2,8 @@
   width: 80%;
   margin: auto;
 }
-.franks-memo {
-  margin: 5% 0;
-  width: 100%;
-  height: auto;
+.franks-memo iframe {
+  border-top: 15px solid black;
 }
 .franks-video {
   width: 100%;
@@ -22,6 +20,7 @@
 }
 .franks-memo p {
   text-align: center;
+  padding-top: 5%;
 }
 .timeline-container {
   width: 80%;
