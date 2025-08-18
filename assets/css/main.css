@@ -828,8 +828,8 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  /*background-image:url('../img/blinders.png');*/
-  background-image:url('../img/hero-img.jpg');
+  background-image:url('../img/blinderz.jpg');
+  /*background-image:url('../img/hero-img.jpg');*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
