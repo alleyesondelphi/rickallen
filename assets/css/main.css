@@ -1,3 +1,28 @@
+.franks-container {
+  width: 80%;
+  margin: auto;
+}
+.franks-memo {
+  margin: 5% 0;
+  width: 100%;
+  height: auto;
+}
+.franks-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.franks-memo h5 {
+  padding: 3% 0;
+  font-weight: 600;
+}
+.franks-memo a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.franks-memo p {
+  text-align: center;
+}
 .timeline-container {
   width: 80%;
   margin: auto;
