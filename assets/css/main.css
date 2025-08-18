@@ -188,10 +188,6 @@
   width: 100%;
   aspect-ratio: 4 / 5;
 }
-.phone-data iframe {
-  border-top: 15px solid black;
-  border-bottom: 15px solid black;
-}
 .phone-data h5 {
   padding: 4%;
 }
