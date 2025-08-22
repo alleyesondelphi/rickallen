@@ -11,6 +11,13 @@
   width: 95%;
   margin: auto;
 }
+.prison-timeline-box {
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 80%;
+  margin: auto;
+}
 .franks-container {
   width: 80%;
   margin: auto;
