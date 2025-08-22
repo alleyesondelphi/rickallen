@@ -1,3 +1,16 @@
+#crebin-folder {
+  width: 80%;
+  margin: auto;
+}
+.crebin {
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.crebin img {
+  width: 95%;
+  margin: auto;
+}
 .franks-container {
   width: 80%;
   margin: auto;
