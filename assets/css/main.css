@@ -1,12 +1,12 @@
 .pdf-section {
-    width: 100%;
+    width: 98%;
     height: 100%;
     padding: 2% 0;
-    margin: 0;
+    margin: 0 auto;
 }
 .pdf-container {
   position: relative;
-  width: 100%;
+  width: 98%;
   max-width: 800px;
   min-width: 300px;
   margin: 2% auto;
@@ -21,13 +21,48 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 98%;
   height: 95%;
   border: 5px solid black;
+  margin: auto;
+}
+.pdf-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 98%;
+  border: 5px solid gray;
+  margin: auto;
 }
 
-
-
+.pdf-header {
+  position: relative;
+  width: 98%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 2% auto;
+}
+.pdf-header h6 {
+  width: 98%;
+  height: auto;
+  font-weight: 600;
+  padding: 1%;
+  text-align: justify;
+}
+.pdf-header p {
+  width: 98%;
+  height: auto;
+  font-weight: 500;
+  padding: 1%;
+  text-align: justify;
+}
+.pdf-header a {
+  font-weight: 600;
+  padding: 1%;
+  text-align: justify;
+  text-decoration: underline;
+}
 
 /*******************************/
 #crebin-folder {
