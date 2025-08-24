@@ -1,15 +1,15 @@
 .pdf-section {
     width: 90%;
     height: 100%;
-    padding: 2% 0;
-    margin: 0 auto;
+    margin: 1% auto;
+    background-color: pink;
 }
 .pdf-container {
   position: relative;
   width: 98%;
   max-width: 800px;
   min-width: 300px;
-  margin: 2% auto;
+  margin: 0 auto;
   aspect-ratio: 8.5 / 11;
 }
 .pdf-container::before {
@@ -24,7 +24,8 @@
   width: 98%;
   height: 95%;
   border: 5px solid black;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0;
 }
 .pdf-container embed {
   position: absolute;
@@ -33,7 +34,8 @@
   width: 98%;
   height: 98%;
   border: 5px solid gray;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .pdf-header {
@@ -41,14 +43,15 @@
   width: 98%;
   max-width: 800px;
   min-width: 300px;
-  margin: 2% auto;
+  margin: 0 auto;
 }
 .pdf-header h6 {
   width: 98%;
   height: auto;
   font-weight: 600;
-  padding: 1%;
+  
   text-align: justify;
+  background-color: blue;
 }
 .pdf-header p {
   width: 98%;
