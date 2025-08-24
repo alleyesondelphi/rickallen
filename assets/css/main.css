@@ -1,3 +1,34 @@
+.pdf-section {
+    width: 100%;
+    height: 100%;
+    padding: 2% 0;
+    margin: 0;
+}
+.pdf-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 2% auto;
+  aspect-ratio: 8.5 / 11;
+}
+.pdf-container::before {
+  content: '';
+  display: block;
+  padding-top: calc(11 / 8.5 * 100%);
+}
+.pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*******************************/
 #crebin-folder {
   width: 80%;
   margin: auto;
