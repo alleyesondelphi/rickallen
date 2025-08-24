@@ -2,7 +2,6 @@
     width: 90%;
     height: 100%;
     margin: 1% auto;
-    background-color: pink;
 }
 .pdf-container {
   position: relative;
@@ -48,10 +47,8 @@
 .pdf-header h6 {
   width: 98%;
   height: auto;
-  font-weight: 600;
-  
+  font-weight: 600; 
   text-align: justify;
-  background-color: blue;
 }
 .pdf-header p {
   width: 98%;
