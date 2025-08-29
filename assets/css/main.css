@@ -21,7 +21,7 @@
   top: 0;
   left: 0;
   width: 98%;
-  height: 95%;
+  height: 90%;
   border: 5px solid black;
   margin: 0 auto;
   padding: 0;
@@ -36,7 +36,6 @@
   margin: 0 auto;
   padding: 0;
 }
-
 .pdf-header {
   position: relative;
   width: 98%;
@@ -64,7 +63,6 @@
   text-decoration: underline;
 }
 /******************************* APPELLATE DOCKET */
-
 #appellate-docket-wrapper {
   width: 90%;
   margin: auto;
@@ -74,10 +72,13 @@
   background-color: #f5f5f5;
   padding: 2%;
 }
+/******************************* FIRST 48 HOURS  */
+#first-48-hours-wrapper {
+  width: 90%;
+  margin: auto;
+}
 
-
-
-/*******************************/
+/**************************************************/
 #crebin-folder {
   width: 80%;
   margin: auto;
@@ -744,7 +745,8 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  /*background-color: var(--background-color);*/
+  background-color: #f5f5f5;
   font-size: 14px;
   padding: 40px 0;
   position: relative;
