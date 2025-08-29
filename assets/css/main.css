@@ -63,6 +63,11 @@
   text-decoration: underline;
 }
 /******************************* APPELLATE DOCKET */
+#wrapper {
+  width: 90%;
+  margin: auto;
+}
+/******************************* APPELLATE DOCKET */
 #appellate-docket-wrapper {
   width: 90%;
   margin: auto;
