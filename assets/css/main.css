@@ -63,6 +63,19 @@
   text-align: justify;
   text-decoration: underline;
 }
+/******************************* APPELLATE DOCKET */
+
+#appellate-docket-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.docket-entry li {
+  list-style: none;
+  background-color: #f5f5f5;
+  padding: 2%;
+}
+
+
 
 /*******************************/
 #crebin-folder {
