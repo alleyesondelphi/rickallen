@@ -128,6 +128,7 @@
 }
 /******************************* MP4s CONTAINER  */
 .mp4s-container {
+  position: relative;
   width: 98%;
   height: 100%;
   max-width: 600px;
@@ -137,19 +138,23 @@
   aspect-ratio: 16 / 9;
 }
 .mp4s-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 5px solid black;
   margin: 0 auto;
   padding: 0;
 }
+
 /******************************* MEMES CONTAINER  */
 .memes-container {
   width: 98%;
   height: 100%;
   max-width: 600px;
   min-width: 300px;
-  margin: 0 auto 2% auto;
+  margin: 0;
   padding: 0;
 }
 .memes-container iframe {
@@ -165,11 +170,12 @@
   margin: auto;
 }
 .crebin {
-  align-items: center;
+
+  /*align-items: center;
   justify-content: center;
   justify-items: center;
   max-width: 600px;
-  min-width: 300px;
+  min-width: 300px;*/
 }
 .crebin img {
   width: 95%;
