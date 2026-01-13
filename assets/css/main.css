@@ -36,7 +36,7 @@
 }
 .link {
   text-decoration: underline;
-  weight: 700;
+  font-weight: 700;
 }
 .pdf-section {
     width: 90%;
