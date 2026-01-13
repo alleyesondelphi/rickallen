@@ -243,21 +243,10 @@
   flex-flow: wrap;
   margin-bottom: 1%;
 }
-.run-off-text {
-
-}
 /**************************************************/
 #crebin-folder {
   width: 80%;
   margin: auto;
-}
-.crebin {
-
-  /*align-items: center;
-  justify-content: center;
-  justify-items: center;
-  max-width: 600px;
-  min-width: 300px;*/
 }
 .crebin img {
   width: 95%;
@@ -1093,9 +1082,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
 
-}
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -1114,13 +1101,6 @@ section,
   text-transform: lowercase;
   font-weight: 500;
   text-decoration: underline;
-}
-.hero-img {
-  /*position: absolute;
-  inset: 0;
-  display: block;
-  object-fit: cover;
-  z-index: 1;*/
 }
 .hero:before {
   content: "";
@@ -1843,6 +1823,3 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
