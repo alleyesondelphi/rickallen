@@ -126,6 +126,7 @@
   min-width: 300px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
+  margin-bottom: 3%;
 }
 .YT-video-container iframe {
   position: absolute;
@@ -146,6 +147,12 @@
 .landscape-ratio {
   aspect-ratio: 16 / 9;
   width: 80%;
+  height: auto;
+  margin: auto;
+}
+.magic-bullet-ratio {
+  aspect-ratio: 16 / 9;
+  width: 98%;
   height: auto;
   margin: auto;
 }
@@ -221,6 +228,11 @@
   display: flex;
   padding: 0;
 }
+.magic-bullet-row {
+  width: 95%;
+  margin: auto;
+  padding: 0;
+}
 /* Create four equal columns that sits next to each other */
 .column {
   flex-wrap: wrap;
@@ -294,7 +306,6 @@
   text-align: justify;
   border: 1px solid darkgray;
 }
-
 .nik-stream {
   width: 100%;
   aspect-ratio: 16 / 9;
