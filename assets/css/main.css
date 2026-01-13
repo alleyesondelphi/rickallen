@@ -1,3 +1,36 @@
+.pdf-landscape {
+  position: relative;
+  width: 98%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 11 / 8.5;
+}
+.pdf-landscape::before {
+  content: '';
+  display: block;
+  padding-top: calc(8.5 / 11 * 100%);
+}
+.pdf-landscape iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 90%;
+  border: 5px solid black;
+  margin: 0 auto;
+  padding: 0;
+}
+.pdf-landscape embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 98%;
+  border: 5px solid gray;
+  margin: 0 auto;
+  padding: 0;
+}
 .magic-bullet-h6 {
   text-align: justify;
 }
