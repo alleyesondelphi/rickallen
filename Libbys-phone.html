@@ -34,6 +34,42 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favs/favicon-16x16.png">
   <link rel="manifest" href="assets/img/favs/site.webmanifest">
 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Required Info -->
+  <title>Libby's Phone - Forensic Analysis Dashboard</title>
+  <meta name="description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis of Liberty German's iPhone">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/Libbys-phone.html">
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Libby's Phone - Forensic Analysis">
+  <meta property="og:description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis Dashboard">
+  <meta property="og:type" content="website"> 
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/Libbys-phone.html">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview-img/Libbys-phone.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Libby's Phone - Forensic Analysis">
+  <meta name="twitter:description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis Dashboard">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview-img/Libbys-phone.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+
+  <!-- Favicons -->
+  <link href="favicon.ico" rel="icon" sizes="any">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favs/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favs/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favs/site.webmanifest">
+
   <!-- Style Sheet -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -76,945 +112,981 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }
 
 .header {
-  padding: 48px 40px 32px;
+  padding: 32px 20px 24px;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, #0f0f0f 0%, var(--bg-primary) 100%);
 }
+@media (min-width: 768px) {
+  .header { padding: 48px 40px 32px; }
+}
 .header-label {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--accent-red);
   margin-bottom: 12px;
 }
+@media (min-width: 768px) {
+  .header-label { font-size: 11px; }
+}
 .header h1 {
   font-family: var(--mono);
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
+@media (min-width: 768px) {
+  .header h1 { font-size: 26px; }
+}
 .header-sub {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-secondary);
   margin-bottom: 12px;
   max-width: 800px;
 }
+@media (min-width: 768px) {
+  .header-sub { font-size: 14px; }
+}
 .header-meta {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .header-meta { font-size: 13px; gap: 20px; }
 }
 .header-meta span { display: flex; align-items: center; gap: 6px; }
 .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+@media (min-width: 768px) {
+  .container { padding: 0 40px; }
+}
 
 .section {
-  padding: 48px 0;
+  padding: 32px 0;
   border-bottom: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  .section { padding: 48px 0; }
 }
 .section:last-child { border-bottom: none; }
 .section-header {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .section-header { gap: 12px; }
 }
 .section-number {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--accent-amber);
   background: var(--accent-amber-dim);
   padding: 4px 10px;
   border-radius: 4px;
 }
+@media (min-width: 768px) {
+  .section-number { font-size: 12px; }
+}
 .section-number.red { color: var(--accent-red); background: var(--accent-red-dim); }
-.section-title { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; }
+.section-number.purple { color: var(--accent-purple); background: var(--accent-purple-dim); }
+.section-number.blue { color: var(--accent-blue); background: var(--accent-blue-dim); }
+.section-title { 
+  font-size: 18px; 
+  font-weight: 600; 
+  letter-spacing: -0.3px; 
+}
+@media (min-width: 768px) {
+  .section-title { font-size: 20px; }
+}
 .section-desc {
   color: var(--text-secondary);
-  font-size: 14px;
-  margin-bottom: 28px;
+  font-size: 13px;
+  margin-bottom: 24px;
   max-width: 760px;
 }
+@media (min-width: 768px) {
+  .section-desc { font-size: 14px; margin-bottom: 28px; }
+}
 
-/* Stat cards */
+/* Stat cards - Mobile responsive */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
 }
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 18px;
+  padding: 14px;
   transition: border-color 0.2s;
+}
+@media (min-width: 768px) {
+  .stat-card { padding: 18px; }
 }
 .stat-card:hover { border-color: var(--border-accent); }
 .stat-label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 6px;
 }
+@media (min-width: 768px) {
+  .stat-label { font-size: 10px; letter-spacing: 1.5px; }
+}
 .stat-value {
   font-family: var(--mono);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -1px;
 }
-.stat-unit { font-size: 12px; font-weight: 400; color: var(--text-secondary); margin-left: 3px; }
-.stat-note { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
-
-/* Event timeline */
-.event-stream { position: relative; }
-.event-group { margin-bottom: 24px; }
-.event-group-header {
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent-amber);
-  margin-bottom: 12px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--border);
+@media (min-width: 768px) {
+  .stat-value { font-size: 26px; }
 }
-.event-row {
-  display: grid;
-  grid-template-columns: 85px 24px 1fr;
-  gap: 8px;
-  align-items: start;
-  padding: 5px 0;
-  font-size: 13px;
-  transition: background 0.15s;
-  border-radius: 4px;
-  padding-left: 4px;
+.stat-unit { font-size: 11px; font-weight: 400; color: var(--text-secondary); margin-left: 3px; }
+@media (min-width: 768px) {
+  .stat-unit { font-size: 12px; }
 }
-.event-row:hover { background: rgba(255,255,255,0.02); }
-.event-time {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-muted);
-  padding-top: 2px;
-}
-.event-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.event-icon.sms { background: var(--accent-green-dim); color: var(--accent-green); }
-.event-icon.call { background: var(--accent-blue-dim); color: var(--accent-blue); }
-.event-icon.call-miss { background: var(--accent-red-dim); color: var(--accent-red); }
-.event-icon.app { background: var(--accent-purple-dim); color: var(--accent-purple); }
-.event-icon.screen { background: rgba(255,255,255,0.06); color: var(--text-muted); }
-.event-icon.location { background: var(--accent-amber-dim); color: var(--accent-amber); }
-.event-icon.health { background: var(--accent-cyan); color: #000; font-weight: 700; }
-.event-icon.battery { background: var(--accent-amber-dim); color: var(--accent-amber); }
-.event-icon.media { background: var(--accent-pink-dim); color: var(--accent-pink); }
-.event-icon.audio { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
-.event-icon.vm { background: var(--accent-red-dim); color: var(--accent-red); }
-.event-icon.system { background: rgba(255,255,255,0.04); color: var(--text-muted); }
-.event-text { color: var(--text-secondary); line-height: 1.5; }
-.event-text strong { color: var(--text-primary); font-weight: 500; }
-.event-text .contact { color: var(--accent-blue); font-weight: 500; }
-.event-text .msg { color: var(--text-primary); font-style: italic; }
-.event-text .unread { color: var(--accent-red); font-family: var(--mono); font-size: 10px; font-weight: 600; }
-.event-text .read { color: var(--accent-green); font-family: var(--mono); font-size: 10px; }
-
-.cascade-highlight {
-  background: var(--accent-red-dim);
-  border: 1px solid rgba(232, 72, 85, 0.2);
-  border-radius: 6px;
-  padding: 12px;
-  margin: 12px 0;
-}
-.cascade-highlight .event-row { padding: 3px 0; }
-.cascade-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent-red);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+.stat-note { font-size: 10px; color: var(--text-secondary); margin-top: 4px; }
+@media (min-width: 768px) {
+  .stat-note { font-size: 11px; }
 }
 
-/* Audio output cards */
-.audio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 12px;
-}
-.audio-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px;
-  border-left: 3px solid var(--accent-purple);
-}
-.audio-card-header {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent-purple);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.audio-card-detail {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-.audio-card-detail strong { color: var(--text-primary); }
-.audio-time-range {
-  font-family: var(--mono);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.audio-duration {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-/* Anomaly cards */
+/* Anomaly Cards - Mobile responsive */
 .anomaly-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+@media (min-width: 768px) {
+  .anomaly-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
 }
 .anomaly-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 24px;
-  border-left: 3px solid var(--accent-red);
-}
-.anomaly-card.info { border-left-color: var(--accent-blue); }
-.anomaly-card.warn { border-left-color: var(--accent-amber); }
-.anomaly-card.ok { border-left-color: var(--accent-green); }
-.anomaly-severity {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.anomaly-severity.high { color: var(--accent-red); }
-.anomaly-severity.medium { color: var(--accent-amber); }
-.anomaly-severity.low { color: var(--accent-blue); }
-.anomaly-severity.clear { color: var(--accent-green); }
-.anomaly-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-.anomaly-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-.anomaly-detail {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  padding: 12px;
-  margin-top: 12px;
-  overflow-x: auto;
-  white-space: pre;
-  line-height: 1.8;
-}
-
-/* Battery chart */
-.chart-container {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 16px;
-}
-.chart-title {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.chart-svg { width: 100%; height: auto; }
-
-/* Motion data */
-.motion-summary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  margin-bottom: 24px;
-}
-.motion-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
   padding: 16px;
+  transition: all 0.2s;
 }
-.motion-label {
+@media (min-width: 768px) {
+  .anomaly-card { padding: 20px; }
+}
+.anomaly-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+}
+.anomaly-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.anomaly-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .anomaly-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+.anomaly-icon.red { background: var(--accent-red-dim); color: var(--accent-red); }
+.anomaly-icon.amber { background: var(--accent-amber-dim); color: var(--accent-amber); }
+.anomaly-icon.purple { background: var(--accent-purple-dim); color: var(--accent-purple); }
+.anomaly-title {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
 }
-.motion-value {
-  font-family: var(--mono);
-  font-size: 22px;
-  font-weight: 700;
+@media (min-width: 768px) {
+  .anomaly-title { font-size: 14px; }
 }
-.motion-time {
+.anomaly-time {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--text-muted);
   margin-top: 2px;
 }
-
-/* Source legend */
-.source-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 24px;
+@media (min-width: 768px) {
+  .anomaly-time { font-size: 12px; }
 }
-.source-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-.source-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-}
-
-.footer {
-  padding: 32px 0;
-  text-align: center;
-  font-size: 12px;
-  color: var(--text-muted);
-  font-family: var(--mono);
-}
-
-/* App bar chart */
-.app-bar-list { display: flex; flex-direction: column; gap: 8px; }
-.app-bar-row {
-  display: grid;
-  grid-template-columns: 140px 1fr 70px;
-  align-items: center;
-  gap: 12px;
+.anomaly-body {
   font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
-.app-bar-name {
+@media (min-width: 768px) {
+  .anomaly-body { font-size: 14px; }
+}
+.anomaly-source {
   font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-primary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.app-bar-track {
-  height: 22px;
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 6px 10px;
   background: var(--bg-secondary);
   border-radius: 4px;
-  overflow: hidden;
+  border: 1px solid var(--border);
 }
-.app-bar-fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+@media (min-width: 768px) {
+  .anomaly-source { font-size: 11px; }
 }
-.app-bar-value {
+.anomaly-source strong { color: var(--accent-amber); }
+
+/* Expert witness section */
+.expert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+}
+@media (min-width: 768px) {
+  .expert-card { padding: 24px; margin: 32px 0; }
+}
+.expert-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .expert-header { flex-direction: row; }
+}
+.expert-badge {
+  background: var(--accent-purple-dim);
+  border: 1px solid var(--accent-purple);
+  border-radius: 6px;
+  padding: 8px 14px;
   font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .expert-badge { font-size: 12px; }
+}
+.expert-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+@media (min-width: 768px) {
+  .expert-info h3 { font-size: 18px; }
+}
+.expert-title {
   font-size: 12px;
   color: var(--text-secondary);
-  text-align: right;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .expert-title { font-size: 13px; }
+}
+.expert-quals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+@media (min-width: 768px) {
+  .expert-quals { font-size: 12px; }
+}
+.expert-quals span {
+  padding: 4px 8px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.expert-finding {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-purple);
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .expert-finding { padding: 16px; }
+}
+.expert-finding strong {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent-purple);
+  display: block;
+  margin-bottom: 6px;
+}
+@media (min-width: 768px) {
+  .expert-finding strong { font-size: 13px; }
+}
+.expert-finding p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .expert-finding p { font-size: 14px; }
 }
 
-/* Tab system */
-.tab-bar {
-  display: flex;
-  gap: 0;
-  margin-bottom: 24px;
+/* Event timeline - Mobile responsive */
+.event-stream { position: relative; }
+.event-group { margin-bottom: 20px; }
+@media (min-width: 768px) {
+  .event-group { margin-bottom: 24px; }
+}
+.event-group-header {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-amber);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  .event-group-header { font-size: 13px; margin-bottom: 12px; }
+}
+.event-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .event-row {
+    grid-template-columns: 90px auto 1fr;
+    gap: 16px;
+    padding: 12px 0;
+  }
+}
+.event-time {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .event-time { font-size: 12px; }
+}
+.event-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .event-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+.event-icon.app { background: var(--accent-amber-dim); color: var(--accent-amber); }
+.event-icon.call { background: var(--accent-blue-dim); color: var(--accent-blue); }
+.event-icon.msg { background: var(--accent-green-dim); color: var(--accent-green); }
+.event-icon.bat { background: var(--accent-red-dim); color: var(--accent-red); }
+.event-icon.vm { background: var(--accent-purple-dim); color: var(--accent-purple); }
+.event-icon.walk { background: var(--accent-cyan); color: #0a0a0a; }
+.event-icon.critical { background: var(--accent-red); color: var(--bg-primary); }
+.event-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .event-desc { font-size: 14px; }
+}
+.event-desc strong { color: var(--text-primary); }
+.event-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .event-note { font-size: 12px; }
+}
+
+.cascade-highlight {
+  background: linear-gradient(90deg, rgba(232,72,85,0.05) 0%, transparent 100%);
+  border-left: 3px solid var(--accent-red);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .cascade-highlight { padding: 20px; margin: 20px 0; }
+}
+.cascade-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-red);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  .cascade-label { font-size: 13px; }
+}
+
+/* Tabs - Mobile responsive */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 768px) {
+  .tabs { gap: 12px; margin-bottom: 24px; }
 }
 .tab-btn {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  padding: 10px 20px;
-  background: none;
+  padding: 10px 14px;
+  background: transparent;
   border: none;
   color: var(--text-muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .tab-btn { font-size: 12px; padding: 12px 16px; }
 }
 .tab-btn:hover { color: var(--text-secondary); }
-.tab-btn.active { color: var(--accent-amber); border-bottom-color: var(--accent-amber); }
+.tab-btn.active {
+  color: var(--accent-amber);
+  border-bottom-color: var(--accent-amber);
+}
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
-/* Collapsible */
-.collapse-header {
+/* Charts - Mobile responsive */
+.chart-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 768px) {
+  .chart-container { padding: 24px; margin: 24px 0; }
+}
+.chart-title {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .chart-title { font-size: 13px; margin-bottom: 20px; }
+}
+svg { 
+  max-width: 100%; 
+  height: auto;
+  min-width: 600px; /* Allows horizontal scroll on mobile */
+}
+@media (min-width: 768px) {
+  svg { min-width: 0; }
+}
+
+/* App bars - Mobile responsive */
+.app-bars { margin: 20px 0; }
+@media (min-width: 768px) {
+  .app-bars { margin: 24px 0; }
+}
+.app-bar-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  .app-bar-row {
+    grid-template-columns: 100px 1fr 80px;
+    gap: 12px;
+    padding: 12px 0;
+  }
+}
+.app-bar-name {
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-secondary);
-  cursor: pointer;
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  user-select: none;
 }
-.collapse-header:hover { color: var(--text-primary); }
-.collapse-arrow { transition: transform 0.2s; display: inline-block; font-size: 10px; }
-.collapse-header.open .collapse-arrow { transform: rotate(90deg); }
-.collapse-body { display: none; padding-bottom: 16px; }
-.collapse-body.open { display: block; }
+@media (min-width: 768px) {
+  .app-bar-name { font-size: 13px; }
+}
+.app-bar-track {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .app-bar-track { height: 8px; }
+}
+.app-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+.app-bar-value {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+@media (min-width: 768px) {
+  .app-bar-value { font-size: 12px; }
+}
 
-@media (max-width: 768px) {
-  .header { padding: 32px 20px 24px; }
-  .container { padding: 0 20px; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .anomaly-grid { grid-template-columns: 1fr; }
-  .audio-grid { grid-template-columns: 1fr; }
-  .event-row { grid-template-columns: 70px 20px 1fr; }
-  .app-bar-row { grid-template-columns: 110px 1fr 55px; }
+/* Mobile adjustments for grids */
+@media (max-width: 767px) {
+  .event-row { 
+    grid-template-columns: 1fr; 
+    gap: 8px;
+  }
+  .event-time {
+    order: -1;
+  }
+  .event-icon {
+    display: none; /* Hide icons on very small screens for clarity */
+  }
 }
+.header a {
+    color:#e84855;
+  }
 </style>
 </head>
+
 <body>
+  <div class="header">
+    <div class="container">
+      <div class="header-label">⚠ IN v. RA Trial Exhibits &mdash; Forensic Analysis</div>
+      <h1>knowledgeC.db + AT&T pings + ISP reports</h1>
+      <div class="header-sub">Comprehensive forensic analysis incorporating testimony from Defense Expert, Stacy Eldridge, and First Sgt. Christopher Cecil's examination reports from the Indiana State Police Cyber Crime Unit. This dashboard consolidates known knowledgeC.db, sms.db, CallHistory.storedata, healthdb_secure.sqlite, CoreRoutine.sqlite, Photos.sqlite, voicemail.db, powerlog data, and other data that can be found <a class="link" href="phone-data.html" target="_blank">here</a>.</div>
+      <div class="header-meta">
+        <span><span class="dot" style="background:var(--accent-red)"></span>Case: IN v. Richard M. Allen</span>
+        <span><span class="dot" style="background:var(--accent-amber)"></span>Device: iPhone 6s (DNPRN3WZGRXW)</span>
+        <span><span class="dot" style="background:var(--accent-blue)"></span>Date: Feb. 13, 2017</span>
+      </div>
+    </div>
+  </div>
 
-<div class="header">
   <div class="container">
-    <div class="header-label">Defendant's Exhibit — Forensic Phone Timeline</div>
-    <h1>knowledgeC.db + Cecil's Timeline</h1>
-    <div class="header-sub">
-      Comprehensive forensic timeline distilled from multiple iOS artifact sources. Originally compiled by forensic analyst (First Sgt. Christopher Cecil), presented as court exhibits. This dashboard consolidates known knowledgeC.db, sms.db, CallHistory.storedata, healthdb_secure.sqlite, CoreRoutine.sqlite, Photos.sqlite, voicemail.db, and powerlog data.
+    
+    <!-- DEVICE & EXAMINATION SUMMARY -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">01</div>
+        <h2 class="section-title">Device & Examination Details</h2>
+      </div>
+      <div class="section-desc">Liberty German's iPhone 6S running iOS 10.2, recovered Feb. 14, 2017, examined by Indiana State Police and defense expert</div>
+      
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Device</div>
+          <div class="stat-value">iPhone<span class="stat-unit">6S</span></div>
+          <div class="stat-note">iOS 10.2</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Carrier</div>
+          <div class="stat-value">AT&T</div>
+          <div class="stat-note">765-588-7599</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Storage</div>
+          <div class="stat-value">64<span class="stat-unit">GB</span></div>
+          <div class="stat-note">Space Gray</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Recovered</div>
+          <div class="stat-value">Feb.<span class="stat-unit">14</span></div>
+          <div class="stat-note">Under victim</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">First Exam</div>
+          <div class="stat-value">Feb.<span class="stat-unit">15</span></div>
+          <div class="stat-note">Logical extraction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Full Exam</div>
+          <div class="stat-value">Oct.<span class="stat-unit">11</span></div>
+          <div class="stat-note">8-month delay</div>
+        </div>
+      </div>
+
+      <div class="expert-card">
+        <div class="expert-header">
+          <div class="expert-badge">DEFENSE EXPERT</div>
+          <div class="expert-info">
+            <h3>Stacy R. Eldridge</h3>
+            <div class="expert-title">Former FBI Digital Forensics Examiner, Silicon Prairie Cyber Services LLC</div>
+            <div class="expert-quals">
+              <span>FBI CART - 10 years</span>
+              <span>IACIS Certified</span>
+              <span>Axiom Certified</span>
+              <span>110+ forensic courses</span>
+            </div>
+          </div>
+        </div>
+        <div class="expert-finding">
+          <strong>KEY FINDING:</strong>
+          <p>The 8-month delay between initial logical extraction (Feb. 15, 2017) and full file system extraction (Oct. 11, 2017) caused critical data loss. The "current power log" file—which would have shown exactly when the phone powered off on Feb. 13—was lost due to this delay and multiple power cycles.</p>
+        </div>
+        <div class="expert-finding">
+          <strong>TESTIMONY HIGHLIGHT:</strong>
+          <p>"Every time you turn off a phone and then turn it back on, you're losing information just because of that action of shutting it off, you're losing some of the temporary files. But then, as the phone ages, files get older and some files will start to drop off at 28, 30 days old."</p>
+        </div>
+      </div>
     </div>
-    <div class="header-meta">
-      <span><span class="dot" style="background:var(--accent-green)"></span> 549+ events cataloged</span>
-      <span><span class="dot" style="background:var(--accent-amber)"></span> Feb 12 &mdash; Feb 15, 2017</span>
-      <span><span class="dot" style="background:var(--accent-blue)"></span> 8+ artifact sources</span>
-      <span><span class="dot" style="background:var(--accent-purple)"></span> Timezone: UTC-5 (EST)</span>
+
+    <!-- CRITICAL ANOMALIES -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number red">02</div>
+        <h2 class="section-title">Remaining Questions</h2>
+      </div>
+      <div class="section-desc">Three major anomalies discovered through defense expert analysis of the knowledgeC database and cell tower records</div>
+      
+      <div class="anomaly-grid">
+        <div class="anomaly-card">
+          <div class="anomaly-header">
+            <div class="anomaly-icon red">🔊</div>
+            <div>
+              <div class="anomaly-title">Aux Cable Insertion</div>
+              <div class="anomaly-time">Feb. 13, 5:45:24 PM</div>
+            </div>
+          </div>
+          <div class="anomaly-body">
+            Wired headphones or aux cable inserted into phone at 5:45 PM, removed at 10:32 PM. This action <strong>silenced all audio output</strong> from the device. Eldridge testified: "By plugging in the cable, you would stop sound from coming out of the phone." Occurred milliseconds after an incoming call.
+          </div>
+          <div class="anomaly-source">
+            Source: <strong>knowledgeC Database</strong> → Z_PK19600, Audio Output Route Start (Value: 1 = Headphones)
+          </div>
+        </div>
+
+        <div class="anomaly-card">
+          <div class="anomaly-header">
+            <div class="anomaly-icon red">📡</div>
+            <div>
+              <div class="anomaly-title">Loss of Cell Tower Connection</div>
+              <div class="anomaly-time">5:44 PM Feb. 13 → 4:33 AM Feb. 14</div>
+            </div>
+          </div>
+          <div class="anomaly-body">
+            Phone lost all connection to AT&T cell towers for <strong>10 hours 49 minutes</strong>. Three independent data sources confirm: (1) AT&T Historical Precision Location logs show no pings, (2) No data usage logged on device, (3) Voicemails not received until Feb. 17.
+          </div>
+          <div class="anomaly-source">
+            Source: <strong>AT&T HPLI Records</strong> + Device Logs. Eldridge: "I could find no evidence on the phone to suggest what happened, so I can only conclude something external to the phone changed."
+          </div>
+        </div>
+
+        <div class="anomaly-card">
+          <div class="anomaly-header">
+            <div class="anomaly-icon amber">⚠️</div>
+            <div>
+              <div class="anomaly-title">Delayed Message Delivery</div>
+              <div class="anomaly-time">iMessages timestamped but not delivered</div>
+            </div>
+          </div>
+          <div class="anomaly-body">
+            Multiple iMessages and FaceTime calls appear on Cecil's timeline between 5:44 PM and 4:33 AM, but forensic analysis shows they were <strong>not actually delivered to the phone until after 4:33 AM</strong> when cell service resumed. Apple's iMessage servers timestamp when sent, not when received.
+          </div>
+          <div class="anomaly-source">
+            Source: <strong>Cecil Timeline vs. Device Logs</strong>. Eldridge: "There is evidence that it did not receive those messages at those times... it was intermittent throughout the day, so some iMessages were coming in on time and some weren't."
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- LAST RECORDED ACTIVITY -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number red">03</div>
+        <h2 class="section-title">Last Recorded Movement & Activity</h2>
+      </div>
+      <div class="section-desc">Final evidence of user interaction and device motion from Apple Health database</div>
+      
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Last Movement</div>
+          <div class="stat-value">2:32<span class="stat-unit">PM</span></div>
+          <div class="stat-note">Feb. 13, 2017</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Steps Logged</div>
+          <div class="stat-value">1682</div>
+          <div class="stat-note">1:31-2:18 PM</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Distance</div>
+          <div class="stat-value">707<span class="stat-unit">m</span></div>
+          <div class="stat-note">≈0.44 miles</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Floors Climbed</div>
+          <div class="stat-value">2</div>
+          <div class="stat-note">≈20 feet elevation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Last Unlock</div>
+          <div class="stat-value">2:07<span class="stat-unit">PM</span></div>
+          <div class="stat-note">User interaction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Failed Unlock</div>
+          <div class="stat-value">2:14<span class="stat-unit">PM</span></div>
+          <div class="stat-note">Touch ID fail</div>
+        </div>
+      </div>
+
+      <div class="expert-finding">
+        <strong>ELDRIDGE TESTIMONY ON APPLE HEALTH ACCURACY:</strong>
+        <p>Research from the Forensic Science Institute in The Hague demonstrates that <strong>distance can be off by 30-40% either way</strong>, and the type of motion greatly impacts logging. Vigorous motion gets credited with extra steps/distance, while slow/casual walking may not be logged at all. The phone does NOT log movement if traveling in a vehicle (distinguishes driving from walking).</p>
+      </div>
+    </div>
+
+    <!-- CECIL'S TIMELINE EVENTS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">04</div>
+        <h2 class="section-title">Timeline of Events — Feb. 13, 2017</h2>
+      </div>
+      <div class="section-desc">Comprehensive timeline based on Cecil's forensic examination and Eldridge's re-analysis</div>
+      
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'allEvents')">All Events</button>
+        <button class="tab-btn" onclick="switchTab(this, 'commsEvents')">Communications</button>
+        <button class="tab-btn" onclick="switchTab(this, 'motionEvents')">Motion & GPS</button>
+        <button class="tab-btn" onclick="switchTab(this, 'anomalyEvents')">Anomalies</button>
+      </div>
+
+      <div id="allEvents" class="tab-content active"></div>
+      <div id="commsEvents" class="tab-content"></div>
+      <div id="motionEvents" class="tab-content"></div>
+      <div id="anomalyEvents" class="tab-content">
+        <div class="event-group">
+          <div class="event-group-header">Critical Anomalies Requiring Human Interaction</div>
+          <div class="event-row">
+            <div class="event-time">5:45:24 PM</div>
+            <div class="event-icon critical">🔊</div>
+            <div class="event-desc">
+              <strong>Audio Output Route Start — Wired Aux Cable Inserted</strong><br>
+              KnowledgeC database logs Z Value Double = 1 (headphones). Eldridge: "Someone took a headphone jack and inserted it into the hole at the bottom... they inserted it into the hole at the bottom at 5:45 p.m. on the 13th."
+              <div class="event-note">Q: "Can you think of any explanation for aux port or headphones being plugged in and unplugged that does not involve human interaction?" A: "I cannot think of any explanation that does not involve humans."</div>
+            </div>
+          </div>
+          <div class="event-row">
+            <div class="event-time">10:32:26 PM</div>
+            <div class="event-icon critical">🔊</div>
+            <div class="event-desc">
+              <strong>Audio Output Route End — Cable Removed</strong><br>
+              Headphones/aux cable removed from device after 4 hours 47 minutes. This was the last logged data received by the iPhone before battery depletion.
+              <div class="event-note">No movement logged. Phone remained stationary from 2:32 PM onward per Apple Health data.</div>
+            </div>
+          </div>
+          <div class="event-row">
+            <div class="event-time">5:44 PM - 4:33 AM</div>
+            <div class="event-icon critical">📡</div>
+            <div class="event-desc">
+              <strong>Complete Loss of Cell Tower Connection</strong><br>
+              10 hours 49 minutes with no connection to AT&T network. AT&T repeatedly attempted to ping the device during this period with no successful response until 4:33 AM Feb. 14.
+              <div class="event-note">Three independent confirmation sources: AT&T HPLI logs, device data usage logs, voicemail delivery records</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUALIZATIONS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number blue">05</div>
+        <h2 class="section-title">Data Visualizations</h2>
+      </div>
+      
+      <div class="chart-container">
+        <div class="chart-title">Battery Drain — Feb. 13, 2017</div>
+        <svg id="batteryChart" width="800" height="200" viewBox="0 0 800 200"></svg>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-title">GPS Coordinates from Device Logs</div>
+        <svg id="gpsChart" width="800" height="320" viewBox="0 0 800 320"></svg>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-title">Application Usage — Feb. 13</div>
+        <div class="app-bars" id="appBars"></div>
+      </div>
+    </div>
+
+    <!-- KEY FINDINGS SUMMARY -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number purple">06</div>
+        <h2 class="section-title">Key Forensic Findings Summary</h2>
+      </div>
+      
+      <div class="expert-card">
+        <h3 style="margin-bottom: 16px;">Defense Expert Conclusions (Stacy Eldridge)</h3>
+        <div class="expert-finding">
+          <strong>1. EXAMINATION DELAY CAUSED DATA LOSS:</strong>
+          <p>The Feb. 15 extraction was only a "logical" extraction—basic user data like texts and photos. Cecil requested but did not obtain the "full file system" extraction until Oct. 11, 2017. This 8-month delay caused permanent loss of the current power log and other temporary system files that would have definitively shown when the phone powered off.</p>
+        </div>
+        <div class="expert-finding">
+          <strong>2. HEADPHONE INSERTION REQUIRES HUMAN INTERACTION:</strong>
+          <p>The knowledgeC database definitively shows wired headphones or an aux cable was inserted at 5:45:24 PM, milliseconds after an incoming call. When asked if this could happen without human interaction, Eldridge testified: "I cannot think of any explanation that does not involve humans." This action silenced all audio from the device.</p>
+        </div>
+        <div class="expert-finding">
+          <strong>3. PHONE STOPPED LOGGING MOVEMENT THEN LOST SERVICE:</strong>
+          <p>Apple Health data shows no movement after 2:32 PM. Yet at 5:44 PM, the phone lost all cell service for nearly 11 hours. Eldridge could not find evidence on the device explaining this: "I could find no evidence on the phone to suggest what happened, so I can only conclude something external to the phone changed." Possible explanations: phone moved, signal blocked, or metal obstruction.</p>
+        </div>
+        <div class="expert-finding">
+          <strong>4. CECIL'S TIMELINE CONTAINS MISLEADING TIMESTAMPS:</strong>
+          <p>Multiple calls, iMessages, and FaceTime entries in Cecil's timeline show timestamps between 5:44 PM Feb. 13 and 4:33 AM Feb. 14. However, forensic analysis of actual device logs proves these were NOT delivered to the phone at those times—they were timestamped by Apple's servers when sent, but not received until service resumed at 4:33 AM.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-
-<div class="container">
-
-  <!-- SECTION 1: OVERVIEW -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <span class="section-title">Overview</span>
-    </div>
-    <p class="section-desc">Key statistics from the exhibits. The heaviest activity is concentrated on February 13, 2017.</p>
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-label">SMS Messages</div>
-        <div class="stat-value">12</div>
-        <div class="stat-note">8 received, 4 sent</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Phone Calls</div>
-        <div class="stat-value">28</div>
-        <div class="stat-note">2 outgoing, 26 incoming</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Unanswered Calls</div>
-        <div class="stat-value" style="color:var(--accent-red)">25</div>
-        <div class="stat-note">After ~4:00 PM on Feb 13</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">GPS Locations</div>
-        <div class="stat-value">6</div>
-        <div class="stat-note">5m&mdash;30m precision</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Walking Segments</div>
-        <div class="stat-value">7</div>
-        <div class="stat-note">~1,605 steps total</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Audio Routes</div>
-        <div class="stat-value">3</div>
-        <div class="stat-note">Sessions on Feb 13</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Instagram Images</div>
-        <div class="stat-value">2</div>
-        <div class="stat-note">Bridge & water scenes</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Voicemails</div>
-        <div class="stat-value">5</div>
-        <div class="stat-note">Received Feb 13 evening</div>
-      </div>
-    </div>
-
-    <div class="source-legend">
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-green)"></div> sms.db</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-blue)"></div> CallHistory.storedata</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-purple)"></div> knowledgeC.db</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-cyan)"></div> healthdb_secure.sqlite</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-amber)"></div> CoreRoutine.sqlite</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-pink)"></div> Photos / Instagram</div>
-      <div class="source-item"><div class="source-dot" style="background:var(--accent-red)"></div> voicemail.db</div>
-    </div>
-  </div>
-
-  <!-- SECTION 2: FEB 13 FULL TIMELINE -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number red">02</span>
-      <span class="section-title">February 13, 2017 — Complete Event Timeline</span>
-    </div>
-    <p class="section-desc">
-      Every significant event on February 13, reconstructed from all artifact sources. All times are local (EST/UTC-5). The day divides into three phases: early morning texts, midday active use with movement, and then a wall of unanswered calls beginning around 4 PM.
-    </p>
-
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab(this, 'tab-all')">All Events</button>
-      <button class="tab-btn" onclick="switchTab(this, 'tab-comms')">Calls & Messages</button>
-      <button class="tab-btn" onclick="switchTab(this, 'tab-motion')">Movement &amp; Location</button>
-    </div>
-
-    <div id="tab-all" class="tab-content active">
-      <div class="event-stream" id="allEvents"></div>
-    </div>
-    <div id="tab-comms" class="tab-content">
-      <div class="event-stream" id="commsEvents"></div>
-    </div>
-    <div id="tab-motion" class="tab-content">
-      <div class="event-stream" id="motionEvents"></div>
-    </div>
-  </div>
-
-  <!-- SECTION 3: AUDIO OUTPUT ROUTES -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <span class="section-title">Audio Output Routes &mdash; Feb 13</span>
-    </div>
-    <p class="section-desc">
-      iOS tracks when audio output routes are active mdash; this covers phone calls, speaker activation, and media playback. Three audio sessions were recorded on February 13.
-    </p>
-    <div class="audio-grid">
-      <div class="audio-card">
-        <div class="audio-card-header">Session 1 mdash; Phone Call</div>
-        <div class="audio-time-range">1:38:40 PM → 1:39:28 PM</div>
-        <div class="audio-duration">Duration: ~48 seconds</div>
-        <div class="audio-card-detail">
-          Outgoing call to <strong>(765)461-9199 "Daddy-o"</strong>. Call connected at 1:38:49 PM for approximately 35 seconds. Audio route started 9 seconds before call connected (dialing), ended 4 seconds after call log shows hangup.
-        </div>
-      </div>
-      <div class="audio-card">
-        <div class="audio-card-header">Session 2 &mdash; Video Recording</div>
-        <div class="audio-time-range">2:14:36 PM → 2:20:04 PM</div>
-        <div class="audio-duration">Duration: ~5 min 28 sec</div>
-        <div class="audio-card-detail">
-          Coincides with <strong>IMG_0095.MOV</strong> recording that ended at 2:14:34 PM (Photos.sqlite). Audio route persisted after video stopped &mdash; possible playback review. Touch ID event at 2:14:41 PM. This is the last media-creation event in the timeline.
-        </div>
-      </div>
-      <div class="audio-card">
-        <div class="audio-card-header">Session 3 mdash; Incoming Call (Phone Idle)</div>
-        <div class="audio-time-range">5:45:24 PM → ?</div>
-        <div class="audio-duration">Duration: Unknown (no end logged)</div>
-        <div class="audio-card-detail">
-          Audio route started when incoming call from <strong>Becky Marchand Patty</strong> arrived at 5:45:25 PM. Call was <strong>not answered</strong>. At 5:45:45 PM, cellular state logged <strong>WCDMA RRC Disconnected</strong> (previous: Connecting). No audio route end was recorded mdash; possible the phone lost connectivity or powered off.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 4: MOVEMENT & GPS -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">04</span>
-      <span class="section-title">Movement & GPS Data — Feb 13</span>
-    </div>
-    <p class="section-desc">
-      Health data (steps, distance) from the accelerometer and GPS fixes from CoreRoutine.sqlite. The phone recorded significant walking activity between 10:55 AM and 2:32 PM, with GPS coordinates showing southwestward movement.
-    </p>
-    <div class="motion-summary">
-      <div class="motion-card">
-        <div class="motion-label">Total Steps</div>
-        <div class="motion-value">1,605</div>
-        <div class="motion-time">Across 7 walking segments</div>
-      </div>
-      <div class="motion-card">
-        <div class="motion-label">Total Distance</div>
-        <div class="motion-value">1,076<span class="stat-unit">m</span></div>
-        <div class="motion-time">~0.67 miles</div>
-      </div>
-      <div class="motion-card">
-        <div class="motion-label">Flights Climbed</div>
-        <div class="motion-value">2</div>
-        <div class="motion-time">At 2:31 PM</div>
-      </div>
-      <div class="motion-card">
-        <div class="motion-label">Longest Segment</div>
-        <div class="motion-value">593<span class="stat-unit">steps</span></div>
-        <div class="motion-time">367m in ~9 min (1:51mdash;2:00 PM)</div>
-      </div>
-    </div>
-
-    <div class="chart-container">
-      <div class="chart-title">GPS Coordinates — Southwestward Movement</div>
-      <svg id="gpsChart" class="chart-svg" viewBox="0 0 800 320"></svg>
-    </div>
-  </div>
-
-  <!-- SECTION 5: BATTERY -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">05</span>
-      <span class="section-title">Battery Drain — Feb 13</span>
-    </div>
-    <p class="section-desc">
-      Battery percentage from knowledgeC over the course of Feb 13. The phone was unplugged at 1:48 PM at 27%, entered Low Power Mode at 10:54 AM (20%), and reached 4% by 2:41 PM. One brief charging session around 1:25 PM brought it from 4% to 28%.
-    </p>
-    <div class="chart-container">
-      <div class="chart-title">Battery Percentage Over Time (Local EST)</div>
-      <svg id="batteryChart" class="chart-svg" viewBox="0 0 800 200"></svg>
-    </div>
-  </div>
-
-  <!-- SECTION 6: APP USAGE -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">06</span>
-      <span class="section-title">App Usage &mdash; Feb 13</span>
-    </div>
-    <p class="section-desc">
-      Apps that were in the foreground on Feb 13 based on knowledgeC /app/inFocus events. Snapchat and Facebook dominate, with brief Instagram sessions tied to the bridge/water photos.
-    </p>
-    <div class="app-bar-list" id="appBars"></div>
-  </div>
-
-  <!-- SECTION 7: ANOMALIES -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number red">07</span>
-      <span class="section-title">Anomalies &amp; Findings</span>
-    </div>
-    <p class="section-desc">
-      Findings from cross-referencing all artifact sources. Includes anomalies from the knowledgeC.db analysis plus new observations from the full forensic timeline.
-    </p>
-    <div class="anomaly-grid">
-
-      <div class="anomaly-card">
-        <div class="anomaly-severity high">Critical</div>
-        <div class="anomaly-title">25 Unanswered Calls/Messages After ~4 PM</div>
-        <div class="anomaly-desc">
-          Starting at 3:59 PM, the phone received a continuous stream of incoming calls and messages from family members &mdash; <strong>"Best Aunt Ever," "Sis," "Gramps," "Becky Marchand Patty," "Peyt," "Arika"</strong> &mdash; none of which were answered. "Gramps" texted <strong>"Answer me before i call police to help search"</strong> at 4:47 PM. The last user-initiated activity on the phone was around 2:05&mdash;2:20 PM.
-        </div>
-      </div>
-
-      <div class="anomaly-card">
-        <div class="anomaly-severity high">Critical</div>
-        <div class="anomaly-title">Audio Route #3 &mdash; No End Logged + Cellular Disconnect</div>
-        <div class="anomaly-desc">
-          At 5:45:24 PM, an audio output route started (incoming call from Becky Marchand Patty). No corresponding end event was ever logged. At 5:45:45 PM, the cellular radio logged <strong>WCDMA RRC State: Disconnected</strong> (previous state: Connecting). This could indicate the phone lost cellular signal, was powered off, or its battery died at this point.
-        </div>
-        <div class="anomaly-detail">17:45:24  Audio Output Route Start
-          17:45:25  Incoming call: Becky Marchand Patty (not answered)
-          17:45:31  Call Backgrounded (logged in 6 powerlog files)
-          17:45:45  WCDMA RRC: Disconnected ← Connecting
-          17:45:45  Call Type: PS DATA | Service: TDS,GSM,WCDMA,LTE
-          [No audio route end ever recorded]</div>
-        </div>
-
-      <div class="anomaly-card warn">
-        <div class="anomaly-severity medium">Significant</div>
-        <div class="anomaly-title">Powerlog Duplication Across 6 Files</div>
-        <div class="anomaly-desc">
-          The "Call Backgrounded" and WCDMA disconnect events at 5:45 PM are each duplicated across 6 separate powerlog files (CurrentPowerlog.PLSQL and 5 date-stamped powerlogs from Oct 2017). This is <strong>structurally expected</strong> &mdash; iOS maintains rolling powerlog archives &mdash; but it confirms these powerlogs persisted through October 2017, meaning the phone was operational months later.
-        </div>
-      </div>
-
-      <div class="anomaly-card warn">
-        <div class="anomaly-severity medium">Significant</div>
-        <div class="anomaly-title">Dual Battery Streams (Oct 11, 2017)</div>
-        <div class="anomaly-desc">
-          From the knowledgeC.db analysis: on Oct 11, the database records two simultaneous battery percentage streams at identical timestamps. Stream A: 34% → 42%. Stream B: 3% → 23%. A single device cannot report two battery levels at once. Likely backup/restore merge or iOS upgrade artifact.
-        </div>
-      </div>
-
-      <div class="anomaly-card warn">
-        <div class="anomaly-severity medium">Notable</div>
-        <div class="anomaly-title">Feb 15 &mdash; iPhone Boot After 2-Day Silence</div>
-        <div class="anomaly-desc">
-          containermanagerd.log.0 records <strong>"iPhone Booting Up"</strong> at 3:06 PM on Feb 15 — over 48 hours after the last activity on Feb 13. The phone booted unplugged at 5% battery, was plugged in 8 seconds later, and a user opened the Settings app. This is consistent with the phone having been powered off or dead for ~2 days.
-        </div>
-        <div class="anomaly-detail">15:06:03  iPhone Booting Up (containermanagerd)
-          15:06:04  Unplugged and Not Charging
-          15:06:04  Screen On
-          15:06:05  Mobile activation startup
-          15:06:11  Stopped Walking/Running: 1 step
-          15:06:12  Phone Locked → Unlocked (20s later)
-          15:06:41  "Power level really becomes bad"
-          15:06:45  Settings app opened
-          15:10:12  Battery: 5% → Plugged in and Charging</div>
-        </div>
-
-      <div class="anomaly-card info">
-        <div class="anomaly-severity low">Observation</div>
-        <div class="anomaly-title">Instagram Bridge/Water Images at 1:44 PM</div>
-        <div class="anomaly-desc">
-          Two Instagram cache images were logged at 1:44:14 PM: one depicting <strong>"part of what appears to be a wooden bridge and a body of water"</strong> (photographed from on the bridge), and another showing a <strong>"fallen tree limb lying on the ground covered with some sticks and leaves"</strong> with water in the background. GPS at 1:44:23 PM places the phone at 40.6056, -86.6120 (5m precision).
-        </div>
-      </div>
-
-      <div class="anomaly-card info">
-        <div class="anomaly-severity low">Observation</div>
-        <div class="anomaly-title">Last Outgoing Communication: 1:18 PM</div>
-        <div class="anomaly-desc">
-          The last SMS sent was to Holly O'Neil at 1:18:43 PM. The last outgoing call was to "Daddy-o" at 1:38 PM (35 seconds). After ~2:20 PM, there is no evidence of user-initiated activity &mdash; only passive events (incoming calls, screen-on from notifications, battery readings).
-        </div>
-      </div>
-
-      <div class="anomaly-card ok">
-        <div class="anomaly-severity clear">Structural &mdash; No Issues</div>
-        <div class="anomaly-title">Database Integrity Verified</div>
-        <div class="anomaly-desc">
-          No duplicate primary keys, no negative-duration sessions, no overlapping app sessions, no backward timestamp jumps, no orphaned records. Data is structurally sound across all artifact sources.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 8: METHODOLOGY -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">08</span>
-      <span class="section-title">Data Sources & Methodology</span>
-    </div>
-    <p class="section-desc" style="max-width:800px;">
-      This analysis draws from two sources: (1) the raw <strong>knowledgeC.db</strong> SQLite database analyzed programmatically, and (2) the court exhibit PDF titled "Cecil's 2019 timeline distilled by Auger" covering rows 1&mdash;549+. The exhibit is marked as a Defendant's Exhibit and includes data from at least 8 iOS artifact databases. Certain pages are marked "Excluded from Public Access Per Rules on Access to Court Records." All timestamps have been verified for UTC-5 (EST) conversion. The Auger forensic tool was used for the original extraction.
-    </p>
-  </div>
-
-  <div class="footer">
-    Forensic Phone Timeline &mdash; Feb 12&mdash;15, 2017 · knowledgeC.db + Full Extraction
-  </div>
-</div>
 
 <script>
 // ============================================================
 // EVENT DATA
 // ============================================================
 const allEventsData = [
-  // Early morning Feb 13
-  { time: "12:20 AM", icon: "battery", text: "<strong>Battery: 33%</strong>" },
-  { time: "1:16 AM", icon: "screen", text: "Screen On (12s)" },
-  { time: "1:26 AM", icon: "screen", text: "Screen On (12s)" },
-  { time: "2:40 AM", icon: "battery", text: "<strong>Battery: 32%</strong>" },
-  { time: "4:43 AM", icon: "battery", text: "<strong>Battery: 31%</strong>" },
-  { time: "5:21 AM", icon: "screen", text: "Screen On (10s)" },
-  { time: "5:41 AM", icon: "screen", text: "Screen On (8s)" },
-  { time: "5:46 AM", icon: "battery", text: "<strong>Battery: 30%</strong>" },
-  { time: "6:39 AM", icon: "system", text: "<em>\"Power level really becomes bad\"</em>" },
-  { time: "6:41 AM", icon: "sms", text: "SMS received from <span class='contact'>Tyler</span>: <span class='msg'>\"Wow\"</span> <span class='read'>READ</span>", comms: true },
-  { time: "6:41 AM", icon: "sms", text: "SMS received from <span class='contact'>Tyler</span>: <span class='msg'>\"U done yet\"</span> <span class='read'>READ</span>", comms: true },
-  { time: "6:43 AM", icon: "screen", text: "Screen On → Off (8s)" },
-  { time: "6:50 AM", icon: "sms", text: "SMS received from <span class='contact'>Tyler</span>: <span class='msg'>\"Guess so and i couldn't cause she didn't forget\"</span> <span class='read'>READ</span>", comms: true },
-  { time: "6:52 AM", icon: "screen", text: "Screen On (12s)" },
-  { time: "6:53 AM", icon: "battery", text: "<strong>Battery: 29%</strong>" },
-
-  // Midday
-  { time: "10:41 AM", icon: "screen", text: "Screen On" },
-  { time: "10:41 AM", icon: "battery", text: "<strong>Battery: 28%</strong>" },
-  { time: "10:42 AM", icon: "app", text: "<strong>Snapchat</strong> in foreground" },
-  { time: "10:42 AM", icon: "sms", text: "SMS sent to <span class='contact'>Tyler</span>: <span class='msg'>\"I wasn't up that early\"</span>", comms: true },
-  { time: "10:42 AM", icon: "battery", text: "<strong>Battery: 27%</strong>" },
-  { time: "10:42 AM", icon: "app", text: "<strong>Snapchat</strong> ← not in foreground → <strong>Snapchat</strong> again" },
-  { time: "10:49 AM", icon: "app", text: "<strong>Facebook</strong> in foreground" },
-  { time: "10:49 AM", icon: "battery", text: "<strong>Battery: 23%</strong>" },
-  { time: "10:53 AM", icon: "battery", text: "<strong>Battery: 22% → 21%</strong>" },
-  { time: "10:54 AM", icon: "battery", text: "<strong>Battery: 20%</strong> — <strong style='color:var(--accent-amber)'>Low Power Mode ON</strong>" },
-  { time: "10:54 AM", icon: "app", text: "Facebook not in foreground" },
-  { time: "10:55 AM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "11:00 AM", icon: "screen", text: "Screen On → Off" },
-  { time: "11:01 AM", icon: "health", text: "<strong>Stopped Walking</strong> — 50 steps, 37.81m", motion: true },
-  { time: "11:07 AM", icon: "app", text: "<strong>Snapchat</strong> in foreground" },
-  { time: "11:09 AM", icon: "battery", text: "<strong>Battery: 19%</strong>" },
-  { time: "11:10 AM", icon: "app", text: "<strong>Facebook</strong> in foreground (35s)" },
-  { time: "11:13 AM", icon: "battery", text: "<strong>Battery: 18%</strong>" },
-  { time: "11:15 AM", icon: "battery", text: "<strong>Battery: 17%</strong>" },
-  { time: "11:15 AM", icon: "app", text: "<strong>Snapchat</strong> in foreground" },
-  { time: "11:16 AM", icon: "battery", text: "<strong>Battery: 15%</strong>" },
-  { time: "11:28 AM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "11:35 AM", icon: "health", text: "<strong>Stopped Walking</strong> — 16 steps, 11.97m", motion: true },
-  { time: "11:49 AM", icon: "battery", text: "<strong>Battery: 14%</strong>" },
-  { time: "11:50 AM", icon: "app", text: "<strong>Snapchat</strong> in foreground → Phone app (5s) → Snapchat" },
-  { time: "11:50 AM", icon: "battery", text: "<strong>Battery: 13%</strong>" },
-  { time: "11:51 AM", icon: "battery", text: "<strong>Battery: 12%</strong>" },
-  { time: "11:51 AM", icon: "app", text: "<strong>Facebook</strong> in foreground" },
-  { time: "11:53 AM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "11:56 AM", icon: "app", text: "Facebook → <strong>Snapchat</strong> (1 min)" },
-  { time: "11:57 AM", icon: "battery", text: "<strong>Battery: 10%</strong>" },
-  { time: "12:01 PM", icon: "health", text: "<strong>Stopped Walking</strong> — 44 steps, 30.33m", motion: true },
-  { time: "12:11 PM", icon: "battery", text: "<strong>Battery: 9%</strong>" },
-  { time: "12:15 PM", icon: "battery", text: "<strong>Battery: 6%</strong>" },
-  { time: "12:15 PM", icon: "app", text: "<strong>Facebook</strong> (20s) → <strong>Snapchat</strong> (35s)" },
-  { time: "12:40 PM", icon: "battery", text: "<strong>Battery: 5%</strong>" },
-  { time: "12:58 PM", icon: "sms", text: "SMS received from <span class='contact'>Anna Williams</span>: <span class='msg'>\"It's OK by me. But I'm working at the dock from four till maybe 730 or 8. I can come pick her up after that.\"</span> <span class='read'>READ</span>", comms: true },
-  { time: "12:59 PM", icon: "app", text: "<strong>Messages</strong> app (10s)" },
-  { time: "12:59 PM", icon: "sms", text: "SMS sent to <span class='contact'>Anna Williams</span>: <span class='msg'>\"Ok that's good\"</span>", comms: true },
-  { time: "12:59 PM", icon: "sms", text: "SMS received from <span class='contact'>Anna Williams</span>: <span class='msg'>\"Ok\"</span> <span class='unread'>UNREAD</span>", comms: true },
-  { time: "1:01 PM", icon: "battery", text: "<strong>Battery: 4%</strong>" },
-  { time: "1:15 PM", icon: "sms", text: "SMS received from <span class='contact'>Holly O'Neil</span>: <span class='msg'>\"Your coupons are at the Delphi DQ!\"</span> <span class='read'>READ</span>", comms: true },
-  { time: "1:18 PM", icon: "screen", text: "Screen On" },
-  { time: "1:18 PM", icon: "sms", text: "SMS sent to <span class='contact'>Holly O'Neil</span>: <span class='msg'>\"Ok. I will come sometime in the next couple days. I'm not sure when I can make it in but I'll try soon.\"</span>  ← <strong style='color:var(--accent-amber)'>Last outgoing SMS</strong>", comms: true },
-  { time: "1:25 PM", icon: "battery", text: "<strong>Battery: 7%</strong> — appears phone was <strong style='color:var(--accent-green)'>plugged in briefly</strong>" },
-  { time: "1:38 PM", icon: "screen", text: "Screen On → Phone app" },
-  { time: "1:38 PM", icon: "audio", text: "<strong>Audio Output Route Start</strong>" },
-  { time: "1:38 PM", icon: "call", text: "Outgoing call to <span class='contact'>(765) 461-9199 \"Daddy-o\"</span> — ~35 seconds ← <strong style='color:var(--accent-amber)'>Last outgoing call</strong>", comms: true },
-  { time: "1:39 PM", icon: "audio", text: "<strong>Audio Output Route End</strong>" },
-  { time: "1:39 PM", icon: "system", text: "<em>\"Power level really becomes good. Quitting throttled mode\"</em>" },
-  { time: "1:39 PM", icon: "battery", text: "<strong>Battery: 17%</strong> (charging)" },
-  { time: "1:39 PM", icon: "app", text: "Messages (briefly) → <strong>Snapchat</strong>" },
-  { time: "1:40 PM", icon: "location", text: "<strong>GPS: 40.6198, -86.5890</strong> (5m precision)", motion: true },
-  { time: "1:40 PM", icon: "battery", text: "<strong>Battery: 18%</strong>" },
-  { time: "1:40 PM", icon: "app", text: "Snapchat not in foreground" },
-  { time: "1:44 PM", icon: "media", text: "<strong>Instagram image cached:</strong> wooden bridge overlooking body of water" },
-  { time: "1:44 PM", icon: "media", text: "<strong>Instagram image cached:</strong> fallen tree limb, sticks/leaves, pool of water" },
-  { time: "1:44 PM", icon: "location", text: "<strong>GPS: 40.6056, -86.6120</strong> (5m precision)", motion: true },
-  { time: "1:44 PM", icon: "battery", text: "<strong>Battery: 23%</strong>" },
-  { time: "1:45 PM", icon: "app", text: "Instagram not in foreground" },
-  { time: "1:45 PM", icon: "battery", text: "<strong>Battery: 24% → 25% → 26%</strong>" },
-  { time: "1:48 PM", icon: "battery", text: "<strong>Battery: 27%</strong> — <strong style='color:var(--accent-red)'>Unplugged</strong>" },
-  { time: "1:48 PM", icon: "system", text: "<em>\"Power level really becomes bad. Entering throttled mode\"</em>" },
-  { time: "1:48 PM", icon: "battery", text: "<strong>Battery: 28%</strong>" },
-  { time: "1:51 PM", icon: "app", text: "<strong>Snapchat</strong> in foreground" },
-  { time: "1:51 PM", icon: "health", text: "<strong>Stopped Walking</strong> — 288 steps, 164.34m", motion: true },
-  { time: "1:51 PM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "1:51 PM", icon: "location", text: "<strong>GPS: 40.5911, -86.6462</strong> (5m precision)", motion: true },
-  { time: "2:00 PM", icon: "health", text: "<strong>Stopped Walking</strong> — 593 steps, 367.03m", motion: true },
-  { time: "2:00 PM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "2:04 PM", icon: "app", text: "<strong>Snapchat</strong> (10s)" },
-  { time: "2:05 PM", icon: "location", text: "<strong>GPS: 40.5889, -86.6425</strong> (5m precision)", motion: true },
-  { time: "2:13 PM", icon: "location", text: "<strong>GPS: 40.5819, -86.6665</strong> (cell tower, low accuracy) and <strong>40.5879, -86.6405</strong> (30m precision)", motion: true },
-  { time: "2:14 PM", icon: "media", text: "<strong>IMG_0095.MOV recording ended</strong> (Photos.sqlite)" },
-  { time: "2:14 PM", icon: "audio", text: "<strong>Audio Output Route Start</strong> (video playback)" },
-  { time: "2:14 PM", icon: "system", text: "Touch ID event" },
-  { time: "2:18 PM", icon: "health", text: "<strong>Stopped Walking</strong> — 548 steps, 414.39m", motion: true },
-  { time: "2:19 PM", icon: "battery", text: "<strong>Battery: 23% → 24%</strong> (charging resumed briefly)" },
-  { time: "2:20 PM", icon: "audio", text: "<strong>Audio Output Route End</strong>" },
-  { time: "2:22 PM", icon: "battery", text: "<strong>Battery: 21%</strong>" },
-  { time: "2:24 PM", icon: "battery", text: "<strong>Battery: 16%</strong>" },
-  { time: "2:25 PM", icon: "health", text: "<strong>Started Walking/Running</strong>", motion: true },
-  { time: "2:28 PM", icon: "battery", text: "<strong>Battery: 10%</strong>" },
-  { time: "2:31 PM", icon: "battery", text: "<strong>Battery: 8%</strong>" },
-  { time: "2:31 PM", icon: "health", text: "<strong>Flight Climbed: 2</strong>", motion: true },
-  { time: "2:32 PM", icon: "health", text: "<strong>Stopped Walking</strong> — 66 steps, 50.64m", motion: true },
-  { time: "2:37 PM", icon: "battery", text: "<strong>Battery: 5%</strong>" },
-  { time: "2:39 PM", icon: "screen", text: "Screen On (brief)" },
-  { time: "2:41 PM", icon: "battery", text: "<strong>Battery: 4%</strong>" },
-
-  // THE SILENCE BEGINS - passive events only
-  { time: "3:14 PM", icon: "sms", text: "SMS received from <span class='contact'>Tyler</span>: <span class='msg'>\"Ight\"</span> <span class='unread'>UNREAD</span>", comms: true },
-  { time: "3:16 PM", icon: "screen", text: "Screen On → Off (12s, no unlock)" },
+  {time:"12:33 AM",icon:"bat",desc:"Battery: 33%",comms:false,motion:false},
+  {time:"1:38 PM",icon:"bat",desc:"Battery: 16% (low)",comms:false,motion:false},
+  {time:"1:38 PM",icon:"call",desc:"Call to Daddy-o (765-461-9199) — 35 seconds",comms:true,motion:false},
+  {time:"1:39 PM",icon:"bat",desc:"<strong>iPhone plugged in & charging</strong>",comms:false,motion:false},
+  {time:"1:39 PM",icon:"msg",desc:"Viewed Messages app (2 seconds)",comms:true,motion:false},
+  {time:"1:39-1:51 PM",icon:"app",desc:"<strong>Snapchat</strong> — Viewing posts, uploading 3 photos from car",comms:true,motion:false},
+  {time:"1:44 PM",icon:"app",desc:"Instagram — Brief viewing",comms:true,motion:false},
+  {time:"1:48 PM",icon:"bat",desc:"<strong>iPhone unplugged</strong> (28% battery)",comms:false,motion:false},
+  {time:"1:51 PM",icon:"app",desc:"Snapchat — Continue viewing",comms:true,motion:false},
+  {time:"2:04-2:05 PM",icon:"app",desc:"Snapchat — Brief interaction",comms:true,motion:false},
+  {time:"2:05 PM",icon:"app",desc:"<strong>Snapchat photo uploaded</strong> — Image of Monon High Bridge",comms:true,motion:false},
+  {time:"2:07 PM",icon:"app",desc:"Snapchat/iPhone locked",comms:true,motion:false},
+  {time:"2:07:20 PM",icon:"app",desc:"<strong>Last time Liberty unlocked her iPhone</strong>",comms:false,motion:false},
+  {time:"2:13:51 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording started</strong> — Video of bridge",comms:false,motion:true},
+  {time:"2:14:34 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording ended</strong> (43 seconds)",comms:false,motion:true},
+  {time:"2:14:41 PM",icon:"bat",desc:"<strong>Failed biometric unlock attempt</strong> (fingerprint)",comms:false,motion:false},
+  {time:"2:32:39 PM",icon:"walk",desc:"<strong>Last recorded movement</strong> (Apple Health)",comms:false,motion:true},
 ];
 
 const cascadeEvents = [
-  { time: "3:59 PM", icon: "call-miss", text: "Incoming FaceTime: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:00 PM", icon: "call-miss", text: "Incoming FaceTime: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:00 PM", icon: "call-miss", text: "Incoming FaceTime: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:01 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:06 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:06 PM", icon: "sms", text: "SMS received from <span class='contact'>Becky Marchand Patty</span>: <span class='msg'>\"You need to call me now!!!!!!!!\"</span> <span class='unread'>UNREAD</span>", comms: true },
-  { time: "4:08 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Becky Marchand Patty</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:13 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> ×3 — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:13 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Sis</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:13 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:17 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Peyt</span> ×2 — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:22 PM", icon: "sms", text: "iMessage from <span class='contact'>Gramps</span>: <span class='msg'>\"Where u at\"</span> <span class='unread'>UNREAD</span>", comms: true },
-  { time: "4:25 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Sis</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:28 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:29 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Sis</span> ×3 — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:40 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "4:47 PM", icon: "sms", text: "iMessage from <span class='contact'>Gramps</span>: <span class='msg'>\"Answer me before i call police to help search\"</span> <span class='unread'>UNREAD</span>", comms: true },
-  { time: "5:23 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "5:25 PM", icon: "vm", text: "Voicemail received from 7655642439 (26 seconds)" },
-  { time: "5:33 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>+13175518570</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "5:33 PM", icon: "system", text: "Email received — Facebook (Unread)" },
-  { time: "5:35 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Gramps</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "5:36 PM", icon: "vm", text: "Voicemail from Gramps" },
-  { time: "5:45 PM", icon: "audio", text: "<strong>Audio Output Route Start</strong>" },
-  { time: "5:45 PM", icon: "call-miss", text: "Incoming call: <span class='contact'>Becky Marchand Patty</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "5:45 PM", icon: "system", text: "<strong style='color:var(--accent-red)'>WCDMA RRC: Disconnected</strong> (was Connecting) — Call Type: PS DATA" },
-  { time: "5:45 PM", icon: "vm", text: "Voicemail transcript created" },
-  { time: "6:00 PM", icon: "vm", text: "Voicemail from <span class='contact'>Sis</span> (0 sec duration)" },
-  { time: "6:50 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Arika</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "7:25 PM", icon: "vm", text: "Voicemail from 7655642439 (0 sec)" },
-  { time: "7:36 PM", icon: "call-miss", text: "Incoming FaceTime: <span class='contact'>msandusky4@ivytech.edu</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
-  { time: "7:43 PM", icon: "vm", text: "Voicemail from <span class='contact'>chris bridge</span> (0 sec)" },
-  { time: "7:46 PM", icon: "vm", text: "Voicemail from <span class='contact'>KINZIE</span> (0 sec)" },
-  { time: "7:51 PM", icon: "call-miss", text: "Incoming FaceTime video: <span class='contact'>Best Aunt Ever</span> — <strong style='color:var(--accent-red)'>NOT ANSWERED</strong>", comms: true },
+  {time:"3:59 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+  {time:"4:14 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+  {time:"4:23 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+  {time:"5:20 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+  {time:"5:44 PM",icon:"call",desc:"<strong>Last connection to cell tower</strong> — Incoming call",comms:true,motion:false},
+  {time:"5:45:24 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE START — Aux cable inserted</strong>",comms:false,motion:false},
+  {time:"5:45-4:33 AM",icon:"critical",desc:"<strong>⚠️ PHONE LOSES ALL CELL SERVICE</strong> — 10hr 49min offline",comms:false,motion:false},
+  {time:"10:32:26 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE END — Cable removed</strong> (Last logged data)",comms:false,motion:false},
+  {time:"4:33 AM (Feb. 14)",icon:"critical",desc:"<strong>⚠️ CELL SERVICE RESUMES</strong> — Multiple messages flood in",comms:true,motion:false},
+  {time:"Feb. 17",icon:"vm",desc:"Voicemails from Feb. 13-14 finally recorded on device",comms:true,motion:false},
 ];
 
-function renderEventRow(evt) {
+function renderEventRow(e) {
+  const icon = getIcon(e.icon);
   return `<div class="event-row">
-    <div class="event-time">${evt.time}</div>
-    <div class="event-icon ${evt.icon}">${iconChar(evt.icon)}</div>
-    <div class="event-text">${evt.text}</div>
+    <div class="event-time">${e.time}</div>
+    <div class="event-icon ${e.icon}">${icon}</div>
+    <div class="event-desc">${e.desc}</div>
   </div>`;
 }
 
-function iconChar(type) {
-  const m = {sms:'✉',call:'☎','call-miss':'✕',app:'◉',screen:'◻',location:'⊕',health:'♥',battery:'⚡',media:'▶',audio:'♪',vm:'⊙',system:'⚙'};
+function getIcon(type) {
+  const m = {
+    'app':'📱', 'call':'📞', 'msg':'💬', 'bat':'🔋',
+    'vm':'🎙️', 'walk':'🚶', 'critical':'🔊'
+  };
   return m[type] || '•';
 }
 
 // All Events tab
 const allEl = document.getElementById('allEvents');
-let html = '<div class="event-group"><div class="event-group-header">Feb 13 — 12:00 AM to 3:30 PM (Active Use Period)</div>';
+let html = '<div class="event-group"><div class="event-group-header">Feb. 13 — 12:00 AM to 3:30 PM (Active Use Period)</div>';
 allEventsData.forEach(e => html += renderEventRow(e));
 html += '</div>';
-html += '<div class="cascade-highlight"><div class="cascade-label">⚠ 3:59 PM Onward — Unanswered Call Cascade (No User Activity)</div>';
+html += '<div class="cascade-highlight"><div class="cascade-label">⚠ 3:59 PM Onward — Unanswered Call Cascade & Critical Anomalies</div>';
 cascadeEvents.forEach(e => html += renderEventRow(e));
 html += '</div>';
 allEl.innerHTML = html;
 
 // Comms tab
 const commsEl = document.getElementById('commsEvents');
-let commsHtml = '<div class="event-group"><div class="event-group-header">All Calls, Messages & Voicemails — Feb 13</div>';
+let commsHtml = '<div class="event-group"><div class="event-group-header">All Calls, Messages & Voicemails — Feb. 13</div>';
 allEventsData.filter(e => e.comms).forEach(e => commsHtml += renderEventRow(e));
-commsHtml += '</div><div class="cascade-highlight"><div class="cascade-label">⚠ Unanswered Calls & Messages</div>';
+commsHtml += '</div><div class="cascade-highlight"><div class="cascade-label">⚠ Unanswered Calls & Messages (Timestamped but Not Delivered)</div>';
 cascadeEvents.filter(e => e.comms || e.icon === 'vm').forEach(e => commsHtml += renderEventRow(e));
 commsHtml += '</div>';
 commsEl.innerHTML = commsHtml;
 
 // Motion tab
 const motionEl = document.getElementById('motionEvents');
-let motionHtml = '<div class="event-group"><div class="event-group-header">Walking Segments & GPS Fixes — Feb 13</div>';
+let motionHtml = '<div class="event-group"><div class="event-group-header">Walking Segments & GPS Fixes — Feb. 13</div>';
 allEventsData.filter(e => e.motion).forEach(e => motionHtml += renderEventRow(e));
 cascadeEvents.filter(e => e.motion).forEach(e => motionHtml += renderEventRow(e));
 motionHtml += '</div>';
