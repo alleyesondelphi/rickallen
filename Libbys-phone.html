@@ -34,42 +34,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favs/favicon-16x16.png">
   <link rel="manifest" href="assets/img/favs/site.webmanifest">
 
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Libby's Phone - Forensic Analysis Dashboard</title>
-  <meta name="description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis of Liberty German's iPhone">
-  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/Libbys-phone.html">
-
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="Libby's Phone - Forensic Analysis">
-  <meta property="og:description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis Dashboard">
-  <meta property="og:type" content="website"> 
-  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/Libbys-phone.html">
-  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview-img/Libbys-phone.png">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="640">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"> 
-  <meta name="twitter:title" content="Libby's Phone - Forensic Analysis">
-  <meta name="twitter:description" content="The State of Indiana v. Richard M. Allen | Forensic Analysis Dashboard">
-  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview-img/Libbys-phone.png">
-  <meta name="twitter:creator" content="@alleyesondelphi">
-
-  <!-- Favicons -->
-  <link href="favicon.ico" rel="icon" sizes="any">
-  <link href="apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favs/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favs/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favs/favicon-16x16.png">
-  <link rel="manifest" href="assets/img/favs/site.webmanifest">
-
   <!-- Style Sheet -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -93,13 +57,12 @@
   --accent-blue-dim: rgba(74, 158, 255, 0.12);
   --accent-purple: #a78bfa;
   --accent-purple-dim: rgba(167, 139, 250, 0.12);
-  --accent-pink: #f472b6;
-  --accent-pink-dim: rgba(244, 114, 182, 0.12);
-  --accent-cyan: #22d3ee;
   --mono: 'JetBrains Mono', monospace;
   --sans: 'DM Sans', sans-serif;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -107,1148 +70,1036 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }
 
+/* Header */
 .header {
-  padding: 32px 20px 24px;
+  padding: 48px 40px 32px;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, #0f0f0f 0%, var(--bg-primary) 100%);
 }
-@media (min-width: 768px) {
-  .header { padding: 48px 40px 32px; }
-}
 .header-label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent-red);
+  color: var(--accent-amber);
   margin-bottom: 12px;
-}
-@media (min-width: 768px) {
-  .header-label { font-size: 11px; }
 }
 .header h1 {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
-@media (min-width: 768px) {
-  .header h1 { font-size: 26px; }
-}
-.header-sub {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  max-width: 800px;
-}
-@media (min-width: 768px) {
-  .header-sub { font-size: 14px; }
-}
 .header-meta {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-secondary);
   display: flex;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
-  .header-meta { font-size: 13px; gap: 20px; }
+.header-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.header-meta span { display: flex; align-items: center; gap: 6px; }
-.dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
-
-.container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 20px; 
-}
-@media (min-width: 768px) {
-  .container { padding: 0 40px; }
+.header-meta .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Section */
 .section {
-  padding: 32px 0;
+  padding: 48px 0;
   border-bottom: 1px solid var(--border);
 }
-@media (min-width: 768px) {
-  .section { padding: 48px 0; }
-}
 .section:last-child { border-bottom: none; }
+
 .section-header {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-@media (min-width: 768px) {
-  .section-header { gap: 12px; }
 }
 .section-number {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--accent-amber);
   background: var(--accent-amber-dim);
   padding: 4px 10px;
   border-radius: 4px;
 }
-@media (min-width: 768px) {
-  .section-number { font-size: 12px; }
-}
-.section-number.red { color: var(--accent-red); background: var(--accent-red-dim); }
-.section-number.purple { color: var(--accent-purple); background: var(--accent-purple-dim); }
-.section-number.blue { color: var(--accent-blue); background: var(--accent-blue-dim); }
-.section-title { 
-  font-size: 18px; 
-  font-weight: 600; 
-  letter-spacing: -0.3px; 
-}
-@media (min-width: 768px) {
-  .section-title { font-size: 20px; }
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 .section-desc {
   color: var(--text-secondary);
-  font-size: 13px;
-  margin-bottom: 24px;
-  max-width: 760px;
-}
-@media (min-width: 768px) {
-  .section-desc { font-size: 14px; margin-bottom: 28px; }
+  font-size: 14px;
+  margin-bottom: 28px;
+  max-width: 700px;
 }
 
-/* Stat cards - Mobile responsive */
+/* Stat cards */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  margin-bottom: 24px;
-}
-@media (min-width: 768px) {
-  .stat-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    margin-bottom: 32px;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
 }
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 14px;
+  padding: 20px;
   transition: border-color 0.2s;
-}
-@media (min-width: 768px) {
-  .stat-card { padding: 18px; }
 }
 .stat-card:hover { border-color: var(--border-accent); }
 .stat-label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 6px;
-}
-@media (min-width: 768px) {
-  .stat-label { font-size: 10px; letter-spacing: 1.5px; }
+  margin-bottom: 8px;
 }
 .stat-value {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: -1px;
 }
-@media (min-width: 768px) {
-  .stat-value { font-size: 26px; }
+.stat-unit {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 4px;
 }
-.stat-unit { font-size: 11px; font-weight: 400; color: var(--text-secondary); margin-left: 3px; }
-@media (min-width: 768px) {
-  .stat-unit { font-size: 12px; }
-}
-.stat-note { font-size: 10px; color: var(--text-secondary); margin-top: 4px; }
-@media (min-width: 768px) {
-  .stat-note { font-size: 11px; }
+.stat-note {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
 }
 
-/* Anomaly Cards - Mobile responsive */
+/* App bar chart */
+.app-bar-list { display: flex; flex-direction: column; gap: 8px; }
+.app-bar-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 70px;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.app-bar-name {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-bar-track {
+  height: 24px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.app-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+.app-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 1px;
+}
+.app-bar-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-accent);
+}
+.timeline-day {
+  position: relative;
+  margin-bottom: 32px;
+}
+.timeline-day::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-amber);
+}
+.timeline-date {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-amber);
+  margin-bottom: 4px;
+}
+.timeline-day-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+.timeline-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.timeline-app-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.timeline-app-tag .time {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.timeline-gap {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 12px 16px;
+  background: var(--accent-red-dim);
+  border: 1px solid rgba(232, 72, 85, 0.2);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--accent-red);
+}
+.timeline-gap::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  border: 2px solid var(--accent-red);
+}
+
+/* Battery chart */
+.battery-chart-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.battery-chart-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.battery-svg { width: 100%; height: auto; }
+
+/* Anomaly cards */
 .anomaly-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin: 24px 0;
-}
-@media (min-width: 768px) {
-  .anomaly-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin: 32px 0;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
 }
 .anomaly-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 16px;
-  transition: all 0.2s;
+  padding: 24px;
+  border-left: 3px solid var(--accent-red);
 }
-@media (min-width: 768px) {
-  .anomaly-card { padding: 20px; }
+.anomaly-card.info {
+  border-left-color: var(--accent-blue);
 }
-.anomaly-card:hover {
-  border-color: var(--border-accent);
-  background: var(--bg-card-hover);
+.anomaly-card.warn {
+  border-left-color: var(--accent-amber);
 }
-.anomaly-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+.anomaly-card.ok {
+  border-left-color: var(--accent-green);
 }
-.anomaly-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-@media (min-width: 768px) {
-  .anomaly-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
-}
-.anomaly-icon.red { background: var(--accent-red-dim); color: var(--accent-red); }
-.anomaly-icon.amber { background: var(--accent-amber-dim); color: var(--accent-amber); }
-.anomaly-icon.purple { background: var(--accent-purple-dim); color: var(--accent-purple); }
-.anomaly-title {
+.anomaly-severity {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
-  color: var(--text-primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
-@media (min-width: 768px) {
-  .anomaly-title { font-size: 14px; }
+.anomaly-severity.high { color: var(--accent-red); }
+.anomaly-severity.medium { color: var(--accent-amber); }
+.anomaly-severity.low { color: var(--accent-blue); }
+.anomaly-severity.clear { color: var(--accent-green); }
+.anomaly-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
-.anomaly-time {
+.anomaly-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.anomaly-detail {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--text-muted);
-  margin-top: 2px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 12px;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.8;
 }
-@media (min-width: 768px) {
-  .anomaly-time { font-size: 12px; }
+
+/* Hourly heatmap */
+.heatmap-row {
+  display: grid;
+  grid-template-columns: 50px repeat(24, 1fr);
+  gap: 3px;
+  align-items: center;
+  margin-bottom: 3px;
 }
-.anomaly-body {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-@media (min-width: 768px) {
-  .anomaly-body { font-size: 14px; }
-}
-.anomaly-source {
+.heatmap-label {
   font-family: var(--mono);
   font-size: 10px;
   color: var(--text-muted);
-  padding: 6px 10px;
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  border: 1px solid var(--border);
+  text-align: right;
+  padding-right: 8px;
 }
-@media (min-width: 768px) {
-  .anomaly-source { font-size: 11px; }
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  position: relative;
+  cursor: default;
+  min-height: 18px;
 }
-.anomaly-source strong { color: var(--accent-amber); }
-
-/* Expert witness section */
-.expert-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-accent);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 24px 0;
-}
-@media (min-width: 768px) {
-  .expert-card { padding: 24px; margin: 32px 0; }
-}
-.expert-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .expert-header { flex-direction: row; }
-}
-.expert-badge {
-  background: var(--accent-purple-dim);
-  border: 1px solid var(--accent-purple);
-  border-radius: 6px;
-  padding: 8px 14px;
+.heatmap-cell[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent-purple);
-  text-align: center;
+  font-size: 10px;
+  background: #222;
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
 }
-@media (min-width: 768px) {
-  .expert-badge { font-size: 12px; }
-}
-.expert-info h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-@media (min-width: 768px) {
-  .expert-info h3 { font-size: 18px; }
-}
-.expert-title {
-  font-size: 12px;
-  color: var(--text-secondary);
+.heatmap-hours {
+  display: grid;
+  grid-template-columns: 50px repeat(24, 1fr);
+  gap: 3px;
   margin-bottom: 8px;
 }
-@media (min-width: 768px) {
-  .expert-title { font-size: 13px; }
-}
-.expert-quals {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 11px;
-  color: var(--text-muted);
-}
-@media (min-width: 768px) {
-  .expert-quals { font-size: 12px; }
-}
-.expert-quals span {
-  padding: 4px 8px;
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
-.expert-finding {
-  background: var(--bg-secondary);
-  border-left: 3px solid var(--accent-purple);
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 4px;
-}
-@media (min-width: 768px) {
-  .expert-finding { padding: 16px; }
-}
-.expert-finding strong {
+.heatmap-hour {
   font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent-purple);
-  display: block;
-  margin-bottom: 6px;
-}
-@media (min-width: 768px) {
-  .expert-finding strong { font-size: 13px; }
-}
-.expert-finding p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-@media (min-width: 768px) {
-  .expert-finding p { font-size: 14px; }
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
 }
 
-/* Event timeline - Mobile responsive */
-.event-stream { position: relative; }
-.event-group { margin-bottom: 20px; }
-@media (min-width: 768px) {
-  .event-group { margin-bottom: 24px; }
-}
-.event-group-header {
-  font-family: var(--mono);
+/* Footer */
+.footer {
+  padding: 32px 0;
+  text-align: center;
   font-size: 12px;
-  font-weight: 600;
-  color: var(--accent-amber);
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--mono);
 }
-@media (min-width: 768px) {
-  .event-group-header { font-size: 13px; margin-bottom: 12px; }
-}
-.event-row {
+
+/* Dual battery viz */
+.dual-battery-viz {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
 }
-@media (min-width: 768px) {
-  .event-row {
-    grid-template-columns: 90px auto 1fr;
-    gap: 16px;
-    padding: 12px 0;
-  }
-}
-.event-time {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-@media (min-width: 768px) {
-  .event-time { font-size: 12px; }
-}
-.event-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  flex-shrink: 0;
-}
-@media (min-width: 768px) {
-  .event-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-}
-.event-icon.app { background: var(--accent-amber-dim); color: var(--accent-amber); }
-.event-icon.call { background: var(--accent-blue-dim); color: var(--accent-blue); }
-.event-icon.msg { background: var(--accent-green-dim); color: var(--accent-green); }
-.event-icon.bat { background: var(--accent-red-dim); color: var(--accent-red); }
-.event-icon.vm { background: var(--accent-purple-dim); color: var(--accent-purple); }
-.event-icon.walk { background: var(--accent-cyan); color: #0a0a0a; }
-.event-icon.critical { background: var(--accent-red); color: var(--bg-primary); }
-.event-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-@media (min-width: 768px) {
-  .event-desc { font-size: 14px; }
-}
-.event-desc strong { color: var(--text-primary); }
-.event-note {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 4px;
-  font-style: italic;
-}
-@media (min-width: 768px) {
-  .event-note { font-size: 12px; }
-}
-
-.cascade-highlight {
-  background: linear-gradient(90deg, rgba(232,72,85,0.05) 0%, transparent 100%);
-  border-left: 3px solid var(--accent-red);
-  padding: 16px;
-  margin: 16px 0;
-  border-radius: 4px;
-}
-@media (min-width: 768px) {
-  .cascade-highlight { padding: 20px; margin: 20px 0; }
-}
-.cascade-label {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent-red);
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-@media (min-width: 768px) {
-  .cascade-label { font-size: 13px; }
-}
-
-/* Tabs - Mobile responsive */
-.tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-@media (min-width: 768px) {
-  .tabs { gap: 12px; margin-bottom: 24px; }
-}
-.tab-btn {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  padding: 10px 14px;
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-@media (min-width: 768px) {
-  .tab-btn { font-size: 12px; padding: 12px 16px; }
-}
-.tab-btn:hover { color: var(--text-secondary); }
-.tab-btn.active {
-  color: var(--accent-amber);
-  border-bottom-color: var(--accent-amber);
-}
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* Charts - Mobile responsive */
-.chart-container {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-  margin: 20px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-@media (min-width: 768px) {
-  .chart-container { padding: 24px; margin: 24px 0; }
-}
-.chart-title {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .chart-title { font-size: 13px; margin-bottom: 20px; }
-}
-svg { 
-  max-width: 100%; 
-  height: auto;
-  min-width: 600px; /* Allows horizontal scroll on mobile */
-}
-@media (min-width: 768px) {
-  svg { min-width: 0; }
-}
-
-/* App bars - Mobile responsive */
-.app-bars { margin: 20px 0; }
-@media (min-width: 768px) {
-  .app-bars { margin: 24px 0; }
-}
-.app-bar-row {
-  display: grid;
-  grid-template-columns: 80px 1fr 60px;
-  gap: 10px;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-@media (min-width: 768px) {
-  .app-bar-row {
-    grid-template-columns: 100px 1fr 80px;
-    gap: 12px;
-    padding: 12px 0;
-  }
-}
-.app-bar-name {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-@media (min-width: 768px) {
-  .app-bar-name { font-size: 13px; }
-}
-.app-bar-track {
-  height: 6px;
+.dual-stream {
   background: var(--bg-secondary);
-  border-radius: 3px;
-  overflow: hidden;
+  border-radius: 6px;
+  padding: 16px;
 }
-@media (min-width: 768px) {
-  .app-bar-track { height: 8px; }
-}
-.app-bar-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.3s;
-}
-.app-bar-value {
+.dual-stream-label {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-primary);
-  text-align: right;
+  margin-bottom: 8px;
 }
-@media (min-width: 768px) {
-  .app-bar-value { font-size: 12px; }
+.dual-stream-label.a { color: var(--accent-amber); }
+.dual-stream-label.b { color: var(--accent-blue); }
+.dual-reading {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
-/* Mobile adjustments for grids */
-@media (max-width: 767px) {
-  .event-row { 
-    grid-template-columns: 1fr; 
-    gap: 8px;
-  }
-  .event-time {
-    order: -1;
-  }
-  .event-icon {
-    display: none; /* Hide icons on very small screens for clarity */
-  }
+@media (max-width: 768px) {
+  .header { padding: 32px 20px 24px; }
+  .container { padding: 0 20px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .anomaly-grid { grid-template-columns: 1fr; }
+  .app-bar-row { grid-template-columns: 120px 1fr 60px; }
+  .dual-battery-viz { grid-template-columns: 1fr; }
+  .heatmap-row { grid-template-columns: 40px repeat(24, 1fr); gap: 2px; }
 }
-.header a {
-    color:#e84855;
-  }
 </style>
 </head>
-
 <body>
-  <div class="header">
-    <div class="container">
-      <div class="header-label">⚠ IN v. RA Trial Exhibits &mdash; Forensic Analysis</div>
-      <h1>knowledgeC.db + AT&T pings + ISP reports</h1>
-      <div class="header-sub">This dashboard consolidates known knowledgeC.db, sms.db, CallHistory.storedata, healthdb_secure.sqlite, CoreRoutine.sqlite, Photos.sqlite, voicemail.db, powerlog data, and other data that can be found <a class="link" href="phone-data.html" target="_blank">here</a>.</div>
-      <div class="header-meta">
-        <span><span class="dot" style="background:var(--accent-red)"></span>Case: IN v. Richard M. Allen</span>
-        <span><span class="dot" style="background:var(--accent-amber)"></span>Device: iPhone 6s (DNPRN3WZGRXW)</span>
-        <span><span class="dot" style="background:var(--accent-blue)"></span>Date: Feb. 13, 2017</span>
-      </div>
-    </div>
-  </div>
 
+<div class="header">
   <div class="container">
-    
-    <!-- DEVICE & EXAMINATION SUMMARY -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">01</div>
-        <h2 class="section-title">Device & Examination Details</h2>
-      </div>
-      <div class="section-desc">Liberty German's iPhone 6S running iOS 10.2, recovered Feb. 14, 2017, examined by Indiana State Police and defense expert</div>
-      
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="stat-label">Device</div>
-          <div class="stat-value">iPhone<span class="stat-unit">6S</span></div>
-          <div class="stat-note">iOS 10.2</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Carrier</div>
-          <div class="stat-value">AT&T</div>
-          <div class="stat-note"></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Storage</div>
-          <div class="stat-value">64<span class="stat-unit">GB</span></div>
-          <div class="stat-note">Space Gray</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Recovered</div>
-          <div class="stat-value">Feb.<span class="stat-unit">14</span></div>
-          <div class="stat-note">Under victim</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">First Exam</div>
-          <div class="stat-value">Feb.<span class="stat-unit">15</span></div>
-          <div class="stat-note">Logical extraction</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Full Exam</div>
-          <div class="stat-value">Oct.<span class="stat-unit">11</span></div>
-          <div class="stat-note">8-month delay</div>
-        </div>
-      </div>
-
-      <div class="expert-card">
-        <div class="expert-header">
-          <div class="expert-badge">DEFENSE EXPERT</div>
-          <div class="expert-info">
-            <h3>Stacy R. Eldridge</h3>
-            <div class="expert-title">Former FBI Digital Forensics Examiner, Silicon Prairie Cyber Services LLC</div>
-            <div class="expert-quals">
-              <span>FBI CART - 10 years</span>
-              <span>IACIS Certified</span>
-              <span>Axiom Certified</span>
-              <span>110+ forensic courses</span>
-            </div>
-          </div>
-        </div>
-        <div class="expert-finding">
-          <strong>KEY FINDING:</strong>
-          <p>The 8-month delay between initial logical extraction (Feb. 15, 2017) and full file system extraction (Oct. 11, 2017) caused critical data loss. The "current power log" file—which would have shown exactly when the phone powered off on Feb. 13—was lost due to this delay and multiple power cycles.</p>
-        </div>
-        <div class="expert-finding">
-          <strong>TESTIMONY HIGHLIGHT:</strong>
-          <p>"Every time you turn off a phone and then turn it back on, you're losing information just because of that action of shutting it off, you're losing some of the temporary files. But then, as the phone ages, files get older and some files will start to drop off at 28, 30 days old."</p>
-        </div>
-      </div>
+    <div class="header-label">Forensic Analysis</div>
+    <h1>knowledgeC.db — Phone Activity Data</h1>
+    <div class="header-meta">
+      <span><span class="dot" style="background:var(--accent-green)"></span> 3,732 records</span>
+      <span><span class="dot" style="background:var(--accent-amber)"></span> Feb 12 – Oct 11, 2017</span>
+      <span><span class="dot" style="background:var(--accent-blue)"></span> iOS knowledgeC (Apple CoreData)</span>
+      <span><span class="dot" style="background:var(--accent-purple)"></span> Timezone: UTC-5 (EST)</span>
     </div>
-
-    <!-- CRITICAL ANOMALIES -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number red">02</div>
-        <h2 class="section-title">Remaining Questions</h2>
-      </div>
-      <div class="section-desc">Three major anomalies discovered through defense expert analysis of the knowledgeC database and cell tower records</div>
-      
-      <div class="anomaly-grid">
-        <div class="anomaly-card">
-          <div class="anomaly-header">
-            <div class="anomaly-icon red">🔊</div>
-            <div>
-              <div class="anomaly-title">Aux Cable Insertion</div>
-              <div class="anomaly-time">Feb. 13, 5:45:24 PM</div>
-            </div>
-          </div>
-          <div class="anomaly-body">
-            Wired headphones or aux cable inserted into phone at 5:45 PM, removed at 10:32 PM. This action <strong>silenced all audio output</strong> from the device. Eldridge testified: "By plugging in the cable, you would stop sound from coming out of the phone." Occurred milliseconds after an incoming call.
-          </div>
-          <div class="anomaly-source">
-            Source: <strong>knowledgeC Database</strong> → Z_PK19600, Audio Output Route Start (Value: 1 = Headphones)
-          </div>
-        </div>
-
-        <div class="anomaly-card">
-          <div class="anomaly-header">
-            <div class="anomaly-icon red">📡</div>
-            <div>
-              <div class="anomaly-title">Loss of Cell Tower Connection</div>
-              <div class="anomaly-time">5:44 PM Feb. 13 → 4:33 AM Feb. 14</div>
-            </div>
-          </div>
-          <div class="anomaly-body">
-            Phone lost all connection to AT&T cell towers for <strong>10 hours 49 minutes</strong>. Three independent data sources confirm: (1) AT&T Historical Precision Location logs show no pings, (2) No data usage logged on device, (3) Voicemails not received until Feb. 17.
-          </div>
-          <div class="anomaly-source">
-            Source: <strong>AT&T HPLI Records</strong> + Device Logs. Eldridge: "I could find no evidence on the phone to suggest what happened, so I can only conclude something external to the phone changed."
-          </div>
-        </div>
-
-        <div class="anomaly-card">
-          <div class="anomaly-header">
-            <div class="anomaly-icon amber">⚠️</div>
-            <div>
-              <div class="anomaly-title">Delayed Message Delivery</div>
-              <div class="anomaly-time">iMessages timestamped but not delivered</div>
-            </div>
-          </div>
-          <div class="anomaly-body">
-            Multiple iMessages and FaceTime calls appear on Cecil's timeline between 5:44 PM and 4:33 AM, but forensic analysis shows they were <strong>not actually delivered to the phone until after 4:33 AM</strong> when cell service resumed. Apple's iMessage servers timestamp when sent, not when received.
-          </div>
-          <div class="anomaly-source">
-            Source: <strong>Cecil Timeline vs. Device Logs</strong>. Eldridge: "There is evidence that it did not receive those messages at those times... it was intermittent throughout the day, so some iMessages were coming in on time and some weren't."
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LAST RECORDED ACTIVITY -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number red">03</div>
-        <h2 class="section-title">Last Recorded Movement & Activity</h2>
-      </div>
-      <div class="section-desc">Final evidence of user interaction and device motion from Apple Health database</div>
-      
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="stat-label">Last Movement</div>
-          <div class="stat-value">2:32<span class="stat-unit">PM</span></div>
-          <div class="stat-note">Feb. 13, 2017</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Steps Logged</div>
-          <div class="stat-value">1682</div>
-          <div class="stat-note">1:31-2:18 PM</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Distance</div>
-          <div class="stat-value">707<span class="stat-unit">m</span></div>
-          <div class="stat-note">≈0.44 miles</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Floors Climbed</div>
-          <div class="stat-value">2</div>
-          <div class="stat-note">≈20 feet elevation</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Last Unlock</div>
-          <div class="stat-value">2:07<span class="stat-unit">PM</span></div>
-          <div class="stat-note">User interaction</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Failed Unlock</div>
-          <div class="stat-value">2:14<span class="stat-unit">PM</span></div>
-          <div class="stat-note">Touch ID fail</div>
-        </div>
-      </div>
-
-      <div class="expert-finding">
-        <strong>ELDRIDGE TESTIMONY ON APPLE HEALTH ACCURACY:</strong>
-        <p>Research from the Forensic Science Institute in The Hague demonstrates that <strong>distance can be off by 30-40% either way</strong>, and the type of motion greatly impacts logging. Vigorous motion gets credited with extra steps/distance, while slow/casual walking may not be logged at all. The phone does NOT log movement if traveling in a vehicle (distinguishes driving from walking).</p>
-      </div>
-    </div>
-
-    <!-- CECIL'S TIMELINE EVENTS -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">04</div>
-        <h2 class="section-title">Timeline of Events — Feb. 13, 2017</h2>
-      </div>
-      <div class="section-desc">Comprehensive timeline based on Cecil's forensic examination and Eldridge's re-analysis</div>
-      
-      <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab(this, 'allEvents')">All Events</button>
-        <button class="tab-btn" onclick="switchTab(this, 'commsEvents')">Communications</button>
-        <button class="tab-btn" onclick="switchTab(this, 'motionEvents')">Motion & GPS</button>
-        <button class="tab-btn" onclick="switchTab(this, 'anomalyEvents')">Anomalies</button>
-      </div>
-
-      <div id="allEvents" class="tab-content active"></div>
-      <div id="commsEvents" class="tab-content"></div>
-      <div id="motionEvents" class="tab-content"></div>
-      <div id="anomalyEvents" class="tab-content">
-        <div class="event-group">
-          <div class="event-group-header">Critical Anomalies Requiring Human Interaction</div>
-          <div class="event-row">
-            <div class="event-time">5:45:24 PM</div>
-            <div class="event-icon critical">🔊</div>
-            <div class="event-desc">
-              <strong>Audio Output Route Start — Wired Aux Cable Inserted</strong><br>
-              KnowledgeC database logs Z Value Double = 1 (headphones). Eldridge: "Someone took a headphone jack and inserted it into the hole at the bottom... they inserted it into the hole at the bottom at 5:45 p.m. on the 13th."
-              <div class="event-note">Q: "Can you think of any explanation for aux port or headphones being plugged in and unplugged that does not involve human interaction?" A: "I cannot think of any explanation that does not involve humans."</div>
-            </div>
-          </div>
-          <div class="event-row">
-            <div class="event-time">10:32:26 PM</div>
-            <div class="event-icon critical">🔊</div>
-            <div class="event-desc">
-              <strong>Audio Output Route End — Cable Removed</strong><br>
-              Headphones/aux cable removed from device after 4 hours 47 minutes. This was the last logged data received by the iPhone before battery depletion.
-              <div class="event-note">No movement logged. Phone remained stationary from 2:32 PM onward per Apple Health data.</div>
-            </div>
-          </div>
-          <div class="event-row">
-            <div class="event-time">5:44 PM - 4:33 AM</div>
-            <div class="event-icon critical">📡</div>
-            <div class="event-desc">
-              <strong>Complete Loss of Cell Tower Connection</strong><br>
-              10 hours 49 minutes with no connection to AT&T network. AT&T repeatedly attempted to ping the device during this period with no successful response until 4:33 AM Feb. 14.
-              <div class="event-note">Three independent confirmation sources: AT&T HPLI logs, device data usage logs, voicemail delivery records</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VISUALIZATIONS -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number blue">05</div>
-        <h2 class="section-title">Data Visualizations</h2>
-      </div>
-      
-      <div class="chart-container">
-        <div class="chart-title">Battery Drain — Feb. 13, 2017</div>
-        <svg id="batteryChart" width="800" height="200" viewBox="0 0 800 200"></svg>
-      </div>
-
-      <div class="chart-container">
-        <div class="chart-title">GPS Coordinates from Device Logs</div>
-        <svg id="gpsChart" width="800" height="320" viewBox="0 0 800 320"></svg>
-      </div>
-
-      <div class="chart-container">
-        <div class="chart-title">Application Usage — Feb. 13</div>
-        <div class="app-bars" id="appBars"></div>
-      </div>
-    </div>
-
-    <!-- KEY FINDINGS SUMMARY -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number purple">06</div>
-        <h2 class="section-title">Key Forensic Findings Summary</h2>
-      </div>
-      
-      <div class="expert-card">
-        <h3 style="margin-bottom: 16px;">Defense Expert Conclusions (Stacy Eldridge)</h3>
-        <div class="expert-finding">
-          <strong>1. EXAMINATION DELAY CAUSED DATA LOSS:</strong>
-          <p>The Feb. 15 extraction was only a "logical" extraction—basic user data like texts and photos. Cecil requested but did not obtain the "full file system" extraction until Oct. 11, 2017. This 8-month delay caused permanent loss of the current power log and other temporary system files that would have definitively shown when the phone powered off.</p>
-        </div>
-        <div class="expert-finding">
-          <strong>2. HEADPHONE INSERTION REQUIRES HUMAN INTERACTION:</strong>
-          <p>The knowledgeC database definitively shows wired headphones or an aux cable was inserted at 5:45:24 PM, milliseconds after an incoming call. When asked if this could happen without human interaction, Eldridge testified: "I cannot think of any explanation that does not involve humans." This action silenced all audio from the device.</p>
-        </div>
-        <div class="expert-finding">
-          <strong>3. PHONE STOPPED LOGGING MOVEMENT THEN LOST SERVICE:</strong>
-          <p>Apple Health data shows no movement after 2:32 PM. Yet at 5:44 PM, the phone lost all cell service for nearly 11 hours. Eldridge could not find evidence on the device explaining this: "I could find no evidence on the phone to suggest what happened, so I can only conclude something external to the phone changed." Possible explanations: phone moved, signal blocked, or metal obstruction.</p>
-        </div>
-        <div class="expert-finding">
-          <strong>4. CECIL'S TIMELINE CONTAINS MISLEADING TIMESTAMPS:</strong>
-          <p>Multiple calls, iMessages, and FaceTime entries in Cecil's timeline show timestamps between 5:44 PM Feb. 13 and 4:33 AM Feb. 14. However, forensic analysis of actual device logs proves these were NOT delivered to the phone at those times—they were timestamped by Apple's servers when sent, but not received until service resumed at 4:33 AM.</p>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <span class="section-title">Overview</span>
+    </div>
+    <p class="section-desc">
+      This database is an Apple knowledgeC.db file — an iOS system database that silently logs device activity including app usage, screen state, battery levels, and lock/unlock events. Here's what it contains.
+    </p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Records</div>
+        <div class="stat-value">3,732</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">App Sessions</div>
+        <div class="stat-value">346</div>
+        <div class="stat-note">Foreground app events</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Screen Events</div>
+        <div class="stat-value">690</div>
+        <div class="stat-note">Screen on/off cycles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Battery Readings</div>
+        <div class="stat-value">481</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Lock/Unlock</div>
+        <div class="stat-value">267</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Days</div>
+        <div class="stat-value">9</div>
+        <div class="stat-note">With recorded usage</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP USAGE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <span class="section-title">App Usage</span>
+    </div>
+    <p class="section-desc">
+      Total time each app spent in the foreground (actively on screen). The app mix — Snapchat, Instagram, TikTok (musical.ly), Candy Crush, a school portal (Skyward), Houseparty — is consistent with a teenager's phone circa early 2017.
+    </p>
+    <div class="app-bar-list" id="appBars"></div>
+  </div>
+
+  <!-- DAILY TIMELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <span class="section-title">Daily Timeline</span>
+    </div>
+    <p class="section-desc">
+      Activity is concentrated into just a handful of days. The large gaps in between — especially the 194-day silence from February to September — are notable.
+    </p>
+    <div class="timeline-container" id="timeline"></div>
+  </div>
+
+  <!-- HOURLY ACTIVITY HEATMAP -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <span class="section-title">Hourly Activity Pattern</span>
+    </div>
+    <p class="section-desc">
+      When the phone was actively being used, by hour of day (local time, EST/UTC-5). Usage peaks in the early afternoon and late evening — consistent with a school-age user.
+    </p>
+    <div id="heatmap"></div>
+  </div>
+
+  <!-- BATTERY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <span class="section-title">Battery Behavior</span>
+    </div>
+    <p class="section-desc">
+      Battery percentage over time for the two periods with dense data. Charging events (plugged in) are shown in green. The February data looks normal. October 11 is where it gets strange.
+    </p>
+    <div class="battery-chart-container">
+      <div class="battery-chart-title">February 12–13, 2017 (local time)</div>
+      <svg id="batteryFeb" class="battery-svg" viewBox="0 0 800 200"></svg>
+    </div>
+    <div class="battery-chart-container">
+      <div class="battery-chart-title">October 11, 2017 — Dual Battery Streams (local time)</div>
+      <svg id="batteryOct" class="battery-svg" viewBox="0 0 800 200"></svg>
+    </div>
+  </div>
+
+  <!-- ANOMALIES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <span class="section-title">Anomaly Assessment</span>
+    </div>
+    <p class="section-desc">
+      Every database artifact examined for inconsistencies. Each finding is rated by severity. One significant anomaly was identified.
+    </p>
+    <div class="anomaly-grid">
+
+      <div class="anomaly-card">
+        <div class="anomaly-severity high">High — Significant Anomaly</div>
+        <div class="anomaly-title">Dual Simultaneous Battery Streams</div>
+        <div class="anomaly-desc">
+          On October 11, the database records <strong>two parallel battery percentage readings</strong> running at the same timestamps. Stream A climbs from 34% → 42%. Stream B climbs from 3% → 23%. A single phone cannot report two battery levels at once. This likely indicates data merged from two devices (backup/restore), an iOS upgrade artifact, or an extraction error.
+        </div>
+        <div class="anomaly-detail">17:46 UTC  Stream A: 35%    Stream B: 3%
+17:49 UTC  Stream A: 36%    Stream B: 6%
+17:52 UTC  Stream A: 38%    Stream B: 9%
+17:55 UTC  Stream A: 40%    Stream B: 12%
+17:59 UTC  Stream A: 42%    Stream B: 16%</div>
+      </div>
+
+      <div class="anomaly-card warn">
+        <div class="anomaly-severity medium">Medium — Notable</div>
+        <div class="anomaly-title">194-Day Data Gap</div>
+        <div class="anomaly-desc">
+          No data exists between Feb 23 and Sep 5, 2017 — a gap of nearly 194 days. This could mean the phone was powered off, factory reset, the database was pruned by iOS, or the forensic extraction only captured partial data. Two additional gaps of 1.7 and 2.8 days exist within the February window.
+        </div>
+      </div>
+
+      <div class="anomaly-card warn">
+        <div class="anomaly-severity medium">Medium — Notable</div>
+        <div class="anomaly-title">14 Zero-Duration App Sessions</div>
+        <div class="anomaly-desc">
+          14 app events were logged as "in focus" for exactly 0 seconds. Most are iMessage (notification taps). Three occur in rapid succession on Feb 20 at 2:37 PM local time — PhotoMath, Subway Surfers, Color Switch — consistent with quickly swiping through the app switcher. Not necessarily suspicious, but unusual to see this many.
+        </div>
+      </div>
+
+      <div class="anomaly-card info">
+        <div class="anomaly-severity low">Low — Expected Behavior</div>
+        <div class="anomaly-title">Screen On While Locked (5 events)</div>
+        <div class="anomaly-desc">
+          Five instances where the screen was illuminated while the device was locked, lasting 30–68 seconds each. This is normal — lock screen notifications, incoming calls, and Siri activation all cause this.
+        </div>
+      </div>
+
+      <div class="anomaly-card info">
+        <div class="anomaly-severity low">Low — Expected Behavior</div>
+        <div class="anomaly-title">Small Battery Gain Without Charging</div>
+        <div class="anomaly-desc">
+          On Feb 15, battery rose from 53% → 56% over 28 minutes while reportedly unplugged. This is within normal battery calibration drift and is not meaningful.
+        </div>
+      </div>
+
+      <div class="anomaly-card ok">
+        <div class="anomaly-severity clear">Clear — No Issues</div>
+        <div class="anomaly-title">No Overlapping App Sessions</div>
+        <div class="anomaly-desc">
+          No instances of two different apps reported as "in focus" at the same time. App transitions are clean and sequential.
+        </div>
+      </div>
+
+      <div class="anomaly-card ok">
+        <div class="anomaly-severity clear">Clear — No Issues</div>
+        <div class="anomaly-title">No Negative Durations</div>
+        <div class="anomaly-desc">
+          No events where the end timestamp precedes the start timestamp. All duration calculations are valid.
+        </div>
+      </div>
+
+      <div class="anomaly-card ok">
+        <div class="anomaly-severity clear">Clear — No Issues</div>
+        <div class="anomaly-title">No Duplicate Primary Keys</div>
+        <div class="anomaly-desc">
+          Database structural integrity is intact. No duplicate records, no orphaned child entries without parents, no evidence of manual row insertion or editing.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <span class="section-title">What Is This Database?</span>
+    </div>
+    <p class="section-desc" style="max-width:800px;">
+      <strong>knowledgeC.db</strong> is a Core Data–backed SQLite database maintained by Apple's "Knowledge" system daemon on iOS and macOS. It silently records device usage events — which app is in the foreground, screen on/off state, battery level, charging status, lock state, audio routing, Siri usage, and media playback. The data is stored with Apple Core Data timestamps (seconds since January 1, 2001 00:00:00 UTC). This database is commonly extracted during forensic examinations of Apple devices and is a standard artifact in mobile forensics toolkits. All times in this analysis have been converted to local time (UTC-5 / Eastern Standard Time) unless otherwise noted.
+    </p>
+  </div>
+
+  <div class="footer">
+    Analysis generated from knowledgeC.db · 3,732 records · Feb–Oct 2017
+  </div>
+</div>
 
 <script>
 // ============================================================
-// EVENT DATA
-// ============================================================
-const allEventsData = [
-  {time:"12:33 AM",icon:"bat",desc:"Battery: 33%",comms:false,motion:false},
-  {time:"1:38 PM",icon:"bat",desc:"Battery: 16% (low)",comms:false,motion:false},
-  {time:"1:38 PM",icon:"call",desc:"Call to Daddy-o — 35 seconds",comms:true,motion:false},
-  {time:"1:39 PM",icon:"bat",desc:"<strong>iPhone plugged in & charging</strong>",comms:false,motion:false},
-  {time:"1:39 PM",icon:"msg",desc:"Viewed Messages app (2 seconds)",comms:true,motion:false},
-  {time:"1:39-1:51 PM",icon:"app",desc:"<strong>Snapchat</strong> — Viewing posts, uploading 3 photos from car",comms:true,motion:false},
-  {time:"1:44 PM",icon:"app",desc:"Instagram — Brief viewing",comms:true,motion:false},
-  {time:"1:48 PM",icon:"bat",desc:"<strong>iPhone unplugged</strong> (28% battery)",comms:false,motion:false},
-  {time:"1:51 PM",icon:"app",desc:"Snapchat — Continue viewing",comms:true,motion:false},
-  {time:"2:04-2:05 PM",icon:"app",desc:"Snapchat — Brief interaction",comms:true,motion:false},
-  {time:"2:05 PM",icon:"app",desc:"<strong>Snapchat photo uploaded</strong> — Image of Monon High Bridge",comms:true,motion:false},
-  {time:"2:07 PM",icon:"app",desc:"Snapchat/iPhone locked",comms:true,motion:false},
-  {time:"2:07:20 PM",icon:"app",desc:"<strong>Last time Liberty unlocked her iPhone</strong>",comms:false,motion:false},
-  {time:"2:13:51 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording started</strong> — Video of bridge",comms:false,motion:true},
-  {time:"2:14:34 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording ended</strong> (43 seconds)",comms:false,motion:true},
-  {time:"2:14:41 PM",icon:"bat",desc:"<strong>Failed biometric unlock attempt</strong> (fingerprint)",comms:false,motion:false},
-  {time:"2:32:39 PM",icon:"walk",desc:"<strong>Last recorded movement</strong> (Apple Health)",comms:false,motion:true},
-];
-
-const cascadeEvents = [
-  {time:"3:59 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
-  {time:"4:14 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
-  {time:"4:23 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
-  {time:"5:20 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
-  {time:"5:44 PM",icon:"call",desc:"<strong>Last connection to cell tower</strong> — Incoming call",comms:true,motion:false},
-  {time:"5:45:24 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE START — Aux cable inserted</strong>",comms:false,motion:false},
-  {time:"5:45-4:33 AM",icon:"critical",desc:"<strong>⚠️ PHONE LOSES ALL CELL SERVICE</strong> — 10hr 49min offline",comms:false,motion:false},
-  {time:"10:32:26 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE END — Cable removed</strong> (Last logged data)",comms:false,motion:false},
-  {time:"4:33 AM (Feb. 14)",icon:"critical",desc:"<strong>⚠️ CELL SERVICE RESUMES</strong> — Multiple messages flood in",comms:true,motion:false},
-  {time:"Feb. 17",icon:"vm",desc:"Voicemails from Feb. 13-14 finally recorded on device",comms:true,motion:false},
-];
-
-function renderEventRow(e) {
-  const icon = getIcon(e.icon);
-  return `<div class="event-row">
-    <div class="event-time">${e.time}</div>
-    <div class="event-icon ${e.icon}">${icon}</div>
-    <div class="event-desc">${e.desc}</div>
-  </div>`;
-}
-
-function getIcon(type) {
-  const m = {
-    'app':'📱', 'call':'📞', 'msg':'💬', 'bat':'🔋',
-    'vm':'🎙️', 'walk':'🚶', 'critical':'🔊'
-  };
-  return m[type] || '•';
-}
-
-// All Events tab
-const allEl = document.getElementById('allEvents');
-let html = '<div class="event-group"><div class="event-group-header">Feb. 13 — 12:00 AM to 3:30 PM (Active Use Period)</div>';
-allEventsData.forEach(e => html += renderEventRow(e));
-html += '</div>';
-html += '<div class="cascade-highlight"><div class="cascade-label">⚠ 3:59 PM Onward — Unanswered Call Cascade & Critical Anomalies</div>';
-cascadeEvents.forEach(e => html += renderEventRow(e));
-html += '</div>';
-allEl.innerHTML = html;
-
-// Comms tab
-const commsEl = document.getElementById('commsEvents');
-let commsHtml = '<div class="event-group"><div class="event-group-header">All Calls, Messages & Voicemails — Feb. 13</div>';
-allEventsData.filter(e => e.comms).forEach(e => commsHtml += renderEventRow(e));
-commsHtml += '</div><div class="cascade-highlight"><div class="cascade-label">⚠ Unanswered Calls & Messages (Timestamped but Not Delivered)</div>';
-cascadeEvents.filter(e => e.comms || e.icon === 'vm').forEach(e => commsHtml += renderEventRow(e));
-commsHtml += '</div>';
-commsEl.innerHTML = commsHtml;
-
-// Motion tab
-const motionEl = document.getElementById('motionEvents');
-let motionHtml = '<div class="event-group"><div class="event-group-header">Walking Segments & GPS Fixes — Feb. 13</div>';
-allEventsData.filter(e => e.motion).forEach(e => motionHtml += renderEventRow(e));
-cascadeEvents.filter(e => e.motion).forEach(e => motionHtml += renderEventRow(e));
-motionHtml += '</div>';
-motionEl.innerHTML = motionHtml;
-
-function switchTab(btn, id) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(id).classList.add('active');
-}
-
-// ============================================================
-// GPS CHART
-// ============================================================
-const gpsPoints = [
-  { lat: 40.6198, lng: -86.5890, time: "1:40 PM", label: "1" },
-  { lat: 40.6056, lng: -86.6120, time: "1:44 PM", label: "2" },
-  { lat: 40.5911, lng: -86.6462, time: "1:51 PM", label: "3" },
-  { lat: 40.5889, lng: -86.6425, time: "2:05 PM", label: "4" },
-  { lat: 40.5879, lng: -86.6405, time: "2:13 PM", label: "5" },
-  { lat: 40.5819, lng: -86.6665, time: "2:13 PM*", label: "6" },
-];
-
-const gpsSvg = document.getElementById('gpsChart');
-const gw = 800, gh = 320, gpad = {top: 40, right: 40, bottom: 60, left: 60};
-const gcw = gw - gpad.left - gpad.right, gch = gh - gpad.top - gpad.bottom;
-
-const latMin = 40.575, latMax = 40.625;
-const lngMin = -86.675, lngMax = -86.580;
-
-let ghtml = '';
-// Grid
-for (let i = 0; i <= 4; i++) {
-  const y = gpad.top + (i / 4) * gch;
-  const lat = (latMax - (i / 4) * (latMax - latMin)).toFixed(3);
-  ghtml += `<line x1="${gpad.left}" y1="${y}" x2="${gw-gpad.right}" y2="${y}" stroke="var(--border)" stroke-width="0.5"/>`;
-  ghtml += `<text x="${gpad.left-8}" y="${y+4}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${lat}°</text>`;
-}
-for (let i = 0; i <= 4; i++) {
-  const x = gpad.left + (i / 4) * gcw;
-  const lng = (lngMin + (i / 4) * (lngMax - lngMin)).toFixed(3);
-  ghtml += `<line x1="${x}" y1="${gpad.top}" x2="${x}" y2="${gh-gpad.bottom}" stroke="var(--border)" stroke-width="0.5"/>`;
-  ghtml += `<text x="${x}" y="${gh-gpad.bottom+16}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${lng}°</text>`;
-}
-ghtml += `<text x="${gw/2}" y="${gh-8}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="10">Longitude (West)</text>`;
-ghtml += `<text x="14" y="${gh/2}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="10" transform="rotate(-90,14,${gh/2})">Latitude (North)</text>`;
-
-// Path
-let pathD = '';
-gpsPoints.forEach((p, i) => {
-  const x = gpad.left + ((p.lng - lngMin) / (lngMax - lngMin)) * gcw;
-  const y = gpad.top + ((latMax - p.lat) / (latMax - latMin)) * gch;
-  pathD += (i === 0 ? 'M' : 'L') + `${x},${y}`;
-});
-ghtml += `<path d="${pathD}" fill="none" stroke="var(--accent-amber)" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>`;
-
-gpsPoints.forEach((p, i) => {
-  const x = gpad.left + ((p.lng - lngMin) / (lngMax - lngMin)) * gcw;
-  const y = gpad.top + ((latMax - p.lat) / (latMax - latMin)) * gch;
-  const color = i < 5 ? 'var(--accent-amber)' : 'var(--accent-red)';
-  ghtml += `<circle cx="${x}" cy="${y}" r="10" fill="${color}" opacity="0.2"/>`;
-  ghtml += `<circle cx="${x}" cy="${y}" r="5" fill="${color}"/>`;
-  ghtml += `<text x="${x+12}" y="${y-8}" fill="var(--text-primary)" font-family="var(--mono)" font-size="10" font-weight="600">${p.time}</text>`;
-  ghtml += `<text x="${x+12}" y="${y+5}" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}</text>`;
-});
-
-ghtml += `<text x="${gw-gpad.right}" y="${gpad.top-10}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="10">● 5m precision  <tspan fill="var(--accent-red)">●</tspan> Cell tower (low accuracy)</text>`;
-gpsSvg.innerHTML = ghtml;
-
-// ============================================================
-// BATTERY CHART — Feb 13
-// ============================================================
-const batteryData = [
-  {t:0.33,p:33},{t:2.68,p:32},{t:4.73,p:31},{t:5.77,p:30},{t:5.88,p:29},
-  {t:10.70,p:28},{t:10.72,p:27},{t:10.82,p:23},{t:10.88,p:22},{t:10.89,p:21},
-  {t:10.91,p:20},{t:11.15,p:19},{t:11.22,p:18},{t:11.25,p:17},{t:11.27,p:16},
-  {t:11.28,p:15},{t:11.83,p:14},{t:11.84,p:13},{t:11.86,p:12},{t:11.95,p:11},
-  {t:12.19,p:9},{t:12.25,p:6},{t:12.67,p:5},{t:13.02,p:4},
-  // charging period
-  {t:13.42,p:7},
-  {t:13.65,p:16},{t:13.66,p:17},{t:13.67,p:18},{t:13.74,p:23},
-  {t:13.75,p:24},{t:13.78,p:25},{t:13.80,p:26},{t:13.80,p:27},
-  // unplugged
-  {t:13.81,p:28},
-  {t:14.32,p:24},{t:14.33,p:23},
-  {t:14.42,p:21},{t:14.47,p:16},
-  {t:14.55,p:10},{t:14.63,p:8},
-  {t:14.70,p:5},{t:14.73,p:4},
-];
-
-const bSvg = document.getElementById('batteryChart');
-const bw = 800, bh = 200, bpad = {top:20,right:20,bottom:30,left:45};
-const bcw = bw-bpad.left-bpad.right, bch = bh-bpad.top-bpad.bottom;
-const tMin = 0, tMax = 16, pMax = 35;
-
-let bhtml = '';
-// Charging zone
-const cx1 = bpad.left + ((13.25 - tMin)/(tMax-tMin))*bcw;
-const cx2 = bpad.left + ((13.80 - tMin)/(tMax-tMin))*bcw;
-bhtml += `<rect x="${cx1}" y="${bpad.top}" width="${cx2-cx1}" height="${bch}" fill="rgba(61,214,140,0.08)"/>`;
-bhtml += `<text x="${(cx1+cx2)/2}" y="${bpad.top+14}" text-anchor="middle" fill="var(--accent-green)" font-family="var(--mono)" font-size="9" opacity="0.7">CHARGING</text>`;
-
-// Low power mode
-const lpx = bpad.left + ((10.91 - tMin)/(tMax-tMin))*bcw;
-bhtml += `<line x1="${lpx}" y1="${bpad.top}" x2="${lpx}" y2="${bpad.top+bch}" stroke="var(--accent-amber)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>`;
-bhtml += `<text x="${lpx+4}" y="${bpad.top+14}" fill="var(--accent-amber)" font-family="var(--mono)" font-size="8" opacity="0.7">LOW POWER</text>`;
-
-// Unplug line
-const upx = bpad.left + ((13.80 - tMin)/(tMax-tMin))*bcw;
-bhtml += `<line x1="${upx}" y1="${bpad.top}" x2="${upx}" y2="${bpad.top+bch}" stroke="var(--accent-red)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>`;
-bhtml += `<text x="${upx+4}" y="${bpad.top+14}" fill="var(--accent-red)" font-family="var(--mono)" font-size="8" opacity="0.7">UNPLUGGED</text>`;
-
-for (let p = 0; p <= pMax; p += 10) {
-  const y = bpad.top + bch - (p/pMax)*bch;
-  bhtml += `<line x1="${bpad.left}" y1="${y}" x2="${bw-bpad.right}" y2="${y}" stroke="var(--border)" stroke-width="0.5"/>`;
-  bhtml += `<text x="${bpad.left-8}" y="${y+4}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${p}%</text>`;
-}
-for (let t = 0; t <= 16; t += 2) {
-  const x = bpad.left + ((t-tMin)/(tMax-tMin))*bcw;
-  const h = t % 24;
-  const lb = h===0?'12a':h<12?h+'a':h===12?'12p':(h-12)+'p';
-  bhtml += `<text x="${x}" y="${bh-6}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${lb}</text>`;
-}
-
-let bpathD = '';
-batteryData.forEach((d,i) => {
-  const x = bpad.left + ((d.t-tMin)/(tMax-tMin))*bcw;
-  const y = bpad.top + bch - (d.p/pMax)*bch;
-  bpathD += (i===0?'M':'L')+`${x},${y}`;
-});
-bhtml += `<path d="${bpathD}" fill="none" stroke="var(--accent-amber)" stroke-width="2" stroke-linejoin="round"/>`;
-batteryData.forEach(d => {
-  const x = bpad.left + ((d.t-tMin)/(tMax-tMin))*bcw;
-  const y = bpad.top + bch - (d.p/pMax)*bch;
-  bhtml += `<circle cx="${x}" cy="${y}" r="2" fill="var(--accent-amber)"/>`;
-});
-bSvg.innerHTML = bhtml;
-
-// ============================================================
-// APP BARS — Feb 13
+// APP USAGE DATA
 // ============================================================
 const apps = [
-  { name: "Snapchat", mins: 74, sessions: 12, color: "#FFFC00" },
-  { name: "Facebook", mins: 48, sessions: 8, color: "#4267B2" },
-  { name: "Instagram", mins: 3, sessions: 3, color: "#E1306C" },
-  { name: "Messages", mins: 1.5, sessions: 4, color: "#34C759" },
-  { name: "Phone", mins: 1, sessions: 3, color: "#4a9eff" },
-  { name: "Settings", mins: 0.5, sessions: 1, color: "#8E8E93" },
+  { name: "Snapchat", bundle: "picaboo", mins: 239.4, sessions: 129, color: "#FFFC00" },
+  { name: "Instagram", bundle: "instagram", mins: 82.9, sessions: 39, color: "#E1306C" },
+  { name: "Facebook", bundle: "Facebook", mins: 68.9, sessions: 25, color: "#4267B2" },
+  { name: "Mail", bundle: "mobilemail", mins: 46.0, sessions: 10, color: "#4a9eff" },
+  { name: "Settings", bundle: "Preferences", mins: 42.5, sessions: 21, color: "#8E8E93" },
+  { name: "Photos", bundle: "mobileslideshow", mins: 27.6, sessions: 11, color: "#a78bfa" },
+  { name: "Cool Monkey", bundle: "monkey", mins: 25.8, sessions: 12, color: "#3dd68c" },
+  { name: "iMessage", bundle: "MobileSMS", mins: 18.0, sessions: 43, color: "#34C759" },
+  { name: "Messenger", bundle: "Messenger", mins: 12.0, sessions: 8, color: "#0099FF" },
+  { name: "TikTok", bundle: "musically", mins: 8.5, sessions: 4, color: "#fe2c55" },
+  { name: "Gmail", bundle: "Gmail", mins: 6.2, sessions: 2, color: "#EA4335" },
+  { name: "Safari", bundle: "mobilesafari", mins: 6.1, sessions: 10, color: "#5AC8FA" },
 ];
+
 const maxMin = apps[0].mins;
-const barsEl = document.getElementById('appBars');
-apps.forEach(app => {
+const barsContainer = document.getElementById("appBars");
+
+apps.forEach((app, i) => {
   const pct = (app.mins / maxMin) * 100;
-  const row = document.createElement('div');
-  row.className = 'app-bar-row';
+  const row = document.createElement("div");
+  row.className = "app-bar-row";
   row.innerHTML = `
     <div class="app-bar-name">${app.name}</div>
-    <div class="app-bar-track"><div class="app-bar-fill" style="width:${pct}%;background:${app.color};opacity:0.7;"></div></div>
-    <div class="app-bar-value">${app.mins >= 60 ? (app.mins/60).toFixed(1)+'h' : Math.round(app.mins)+'m'} <span style="color:var(--text-muted)">(${app.sessions})</span></div>`;
-  barsEl.appendChild(row);
+    <div class="app-bar-track">
+      <div class="app-bar-fill" style="width:0%;background:${app.color};opacity:0.7;" data-width="${pct}"></div>
+    </div>
+    <div class="app-bar-value">${app.mins >= 60 ? (app.mins/60).toFixed(1) + 'h' : Math.round(app.mins) + 'm'} <span style="color:var(--text-muted)">(${app.sessions})</span></div>
+  `;
+  barsContainer.appendChild(row);
 });
+
+// Animate bars on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.app-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }
+  });
+}, { threshold: 0.2 });
+observer.observe(barsContainer);
+
+// ============================================================
+// TIMELINE
+// ============================================================
+const timelineDays = [
+  {
+    date: "Feb 12, 2017 (Sun)",
+    local: "2:36 PM – 5:17 PM",
+    totalMin: 104,
+    apps: [
+      { name: "Snapchat", min: 47.5 },
+      { name: "Cool Monkey", min: 24.9 },
+      { name: "iMessage", min: 11.2 },
+      { name: "Facebook", min: 10.5 },
+    ]
+  },
+  {
+    date: "Feb 13, 2017 (Mon)",
+    local: "7:08 PM – 11:25 PM",
+    totalMin: 162,
+    apps: [
+      { name: "Snapchat", min: 73.5 },
+      { name: "Facebook", min: 47.9 },
+      { name: "Instagram", min: 25.2 },
+      { name: "TikTok", min: 5.9 },
+      { name: "iMessage", min: 4.8 },
+    ]
+  },
+  { gap: true, label: "1.7 days — no data" },
+  {
+    date: "Feb 15, 2017 (Wed)",
+    local: "3:06 PM – 4:03 PM",
+    totalMin: 25,
+    apps: [
+      { name: "Settings", min: 12.2 },
+      { name: "Snapchat", min: 10.8 },
+    ]
+  },
+  { gap: true, label: "1.9 days — no data" },
+  {
+    date: "Feb 17, 2017 (Fri)",
+    local: "3:02 PM – 3:37 PM",
+    totalMin: 4.5,
+    apps: [
+      { name: "Instagram", min: 1.9 },
+      { name: "Camera", min: 1.0 },
+    ]
+  },
+  { gap: true, label: "2.8 days — no data" },
+  {
+    date: "Feb 20, 2017 (Mon) ★ Heaviest Day",
+    local: "11:31 AM – 3:34 PM",
+    totalMin: 277,
+    apps: [
+      { name: "Snapchat", min: 104.4 },
+      { name: "Instagram", min: 50.5 },
+      { name: "Mail", min: 45.6 },
+      { name: "Photos", min: 22.9 },
+      { name: "Settings", min: 15.8 },
+      { name: "Messenger", min: 12.0 },
+    ]
+  },
+  {
+    date: "Feb 21, 2017 (Tue)",
+    local: "1:12 PM – 2:51 PM",
+    totalMin: 15,
+    apps: [
+      { name: "Settings", min: 3.1 },
+      { name: "Snapchat", min: 3.0 },
+      { name: "Facebook", min: 2.9 },
+    ]
+  },
+  {
+    date: "Feb 22, 2017 (Wed)",
+    local: "1:55 PM – 2:00 PM",
+    totalMin: 3.5,
+    apps: [
+      { name: "Safari", min: 1.7 },
+      { name: "Settings", min: 1.2 },
+    ]
+  },
+  {
+    date: "Feb 23, 2017 (Thu)",
+    local: "9:57 AM – 10:06 AM",
+    totalMin: 9,
+    apps: [
+      { name: "Settings", min: 9.0 },
+    ]
+  },
+  { gap: true, label: "193.9 days — no data (Feb 23 → Sep 5)" },
+  {
+    date: "Sep 5, 2017 (Tue)",
+    local: "No app sessions",
+    totalMin: 0,
+    apps: [],
+    note: "Battery and charging events only — phone plugged in, charged from 8% → 19%"
+  },
+  { gap: true, label: "36.1 days — no data (Sep 5 → Oct 11)" },
+  {
+    date: "Oct 11, 2017 (Wed)",
+    local: "12:56 PM – 2:07 PM",
+    totalMin: 1.2,
+    apps: [
+      { name: "Settings", min: 1.2 },
+    ],
+    note: "Dual battery streams detected (see Anomalies)"
+  },
+];
+
+const timelineEl = document.getElementById("timeline");
+timelineDays.forEach(day => {
+  if (day.gap) {
+    const el = document.createElement("div");
+    el.className = "timeline-gap";
+    el.textContent = "⚠ GAP: " + day.label;
+    timelineEl.appendChild(el);
+    return;
+  }
+  const el = document.createElement("div");
+  el.className = "timeline-day";
+  let appsHtml = day.apps.map(a =>
+    `<span class="timeline-app-tag"><span class="time">${a.min >= 60 ? (a.min/60).toFixed(1)+'h' : Math.round(a.min)+'m'}</span> ${a.name}</span>`
+  ).join('');
+  let noteHtml = day.note ? `<div style="font-size:12px;color:var(--accent-amber);margin-top:8px;">⚠ ${day.note}</div>` : '';
+  el.innerHTML = `
+    <div class="timeline-date">${day.date}</div>
+    <div class="timeline-day-meta">${day.local} · ${day.totalMin >= 60 ? (day.totalMin/60).toFixed(1)+' hours' : Math.round(day.totalMin)+' min'} total screen time</div>
+    <div class="timeline-apps">${appsHtml}</div>
+    ${noteHtml}
+  `;
+  timelineEl.appendChild(el);
+});
+
+// ============================================================
+// HOURLY HEATMAP (local time)
+// ============================================================
+// Sessions by local hour (UTC hour - 5)
+const hourlyDataUTC = {0:30,1:12,2:37,3:9,14:1,15:14,16:17,17:19,18:56,19:31,20:36,21:42,22:14,23:28};
+// Convert to local (EST = UTC-5)
+const hourlyLocal = {};
+for (let h = 0; h < 24; h++) hourlyLocal[h] = 0;
+for (const [utcH, count] of Object.entries(hourlyDataUTC)) {
+  let localH = (parseInt(utcH) - 5 + 24) % 24;
+  hourlyLocal[localH] += count;
+}
+
+const heatmapEl = document.getElementById("heatmap");
+const maxHourly = Math.max(...Object.values(hourlyLocal));
+
+// Hour labels
+let hoursRow = '<div class="heatmap-hours"><div></div>';
+for (let h = 0; h < 24; h++) {
+  hoursRow += `<div class="heatmap-hour">${h === 0 ? '12a' : h < 12 ? h+'a' : h === 12 ? '12p' : (h-12)+'p'}</div>`;
+}
+hoursRow += '</div>';
+heatmapEl.innerHTML = hoursRow;
+
+// Single row
+let row = '<div class="heatmap-row"><div class="heatmap-label">EST</div>';
+for (let h = 0; h < 24; h++) {
+  const val = hourlyLocal[h] || 0;
+  const intensity = val / maxHourly;
+  const bg = val === 0 ? 'var(--bg-secondary)' : `rgba(245, 166, 35, ${0.15 + intensity * 0.85})`;
+  row += `<div class="heatmap-cell" style="background:${bg}" data-tooltip="${formatHour(h)}: ${val} sessions"></div>`;
+}
+row += '</div>';
+heatmapEl.innerHTML += row;
+
+function formatHour(h) {
+  if (h === 0) return '12 AM';
+  if (h < 12) return h + ' AM';
+  if (h === 12) return '12 PM';
+  return (h-12) + ' PM';
+}
+
+// ============================================================
+// BATTERY CHARTS
+// ============================================================
+
+// Feb 12-13 battery data (local time offsets from midnight Feb 12)
+const febBattery = [
+  {t:14.60, pct:24}, {t:14.62, pct:23}, {t:14.83, pct:22}, {t:14.84, pct:21},
+  {t:14.84, pct:20}, {t:14.93, pct:19}, {t:15.11, pct:18}, {t:15.17, pct:16},
+  {t:15.34, pct:15}, {t:15.41, pct:14}, {t:16.16, pct:13}, {t:16.19, pct:12},
+  {t:16.20, pct:11}, {t:16.22, pct:10}, {t:16.27, pct:9},
+  // plugged in at ~16.27
+  {t:16.28, pct:10}, {t:16.29, pct:11}, {t:16.30, pct:12}, {t:16.31, pct:13},
+  {t:16.32, pct:14}, {t:16.34, pct:15}, {t:16.37, pct:16}, {t:16.39, pct:17},
+  {t:16.42, pct:18}, {t:16.45, pct:19}, {t:16.48, pct:20}, {t:16.52, pct:21},
+  {t:16.56, pct:22}, {t:16.60, pct:23}, {t:16.65, pct:24}, {t:16.71, pct:25},
+  {t:16.79, pct:26}, {t:16.88, pct:27}, {t:16.97, pct:28},
+  // unplugged ~17.29
+  {t:17.35, pct:32}, {t:17.38, pct:31}, {t:17.43, pct:30}, {t:17.52, pct:29},
+  {t:17.70, pct:28}, {t:17.88, pct:27},
+  // plugged in again ~18.19
+  {t:18.21, pct:27}, {t:18.25, pct:28}, {t:18.30, pct:29}, {t:18.38, pct:30},
+  {t:18.50, pct:32}, {t:18.57, pct:33}, {t:18.73, pct:35}, {t:18.87, pct:36},
+  {t:19.00, pct:37}, {t:19.10, pct:38}, {t:19.27, pct:40},
+  // into Feb 13
+  {t:19.42, pct:41}, {t:19.70, pct:43}, {t:20.52, pct:48},
+  {t:21.10, pct:50}, {t:22.00, pct:53}, {t:23.50, pct:56},
+];
+
+const febCharging = [
+  {start: 16.27, end: 17.29},
+  {start: 18.19, end: 19.43},
+];
+
+drawBatteryChart('batteryFeb', febBattery, febCharging, 14, 24, 'Feb 12–13');
+
+// Oct 11 battery — two streams
+const octStreamA = [
+  {t:12.74, pct:34}, {t:12.77, pct:35}, {t:12.82, pct:36}, {t:12.84, pct:37},
+  {t:12.87, pct:38}, {t:12.90, pct:39}, {t:12.93, pct:40}, {t:12.97, pct:41},
+  {t:12.99, pct:42},
+];
+const octStreamB = [
+  {t:11.94, pct:4},
+  {t:12.78, pct:3}, {t:12.79, pct:4}, {t:12.80, pct:5},
+  {t:12.82, pct:6}, {t:12.84, pct:7}, {t:12.85, pct:8}, {t:12.87, pct:9},
+  {t:12.88, pct:10}, {t:12.90, pct:11}, {t:12.92, pct:12}, {t:12.94, pct:13},
+  {t:12.96, pct:14}, {t:12.98, pct:15}, {t:12.99, pct:16}, {t:13.01, pct:17},
+  {t:13.03, pct:18}, {t:13.04, pct:19}, {t:13.06, pct:20}, {t:13.08, pct:21},
+  {t:13.10, pct:22}, {t:13.11, pct:23},
+];
+
+drawDualBatteryChart('batteryOct', octStreamA, octStreamB, 11.5, 13.5);
+
+function drawBatteryChart(id, data, charging, tMin, tMax, label) {
+  const svg = document.getElementById(id);
+  const w = 800, h = 200, pad = {top: 20, right: 20, bottom: 30, left: 45};
+  const cw = w - pad.left - pad.right;
+  const ch = h - pad.top - pad.bottom;
+
+  let html = '';
+
+  // Charging zones
+  charging.forEach(c => {
+    const x1 = pad.left + ((c.start - tMin) / (tMax - tMin)) * cw;
+    const x2 = pad.left + ((c.end - tMin) / (tMax - tMin)) * cw;
+    html += `<rect x="${x1}" y="${pad.top}" width="${x2-x1}" height="${ch}" fill="rgba(61,214,140,0.08)" />`;
+  });
+
+  // Grid lines
+  for (let pct = 0; pct <= 60; pct += 20) {
+    const y = pad.top + ch - (pct / 60) * ch;
+    html += `<line x1="${pad.left}" y1="${y}" x2="${w-pad.right}" y2="${y}" stroke="var(--border)" stroke-width="0.5" />`;
+    html += `<text x="${pad.left-8}" y="${y+4}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${pct}%</text>`;
+  }
+
+  // Hour labels
+  for (let t = Math.ceil(tMin); t <= tMax; t++) {
+    const x = pad.left + ((t - tMin) / (tMax - tMin)) * cw;
+    const hr = t % 24;
+    const label = hr === 0 ? '12a' : hr < 12 ? hr+'a' : hr === 12 ? '12p' : (hr-12)+'p';
+    html += `<text x="${x}" y="${h-6}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${label}</text>`;
+  }
+
+  // Line
+  let pathD = '';
+  data.forEach((d, i) => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / 60) * ch;
+    pathD += (i === 0 ? 'M' : 'L') + `${x},${y}`;
+  });
+  html += `<path d="${pathD}" fill="none" stroke="var(--accent-amber)" stroke-width="2" stroke-linejoin="round" />`;
+
+  // Dots
+  data.forEach(d => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / 60) * ch;
+    html += `<circle cx="${x}" cy="${y}" r="2.5" fill="var(--accent-amber)" />`;
+  });
+
+  svg.innerHTML = html;
+}
+
+function drawDualBatteryChart(id, streamA, streamB, tMin, tMax) {
+  const svg = document.getElementById(id);
+  const w = 800, h = 200, pad = {top: 20, right: 20, bottom: 30, left: 45};
+  const cw = w - pad.left - pad.right;
+  const ch = h - pad.top - pad.bottom;
+  const pctMax = 50;
+
+  let html = '';
+
+  // Grid
+  for (let pct = 0; pct <= pctMax; pct += 10) {
+    const y = pad.top + ch - (pct / pctMax) * ch;
+    html += `<line x1="${pad.left}" y1="${y}" x2="${w-pad.right}" y2="${y}" stroke="var(--border)" stroke-width="0.5" />`;
+    html += `<text x="${pad.left-8}" y="${y+4}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${pct}%</text>`;
+  }
+
+  // Time labels
+  for (let t = 12; t <= 13.5; t += 0.25) {
+    const x = pad.left + ((t - tMin) / (tMax - tMin)) * cw;
+    const mins = Math.round((t % 1) * 60);
+    const hr = Math.floor(t);
+    const label = `${hr > 12 ? hr-12 : hr}:${mins.toString().padStart(2,'0')}p`;
+    html += `<text x="${x}" y="${h-6}" text-anchor="middle" fill="var(--text-muted)" font-family="var(--mono)" font-size="9">${label}</text>`;
+  }
+
+  // Stream A line (amber)
+  let pathA = '';
+  streamA.forEach((d, i) => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / pctMax) * ch;
+    pathA += (i === 0 ? 'M' : 'L') + `${x},${y}`;
+  });
+  html += `<path d="${pathA}" fill="none" stroke="var(--accent-amber)" stroke-width="2.5" stroke-linejoin="round" />`;
+  streamA.forEach(d => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / pctMax) * ch;
+    html += `<circle cx="${x}" cy="${y}" r="3" fill="var(--accent-amber)" />`;
+  });
+
+  // Stream B line (blue)
+  let pathB = '';
+  streamB.forEach((d, i) => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / pctMax) * ch;
+    pathB += (i === 0 ? 'M' : 'L') + `${x},${y}`;
+  });
+  html += `<path d="${pathB}" fill="none" stroke="var(--accent-blue)" stroke-width="2.5" stroke-linejoin="round" />`;
+  streamB.forEach(d => {
+    const x = pad.left + ((d.t - tMin) / (tMax - tMin)) * cw;
+    const y = pad.top + ch - (d.pct / pctMax) * ch;
+    html += `<circle cx="${x}" cy="${y}" r="3" fill="var(--accent-blue)" />`;
+  });
+
+  // Legend
+  html += `<rect x="${w-pad.right-180}" y="${pad.top+5}" width="170" height="44" rx="4" fill="var(--bg-card)" stroke="var(--border)" />`;
+  html += `<line x1="${w-pad.right-165}" y1="${pad.top+20}" x2="${w-pad.right-145}" y2="${pad.top+20}" stroke="var(--accent-amber)" stroke-width="2.5" />`;
+  html += `<text x="${w-pad.right-140}" y="${pad.top+24}" fill="var(--text-secondary)" font-family="var(--mono)" font-size="10">Stream A (34→42%)</text>`;
+  html += `<line x1="${w-pad.right-165}" y1="${pad.top+38}" x2="${w-pad.right-145}" y2="${pad.top+38}" stroke="var(--accent-blue)" stroke-width="2.5" />`;
+  html += `<text x="${w-pad.right-140}" y="${pad.top+42}" fill="var(--text-secondary)" font-family="var(--mono)" font-size="10">Stream B (3→23%)</text>`;
+
+  svg.innerHTML = html;
+}
 </script>
+
 </body>
 </html>
