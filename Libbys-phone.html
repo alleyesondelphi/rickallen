@@ -179,6 +179,10 @@
         padding: 10px;
       }
 
+      .anomaly-span {
+        margin-right: 25px;
+      }
+
       .audio-grid {
         grid-template-columns: 1fr;
       }
@@ -581,7 +585,7 @@
     /* Anomaly cards */
     .anomaly-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
       gap: 16px;
     }
 
@@ -656,8 +660,8 @@
       border-radius: 4px;
       padding: 12px;
       margin-top: 12px;
-      overflow-x: auto;
-      white-space: pre;
+      /*overflow-x: auto;
+      white-space: pre;*/
       line-height: 1.8;
     }
 
@@ -671,8 +675,10 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
-
-
+    .heatmap-container {
+      width:90%;
+      margin:auto;
+    }
     .heatmap-label {
       font-family: var(--mono);
       font-size: 10px;
@@ -1025,12 +1031,6 @@
         grid-template-columns: 1fr;
       }
 
-      .anomaly-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-        gap: 16px;
-      }
-
       .app-bar-row {
         grid-template-columns: 120px 1fr 60px;
       }
@@ -1210,15 +1210,15 @@
       .anomaly-title,
       .anomaly-desc,
       .anomaly-detail {
-        overflow-wrap: break-word !important;
+        /*overflow-wrap: break-word !important;
         word-wrap: break-word !important;
         word-break: break-word !important;
-        max-width: 100% !important;
+        max-width: 100% !important;*/
       }
       
       .anomaly-detail {
-        white-space: pre-wrap !important;
-        overflow-x: auto !important;
+        /*white-space: pre-wrap !important;
+        overflow-x: auto !important;*/
       }
     }
   </style>
@@ -1358,11 +1358,10 @@
         <span class="section-number">02</span>
         <span class="section-title">Hourly Activity Pattern</span>
       </div>
-      <p class="section-desc">
-        When the phone was actively being used, by hour of day (local time, EST/UTC-5). Usage peaks in the early
-        afternoon and late evening — consistent with a school-age user.
-      </p>
-      <div id="heatmap"></div>
+        <p class="section-desc">
+          When the phone was actively being used, by hour of day (local time, EST/UTC-5). Usage peaks in the early afternoon and late evening — consistent with a school-age user.
+        </p>
+        <div id="heatmap"></div>
     </div><!-- End /02 hourly activity pattern-->
 
     <!-- 03 app usage -->
@@ -1596,9 +1595,7 @@
         <span class="section-title">Anomalies & Findings</span>
       </div>
       <p class="section-desc">
-        Every database artifact examined for inconsistencies. Findings from cross-referencing all artifact
-        sources. Includes anomalies from the knowledgeC.db analysis plus new observations from the full forensic
-        timeline.
+        Every database artifact examined for inconsistencies. Findings from cross-referencing all artifact sources. Includes anomalies from the knowledgeC.db analysis plus new observations from the full forensic timeline.
       </p>
       <!-- anomaly grid -->
       <div class="anomaly-grid">
@@ -1607,11 +1604,11 @@
           <div class="anomaly-severity high">Critical</div>
           <div class="anomaly-title">25 Unanswered Calls / Messages After ~4 PM</div>
           <div class="anomaly-desc">
-            Starting at 3:59 PM, the phone received a continuous stream of incoming calls and messages from
-            family members — <strong>"Best Aunt Ever," "Sis," "Gramps," "Becky Marchand Patty," "Peyt,"
-              "Arika"</strong> — none of which were answered. "Gramps" texted <strong>"Answer me before i
-              call police to help search"</strong> at 4:47 PM. The last user-initiated activity on the
-            phone was around 2:05–2:20 PM.
+            Starting at 3:59 PM, the phone received a continuous stream of incoming calls and messages from family members
+            <div class="anomaly-detail">
+              <span class="anomaly-span">2:20 PM</span>Last user-initiated activity<br>
+              <span class="anomaly-span">4:47 PM</span>Text from "Gramps": "Answer me before i call police to help search"<br>
+            </div>
           </div>
         </div>
 
@@ -1619,18 +1616,15 @@
           <div class="anomaly-severity high">Critical</div>
           <div class="anomaly-title">Audio Route #3 — No End Logged + Cellular Disconnect</div>
           <div class="anomaly-desc">
-            At 5:45:24 PM, an audio output route started (incoming call from Becky Marchand Patty). No
-            corresponding end event was ever logged. At 5:45:45 PM, the cellular radio logged <strong>WCDMA
-              RRC State: Disconnected</strong> (previous state: Connecting). This could indicate the phone
-            lost cellular signal, was powered off, or its battery died at this point.
+            At 5:45:24 PM, an audio output route started (incoming call from Becky Marchand Patty). No corresponding end event was ever logged. At 5:45:45 PM, the cellular radio logged <strong>WCDMA RRC State: Disconnected</strong> (previous state: Connecting). This could indicate the phone lost cellular signal, was powered off, or its battery died at this point.
           </div>
           <div class="anomaly-detail">
-            17:45:24 Audio Output Route Start
-            17:45:25 Incoming call: Becky Marchand Patty (not answered)
-            17:45:31 Call Backgrounded (logged in 6 powerlog files)
-            17:45:45 WCDMA RRC: Disconnected ← Connecting
-            17:45:45 Call Type: PS DATA | Service: TDS,GSM,WCDMA,LTE
-            [No audio route end ever recorded]
+            <span class="anomaly-span">17:45:24</span>Audio Output Route Start<br>
+            <span class="anomaly-span">17:45:25</span>Incoming call: Becky Marchand Patty (not answered)<br>
+            <span class="anomaly-span">17:45:31</span>Call Backgrounded (logged in 6 powerlog files)<br>
+            <span class="anomaly-span">17:45:45</span>WCDMA RRC: Disconnected ← Connecting<br>
+            <span class="anomaly-span">17:45:45</span>Call Type: PS DATA | Service: TDS,GSM,WCDMA,LTE<br>
+            <span class="anomaly-span">[No audio route end ever recorded]</span>
           </div>
         </div>
 
@@ -1638,11 +1632,7 @@
           <div class="anomaly-severity medium">Significant</div>
           <div class="anomaly-title">Powerlog Duplication Across 6 Files</div>
           <div class="anomaly-desc">
-            The "Call Backgrounded" and WCDMA disconnect events at 5:45 PM are each duplicated across 6
-            separate powerlog files (CurrentPowerlog.PLSQL and 5 date-stamped powerlogs from Oct 2017). This
-            is <strong>structurally expected</strong> — iOS maintains rolling powerlog archives — but it
-            confirms these powerlogs persisted through October 2017, meaning the phone was operational
-            months later.
+            The "Call Backgrounded" and WCDMA disconnect events at 5:45 PM are each duplicated across 6 separate powerlog files (CurrentPowerlog.PLSQL and 5 date-stamped powerlogs from Oct 2017). This is <strong>structurally expected</strong> — iOS maintains rolling powerlog archives — but it confirms these powerlogs persisted through October 2017, meaning the phone was operational months later.
           </div>
         </div>
 
@@ -1650,10 +1640,7 @@
           <div class="anomaly-severity medium">Significant</div>
           <div class="anomaly-title">Dual Battery Streams (Oct 11, 2017)</div>
           <div class="anomaly-desc">
-            From the knowledgeC.db analysis: on Oct 11, the database records two simultaneous battery
-            percentage streams at identical timestamps. Stream A: 34% → 42%. Stream B: 3% → 23%. A single
-            device cannot report two battery levels at once. Likely backup/restore merge or iOS upgrade
-            artifact.
+            From the knowledgeC.db analysis: on Oct 11, the database records two simultaneous battery percentage streams at identical timestamps. Stream A: 34% → 42%. Stream B: 3% → 23%. A single device cannot report two battery levels at once. Likely backup/restore merge or iOS upgrade artifact.
           </div>
         </div>
 
@@ -1661,21 +1648,18 @@
           <div class="anomaly-severity medium">Notable</div>
           <div class="anomaly-title">Feb 15 — iPhone Boot After 2-Day Silence</div>
           <div class="anomaly-desc">
-            containermanagerd.log.0 records <strong>"iPhone Booting Up"</strong> at 3:06 PM on Feb 15 — over
-            48 hours after the last activity on Feb 13. The phone booted unplugged at 5% battery, was
-            plugged in 8 seconds later, and a user opened the Settings app. This is consistent with the
-            phone having been powered off or dead for ~2 days.
+            containermanagerd.log.0 records <strong>"iPhone Booting Up"</strong> at 3:06 PM on Feb 15 — over 48 hours after the last activity on Feb 13. The phone booted unplugged at 5% battery, was plugged in 8 seconds later, and a user opened the Settings app. This is consistent with the phone having been powered off or dead for ~2 days.
           </div>
           <div class="anomaly-detail">
-            15:06:03 iPhone Booting Up (containermanagerd)
-            15:06:04 Unplugged and Not Charging
-            15:06:04 Screen On
-            15:06:05 Mobile activation startup
-            15:06:11 Stopped Walking/Running: 1 step
-            15:06:12 Phone Locked → Unlocked (20s later)
-            15:06:41 "Power level really becomes bad"
-            15:06:45 Settings app opened
-            15:10:12 Battery: 5% → Plugged in and Charging
+            <span class="anomaly-span">05:06:03</span>iPhone Booting Up (containermanagerd)<br>
+            <span class="anomaly-span">15:06:04</span>Unplugged and Not Charging<br>
+            <span class="anomaly-span">15:06:04</span>Screen On<br>
+            <span class="anomaly-span">15:06:05</span>Mobile activation startup<br>
+            <span class="anomaly-span">15:06:11</span>Stopped Walking/Running: 1 step<br>
+            <span class="anomaly-span">15:06:12</span>Phone Locked → Unlocked (20s later)<br>
+            <span class="anomaly-span">15:06:41</span>"Power level really becomes bad"<br>
+            <span class="anomaly-span">15:06:45</span>Settings app opened<br>
+            <span class="anomaly-span">15:10:12</span>Battery: 5% → Plugged in and Charging<br>
           </div>
         </div>
 
@@ -1683,11 +1667,7 @@
           <div class="anomaly-severity low">Observation</div>
           <div class="anomaly-title">Instagram Bridge/Water Images at 1:44 PM</div>
           <div class="anomaly-desc">
-            Two Instagram cache images were logged at 1:44:14 PM: one depicting <strong>"part of what
-              appears to be a wooden bridge and a body of water"</strong> (photographed from on the
-            bridge), and another showing a <strong>"fallen tree limb lying on the ground covered with some
-              sticks and leaves"</strong> with water in the background. GPS at 1:44:23 PM places the phone
-            at 40.6056, -86.6120 (5m precision).
+            Two Instagram cache images were logged at 1:44:14 PM: one depicting <strong>"part of what appears to be a wooden bridge and a body of water"</strong> (photographed from on the bridge), and another showing a <strong>"fallen tree limb lying on the ground covered with some sticks and leaves"</strong> with water in the background. GPS at 1:44:23 PM places the phone at 40.6056, -86.6120 (5m precision).
           </div>
         </div>
 
@@ -1695,9 +1675,7 @@
           <div class="anomaly-severity low">Observation</div>
           <div class="anomaly-title">Last Outgoing Communication: 1:18 PM</div>
           <div class="anomaly-desc">
-            The last SMS sent was to Holly O'Neil at 1:18:43 PM. The last outgoing call was to "Daddy-o" at
-            1:38 PM (35 seconds). After ~2:20 PM, there is no evidence of user-initiated activity — only
-            passive events (incoming calls, screen-on from notifications, battery readings).
+            The last SMS sent was to Holly O'Neil at 1:18:43 PM. The last outgoing call was to "Daddy-o" at 1:38 PM (35 seconds). After ~2:20 PM, there is no evidence of user-initiated activity — only passive events (incoming calls, screen-on from notifications, battery readings).
           </div>
         </div>
 
@@ -1705,9 +1683,7 @@
           <div class="anomaly-severity clear">Structural — No Issues</div>
           <div class="anomaly-title">Database Integrity Verified</div>
           <div class="anomaly-desc">
-            No duplicate primary keys, no negative-duration sessions, no overlapping app sessions, no
-            backward timestamp jumps, no orphaned records. Data is structurally sound across all artifact
-            sources.
+            No duplicate primary keys, no negative-duration sessions, no overlapping app sessions, no backward timestamp jumps, no orphaned records. Data is structurally sound across all artifact sources.
           </div>
         </div>
 
@@ -1715,17 +1691,14 @@
           <div class="anomaly-severity high">High — Significant Anomaly</div>
           <div class="anomaly-title">Dual Simultaneous Battery Streams</div>
           <div class="anomaly-desc">
-            On October 11, the database records <strong>two parallel battery percentage readings</strong>
-            running at the same timestamps. Stream A climbs from 34% → 42%. Stream B climbs from 3% → 23%. A
-            single phone cannot report two battery levels at once. This likely indicates data merged from
-            two devices (backup/restore), an iOS upgrade artifact, or an extraction error.
+            On October 11, the database records <strong>two parallel battery percentage readings</strong> running at the same timestamps. Stream A climbs from 34% → 42%. Stream B climbs from 3% → 23%. A single phone cannot report two battery levels at once. This likely indicates data merged from two devices (backup/restore), an iOS upgrade artifact, or an extraction error.
           </div>
           <div class="anomaly-detail">
-            17:46 UTC Stream A: 35% Stream B: 3%
-            17:49 UTC Stream A: 36% Stream B: 6%
-            17:52 UTC Stream A: 38% Stream B: 9%
-            17:55 UTC Stream A: 40% Stream B: 12%
-            17:59 UTC Stream A: 42% Stream B: 16%
+            <span class="anomaly-span">17:46 UTC</span><span class="anomaly-span">Stream A: 35%</span>Stream B:  3%<br>
+            <span class="anomaly-span">17:49 UTC</span><span class="anomaly-span">Stream A: 36%</span>Stream B:  6%<br>
+            <span class="anomaly-span">17:52 UTC</span><span class="anomaly-span">Stream A: 38%</span>Stream B:  9%<br>
+            <span class="anomaly-span">17:55 UTC</span><span class="anomaly-span">Stream A: 40%</span>Stream B: 12%<br>
+            <span class="anomaly-span">17:59 UTC</span><span class="anomaly-span">Stream A: 42%</span>Stream B: 16%<br>
           </div>
         </div>
 
@@ -1733,10 +1706,7 @@
           <div class="anomaly-severity medium">Medium — Notable</div>
           <div class="anomaly-title">194-Day Data Gap</div>
           <div class="anomaly-desc">
-            No data exists between Feb 23 and Sep 5, 2017 — a gap of nearly 194 days. This could mean the
-            phone was powered off, factory reset, the database was pruned by iOS, or the forensic extraction
-            only captured partial data. Two additional gaps of 1.7 and 2.8 days exist within the February
-            window.
+            No data exists between Feb 23 and Sep 5, 2017 — a gap of nearly 194 days. This could mean the phone was powered off, factory reset, the database was pruned by iOS, or the forensic extraction only captured partial data. Two additional gaps of 1.7 and 2.8 days exist within the February window.
           </div>
         </div>
 
@@ -1744,10 +1714,7 @@
           <div class="anomaly-severity medium">Medium — Notable</div>
           <div class="anomaly-title">14 Zero-Duration App Sessions</div>
           <div class="anomaly-desc">
-            14 app events were logged as "in focus" for exactly 0 seconds. Most are iMessage (notification
-            taps). Three occur in rapid succession on Feb 20 at 2:37 PM local time — PhotoMath, Subway
-            Surfers, Color Switch — consistent with quickly swiping through the app switcher. Not
-            necessarily suspicious, but unusual to see this many.
+            14 app events were logged as "in focus" for exactly 0 seconds. Most are iMessage (notification taps). Three occur in rapid succession on Feb 20 at 2:37 PM local time — PhotoMath, Subway Surfers, Color Switch — consistent with quickly swiping through the app switcher. Not necessarily suspicious, but unusual to see this many.
           </div>
         </div>
 
@@ -1755,9 +1722,7 @@
           <div class="anomaly-severity low">Low — Expected Behavior</div>
           <div class="anomaly-title">Screen On While Locked (5 events)</div>
           <div class="anomaly-desc">
-            Five instances where the screen was illuminated while the device was locked, lasting 30–68
-            seconds each. This is normal — lock screen notifications, incoming calls, and Siri activation
-            all cause this.
+            Five instances where the screen was illuminated while the device was locked, lasting 30–68 seconds each. This is normal — lock screen notifications, incoming calls, and Siri activation all cause this.
           </div>
         </div>
 
@@ -1765,8 +1730,7 @@
           <div class="anomaly-severity low">Low — Expected Behavior</div>
           <div class="anomaly-title">Small Battery Gain Without Charging</div>
           <div class="anomaly-desc">
-            On Feb 15, battery rose from 53% → 56% over 28 minutes while reportedly unplugged. This is
-            within normal battery calibration drift and is not meaningful.
+            On Feb 15, battery rose from 53% → 56% over 28 minutes while reportedly unplugged. This is within normal battery calibration drift and is not meaningful.
           </div>
         </div>
 
@@ -1774,8 +1738,7 @@
           <div class="anomaly-severity clear">Clear — No Issues</div>
           <div class="anomaly-title">No Overlapping App Sessions</div>
           <div class="anomaly-desc">
-            No instances of two different apps reported as "in focus" at the same time. App transitions are
-            clean and sequential.
+            No instances of two different apps reported as "in focus" at the same time. App transitions are clean and sequential.
           </div>
         </div>
 
@@ -1783,8 +1746,7 @@
           <div class="anomaly-severity clear">Clear — No Issues</div>
           <div class="anomaly-title">No Negative Durations</div>
           <div class="anomaly-desc">
-            No events where the end timestamp precedes the start timestamp. All duration calculations are
-            valid.
+            No events where the end timestamp precedes the start timestamp. All duration calculations are valid.
           </div>
         </div>
 
@@ -1792,8 +1754,7 @@
           <div class="anomaly-severity clear">Clear — No Issues</div>
           <div class="anomaly-title">No Duplicate Primary Keys</div>
           <div class="anomaly-desc">
-            Database structural integrity is intact. No duplicate records, no orphaned child entries without
-            parents, no evidence of manual row insertion or editing.
+            Database structural integrity is intact. No duplicate records, no orphaned child entries without parents, no evidence of manual row insertion or editing.
           </div>
         </div>
 
