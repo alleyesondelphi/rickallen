@@ -179,10 +179,6 @@
         padding: 10px;
       }
 
-      .anomaly-span {
-        margin-right: 25px;
-      }
-
       .audio-grid {
         grid-template-columns: 1fr;
       }
@@ -222,6 +218,10 @@
       .chart-container {
         padding: 16px;
       }
+    }
+
+    .anomaly-span {
+      margin-right: 20px;
     }
 
     /* Responsive SVG Charts */
@@ -676,15 +676,15 @@
       -webkit-overflow-scrolling: touch;
     }
     .heatmap-container {
-      width:90%;
-      margin:auto;
+      width: 98%;
+      margin: auto;
     }
     .heatmap-label {
       font-family: var(--mono);
       font-size: 10px;
       color: var(--text-muted);
       text-align: right;
-      padding-right: 8px;
+      padding-right: 5px;
     }
 
     .heatmap-cell {
@@ -723,7 +723,7 @@
       font-family: var(--mono);
       font-size: 9px;
       color: var(--text-muted);
-      text-align: center;
+      text-align: left;
     }
 
     /* Motion data */
@@ -1221,6 +1221,151 @@
         overflow-x: auto !important;*/
       }
     }
+
+    /* Event timeline - Mobile responsive */
+    .event-stream { position: relative; }
+    .event-group { margin-bottom: 20px; }
+    @media (min-width: 768px) {
+      .event-group { margin-bottom: 24px; }
+    }
+    .event-group-header {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-amber);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 768px) {
+      .event-group-header { font-size: 13px; margin-bottom: 12px; }
+    }
+    .event-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .event-row {
+        grid-template-columns: 90px auto 1fr;
+        gap: 16px;
+        padding: 12px 0;
+      }
+    }
+    .event-time {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    @media (min-width: 768px) {
+      .event-time { font-size: 12px; }
+    }
+    .event-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) {
+      .event-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+    }
+    .event-icon.app { background: var(--accent-amber-dim); color: var(--accent-amber); }
+    .event-icon.call { background: var(--accent-blue-dim); color: var(--accent-blue); }
+    .event-icon.msg { background: var(--accent-green-dim); color: var(--accent-green); }
+    .event-icon.bat { background: var(--accent-red-dim); color: var(--accent-red); }
+    .event-icon.vm { background: var(--accent-purple-dim); color: var(--accent-purple); }
+    .event-icon.walk { background: var(--accent-cyan); color: #0a0a0a; }
+    .event-icon.critical { background: var(--accent-red); color: var(--bg-primary); }
+    .event-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    @media (min-width: 768px) {
+      .event-desc { font-size: 14px; }
+    }
+    .event-desc strong { color: var(--text-primary); }
+    .event-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-style: italic;
+    }
+    @media (min-width: 768px) {
+      .event-note { font-size: 12px; }
+    }
+
+    .cascade-highlight {
+      background: linear-gradient(90deg, rgba(232,72,85,0.05) 0%, transparent 100%);
+      border-left: 3px solid var(--accent-red);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    @media (min-width: 768px) {
+      .cascade-highlight { padding: 20px; margin: 20px 0; }
+    }
+    .cascade-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-red);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 768px) {
+      .cascade-label { font-size: 13px; }
+    }
+
+    /* Tabs - Mobile responsive */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (min-width: 768px) {
+      .tabs { gap: 12px; margin-bottom: 24px; }
+    }
+    .tab-btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 10px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    @media (min-width: 768px) {
+      .tab-btn { font-size: 12px; padding: 12px 16px; }
+    }
+    .tab-btn:hover { color: var(--text-secondary); }
+    .tab-btn.active {
+      color: var(--accent-amber);
+      border-bottom-color: var(--accent-amber);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
   </style>
 </head>
 
@@ -1361,7 +1506,9 @@
         <p class="section-desc">
           When the phone was actively being used, by hour of day (local time, EST/UTC-5). Usage peaks in the early afternoon and late evening — consistent with a school-age user.
         </p>
-        <div id="heatmap"></div>
+        <div class="heatmap-container">
+            <div id="heatmap"></div>
+        </div>
     </div><!-- End /02 hourly activity pattern-->
 
     <!-- 03 app usage -->
@@ -1378,19 +1525,57 @@
       <div class="app-bar-list" id="appBars"></div>
     </div><!-- End /03 app usage -->
 
-    <!-- 04 timeline -->
+    <!-- 04 timeline of events -->
     <div class="section">
       <div class="section-header">
-        <span class="section-number">04</span>
-        <span class="section-title">Timeline</span>
+        <div class="section-number">04</div>
+        <h2 class="section-title">Timeline of Events — Feb. 13, 2017</h2>
       </div>
-      <p class="section-desc">
-        Activity is concentrated into a total of 9 days. The large gaps in between — especially the 194-day
-        silence from February to September — would be notable if not for the fact that the phone was secured as
-        evidence.
-      </p>
-      <div class="timeline-container" id="timeline"></div>
-    </div><!-- End /04 timeline -->
+      <div class="section-desc">Timeline based on First Sgt. Christopher Cecil's forensic examination and Digital Forensics Expert Stacy Eldridge's re-analysis. The day divides into three phases: early morning texts, midday active use with movement, and then a wall of unanswered calls beginning around 4 PM.</div>
+      
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'allEvents')">All Events</button>
+        <button class="tab-btn" onclick="switchTab(this, 'commsEvents')">Communications</button>
+        <button class="tab-btn" onclick="switchTab(this, 'motionEvents')">Motion & GPS</button>
+        <button class="tab-btn" onclick="switchTab(this, 'anomalyEvents')">Anomalies</button>
+      </div>
+
+      <div id="allEvents" class="tab-content active"></div>
+      <div id="commsEvents" class="tab-content"></div>
+      <div id="motionEvents" class="tab-content"></div>
+      <div id="anomalyEvents" class="tab-content">
+        <div class="event-group">
+          <div class="event-group-header">Critical Anomalies Requiring Human Interaction</div>
+          <div class="event-row">
+            <div class="event-time">5:45:24 PM</div>
+            <div class="event-icon critical">🔊</div>
+            <div class="event-desc">
+              <strong>Audio Output Route Start — Wired Aux Cable Inserted</strong><br>
+              KnowledgeC database logs Z Value Double = 1 (headphones). Eldridge: "Someone took a headphone jack and inserted it into the hole at the bottom... they inserted it into the hole at the bottom at 5:45 p.m. on the 13th."
+              <div class="event-note">Q: "Can you think of any explanation for aux port or headphones being plugged in and unplugged that does not involve human interaction?" A: "I cannot think of any explanation that does not involve humans."</div>
+            </div>
+          </div>
+          <div class="event-row">
+            <div class="event-time">10:32:26 PM</div>
+            <div class="event-icon critical">🔊</div>
+            <div class="event-desc">
+              <strong>Audio Output Route End — Cable Removed</strong><br>
+              Headphones/aux cable removed from device after 4 hours 47 minutes. This was the last logged data received by the iPhone before battery depletion.
+              <div class="event-note">No movement logged. Phone remained stationary from 2:32 PM onward per Apple Health data.</div>
+            </div>
+          </div>
+          <div class="event-row">
+            <div class="event-time">5:44 PM - 4:33 AM</div>
+            <div class="event-icon critical">📡</div>
+            <div class="event-desc">
+              <strong>Complete Loss of Cell Tower Connection</strong><br>
+              10 hours 49 minutes with no connection to AT&T network. AT&T repeatedly attempted to ping the device during this period with no successful response until 4:33 AM Feb. 14.
+              <div class="event-note">Three independent confirmation sources: AT&T HPLI logs, device data usage logs, voicemail delivery records</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- 04 timeline of events -->
 
     <!-- 05 movement & location -->
     <div class="section">
@@ -1533,13 +1718,13 @@
         </div>
         <div class="audio-card">
           <div class="audio-card-header">Session 3 — Incoming Call (Phone Idle)</div>
-          <div class="audio-time-range">5:45:24 PM → ?</div>
-          <div class="audio-duration">Duration: Unknown (no end logged)</div>
+          <div class="audio-time-range">5:45:24 PM → 10:32:26 PM</div>
+          <div class="audio-duration">Duration: 4 hrs 47 min 2 sec</div>
           <div class="audio-card-detail">
             Audio route started when incoming call from <strong>Becky Marchand Patty</strong> arrived at
             5:45:25 PM. Call was <strong>not answered</strong>. At 5:45:45 PM, cellular state logged
             <strong>WCDMA RRC Disconnected</strong> (previous: Connecting). No audio route end was recorded
-            — possible the phone lost connectivity or powered off.
+            in the Oct. 11, 2017 knowledgeC.db file.
           </div>
         </div>
       </div>
@@ -1602,7 +1787,7 @@
 
         <div class="anomaly-card">
           <div class="anomaly-severity high">Critical</div>
-          <div class="anomaly-title">25 Unanswered Calls / Messages After ~4 PM</div>
+          <div class="anomaly-title">25 Unanswered Calls/Messages After ~4 PM</div>
           <div class="anomaly-desc">
             Starting at 3:59 PM, the phone received a continuous stream of incoming calls and messages from family members
             <div class="anomaly-detail">
@@ -1905,137 +2090,6 @@
     }, { threshold: 0.2 });
     observer.observe(barsContainer);
 
-    // ============================================================
-    // TIMELINE
-    // ============================================================
-    const timelineDays = [
-      {
-        date: "Feb 12, 2017 (Sun)",
-        local: "2:36 PM – 5:17 PM",
-        totalMin: 104,
-        apps: [
-          { name: "Snapchat", min: 47.5 },
-          { name: "Cool Monkey", min: 24.9 },
-          { name: "iMessage", min: 11.2 },
-          { name: "Facebook", min: 10.5 },
-        ]
-      },
-      {
-        date: "Feb 13, 2017 (Mon)",
-        local: "7:08 PM – 11:25 PM",
-        totalMin: 162,
-        apps: [
-          { name: "Snapchat", min: 73.5 },
-          { name: "Facebook", min: 47.9 },
-          { name: "Instagram", min: 25.2 },
-          { name: "TikTok", min: 5.9 },
-          { name: "iMessage", min: 4.8 },
-        ]
-      },
-      { gap: true, label: "1.7 days — no data" },
-      {
-        date: "Feb 15, 2017 (Wed)",
-        local: "3:06 PM – 4:03 PM",
-        totalMin: 25,
-        apps: [
-          { name: "Settings", min: 12.2 },
-          { name: "Snapchat", min: 10.8 },
-        ]
-      },
-      { gap: true, label: "1.9 days — no data" },
-      {
-        date: "Feb 17, 2017 (Fri)",
-        local: "3:02 PM – 3:37 PM",
-        totalMin: 4.5,
-        apps: [
-          { name: "Instagram", min: 1.9 },
-          { name: "Camera", min: 1.0 },
-        ]
-      },
-      { gap: true, label: "2.8 days — no data" },
-      {
-        date: "Feb 20, 2017 (Mon) ★ Heaviest Day",
-        local: "11:31 AM – 3:34 PM",
-        totalMin: 277,
-        apps: [
-          { name: "Snapchat", min: 104.4 },
-          { name: "Instagram", min: 50.5 },
-          { name: "Mail", min: 45.6 },
-          { name: "Photos", min: 22.9 },
-          { name: "Settings", min: 15.8 },
-          { name: "Messenger", min: 12.0 },
-        ]
-      },
-      {
-        date: "Feb 21, 2017 (Tue)",
-        local: "1:12 PM – 2:51 PM",
-        totalMin: 15,
-        apps: [
-          { name: "Settings", min: 3.1 },
-          { name: "Snapchat", min: 3.0 },
-          { name: "Facebook", min: 2.9 },
-        ]
-      },
-      {
-        date: "Feb 22, 2017 (Wed)",
-        local: "1:55 PM – 2:00 PM",
-        totalMin: 3.5,
-        apps: [
-          { name: "Safari", min: 1.7 },
-          { name: "Settings", min: 1.2 },
-        ]
-      },
-      {
-        date: "Feb 23, 2017 (Thu)",
-        local: "9:57 AM – 10:06 AM",
-        totalMin: 9,
-        apps: [
-          { name: "Settings", min: 9.0 },
-        ]
-      },
-      { gap: true, label: "193.9 days — no data (Feb 23 → Sep 5)" },
-      {
-        date: "Sep 5, 2017 (Tue)",
-        local: "No app sessions",
-        totalMin: 0,
-        apps: [],
-        note: "Battery and charging events only — phone plugged in, charged from 8% → 19%"
-      },
-      { gap: true, label: "36.1 days — no data (Sep 5 → Oct 11)" },
-      {
-        date: "Oct 11, 2017 (Wed)",
-        local: "12:56 PM – 2:07 PM",
-        totalMin: 1.2,
-        apps: [
-          { name: "Settings", min: 1.2 },
-        ],
-        note: "Dual battery streams detected (see Anomalies)"
-      },
-    ];
-
-    const timelineEl = document.getElementById("timeline");
-    timelineDays.forEach(day => {
-      if (day.gap) {
-        const el = document.createElement("div");
-        el.className = "timeline-gap";
-        el.textContent = "⚠ GAP: " + day.label;
-        timelineEl.appendChild(el);
-        return;
-      }
-      const el = document.createElement("div");
-      el.className = "timeline-day";
-      let appsHtml = day.apps.map(a =>
-        `<span class="timeline-app-tag"><span class="time">${a.min >= 60 ? (a.min / 60).toFixed(1) + 'h' : Math.round(a.min) + 'm'}</span> ${a.name}</span>`
-      ).join('');
-      let noteHtml = day.note ? `<div style="font-size:12px;color:var(--accent-amber);margin-top:8px;">⚠ ${day.note}</div>` : '';
-      el.innerHTML = `
-    <div class="timeline-date">${day.date}</div>
-    <div class="timeline-day-meta">${day.local} · ${day.totalMin >= 60 ? (day.totalMin / 60).toFixed(1) + ' hours' : Math.round(day.totalMin) + ' min'} total screen time</div>
-    <div class="timeline-apps">${appsHtml}</div>
-    ${noteHtml}
-  `;
-      timelineEl.appendChild(el);
-    });
 
     // ============================================================
     // HOURLY HEATMAP (local time)
@@ -2082,6 +2136,7 @@
     // ============================================================
     // GPS CHART
     // ============================================================
+    console.log('GPS Chart - Starting...');
     const gpsPoints = [
       { lat: 40.6198, lng: -86.5890, time: "1:40 PM", label: "1" },
       { lat: 40.6056, lng: -86.6120, time: "1:44 PM", label: "2" },
@@ -2136,6 +2191,7 @@
 
     ghtml += `<text x="${gw - gpad.right}" y="${gpad.top - 10}" text-anchor="end" fill="var(--text-muted)" font-family="var(--mono)" font-size="10">● 5m precision  <tspan fill="var(--accent-red)">●</tspan> Cell tower (low accuracy)</text>`;
     gpsSvg.innerHTML = ghtml;
+    console.log('GPS Chart - Rendered successfully');
 
     // ============================================================
     // BATTERY CHARTS
@@ -2304,6 +2360,7 @@
     // ============================================================
     // BATTERY CHART — Feb 13
     // ============================================================
+    console.log('Battery Chart - Starting...');
     const batteryData = [
       { t: 0.33, p: 33 }, { t: 2.68, p: 32 }, { t: 4.73, p: 31 }, { t: 5.77, p: 30 }, { t: 5.88, p: 29 },
       { t: 10.70, p: 28 }, { t: 10.72, p: 27 }, { t: 10.82, p: 23 }, { t: 10.88, p: 22 }, { t: 10.89, p: 21 },
@@ -2369,6 +2426,134 @@
       bhtml += `<circle cx="${x}" cy="${y}" r="2" fill="var(--accent-amber)"/>`;
     });
     bSvg.innerHTML = bhtml;
+    console.log('Battery Chart - Rendered successfully');
+
+    // ============================================================
+    // TIMELINE EVENT DATA
+    // ============================================================
+    console.log('Timeline script starting...');
+    
+    const allEventsData = [
+      {time:"12:33 AM",icon:"bat",desc:"Battery: 33%",comms:false,motion:false},
+      {time:"1:38 PM",icon:"bat",desc:"Battery: 16% (low)",comms:false,motion:false},
+      {time:"1:38 PM",icon:"call",desc:"Call to Daddy-o — 35 seconds",comms:true,motion:false},
+      {time:"1:39 PM",icon:"bat",desc:"<strong>iPhone plugged in & charging</strong>",comms:false,motion:false},
+      {time:"1:39 PM",icon:"msg",desc:"Viewed Messages app (2 seconds)",comms:true,motion:false},
+      {time:"1:39-1:51 PM",icon:"app",desc:"<strong>Snapchat</strong> — Viewing posts, uploading 3 photos from car",comms:true,motion:false},
+      {time:"1:44 PM",icon:"app",desc:"Instagram — Brief viewing",comms:true,motion:false},
+      {time:"1:48 PM",icon:"bat",desc:"<strong>iPhone unplugged</strong> (28% battery)",comms:false,motion:false},
+      {time:"1:51 PM",icon:"app",desc:"Snapchat — Continue viewing",comms:true,motion:false},
+      {time:"2:04-2:05 PM",icon:"app",desc:"Snapchat — Brief interaction",comms:true,motion:false},
+      {time:"2:05 PM",icon:"app",desc:"<strong>Snapchat photo uploaded</strong> — Image of Monon High Bridge",comms:true,motion:false},
+      {time:"2:07 PM",icon:"app",desc:"Snapchat/iPhone locked",comms:true,motion:false},
+      {time:"2:07:20 PM",icon:"app",desc:"<strong>Last time Liberty unlocked her iPhone</strong>",comms:false,motion:false},
+      {time:"2:13:51 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording started</strong> — Video of bridge",comms:false,motion:true},
+      {time:"2:14:34 PM",icon:"walk",desc:"<strong>IMG_0095.MOV recording ended</strong> (43 seconds)",comms:false,motion:true},
+      {time:"2:14:41 PM",icon:"bat",desc:"<strong>Failed biometric unlock attempt</strong> (fingerprint)",comms:false,motion:false},
+      {time:"2:32:39 PM",icon:"walk",desc:"<strong>Last recorded movement</strong> (Apple Health)",comms:false,motion:true},
+    ];
+    console.log('allEventsData loaded:', allEventsData.length, 'events');
+
+    const cascadeEvents = [
+      {time:"3:59 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+      {time:"4:14 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+      {time:"4:23 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+      {time:"5:20 PM",icon:"call",desc:"Unanswered call",comms:true,motion:false},
+      {time:"5:44 PM",icon:"call",desc:"<strong>Last connection to cell tower</strong> — Incoming call",comms:true,motion:false},
+      {time:"5:45 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE START — Aux cable inserted</strong>",comms:false,motion:false},
+      {time:"5:45-4:33 AM",icon:"critical",desc:"<strong>⚠️ PHONE LOSES ALL CELL SERVICE</strong> — 10hr 49min offline",comms:false,motion:false},
+      {time:"10:32 PM",icon:"critical",desc:"<strong>⚠️ AUDIO OUTPUT ROUTE END — Cable removed</strong> (Last logged data)",comms:false,motion:false},
+      {time:"4:33 AM",icon:"critical",desc:"<strong>⚠️ CELL SERVICE RESUMES</strong> — Multiple messages flood in",comms:true,motion:false},
+      {time:"Feb. 17",icon:"vm",desc:"Voicemails from Feb. 13-14 finally recorded on device",comms:true,motion:false},
+    ];
+    console.log('cascadeEvents loaded:', cascadeEvents.length, 'events');
+
+    function renderEventRow(e) {
+      const icon = getIcon(e.icon);
+      return `<div class="event-row">
+        <div class="event-time">${e.time}</div>
+        <div class="event-icon ${e.icon}">${icon}</div>
+        <div class="event-desc">${e.desc}</div>
+      </div>`;
+    }
+
+    function getIcon(type) {
+      const m = {
+        'app':'📱', 'call':'📞', 'msg':'💬', 'bat':'🔋',
+        'vm':'🎙️', 'walk':'🚶', 'critical':'🔊'
+      };
+      return m[type] || '•';
+    }
+
+    // All Events tab
+    console.log('Looking for allEvents element...');
+    const allEl = document.getElementById('allEvents');
+    console.log('allEvents element:', allEl);
+    if (allEl) {
+      console.log('Populating All Events tab...');
+      let html = '<div class="event-group"><div class="event-group-header">Feb. 13 — 12:00 AM to 3:30 PM (Active Use Period)</div>';
+      allEventsData.forEach(e => html += renderEventRow(e));
+      html += '</div>';
+      html += '<div class="cascade-highlight"><div class="cascade-label">⚠ 3:59 PM Onward — Unanswered Call Cascade & Critical Anomalies</div>';
+      cascadeEvents.forEach(e => html += renderEventRow(e));
+      html += '</div>';
+      allEl.innerHTML = html;
+      console.log('All Events tab populated');
+    } else {
+      console.error('ERROR: allEvents element not found!');
+    }
+
+    // Comms tab
+    console.log('Looking for commsEvents element...');
+    const commsEl = document.getElementById('commsEvents');
+    console.log('commsEvents element:', commsEl);
+    if (commsEl) {
+      console.log('Filtering comms events...');
+      const commsFiltered = allEventsData.filter(e => e.comms);
+      console.log('Found', commsFiltered.length, 'comms events in allEventsData');
+      const cascadeComms = cascadeEvents.filter(e => e.comms || e.icon === 'vm');
+      console.log('Found', cascadeComms.length, 'comms events in cascadeEvents');
+      
+      let commsHtml = '<div class="event-group"><div class="event-group-header">All Calls, Messages & Voicemails — Feb. 13</div>';
+      commsFiltered.forEach(e => commsHtml += renderEventRow(e));
+      commsHtml += '</div><div class="cascade-highlight"><div class="cascade-label">⚠ Unanswered Calls & Messages (Timestamped but Not Delivered)</div>';
+      cascadeComms.forEach(e => commsHtml += renderEventRow(e));
+      commsHtml += '</div>';
+      commsEl.innerHTML = commsHtml;
+      console.log('Comms tab populated');
+    } else {
+      console.error('ERROR: commsEvents element not found!');
+    }
+
+    // Motion tab
+    console.log('Looking for motionEvents element...');
+    const motionEl = document.getElementById('motionEvents');
+    console.log('motionEvents element:', motionEl);
+    if (motionEl) {
+      console.log('Filtering motion events...');
+      const motionFiltered = allEventsData.filter(e => e.motion);
+      console.log('Found', motionFiltered.length, 'motion events');
+      
+      let motionHtml = '<div class="event-group"><div class="event-group-header">Walking Segments & GPS Fixes — Feb. 13</div>';
+      motionFiltered.forEach(e => motionHtml += renderEventRow(e));
+      cascadeEvents.filter(e => e.motion).forEach(e => motionHtml += renderEventRow(e));
+      motionHtml += '</div>';
+      motionEl.innerHTML = motionHtml;
+      console.log('Motion tab populated');
+    } else {
+      console.error('ERROR: motionEvents element not found!');
+    }
+
+    console.log('Defining switchTab function...');
+    function switchTab(btn, id) {
+      console.log('switchTab called for:', id);
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(id).classList.add('active');
+      console.log('Switched to tab:', id);
+    }
+    console.log('Timeline script complete');
   </script>
 
 </body>
