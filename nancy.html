@@ -216,6 +216,14 @@ body.collapsed #toggle-btn { left:10px; }
   #sidebar { width:100%; max-width:100%; }
   body:not(.collapsed) #toggle-btn { display:none; }
 }
+
+/* Escape-route tag tooltips — geographically anchored, zoom-safe on mobile */
+.leaflet-tooltip.esc-tag {
+  background:rgba(0,0,0,.88); color:#fff; padding:3px 7px; border-radius:3px;
+  font:bold 10px/1.3 system-ui; white-space:nowrap; border:none;
+  box-shadow:0 1px 4px rgba(0,0,0,.5); pointer-events:auto; cursor:pointer;
+}
+.leaflet-tooltip.esc-tag::before { display:none; }
 </style>
 </head>
 <body>
@@ -893,12 +901,18 @@ map.on('click', e => {
 (function buildEscapeRoute() {
   const ER = ly.escapeRoute;
 
-  // --- Helper: compact map tag (fixed-width, never wraps) ---
-  function tag(text, color='#ff6b35') {
-    return L.divIcon({
-      html:`<div style="display:inline-block;background:rgba(0,0,0,.88);color:#fff;padding:3px 7px;border-radius:3px;font:bold 10px/1.3 system-ui;white-space:nowrap;border-left:3px solid ${color};pointer-events:auto;">${text}</div>`,
-      className:'', iconSize:[0,0], iconAnchor:[-6,12],
+  // --- Helper: geographically-anchored tag (circleMarker + permanent tooltip) ---
+  // Uses L.circleMarker so position tracks lat/lng at all zoom levels (fixes mobile)
+  function waypoint(latlng, text, color, popupHtml) {
+    const m = L.circleMarker(latlng, {
+      radius:5, color:color, fillColor:color, fillOpacity:0.9, weight:2, opacity:0.9,
     });
+    const tip = m.bindTooltip(
+      `<span style="border-left:3px solid ${color};padding-left:5px;">${text}</span>`,
+      { permanent:true, direction:'right', offset:[8,0], className:'esc-tag' }
+    );
+    if (popupHtml) m.bindPopup(popupHtml);
+    return m;
   }
 
   // === ROUTE COORDINATES ===
@@ -987,40 +1001,40 @@ map.on('click', e => {
     {color:'#e74c3c',weight:1,dashArray:'6,4',fillColor:'#e74c3c',fillOpacity:0.05}
   ).bindPopup('<b style="color:#e74c3c;">Low-Surveillance Zone</b><br>Marana → Casa Grande (~60 mi)<br>No fixed cameras · sparse cell towers<br>Near-zero traffic 2-3 AM').addTo(ER);
 
-  // === COMPACT TAGS (click for detail) ===
+  // === WAYPOINT TAGS (circleMarker + permanent tooltip — zoom-safe on mobile) ===
 
-  L.marker([32.2700,-110.9371], {icon: tag('Swan → I-10 · 12 min','#ffe066')})
-    .bindPopup('<b>Egress via Swan Rd</b><br>Straight south from origin<br>Mostly 45 mph, few signals at night<br>~12 min to I-10 onramp').addTo(ER);
+  waypoint([32.2700,-110.9371], 'Swan → I-10 · 12 min', '#ffe066',
+    '<b>Egress via Swan Rd</b><br>Straight south from origin<br>Mostly 45 mph, few signals at night<br>~12 min to I-10 onramp').addTo(ER);
 
-  L.marker([32.2205,-110.9807], {icon: tag('I-10 onramp · Exit 258','#ff6b35')})
-    .bindPopup('<b>I-10 WB Onramp</b><br>Congress St / Exit 258<br>~12-14 min from origin<br>Last point with dense urban cameras').addTo(ER);
+  waypoint([32.2205,-110.9807], 'I-10 onramp · Exit 258', '#ff6b35',
+    '<b>I-10 WB Onramp</b><br>Congress St / Exit 258<br>~12-14 min from origin<br>Last point with dense urban cameras').addTo(ER);
 
-  L.marker([32.2938,-111.0296], {icon: tag('Last camera cluster','#ff6b35')})
-    .bindPopup('<b>Ruthrauff Rd (Exit 252)</b><br>Last concentration of ADOT cams<br>Beyond here: coverage thins rapidly').addTo(ER);
+  waypoint([32.2938,-111.0296], 'Last camera cluster', '#ff6b35',
+    '<b>Ruthrauff Rd (Exit 252)</b><br>Last concentration of ADOT cams<br>Beyond here: coverage thins rapidly').addTo(ER);
 
-  L.marker([32.3526,-111.0831], {icon: tag('Metro edge · 20 min','#e74c3c')})
-    .bindPopup('<b>Cortaro Rd — Metro Edge</b><br>Exit 246 · ~18-20 min from origin<br>Surveillance drops dramatically past here<br>Entering open desert corridor').addTo(ER);
+  waypoint([32.3526,-111.0831], 'Metro edge · 20 min', '#e74c3c',
+    '<b>Cortaro Rd — Metro Edge</b><br>Exit 246 · ~18-20 min from origin<br>Surveillance drops dramatically past here<br>Entering open desert corridor').addTo(ER);
 
-  L.marker([32.3900,-111.1500], {icon: tag('⚠ Surveillance gap begins','#e74c3c')})
-    .bindPopup('<b>Past Marana</b><br>No fixed ADOT cameras<br>Sparse cell towers<br>Near-zero traffic at 2-3 AM<br>No other vehicles = no visual context for IDs').addTo(ER);
+  waypoint([32.3900,-111.1500], '⚠ Surveillance gap begins', '#e74c3c',
+    '<b>Past Marana</b><br>No fixed ADOT cameras<br>Sparse cell towers<br>Near-zero traffic at 2-3 AM<br>No other vehicles = no visual context for IDs').addTo(ER);
 
-  L.marker([32.5000,-111.4200], {icon: tag('Picacho · 40 min','#e74c3c')})
-    .bindPopup('<b>Picacho Peak area</b><br>~40-45 min from origin<br>Deep in surveillance gap').addTo(ER);
+  waypoint([32.5000,-111.4200], 'Picacho · 40 min', '#e74c3c',
+    '<b>Picacho Peak area</b><br>~40-45 min from origin<br>Deep in surveillance gap').addTo(ER);
 
-  L.marker([32.8500,-111.6800], {icon: tag('🔀 I-8/I-10 fork · 60 min','#ffe066')})
-    .bindPopup('<b>Critical Decision Point</b><br>I-8 / I-10 Split · ~60 min from origin<br><b style="color:#a855f7;">NW → Phoenix</b> (~90 min total)<br><b style="color:#14b8a6;">W → Yuma/CA</b> (~3.5 hr total)<br>Three-way optionality from here').addTo(ER);
+  waypoint([32.8500,-111.6800], '🔀 I-8/I-10 fork · 60 min', '#ffe066',
+    '<b>Critical Decision Point</b><br>I-8 / I-10 Split · ~60 min from origin<br><b style="color:#a855f7;">NW → Phoenix</b> (~90 min total)<br><b style="color:#14b8a6;">W → Yuma/CA</b> (~3.5 hr total)<br>Three-way optionality from here').addTo(ER);
 
-  L.marker([33.4484,-112.0740], {icon: tag('Phoenix · 90 min','#a855f7')})
-    .bindPopup('<b>Phoenix Metro</b><br>~90 min from origin<br>Population 5M+ — easy to disappear<br>Major airport, bus, rail connections').addTo(ER);
+  waypoint([33.4484,-112.0740], 'Phoenix · 90 min', '#a855f7',
+    '<b>Phoenix Metro</b><br>~90 min from origin<br>Population 5M+ — easy to disappear<br>Major airport, bus, rail connections').addTo(ER);
 
-  L.marker([32.7266,-114.6237], {icon: tag('Yuma / CA · 3.5 hr','#14b8a6')})
-    .bindPopup('<b>Yuma / CA Border</b><br>~3.5 hr from origin<br>I-8 desert: almost zero surveillance<br>Cross into California').addTo(ER);
+  waypoint([32.7266,-114.6237], 'Yuma / CA · 3.5 hr', '#14b8a6',
+    '<b>Yuma / CA Border</b><br>~3.5 hr from origin<br>I-8 desert: almost zero surveillance<br>Cross into California').addTo(ER);
 
-  L.marker([31.8828,-112.8185], {icon: tag('Lukeville / MX · 3 hr','#14b8a6')})
-    .bindPopup('<b>Lukeville / Mexico Border</b><br>~3 hr via SR-85 from I-8<br>Remote crossing, minimal traffic').addTo(ER);
+  waypoint([31.8828,-112.8185], 'Lukeville / MX · 3 hr', '#14b8a6',
+    '<b>Lukeville / Mexico Border</b><br>~3 hr via SR-85 from I-8<br>Remote crossing, minimal traffic').addTo(ER);
 
-  L.marker([31.3400,-110.9400], {icon: tag('Nogales / MX · ⚠ monitored','#ef4444')})
-    .bindPopup('<b>Nogales / Mexico Border</b><br>~60 mi / ~1 hr from I-10/I-19 junction<br>⚠ Border Patrol checkpoints on I-19<br>⚠ Heavily monitored corridor<br>Higher interception risk vs WB I-10').addTo(ER);
+  waypoint([31.3400,-110.9400], 'Nogales / MX · ⚠ monitored', '#ef4444',
+    '<b>Nogales / Mexico Border</b><br>~60 mi / ~1 hr from I-10/I-19 junction<br>⚠ Border Patrol checkpoints on I-19<br>⚠ Heavily monitored corridor<br>Higher interception risk vs WB I-10').addTo(ER);
 
 })();
 
