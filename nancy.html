@@ -3,7 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nancy — Catalina Foothills Search Intelligence Map</title>
+<title>Nancy Guthrie — Catalina Foothills Resource Map</title>
+  <title>AEOD Unlisted – Nancy Guthrie</title>
+  <meta name="description" content="Nancy">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/nancy.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="AEOD Unlisted – Nancy Guthrie">
+  <meta property="og:description" content="Pima County Resource Map">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/nancy.html">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/nancy.html">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:site_name" content="AEOD">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AEOD Unlisted – Nancy Guthrie">
+  <meta name="twitter:description" content="Pima County Resource Map">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/nancy.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+<!-- Style Sheets -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
 <style>
@@ -204,8 +223,8 @@ body.collapsed #toggle-btn { left:10px; }
 
 <div id="sidebar">
   <div class="hdr">
-    <h1>NANCY</h1>
-    <p>Catalina Foothills Search Intelligence Map</p>
+    <h1>NANCY GUTHRIE</h1>
+    <p>Catalina Foothills Resource Map</p>
   </div>
 
   <div class="sec">
@@ -225,6 +244,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="towers" checked> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
+    <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
       <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> Mine</span>
       <span class="legend-item"><span class="legend-dot" style="background:#3498db;"></span> Tower</span>
@@ -452,6 +472,7 @@ const ly = {
   routeTraces: L.layerGroup().addTo(map),
   maxReach:   L.layerGroup().addTo(map),
   camOnRoute: L.layerGroup().addTo(map),
+  escapeRoute: L.layerGroup(),
 };
 
 // =============================================================
@@ -866,6 +887,143 @@ map.on('click', e => {
   const km = (totalM / 1000).toFixed(2);
   document.getElementById('measure-info').textContent = `Distance: ${mi} mi (${km} km) | ${measurePts.length} points`;
 });
+
+// =============================================================
+// ESCAPE ROUTE ANALYSIS: WB I-10 Corridor (2-3 AM scenario)
+// =============================================================
+(function buildEscapeRoute() {
+  const ER = ly.escapeRoute;
+
+  // --- Helper: compact map tag (fixed-width, never wraps) ---
+  function tag(text, color='#ff6b35') {
+    return L.divIcon({
+      html:`<div style="display:inline-block;background:rgba(0,0,0,.88);color:#fff;padding:3px 7px;border-radius:3px;font:bold 10px/1.3 system-ui;white-space:nowrap;border-left:3px solid ${color};pointer-events:auto;">${text}</div>`,
+      className:'', iconSize:[0,0], iconAnchor:[-6,12],
+    });
+  }
+
+  // === ROUTE COORDINATES ===
+
+  // Phase 1: Local egress — Swan Rd south to I-10
+  const swan = [
+    [32.3121,-110.9405],[32.3100,-110.9371],[32.3050,-110.9371],
+    [32.2950,-110.9371],[32.2850,-110.9371],[32.2750,-110.9371],
+    [32.2650,-110.9371],[32.2550,-110.9371],[32.2450,-110.9371],
+    [32.2350,-110.9371],[32.2250,-110.9371],[32.2150,-110.9371],
+    [32.2120,-110.9371],[32.2050,-110.9400],
+  ];
+  // Phase 1 alt: Campbell Ave
+  const campbell = [
+    [32.3121,-110.9405],[32.3100,-110.9485],[32.3050,-110.9485],
+    [32.2950,-110.9485],[32.2850,-110.9485],[32.2750,-110.9485],
+    [32.2650,-110.9485],[32.2550,-110.9485],[32.2450,-110.9485],
+    [32.2350,-110.9485],[32.2300,-110.9525],[32.2250,-110.9600],
+    [32.2205,-110.9807],
+  ];
+  // Phase 2: I-10 WB metro (actual junction coords)
+  const metro = [
+    [32.2205,-110.9807],[32.2359,-110.9845],[32.2495,-110.9921],
+    [32.2634,-111.0061],[32.2764,-111.0147],[32.2938,-111.0296],
+    [32.3087,-111.0416],[32.3220,-111.0514],[32.3372,-111.0661],
+    [32.3526,-111.0831],
+  ];
+  // Phase 3: I-10 WB open desert
+  const desert = [
+    [32.3526,-111.0831],[32.3700,-111.1100],[32.3900,-111.1500],
+    [32.4100,-111.2000],[32.4300,-111.2800],[32.4500,-111.3500],
+    [32.5000,-111.4200],[32.5500,-111.5000],[32.6800,-111.5500],
+    [32.7700,-111.5600],[32.8500,-111.6800],
+  ];
+  // Fork A: Phoenix
+  const phoenix = [
+    [32.8500,-111.6800],[32.9500,-111.7500],[33.1000,-111.8200],
+    [33.2500,-111.8800],[33.4200,-111.9500],[33.4484,-112.0740],
+  ];
+  // Fork B: Yuma via I-8
+  const yuma = [
+    [32.8500,-111.6800],[32.7800,-111.8500],[32.7300,-112.1000],
+    [32.7000,-112.5000],[32.6800,-113.0000],[32.6800,-113.5000],
+    [32.7200,-114.2000],[32.7266,-114.6237],
+  ];
+  // Comparison: I-19 south to Nogales
+  const nogales = [
+    [32.1948,-110.9765],[32.1408,-110.9868],[32.1200,-111.0050],
+    [32.0500,-111.0300],[31.9500,-111.0400],[31.8500,-111.0500],
+    [31.7500,-110.9800],[31.6700,-110.9600],[31.5000,-110.9500],
+    [31.3400,-110.9400],
+  ];
+
+  // === DRAW LINES ===
+
+  // Shadow under main corridor
+  L.polyline([...metro, ...desert.slice(1)], {color:'#000',weight:10,opacity:0.3}).addTo(ER);
+
+  // Local egress
+  L.polyline(swan, {color:'#ffe066',weight:4,dashArray:'8,6',opacity:0.9})
+    .bindPopup('<b>Primary: Swan Rd → I-10</b><br>~12 min at 2-3 AM, straight south, minimal signals').addTo(ER);
+  L.polyline(campbell, {color:'#ffe066',weight:3,dashArray:'4,8',opacity:0.5})
+    .bindPopup('<b>Alternate: Campbell Ave → I-10</b><br>~14 min, merges at Exit 258').addTo(ER);
+
+  // Metro I-10
+  L.polyline(metro, {color:'#ff6b35',weight:6,opacity:0.85})
+    .bindPopup('<b>I-10 WB Metro</b><br>75 mph limit, 80-85+ at night<br>ADOT cameras at interchanges<br>~8-10 min to clear').addTo(ER);
+
+  // Desert I-10
+  L.polyline(desert, {color:'#e74c3c',weight:6,opacity:0.8})
+    .bindPopup('<b>I-10 WB Open Desert</b><br>Minimal surveillance past Marana<br>No fixed cameras, sparse towers<br>75 limit, 85-90+ realistic').addTo(ER);
+
+  // Forks
+  L.polyline(phoenix, {color:'#a855f7',weight:4,dashArray:'12,6',opacity:0.7})
+    .bindPopup('<b>I-10 NW → Phoenix</b><br>~90 min total · vanish into 5M+ metro').addTo(ER);
+  L.polyline(yuma, {color:'#14b8a6',weight:4,dashArray:'12,6',opacity:0.7})
+    .bindPopup('<b>I-8 W → Yuma / CA</b><br>~3.5 hr total · near-zero surveillance').addTo(ER);
+
+  // I-19 comparison (dim)
+  L.polyline(nogales, {color:'#ef4444',weight:3,dashArray:'6,10',opacity:0.35})
+    .bindPopup('<b>I-19 S → Nogales</b><br>~60 mi to border<br>⚠ BP checkpoints · heavily monitored<br>Higher interception risk').addTo(ER);
+
+  // === SURVEILLANCE GAP ZONE ===
+  L.polygon(
+    [[32.36,-111.10],[32.36,-111.80],[32.95,-111.80],[32.95,-111.10]],
+    {color:'#e74c3c',weight:1,dashArray:'6,4',fillColor:'#e74c3c',fillOpacity:0.05}
+  ).bindPopup('<b style="color:#e74c3c;">Low-Surveillance Zone</b><br>Marana → Casa Grande (~60 mi)<br>No fixed cameras · sparse cell towers<br>Near-zero traffic 2-3 AM').addTo(ER);
+
+  // === COMPACT TAGS (click for detail) ===
+
+  L.marker([32.2700,-110.9371], {icon: tag('Swan → I-10 · 12 min','#ffe066')})
+    .bindPopup('<b>Egress via Swan Rd</b><br>Straight south from origin<br>Mostly 45 mph, few signals at night<br>~12 min to I-10 onramp').addTo(ER);
+
+  L.marker([32.2205,-110.9807], {icon: tag('I-10 onramp · Exit 258','#ff6b35')})
+    .bindPopup('<b>I-10 WB Onramp</b><br>Congress St / Exit 258<br>~12-14 min from origin<br>Last point with dense urban cameras').addTo(ER);
+
+  L.marker([32.2938,-111.0296], {icon: tag('Last camera cluster','#ff6b35')})
+    .bindPopup('<b>Ruthrauff Rd (Exit 252)</b><br>Last concentration of ADOT cams<br>Beyond here: coverage thins rapidly').addTo(ER);
+
+  L.marker([32.3526,-111.0831], {icon: tag('Metro edge · 20 min','#e74c3c')})
+    .bindPopup('<b>Cortaro Rd — Metro Edge</b><br>Exit 246 · ~18-20 min from origin<br>Surveillance drops dramatically past here<br>Entering open desert corridor').addTo(ER);
+
+  L.marker([32.3900,-111.1500], {icon: tag('⚠ Surveillance gap begins','#e74c3c')})
+    .bindPopup('<b>Past Marana</b><br>No fixed ADOT cameras<br>Sparse cell towers<br>Near-zero traffic at 2-3 AM<br>No other vehicles = no visual context for IDs').addTo(ER);
+
+  L.marker([32.5000,-111.4200], {icon: tag('Picacho · 40 min','#e74c3c')})
+    .bindPopup('<b>Picacho Peak area</b><br>~40-45 min from origin<br>Deep in surveillance gap').addTo(ER);
+
+  L.marker([32.8500,-111.6800], {icon: tag('🔀 I-8/I-10 fork · 60 min','#ffe066')})
+    .bindPopup('<b>Critical Decision Point</b><br>I-8 / I-10 Split · ~60 min from origin<br><b style="color:#a855f7;">NW → Phoenix</b> (~90 min total)<br><b style="color:#14b8a6;">W → Yuma/CA</b> (~3.5 hr total)<br>Three-way optionality from here').addTo(ER);
+
+  L.marker([33.4484,-112.0740], {icon: tag('Phoenix · 90 min','#a855f7')})
+    .bindPopup('<b>Phoenix Metro</b><br>~90 min from origin<br>Population 5M+ — easy to disappear<br>Major airport, bus, rail connections').addTo(ER);
+
+  L.marker([32.7266,-114.6237], {icon: tag('Yuma / CA · 3.5 hr','#14b8a6')})
+    .bindPopup('<b>Yuma / CA Border</b><br>~3.5 hr from origin<br>I-8 desert: almost zero surveillance<br>Cross into California').addTo(ER);
+
+  L.marker([31.8828,-112.8185], {icon: tag('Lukeville / MX · 3 hr','#14b8a6')})
+    .bindPopup('<b>Lukeville / Mexico Border</b><br>~3 hr via SR-85 from I-8<br>Remote crossing, minimal traffic').addTo(ER);
+
+  L.marker([31.3400,-110.9400], {icon: tag('Nogales / MX · ⚠ monitored','#ef4444')})
+    .bindPopup('<b>Nogales / Mexico Border</b><br>~60 mi / ~1 hr from I-10/I-19 junction<br>⚠ Border Patrol checkpoints on I-19<br>⚠ Heavily monitored corridor<br>Higher interception risk vs WB I-10').addTo(ER);
+
+})();
 
 // =============================================================
 // TOOL: DISTANCE RINGS
