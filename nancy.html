@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nancy — Catalina Foothills Search Intelligence Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
+<style>
+:root {
+  --sidebar-w: 320px;
+  --bg: #0f1318; --panel: #161d26; --section: #1a2230;
+  --text: #e6edf3; --dim: #7d8998; --accent: #e74c3c;
+  --accent-soft: rgba(231,76,60,.12); --accent-glow: rgba(231,76,60,.35);
+  --border: #252d38; --link: #58a6ff;
+  --radius: 6px; --ease: cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; overflow:hidden; font-family:'Inter',-apple-system,system-ui,'Segoe UI',sans-serif; background:#000; }
+
+#map { position:absolute; top:0; bottom:0; right:0; left:var(--sidebar-w); z-index:1; transition:left .35s var(--ease); }
+body.collapsed #map { left:0; }
+
+#sidebar {
+  position:absolute; top:0; left:0; bottom:0; width:var(--sidebar-w);
+  background:var(--bg); color:var(--text); z-index:1000;
+  overflow-y:auto; overflow-x:hidden; border-right:1px solid var(--border);
+  transition:transform .35s var(--ease); font-size:13px;
+  -webkit-overflow-scrolling:touch;
+}
+body.collapsed #sidebar { transform:translateX(-100%); }
+#sidebar::-webkit-scrollbar { width:5px; }
+#sidebar::-webkit-scrollbar-track { background:transparent; }
+#sidebar::-webkit-scrollbar-thumb { background:var(--border); border-radius:10px; }
+#sidebar::-webkit-scrollbar-thumb:hover { background:var(--dim); }
+
+.hdr {
+  padding:16px 18px; position:sticky; top:0; z-index:10;
+  background:linear-gradient(135deg, #1a1014 0%, var(--panel) 100%);
+  border-bottom:1px solid var(--accent-glow);
+  box-shadow:0 4px 20px rgba(231,76,60,.08);
+}
+.hdr h1 { font-size:22px; font-weight:800; letter-spacing:3px; color:#fff; text-shadow:0 0 20px var(--accent-glow); }
+.hdr p { font-size:10px; color:var(--dim); margin-top:3px; letter-spacing:.5px; text-transform:uppercase; }
+
+.sec { padding:12px 16px; border-bottom:1px solid var(--border); }
+.sec h3 {
+  font-size:9px; text-transform:uppercase; letter-spacing:2px; color:var(--dim);
+  margin-bottom:8px; font-weight:600;
+}
+
+.lyr {
+  display:flex; align-items:center; gap:7px; padding:5px 6px; cursor:pointer;
+  border-radius:var(--radius); transition:background .2s var(--ease);
+}
+.lyr:hover { background:var(--section); }
+.lyr input[type="checkbox"], .lyr input[type="radio"] {
+  accent-color:var(--accent); width:14px; height:14px; cursor:pointer;
+}
+.cnt {
+  margin-left:auto; font-size:9px; color:var(--dim); font-weight:600;
+  background:var(--section); padding:2px 8px; border-radius:10px;
+  border:1px solid var(--border);
+}
+.dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-left:4px; vertical-align:middle; }
+.dot.ok { background:#2ea043; box-shadow:0 0 6px rgba(46,160,67,.5); }
+.dot.ld { background:#d29922; animation:pulse 1.2s ease-in-out infinite; }
+.dot.er { background:#f85149; box-shadow:0 0 6px rgba(248,81,73,.5); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+.btn {
+  display:block; width:100%; padding:8px 12px; margin:3px 0;
+  background:var(--section); color:var(--text); border:1px solid var(--border);
+  border-radius:var(--radius); cursor:pointer; font-size:12px; text-align:left;
+  transition:all .2s var(--ease); font-weight:500;
+}
+.btn:hover { border-color:var(--accent); background:var(--panel); box-shadow:0 0 10px var(--accent-soft); transform:translateY(-1px); }
+.btn:active { transform:translateY(0); }
+.btn.on { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 0 12px var(--accent-glow); }
+
+#search-input {
+  width:100%; padding:8px 12px; background:var(--section); color:var(--text);
+  border:1px solid var(--border); border-radius:var(--radius); font-size:12px; outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+#search-input:focus { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft); }
+#search-results { max-height:180px; overflow-y:auto; margin-top:4px; }
+.sr { padding:6px 8px; font-size:11px; cursor:pointer; border-radius:var(--radius); transition:background .15s; }
+.sr:hover { background:var(--section); }
+
+.link {
+  display:block; padding:4px 0; color:var(--link); text-decoration:none; font-size:11px;
+  transition:color .15s; opacity:.85;
+}
+.link:hover { text-decoration:underline; opacity:1; }
+
+#toggle-btn {
+  position:absolute; top:80px; z-index:1001;
+  left:calc(var(--sidebar-w) + 10px); transition:left .35s var(--ease), background .2s;
+  background:var(--panel); color:var(--text); border:1px solid var(--border);
+  border-radius:var(--radius); padding:8px 12px; cursor:pointer; font-size:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.3); line-height:1;
+}
+#toggle-btn:hover { background:var(--section); }
+body.collapsed #toggle-btn { left:10px; }
+
+#coords {
+  position:absolute; bottom:8px; right:8px; z-index:1000;
+  background:rgba(15,19,24,.85); color:var(--dim); padding:4px 10px;
+  border-radius:var(--radius); font-size:10px; font-family:'SF Mono',Menlo,monospace;
+  border:1px solid var(--border); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+}
+#measure-info {
+  position:absolute; top:10px; right:60px; z-index:1000;
+  background:rgba(15,19,24,.9); color:#ffd700; padding:8px 16px;
+  border-radius:var(--radius); font-size:13px; font-weight:600; display:none;
+  border:1px solid rgba(255,215,0,.3); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+}
+
+.legend { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.legend-item { display:flex; align-items:center; gap:4px; font-size:10px; color:var(--dim); }
+.legend-dot { width:9px; height:9px; border-radius:50%; border:1.5px solid rgba(255,255,255,.6); box-shadow:0 0 4px rgba(0,0,0,.3); }
+
+/* Leaflet overrides */
+.leaflet-control-zoom a {
+  background:var(--panel)!important; color:var(--text)!important;
+  border-color:var(--border)!important; transition:background .15s!important;
+}
+.leaflet-control-zoom a:hover { background:var(--section)!important; }
+.leaflet-popup-content-wrapper {
+  background:var(--panel); color:var(--text); border-radius:8px;
+  border:1px solid var(--border); box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.leaflet-popup-tip { background:var(--panel); }
+.leaflet-popup-content { font-size:12px; line-height:1.6; }
+.leaflet-popup-content a { color:var(--link); }
+.leaflet-popup-content b { color:#fff; }
+.leaflet-draw-toolbar a { background-color:var(--panel)!important; border-color:var(--border)!important; }
+
+/* Pulsing camera-on-route highlight */
+@keyframes cam-pulse {
+  0%   { box-shadow: 0 0 4px 2px rgba(255,255,0,.9), 0 0 12px 4px rgba(255,255,0,.4); }
+  50%  { box-shadow: 0 0 8px 4px rgba(255,255,0,1),  0 0 20px 8px rgba(255,255,0,.6); }
+  100% { box-shadow: 0 0 4px 2px rgba(255,255,0,.9), 0 0 12px 4px rgba(255,255,0,.4); }
+}
+.cam-on-route {
+  animation: cam-pulse 1.5s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Drive-time section accent */
+.sec-dt { background:linear-gradient(180deg, rgba(231,76,60,.04) 0%, transparent 100%); }
+.sec-dt h3 { color:var(--accent); }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  :root { --sidebar-w: 100%; }
+
+  #sidebar {
+    width:85%; max-width:340px;
+    box-shadow:4px 0 24px rgba(0,0,0,.6);
+  }
+  body.collapsed #sidebar { transform:translateX(-100%); }
+
+  #map { left:0!important; }
+
+  #toggle-btn {
+    left:10px!important; top:100px;
+    padding:10px 14px; font-size:18px;
+    background:var(--panel); border:1px solid var(--border);
+    box-shadow:0 2px 12px rgba(0,0,0,.5);
+  }
+  body:not(.collapsed) #toggle-btn { left:calc(85% + 10px)!important; }
+  @media (min-width:341px) {
+    body:not(.collapsed) #toggle-btn { left:350px!important; }
+  }
+
+  #coords { font-size:9px; bottom:4px; right:4px; padding:3px 6px; }
+  #measure-info { top:auto; bottom:50px; right:10px; left:10px; text-align:center; font-size:12px; }
+
+  .hdr h1 { font-size:18px; }
+  .sec { padding:10px 14px; }
+  .btn { padding:10px 12px; font-size:13px; min-height:44px; display:flex; align-items:center; }
+  .lyr { padding:6px; min-height:36px; }
+  .lyr input[type="checkbox"], .lyr input[type="radio"] { width:16px; height:16px; }
+
+  .leaflet-control-zoom { transform:scale(1.15); transform-origin:top left; }
+  .leaflet-draw-toolbar { transform:scale(1.1); transform-origin:top right; }
+
+  /* When sidebar is open, dim the map */
+  body:not(.collapsed) #map::after {
+    content:''; position:absolute; inset:0; background:rgba(0,0,0,.4); z-index:999;
+    pointer-events:auto;
+  }
+}
+
+@media (max-width: 380px) {
+  #sidebar { width:100%; max-width:100%; }
+  body:not(.collapsed) #toggle-btn { display:none; }
+}
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <div class="hdr">
+    <h1>NANCY</h1>
+    <p>Catalina Foothills Search Intelligence Map</p>
+  </div>
+
+  <div class="sec">
+    <h3>Basemap</h3>
+    <label class="lyr"><input type="radio" name="bm" value="streets" checked> Streets</label>
+    <label class="lyr"><input type="radio" name="bm" value="topo"> Topographic</label>
+    <label class="lyr"><input type="radio" name="bm" value="satellite"> Satellite</label>
+    <label class="lyr"><input type="radio" name="bm" value="esritopo"> ESRI Topo</label>
+    <label class="lyr"><input type="radio" name="bm" value="dark"> Dark</label>
+  </div>
+
+  <div class="sec">
+    <h3>Data Layers</h3>
+    <label class="lyr"><input type="checkbox" data-layer="routes" checked> Major Routes <span class="cnt" id="cnt-routes">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="cameras" checked> Traffic Cameras <span class="cnt" id="cnt-cameras">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="mines"> Mines &amp; Shafts <span class="cnt" id="cnt-mines">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="towers" checked> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
+    <div class="legend" style="margin-top:8px;">
+      <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> Mine</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#3498db;"></span> Tower</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#ff6b35;transform:rotate(45deg);border-radius:0;"></span> ADOT Cam</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#e74c3c;"></span> OSM Cam</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Tools</h3>
+    <button class="btn" id="btn-measure" onclick="toggleMeasure()">&#x1f4cf; Measure Distance</button>
+    <button class="btn" onclick="addDistanceRings()">&#x2b55; Distance Rings from Center</button>
+    <button class="btn" id="btn-grid" onclick="toggleGrid()">&#x1f4d0; Search Grid Overlay</button>
+    <button class="btn" onclick="dropMarker()">&#x1f4cc; Drop Note Marker</button>
+    <button class="btn" onclick="clearAnnotations()">&#x1f5d1; Clear All Annotations</button>
+    <button class="btn" onclick="exportData()">&#x1f4be; Export Notes as GeoJSON</button>
+  </div>
+
+  <div class="sec sec-dt">
+    <h3>Drive-Time Analysis</h3>
+    <div style="margin-bottom:6px;">
+      <label style="font-size:11px;display:block;margin-bottom:3px;">Starting Address</label>
+      <input type="text" id="dt-address" value="5820 N Camino Escalante, Tucson, AZ"
+        style="width:100%;padding:5px 8px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;outline:none;"/>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;">
+      <label style="font-size:11px;">Minutes:</label>
+      <input type="number" id="dt-minutes" value="20" min="1" max="60"
+        style="width:55px;padding:5px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:12px;outline:none;text-align:center;"/>
+    </div>
+    <button class="btn" onclick="runDriveTime()" id="btn-drivetime">Calculate Drive-Time Radius</button>
+    <button class="btn" onclick="clearDriveTime()">Clear Drive-Time Layers</button>
+    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="maxReach" checked> Max Road-Reach Circle</label>
+    <label class="lyr"><input type="checkbox" data-layer="camOnRoute" checked> &#x1f4f7; Cameras on Routes <span class="cnt" id="cnt-cam-route">-</span></label>
+    <div id="dt-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
+    <div id="dt-results" style="font-size:11px;margin-top:6px;max-height:250px;overflow-y:auto;line-height:1.6;"></div>
+  </div>
+
+  <div class="sec">
+    <h3>Search Location</h3>
+    <input type="text" id="search-input" placeholder="Address, place, or lat,lon..." onkeydown="if(event.key==='Enter')doSearch()"/>
+    <div id="search-results"></div>
+  </div>
+
+  <div class="sec">
+    <h3>Data Status</h3>
+    <div id="status-panel"></div>
+  </div>
+
+  <div class="sec">
+    <h3>Quick Links</h3>
+    <a href="https://www.az511.gov/cctv" target="_blank" rel="noopener" class="link">AZ511 Live Traffic Cameras</a>
+    <a href="https://globe.adsbexchange.com/?lat=32.33&lon=-110.88&zoom=11" target="_blank" rel="noopener" class="link">ADS-B Exchange (Flight Tracker)</a>
+    <a href="https://www.broadcastify.com/webPlayer/30258" target="_blank" rel="noopener" class="link">Pima County Sheriff / Oro Valley Scanner</a>
+    <a href="https://www.broadcastify.com/listen/feed/43805" target="_blank" rel="noopener" class="link">Tucson PD East Division Scanner</a>
+    <a href="https://web.pulsepoint.org/" target="_blank" rel="noopener" class="link">PulsePoint Live Incidents</a>
+    <a href="https://namus.nij.ojp.gov/" target="_blank" rel="noopener" class="link">NamUs Missing Persons DB</a>
+    <a href="https://pimamaps.pima.gov/geoapps/main/" target="_blank" rel="noopener" class="link">PimaMaps (County GIS)</a>
+    <a href="https://thediggings.com/usa/arizona/pima-az019" target="_blank" rel="noopener" class="link">The Diggings (22K+ Mine Claims)</a>
+    <a href="https://www.icrimewatch.net/index.php?AgencyID=55056" target="_blank" rel="noopener" class="link">Pima County Sex Offender Map</a>
+    <a href="https://www.asr.pima.gov/" target="_blank" rel="noopener" class="link">Pima County Assessor (Property)</a>
+    <a href="https://www.recorder.pima.gov/PublicSearch" target="_blank" rel="noopener" class="link">Pima County Recorder (Deeds)</a>
+    <a href="https://www.to.pima.gov/propertySearch/" target="_blank" rel="noopener" class="link">Treasurer (Delinquent Tax = Vacant?)</a>
+    <a href="https://alertmap.rfcd.pima.gov/gmap/gmap.html" target="_blank" rel="noopener" class="link">Flood Control ALERT (Live Sensors)</a>
+    <a href="https://www.fs.usda.gov/alerts/coronado/alerts-notices" target="_blank" rel="noopener" class="link">Coronado NF Alerts &amp; Closures</a>
+    <a href="https://eaccess.azcourts.gov/" target="_blank" rel="noopener" class="link">AZ Court Records (eAccess)</a>
+  </div>
+</div>
+
+<button id="toggle-btn" onclick="document.body.classList.toggle('collapsed')">&#9776;</button>
+<div id="coords"></div>
+<div id="measure-info"></div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+<script>
+// =============================================================
+// CONFIG
+// =============================================================
+const C = {
+  center: [32.312, -110.940],
+  zoom: 13,
+  overpassServers: [
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.kumi.systems/api/interpreter',
+    'https://overpass.openstreetmap.ru/api/interpreter',
+  ],
+  nominatim: 'https://nominatim.openstreetmap.org/search',
+  bboxWide: '32.15,-111.15,32.50,-110.60',   // mines, towers (includes mountains)
+  bboxRoutes: '32.24,-111.05,32.40,-110.70',  // routes (focused area)
+  az511Key: '',  // Paste your AZ511 API key here when you get it
+};
+
+// (Catalina Foothills boundary removed)
+
+// Camera data — populated at runtime
+const CAMERAS = [];
+
+// =============================================================
+// ADOT Highway Cameras (verified ADOT/AZ511 installations)
+// Coords from known highway interchange positions; IDs from trafficcamarchive
+// Image snapshots: https://az511.com/map/Cctv/{viewId} (refresh every 5s)
+// =============================================================
+// Coords from OSM motorway_junction nodes (highway=motorway_junction query)
+// Each position is the averaged center of EB/WB ramp nodes at that interchange
+const ADOT_CAMERAS = [
+  // I-10 Corridor (northwest to southeast through Tucson)
+  { id:29382, name:'I-10 @ Cortaro Rd',        lat:32.35259, lon:-111.08310, road:'I-10' },  // Exit 246
+  { id:29383, name:'I-10 @ Ina Rd',            lat:32.33722, lon:-111.06609, road:'I-10' },  // Exit 248
+  { id:29384, name:'I-10 @ E of Ina Rd',       lat:32.33000, lon:-111.05850, road:'I-10' },  // Between 248–250
+  { id:29385, name:'I-10 @ Orange Grove Rd',   lat:32.32200, lon:-111.05135, road:'I-10' },  // Exit 250
+  { id:29386, name:'I-10 @ Sunset Rd',         lat:32.30877, lon:-111.04158, road:'I-10' },  // Exit 251
+  { id:29387, name:'I-10 @ Ruthrauff Rd (W)',  lat:32.29927, lon:-111.03479, road:'I-10' },  // Exit 252 west ramp
+  { id:29388, name:'I-10 @ Ruthrauff Rd',      lat:32.29380, lon:-111.02960, road:'I-10' },  // Exit 252 center
+  { id:29389, name:'I-10 @ Ruthrauff Rd (E)',  lat:32.28830, lon:-111.02428, road:'I-10' },  // Exit 252 east ramp
+  { id:29390, name:'I-10 @ W of Prince Rd',    lat:32.28000, lon:-111.01800, road:'I-10' },  // Between 252–254
+  { id:29391, name:'I-10 @ Prince Rd',         lat:32.27643, lon:-111.01469, road:'I-10' },  // Exit 254
+  { id:29392, name:'I-10 @ E of Prince Rd',    lat:32.27098, lon:-111.01090, road:'I-10' },  // Between 254–255
+  { id:29393, name:'I-10 @ Miracle Mile',      lat:32.26340, lon:-111.00610, road:'I-10' },  // Exit 255
+  { id:29394, name:'I-10 @ Grant Rd',          lat:32.24945, lon:-110.99210, road:'I-10' },  // Exit 256
+  { id:29395, name:'I-10 @ Speedway Blvd',     lat:32.23590, lon:-110.98445, road:'I-10' },  // Exit 257
+  { id:29396, name:'I-10 @ Congress St',        lat:32.22050, lon:-110.98070, road:'I-10' },  // Exit 258
+  { id:29397, name:'I-10 @ 22nd St',           lat:32.20290, lon:-110.97790, road:'I-10' },  // Exit 259
+  { id:29398, name:'I-10 @ I-19',              lat:32.19480, lon:-110.97650, road:'I-10' },  // Exit 260
+  { id:29399, name:'I-10 @ 6th Ave',           lat:32.18670, lon:-110.96590, road:'I-10' },  // Exit 261
+  { id:29400, name:'I-10 @ E of 6th Ave',      lat:32.18540, lon:-110.96200, road:'I-10' },  // Between 261–262
+  { id:29401, name:'I-10 @ Park Ave',          lat:32.18410, lon:-110.95890, road:'I-10' },  // Exit 262
+  { id:29402, name:'I-10 @ Kino Pkwy',         lat:32.17730, lon:-110.94470, road:'I-10' },  // Exit 263
+  { id:29403, name:'I-10 @ Country Club Rd',   lat:32.16900, lon:-110.93000, road:'I-10' },  // Between 263–264
+  { id:29404, name:'I-10 @ Palo Verde Rd',     lat:32.16140, lon:-110.91620, road:'I-10' },  // Exit 264
+  { id:29405, name:'I-10 @ Alvernon Way',      lat:32.15790, lon:-110.91010, road:'I-10' },  // Exit 265
+  { id:29406, name:'I-10 @ Drexel Rd',         lat:32.14800, lon:-110.89500, road:'I-10' },  // Between 265–267
+  { id:29407, name:'I-10 @ Valencia Rd',        lat:32.13480, lon:-110.88670, road:'I-10' },  // Exit 267
+  { id:29772, name:'I-10 @ Houghton Rd',       lat:32.17400, lon:-110.79800, road:'I-10' },  // Exit 275
+  // I-19 Corridor (north to south, km-based exits)
+  { id:29454, name:'I-19 @ N of Ajo Way',      lat:32.19300, lon:-110.97930, road:'I-19' },  // Exit 102
+  { id:29453, name:'I-19 @ Ajo Way',           lat:32.19070, lon:-110.98070, road:'I-19' },  // Exit 101
+  { id:29452, name:'I-19 @ Irvington Rd',      lat:32.18410, lon:-110.98500, road:'I-19' },  // Exit 99
+  { id:29451, name:'I-19 @ S of Irvington Rd', lat:32.17190, lon:-110.98540, road:'I-19' },  // S of Exit 99
+  { id:29450, name:'I-19 @ Drexel Rd',         lat:32.15770, lon:-110.98590, road:'I-19' },  // Exit 98
+  { id:29449, name:'I-19 @ Valencia Rd',        lat:32.14080, lon:-110.98680, road:'I-19' },  // Exit 95
+  { id:29448, name:'I-19 @ N of San Xavier Rd',lat:32.12000, lon:-111.00500, road:'I-19' },  // S of Exit 95
+];
+
+// =============================================================
+// MAP + BASEMAPS
+// =============================================================
+const map = L.map('map', {
+  center: C.center, zoom: C.zoom, minZoom: 3, maxZoom: 19, zoomControl: true,
+});
+
+const tiles = {
+  streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:'&copy; OpenStreetMap', maxZoom:19 }),
+  topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution:'&copy; OpenTopoMap', maxZoom:17 }),
+  satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution:'&copy; Esri', maxZoom:19 }),
+  esritopo: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution:'&copy; Esri', maxZoom:19 }),
+  dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution:'&copy; CartoDB', maxZoom:19 }),
+};
+tiles.streets.addTo(map);
+
+// =============================================================
+// LAYER GROUPS
+// =============================================================
+const ly = {
+  routes:     L.layerGroup().addTo(map),
+  cameras:    L.layerGroup().addTo(map),
+  mines:      L.layerGroup(),
+  towers:     L.layerGroup().addTo(map),
+  trailheads: L.layerGroup(),
+  hillshade:  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
+    opacity:.35, maxZoom:18 }),
+  annotations: L.featureGroup().addTo(map),
+  grid:       L.layerGroup(),
+  rings:      L.layerGroup(),
+  measure:    L.layerGroup().addTo(map),
+  isochrone:  L.layerGroup().addTo(map),
+  routeTraces: L.layerGroup().addTo(map),
+  maxReach:   L.layerGroup().addTo(map),
+  camOnRoute: L.layerGroup().addTo(map),
+};
+
+// =============================================================
+// ICONS (simple colored dots via divIcon)
+// =============================================================
+function dot(color, size=12) {
+  return L.divIcon({
+    html:`<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:2px solid #fff;box-shadow:0 0 5px rgba(0,0,0,.6);"></div>`,
+    className:'', iconSize:[size,size], iconAnchor:[size/2,size/2], popupAnchor:[0,-size/2],
+  });
+}
+function diamond(color, size=14) {
+  return L.divIcon({
+    html:`<div style="width:${size}px;height:${size}px;background:${color};transform:rotate(45deg);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,.7);"></div>`,
+    className:'', iconSize:[size,size], iconAnchor:[size/2,size/2], popupAnchor:[0,-size/2],
+  });
+}
+const ICO = {
+  mine:  dot('#f39c12',13),
+  tower: dot('#3498db',12),
+  cam:   dot('#e74c3c',11),       // OSM/Overpass cameras (smaller)
+  adot:  diamond('#ff6b35',13),   // ADOT highway cameras (diamond, orange)
+  trail: dot('#2ecc71',11),
+  user:  dot('#a855f7',16),
+};
+
+// =============================================================
+// STATUS TRACKING
+// =============================================================
+const statusData = {};
+function setStatus(key, state, extra='') {
+  statusData[key] = { state, extra };
+  const panel = document.getElementById('status-panel');
+  panel.innerHTML = Object.entries(statusData).map(([k,v]) => {
+    const cls = v.state==='loaded'?'ok': v.state==='loading'?'ld':'er';
+    return `<div style="padding:2px 0;font-size:11px;"><span class="dot ${cls}"></span>${k} ${v.extra}</div>`;
+  }).join('');
+}
+
+// =============================================================
+// OVERPASS HELPER
+// =============================================================
+async function overpass(query) {
+  const body = 'data=' + encodeURIComponent(query);
+  const headers = {'Content-Type':'application/x-www-form-urlencoded'};
+  for (const server of C.overpassServers) {
+    try {
+      const r = await fetch(server, { method:'POST', body, headers });
+      if (r.ok) return r.json();
+      console.warn(`Overpass ${server} returned ${r.status}, trying next...`);
+    } catch(e) {
+      console.warn(`Overpass ${server} failed: ${e.message}, trying next...`);
+    }
+  }
+  throw new Error('All Overpass servers failed');
+}
+
+// =============================================================
+// RENDER STATIC LAYERS
+// =============================================================
+// Origin point — 5820 N Camino Escalante
+// Hardcoded fallback so it always appears even if Nominatim is down
+const ORIGIN_COORD = { lat:32.31210, lon:-110.94050 }; // verified via Google Earth
+let originResolved = null; // will be set by geocode, shared with runDriveTime
+
+const ORIGIN_LABEL = L.divIcon({
+  html:`<div style="display:flex;align-items:center;gap:4px;">
+    <div style="width:20px;height:20px;background:#fff;border:3px solid #e74c3c;border-radius:50%;box-shadow:0 0 14px rgba(231,76,60,.9),0 0 40px rgba(231,76,60,.4);flex-shrink:0;"></div>
+    <div style="background:rgba(0,0,0,.9);color:#fff;font-size:12px;padding:3px 10px;border-radius:3px;white-space:nowrap;font-weight:700;border:1px solid #e74c3c;letter-spacing:.3px;">5820 N Camino Escalante</div>
+  </div>`,
+  className:'', iconSize:[240,24], iconAnchor:[10,12],
+});
+
+// Place immediately with fallback, then refine with geocode
+const originMarker = L.marker([ORIGIN_COORD.lat, ORIGIN_COORD.lon], { icon: ORIGIN_LABEL, zIndexOffset:2000, interactive:true })
+  .bindPopup(`<b>5820 N Camino Escalante</b><br>Tucson, AZ<br><small>${ORIGIN_COORD.lat.toFixed(5)}, ${ORIGIN_COORD.lon.toFixed(5)}</small>`)
+  .addTo(map);
+
+// Refine position via geocode (result shared with drive-time analysis)
+(async () => {
+  try {
+    const geo = await geocodeAddress('5820 N Camino Escalante, Tucson, AZ');
+    if (geo) {
+      originResolved = geo;
+      ORIGIN_COORD.lat = geo.lat;
+      ORIGIN_COORD.lon = geo.lon;
+      originMarker.setLatLng([geo.lat, geo.lon]);
+      originMarker.setPopupContent(`<b>5820 N Camino Escalante</b><br>Tucson, AZ<br><small>${geo.lat.toFixed(5)}, ${geo.lon.toFixed(5)}</small>`);
+    }
+  } catch(e) { console.warn('Origin geocode failed, using fallback coords:', e); }
+})();
+
+// Cameras loaded dynamically via loadCameras() at startup
+
+// =============================================================
+// LOAD: MINES + TOWERS + TRAILHEADS (combined Overpass query)
+// =============================================================
+async function loadPointData() {
+  setStatus('mines','loading');
+  setStatus('towers','loading');
+  setStatus('trailheads','loading');
+
+  const bbox = C.bboxWide;
+  const q = `[out:json][timeout:45];(
+    node["historic"~"^mine"](${bbox});
+    node["man_made"~"^(mineshaft|adit)$"](${bbox});
+    way["historic"~"^mine"](${bbox});
+    node["man_made"="mast"]["tower:type"="communication"](${bbox});
+    node["man_made"="tower"]["tower:type"="communication"](${bbox});
+    node["man_made"="communications_tower"](${bbox});
+    way["man_made"="mast"]["tower:type"="communication"](${bbox});
+    node["highway"="trailhead"](${bbox});
+    node["information"="trailhead"](${bbox});
+  );out center;`;
+
+  try {
+    const data = await overpass(q);
+    let mc=0, tc=0, thc=0;
+
+    data.elements.forEach(el => {
+      const lat = el.lat || el.center?.lat;
+      const lon = el.lon || el.center?.lon;
+      if (!lat || !lon) return;
+      const t = el.tags || {};
+      const coord = `<small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`;
+
+      if (t.historic?.match(/mine/) || t['man_made']==='mineshaft' || t['man_made']==='adit') {
+        const name = t.name || t.historic || t['man_made'] || 'Mine';
+        L.marker([lat,lon],{icon:ICO.mine})
+          .bindPopup(`<b>${name}</b><br>Type: ${t['man_made']||t.historic||'mine'}<br>${coord}`)
+          .addTo(ly.mines);
+        mc++;
+      } else if (t['man_made']==='mast'||t['man_made']==='tower'||t['man_made']==='communications_tower') {
+        const name = t.name || t.operator || 'Cell Tower';
+        const op = t.operator ? `<br>Operator: ${t.operator}` : '';
+        const ht = t.height ? `<br>Height: ${t.height}` : '';
+        L.marker([lat,lon],{icon:ICO.tower})
+          .bindPopup(`<b>${name}</b>${op}${ht}<br>${coord}`)
+          .addTo(ly.towers);
+        tc++;
+      } else if (t.highway==='trailhead'||t.information==='trailhead') {
+        const name = t.name || 'Trailhead';
+        L.marker([lat,lon],{icon:ICO.trail})
+          .bindPopup(`<b>${name}</b><br>${coord}`)
+          .addTo(ly.trailheads);
+        thc++;
+      }
+    });
+
+    document.getElementById('cnt-mines').textContent = mc;
+    document.getElementById('cnt-towers').textContent = tc;
+    document.getElementById('cnt-trailheads').textContent = thc;
+    setStatus('mines','loaded',`(${mc})`);
+    setStatus('towers','loaded',`(${tc})`);
+    setStatus('trailheads','loaded',`(${thc})`);
+  } catch(e) {
+    console.error('Point data error:',e);
+    setStatus('mines','error',e.message);
+    setStatus('towers','error','');
+    setStatus('trailheads','error','');
+  }
+}
+
+// =============================================================
+// LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
+// =============================================================
+function addADOTMarker(cam) {
+  CAMERAS.push([cam.lat, cam.lon, cam.name]);
+  const viewUrl = `https://az511.com/map/Cctv/${cam.id}`;
+  const popup = `<b style="color:#ff6b35;">ADOT</b> — <b>${cam.name}</b>`
+    + (cam.road ? `<br>Road: ${cam.road}` : '')
+    + `<br><a href="${viewUrl}" target="_blank" style="color:#58a6ff;">Live snapshot ↗</a>`
+    + `<br><small>${cam.lat.toFixed(5)}, ${cam.lon.toFixed(5)}</small>`;
+  L.marker([cam.lat, cam.lon], { icon: ICO.adot })
+    .bindPopup(popup)
+    .addTo(ly.cameras);
+}
+
+// Try AZ511 live API first; fall back to hardcoded camera list
+async function loadADOTCameras() {
+  if (C.az511Key) {
+    try {
+      // CORS proxy needed — try allorigins as a lightweight option
+      const apiUrl = `https://az511.com/api/v2/get/cameras?key=${encodeURIComponent(C.az511Key)}&format=json`;
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
+      const r = await fetch(proxyUrl, { signal: AbortSignal.timeout(12000) });
+      if (!r.ok) throw new Error(`AZ511 API ${r.status}`);
+      const cameras = await r.json();
+      // Filter to Tucson metro area (roughly lat 32.0–32.5, lon -111.2 to -110.6)
+      let count = 0;
+      cameras.forEach(c => {
+        if (c.Latitude < 32.0 || c.Latitude > 32.5) return;
+        if (c.Longitude < -111.2 || c.Longitude > -110.6) return;
+        const viewId = c.Views?.[0]?.Id || c.Id;
+        addADOTMarker({
+          id: viewId, name: c.Location || `${c.Roadway} ${c.Direction||''}`.trim(),
+          lat: c.Latitude, lon: c.Longitude, road: c.Roadway || '',
+        });
+        count++;
+      });
+      console.log(`AZ511 API: loaded ${count} Tucson-area cameras (${cameras.length} statewide)`);
+      return count;
+    } catch(e) {
+      console.warn('AZ511 API failed, using hardcoded list:', e.message);
+    }
+  }
+  // Fallback: hardcoded ADOT camera positions
+  ADOT_CAMERAS.forEach(cam => addADOTMarker(cam));
+  return ADOT_CAMERAS.length;
+}
+
+async function loadCameras() {
+  setStatus('cameras','loading');
+
+  // 1) ADOT highway cameras (live API if key set, otherwise hardcoded)
+  const adotCount = await loadADOTCameras();
+
+  // 2) Overpass OSM cameras (supplemental — community-mapped)
+  let osmCount = 0;
+  const bbox = C.bboxWide;
+  const q = `[out:json][timeout:45];(
+    node["man_made"="surveillance"](${bbox});
+    node["highway"="speed_camera"](${bbox});
+    node["traffic_signals:camera"="yes"](${bbox});
+    node["camera:type"](${bbox});
+    way["man_made"="surveillance"](${bbox});
+  );out center;`;
+
+  try {
+    const data = await overpass(q);
+    data.elements.forEach(el => {
+      const lat = el.lat || el.center?.lat;
+      const lon = el.lon || el.center?.lon;
+      if (!lat || !lon) return;
+      // Skip OSM nodes very close to an ADOT camera (within ~150m) to avoid duplicates
+      const isDupe = ADOT_CAMERAS.some(a =>
+        Math.abs(a.lat - lat) < 0.0015 && Math.abs(a.lon - lon) < 0.0015
+      );
+      if (isDupe) return;
+
+      const t = el.tags || {};
+      const type = t['surveillance:type'] || t['camera:type'] || t.highway || t['man_made'] || 'camera';
+      const name = t.name || t.description || t.operator || type;
+      const op = t.operator ? `<br>Operator: ${t.operator}` : '';
+      const camType = t['surveillance:type'] ? `<br>Type: ${t['surveillance:type']}` : '';
+      const zone = t['surveillance:zone'] ? `<br>Zone: ${t['surveillance:zone']}` : '';
+
+      CAMERAS.push([lat, lon, name]);
+      L.marker([lat, lon], { icon: ICO.cam })
+        .bindPopup(`<b>${name}</b> <small style="color:#7d8998;">(OSM)</small>${camType}${op}${zone}<br><small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`)
+        .addTo(ly.cameras);
+      osmCount++;
+    });
+  } catch(e) {
+    console.warn('Overpass camera fallback failed:', e.message);
+  }
+
+  const total = adotCount + osmCount;
+  document.getElementById('cnt-cameras').textContent = `${adotCount} ADOT + ${osmCount} OSM`;
+  setStatus('cameras','loaded',`(${adotCount} ADOT + ${osmCount} OSM)`);
+}
+
+// =============================================================
+// LOAD: KEY ROUTES (Overpass, primary + secondary roads)
+// =============================================================
+async function loadRoutes() {
+  setStatus('routes','loading');
+  const bbox = C.bboxRoutes;
+  const q = `[out:json][timeout:40];(
+    way["highway"="motorway"](${bbox});
+    way["highway"="trunk"](${bbox});
+    way["highway"="primary"](${bbox});
+    way["highway"="secondary"](${bbox});
+  );out geom;`;
+
+  try {
+    const data = await overpass(q);
+    const colors = { motorway:'#e74c3c', trunk:'#ff6b35', primary:'#ffd700', secondary:'#a0d2db' };
+    const weights = { motorway:5, trunk:4, primary:3.5, secondary:2.5 };
+    let count = 0;
+
+    data.elements.forEach(way => {
+      if (!way.geometry || way.geometry.length < 2) return;
+      const coords = way.geometry.map(g => [g.lat, g.lon]);
+      const hw = way.tags?.highway || 'road';
+      const name = way.tags?.name || way.tags?.ref || hw;
+      L.polyline(coords, {
+        color: colors[hw] || '#ffd700',
+        weight: weights[hw] || 3,
+        opacity: 0.75,
+      }).bindPopup(`<b>${name}</b><br>Class: ${hw}`).addTo(ly.routes);
+      count++;
+    });
+
+    document.getElementById('cnt-routes').textContent = count+' seg';
+    setStatus('routes','loaded',`(${count} segments)`);
+  } catch(e) {
+    console.error('Routes error:',e);
+    setStatus('routes','error',e.message);
+  }
+}
+
+// =============================================================
+// BASEMAP SWITCHER
+// =============================================================
+let activeBM = tiles.streets;
+document.querySelectorAll('input[name="bm"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    map.removeLayer(activeBM);
+    activeBM = tiles[radio.value];
+    activeBM.addTo(map);
+  });
+});
+
+// =============================================================
+// LAYER TOGGLES
+// =============================================================
+document.querySelectorAll('[data-layer]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const layer = ly[cb.dataset.layer];
+    if (!layer) return;
+    if (cb.checked) { map.addLayer(layer); }
+    else { map.removeLayer(layer); }
+  });
+});
+
+// =============================================================
+// COORDINATE DISPLAY
+// =============================================================
+map.on('mousemove', e => {
+  document.getElementById('coords').textContent =
+    `${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)} | Zoom ${map.getZoom()}`;
+});
+
+// =============================================================
+// SEARCH / GEOCODE
+// =============================================================
+async function doSearch() {
+  const q = document.getElementById('search-input').value.trim();
+  if (!q) return;
+
+  // Check if it's coordinates (lat,lon)
+  const coordMatch = q.match(/^(-?\d+\.?\d*)\s*,\s*(-?\d+\.?\d*)$/);
+  if (coordMatch) {
+    const lat = parseFloat(coordMatch[1]), lon = parseFloat(coordMatch[2]);
+    map.setView([lat,lon], 16);
+    L.popup().setLatLng([lat,lon]).setContent(`<b>Coordinates</b><br>${lat}, ${lon}`).openOn(map);
+    return;
+  }
+
+  try {
+    const url = `${C.nominatim}?format=json&q=${encodeURIComponent(q)}&viewbox=-111.15,32.15,-110.60,32.50&bounded=0&limit=6`;
+    const r = await fetch(url, { headers:{'Accept':'application/json'} });
+    const results = await r.json();
+    const div = document.getElementById('search-results');
+    div.innerHTML = '';
+    results.forEach(res => {
+      const el = document.createElement('div');
+      el.className = 'sr';
+      el.textContent = res.display_name?.substring(0,80);
+      el.onclick = () => {
+        map.setView([parseFloat(res.lat), parseFloat(res.lon)], 16);
+        L.popup().setLatLng([res.lat, res.lon]).setContent(`<b>${res.display_name?.substring(0,60)}</b>`).openOn(map);
+        div.innerHTML = '';
+      };
+      div.appendChild(el);
+    });
+  } catch(e) { console.error('Search error:',e); }
+}
+
+// =============================================================
+// TOOL: MEASURE DISTANCE
+// =============================================================
+let measuring = false, measurePts = [], measureLine = null;
+
+function toggleMeasure() {
+  measuring = !measuring;
+  document.getElementById('btn-measure').classList.toggle('on', measuring);
+  if (measuring) {
+    measurePts = [];
+    if (measureLine) { ly.measure.removeLayer(measureLine); measureLine = null; }
+    document.getElementById('measure-info').style.display = 'block';
+    document.getElementById('measure-info').textContent = 'Click points on map. Click Measure again to finish.';
+    map.getContainer().style.cursor = 'crosshair';
+  } else {
+    map.getContainer().style.cursor = '';
+    document.getElementById('measure-info').style.display = 'none';
+  }
+}
+
+map.on('click', e => {
+  if (!measuring) return;
+  measurePts.push(e.latlng);
+  if (measureLine) ly.measure.removeLayer(measureLine);
+  measureLine = L.polyline(measurePts, { color:'#ffd700', weight:3, dashArray:'6,4' }).addTo(ly.measure);
+
+  let totalM = 0;
+  for (let i=1; i<measurePts.length; i++) {
+    totalM += measurePts[i-1].distanceTo(measurePts[i]);
+  }
+  const mi = (totalM / 1609.344).toFixed(2);
+  const km = (totalM / 1000).toFixed(2);
+  document.getElementById('measure-info').textContent = `Distance: ${mi} mi (${km} km) | ${measurePts.length} points`;
+});
+
+// =============================================================
+// TOOL: DISTANCE RINGS
+// =============================================================
+function addDistanceRings() {
+  ly.rings.clearLayers();
+  const center = L.latLng(ORIGIN_COORD.lat, ORIGIN_COORD.lon);
+  const miles = [0.5, 1, 2, 5, 10, 25];
+  miles.forEach(mi => {
+    const meters = mi * 1609.344;
+    // Dark outline for contrast on light basemaps
+    L.circle(center, {
+      radius: meters, color:'#000', weight:4, fillOpacity:0, dashArray:'8,6', opacity:0.4,
+    }).addTo(ly.rings);
+    // Warm white ring visible on all basemaps
+    L.circle(center, {
+      radius: meters, color:'#f0e6d3', weight:2, fillOpacity:0, dashArray:'8,6', opacity:0.9,
+    }).bindPopup(`${mi} mile radius`).addTo(ly.rings);
+    // Label at top of each ring
+    const labelPt = L.latLng(center.lat + (meters / 111320), center.lng);
+    L.marker(labelPt, {
+      icon: L.divIcon({
+        html:`<div style="background:rgba(0,0,0,.75);color:#f0e6d3;padding:2px 6px;border-radius:4px;font:bold 10px monospace;white-space:nowrap;border:1px solid rgba(240,230,211,.4);">${mi} mi</div>`,
+        className:'', iconAnchor:[0,10],
+      }), interactive:false,
+    }).addTo(ly.rings);
+  });
+  // Center marker
+  L.circleMarker(center, { radius:6, color:'#fff', fillColor:'#f0e6d3', fillOpacity:1, weight:2 })
+    .bindPopup(`Center: ${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}`).addTo(ly.rings);
+  map.addLayer(ly.rings);
+}
+
+// =============================================================
+// TOOL: SEARCH GRID
+// =============================================================
+let gridVisible = false;
+function toggleGrid() {
+  gridVisible = !gridVisible;
+  document.getElementById('btn-grid').classList.toggle('on', gridVisible);
+  if (gridVisible) {
+    ly.grid.clearLayers();
+    const bounds = map.getBounds();
+    const step = 0.01; // ~1.1km grid cells
+    const south = Math.floor(bounds.getSouth()/step)*step;
+    const north = Math.ceil(bounds.getNorth()/step)*step;
+    const west = Math.floor(bounds.getWest()/step)*step;
+    const east = Math.ceil(bounds.getEast()/step)*step;
+
+    for (let lat=south; lat<=north; lat+=step) {
+      L.polyline([[lat,west],[lat,east]], {color:'rgba(255,255,255,.25)',weight:1}).addTo(ly.grid);
+    }
+    for (let lon=west; lon<=east; lon+=step) {
+      L.polyline([[south,lon],[north,lon]], {color:'rgba(255,255,255,.25)',weight:1}).addTo(ly.grid);
+    }
+    // Label cells
+    for (let lat=south; lat<north; lat+=step) {
+      for (let lon=west; lon<east; lon+=step) {
+        const label = `${lat.toFixed(2)}/${lon.toFixed(2)}`;
+        L.marker([lat+step/2, lon+step/2], {
+          icon: L.divIcon({
+            html:`<div style="color:rgba(255,255,255,.3);font-size:8px;white-space:nowrap;">${label}</div>`,
+            className:'', iconSize:[60,12],
+          })
+        }).addTo(ly.grid);
+      }
+    }
+    map.addLayer(ly.grid);
+  } else {
+    map.removeLayer(ly.grid);
+  }
+}
+
+// =============================================================
+// TOOL: DROP MARKER WITH NOTE
+// =============================================================
+function dropMarker() {
+  const center = map.getCenter();
+  const note = prompt('Note for this marker:','');
+  if (note === null) return;
+  const m = L.marker(center, { icon:ICO.user, draggable:true })
+    .bindPopup(`<b>Note</b><br>${note || '(no note)'}<br><small>${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}</small><br><button onclick="this.closest('.leaflet-popup').remove();event.target.closest('.leaflet-popup')">Close</button>`)
+    .addTo(ly.annotations);
+  m.openPopup();
+  saveAnnotations();
+  m.on('dragend', saveAnnotations);
+}
+
+// =============================================================
+// TOOL: CLEAR ANNOTATIONS
+// =============================================================
+function clearAnnotations() {
+  if (!confirm('Clear all annotations, distance rings, grid, and measurements?')) return;
+  ly.annotations.clearLayers();
+  ly.rings.clearLayers();
+  ly.grid.clearLayers();
+  ly.measure.clearLayers();
+  measurePts = [];
+  measureLine = null;
+  gridVisible = false;
+  document.getElementById('btn-grid').classList.remove('on');
+  localStorage.removeItem('nancy-annotations');
+}
+
+// =============================================================
+// TOOL: EXPORT ANNOTATIONS AS GEOJSON
+// =============================================================
+function exportData() {
+  const features = [];
+  ly.annotations.eachLayer(layer => {
+    if (layer.getLatLng) {
+      const ll = layer.getLatLng();
+      const popup = layer.getPopup()?.getContent() || '';
+      features.push({
+        type:'Feature',
+        geometry: { type:'Point', coordinates:[ll.lng, ll.lat] },
+        properties: { popup },
+      });
+    }
+  });
+  const geojson = { type:'FeatureCollection', features };
+  const blob = new Blob([JSON.stringify(geojson, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'nancy-annotations.geojson'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// =============================================================
+// PERSISTENCE (localStorage)
+// =============================================================
+function saveAnnotations() {
+  const markers = [];
+  ly.annotations.eachLayer(layer => {
+    if (layer.getLatLng) {
+      const ll = layer.getLatLng();
+      markers.push({ lat:ll.lat, lon:ll.lng, popup:layer.getPopup()?.getContent()||'' });
+    }
+  });
+  localStorage.setItem('nancy-annotations', JSON.stringify(markers));
+}
+
+function loadAnnotations() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('nancy-annotations') || '[]');
+    saved.forEach(m => {
+      L.marker([m.lat, m.lon], { icon:ICO.user, draggable:true })
+        .bindPopup(m.popup).addTo(ly.annotations)
+        .on('dragend', saveAnnotations);
+    });
+  } catch(e) {}
+}
+
+// =============================================================
+// LEAFLET DRAW (polygon/line annotation)
+// =============================================================
+const drawnItems = ly.annotations;
+const drawControl = new L.Control.Draw({
+  position:'topright',
+  draw: {
+    polyline:  { shapeOptions:{ color:'#a855f7', weight:3 } },
+    polygon:   { shapeOptions:{ color:'#a855f7', fillOpacity:.15 } },
+    rectangle: { shapeOptions:{ color:'#a855f7', fillOpacity:.15 } },
+    circle:    { shapeOptions:{ color:'#a855f7', fillOpacity:.1 } },
+    marker:    { icon: ICO.user },
+    circlemarker: false,
+  },
+  edit: { featureGroup: drawnItems },
+});
+map.addControl(drawControl);
+map.on(L.Draw.Event.CREATED, e => {
+  drawnItems.addLayer(e.layer);
+  if (e.layerType === 'marker') {
+    const note = prompt('Note for this marker:','') || '';
+    e.layer.bindPopup(`<b>Note</b><br>${note}`);
+  }
+  saveAnnotations();
+});
+
+// =============================================================
+// SCALE BAR
+// =============================================================
+L.control.scale({ imperial:true, metric:true, position:'bottomleft' }).addTo(map);
+
+// =============================================================
+// DRIVE-TIME ANALYSIS (Valhalla isochrone + OSRM route traces)
+// =============================================================
+
+// Corridors from 5820 N Camino Escalante (32.312, -110.940)
+// Destinations set far enough that 20min drive won't reach them
+const CORRIDORS = [
+  { name:'N — Oracle Rd → Oro Valley',       end:[32.55,-110.97],  color:'#e74c3c' },
+  { name:'NNE — Campbell Ave → Skyline Dr',  end:[32.45,-110.92],  color:'#e67e22' },
+  { name:'NE — Swan Rd → Catalina Foothills',end:[32.44,-110.85],  color:'#f39c12' },
+  { name:'E — River Rd / Grant → Tanque Verde',end:[32.28,-110.65],color:'#f1c40f' },
+  { name:'SE — Speedway → East side / I-10', end:[32.15,-110.65],  color:'#2ecc71' },
+  { name:'S — Oracle / 6th Ave → South Tucson',end:[32.08,-110.97],color:'#1abc9c' },
+  { name:'SW — I-10 South → Valencia / Airport',end:[32.08,-111.10],color:'#3498db' },
+  { name:'W — I-10 West → Marana',           end:[32.35,-111.30],  color:'#9b59b6' },
+  { name:'NW — La Cholla / Ina → Dove Mountain',end:[32.48,-111.10],color:'#e91e63' },
+  { name:'S-I10 — Stone to I-10 → Irvington',end:[32.10,-111.00], color:'#00bcd4' },
+];
+
+async function geocodeAddress(address) {
+  const url = `${C.nominatim}?format=json&q=${encodeURIComponent(address)}&limit=1`;
+  const r = await fetch(url, { headers:{'Accept':'application/json'} });
+  const data = await r.json();
+  if (data.length) return { lat:parseFloat(data[0].lat), lon:parseFloat(data[0].lon), display:data[0].display_name };
+  return null;
+}
+
+async function fetchIsochrone(lat, lon, minutes) {
+  const params = {
+    locations:[{lat,lon}],
+    costing:'auto',
+    contours:[],
+    polygons:true,
+    show_locations:false,
+  };
+  // Build contours at intervals up to the target time
+  const intervals = [5, 10, 15, 20, 25, 30, 40, 50, 60].filter(t => t <= minutes);
+  if (!intervals.includes(minutes)) intervals.push(minutes);
+  intervals.sort((a,b) => a-b);
+  params.contours = intervals.map(t => ({time:t}));
+
+  const url = `https://valhalla1.openstreetmap.de/isochrone?json=${encodeURIComponent(JSON.stringify(params))}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`Valhalla ${r.status}`);
+  return r.json();
+}
+
+async function fetchRouteTrace(startLat, startLon, endLat, endLon) {
+  const url = `https://router.project-osrm.org/route/v1/driving/${startLon},${startLat};${endLon},${endLat}?overview=full&geometries=geojson&annotations=duration,distance`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`OSRM ${r.status}`);
+  return r.json();
+}
+
+function trimRouteToTime(routeData, maxSeconds) {
+  const route = routeData.routes?.[0];
+  if (!route) return null;
+  const coords = route.geometry.coordinates; // [lon,lat]
+  const durations = route.legs[0]?.annotation?.duration;
+  const distances = route.legs[0]?.annotation?.distance;
+  if (!durations || !coords) return null;
+
+  let cumTime = 0, cumDist = 0;
+  for (let i = 0; i < durations.length; i++) {
+    cumTime += durations[i];
+    cumDist += (distances?.[i] || 0);
+    if (cumTime >= maxSeconds) {
+      // Interpolate to exact cutoff
+      const overshoot = cumTime - maxSeconds;
+      const ratio = durations[i] > 0 ? 1 - (overshoot / durations[i]) : 1;
+      const prev = coords[i], next = coords[i+1];
+      if (prev && next) {
+        const cutoff = [
+          prev[0] + (next[0] - prev[0]) * ratio,
+          prev[1] + (next[1] - prev[1]) * ratio,
+        ];
+        const trimmed = coords.slice(0, i+1).concat([cutoff]);
+        const latlngs = trimmed.map(c => [c[1], c[0]]);
+        return { latlngs, seconds: maxSeconds, distMi: cumDist / 1609.344, endpoint: [cutoff[1], cutoff[0]] };
+      }
+    }
+  }
+  // Entire route is within time limit
+  const latlngs = coords.map(c => [c[1], c[0]]);
+  const last = coords[coords.length-1];
+  return { latlngs, seconds: cumTime, distMi: cumDist / 1609.344, endpoint: [last[1], last[0]] };
+}
+
+// Point-to-segment distance (meters) for camera proximity detection
+function ptSegDistM(px, py, ax, ay, bx, by) {
+  const dx = bx-ax, dy = by-ay;
+  const lenSq = dx*dx + dy*dy;
+  let t = lenSq > 0 ? ((px-ax)*dx + (py-ay)*dy) / lenSq : 0;
+  t = Math.max(0, Math.min(1, t));
+  const cx = ax + t*dx, cy = ay + t*dy;
+  // Approximate meter conversion at this latitude
+  const dLat = (px - cx) * 111320;
+  const dLon = (py - cy) * 111320 * Math.cos(px * Math.PI / 180);
+  return Math.sqrt(dLat*dLat + dLon*dLon);
+}
+
+function highlightCamerasOnRoutes(traceResults, thresholdMeters) {
+  ly.camOnRoute.clearLayers();
+  const allRouteSegs = [];
+  traceResults.forEach(tr => {
+    if (!tr.result) return;
+    const pts = tr.result.latlngs; // [[lat,lon],...]
+    for (let i = 0; i < pts.length - 1; i++) {
+      allRouteSegs.push({ a: pts[i], b: pts[i+1], corridor: tr });
+    }
+  });
+  if (!allRouteSegs.length) return 0;
+
+  let count = 0;
+  const highlightIcon = L.divIcon({
+    html:`<div class="cam-on-route" style="width:16px;height:16px;background:#ffeb3b;border:2px solid #f44336;"></div>`,
+    className:'', iconSize:[16,16], iconAnchor:[8,8],
+  });
+
+  CAMERAS.forEach(([lat, lon, name]) => {
+    let minDist = Infinity;
+    let nearestCorridor = null;
+    for (const seg of allRouteSegs) {
+      const d = ptSegDistM(lat, lon, seg.a[0], seg.a[1], seg.b[0], seg.b[1]);
+      if (d < minDist) { minDist = d; nearestCorridor = seg.corridor; }
+    }
+    if (minDist <= thresholdMeters) {
+      L.marker([lat, lon], { icon: highlightIcon, zIndexOffset: 1500 })
+        .bindPopup(`<b>&#x1f4f7; ${name}</b><br><span style="color:#f1c40f;">On route: ${nearestCorridor.name}</span><br>Distance from route: ${Math.round(minDist)}m<br><a href="https://www.az511.gov/cctv" target="_blank">View live feed &rarr;</a>`)
+        .addTo(ly.camOnRoute);
+      count++;
+    }
+  });
+  document.getElementById('cnt-cam-route').textContent = count;
+  return count;
+}
+
+async function runDriveTime() {
+  const statusEl = document.getElementById('dt-status');
+  const resultsEl = document.getElementById('dt-results');
+  try {
+  const address = document.getElementById('dt-address').value.trim();
+  const minutes = parseInt(document.getElementById('dt-minutes').value) || 20;
+  const maxSec = minutes * 60;
+
+  if (!address) { statusEl.textContent = 'Enter an address.'; return; }
+
+  // Clear previous
+  ly.isochrone.clearLayers();
+  ly.routeTraces.clearLayers();
+  ly.maxReach.clearLayers();
+  ly.camOnRoute.clearLayers();
+  resultsEl.innerHTML = '';
+  statusEl.innerHTML = '<span class="dot ld"></span> Geocoding address...';
+
+  // 1. Geocode (reuse cached result for the default address)
+  let start;
+  const isDefaultAddr = address.toLowerCase().includes('camino escalante');
+  if (isDefaultAddr && originResolved) {
+    start = originResolved;
+  } else if (isDefaultAddr && !originResolved) {
+    // Use hardcoded fallback
+    start = { lat: ORIGIN_COORD.lat, lon: ORIGIN_COORD.lon, display:'5820 N Camino Escalante, Tucson, AZ' };
+  } else {
+    try {
+      start = await geocodeAddress(address);
+      if (!start) { statusEl.innerHTML = '<span class="dot er"></span> Address not found.'; return; }
+    } catch(e) { statusEl.innerHTML = '<span class="dot er"></span> Geocoding failed: '+e.message; return; }
+  }
+
+  // Center map on start point
+  map.setView([start.lat, start.lon], 12);
+
+  // 2. Fetch isochrone + route traces
+  statusEl.innerHTML = '<span class="dot ld"></span> Fetching isochrone...';
+
+  let isoData = null;
+  try {
+    isoData = await fetchIsochrone(start.lat, start.lon, minutes);
+  } catch(e) {
+    console.error('Isochrone error:', e);
+    statusEl.innerHTML = '<span class="dot er"></span> Isochrone failed: ' + e.message + ' — fetching routes...';
+  }
+
+  // Fetch route traces sequentially with small delays to avoid rate limits
+  statusEl.innerHTML = '<span class="dot ld"></span> Tracing routes (0/' + CORRIDORS.length + ')...';
+  const traceResults = [];
+  for (let i = 0; i < CORRIDORS.length; i++) {
+    const corridor = CORRIDORS[i];
+    statusEl.innerHTML = `<span class="dot ld"></span> Tracing route ${i+1}/${CORRIDORS.length}: ${corridor.name}...`;
+    try {
+      const data = await fetchRouteTrace(start.lat, start.lon, corridor.end[0], corridor.end[1]);
+      const result = trimRouteToTime(data, maxSec);
+      traceResults.push({ ...corridor, result });
+    } catch(e) {
+      console.error(`Route trace error (${corridor.name}):`, e);
+      traceResults.push({ ...corridor, result: null });
+    }
+    // Small delay between requests to avoid rate limiting
+    if (i < CORRIDORS.length - 1) await new Promise(r => setTimeout(r, 300));
+  }
+
+  // 3. Render isochrone contours
+  const isoColors = {
+    5:'#2ecc71', 10:'#a3e635', 15:'#fbbf24', 20:'#f97316',
+    25:'#ef4444', 30:'#dc2626', 40:'#b91c1c', 50:'#991b1b', 60:'#7f1d1d',
+  };
+  if (isoData && isoData.features) {
+    // Valhalla returns features outer-to-inner, render in that order
+    isoData.features.forEach(feature => {
+      const contour = feature.properties?.contour;
+      const color = isoColors[contour] || '#e74c3c';
+      L.geoJSON(feature, {
+        style: { color, weight:2, fillColor:color, fillOpacity:0.08, dashArray: contour === minutes ? null : '4,4' },
+      }).bindPopup(`<b>${contour}-minute drive</b>`).addTo(ly.isochrone);
+    });
+    statusEl.innerHTML = '<span class="dot ok"></span> Isochrone computed.';
+  } else {
+    statusEl.innerHTML = '<span class="dot er"></span> Isochrone API failed — showing route traces only.';
+  }
+
+  // 4. Render route traces
+  let html = `<div style="margin-bottom:6px;color:var(--text);"><b>${minutes}-Minute Corridor Reach:</b></div>`;
+  traceResults.forEach(tr => {
+    if (!tr.result) {
+      html += `<div style="color:var(--dim);">&#x2716; ${tr.name}: failed</div>`;
+      return;
+    }
+    const r = tr.result;
+
+    // Draw the trace line — dark outline + bright color for visibility
+    L.polyline(r.latlngs, { color:'#000', weight:9, opacity:0.35 }).addTo(ly.routeTraces);
+    L.polyline(r.latlngs, { color:tr.color, weight:5, opacity:0.95, lineCap:'round', lineJoin:'round' })
+      .bindPopup(`<b>${tr.name}</b><br>${r.distMi.toFixed(1)} mi in ${Math.round(r.seconds/60)} min`)
+      .addTo(ly.routeTraces);
+
+    // Endpoint label — shows direction, distance, and time right on the map
+    const shortName = tr.name.split('—')[0].trim(); // e.g. "N", "SW", "E"
+    const endLabel = L.divIcon({
+      html:`<div style="display:flex;align-items:center;gap:3px;">
+        <div style="width:12px;height:12px;background:${tr.color};border:2px solid #fff;border-radius:50%;box-shadow:0 0 6px ${tr.color};flex-shrink:0;"></div>
+        <div style="background:rgba(0,0,0,.85);color:#fff;font-size:10px;padding:2px 6px;border-radius:3px;white-space:nowrap;font-weight:600;border:1px solid ${tr.color};">${shortName} ${r.distMi.toFixed(1)}mi</div>
+      </div>`,
+      className:'', iconSize:[120,16], iconAnchor:[6,8],
+    });
+    L.marker(r.endpoint, { icon:endLabel, zIndexOffset:900 })
+      .bindPopup(`<b>${tr.name}</b><br>Endpoint: ${r.endpoint[0].toFixed(4)}, ${r.endpoint[1].toFixed(4)}<br>${r.distMi.toFixed(1)} mi in ${Math.round(r.seconds/60)} min`)
+      .addTo(ly.routeTraces);
+
+    const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${tr.color};margin-right:4px;"></span>`;
+    html += `<div>${dot}${tr.name}<br><span style="color:var(--dim);margin-left:12px;">${r.distMi.toFixed(1)} mi | ${Math.round(r.seconds/60)} min</span></div>`;
+  });
+
+  // 4b. Highlight cameras near any route trace (within 400m)
+  const camCount = highlightCamerasOnRoutes(traceResults, 400);
+  if (camCount > 0) {
+    html += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid var(--border);"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ffeb3b;border:2px solid #f44336;margin-right:4px;"></span><b>${camCount} cameras on routes</b></div>`;
+  }
+
+  // 5. Max-Reach Circle — based on furthest actual road distance
+  ly.maxReach.clearLayers();
+  const validTraces = traceResults.filter(t => t.result);
+  if (validTraces.length > 0) {
+    const maxTrace = validTraces.reduce((best, tr) =>
+      tr.result.distMi > best.result.distMi ? tr : best
+    );
+    const maxRoadMi = maxTrace.result.distMi;
+    const maxRoadMeters = maxRoadMi * 1609.344;
+
+    L.circle([start.lat, start.lon], {
+      radius: maxRoadMeters, color:'#ff9f43', weight:2.5, dashArray:'10,8',
+      fillColor:'#ff9f43', fillOpacity:0.03,
+    }).bindPopup(`<b>Max Road-Reach Circle</b><br>Radius: ${maxRoadMi.toFixed(1)} mi (${(maxRoadMeters/1000).toFixed(1)} km)<br>Furthest drivable distance in ${minutes} min<br>Via: ${maxTrace.name}`)
+      .addTo(ly.maxReach);
+
+    html += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid var(--border);"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;border:2px solid #ff9f43;margin-right:4px;"></span><b>Max road reach:</b> ${maxRoadMi.toFixed(1)} mi<br><span style="color:var(--dim);margin-left:12px;">via ${maxTrace.name}</span></div>`;
+  }
+
+  resultsEl.innerHTML = html;
+
+  const contourCount = (isoData && isoData.features) ? isoData.features.length : 0;
+  statusEl.innerHTML = `<span class="dot ok"></span> Done — ${contourCount} contours + ${validTraces.length} route traces.`;
+  } catch(err) {
+    console.error('Drive-time analysis error:', err);
+    statusEl.innerHTML = `<span class="dot er"></span> Error: ${err.message}`;
+  }
+}
+
+function clearDriveTime() {
+  ly.isochrone.clearLayers();
+  ly.routeTraces.clearLayers();
+  ly.maxReach.clearLayers();
+  ly.camOnRoute.clearLayers();
+  document.getElementById('dt-status').textContent = '';
+  document.getElementById('dt-results').innerHTML = '';
+}
+
+// =============================================================
+// STARTUP
+// =============================================================
+loadAnnotations();
+
+// Fire data loads in parallel
+loadPointData();
+loadRoutes();
+loadCameras();
+
+// Auto-run drive-time analysis after cameras + geocode have time to load
+setTimeout(() => runDriveTime(), 4000);
+
+// Mobile: auto-collapse sidebar on small screens, close on map tap
+if (window.innerWidth <= 768) {
+  document.body.classList.add('collapsed');
+}
+// Close sidebar when tapping the dimmed map overlay (mobile)
+document.getElementById('map').addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && !document.body.classList.contains('collapsed')) {
+    // Only close if the click is on the overlay (pseudo-element passes through)
+    document.body.classList.add('collapsed');
+    map.invalidateSize();
+  }
+});
+// Ensure map resizes after sidebar toggle
+document.getElementById('toggle-btn').addEventListener('click', () => {
+  setTimeout(() => map.invalidateSize(), 400);
+});
+</script>
+</body>
+</html>
