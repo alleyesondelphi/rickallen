@@ -271,12 +271,53 @@ body.collapsed #toggle-btn { left:10px; }
   </div>
 
   <div class="sec">
+    <h3>Crime Intel <small style="color:var(--dim);font-weight:400;">(Tucson PD)</small></h3>
+    <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+      <select id="crime-division" style="flex:1;min-width:80px;padding:4px 6px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;">
+        <option value="">All Divisions</option>
+        <option value="East" selected>East</option>
+        <option value="Midtown">Midtown</option>
+        <option value="South">South</option>
+        <option value="West">West</option>
+      </select>
+      <select id="crime-period" style="flex:1;min-width:80px;padding:4px 6px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;">
+        <option value="90">Last 90 days</option>
+        <option value="180">Last 6 months</option>
+        <option value="365" selected>Last year</option>
+        <option value="0">All time</option>
+      </select>
+    </div>
+    <button class="btn" onclick="loadCrimeIntel()">&#x1f6a8; Load Crime Data</button>
+    <div id="crime-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
+    <div id="crime-results" style="font-size:11px;margin-top:6px;max-height:300px;overflow-y:auto;line-height:1.6;"></div>
+  </div>
+
+  <div class="sec">
     <h3>Data Status</h3>
     <div id="status-panel"></div>
   </div>
 
   <div class="sec">
+    <h3>News &amp; Media Search</h3>
+    <p style="font-size:10px;color:var(--dim);margin:0 0 6px;">Pre-built searches — last 2 years. Opens in new tab.</p>
+    <a href="https://www.google.com/search?q=%22kidnapping%22+OR+%22abduction%22+OR+%22kidnapped%22+Tucson+Arizona&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Kidnapping / Abduction — Tucson</a>
+    <a href="https://www.google.com/search?q=%22elder+abuse%22+OR+%22elderly+victim%22+OR+%22senior+abuse%22+Tucson+Arizona&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Elder Abuse — Tucson</a>
+    <a href="https://www.google.com/search?q=%22missing+person%22+OR+%22missing+woman%22+OR+%22missing+elderly%22+Tucson+Arizona&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Missing Person — Tucson</a>
+    <a href="https://www.google.com/search?q=%22Catalina+Foothills%22+crime+OR+arrest+OR+kidnap+OR+missing&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Catalina Foothills — Crime</a>
+    <a href="https://www.google.com/search?q=%22exploitation%22+OR+%22conservatorship%22+OR+%22guardianship%22+elderly+Tucson+Pima&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Elder Exploitation / Guardianship</a>
+    <a href="https://www.google.com/search?q=site%3Atucson.com+OR+site%3Akvoa.com+OR+site%3Akgun9.com+OR+site%3Akold.com+kidnapping+OR+%22elder+abuse%22+OR+missing&tbs=qdr:y2&tbm=nws" target="_blank" rel="noopener" class="link">🔍 Local TV Stations — Kidnap/Abuse</a>
+    <a href="https://tucson.com/search/?q=kidnapping+OR+%22elder+abuse%22&t=article&o=date" target="_blank" rel="noopener" class="link">🔍 Arizona Daily Star Archive</a>
+    <div style="margin-top:8px;padding:6px 8px;background:var(--section);border-radius:4px;border:1px solid var(--border);">
+      <div style="font-size:10px;color:var(--dim);margin-bottom:4px;">Set up Google Alerts (real-time email notifications):</div>
+      <a href="https://www.google.com/alerts#1:0&q=%22kidnapping%22+OR+%22abduction%22+Tucson+Arizona" target="_blank" rel="noopener" class="link" style="font-size:11px;">⚡ Create Alert: Kidnapping Tucson</a>
+      <a href="https://www.google.com/alerts#1:0&q=%22elder+abuse%22+OR+%22elderly%22+Tucson+Arizona" target="_blank" rel="noopener" class="link" style="font-size:11px;">⚡ Create Alert: Elder Abuse Tucson</a>
+      <a href="https://www.google.com/alerts#1:0&q=%22missing+person%22+Tucson+%22Catalina+Foothills%22" target="_blank" rel="noopener" class="link" style="font-size:11px;">⚡ Create Alert: Missing Person</a>
+    </div>
+  </div>
+
+  <div class="sec">
     <h3>Quick Links</h3>
+    <a href="https://policeanalysis.tucsonaz.gov" target="_blank" rel="noopener" class="link">Tucson PD Crime Dashboard</a>
     <a href="https://www.az511.gov/cctv" target="_blank" rel="noopener" class="link">AZ511 Live Traffic Cameras</a>
     <a href="https://globe.adsbexchange.com/?lat=32.33&lon=-110.88&zoom=11" target="_blank" rel="noopener" class="link">ADS-B Exchange (Flight Tracker)</a>
     <a href="https://www.broadcastify.com/webPlayer/30258" target="_blank" rel="noopener" class="link">Pima County Sheriff / Oro Valley Scanner</a>
@@ -459,10 +500,20 @@ async function overpass(query) {
   for (const server of C.overpassServers) {
     try {
       const r = await fetch(server, { method:'POST', body, headers });
-      if (r.ok) return r.json();
-      console.warn(`Overpass ${server} returned ${r.status}, trying next...`);
+      if (!r.ok) { console.warn(`Overpass ${server} → ${r.status}`); continue; }
+      const ct = r.headers.get('content-type') || '';
+      if (!ct.includes('json')) {
+        console.warn(`Overpass ${server} returned non-JSON (${ct}), skipping`);
+        continue;
+      }
+      const text = await r.text();
+      if (text.charAt(0) === '<') {
+        console.warn(`Overpass ${server} returned HTML, skipping`);
+        continue;
+      }
+      return JSON.parse(text);
     } catch(e) {
-      console.warn(`Overpass ${server} failed: ${e.message}, trying next...`);
+      console.warn(`Overpass ${server} failed: ${e.message}`);
     }
   }
   throw new Error('All Overpass servers failed');
@@ -941,6 +992,127 @@ function exportData() {
   const a = document.createElement('a');
   a.href = url; a.download = 'nancy-annotations.geojson'; a.click();
   URL.revokeObjectURL(url);
+}
+
+// =============================================================
+// CRIME INTEL (Tucson PD Reported Crimes — ArcGIS Feature Service)
+// =============================================================
+const CRIME_API = 'https://services3.arcgis.com/9coHY2fvuFjG9HQX/arcgis/rest/services/Tucson_Police_Reported_Crimes/FeatureServer/8/query';
+
+// Offense categories relevant to a kidnapping/missing-person search
+const CRIME_PRIORITY = [
+  'Kidnap','Abduct','Homicide','Murder','Assault','Robbery','Sex','Rape',
+  'Weapon','Forcible','Battery','Threat','Stalk','Intimidat',
+];
+
+async function loadCrimeIntel() {
+  const statusEl = document.getElementById('crime-status');
+  const resultsEl = document.getElementById('crime-results');
+  const division = document.getElementById('crime-division').value;
+  const days = parseInt(document.getElementById('crime-period').value);
+
+  statusEl.textContent = 'Querying Tucson PD data...';
+  resultsEl.innerHTML = '';
+
+  // Build WHERE clause
+  const clauses = [];
+  if (division) clauses.push(`Division='${division}'`);
+  if (days > 0) {
+    const since = new Date(Date.now() - days * 86400000);
+    clauses.push(`DateOccurred >= '${since.toISOString().split('T')[0]}'`);
+  }
+  const where = clauses.length ? clauses.join(' AND ') : '1=1';
+
+  try {
+    // Query: get all matching records (up to 32k via pagination)
+    let allRecords = [];
+    let offset = 0;
+    const pageSize = 2000;
+    let exceeded = true;
+
+    while (exceeded && offset < 50000) {
+      const params = new URLSearchParams({
+        where, outFields: 'OffenseDescription,UCRDescription,Division,Ward,Year,Month',
+        f: 'json', resultRecordCount: pageSize, resultOffset: offset,
+      });
+      const r = await fetch(`${CRIME_API}?${params}`);
+      if (!r.ok) throw new Error(`API ${r.status}`);
+      const data = await r.json();
+      if (data.error) throw new Error(data.error.message);
+      const features = data.features || [];
+      allRecords.push(...features.map(f => f.attributes));
+      exceeded = data.exceededTransferLimit === true;
+      offset += pageSize;
+      statusEl.textContent = `Loading... ${allRecords.length} records`;
+    }
+
+    if (allRecords.length === 0) {
+      statusEl.textContent = 'No records found for this filter.';
+      return;
+    }
+
+    // Tally by offense type
+    const offenseCounts = {};
+    allRecords.forEach(r => {
+      const desc = r.OffenseDescription || r.UCRDescription || 'Unknown';
+      offenseCounts[desc] = (offenseCounts[desc] || 0) + 1;
+    });
+
+    // Sort: priority crimes first, then by count
+    const sorted = Object.entries(offenseCounts).sort((a, b) => {
+      const aPri = CRIME_PRIORITY.some(k => a[0].toLowerCase().includes(k.toLowerCase()));
+      const bPri = CRIME_PRIORITY.some(k => b[0].toLowerCase().includes(k.toLowerCase()));
+      if (aPri && !bPri) return -1;
+      if (!aPri && bPri) return 1;
+      return b[1] - a[1];
+    });
+
+    // Separate priority vs other
+    const priorityCrimes = sorted.filter(([desc]) =>
+      CRIME_PRIORITY.some(k => desc.toLowerCase().includes(k.toLowerCase()))
+    );
+    const totalPriority = priorityCrimes.reduce((s, [,c]) => s + c, 0);
+
+    // Build HTML
+    let html = `<div style="margin-bottom:8px;padding:6px 8px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:3px;">`;
+    html += `<b>${allRecords.length.toLocaleString()}</b> total crimes`;
+    html += division ? ` · ${division} Div.` : '';
+    html += days > 0 ? ` · last ${days}d` : ' · all time';
+    if (totalPriority > 0) {
+      html += `<br><b style="color:var(--accent);">${totalPriority}</b> violent/person crimes flagged`;
+    }
+    html += `</div>`;
+
+    // Priority crimes section
+    if (priorityCrimes.length > 0) {
+      html += `<div style="margin-bottom:6px;font-weight:600;color:var(--accent);">⚠ Priority Offenses</div>`;
+      priorityCrimes.forEach(([desc, count]) => {
+        html += `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--border);">`;
+        html += `<span style="color:var(--accent);">${desc}</span><b>${count}</b></div>`;
+      });
+    }
+
+    // Top other crimes (show top 20)
+    const otherCrimes = sorted.filter(([desc]) =>
+      !CRIME_PRIORITY.some(k => desc.toLowerCase().includes(k.toLowerCase()))
+    ).slice(0, 20);
+
+    if (otherCrimes.length > 0) {
+      html += `<div style="margin:8px 0 4px;font-weight:600;color:var(--dim);">Other Top Offenses</div>`;
+      otherCrimes.forEach(([desc, count]) => {
+        html += `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--border);">`;
+        html += `<span>${desc}</span><b style="color:var(--dim);">${count}</b></div>`;
+      });
+      const remaining = sorted.length - priorityCrimes.length - otherCrimes.length;
+      if (remaining > 0) html += `<div style="color:var(--dim);margin-top:4px;">+ ${remaining} more offense types</div>`;
+    }
+
+    resultsEl.innerHTML = html;
+    statusEl.textContent = `Loaded ${allRecords.length.toLocaleString()} records (${sorted.length} offense types)`;
+  } catch(e) {
+    console.error('Crime data error:', e);
+    statusEl.textContent = `Error: ${e.message}`;
+  }
 }
 
 // =============================================================
