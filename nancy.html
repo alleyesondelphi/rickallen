@@ -250,6 +250,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="mines"> Mines &amp; Shafts <span class="cnt" id="cnt-mines">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="towers" checked> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="silos"> Titan II Silos <span class="cnt" id="cnt-silos">18</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
@@ -258,6 +259,7 @@ body.collapsed #toggle-btn { left:10px; }
       <span class="legend-item"><span class="legend-dot" style="background:#ff6b35;transform:rotate(45deg);border-radius:0;"></span> ADOT Cam</span>
       <span class="legend-item"><span class="legend-dot" style="background:#e74c3c;"></span> OSM Cam</span>
       <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
     </div>
   </div>
 
@@ -469,6 +471,7 @@ const ly = {
   mines:      L.layerGroup(),
   towers:     L.layerGroup().addTo(map),
   trailheads: L.layerGroup(),
+  silos:      L.layerGroup(),
   hillshade:  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
     opacity:.35, maxZoom:18 }),
   annotations: L.featureGroup().addTo(map),
@@ -503,6 +506,10 @@ const ICO = {
   cam:   dot('#e74c3c',11),       // OSM/Overpass cameras (smaller)
   adot:  diamond('#ff6b35',13),   // ADOT highway cameras (diamond, orange)
   trail: dot('#2ecc71',11),
+  silo:  L.divIcon({
+    html:`<div style="width:14px;height:14px;background:#c0392b;border:2px solid #fff;box-shadow:0 0 6px rgba(192,57,43,.7);clip-path:polygon(50% 0%,100% 100%,0% 100%);"></div>`,
+    className:'', iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-7],
+  }),
   user:  dot('#a855f7',16),
 };
 
@@ -652,6 +659,45 @@ async function loadPointData() {
     setStatus('trailheads','error','');
   }
 }
+
+// =============================================================
+// TITAN II MISSILE SILOS (Davis-Monthan AFB, 570th/571st SMS)
+// =============================================================
+const SILO_SITES = [
+  { id:'570-1', type:'Titan II', town:'Oracle',           base:'Davis-Monthan', lat:32.59739, lon:-110.88931 },
+  { id:'570-2', type:'Titan II', town:'Three Points',     base:'Davis-Monthan', lat:32.10113, lon:-111.26255 },
+  { id:'570-3', type:'Titan II', town:'Rillito',           base:'Davis-Monthan', lat:32.36804, lon:-111.46224 },
+  { id:'570-4', type:'Titan II', town:'Rillito',           base:'Davis-Monthan', lat:32.35946, lon:-111.31804 },
+  { id:'570-5', type:'Titan II', town:'Rillito',           base:'Davis-Monthan', lat:32.52326, lon:-111.23947 },
+  { id:'570-6', type:'Titan II', town:'Rillito',           base:'Davis-Monthan', lat:32.42808, lon:-111.13775 },
+  { id:'570-7', type:'Titan II', town:'Oracle Junction',   base:'Davis-Monthan', lat:32.74869, lon:-111.11581 },
+  { id:'570-8', type:'Titan II', town:'Oracle Junction',   base:'Davis-Monthan', lat:32.65285, lon:-111.02803 },
+  { id:'570-9', type:'Titan II', town:'Oracle Junction',   base:'Davis-Monthan', lat:32.47848, lon:-110.92904 },
+  { id:'571-1', type:'Titan II', town:'Benson',            base:'Davis-Monthan', lat:31.98221, lon:-110.18537 },
+  { id:'571-2', type:'Titan II', town:'Benson',            base:'Davis-Monthan', lat:31.95945, lon:-110.37374 },
+  { id:'571-3', type:'Titan II', town:'Mescal',            base:'Davis-Monthan', lat:31.97101, lon:-110.50769 },
+  { id:'571-4', type:'Titan II', town:'Pantano',           base:'Davis-Monthan', lat:31.95730, lon:-110.66282 },
+  { id:'571-5', type:'Titan II', town:'Continental',       base:'Davis-Monthan', lat:31.75372, lon:-110.89091 },
+  { id:'571-6', type:'Titan II', town:'Amado',             base:'Davis-Monthan', lat:31.64462, lon:-111.07054 },
+  { id:'571-7', type:'Titan II', town:'Green Valley',      base:'Davis-Monthan', lat:31.90378, lon:-110.99923 },
+  { id:'571-8', type:'Titan II', town:'Palo Alto',         base:'Davis-Monthan', lat:31.88817, lon:-111.38910 },
+  { id:'571-9', type:'Titan II', town:'Three Points',      base:'Davis-Monthan', lat:32.00431, lon:-111.35471 },
+];
+
+function loadSilos() {
+  SILO_SITES.forEach(s => {
+    L.marker([s.lat, s.lon], { icon: ICO.silo })
+      .bindPopup(
+        `<b>Site ${s.id}</b><br>`
+        + `Type: ${s.type}<br>`
+        + `Near: ${s.town}<br>`
+        + `Base: ${s.base}<br>`
+        + `<small>${s.lat.toFixed(5)}, ${s.lon.toFixed(5)}</small>`
+      )
+      .addTo(ly.silos);
+  });
+}
+loadSilos();
 
 // =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
