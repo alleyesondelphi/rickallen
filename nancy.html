@@ -251,15 +251,17 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="towers" checked> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="silos"> Titan II Silos <span class="cnt" id="cnt-silos">18</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="water"> Water Features <span class="cnt" id="cnt-water">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
       <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> Mine</span>
-      <span class="legend-item"><span class="legend-dot" style="background:#3498db;"></span> Tower</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#3498db;width:5px;height:11px;border-radius:2px;"></span> Tower</span>
       <span class="legend-item"><span class="legend-dot" style="background:#ff6b35;transform:rotate(45deg);border-radius:0;"></span> ADOT Cam</span>
       <span class="legend-item"><span class="legend-dot" style="background:#e74c3c;"></span> OSM Cam</span>
       <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
       <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#0ea5e9;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:8px;height:9px;"></span> Water</span>
     </div>
   </div>
 
@@ -338,7 +340,7 @@ body.collapsed #toggle-btn { left:10px; }
     <button class="btn" onclick="clearScenarios()">&#x1f5d1; Clear Scenarios</button>
     <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="rsgRoutes" checked> Scenario Routes <span class="cnt" id="cnt-rsg-routes">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="rsgCams" checked> Cameras on Scenarios <span class="cnt" id="cnt-rsg-cams">-</span></label>
-    <label class="lyr"><input type="checkbox" data-layer="rsgPOI" checked> Nearby POI <span class="cnt" id="cnt-rsg-poi">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="rsgPOI" checked> Points of Interest <span class="cnt" id="cnt-rsg-poi">-</span></label>
     <div id="rsg-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
     <div id="rsg-results" style="font-size:11px;margin-top:6px;max-height:350px;overflow-y:auto;line-height:1.6;"></div>
   </div>
@@ -522,6 +524,7 @@ const ly = {
   towers:     L.layerGroup().addTo(map),
   trailheads: L.layerGroup(),
   silos:      L.layerGroup(),
+  water:      L.layerGroup(),
   hillshade:  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
     opacity:.35, maxZoom:18 }),
   annotations: L.featureGroup().addTo(map),
@@ -555,10 +558,17 @@ function diamond(color, size=14) {
 }
 const ICO = {
   mine:  dot('#f39c12',13),
-  tower: dot('#3498db',12),
+  tower: L.divIcon({
+    html:`<div style="width:8px;height:14px;background:#3498db;border:2px solid #fff;border-radius:2px;box-shadow:0 0 5px rgba(52,152,219,.6);"></div>`,
+    className:'', iconSize:[8,14], iconAnchor:[4,7], popupAnchor:[0,-7],
+  }),
   cam:   dot('#e74c3c',11),       // OSM/Overpass cameras (smaller)
   adot:  diamond('#ff6b35',13),   // ADOT highway cameras (diamond, orange)
   trail: dot('#2ecc71',11),
+  water: L.divIcon({
+    html:`<div style="width:12px;height:14px;background:#0ea5e9;border:2px solid #fff;box-shadow:0 0 5px rgba(14,165,233,.6);border-radius:50% 50% 50% 0;transform:rotate(-45deg);"></div>`,
+    className:'', iconSize:[12,14], iconAnchor:[6,7], popupAnchor:[0,-7],
+  }),
   silo:  L.divIcon({
     html:`<div style="width:14px;height:14px;background:#c0392b;border:2px solid #fff;box-shadow:0 0 6px rgba(192,57,43,.7);clip-path:polygon(50% 0%,100% 100%,0% 100%);"></div>`,
     className:'', iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-7],
@@ -751,6 +761,67 @@ function loadSilos() {
   });
 }
 loadSilos();
+
+// =============================================================
+// LOAD: WATER FEATURES (ponds, stock tanks, reservoirs, basins)
+// =============================================================
+async function loadWater() {
+  setStatus('water','loading');
+  const bbox = C.bboxWide;
+  const q = `[out:json][timeout:60];(
+    node["natural"="water"](${bbox});
+    way["natural"="water"](${bbox});
+    relation["natural"="water"](${bbox});
+    node["landuse"="reservoir"](${bbox});
+    way["landuse"="reservoir"](${bbox});
+    node["landuse"="basin"](${bbox});
+    way["landuse"="basin"](${bbox});
+    node["man_made"="reservoir_covered"](${bbox});
+    way["man_made"="reservoir_covered"](${bbox});
+    node["man_made"="water_well"](${bbox});
+    way["waterway"="dam"](${bbox});
+  );out center;`;
+
+  try {
+    const data = await overpass(q);
+    let count = 0;
+
+    data.elements.forEach(el => {
+      const lat = el.lat || el.center?.lat;
+      const lon = el.lon || el.center?.lon;
+      if (!lat || !lon) return;
+      const t = el.tags || {};
+
+      // Determine type label
+      let type = 'water';
+      if (t.water === 'pond') type = 'pond';
+      else if (t.water === 'reservoir' || t.landuse === 'reservoir') type = 'reservoir';
+      else if (t.water === 'lake') type = 'lake';
+      else if (t.water === 'basin' || t.landuse === 'basin') type = 'basin';
+      else if (t.water === 'stock_tank' || t.name?.toLowerCase().includes('stock tank') || t.name?.toLowerCase().includes('tank')) type = 'stock tank';
+      else if (t.water === 'wastewater') type = 'wastewater';
+      else if (t['man_made'] === 'reservoir_covered') type = 'covered reservoir';
+      else if (t['man_made'] === 'water_well') type = 'water well';
+      else if (t.waterway === 'dam') type = 'dam';
+      else if (t.natural === 'water') type = t.water || 'water body';
+
+      const name = t.name || type.charAt(0).toUpperCase() + type.slice(1);
+      const area = t.area ? `<br>Area: ${t.area}` : '';
+      const coord = `<small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`;
+
+      L.marker([lat, lon], { icon: ICO.water })
+        .bindPopup(`<b>${name}</b><br>Type: ${type}${area}<br>${coord}`)
+        .addTo(ly.water);
+      count++;
+    });
+
+    document.getElementById('cnt-water').textContent = count;
+    setStatus('water','loaded',`(${count})`);
+  } catch(e) {
+    console.error('Water features error:', e);
+    setStatus('water','error', e.message);
+  }
+}
 
 // =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
@@ -1952,6 +2023,21 @@ function rsgFindNearbyPOI(latlngs) {
     }
   });
 
+  // Water features
+  ly.water.eachLayer(marker => {
+    if (!marker.getLatLng) return;
+    const ll = marker.getLatLng();
+    let minD = Infinity;
+    for (let i = 0; i < latlngs.length - 1; i++) {
+      minD = Math.min(minD, ptSegDistM(ll.lat, ll.lng, latlngs[i][0], latlngs[i][1], latlngs[i+1][0], latlngs[i+1][1]));
+    }
+    if (minD <= threshold) {
+      const popup = marker.getPopup()?.getContent() || 'Water';
+      const name = popup.match(/<b>([^<]+)<\/b>/)?.[1] || 'Water feature';
+      nearby.push({ lat:ll.lat, lon:ll.lng, name, type:'water', distMi:minD/1609.344 });
+    }
+  });
+
   return nearby;
 }
 
@@ -1965,7 +2051,7 @@ function drawScenarioRoute(result, color, opacity, gapInfo, nearbyPOI, dest, dir
       `<b>Scenario → ${dest.name}</b> <small style="color:var(--dim);">(${direction.toUpperCase()})</small><br>`
       + `${result.distMi.toFixed(1)} mi | ${Math.round(result.seconds/60)} min<br>`
       + `&#x1f4f7; Cameras: <b>${gapInfo.totalCameras}</b> | Gap: <b>${gapInfo.longestGap.distMi.toFixed(1)} mi</b>`
-      + (nearbyPOI.length ? `<br>&#x26a0; ${nearbyPOI.length} POI nearby` : '')
+      + (nearbyPOI.length ? `<br>&#x26a0; ${nearbyPOI.length} points of interest nearby` : '')
     ).addTo(ly.rsgRoutes);
 
   // Endpoint marker
@@ -2001,7 +2087,7 @@ function drawScenarioRoute(result, color, opacity, gapInfo, nearbyPOI, dest, dir
   // POI markers
   nearbyPOI.forEach(poi => {
     L.circleMarker([poi.lat, poi.lon], {
-      radius:6, color:poi.type==='silo'?'#c0392b':'#f39c12', fillOpacity:0.7, weight:1,
+      radius:6, color:poi.type==='silo'?'#c0392b':poi.type==='water'?'#0ea5e9':'#f39c12', fillOpacity:0.7, weight:1,
     }).bindPopup(`<b>${poi.name}</b><br>${poi.distMi.toFixed(1)} mi from route`).addTo(ly.rsgPOI);
   });
 
@@ -2117,7 +2203,7 @@ async function generateScenario() {
       <div>${winner.result.distMi.toFixed(1)} mi | ${Math.round(winner.result.seconds/60)} min</div>
       <div>&#x1f4f7; Cameras: <b>${winner.gapInfo.totalCameras}</b></div>
       <div>&#x1f6e1; Longest gap: <b>${winner.gapInfo.longestGap.distMi.toFixed(1)} mi</b></div>
-      ${winner.nearbyPOI.length ? `<div>&#x26a0; ${winner.nearbyPOI.length} POI nearby</div>` : ''}
+      ${winner.nearbyPOI.length ? `<div>&#x26a0; ${winner.nearbyPOI.length} points of interest nearby</div>` : ''}
       <div style="margin-top:4px;color:var(--dim);">Tested ${variants.length} variants</div>
       ${variants.length > 1 ? `<div style="color:var(--dim);">Runner-up: ${variants[1].gapInfo.totalCameras} cameras, ${variants[1].gapInfo.longestGap.distMi.toFixed(1)} mi gap</div>` : ''}
     `;
@@ -2140,7 +2226,7 @@ async function generateScenario() {
       <div>${r.result.distMi.toFixed(1)} mi | ${Math.round(r.result.seconds/60)} min</div>
       <div>&#x1f4f7; Cameras on route: <b>${r.gapInfo.totalCameras}</b></div>
       <div>&#x1f6e1; Longest camera gap: <b>${r.gapInfo.longestGap.distMi.toFixed(1)} mi</b></div>
-      ${r.nearbyPOI.length ? `<div style="margin-top:4px;">&#x26a0; Nearby POI:</div>${r.nearbyPOI.map(p => `<div style="margin-left:8px;color:var(--dim);">• ${p.name} (${p.distMi.toFixed(1)} mi)</div>`).join('')}` : ''}
+      ${r.nearbyPOI.length ? `<div style="margin-top:4px;">&#x26a0; Points of Interest:</div>${r.nearbyPOI.map(p => `<div style="margin-left:8px;color:var(--dim);">• ${p.name} (${p.distMi.toFixed(1)} mi)</div>`).join('')}` : ''}
     `;
 
     // Fit map to route
@@ -2231,6 +2317,7 @@ loadAnnotations();
 loadPointData();
 loadRoutes();
 loadCameras();
+loadWater();
 
 // Auto-run drive-time analysis after cameras + geocode have time to load
 setTimeout(() => runDriveTime(), 4000);
