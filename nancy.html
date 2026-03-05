@@ -293,6 +293,56 @@ body.collapsed #toggle-btn { left:10px; }
     <div id="dt-results" style="font-size:11px;margin-top:6px;max-height:250px;overflow-y:auto;line-height:1.6;"></div>
   </div>
 
+  <div class="sec sec-dt">
+    <h3>Route Scenario Generator</h3>
+    <div style="margin-bottom:6px;">
+      <label style="font-size:11px;display:block;margin-bottom:3px;">Direction</label>
+      <select id="rsg-direction" style="width:100%;padding:5px 8px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;">
+        <option value="any">Any Direction</option>
+        <option value="n">North — Oracle / Oro Valley</option>
+        <option value="ne">Northeast — Mt Lemmon Hwy</option>
+        <option value="e">East — Benson / I-10E</option>
+        <option value="se">Southeast — Sonoita</option>
+        <option value="s">South — Nogales / I-19</option>
+        <option value="sw">Southwest — Sells / AZ-86</option>
+        <option value="w">West — I-10W / Marana</option>
+        <option value="nw">Northwest — Phoenix / I-10W</option>
+      </select>
+    </div>
+    <div style="margin-bottom:6px;">
+      <label style="font-size:11px;display:block;margin-bottom:3px;">Road Preference</label>
+      <select id="rsg-roads" style="width:100%;padding:5px 8px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;">
+        <option value="any">Any Roads</option>
+        <option value="highway">Prefer Highways</option>
+        <option value="backroad">Prefer Back Roads</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;">
+      <label style="font-size:11px;">Max Drive Time:</label>
+      <input type="number" id="rsg-minutes" value="30" min="5" max="120"
+        style="width:55px;padding:5px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:12px;outline:none;text-align:center;"/>
+      <span style="font-size:11px;color:var(--dim);">min</span>
+    </div>
+    <div style="margin-bottom:6px;">
+      <label style="font-size:11px;display:block;margin-bottom:3px;">Random Detour Stops</label>
+      <select id="rsg-waypoints" style="width:100%;padding:5px 8px;background:var(--section);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:11px;">
+        <option value="0">None (direct route)</option>
+        <option value="1">1 Waypoint</option>
+        <option value="2">2 Waypoints</option>
+        <option value="3">3 Waypoints</option>
+      </select>
+    </div>
+    <label class="lyr" style="margin-bottom:6px;"><input type="checkbox" id="rsg-stealth"> &#x1f575; Stealth Mode (fewest cameras)</label>
+    <button class="btn" onclick="generateScenario()">&#x1f3b2; Generate Route</button>
+    <button class="btn" onclick="batchGenerateScenarios()">&#x1f525; Batch Generate (heatmap)</button>
+    <button class="btn" onclick="clearScenarios()">&#x1f5d1; Clear Scenarios</button>
+    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="rsgRoutes" checked> Scenario Routes <span class="cnt" id="cnt-rsg-routes">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="rsgCams" checked> Cameras on Scenarios <span class="cnt" id="cnt-rsg-cams">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="rsgPOI" checked> Nearby POI <span class="cnt" id="cnt-rsg-poi">-</span></label>
+    <div id="rsg-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
+    <div id="rsg-results" style="font-size:11px;margin-top:6px;max-height:350px;overflow-y:auto;line-height:1.6;"></div>
+  </div>
+
   <div class="sec">
     <h3>Search Location</h3>
     <input type="text" id="search-input" placeholder="Address, place, or lat,lon..." onkeydown="if(event.key==='Enter')doSearch()"/>
@@ -483,6 +533,9 @@ const ly = {
   maxReach:   L.layerGroup().addTo(map),
   camOnRoute: L.layerGroup().addTo(map),
   escapeRoute: L.layerGroup(),
+  rsgRoutes:  L.layerGroup().addTo(map),
+  rsgCams:    L.layerGroup().addTo(map),
+  rsgPOI:     L.layerGroup().addTo(map),
 };
 
 // =============================================================
@@ -1683,6 +1736,490 @@ function clearDriveTime() {
   ly.camOnRoute.clearLayers();
   document.getElementById('dt-status').textContent = '';
   document.getElementById('dt-results').innerHTML = '';
+}
+
+// =============================================================
+// ROUTE SCENARIO GENERATOR
+// =============================================================
+
+// --- Destination endpoints by direction ---
+const RSG_DESTINATIONS = {
+  n: [
+    { name:'Oracle Junction',   lat:32.60, lon:-110.95 },
+    { name:'Oro Valley N',      lat:32.50, lon:-110.98 },
+    { name:'Catalina (town)',   lat:32.52, lon:-110.91 },
+    { name:'SaddleBrooke',      lat:32.55, lon:-110.88 },
+    { name:'San Manuel Jct',    lat:32.63, lon:-110.85 },
+  ],
+  ne: [
+    { name:'Mt Lemmon Hwy',     lat:32.42, lon:-110.76 },
+    { name:'Summerhaven',       lat:32.44, lon:-110.72 },
+    { name:'Redington Pass',    lat:32.38, lon:-110.68 },
+    { name:'Tanque Verde Falls',lat:32.35, lon:-110.70 },
+  ],
+  e: [
+    { name:'Vail',              lat:32.05, lon:-110.70 },
+    { name:'Benson',            lat:31.97, lon:-110.29 },
+    { name:'Colossal Cave Rd',  lat:32.08, lon:-110.63 },
+    { name:'Mescal (I-10E)',    lat:32.02, lon:-110.45 },
+    { name:'J-6 Ranch area',    lat:31.95, lon:-110.55 },
+  ],
+  se: [
+    { name:'Corona de Tucson',  lat:31.96, lon:-110.79 },
+    { name:'Sonoita Hwy',       lat:31.80, lon:-110.65 },
+    { name:'Houghton S',        lat:32.05, lon:-110.78 },
+    { name:'Sahuarita SE',      lat:31.93, lon:-110.85 },
+  ],
+  s: [
+    { name:'Green Valley',      lat:31.85, lon:-110.99 },
+    { name:'Tubac',             lat:31.61, lon:-111.05 },
+    { name:'Sahuarita',         lat:31.94, lon:-110.96 },
+    { name:'Nogales Hwy',       lat:31.70, lon:-110.95 },
+    { name:'Amado',             lat:31.73, lon:-111.07 },
+  ],
+  sw: [
+    { name:'Sells (AZ-86)',     lat:31.91, lon:-111.88 },
+    { name:'Three Points',      lat:32.08, lon:-111.33 },
+    { name:'Ryan Field area',   lat:32.13, lon:-111.17 },
+    { name:'Ajo Hwy S',         lat:32.05, lon:-111.25 },
+  ],
+  w: [
+    { name:'Marana',            lat:32.44, lon:-111.22 },
+    { name:'Red Rock',          lat:32.52, lon:-111.37 },
+    { name:'Eloy (I-10W)',      lat:32.76, lon:-111.56 },
+    { name:'Casa Grande (I-10W)',lat:32.88, lon:-111.75 },
+    { name:'Picacho',           lat:32.63, lon:-111.42 },
+  ],
+  nw: [
+    { name:'Dove Mountain',     lat:32.44, lon:-111.11 },
+    { name:'Cortaro',           lat:32.40, lon:-111.10 },
+    { name:'Picture Rocks',     lat:32.39, lon:-111.25 },
+    { name:'Phoenix (I-10)',    lat:33.00, lon:-111.80 },
+  ],
+};
+
+const RSG_DIR_KEYS = Object.keys(RSG_DESTINATIONS);
+
+const RSG_COLORS = {
+  n:'#e74c3c', ne:'#f39c12', e:'#f1c40f', se:'#2ecc71',
+  s:'#1abc9c', sw:'#3498db', w:'#9b59b6', nw:'#e91e63',
+};
+
+// Bounding box for random waypoints (Tucson metro)
+const RSG_BBOX = { south:32.10, north:32.45, west:-111.15, east:-110.70 };
+
+// Direction bias vectors for waypoint placement
+const RSG_DIR_BIAS = {
+  n: {lat:0.06,lon:0.00},  ne:{lat:0.04,lon:0.04},
+  e: {lat:0.00,lon:0.06},  se:{lat:-0.04,lon:0.04},
+  s: {lat:-0.06,lon:0.00}, sw:{lat:-0.04,lon:-0.04},
+  w: {lat:0.00,lon:-0.06}, nw:{lat:0.04,lon:-0.04},
+};
+
+// --- Helpers ---
+
+function rsgPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function rsgRandInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+function generateRandomWaypoints(count, direction, roadPref) {
+  if (count === 0) return [];
+  const bias = RSG_DIR_BIAS[direction] || { lat:0, lon:0 };
+  const bb = RSG_BBOX;
+  const oLat = ORIGIN_COORD.lat, oLon = ORIGIN_COORD.lon;
+  const pts = [];
+  const jitter = roadPref === 'backroad' ? 0.07 : 0.03;
+  for (let i = 0; i < count; i++) {
+    const progress = (i + 1) / (count + 1);
+    const bLat = oLat + bias.lat * progress * (2 + Math.random());
+    const bLon = oLon + bias.lon * progress * (2 + Math.random());
+    const lat = Math.max(bb.south, Math.min(bb.north, bLat + (Math.random() - 0.5) * jitter));
+    const lon = Math.max(bb.west, Math.min(bb.east, bLon + (Math.random() - 0.5) * jitter));
+    pts.push({ lat, lon });
+  }
+  return pts;
+}
+
+function trimMultiLegRoute(data, maxSec) {
+  const route = data.routes?.[0];
+  if (!route) return null;
+  const coords = route.geometry.coordinates; // [lon,lat]
+  const durations = [], distances = [];
+  route.legs.forEach(leg => {
+    durations.push(...(leg.annotation?.duration || []));
+    distances.push(...(leg.annotation?.distance || []));
+  });
+  let cumTime = 0, cumDist = 0;
+  for (let i = 0; i < durations.length; i++) {
+    cumTime += durations[i];
+    cumDist += (distances[i] || 0);
+    if (cumTime >= maxSec) {
+      const overshoot = cumTime - maxSec;
+      const ratio = durations[i] > 0 ? 1 - (overshoot / durations[i]) : 1;
+      const prev = coords[i], next = coords[i + 1];
+      if (prev && next) {
+        const cutoff = [prev[0] + (next[0] - prev[0]) * ratio, prev[1] + (next[1] - prev[1]) * ratio];
+        const trimmed = coords.slice(0, i + 1).concat([cutoff]);
+        return {
+          latlngs: trimmed.map(c => [c[1], c[0]]),
+          seconds: maxSec,
+          distMi: cumDist / 1609.344,
+          endpoint: [cutoff[1], cutoff[0]],
+          durations: durations.slice(0, i + 1),
+          distances: distances.slice(0, i + 1),
+        };
+      }
+    }
+  }
+  // Route didn't reach maxSec — return full route
+  return {
+    latlngs: coords.map(c => [c[1], c[0]]),
+    seconds: cumTime,
+    distMi: cumDist / 1609.344,
+    endpoint: [coords[coords.length - 1][1], coords[coords.length - 1][0]],
+    durations,
+    distances,
+  };
+}
+
+function rsgAnalyzeGaps(latlngs, segDistances) {
+  const threshold = 400; // meters
+  const segHasCam = [];
+  let totalCameras = 0;
+  const camsFound = new Set();
+
+  for (let i = 0; i < latlngs.length - 1; i++) {
+    const a = latlngs[i], b = latlngs[i + 1];
+    let found = false;
+    CAMERAS.forEach(([clat, clon, cname], idx) => {
+      const d = ptSegDistM(clat, clon, a[0], a[1], b[0], b[1]);
+      if (d <= threshold) {
+        found = true;
+        if (!camsFound.has(idx)) { camsFound.add(idx); totalCameras++; }
+      }
+    });
+    segHasCam.push(found);
+  }
+
+  // Find longest camera-free gap
+  let gapDist = 0, gapStart = 0;
+  let best = { distMi:0, startIdx:0, endIdx:0, startCoord:null, endCoord:null };
+  for (let i = 0; i < segHasCam.length; i++) {
+    const sd = segDistances[i] || 0;
+    if (!segHasCam[i]) {
+      if (gapDist === 0) gapStart = i;
+      gapDist += sd;
+    } else {
+      if (gapDist / 1609.344 > best.distMi) {
+        best = { distMi:gapDist/1609.344, startIdx:gapStart, endIdx:i, startCoord:latlngs[gapStart], endCoord:latlngs[i] };
+      }
+      gapDist = 0;
+    }
+  }
+  if (gapDist / 1609.344 > best.distMi) {
+    best = { distMi:gapDist/1609.344, startIdx:gapStart, endIdx:segHasCam.length, startCoord:latlngs[gapStart], endCoord:latlngs[latlngs.length-1] };
+  }
+
+  return { totalCameras, longestGap:best, camsFound };
+}
+
+function rsgFindNearbyPOI(latlngs) {
+  const nearby = [];
+  const threshold = 2000; // 2 km
+
+  // Silos
+  SILO_SITES.forEach(s => {
+    let minD = Infinity;
+    for (let i = 0; i < latlngs.length - 1; i++) {
+      minD = Math.min(minD, ptSegDistM(s.lat, s.lon, latlngs[i][0], latlngs[i][1], latlngs[i+1][0], latlngs[i+1][1]));
+    }
+    if (minD <= threshold) {
+      nearby.push({ lat:s.lat, lon:s.lon, name:`Silo ${s.id} (${s.town})`, type:'silo', distMi:minD/1609.344 });
+    }
+  });
+
+  // Mines
+  ly.mines.eachLayer(marker => {
+    if (!marker.getLatLng) return;
+    const ll = marker.getLatLng();
+    let minD = Infinity;
+    for (let i = 0; i < latlngs.length - 1; i++) {
+      minD = Math.min(minD, ptSegDistM(ll.lat, ll.lng, latlngs[i][0], latlngs[i][1], latlngs[i+1][0], latlngs[i+1][1]));
+    }
+    if (minD <= threshold) {
+      const popup = marker.getPopup()?.getContent() || 'Mine';
+      const name = popup.match(/<b>([^<]+)<\/b>/)?.[1] || 'Mine';
+      nearby.push({ lat:ll.lat, lon:ll.lng, name, type:'mine', distMi:minD/1609.344 });
+    }
+  });
+
+  return nearby;
+}
+
+// --- Drawing ---
+
+function drawScenarioRoute(result, color, opacity, gapInfo, nearbyPOI, dest, direction) {
+  // Double-line technique (matching drive-time style)
+  L.polyline(result.latlngs, { color:'#000', weight:9, opacity:opacity*0.35 }).addTo(ly.rsgRoutes);
+  L.polyline(result.latlngs, { color, weight:5, opacity, lineCap:'round', lineJoin:'round' })
+    .bindPopup(
+      `<b>Scenario → ${dest.name}</b> <small style="color:var(--dim);">(${direction.toUpperCase()})</small><br>`
+      + `${result.distMi.toFixed(1)} mi | ${Math.round(result.seconds/60)} min<br>`
+      + `&#x1f4f7; Cameras: <b>${gapInfo.totalCameras}</b> | Gap: <b>${gapInfo.longestGap.distMi.toFixed(1)} mi</b>`
+      + (nearbyPOI.length ? `<br>&#x26a0; ${nearbyPOI.length} POI nearby` : '')
+    ).addTo(ly.rsgRoutes);
+
+  // Endpoint marker
+  L.marker(result.endpoint, {
+    icon: L.divIcon({
+      html:`<div style="width:10px;height:10px;background:${color};border:2px solid #fff;border-radius:50%;box-shadow:0 0 8px ${color};"></div>`,
+      className:'', iconSize:[10,10], iconAnchor:[5,5],
+    }),
+  }).addTo(ly.rsgRoutes);
+
+  // Camera gap highlight (dashed green)
+  if (gapInfo.longestGap.distMi > 0.3) {
+    const gapCoords = result.latlngs.slice(gapInfo.longestGap.startIdx, gapInfo.longestGap.endIdx + 1);
+    if (gapCoords.length >= 2) {
+      L.polyline(gapCoords, { color:'#00ff88', weight:3, dashArray:'8,4', opacity:0.7 })
+        .bindPopup(`&#x1f6e1; Camera gap: ${gapInfo.longestGap.distMi.toFixed(1)} mi`)
+        .addTo(ly.rsgRoutes);
+    }
+  }
+
+  // Camera markers
+  const camIcon = L.divIcon({
+    html:`<div style="width:14px;height:14px;background:#ffeb3b;border:2px solid #f44336;border-radius:50%;box-shadow:0 0 6px rgba(255,235,59,.6);"></div>`,
+    className:'', iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-7],
+  });
+  gapInfo.camsFound.forEach(idx => {
+    const [lat, lon, name] = CAMERAS[idx];
+    L.marker([lat, lon], { icon:camIcon, zIndexOffset:1500 })
+      .bindPopup(`<b>${name}</b><br>On scenario route`)
+      .addTo(ly.rsgCams);
+  });
+
+  // POI markers
+  nearbyPOI.forEach(poi => {
+    L.circleMarker([poi.lat, poi.lon], {
+      radius:6, color:poi.type==='silo'?'#c0392b':'#f39c12', fillOpacity:0.7, weight:1,
+    }).bindPopup(`<b>${poi.name}</b><br>${poi.distMi.toFixed(1)} mi from route`).addTo(ly.rsgPOI);
+  });
+
+  // Update counts
+  document.getElementById('cnt-rsg-routes').textContent = Math.floor(ly.rsgRoutes.getLayers().length / 2);
+  document.getElementById('cnt-rsg-cams').textContent = ly.rsgCams.getLayers().length;
+  document.getElementById('cnt-rsg-poi').textContent = ly.rsgPOI.getLayers().length;
+}
+
+// --- Internal route generation (returns data, optionally draws) ---
+
+async function rsgGenerateOne(opts) {
+  const { direction, roadPref, maxMin, numWP, draw, opacity } = opts;
+  const maxSec = maxMin * 60;
+
+  // Pick destination
+  const endpoints = RSG_DESTINATIONS[direction];
+  const dest = rsgPick(endpoints);
+
+  // Generate waypoints
+  const waypoints = generateRandomWaypoints(numWP, direction, roadPref);
+
+  // Build OSRM URL
+  const points = [
+    { lat:ORIGIN_COORD.lat, lon:ORIGIN_COORD.lon },
+    ...waypoints,
+    dest,
+  ];
+  const coordStr = points.map(p => `${p.lon},${p.lat}`).join(';');
+  const url = `https://router.project-osrm.org/route/v1/driving/${coordStr}?overview=full&geometries=geojson&annotations=duration,distance`;
+
+  const resp = await fetch(url);
+  const data = await resp.json();
+  if (!data.routes || !data.routes.length) return null;
+
+  // Trim to time limit
+  const trimmed = trimMultiLegRoute(data, maxSec);
+  if (!trimmed) return null;
+
+  // Camera gap analysis
+  const gapInfo = rsgAnalyzeGaps(trimmed.latlngs, trimmed.distances);
+
+  // POI analysis
+  const nearbyPOI = rsgFindNearbyPOI(trimmed.latlngs);
+
+  // Draw if requested
+  const color = RSG_COLORS[direction] || '#e74c3c';
+  if (draw) {
+    drawScenarioRoute(trimmed, color, opacity || 0.9, gapInfo, nearbyPOI, dest, direction);
+  }
+
+  return { result:trimmed, gapInfo, nearbyPOI, direction, dest, color };
+}
+
+// --- Main entry: single route (or stealth) ---
+
+async function generateScenario() {
+  const statusEl = document.getElementById('rsg-status');
+  const resultsEl = document.getElementById('rsg-results');
+
+  let dir = document.getElementById('rsg-direction').value;
+  const roadPref = document.getElementById('rsg-roads').value;
+  const maxMin = parseInt(document.getElementById('rsg-minutes').value) || 30;
+  const numWP = parseInt(document.getElementById('rsg-waypoints').value) || 0;
+  const isStealth = document.getElementById('rsg-stealth').checked;
+
+  if (CAMERAS.length === 0) {
+    statusEl.textContent = 'Waiting for camera data to load...';
+    return;
+  }
+
+  clearScenarios();
+
+  // --- STEALTH MODE ---
+  if (isStealth) {
+    const numVariants = 8;
+    if (dir === 'any') dir = rsgPick(RSG_DIR_KEYS);
+    statusEl.textContent = `Stealth: testing ${numVariants} variants (${dir.toUpperCase()})...`;
+
+    const variants = [];
+    for (let v = 0; v < numVariants; v++) {
+      statusEl.textContent = `Stealth: route ${v+1}/${numVariants}...`;
+      try {
+        const r = await rsgGenerateOne({ direction:dir, roadPref, maxMin, numWP:rsgRandInt(0,3), draw:false });
+        if (r) variants.push(r);
+      } catch(e) { console.warn('Stealth variant failed:', e); }
+      if (v < numVariants - 1) await new Promise(r => setTimeout(r, 350));
+    }
+
+    if (variants.length === 0) { statusEl.textContent = 'No routes found.'; return; }
+
+    // Score: fewer cameras first, then longer gap
+    variants.sort((a, b) => {
+      if (a.gapInfo.totalCameras !== b.gapInfo.totalCameras)
+        return a.gapInfo.totalCameras - b.gapInfo.totalCameras;
+      return b.gapInfo.longestGap.distMi - a.gapInfo.longestGap.distMi;
+    });
+
+    const winner = variants[0];
+
+    // Draw all dimmed, winner bright green
+    variants.forEach((v, i) => {
+      const isWin = (i === 0);
+      drawScenarioRoute(v.result, isWin ? '#00ff88' : '#555', isWin ? 0.95 : 0.18,
+        v.gapInfo, isWin ? v.nearbyPOI : [], v.dest, v.direction);
+    });
+
+    statusEl.textContent = `Stealth complete — ${variants.length} variants tested`;
+    resultsEl.innerHTML = `
+      <div style="padding:6px 8px;background:rgba(0,255,136,.1);border-left:3px solid #00ff88;border-radius:3px;margin-bottom:6px;">
+        <b>&#x1f575; Stealth Route → ${winner.dest.name}</b>
+      </div>
+      <div>${winner.result.distMi.toFixed(1)} mi | ${Math.round(winner.result.seconds/60)} min</div>
+      <div>&#x1f4f7; Cameras: <b>${winner.gapInfo.totalCameras}</b></div>
+      <div>&#x1f6e1; Longest gap: <b>${winner.gapInfo.longestGap.distMi.toFixed(1)} mi</b></div>
+      ${winner.nearbyPOI.length ? `<div>&#x26a0; ${winner.nearbyPOI.length} POI nearby</div>` : ''}
+      <div style="margin-top:4px;color:var(--dim);">Tested ${variants.length} variants</div>
+      ${variants.length > 1 ? `<div style="color:var(--dim);">Runner-up: ${variants[1].gapInfo.totalCameras} cameras, ${variants[1].gapInfo.longestGap.distMi.toFixed(1)} mi gap</div>` : ''}
+    `;
+    return;
+  }
+
+  // --- SINGLE ROUTE ---
+  if (dir === 'any') dir = rsgPick(RSG_DIR_KEYS);
+  statusEl.textContent = `Generating route (${dir.toUpperCase()})...`;
+
+  try {
+    const r = await rsgGenerateOne({ direction:dir, roadPref, maxMin, numWP, draw:true, opacity:0.9 });
+    if (!r) { statusEl.textContent = 'No route found — try a different direction.'; return; }
+
+    statusEl.textContent = `Route generated → ${r.dest.name}`;
+    resultsEl.innerHTML = `
+      <div style="padding:6px 8px;background:var(--accent-soft);border-left:3px solid ${r.color};border-radius:3px;margin-bottom:6px;">
+        <b>→ ${r.dest.name}</b> <small style="color:var(--dim);">(${r.direction.toUpperCase()})</small>
+      </div>
+      <div>${r.result.distMi.toFixed(1)} mi | ${Math.round(r.result.seconds/60)} min</div>
+      <div>&#x1f4f7; Cameras on route: <b>${r.gapInfo.totalCameras}</b></div>
+      <div>&#x1f6e1; Longest camera gap: <b>${r.gapInfo.longestGap.distMi.toFixed(1)} mi</b></div>
+      ${r.nearbyPOI.length ? `<div style="margin-top:4px;">&#x26a0; Nearby POI:</div>${r.nearbyPOI.map(p => `<div style="margin-left:8px;color:var(--dim);">• ${p.name} (${p.distMi.toFixed(1)} mi)</div>`).join('')}` : ''}
+    `;
+
+    // Fit map to route
+    const bounds = L.latLngBounds(r.result.latlngs);
+    map.fitBounds(bounds.pad(0.1));
+  } catch(e) {
+    console.error('Route generation failed:', e);
+    statusEl.textContent = 'Error: ' + e.message;
+  }
+}
+
+// --- Batch generate (heatmap) ---
+
+async function batchGenerateScenarios() {
+  const statusEl = document.getElementById('rsg-status');
+  const resultsEl = document.getElementById('rsg-results');
+  const roadPref = document.getElementById('rsg-roads').value;
+  const maxMin = parseInt(document.getElementById('rsg-minutes').value) || 30;
+  let dirFilter = document.getElementById('rsg-direction').value;
+
+  if (CAMERAS.length === 0) {
+    statusEl.textContent = 'Waiting for camera data to load...';
+    return;
+  }
+
+  clearScenarios();
+  const numRoutes = 15;
+  statusEl.textContent = `Batch: generating ${numRoutes} routes...`;
+
+  const allResults = [];
+  for (let i = 0; i < numRoutes; i++) {
+    statusEl.textContent = `Batch: route ${i+1}/${numRoutes}...`;
+    const dir = dirFilter === 'any' ? rsgPick(RSG_DIR_KEYS) : dirFilter;
+    const numWP = rsgRandInt(0, 2);
+    try {
+      const r = await rsgGenerateOne({ direction:dir, roadPref, maxMin, numWP, draw:true, opacity:0.35 });
+      if (r) allResults.push(r);
+    } catch(e) { console.warn('Batch route failed:', e); }
+    if (i < numRoutes - 1) await new Promise(r => setTimeout(r, 350));
+  }
+
+  if (allResults.length === 0) { statusEl.textContent = 'No routes generated.'; return; }
+
+  // Aggregate stats
+  const avgDist = allResults.reduce((s,r) => s + r.result.distMi, 0) / allResults.length;
+  const avgCams = allResults.reduce((s,r) => s + r.gapInfo.totalCameras, 0) / allResults.length;
+  const avgGap = allResults.reduce((s,r) => s + r.gapInfo.longestGap.distMi, 0) / allResults.length;
+  const dirs = [...new Set(allResults.map(r => r.direction))];
+  const minCams = Math.min(...allResults.map(r => r.gapInfo.totalCameras));
+  const maxCams = Math.max(...allResults.map(r => r.gapInfo.totalCameras));
+
+  statusEl.textContent = `Batch complete — ${allResults.length} routes`;
+  resultsEl.innerHTML = `
+    <div style="padding:6px 8px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:3px;margin-bottom:6px;">
+      <b>&#x1f525; ${allResults.length} routes generated</b>
+    </div>
+    <div>Avg distance: <b>${avgDist.toFixed(1)} mi</b></div>
+    <div>Camera exposure: <b>${minCams}–${maxCams}</b> (avg ${avgCams.toFixed(0)})</div>
+    <div>Avg longest gap: <b>${avgGap.toFixed(1)} mi</b></div>
+    <div>Directions: ${dirs.map(d => d.toUpperCase()).join(', ')}</div>
+    <div style="margin-top:6px;color:var(--dim);font-size:10px;">Overlapping segments glow brighter = most probable corridors</div>
+  `;
+
+  // Fit map
+  const allPts = allResults.flatMap(r => r.result.latlngs);
+  if (allPts.length) map.fitBounds(L.latLngBounds(allPts).pad(0.05));
+}
+
+// --- Clear ---
+
+function clearScenarios() {
+  ly.rsgRoutes.clearLayers();
+  ly.rsgCams.clearLayers();
+  ly.rsgPOI.clearLayers();
+  document.getElementById('cnt-rsg-routes').textContent = '-';
+  document.getElementById('cnt-rsg-cams').textContent = '-';
+  document.getElementById('cnt-rsg-poi').textContent = '-';
+  document.getElementById('rsg-status').textContent = '';
+  document.getElementById('rsg-results').innerHTML = '';
 }
 
 // =============================================================
