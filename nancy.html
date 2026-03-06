@@ -218,6 +218,22 @@ body.collapsed #toggle-btn { left:10px; }
 }
 
 /* Escape-route tag tooltips — geographically anchored, zoom-safe on mobile */
+/* Wash / watershed labels */
+.leaflet-tooltip.wash-label {
+  background:rgba(10,40,80,.85); color:#7ec8ff; padding:1px 5px; border-radius:3px;
+  font:600 8px/1.3 system-ui; white-space:nowrap; border:none;
+  box-shadow:0 1px 3px rgba(0,0,0,.5); pointer-events:none;
+}
+.leaflet-tooltip.wash-label::before { display:none; }
+.leaflet-tooltip.wash-line-label {
+  background:transparent; color:#1e90ff; padding:0; border:none; box-shadow:none;
+  font:bold 10px/1.2 system-ui; white-space:nowrap; text-shadow:
+    -1px -1px 2px rgba(0,0,0,.9), 1px -1px 2px rgba(0,0,0,.9),
+    -1px  1px 2px rgba(0,0,0,.9), 1px  1px 2px rgba(0,0,0,.9);
+  pointer-events:none;
+}
+.leaflet-tooltip.wash-line-label::before { display:none; }
+
 .leaflet-tooltip.esc-tag {
   background:rgba(0,0,0,.88); color:#fff; padding:3px 7px; border-radius:3px;
   font:bold 10px/1.3 system-ui; white-space:nowrap; border:none;
@@ -263,7 +279,7 @@ body.collapsed #toggle-btn { left:10px; }
       <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
       <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
       <span class="legend-item"><span class="legend-dot" style="background:#0ea5e9;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:8px;height:9px;"></span> Water</span>
-      <span class="legend-item"><span class="legend-dot" style="background:#1e90ff;width:14px;height:3px;border-radius:1px;border:none;"></span> Wash</span>
+      <span class="legend-item"><svg width="10" height="13" viewBox="0 0 14 18" style="vertical-align:middle;"><path d="M7 0C7 0 0 7.5 0 11a7 7 0 0014 0C14 7.5 7 0 7 0z" fill="#1e90ff" stroke="#fff" stroke-width="1.5"/></svg> Wash</span>
     </div>
   </div>
 
@@ -934,10 +950,18 @@ function loadWatersheds() {
   ];
 
   majorWashes.forEach(w => {
-    L.polyline(w.coords, {
+    const line = L.polyline(w.coords, {
       color: w.color, weight: w.weight, opacity: 0.85,
       dashArray: w.weight < 3 ? '6 4' : null,
     }).bindPopup(`<b style="color:${w.color};">${w.name}</b><br><small>Major Wash / Waterway</small>`)
+      .addTo(ly.watersheds);
+    // Label at midpoint of polyline
+    const mid = w.coords[Math.floor(w.coords.length / 2)];
+    L.marker(mid, { icon: L.divIcon({ html:'', className:'', iconSize:[0,0] }) })
+      .bindTooltip(w.name, {
+        permanent: true, direction: 'center',
+        className: 'wash-line-label',
+      })
       .addTo(ly.watersheds);
     count++;
   });
@@ -1077,13 +1101,17 @@ function loadWatersheds() {
   ];
 
   const washIcon = L.divIcon({
-    html:`<div style="width:6px;height:6px;background:#1e90ff;border:1.5px solid #fff;border-radius:50%;box-shadow:0 0 4px rgba(30,144,255,.6);"></div>`,
-    className:'', iconSize:[6,6], iconAnchor:[3,3], popupAnchor:[0,-4],
+    html:`<svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0C7 0 0 7.5 0 11a7 7 0 0014 0C14 7.5 7 0 7 0z" fill="#1e90ff" stroke="#fff" stroke-width="1.5"/><circle cx="7" cy="10.5" r="2" fill="#fff" opacity=".5"/></svg>`,
+    className:'', iconSize:[14,18], iconAnchor:[7,18], popupAnchor:[0,-16],
   });
 
   namedWatersheds.forEach(([num, name, lat, lon]) => {
     L.marker([lat, lon], { icon: washIcon })
       .bindPopup(`<b style="color:#1e90ff;">#${num} — ${name}</b><br><small>Named Tucson Basin Watershed</small><br><small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`)
+      .bindTooltip(`${name}`, {
+        permanent: true, direction: 'right', offset: [8, -8],
+        className: 'wash-label',
+      })
       .addTo(ly.watersheds);
     count++;
   });
