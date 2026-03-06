@@ -252,6 +252,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="silos"> Titan II Silos <span class="cnt" id="cnt-silos">18</span></label>
     <label class="lyr"><input type="checkbox" data-layer="water"> Water Features <span class="cnt" id="cnt-water">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="watersheds"> Washes &amp; Watersheds <span class="cnt" id="cnt-watersheds">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
@@ -262,6 +263,7 @@ body.collapsed #toggle-btn { left:10px; }
       <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
       <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
       <span class="legend-item"><span class="legend-dot" style="background:#0ea5e9;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:8px;height:9px;"></span> Water</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1e90ff;width:14px;height:3px;border-radius:1px;border:none;"></span> Wash</span>
     </div>
   </div>
 
@@ -535,6 +537,7 @@ const ly = {
   routeTraces: L.layerGroup().addTo(map),
   maxReach:   L.layerGroup().addTo(map),
   camOnRoute: L.layerGroup().addTo(map),
+  watersheds:  L.layerGroup(),
   escapeRoute: L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
@@ -821,6 +824,272 @@ async function loadWater() {
     console.error('Water features error:', e);
     setStatus('water','error', e.message);
   }
+}
+
+// =============================================================
+// LOAD: WASHES & WATERSHEDS (Pima County / Watershed Mgmt Group data)
+// Source: Tucson Washes and Watersheds map, TerraSystems SW / WMG 2009
+// HUC data: USDA-NRCS National Cartography & Geospatial Center
+// =============================================================
+function loadWatersheds() {
+  setStatus('watersheds','loading');
+  let count = 0;
+
+  // --- Major Wash Courses (polylines) ---
+  const majorWashes = [
+    { name:'Santa Cruz River', color:'#1e90ff', weight:4, coords:[
+      [32.090,-111.010],[32.105,-111.000],[32.120,-111.005],[32.141,-110.987],
+      [32.158,-110.986],[32.173,-110.985],[32.184,-110.985],[32.192,-110.979],
+      [32.204,-110.978],[32.222,-110.981],[32.240,-110.992],[32.263,-111.006],
+      [32.277,-111.015],[32.293,-111.030],[32.310,-111.042],[32.330,-111.058],
+      [32.350,-111.080],[32.370,-111.095],[32.395,-111.115],[32.420,-111.135],
+      [32.445,-111.160],[32.470,-111.185]
+    ]},
+    { name:'Rillito River', color:'#4169e1', weight:4, coords:[
+      [32.280,-110.868],[32.283,-110.880],[32.287,-110.895],[32.290,-110.910],
+      [32.292,-110.925],[32.294,-110.940],[32.296,-110.955],[32.299,-110.968],
+      [32.303,-110.980],[32.308,-110.995],[32.313,-111.010],[32.318,-111.025],
+      [32.323,-111.038],[32.330,-111.058]
+    ]},
+    { name:'Pantano Wash', color:'#4682b4', weight:3.5, coords:[
+      [32.125,-110.680],[32.140,-110.700],[32.155,-110.720],[32.170,-110.740],
+      [32.180,-110.758],[32.190,-110.775],[32.202,-110.790],[32.215,-110.805],
+      [32.228,-110.818],[32.242,-110.830],[32.258,-110.845],[32.270,-110.858],
+      [32.280,-110.868]
+    ]},
+    { name:'Tanque Verde Creek', color:'#5b9bd5', weight:3.5, coords:[
+      [32.255,-110.695],[32.260,-110.718],[32.265,-110.738],[32.268,-110.755],
+      [32.270,-110.770],[32.272,-110.790],[32.275,-110.810],[32.277,-110.830],
+      [32.278,-110.845],[32.279,-110.855],[32.280,-110.868]
+    ]},
+    { name:'Sabino Creek', color:'#6ca6cd', weight:3, coords:[
+      [32.395,-110.810],[32.385,-110.812],[32.370,-110.815],[32.355,-110.815],
+      [32.340,-110.818],[32.325,-110.820],[32.310,-110.822],[32.300,-110.828],
+      [32.293,-110.838],[32.287,-110.848],[32.282,-110.858],[32.280,-110.868]
+    ]},
+    { name:'Canyon del Oro', color:'#4682b4', weight:3.5, coords:[
+      [32.460,-110.920],[32.445,-110.925],[32.430,-110.932],[32.420,-110.938],
+      [32.410,-110.948],[32.400,-110.960],[32.390,-110.975],[32.380,-110.988],
+      [32.370,-111.000],[32.360,-111.015],[32.350,-111.035],[32.345,-111.055],
+      [32.340,-111.065],[32.335,-111.075],[32.330,-111.058]
+    ]},
+    { name:'Agua Caliente Wash', color:'#6ca6cd', weight:2.5, coords:[
+      [32.310,-110.730],[32.300,-110.738],[32.290,-110.748],[32.280,-110.758],
+      [32.272,-110.770],[32.268,-110.785],[32.265,-110.800],[32.270,-110.820],
+      [32.275,-110.840],[32.280,-110.868]
+    ]},
+    { name:'Ventana Canyon Wash', color:'#87ceeb', weight:2, coords:[
+      [32.370,-110.870],[32.355,-110.870],[32.340,-110.868],[32.325,-110.862],
+      [32.310,-110.855],[32.298,-110.850],[32.290,-110.854],[32.285,-110.860],
+      [32.280,-110.868]
+    ]},
+    { name:'West Branch Santa Cruz River', color:'#5b9bd5', weight:2.5, coords:[
+      [32.100,-111.050],[32.120,-111.040],[32.140,-111.025],[32.155,-111.010],
+      [32.170,-111.000],[32.185,-110.990],[32.192,-110.979]
+    ]},
+    { name:'Tucson Arroyo', color:'#87ceeb', weight:2, coords:[
+      [32.275,-110.930],[32.265,-110.940],[32.255,-110.952],[32.245,-110.960],
+      [32.235,-110.968],[32.225,-110.975],[32.215,-110.980],[32.204,-110.978]
+    ]},
+    { name:'Julian Wash', color:'#87ceeb', weight:2, coords:[
+      [32.175,-110.890],[32.172,-110.910],[32.170,-110.930],[32.172,-110.950],
+      [32.178,-110.968],[32.185,-110.978],[32.192,-110.979]
+    ]},
+    { name:'Airport Wash', color:'#87ceeb', weight:2, coords:[
+      [32.195,-110.880],[32.190,-110.900],[32.188,-110.920],[32.190,-110.940],
+      [32.195,-110.955],[32.200,-110.968],[32.204,-110.978]
+    ]},
+    { name:'Alamo Wash', color:'#87ceeb', weight:2, coords:[
+      [32.310,-110.895],[32.305,-110.905],[32.300,-110.915],[32.296,-110.925],
+      [32.293,-110.935],[32.292,-110.945],[32.293,-110.955],[32.296,-110.960]
+    ]},
+    { name:'Alvernon Wash', color:'#87ceeb', weight:2, coords:[
+      [32.315,-110.910],[32.308,-110.912],[32.300,-110.914],[32.290,-110.916],
+      [32.280,-110.918],[32.270,-110.920],[32.260,-110.925],[32.250,-110.930]
+    ]},
+    { name:'Flowing Wells Wash', color:'#87ceeb', weight:2, coords:[
+      [32.310,-110.985],[32.305,-110.990],[32.298,-111.000],[32.290,-111.010],
+      [32.280,-111.015],[32.275,-111.015]
+    ]},
+    { name:'Pima Wash', color:'#87ceeb', weight:2, coords:[
+      [32.335,-110.900],[32.325,-110.898],[32.315,-110.896],[32.305,-110.892],
+      [32.298,-110.888],[32.292,-110.882],[32.287,-110.875],[32.284,-110.870]
+    ]},
+    { name:'Finger Rock Wash', color:'#87ceeb', weight:2, coords:[
+      [32.370,-110.920],[32.358,-110.920],[32.348,-110.922],[32.338,-110.925],
+      [32.328,-110.930],[32.318,-110.940],[32.313,-110.955]
+    ]},
+    { name:'Campbell Wash', color:'#87ceeb', weight:2, coords:[
+      [32.345,-110.935],[32.335,-110.938],[32.325,-110.942],[32.315,-110.945],
+      [32.305,-110.948],[32.298,-110.952],[32.296,-110.960]
+    ]},
+    { name:'Craycroft Wash', color:'#87ceeb', weight:2, coords:[
+      [32.330,-110.870],[32.320,-110.870],[32.310,-110.870],[32.300,-110.870],
+      [32.290,-110.870],[32.280,-110.868]
+    ]},
+    { name:'Black Wash', color:'#4682b4', weight:2.5, coords:[
+      [32.215,-111.020],[32.210,-111.035],[32.205,-111.050],[32.200,-111.060],
+      [32.195,-111.070],[32.188,-111.082],[32.180,-111.090]
+    ]},
+  ];
+
+  majorWashes.forEach(w => {
+    L.polyline(w.coords, {
+      color: w.color, weight: w.weight, opacity: 0.85,
+      dashArray: w.weight < 3 ? '6 4' : null,
+    }).bindPopup(`<b style="color:${w.color};">${w.name}</b><br><small>Major Wash / Waterway</small>`)
+      .addTo(ly.watersheds);
+    count++;
+  });
+
+  // --- Major Watershed Boundary Regions (semi-transparent polygons) ---
+  const watershedRegions = [
+    { name:'Rillito Creek Watershed', color:'#4169e1', coords:[
+      [32.280,-111.060],[32.340,-111.060],[32.370,-111.000],[32.395,-110.950],
+      [32.400,-110.900],[32.395,-110.850],[32.340,-110.815],[32.300,-110.820],
+      [32.280,-110.868],[32.265,-110.920],[32.260,-110.960],[32.270,-111.010],
+      [32.280,-111.060]
+    ]},
+    { name:'Canyon del Oro Watershed', color:'#2e8b57', coords:[
+      [32.330,-111.058],[32.340,-111.060],[32.370,-111.100],[32.410,-111.120],
+      [32.460,-111.100],[32.470,-110.920],[32.460,-110.920],[32.430,-110.932],
+      [32.400,-110.960],[32.370,-111.000],[32.340,-111.040],[32.330,-111.058]
+    ]},
+    { name:'Tanque Verde Creek Watershed', color:'#8b4513', coords:[
+      [32.280,-110.868],[32.300,-110.820],[32.340,-110.815],[32.370,-110.815],
+      [32.380,-110.780],[32.350,-110.700],[32.290,-110.680],[32.255,-110.695],
+      [32.250,-110.730],[32.260,-110.790],[32.270,-110.830],[32.280,-110.868]
+    ]},
+    { name:'Pantano Wash / Cienega Creek Watershed', color:'#b8860b', coords:[
+      [32.280,-110.868],[32.270,-110.830],[32.250,-110.730],[32.230,-110.670],
+      [32.190,-110.640],[32.140,-110.650],[32.100,-110.670],[32.125,-110.680],
+      [32.155,-110.720],[32.190,-110.775],[32.230,-110.825],[32.258,-110.845],
+      [32.280,-110.868]
+    ]},
+    { name:'Lower Santa Cruz River Watershed', color:'#228b22', coords:[
+      [32.330,-111.058],[32.270,-111.010],[32.240,-110.992],[32.204,-110.978],
+      [32.192,-110.979],[32.160,-111.010],[32.150,-111.050],[32.160,-111.100],
+      [32.210,-111.140],[32.280,-111.130],[32.330,-111.100],[32.340,-111.060],
+      [32.330,-111.058]
+    ]},
+    { name:'Upper Santa Cruz River Watershed', color:'#556b2f', coords:[
+      [32.192,-110.979],[32.170,-110.985],[32.140,-110.987],[32.100,-111.010],
+      [32.070,-111.030],[32.060,-111.080],[32.080,-111.100],[32.120,-111.090],
+      [32.150,-111.050],[32.160,-111.010],[32.192,-110.979]
+    ]},
+    { name:'Black Wash Watershed', color:'#696969', coords:[
+      [32.240,-110.992],[32.230,-111.010],[32.215,-111.020],[32.200,-111.060],
+      [32.180,-111.090],[32.160,-111.100],[32.150,-111.050],[32.160,-111.010],
+      [32.192,-110.979],[32.204,-110.978],[32.240,-110.992]
+    ]},
+  ];
+
+  watershedRegions.forEach(r => {
+    L.polygon(r.coords, {
+      color: r.color, weight: 1.5, opacity: 0.6,
+      fillColor: r.color, fillOpacity: 0.08,
+      dashArray: '4 3',
+    }).bindPopup(`<b style="color:${r.color};">${r.name}</b><br><small>Major Watershed Boundary (approx.)</small>`)
+      .addTo(ly.watersheds);
+    count++;
+  });
+
+  // --- 78 Named Tucson Basin Watersheds (labeled point markers) ---
+  const namedWatersheds = [
+    [1,'18th Street Wash',32.216,-110.965],
+    [2,'A Mtn Detention',32.212,-110.985],
+    [3,'Agua Caliente',32.300,-110.735],
+    [4,'Airport Wash',32.195,-110.920],
+    [5,'Alamo Wash',32.298,-110.920],
+    [6,'Alvernon Wash',32.280,-110.918],
+    [7,'Atterbury Wash',32.195,-110.850],
+    [8,'Bronx Wash',32.245,-110.900],
+    [9,'Camino de Oeste Wash',32.290,-111.020],
+    [10,'Camino Real Wash',32.260,-110.970],
+    [11,'Campbell Wash',32.325,-110.940],
+    [12,'Casas Adobes Wash',32.340,-111.005],
+    [13,'Christmas Wash',32.308,-110.870],
+    [14,'Christopher City Wash',32.160,-110.875],
+    [15,'Civano Wash',32.195,-110.780],
+    [16,'Craycroft Wash',32.295,-110.870],
+    [17,'Creekside Wash',32.170,-110.960],
+    [18,'Cushing Street Wash',32.218,-110.960],
+    [19,'Del Cerro Wash',32.255,-110.900],
+    [20,'Downtown Watershed',32.225,-110.975],
+    [21,'Earp Wash',32.250,-110.890],
+    [22,'Eastview Wash',32.230,-110.860],
+    [23,'El Vado Wash',32.270,-110.975],
+    [24,'Escalante Wash',32.245,-110.920],
+    [25,'Este Wash',32.315,-110.925],
+    [26,'Fahringer Wash',32.190,-110.930],
+    [27,'Finger Rock Wash',32.358,-110.920],
+    [28,'First Avenue Wash',32.220,-110.968],
+    [29,'Fletcha Caida Wash',32.265,-110.895],
+    [30,'Flowing Wells Wash',32.300,-110.995],
+    [31,'Fortyniners Wash',32.290,-110.880],
+    [32,'Friendly Village Wash',32.260,-110.935],
+    [33,'Grant Road Wash',32.250,-110.948],
+    [34,'Guillermo Wash',32.238,-110.858],
+    [35,'Hidden Hills Wash',32.275,-110.965],
+    [36,'Hughes Wash',32.170,-110.930],
+    [37,'Idle Hour Wash',32.175,-110.910],
+    [38,'Irvington (Michigan) Wash',32.182,-110.900],
+    [39,'Julian Wash',32.175,-110.955],
+    [40,'Kreuger Wash',32.175,-110.950],
+    [41,'Los Reales Diversion Channel',32.155,-110.930],
+    [42,'Mesquite Ranch Wash',32.255,-110.870],
+    [43,'Mission View Wash',32.240,-110.918],
+    [44,'Nanini Wash',32.310,-110.980],
+    [45,'North Mountain Ave. Wash',32.200,-110.965],
+    [46,'Owen Park Wash',32.235,-110.940],
+    [47,'Pegler Wash',32.305,-110.900],
+    [48,'Pima Wash',32.325,-110.900],
+    [49,'Race Track Wash',32.265,-110.952],
+    [50,'Reyes Wash',32.240,-110.900],
+    [51,'Robb Wash',32.305,-110.880],
+    [52,'Rodeo Wash',32.300,-110.935],
+    [53,'Roger Wash',32.295,-110.960],
+    [54,'Roller Coaster Wash',32.285,-110.978],
+    [55,'Rolling Hills Wash',32.240,-110.840],
+    [56,'Rose Hill Wash',32.280,-110.970],
+    [57,'Ruthrauff Wash',32.300,-111.010],
+    [58,'Sabino Creek',32.360,-110.820],
+    [59,'Santa Clara Wash',32.180,-110.890],
+    [60,'Silvercroft Wash',32.310,-110.960],
+    [61,'Spanish Trail Wash',32.260,-110.895],
+    [62,'Stone Avenue Wash',32.210,-110.975],
+    [63,'Swan Road Wash',32.230,-110.880],
+    [64,'Sweetwater Wash',32.290,-110.965],
+    [65,'Trails End Wash',32.298,-110.870],
+    [66,'Tucson Arroyo',32.255,-110.952],
+    [67,'Tucson General Wash',32.185,-110.960],
+    [68,'Udall Park Wash',32.248,-110.838],
+    [69,'Valencia Wash',32.268,-110.946],
+    [70,'Valley View Wash',32.175,-110.975],
+    [71,'Ventana Canyon Wash',32.345,-110.870],
+    [72,'Villa Entrada Wash',32.270,-110.960],
+    [73,'WBSCR Diversion Channel',32.155,-111.010],
+    [74,'West Branch Santa Cruz River',32.155,-111.010],
+    [75,'West University Wash',32.232,-110.958],
+    [76,'Wetmore Wash',32.240,-110.958],
+    [77,'Wrightstown Wash',32.225,-110.835],
+    [78,'Wyoming Wash',32.228,-110.830],
+  ];
+
+  const washIcon = L.divIcon({
+    html:`<div style="width:6px;height:6px;background:#1e90ff;border:1.5px solid #fff;border-radius:50%;box-shadow:0 0 4px rgba(30,144,255,.6);"></div>`,
+    className:'', iconSize:[6,6], iconAnchor:[3,3], popupAnchor:[0,-4],
+  });
+
+  namedWatersheds.forEach(([num, name, lat, lon]) => {
+    L.marker([lat, lon], { icon: washIcon })
+      .bindPopup(`<b style="color:#1e90ff;">#${num} — ${name}</b><br><small>Named Tucson Basin Watershed</small><br><small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`)
+      .addTo(ly.watersheds);
+    count++;
+  });
+
+  document.getElementById('cnt-watersheds').textContent = count;
+  setStatus('watersheds','loaded',`(${count})`);
 }
 
 // =============================================================
@@ -2318,6 +2587,7 @@ loadPointData();
 loadRoutes();
 loadCameras();
 loadWater();
+loadWatersheds();
 
 // Auto-run drive-time analysis after cameras + geocode have time to load
 setTimeout(() => runDriveTime(), 4000);
