@@ -1761,10 +1761,15 @@ function addDistanceRings() {
 
   // Draw from largest to smallest so smaller zones layer on top
   [...zones].reverse().forEach(([radius, label, color, opacity, desc]) => {
-    // Fill zone
+    // Black outline (wider, behind)
     L.circle(center, {
-      radius, color, weight: 2, fillColor: color, fillOpacity: opacity,
-      dashArray: '6,4', opacity: 0.7,
+      radius, color: '#000', weight: 6, fill: false,
+      dashArray: '6,4', opacity: 0.6,
+    }).addTo(ly.jammerZone);
+    // White border (on top of black)
+    L.circle(center, {
+      radius, color: '#fff', weight: 3, fillColor: color, fillOpacity: opacity,
+      dashArray: '6,4', opacity: 0.9,
     }).bindPopup(
       `<b style="color:${color};">&#x1f4f5; ${label}</b><br>`
       + `<span style="font-size:11px;">${desc}</span><br>`
