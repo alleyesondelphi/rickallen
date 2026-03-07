@@ -144,6 +144,25 @@ li { margin-bottom:4px; }
 <h3>Route Generator</h3>
 <p>Enter start and end coordinates to calculate a driving route. The route displays on the map with distance, duration, and any cameras along the way highlighted.</p>
 
+<h3>Drop Note Marker / Export</h3>
+<p>Click <b>Drop Note Marker</b> to place a pin on the map with a custom note. Use <b>Clear All Annotations</b> to remove them. When you're done, click <b>Export Notes as GeoJSON</b> to download all your markers as a standard GeoJSON file. This file can be opened in QGIS, Google Earth, kepler.gl, or any GIS tool for further analysis or to share with others.</p>
+
+<h2>Crime Intel</h2>
+<p>The Crime Intel panel queries the <b>Tucson PD Reported Crimes</b> database (ArcGIS Feature Service) in real time. To use it:</p>
+<ol style="padding-left:20px;margin-bottom:12px;">
+  <li>Pick a <b>division</b> &mdash; East (default, covers Catalina Foothills), Midtown, South, West, or All.</li>
+  <li>Pick a <b>time period</b> &mdash; last 90 days, 6 months, last year, or all time.</li>
+  <li>Click <b>Load Crime Data</b>.</li>
+</ol>
+<p>Results load in the sidebar with a summary count and two sections:</p>
+<ul>
+  <li><b style="color:#e74c3c;">Priority Offenses</b> &mdash; Violent and person-crimes are automatically flagged and shown first (kidnapping, homicide, assault, robbery, sexual offenses, weapons, stalking, threats, etc.).</li>
+  <li><b>Other Top Offenses</b> &mdash; The top 20 remaining crime types by count (theft, burglary, fraud, etc.).</li>
+</ul>
+<div class="note">
+  <b>Source:</b> Tucson Police Department reported crimes via the City of Tucson ArcGIS open data portal. Data may lag a few days behind real-time reports. Division boundaries are set by TPD &mdash; Catalina Foothills falls under the <b>East Division</b>.
+</div>
+
 <h2>Status Panel</h2>
 <p>The bottom of the sidebar shows a loading status for each data layer:</p>
 <ul>
@@ -165,7 +184,7 @@ li { margin-bottom:4px; }
 </ul>
 
 <div class="note">
-  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), OpenSky Network (aircraft), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding). All data is fetched live in your browser.
+  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding). All data is fetched live in your browser.
 </div>
 
 <p style="margin-top:32px;"><a href="nancy.html" class="back">&larr; Back to Map</a></p>

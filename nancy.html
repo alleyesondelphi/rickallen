@@ -1142,6 +1142,25 @@ function loadWatersheds() {
 //   11=Parachutist, 12=Ultralight, 13=Reserved, 14=UAV, 15=Space vehicle
 // =============================================================
 let aircraftLoaded = false;
+const aircraftMetaCache = {};  // icao24 → {reg, type, operator} or null
+
+async function fetchAircraftMeta(icao24) {
+  if (icao24 in aircraftMetaCache) return aircraftMetaCache[icao24];
+  try {
+    const r = await fetch(`https://hexdb.io/api/v1/aircraft/${icao24}`);
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const meta = {
+      reg:  d.Registration || '',
+      type: d.Type || d.ICAOTypeCode || '',
+      mfr:  d.Manufacturer || '',
+      owner: d.RegisteredOwners || '',
+    };
+    aircraftMetaCache[icao24] = meta;
+    return meta;
+  } catch { aircraftMetaCache[icao24] = null; return null; }
+}
+
 async function loadAircraft() {
   if (aircraftLoaded) return;
   setStatus('aircraft','loading');
@@ -1157,6 +1176,7 @@ async function loadAircraft() {
       const lat = s[6], lon = s[5];
       if (lat == null || lon == null) return;
       if (s[8]) return; // skip on_ground
+      const icao24   = s[0] || '';
       const callsign = (s[1] || '').trim() || 'N/A';
       const origin   = s[2] || '';
       const altM     = s[7];  // barometric altitude in meters
@@ -1172,16 +1192,47 @@ async function loadAircraft() {
         cat >= 2 && cat <= 7 ? 'Fixed-wing' : cat === 9 ? 'Glider' :
         cat === 10 ? 'Lighter-than-air' : cat === 12 ? 'Ultralight' : 'Unknown';
       const vrateStr = vrate != null ? (vrate > 0.5 ? ' &#x2197;' : vrate < -0.5 ? ' &#x2198;' : ' &#x2192;') : '';
-      const popup = `<b style="color:${isHeli?'#e91e63':'#00bcd4'};">${callsign}</b>${vrateStr}<br>`
+      // Lookup links
+      const csEnc = encodeURIComponent(callsign);
+      const links = `<div style="margin-top:4px;font-size:10px;display:flex;gap:6px;flex-wrap:wrap;">`
+        + (callsign !== 'N/A' ? `<a href="https://www.flightaware.com/live/flight/${csEnc}" target="_blank" rel="noopener" style="color:#58a6ff;">FlightAware</a>` : '')
+        + `<a href="https://globe.adsbexchange.com/?icao=${icao24}" target="_blank" rel="noopener" style="color:#58a6ff;">ADS-B Exch</a>`
+        + `<span id="faa-link-${icao24}"></span>`
+        + `</div>`;
+      const metaDiv = `<div id="meta-${icao24}" style="font-size:11px;color:#7d8998;margin-top:3px;">Loading details&hellip;</div>`;
+      const popup = `<b style="color:${isHeli?'#e91e63':'#00bcd4'};">${callsign}</b>${vrateStr}`
+        + `<span style="float:right;font-size:9px;color:#7d8998;">${icao24.toUpperCase()}</span><br>`
         + `Type: ${catLabel}<br>`
         + (altFt != null ? `Alt: ${altFt.toLocaleString()} ft<br>` : '')
         + (velKts != null ? `Speed: ${velKts} kts<br>` : '')
         + (heading != null ? `Heading: ${Math.round(heading)}&deg;<br>` : '')
         + (origin ? `Origin: ${origin}<br>` : '')
-        + `<small>${lat.toFixed(4)}, ${lon.toFixed(4)}</small>`;
-      L.marker([lat, lon], { icon: aircraftIcon(heading, isHeli || isUAV) })
-        .bindPopup(popup)
+        + `<small>${lat.toFixed(4)}, ${lon.toFixed(4)}</small>`
+        + metaDiv + links;
+      const marker = L.marker([lat, lon], { icon: aircraftIcon(heading, isHeli || isUAV) })
+        .bindPopup(popup, { minWidth: 220 })
         .addTo(ly.aircraft);
+      // Lazy-fetch metadata when popup opens
+      marker.on('popupopen', async () => {
+        const el = document.getElementById(`meta-${icao24}`);
+        if (!el || el.dataset.done) return;
+        el.dataset.done = '1';
+        const m = await fetchAircraftMeta(icao24);
+        if (m) {
+          let html = '';
+          if (m.reg)   html += `<b>Reg:</b> ${m.reg}<br>`;
+          if (m.type)  html += `<b>Aircraft:</b> ${m.mfr ? m.mfr+' ' : ''}${m.type}<br>`;
+          if (m.owner) html += `<b>Owner:</b> ${m.owner}`;
+          el.innerHTML = html || '<i>No metadata</i>';
+          // Add FAA registry link if we got a registration
+          if (m.reg) {
+            const faaEl = document.getElementById(`faa-link-${icao24}`);
+            if (faaEl) faaEl.innerHTML = `<a href="https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=${encodeURIComponent(m.reg)}" target="_blank" rel="noopener" style="color:#58a6ff;">FAA Registry</a>`;
+          }
+        } else {
+          el.innerHTML = '<i>No metadata available</i>';
+        }
+      });
       count++;
     });
     aircraftLoaded = true;
