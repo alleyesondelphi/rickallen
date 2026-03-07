@@ -131,6 +131,23 @@ li { margin-bottom:4px; }
   <span class="layer-name">WB I-10 Escape Corridor</span>
   <span class="layer-desc">Westbound I-10 corridor analysis with surveillance gaps and exit points</span>
 </div>
+<div class="layer-row">
+  <span class="layer-icon">&#x1f4f5;</span>
+  <span class="layer-name">WiFi Jammer Zone</span>
+  <span class="layer-desc">Estimated disruption radius if a WiFi jammer were used at 5820 N Camino Escalante. Three concentric zones at 30 m, 100 m, and 300 m.</span>
+</div>
+
+<h3 style="margin-top:20px;">WiFi Jammer Disruption Zone</h3>
+<p>This analytical overlay shows the estimated area where consumer WiFi cameras (Ring, Nest, Arlo, Blink, etc.) could be knocked offline by a signal jammer centered on the property. WiFi cameras typically operate on 2.4 GHz and 5 GHz bands, which are vulnerable to broadband RF jammers.</p>
+<p>Three zones are shown:</p>
+<ul>
+  <li><b style="color:#ff1744;">30 m</b> &mdash; <b>Handheld / low-power.</b> Cheap consumer jammers ($30&ndash;$100). Would disrupt cameras on the immediate property and nearest adjacent homes.</li>
+  <li><b style="color:#ff9100;">100 m</b> &mdash; <b>Medium-power.</b> Vehicle-mounted or briefcase-style unit. Covers roughly 1&ndash;2 surrounding properties in every direction.</li>
+  <li><b style="color:#ffd600;">300 m</b> &mdash; <b>High-power / directional antenna.</b> Could blank an entire block. Would reach cameras on surrounding streets and cul-de-sacs.</li>
+</ul>
+<div class="note">
+  <b>Note:</b> These are conservative estimates for a residential environment with walls, fences, and vegetation providing partial shielding. Line-of-sight and elevation differences affect actual range. Wired cameras (PoE/coax) and cameras with local SD card storage would not be affected by WiFi jamming. Using a jammer is a federal crime under 47 U.S.C. &sect; 333.
+</div>
 
 <h2>Tools</h2>
 

@@ -275,6 +275,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="stormDrains"> Storm Drains <span class="cnt" id="cnt-stormDrains">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
+    <label class="lyr"><input type="checkbox" data-layer="jammerZone"> &#x1f4f5; WiFi Jammer Disruption Zone</label>
     <div class="legend" style="margin-top:8px;">
       <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> Mine</span>
       <span class="legend-item"><span class="legend-dot" style="background:#3498db;width:5px;height:11px;border-radius:2px;"></span> Tower</span>
@@ -563,6 +564,7 @@ const ly = {
   watersheds:  L.layerGroup(),
   aircraft:    L.layerGroup(),
   stormDrains: L.layerGroup(),
+  jammerZone:  L.layerGroup(),
   escapeRoute: L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
@@ -1736,6 +1738,62 @@ function addDistanceRings() {
     .bindPopup(`Center: ${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}`).addTo(ly.rings);
   map.addLayer(ly.rings);
 }
+
+// =============================================================
+// ANALYSIS: WIFI JAMMER DISRUPTION ZONE
+// Estimated ranges based on publicly documented WiFi jammer capabilities.
+// Consumer WiFi cameras (Ring, Nest, Arlo, Blink, etc.) use 2.4 GHz / 5 GHz.
+// Jammer effectiveness depends on power, antenna, obstacles, and LOS.
+// Ranges below are conservative estimates for residential environments.
+// =============================================================
+(function buildJammerZone() {
+  const center = L.latLng(ORIGIN_COORD.lat, ORIGIN_COORD.lon);
+
+  // Zone definitions: [radius_meters, label, color, opacity, description]
+  const zones = [
+    [30,  '30 m — Handheld / Low-Power',     '#ff1744', 0.20,
+      'Cheap handheld WiFi jammers (~$30\u2013$100). Effective indoors or at close range. Disrupts cameras within the immediate property and nearest neighbors.'],
+    [100, '100 m — Medium-Power',             '#ff9100', 0.14,
+      'Briefcase or vehicle-mounted jammer. Covers ~1\u20132 surrounding properties in all directions. Most WiFi cameras in this radius would lose connection.'],
+    [300, '300 m — High-Power / Directional', '#ffd600', 0.08,
+      'High-power or directional antenna jammer. Could blank out an entire block or cul-de-sac. Would reach cameras on surrounding streets.'],
+  ];
+
+  // Draw from largest to smallest so smaller zones layer on top
+  [...zones].reverse().forEach(([radius, label, color, opacity, desc]) => {
+    // Fill zone
+    L.circle(center, {
+      radius, color, weight: 2, fillColor: color, fillOpacity: opacity,
+      dashArray: '6,4', opacity: 0.7,
+    }).bindPopup(
+      `<b style="color:${color};">&#x1f4f5; ${label}</b><br>`
+      + `<span style="font-size:11px;">${desc}</span><br>`
+      + `<small style="color:#7d8998;">Centered on 5820 N Camino Escalante</small>`
+    ).addTo(ly.jammerZone);
+
+    // Label at top of zone
+    const labelLat = center.lat + (radius / 111320);
+    L.marker([labelLat, center.lng], {
+      icon: L.divIcon({
+        html: `<div style="background:rgba(0,0,0,.85);color:${color};padding:2px 7px;border-radius:4px;font:bold 10px monospace;white-space:nowrap;border:1px solid ${color}40;">${label}</div>`,
+        className: '', iconAnchor: [0, 12],
+      }), interactive: false,
+    }).addTo(ly.jammerZone);
+  });
+
+  // Center icon
+  L.circleMarker(center, {
+    radius: 5, color: '#fff', fillColor: '#ff1744', fillOpacity: 1, weight: 2,
+  }).bindPopup(
+    `<b>&#x1f4f5; Jammer Origin</b><br>5820 N Camino Escalante<br>`
+    + `<small>${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}</small><br>`
+    + `<div style="margin-top:6px;font-size:10px;color:#7d8998;line-height:1.5;">`
+    + `<b style="color:#ff1744;">30 m</b> — handheld jammer; immediate property<br>`
+    + `<b style="color:#ff9100;">100 m</b> — medium-power; ~1\u20132 houses out<br>`
+    + `<b style="color:#ffd600;">300 m</b> — high-power; full block radius<br>`
+    + `<br>WiFi cameras (Ring, Nest, Arlo, Blink) are<br>especially vulnerable on 2.4 GHz.</div>`
+  ).addTo(ly.jammerZone);
+})();
 
 // =============================================================
 // TOOL: SEARCH GRID
