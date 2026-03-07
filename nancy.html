@@ -272,6 +272,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="water"> Water Features <span class="cnt" id="cnt-water">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="watersheds"> Washes &amp; Watersheds <span class="cnt" id="cnt-watersheds">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="aircraft"> Aircraft (ADS-B) <span class="cnt" id="cnt-aircraft">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="stormDrains"> Storm Drains <span class="cnt" id="cnt-stormDrains">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
@@ -285,6 +286,7 @@ body.collapsed #toggle-btn { left:10px; }
       <span class="legend-item"><svg width="10" height="13" viewBox="0 0 14 18" style="vertical-align:middle;"><path d="M7 0C7 0 0 7.5 0 11a7 7 0 0014 0C14 7.5 7 0 7 0z" fill="#1e90ff" stroke="#fff" stroke-width="1.5"/></svg> Wash</span>
       <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#00bcd4;">&#9992;</span> Plane</span>
       <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#e91e63;">&#9992;</span> Heli</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#607d8b;width:7px;height:7px;border:1.5px solid #90a4ae;"></span> Drain</span>
     </div>
   </div>
 
@@ -560,6 +562,7 @@ const ly = {
   camOnRoute: L.layerGroup().addTo(map),
   watersheds:  L.layerGroup(),
   aircraft:    L.layerGroup(),
+  stormDrains: L.layerGroup(),
   escapeRoute: L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
@@ -1246,6 +1249,75 @@ async function loadAircraft() {
 }
 
 // =============================================================
+// LOAD: STORM DRAINS (City of Tucson ArcGIS Feature Service)
+// Source: Tucson Dept of Transportation — drain disc locations
+// =============================================================
+const DRAIN_API = 'https://services3.arcgis.com/9coHY2fvuFjG9HQX/ArcGIS/rest/services/DRAINDISC_AGOVW/FeatureServer/0/query';
+let stormDrainsLoaded = false;
+
+async function loadStormDrains() {
+  if (stormDrainsLoaded) return;
+  setStatus('stormDrains','loading');
+  const [lamin, lomin, lamax, lomax] = C.bboxWide.split(',').map(Number);
+  const bbox = `${lomin},${lamin},${lomax},${lamax}`;
+  try {
+    let allFeatures = [];
+    let offset = 0;
+    const pageSize = 2000;
+    let more = true;
+    while (more && offset < 20000) {
+      const params = new URLSearchParams({
+        where: '1=1',
+        geometry: bbox,
+        geometryType: 'esriGeometryEnvelope',
+        inSR: '4326', outSR: '4326',
+        spatialRel: 'esriSpatialRelIntersects',
+        outFields: 'LOCATION,INST_DATE,INSP_DATE,REP_DATE',
+        f: 'json',
+        resultRecordCount: pageSize,
+        resultOffset: offset,
+      });
+      const r = await fetch(`${DRAIN_API}?${params}`);
+      if (!r.ok) throw new Error(`Storm Drain API ${r.status}`);
+      const data = await r.json();
+      if (data.error) throw new Error(data.error.message);
+      const features = data.features || [];
+      allFeatures.push(...features);
+      more = data.exceededTransferLimit === true;
+      offset += pageSize;
+      if (more) setStatus('stormDrains','loading',`(${allFeatures.length}...)`);
+    }
+    let count = 0;
+    allFeatures.forEach(f => {
+      const lon = f.geometry.x, lat = f.geometry.y;
+      if (lat == null || lon == null) return;
+      const a = f.attributes || {};
+      const loc   = a.LOCATION || 'Unknown';
+      const inst  = a.INST_DATE || '';
+      const insp  = a.INSP_DATE || '';
+      const rep   = a.REP_DATE || '';
+      const popup = `<b style="color:#607d8b;">&#x1F4A7; Storm Drain</b><br>`
+        + `<b>${loc}</b><br>`
+        + (inst ? `Installed: ${inst}<br>` : '')
+        + (insp ? `Inspected: ${insp}<br>` : '')
+        + (rep  ? `Repaired: ${rep}<br>` : '')
+        + `<small>${lat.toFixed(5)}, ${lon.toFixed(5)}</small>`;
+      L.circleMarker([lat, lon], {
+        radius: 3, fillColor: '#607d8b', color: '#90a4ae',
+        weight: 1, fillOpacity: 0.7, opacity: 0.9,
+      }).bindPopup(popup).addTo(ly.stormDrains);
+      count++;
+    });
+    stormDrainsLoaded = true;
+    document.getElementById('cnt-stormDrains').textContent = count.toLocaleString();
+    setStatus('stormDrains','loaded',`(${count.toLocaleString()})`);
+  } catch(e) {
+    console.error('Storm drains error:', e);
+    setStatus('stormDrains','error',e.message);
+  }
+}
+
+// =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
 // =============================================================
 function addADOTMarker(cam) {
@@ -1406,6 +1478,7 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
     if (cb.checked) {
       map.addLayer(layer);
       if (cb.dataset.layer === 'aircraft' && !aircraftLoaded) loadAircraft();
+      if (cb.dataset.layer === 'stormDrains' && !stormDrainsLoaded) loadStormDrains();
     } else { map.removeLayer(layer); }
   });
 });
