@@ -248,6 +248,7 @@ body.collapsed #toggle-btn { left:10px; }
   <div class="hdr">
     <h1>NANCY GUTHRIE</h1>
     <p>Catalina Foothills Resource Map</p>
+    <a href="nancy-guide.html" style="display:inline-block;margin-top:6px;font-size:10px;color:var(--link);text-decoration:none;opacity:.8;letter-spacing:.5px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">&#x2139; User Guide</a>
   </div>
 
   <div class="sec">
@@ -269,6 +270,7 @@ body.collapsed #toggle-btn { left:10px; }
     <label class="lyr"><input type="checkbox" data-layer="silos"> Titan II Silos <span class="cnt" id="cnt-silos">18</span></label>
     <label class="lyr"><input type="checkbox" data-layer="water"> Water Features <span class="cnt" id="cnt-water">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="watersheds"> Washes &amp; Watersheds <span class="cnt" id="cnt-watersheds">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="aircraft"> Aircraft (ADS-B) <span class="cnt" id="cnt-aircraft">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
     <div class="legend" style="margin-top:8px;">
@@ -280,6 +282,8 @@ body.collapsed #toggle-btn { left:10px; }
       <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
       <span class="legend-item"><span class="legend-dot" style="background:#0ea5e9;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:8px;height:9px;"></span> Water</span>
       <span class="legend-item"><svg width="10" height="13" viewBox="0 0 14 18" style="vertical-align:middle;"><path d="M7 0C7 0 0 7.5 0 11a7 7 0 0014 0C14 7.5 7 0 7 0z" fill="#1e90ff" stroke="#fff" stroke-width="1.5"/></svg> Wash</span>
+      <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#00bcd4;">&#9992;</span> Plane</span>
+      <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#e91e63;">&#9992;</span> Heli</span>
     </div>
   </div>
 
@@ -554,6 +558,7 @@ const ly = {
   maxReach:   L.layerGroup().addTo(map),
   camOnRoute: L.layerGroup().addTo(map),
   watersheds:  L.layerGroup(),
+  aircraft:    L.layerGroup(),
   escapeRoute: L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
@@ -594,6 +599,14 @@ const ICO = {
   }),
   user:  dot('#a855f7',16),
 };
+function aircraftIcon(heading, isHeli) {
+  const color = isHeli ? '#e91e63' : '#00bcd4';
+  const rot = (heading != null) ? heading : 0;
+  return L.divIcon({
+    html:`<div style="font-size:18px;color:${color};transform:rotate(${rot}deg);filter:drop-shadow(0 0 3px ${color});line-height:1;text-align:center;">&#9992;</div>`,
+    className:'', iconSize:[18,18], iconAnchor:[9,9], popupAnchor:[0,-9],
+  });
+}
 
 // =============================================================
 // STATUS TRACKING
@@ -1121,6 +1134,66 @@ function loadWatersheds() {
 }
 
 // =============================================================
+// LOAD: AIRCRAFT — OpenSky Network ADS-B (live positions)
+// API docs: https://openskynetwork.github.io/opensky-api/rest.html
+// Anonymous: 400 credits/day, 10s resolution. Free account: 4000/day.
+// Category codes: 0=N/A, 1=N/A, 2=Light, 3=Small, 4=Large, 5=High Vortex,
+//   6=Heavy, 7=High Perf, 8=Rotorcraft, 9=Glider, 10=Lighter-than-air,
+//   11=Parachutist, 12=Ultralight, 13=Reserved, 14=UAV, 15=Space vehicle
+// =============================================================
+let aircraftLoaded = false;
+async function loadAircraft() {
+  if (aircraftLoaded) return;
+  setStatus('aircraft','loading');
+  const [lamin, lomin, lamax, lomax] = C.bboxWide.split(',').map(Number);
+  const url = `https://opensky-network.org/api/states/all?lamin=${lamin}&lamax=${lamax}&lomin=${lomin}&lomax=${lomax}`;
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`OpenSky API ${r.status}`);
+    const data = await r.json();
+    const states = data.states || [];
+    let count = 0;
+    states.forEach(s => {
+      const lat = s[6], lon = s[5];
+      if (lat == null || lon == null) return;
+      if (s[8]) return; // skip on_ground
+      const callsign = (s[1] || '').trim() || 'N/A';
+      const origin   = s[2] || '';
+      const altM     = s[7];  // barometric altitude in meters
+      const altFt    = altM != null ? Math.round(altM * 3.281) : null;
+      const velMs    = s[9];  // m/s
+      const velKts   = velMs != null ? Math.round(velMs * 1.944) : null;
+      const heading  = s[10]; // true track in degrees
+      const vrate    = s[11]; // vertical rate m/s
+      const cat      = s[17]; // aircraft category
+      const isHeli   = (cat === 8);
+      const isUAV    = (cat === 14);
+      const catLabel = isHeli ? 'Rotorcraft' : isUAV ? 'UAV/Drone' :
+        cat >= 2 && cat <= 7 ? 'Fixed-wing' : cat === 9 ? 'Glider' :
+        cat === 10 ? 'Lighter-than-air' : cat === 12 ? 'Ultralight' : 'Unknown';
+      const vrateStr = vrate != null ? (vrate > 0.5 ? ' &#x2197;' : vrate < -0.5 ? ' &#x2198;' : ' &#x2192;') : '';
+      const popup = `<b style="color:${isHeli?'#e91e63':'#00bcd4'};">${callsign}</b>${vrateStr}<br>`
+        + `Type: ${catLabel}<br>`
+        + (altFt != null ? `Alt: ${altFt.toLocaleString()} ft<br>` : '')
+        + (velKts != null ? `Speed: ${velKts} kts<br>` : '')
+        + (heading != null ? `Heading: ${Math.round(heading)}&deg;<br>` : '')
+        + (origin ? `Origin: ${origin}<br>` : '')
+        + `<small>${lat.toFixed(4)}, ${lon.toFixed(4)}</small>`;
+      L.marker([lat, lon], { icon: aircraftIcon(heading, isHeli || isUAV) })
+        .bindPopup(popup)
+        .addTo(ly.aircraft);
+      count++;
+    });
+    aircraftLoaded = true;
+    document.getElementById('cnt-aircraft').textContent = count;
+    setStatus('aircraft','loaded',`(${count})`);
+  } catch(e) {
+    console.error('Aircraft load error:', e);
+    setStatus('aircraft','error',e.message);
+  }
+}
+
+// =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
 // =============================================================
 function addADOTMarker(cam) {
@@ -1278,8 +1351,10 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
   cb.addEventListener('change', () => {
     const layer = ly[cb.dataset.layer];
     if (!layer) return;
-    if (cb.checked) { map.addLayer(layer); }
-    else { map.removeLayer(layer); }
+    if (cb.checked) {
+      map.addLayer(layer);
+      if (cb.dataset.layer === 'aircraft' && !aircraftLoaded) loadAircraft();
+    } else { map.removeLayer(layer); }
   });
 });
 
