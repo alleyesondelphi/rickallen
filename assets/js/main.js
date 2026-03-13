@@ -10,6 +10,44 @@
   "use strict";
 
   /**
+   * Lazy-load iframes (PDFs, videos, audio)
+   * Defers loading until the iframe is near the viewport.
+   * Prevents page crashes on heavy pages with many embeds.
+   */
+  function initLazyIframes() {
+    const iframes = document.querySelectorAll('iframe[src]');
+    if (!iframes.length) return;
+
+    // Store src, clear it, add placeholder styling
+    iframes.forEach(function(iframe) {
+      iframe.dataset.src = iframe.src;
+      iframe.removeAttribute('src');
+      iframe.classList.add('lazy-iframe');
+    });
+
+    // Load iframe when it enters the viewport (with 300px margin)
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const iframe = entry.target;
+          iframe.src = iframe.dataset.src;
+          iframe.classList.add('lazy-iframe--loaded');
+          observer.unobserve(iframe);
+        }
+      });
+    }, {
+      rootMargin: '300px 0px'
+    });
+
+    iframes.forEach(function(iframe) {
+      observer.observe(iframe);
+    });
+  }
+
+  // Run lazy loading before anything else
+  initLazyIframes();
+
+  /**
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');

@@ -1,7 +1,4 @@
 # www.robotstxt.org/
 
-User-agent: Twitterbot
-Disallow: *
-
-Allow: /images
-Allow: /archives
+User-agent: *
+Disallow:

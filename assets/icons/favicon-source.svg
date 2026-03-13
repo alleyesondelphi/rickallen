@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4B896;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B48C5A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0C0E12"/>
+  
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="508" height="508" rx="62" fill="none" stroke="rgba(180,140,90,0.2)" stroke-width="2"/>
+  
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="512" height="4" rx="2" fill="url(#gold)" opacity="0.6"/>
+
+  <!-- "IN" text - top portion -->
+  <text x="256" y="205" 
+        font-family="'Georgia', 'Times New Roman', serif" 
+        font-size="130" 
+        font-weight="700" 
+        fill="url(#gold)" 
+        text-anchor="middle" 
+        letter-spacing="-2">IN</text>
+
+  <!-- "v" divider - small italic -->
+  <text x="256" y="295" 
+        font-family="'Georgia', 'Times New Roman', serif" 
+        font-size="72" 
+        font-weight="400" 
+        font-style="italic"
+        fill="#8A7A60" 
+        text-anchor="middle"
+        opacity="0.7">v</text>
+
+  <!-- "RA" text - bottom portion -->
+  <text x="256" y="405" 
+        font-family="'Georgia', 'Times New Roman', serif" 
+        font-size="130" 
+        font-weight="700" 
+        fill="#E8E2D8" 
+        text-anchor="middle" 
+        letter-spacing="-2">RA</text>
+
+  <!-- Thin horizontal rules flanking the "v" -->
+  <line x1="100" y1="270" x2="205" y2="270" stroke="#B48C5A" stroke-width="1.5" opacity="0.3"/>
+  <line x1="307" y1="270" x2="412" y2="270" stroke="#B48C5A" stroke-width="1.5" opacity="0.3"/>
+</svg>
