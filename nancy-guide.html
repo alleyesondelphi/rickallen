@@ -152,9 +152,29 @@ li { margin-bottom:4px; }
   <span class="layer-desc">Westbound I-10 corridor analysis with surveillance gaps and exit points</span>
 </div>
 <div class="layer-row">
+  <span class="layer-icon">&#x1f697;</span>
+  <span class="layer-name">Genematas Dr Route</span>
+  <span class="layer-desc">Traced route from W Roller Coaster Rd / La Cholla area to 5830 N Genematas Dr (Shadow Hills). 7.6 miles, ~21 min drive.</span>
+</div>
+<div class="layer-row">
   <span class="layer-icon">&#x1f4f5;</span>
   <span class="layer-name">WiFi Jammer Zone</span>
   <span class="layer-desc">Estimated disruption radius if a WiFi jammer were used at 5820 N Camino Escalante. Three concentric zones at 30 m, 100 m, and 300 m.</span>
+</div>
+<div class="layer-row">
+  <span class="layer-icon">&#x1f6a8;</span>
+  <span class="layer-name">TPD Divisions</span>
+  <span class="layer-desc">Tucson Police Department division boundaries (East, Midtown, South, West). Loads on first toggle from the City of Tucson ArcGIS service.</span>
+</div>
+<div class="layer-row">
+  <span class="layer-icon">&#x1f682;</span>
+  <span class="layer-name">Railroads</span>
+  <span class="layer-desc">Rail lines in Pima and surrounding counties from OpenStreetMap. Color-coded: amber for mainline, darker amber for spur/siding, gray for yard tracks. Loads on first toggle.</span>
+</div>
+<div class="layer-row">
+  <span class="layer-icon">&#x1f3f4;</span>
+  <span class="layer-name">Criminal Territories &amp; Corridors</span>
+  <span class="layer-desc">Regional cartel/gang territory polygons and smuggling corridors. Covers Tohono O&#8217;odham Nation, I-19 Corridor, Barrio Hollywood/NMM, Phoenix distribution hub, Cochise Corridor, and cartel scout arrest locations. Zooms out to regional view when toggled on.</span>
 </div>
 
 <h3 style="margin-top:20px;">WiFi Jammer Disruption Zone</h3>
@@ -167,6 +187,38 @@ li { margin-bottom:4px; }
 </ul>
 <div class="note">
   <b>Note:</b> These are conservative estimates for a residential environment with walls, fences, and vegetation providing partial shielding. Line-of-sight and elevation differences affect actual range. Wired cameras (PoE/coax) and cameras with local SD card storage would not be affected by WiFi jamming. Using a jammer is a federal crime under 47 U.S.C. &sect; 333.
+</div>
+
+<h3 style="margin-top:20px;">Criminal Territories &amp; Corridors</h3>
+<p>This overlay shows known cartel and gang-controlled areas across southern Arizona. Each zone is a semi-transparent polygon that lets the underlying map show through. Hover over a zone to highlight it; click for a detailed intelligence popup with source agencies.</p>
+<p>Six zones are included:</p>
+<ul>
+  <li><b style="color:#e74c3c;">Tohono O&#8217;odham Nation</b> &mdash; 2.8M-acre reservation with 62-mile Mexico border. Sinaloa Cartel dominant.</li>
+  <li><b style="color:#ff6b35;">I-19 Corridor</b> &mdash; Primary drug/human trafficking pipeline from Nogales to Tucson.</li>
+  <li><b style="color:#9b59b6;">Barrio Hollywood / AZ New Mexican Mafia</b> &mdash; Largest Tucson street gang alliance operating in south/central Tucson.</li>
+  <li><b style="color:#3498db;">Phoenix Distribution Hub</b> &mdash; National-level narcotics redistribution center in Maricopa County.</li>
+  <li><b style="color:#e67e22;">Cochise Corridor</b> &mdash; Secondary smuggling route through Douglas/Agua Prieta to Sierra Vista.</li>
+  <li><b style="color:#f1c40f;">&#x25c6; Scout Arrest Locations</b> &mdash; Diamond markers at known cartel scout/spotter arrest sites (Maricopa, Silverbell Mountains).</li>
+</ul>
+<div class="note">
+  <b>Sources:</b> DEA, HIDTA, DOJ OIG, CBP Tucson/Douglas Sectors, FBI Phoenix, Tucson PD Gang Unit, Maricopa County SO, Cochise County SO, tribal law enforcement testimony. Intelligence is compiled from open-source federal reports and court documents.
+</div>
+
+<h2>Corridor Analysis Tab</h2>
+<p>Use the <b>MAP</b> / <b>CORRIDOR ANALYSIS</b> toggle buttons at the top of the sidebar to switch between the interactive map and a full traffic estimate document.</p>
+<p>The Corridor Analysis tab includes:</p>
+<ul>
+  <li><b>Metro baseline</b> &mdash; Tucson registered vehicles, road network size, and daily VMT</li>
+  <li><b>Sunday 1-3 AM snapshot</b> &mdash; Estimated instantaneous vehicle count (5,000-6,000) with sourced FHWA/DOT ratios</li>
+  <li><b>Breakdown by road type</b> &mdash; Estimated vehicles on interstates, arterials, and local streets</li>
+  <li><b>Who is on the road</b> &mdash; Bar close-out, rideshare, shift workers, truckers, etc.</li>
+  <li><b>Egress corridors</b> &mdash; Five routes from 5820 N Camino Escalante with distances, drive times, and camera density</li>
+  <li><b>I-10 camera coverage</b> &mdash; ADOT camera spacing from urban core to open desert</li>
+  <li><b>Data confidence summary</b> &mdash; Each data point tagged SOURCED or ESTIMATED with its basis</li>
+  <li><b>Cross-reference sources</b> &mdash; Where to find harder numbers (Pima County count stations, TPD logs, PAG model, ALPR data)</li>
+</ul>
+<div class="note">
+  <b>Note:</b> All corridor travel times in the analysis tab have been reconciled with the map's escape route layer data. Figures tagged ESTIMATED have not been verified against local data.
 </div>
 
 <h2>Tools</h2>
@@ -223,10 +275,12 @@ li { margin-bottom:4px; }
   <li>Layer data comes from OpenStreetMap (Overpass API), AZ 511, and OpenSky Network. Counts may vary depending on API availability.</li>
   <li>The Aircraft layer only loads when you first check it (to save API credits). It shows a snapshot of current airborne traffic &mdash; refresh the page for updated positions.</li>
   <li>The Escape Corridor layer is specialized analysis &mdash; toggle it on to see surveillance gaps along westbound I-10.</li>
+  <li>The Criminal Territories layer automatically zooms out to show the full regional picture when toggled on.</li>
+  <li>All data layers start unchecked &mdash; toggle on only what you need to keep the map clean.</li>
 </ul>
 
 <div class="note">
-  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding). All data is fetched live in your browser.
+  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains, TPD divisions), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding), DEA/HIDTA/DOJ/CBP (territory intelligence). All data is fetched live in your browser except territory overlays which are compiled from open-source reports.
 </div>
 
 <p style="margin-top:32px;"><a href="nancy" class="back">&larr; Back to Map</a></p>
