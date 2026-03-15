@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Search Guide — IN v. RA Court File Search</title>
+  <meta name="description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/search/guide.html">
+
+  <meta property="og:title" content="Search Guide — IN v. RA Court File Search">
+  <meta property="og:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/search/guide.html">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Search Guide — IN v. RA Court File Search">
+  <meta name="twitter:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0e0c0b;
+      --surface: #171413;
+      --surface-raised: #1e1a18;
+      --border: #2a2523;
+      --border-light: #3a3432;
+      --gold: #b48c5a;
+      --gold-dim: #7a6040;
+      --gold-bright: #c8a468;
+      --text: #d4cdc5;
+      --text-dim: #8a8279;
+      --text-faint: #5a5450;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+
+    .header .subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold-dim);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--gold-bright);
+    }
+
+    .guide-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.75;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 2rem 0;
+      opacity: 0.5;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      color: var(--gold-bright);
+    }
+
+    .example-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold-dim);
+      padding: 1rem 1.2rem;
+      margin: 1rem 0 1.5rem;
+      border-radius: 2px;
+    }
+
+    .example-block .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--text-faint);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .example-block .query {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .example-block .note {
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-right: 2px solid var(--gold-dim);
+      padding: 0.7rem 1rem;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat-box .val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .stat-box .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--text-faint);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-weight: 700;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--text-faint);
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+    }
+
+    .footer a {
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .header { padding: 1.5rem 1rem 1rem; }
+      .header h1 { font-size: 1.4rem; }
+      .guide-container { padding: 1.5rem 1rem 3rem; }
+      h2 { font-size: 1.2rem; }
+      .stat-row { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Search Guide</h1>
+  <div class="subtitle">Indiana v. Richard M. Allen — Court File Search</div>
+  <a href="index.html" class="back-link">← Back to search</a>
+</header>
+
+<div class="guide-container">
+
+  <h2>What This Is</h2>
+
+  <p class="lead">This tool lets you search across the publicly available court filings from <em>Indiana v. Richard M. Allen</em> using natural language queries. Instead of opening documents one at a time, you can ask a question and the system finds the most relevant passages across every indexed filing.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="val">18,435</div>
+      <div class="label">Indexed chunks</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">667</div>
+      <div class="label">Court filings</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">Oct '22 – Dec '25</div>
+      <div class="label">Date range</div>
+    </div>
+  </div>
+
+  <p>The indexed documents include motions, orders, transcripts, hearing records, exhibits, and other filings from the public docket. Documents that are sealed, redacted, or image-only (scanned without OCR) are not included in the search results.</p>
+
+  <div class="divider"></div>
+
+  <h2>How It Works</h2>
+
+  <p>This is a semantic search engine, not a keyword search. It understands meaning, not just exact words. When you type a query, the system converts it into a mathematical representation and compares it against every document chunk in the database, returning the closest matches by meaning.</p>
+
+  <p>This means you can search for concepts, not just terms. A query like "defense arguments about the bullet" will find relevant passages even if those passages don't contain the exact word "bullet" — they might say "round," "cartridge," "projectile," or "firearms evidence."</p>
+
+  <p>Each result shows the source filing, date, a relevance score, and a link to the original document on Google Drive.</p>
+
+  <div class="divider"></div>
+
+  <h2>Search Tips</h2>
+
+  <p>Natural language works best. Ask questions or describe what you're looking for in plain English.</p>
+
+  <div class="example-block">
+    <div class="label">Good queries</div>
+    <div class="query">What did the defense argue about the unspent bullet?</div>
+    <div class="note">Finds testimony, closing arguments, and motions related to the bullet evidence.</div>
+  </div>
+
+  <div class="example-block">
+    <div class="label">Good queries</div>
+    <div class="query">confessions at Westville Correctional</div>
+    <div class="note">Surfaces references to Allen's statements while incarcerated.</div>
+  </div>
+
+  <div class="example-block">
+    <div class="label">Good queries</div>
+    <div class="query">motion to disqualify Judge Gull</div>
+    <div class="note">Finds the defense filings and court orders related to recusal arguments.</div>
+  </div>
+
+  <div class="example-block">
+    <div class="label">Less effective</div>
+    <div class="query">McLeland 2023</div>
+    <div class="note">Too sparse. Try instead: "McLeland motion to seal" or "prosecution arguments about public access."</div>
+  </div>
+
+  <p>General guidance:</p>
+  <ul>
+    <li>Use full phrases and questions rather than single keywords</li>
+    <li>Include context — "search warrant for Whiteman Drive" works better than just "search warrant"</li>
+    <li>The relevance percentage is a rough guide — anything above 50% is usually on point, below 40% may be tangential</li>
+    <li>Adjust the results count (3, 5, 10, or 15) to see more or fewer matches</li>
+    <li>Click "Expand" to see the full text of a result, or "View Source" to open the original filing</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>What's Indexed</h2>
+
+  <p>The search covers text extracted from 667 PDF filings downloaded from the public Google Drive case file archive. This includes:</p>
+
+  <ul>
+    <li>Court orders and rulings</li>
+    <li>Defense and prosecution motions</li>
+    <li>Hearing and trial transcripts</li>
+    <li>Affidavits and search warrants</li>
+    <li>Appellate filings</li>
+    <li>Exhibits (text-based only — images and scanned pages without embedded text are not searchable)</li>
+  </ul>
+
+  <p>Approximately 300 files in the collection are image-only PDFs (scanned documents, photographs, handwritten letters) that couldn't be text-extracted. These are still available through the case file archive but won't appear in search results.</p>
+
+  <div class="divider"></div>
+
+  <h2>Limitations</h2>
+
+  <ul>
+    <li>This is a search tool, not legal analysis. Results are document excerpts, not conclusions.</li>
+    <li>Sealed and confidential filings are not included.</li>
+    <li>Some document text may have extraction artifacts (spacing issues, broken words) from PDF conversion.</li>
+    <li>The search API may take a few seconds to respond on the first query if the server has been idle.</li>
+    <li>Results show document chunks (roughly paragraph-length passages), not full documents. Use the "View Source" link to read the complete filing.</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>About</h2>
+
+  <p>This tool was built as a proof of concept for document intelligence applied to public court records. The underlying technology — semantic vector search over extracted document text — is designed to be adaptable to any large collection of court filings.</p>
+
+  <p>All documents are sourced from publicly available court records. This project is not affiliated with the court, any party to the case, or any legal organization.</p>
+
+</div>
+
+<footer class="footer">
+  <p>Documents sourced from public court records · <a href="https://alleyesondelphi.github.io/rickallen" target="_blank">@alleyesondelphi | GitHub</a></p>
+</footer>
+
+</body>
+</html>
