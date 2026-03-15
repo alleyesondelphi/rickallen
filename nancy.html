@@ -240,6 +240,89 @@
     box-shadow:0 1px 4px rgba(0,0,0,.5); pointer-events:auto; cursor:pointer;
   }
   .leaflet-tooltip.esc-tag::before { display:none; }
+
+  /* --- Tab toggle buttons --- */
+  .view-tabs { display:flex; gap:4px; margin-top:8px; }
+  .view-tabs button {
+    flex:1; padding:5px 0; font-size:10px; font-weight:600; letter-spacing:.5px;
+    border:1px solid var(--border); border-radius:var(--radius); cursor:pointer;
+    background:transparent; color:var(--dim); transition:all .2s;
+  }
+  .view-tabs button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .view-tabs button:hover:not(.active) { border-color:var(--dim); color:var(--text); }
+
+  /* --- Corridor analysis panel --- */
+  #analysis-panel {
+    display:none; position:absolute; top:0; bottom:0; right:0; left:var(--sidebar-w);
+    z-index:2; background:var(--bg); overflow-y:auto; padding:24px;
+    transition:left .35s var(--ease);
+  }
+  body.collapsed #analysis-panel { left:0; }
+  #analysis-panel .a-wrap { max-width:860px; margin:0 auto; }
+  #analysis-panel .a-header { padding:20px 0 16px; border-bottom:2px solid var(--accent); margin-bottom:24px; }
+  #analysis-panel .a-header h2 { font-size:20px; font-weight:800; letter-spacing:2px; text-shadow:0 0 20px var(--accent-glow); }
+  #analysis-panel .a-header p { font-size:11px; color:var(--dim); margin-top:4px; text-transform:uppercase; letter-spacing:.5px; }
+  #analysis-panel .a-sec { margin:0 0 28px; }
+  #analysis-panel .a-sec-label { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--dim); margin:0 0 12px; font-weight:600; }
+  #analysis-panel .a-sec-intro { font-size:13px; color:var(--dim); margin:0 0 14px; line-height:1.6; }
+  .corridor-card {
+    background:var(--panel); border-radius:var(--radius); padding:14px 16px; margin:0 0 10px;
+    border:1px solid var(--border); transition:border-color .2s;
+  }
+  .corridor-card:hover { border-color:rgba(255,255,255,.15); }
+  .corridor-card .cc-name { font-size:14px; font-weight:600; margin:0 0 4px; }
+  .corridor-card .cc-stats { display:flex; gap:16px; flex-wrap:wrap; margin:6px 0; }
+  .corridor-card .cc-stat { font-size:12px; color:var(--dim); }
+  .corridor-card .cc-stat b { color:var(--text); }
+  .corridor-card .cc-note { font-size:11px; color:var(--dim); margin:8px 0 0; line-height:1.5; padding-top:8px; border-top:1px solid var(--border); }
+  .cam-strip { display:flex; align-items:center; gap:6px; margin:8px 0 0; }
+  .cam-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .cam-label { font-size:10px; color:var(--dim); }
+  .gap-bar { flex:1; height:6px; border-radius:3px; background:var(--section); position:relative; overflow:hidden; }
+  .gap-fill { height:100%; border-radius:3px; }
+  .zone-row { display:flex; gap:8px; margin:0 0 8px; }
+  .zone-card { flex:1; background:var(--panel); border-radius:var(--radius); padding:12px 14px; border:1px solid var(--border); }
+  .zone-card .zl { font-size:10px; color:var(--dim); margin:0 0 4px; }
+  .zone-card .zv { font-size:18px; font-weight:700; margin:0 0 2px; }
+  .zone-card .zs { font-size:10px; color:var(--dim); }
+  .imp-box { background:var(--panel); border-radius:var(--radius); padding:18px 20px; border:1px solid var(--border); }
+  .imp-row { display:flex; gap:14px; margin:10px 0; align-items:flex-start; }
+  .imp-num { font-size:22px; font-weight:700; color:var(--link); flex-shrink:0; width:44px; text-align:center; }
+  .imp-text { font-size:12px; color:var(--dim); line-height:1.6; }
+  .imp-text b { color:var(--text); }
+  .a-caveat { font-size:10px; color:#d29922; font-style:italic; margin:6px 0 0; padding:6px 10px; background:rgba(210,153,34,.06); border-radius:var(--radius); border-left:2px solid #d29922; }
+  .a-tag { display:inline-block; font-size:9px; font-weight:600; padding:1px 5px; border-radius:3px; vertical-align:middle; margin-left:4px; background:rgba(210,153,34,.15); color:#d29922; }
+  .a-footer { margin-top:32px; padding-top:12px; border-top:1px solid var(--border); font-size:10px; color:var(--dim); text-align:center; }
+  .a-baseline { display:flex; gap:8px; margin:0 0 12px; }
+  .a-baseline .bl-card { flex:1; background:var(--panel); border-radius:var(--radius); padding:12px 14px; border:1px solid var(--border); }
+  .a-baseline .bl-label { font-size:10px; color:var(--dim); margin:0 0 2px; }
+  .a-baseline .bl-val { font-size:20px; font-weight:700; margin:0 0 2px; }
+  .a-baseline .bl-sub { font-size:10px; color:var(--dim); }
+  .a-estimate-box { background:var(--panel); border-left:3px solid var(--accent); border-radius:var(--radius); padding:14px 18px; margin:0 0 12px; }
+  .a-estimate-box .est-main { font-size:16px; font-weight:700; }
+  .a-estimate-box .est-range { font-size:11px; color:var(--dim); font-style:italic; margin:4px 0 0; line-height:1.5; }
+  .a-table { width:100%; border-collapse:collapse; margin:0 0 12px; font-size:12px; }
+  .a-table th { text-align:left; padding:8px 10px; background:var(--section); color:var(--dim); font-size:10px; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--border); }
+  .a-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
+  .a-table tr:last-child td { border-bottom:none; }
+  .a-table .conf-sourced { color:#2ea043; font-weight:600; font-size:10px; text-transform:uppercase; }
+  .a-table .conf-est { color:#d29922; font-weight:600; font-size:10px; text-transform:uppercase; }
+  .a-list { list-style:none; padding:0; margin:0 0 12px; }
+  .a-list li { font-size:12px; color:var(--dim); line-height:1.6; padding:6px 0; border-bottom:1px solid var(--border); }
+  .a-list li:last-child { border-bottom:none; }
+  .a-list li b { color:var(--text); }
+  .a-xref { background:var(--panel); border-radius:var(--radius); padding:14px 18px; border:1px solid var(--border); }
+  .a-xref li { font-size:11px; color:var(--dim); line-height:1.6; margin:0 0 8px; }
+  .a-xref li b { color:var(--text); }
+
+  @media (max-width:600px) {
+    #analysis-panel { left:0!important; padding:16px; }
+    .zone-row { flex-direction:column; }
+    .a-baseline { flex-direction:column; }
+    .corridor-card .cc-stats { flex-direction:column; gap:4px; }
+    .imp-row { flex-direction:column; gap:4px; }
+    .imp-num { width:auto; text-align:left; }
+  }
   </style>
 </head>
 <body>
@@ -250,6 +333,10 @@
     <p>Catalina Foothills Resource Map</p>
     <strong><a href="nancy-guide" style="display:inline-block;margin-top:6px;font-size:10px;color:var(--link);text-decoration:none;opacity:.8;letter-spacing:.5px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">&#x2139; User Guide</a></strong>
     <div style="margin-top:4px;font-size:10px;color:var(--dim);letter-spacing:.3px;">You can find Alex on Facebook <a href="https://facebook.com/AlexanderZabelJr" target="_blank" rel="noopener" style="color:var(--link);">here</a>.</div>
+    <div class="view-tabs">
+      <button id="tab-map" class="active" onclick="switchView('map')">MAP</button>
+      <button id="tab-analysis" onclick="switchView('analysis')">CORRIDOR ANALYSIS</button>
+    </div>
   </div>
 
   <div class="sec">
@@ -276,8 +363,20 @@
     <label class="lyr"><input type="checkbox" data-layer="watersheds"> Washes &amp; Watersheds <span class="cnt" id="cnt-watersheds">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="aircraft"> Aircraft (ADS-B) <span class="cnt" id="cnt-aircraft">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="stormDrains"> Storm Drains <span class="cnt" id="cnt-stormDrains">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="railroads"> &#x1f682; Railroads <span class="cnt" id="cnt-railroads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
+    <label class="lyr"><input type="checkbox" data-layer="tpdDivisions"> &#x1f6a8; TPD Divisions</label>
+    <label class="lyr"><input type="checkbox" data-layer="territories"> &#x1f3f4; Criminal Territories &amp; Corridors <span class="cnt" id="cnt-territories">6</span></label>
+    <div id="legend-territories" style="display:none;margin:4px 0 4px 22px;font-size:10px;line-height:1.8;">
+      <span class="legend-item"><span class="legend-dot" style="background:#e74c3c;"></span> Tohono O'odham</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#ff6b35;width:14px;height:5px;border-radius:2px;"></span> I-19 Corridor</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#9b59b6;"></span> Barrio Hollywood</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#3498db;"></span> PHX Hub</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#e67e22;"></span> Cochise Corridor</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#f1c40f;width:7px;height:7px;transform:rotate(45deg);border-radius:0;"></span> Scout Arrest</span>
+    </div>
+    <label class="lyr"><input type="checkbox" data-layer="genematasRoute"> &#x1f697; Genematas Dr Route (7.6 mi)</label>
     <label class="lyr"><input type="checkbox" data-layer="jammerZone"> &#x1f4f5; WiFi Jammer Disruption Zone</label>
     <div class="legend" style="margin-top:8px;">
       <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> Mine</span>
@@ -449,11 +548,287 @@
 <button id="toggle-btn" onclick="document.body.classList.toggle('collapsed')">&#9776;</button>
 <div id="coords"></div>
 <div id="measure-info"></div>
+<div id="analysis-panel">
+<div class="a-wrap">
+  <div class="a-header">
+    <h2>TUCSON TRAFFIC ESTIMATE</h2>
+    <p>Sunday 1:00 - 3:00 AM — instantaneous vehicle count</p>
+  </div>
+
+  <div class="a-sec-intro" style="margin-bottom:20px;">
+    Working estimate. This document distinguishes between data points grounded in published sources and figures derived from structured estimation. All estimated figures should be cross-referenced with local data before use in any published analysis.
+  </div>
+
+  <!-- METRO BASELINE -->
+  <div class="a-sec">
+    <div class="a-sec-label">Metro baseline</div>
+    <div class="a-baseline">
+      <div class="bl-card">
+        <div class="bl-label">Registered vehicles <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+        <div class="bl-val">~700,000</div>
+        <div class="bl-sub">Census/ACS + ADOT</div>
+      </div>
+      <div class="bl-card">
+        <div class="bl-label">Road network <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+        <div class="bl-val">~4,800 lane-mi</div>
+        <div class="bl-sub">City + county + interstates</div>
+      </div>
+      <div class="bl-card">
+        <div class="bl-label">Daily VMT <span class="a-tag">ESTIMATED</span></div>
+        <div class="bl-val">20-25M</div>
+        <div class="bl-sub">Vehicle-miles traveled</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUNDAY 1-3 AM SNAPSHOT -->
+  <div class="a-sec">
+    <div class="a-sec-label">Sunday 1-3 AM snapshot</div>
+    <div class="a-sec-intro">
+      National and regional traffic count data consistently shows this window as the lowest-traffic period of the week <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span>. FHWA and state DOT continuous count stations report it carries roughly 1-2% of daily traffic volume and 5-8% of peak-hour volume.
+    </div>
+
+    <div class="a-estimate-box">
+      <div class="est-main">Central estimate: 5,000-6,000 vehicles on all Tucson-area roads at any given moment</div>
+      <div class="est-range">Range: 4,000-8,000 vehicles. Could be off by 30-40% in either direction. Based on national hourly distribution factors applied to Tucson VMT and road network size. No Tucson-specific study identified for this exact figure. <span class="a-tag">ESTIMATED</span></div>
+    </div>
+
+    <div class="zone-row">
+      <div class="zone-card" style="border-left:3px solid var(--link);">
+        <div class="zl">Peak-hour vehicles <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+        <div class="zv" style="color:var(--link);">80-100K</div>
+        <div class="zs">Weekday reference point</div>
+      </div>
+      <div class="zone-card" style="border-left:3px solid #d29922;">
+        <div class="zl">Sun 1-3 AM vs peak <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+        <div class="zv" style="color:#d29922;">5-8%</div>
+        <div class="zs">FHWA hourly distribution</div>
+      </div>
+      <div class="zone-card" style="border-left:3px solid var(--accent);">
+        <div class="zl">% of daily volume <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+        <div class="zv" style="color:var(--accent);">1-2%</div>
+        <div class="zs">Weekly traffic low point</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKDOWN BY ROAD TYPE -->
+  <div class="a-sec">
+    <div class="a-sec-label">Breakdown by road type</div>
+    <div class="a-sec-intro">Pattern-based reasoning, not Tucson-specific count data. This is the roughest layer of the estimate. <span class="a-tag">ESTIMATED</span></div>
+    <table class="a-table">
+      <tr><th>Road type</th><th>Est. vehicles</th><th>Notes</th></tr>
+      <tr><td>I-10/I-19 corridors</td><td><b>500-1,000</b></td><td style="color:var(--dim);">Long-haul trucking runs 24/7; bar-close traffic feeds onto I-10 ramps</td></tr>
+      <tr><td>Major arterials (Speedway, Broadway, Grant, Oracle, etc.)</td><td><b>1,500-3,000</b></td><td style="color:var(--dim);">Spread across dozens of corridors; rideshare surge around 2 AM bar close</td></tr>
+      <tr><td>Collectors + local streets</td><td><b>2,000-4,000</b></td><td style="color:var(--dim);">Bar/restaurant close-out, shift workers (hospitals, hotels, warehouses), convenience runs</td></tr>
+    </table>
+  </div>
+
+  <!-- WHO IS ON THE ROAD -->
+  <div class="a-sec">
+    <div class="a-sec-label">Who is on the road at this hour</div>
+    <ul class="a-list">
+      <li><b>Bar/restaurant close-out</b> — AZ bars serve until 2 AM; regulatory fact (ARS 4-244) that shapes the late-night traffic curve</li>
+      <li><b>Rideshare + taxi drivers</b> — Surge pricing window around bar close; concentrated near entertainment districts</li>
+      <li><b>Shift workers</b> — Hospitals, hotels, warehouses, distribution centers; predictable patterns</li>
+      <li><b>Long-haul truckers</b> — Interstate corridors operate 24/7 regardless of day of week</li>
+      <li><b>Late-night errands</b> — Convenience store runs, fast food, pharmacy; scattered and unpredictable</li>
+      <li><b>Unaccounted movement</b> — People who are simply driving with no categorizable destination</li>
+    </ul>
+  </div>
+
+  <!-- CORRIDOR-SPECIFIC -->
+  <div class="a-sec">
+    <div class="a-sec-label">Corridor-specific: Catalina Foothills area</div>
+    <div class="a-sec-intro">
+      Applied to the Nancy Guthrie case geography. Starting point: 5820 N Camino Escalante, Tucson AZ (Catalina Foothills). The map tool calculates drive-time radii, camera coverage, and escape route scenarios from this location.
+    </div>
+
+    <div class="corridor-card" style="border-left:3px solid #f85149;">
+      <div class="cc-name">Swan Rd south to I-10</div>
+      <div class="cc-stats">
+        <div class="cc-stat">Direction: <b>South</b></div>
+        <div class="cc-stat">To I-10: <b>~7 mi / 12 min</b></div>
+        <div class="cc-stat">Camera density: <b>Low</b></div>
+      </div>
+      <div class="cam-strip">
+        <div class="cam-dot" style="background:#2ea043;"></div>
+        <div class="gap-bar"><div class="gap-fill" style="width:15%;background:#f85149;"></div></div>
+        <div class="cam-label">Mostly residential; minimal surveillance until I-10 ramps</div>
+      </div>
+      <div class="cc-note">Residential feeder; minimal surveillance; connects to I-10 at Palo Verde/Country Club. Straight south, mostly 45 mph, few signals at night. At 1-3 AM Sunday: expect &lt;50 vehicles on this entire corridor.</div>
+    </div>
+
+    <div class="corridor-card" style="border-left:3px solid #58a6ff;">
+      <div class="cc-name">Campbell Ave south to I-10</div>
+      <div class="cc-stats">
+        <div class="cc-stat">Direction: <b>South-Southwest</b></div>
+        <div class="cc-stat">To I-10: <b>~7 mi / 14 min</b></div>
+        <div class="cc-stat">Camera density: <b>Low-moderate</b></div>
+      </div>
+      <div class="cam-strip">
+        <div class="cam-dot" style="background:#2ea043;"></div>
+        <div class="gap-bar"><div class="gap-fill" style="width:30%;background:#58a6ff;"></div></div>
+        <div class="cam-label">Residential transitioning to commercial near Grant/Speedway</div>
+      </div>
+      <div class="cc-note">Residential to commercial transition; hits I-10 at Congress/Speedway area (Exit 258). More witness potential at arterial intersections (Grant, Speedway, Broadway).</div>
+    </div>
+
+    <div class="corridor-card" style="border-left:3px solid #2ea043;">
+      <div class="cc-name">Sunrise Dr west to Oracle Rd (SR-77)</div>
+      <div class="cc-stats">
+        <div class="cc-stat">Direction: <b>Northwest</b></div>
+        <div class="cc-stat">To I-10: <b>~7 mi / 12 min</b></div>
+        <div class="cc-stat">Camera density: <b>Low</b></div>
+      </div>
+      <div class="cam-strip">
+        <div class="cam-dot" style="background:#2ea043;"></div>
+        <div class="gap-bar"><div class="gap-fill" style="width:18%;background:#2ea043;"></div></div>
+        <div class="cam-label">Suburban residential; Oracle Rd has scattered commercial cameras</div>
+      </div>
+      <div class="cc-note">Connects to Oracle (SR-77) north toward Oro Valley; or south to I-10 at Ina/Orange Grove area. ADOT cameras at I-10 interchanges (Cortaro, Ina, Orange Grove).</div>
+    </div>
+
+    <div class="corridor-card" style="border-left:3px solid #d2a8ff;">
+      <div class="cc-name">Kolb Rd south to I-10 east</div>
+      <div class="cc-stats">
+        <div class="cc-stat">Direction: <b>Southeast</b></div>
+        <div class="cc-stat">To I-10: <b>~8 mi / 13 min</b></div>
+        <div class="cc-stat">Camera density: <b>Low-moderate</b></div>
+      </div>
+      <div class="cam-strip">
+        <div class="cam-dot" style="background:#2ea043;"></div>
+        <div class="gap-bar"><div class="gap-fill" style="width:22%;background:#d2a8ff;"></div></div>
+        <div class="cam-label">Long residential stretch; thins out toward Vail</div>
+      </div>
+      <div class="cc-note">Long residential stretch; connects to I-10 east toward Houghton/Vail. Past Houghton Rd interchange, camera gaps widen to 5+ miles. Lowest post-metro surveillance of any I-10 direction.</div>
+    </div>
+
+    <div class="corridor-card" style="border-left:3px solid #7d8998;">
+      <div class="cc-name">Tanque Verde Rd / Catalina Hwy northeast</div>
+      <div class="cc-stats">
+        <div class="cc-stat">Direction: <b>Northeast</b></div>
+        <div class="cc-stat">To I-10: <b>N/A — away</b></div>
+        <div class="cc-stat">Camera density: <b>Very low</b></div>
+      </div>
+      <div class="cam-strip">
+        <div class="cam-dot" style="background:#d29922;"></div>
+        <div class="gap-bar"><div class="gap-fill" style="width:5%;background:#7d8998;"></div></div>
+        <div class="cam-label">Dead-ends into Coronado NF / Mt. Lemmon; no through-traffic</div>
+      </div>
+      <div class="cc-note">Dead-ends into Coronado NF/Mt. Lemmon; no through-traffic at 1-3 AM. Not a viable egress route for leaving the metro. Relevant only if a destination, not a transit corridor.</div>
+    </div>
+
+    <div class="a-caveat">All corridor distances, travel times, and camera density assessments are estimated. Camera data combines ADOT highway cameras (verified positions) and OSM community-mapped cameras (variable completeness). Private cameras not included.</div>
+  </div>
+
+  <!-- I-10 CAMERA COVERAGE -->
+  <div class="a-sec">
+    <div class="a-sec-label">I-10 corridor — ADOT camera coverage</div>
+    <div class="a-sec-intro">
+      The map tool catalogs ADOT highway cameras along I-10 from Cortaro Rd (Exit 246) through Houghton Rd (Exit 275). Camera spacing averages approximately 1-2 miles through the urban core but thins significantly past the Valencia Rd interchange heading southeast and past Cortaro/Ruthrauff heading northwest. The WB I-10 escape corridor analysis in the map tool identifies this thinning as a surveillance vulnerability — once past Marana, camera gaps widen to 5+ miles.
+    </div>
+    <div class="zone-row">
+      <div class="zone-card" style="border-left:3px solid var(--link);">
+        <div class="zl">Urban core (Speedway to Ina)</div>
+        <div class="zv" style="color:var(--link);">1-2 mi gaps</div>
+        <div class="zs">~16 ADOT cameras</div>
+      </div>
+      <div class="zone-card" style="border-left:3px solid #d29922;">
+        <div class="zl">Transition zone</div>
+        <div class="zv" style="color:#d29922;">3-5 mi gaps</div>
+        <div class="zs">~6 ADOT cameras</div>
+      </div>
+      <div class="zone-card" style="border-left:3px solid var(--accent);">
+        <div class="zl">Open desert</div>
+        <div class="zv" style="color:var(--accent);">5+ mi gaps</div>
+        <div class="zs">Sporadic</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT THIS MEANS -->
+  <div class="a-sec">
+    <div class="a-sec-label">What this means for the investigation</div>
+    <div class="imp-box">
+      <div class="imp-row">
+        <div class="imp-num">&lt;50</div>
+        <div class="imp-text"><b>Estimated vehicles on any single residential feeder road</b> at 1-3 AM Sunday. The total number of potential witness vehicles on any single corridor at that hour is likely in the low hundreds at most.</div>
+      </div>
+      <div class="imp-row">
+        <div class="imp-num">12-14</div>
+        <div class="imp-text"><b>Minutes from residence to I-10 access</b> via any corridor. Once on I-10, a vehicle has directional options: NW toward Marana/Phoenix, SE toward Vail/Benson, or south via I-19 toward Nogales.</div>
+      </div>
+      <div class="imp-row">
+        <div class="imp-num">3</div>
+        <div class="imp-text"><b>Targeted data sources</b> that would matter most: ALPR (automated license plate reader) logs at key intersections, gas station / convenience store cameras along corridors, and cell tower connection records for the 1-3 AM window.</div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--dim);margin:12px 0 0;line-height:1.6;">
+      Law enforcement reviewing this window faces a needle-in-haystack problem: enough vehicles on the road that movement would not be conspicuous, but few enough that identifying a specific vehicle requires targeted data sources (ALPR, gas station cameras, cell tower records) rather than volume-based pattern matching.
+    </div>
+  </div>
+
+  <!-- DATA CONFIDENCE -->
+  <div class="a-sec">
+    <div class="a-sec-label">Data confidence summary</div>
+    <table class="a-table">
+      <tr><th>Data point</th><th>Confidence</th><th>Source / basis</th></tr>
+      <tr><td>Metro population + registered vehicles</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">Census/ACS, ADOT registrations</td></tr>
+      <tr><td>Sunday 1-3 AM = weekly low</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">FHWA, state DOT continuous count stations</td></tr>
+      <tr><td>1-2% of daily / 5-8% of peak ratios</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">Highway Capacity Manual, FHWA Traffic Monitoring Guide</td></tr>
+      <tr><td>AZ bar closing time (2 AM)</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">ARS 4-244 regulatory fact</td></tr>
+      <tr><td>Instantaneous vehicle count (5-6K)</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">National factors applied to Tucson VMT; no local study; +/- 30-40%</td></tr>
+      <tr><td>Road-type breakdown</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">Pattern reasoning only; no Tucson-specific count data</td></tr>
+      <tr><td>Corridor distances / travel times</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">Map tool routing; actual times vary with conditions</td></tr>
+      <tr><td>Camera density assessments</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">ADOT verified + OSM community-mapped; private cameras not included</td></tr>
+    </table>
+  </div>
+
+  <!-- CROSS-REFERENCE SOURCES -->
+  <div class="a-sec">
+    <div class="a-sec-label">Cross-reference: sources for harder numbers</div>
+    <div class="a-xref">
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li><b>Pima County + City of Tucson permanent traffic count stations</b> — Hourly volumes available through ADOT Traffic Data portal. Would replace estimated instantaneous count with observed data.</li>
+        <li><b>TPD/PCSD calls for service and traffic stop logs</b> — Calls for service, traffic stops, DUI enforcement activity during 1-3 AM window. Indirect but concrete proxy for vehicles officers are encountering.</li>
+        <li><b>ADOT traffic count maps (corridor-specific)</b> — Some stations report hourly-level data for individual corridors. Could validate or replace the road-type breakdown.</li>
+        <li><b>Pima Association of Governments (PAG) regional traffic model</b> — May have time-of-day VMT distributions specific to Tucson metro rather than relying on national factors.</li>
+        <li><b>ALPR data (if accessible via FOIA)</b> — Automated License Plate Reader logs from TPD or PCSD would give actual vehicle counts at specific locations during this window.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="a-footer">This document is a working analytical estimate. Figures tagged ESTIMATED have not been verified against local data.</div>
+</div>
+</div>
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
 <script>
+// =============================================================
+// VIEW TOGGLE (Map ↔ Corridor Analysis)
+// =============================================================
+function switchView(view) {
+  const mapEl = document.getElementById('map');
+  const analEl = document.getElementById('analysis-panel');
+  const tabMap = document.getElementById('tab-map');
+  const tabAnal = document.getElementById('tab-analysis');
+  if (view === 'analysis') {
+    mapEl.style.display = 'none';
+    analEl.style.display = 'block';
+    tabMap.classList.remove('active');
+    tabAnal.classList.add('active');
+  } else {
+    analEl.style.display = 'none';
+    mapEl.style.display = 'block';
+    tabMap.classList.add('active');
+    tabAnal.classList.remove('active');
+    if (window._leafletMap) window._leafletMap.invalidateSize();
+  }
+}
+
 // =============================================================
 // CONFIG
 // =============================================================
@@ -528,6 +903,7 @@ const ADOT_CAMERAS = [
 const map = L.map('map', {
   center: C.center, zoom: C.zoom, minZoom: 3, maxZoom: 19, zoomControl: true,
 });
+window._leafletMap = map;
 
 const tiles = {
   streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -573,6 +949,10 @@ const ly = {
   stormDrains: L.layerGroup(),
   jammerZone:  L.layerGroup(),
   escapeRoute: L.layerGroup(),
+  genematasRoute: L.layerGroup(),
+  tpdDivisions: L.layerGroup(),
+  railroads:    L.layerGroup(),
+  territories:  L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
   rsgPOI:     L.layerGroup().addTo(map),
@@ -1327,6 +1707,289 @@ async function loadStormDrains() {
 }
 
 // =============================================================
+// TPD DIVISIONS (lazy-load from City of Tucson ArcGIS)
+// =============================================================
+let tpdDivisionsLoaded = false;
+const TPD_DIV_API = 'https://services3.arcgis.com/9coHY2fvuFjG9HQX/arcgis/rest/services/TPD_SECTORS/FeatureServer/0/query';
+const TPD_DIV_COLORS = {
+  'Operations Division East':    '#e74c3c',
+  'Operations Division Midtown': '#3498db',
+  'Operations Division South':   '#2ecc71',
+  'Operations Division West':    '#f39c12',
+};
+const TPD_DIV_SHORT = {
+  'Operations Division East':    'EAST',
+  'Operations Division Midtown': 'MIDTOWN',
+  'Operations Division South':   'SOUTH',
+  'Operations Division West':    'WEST',
+};
+
+async function loadTPDDivisions() {
+  if (tpdDivisionsLoaded) return;
+  try {
+    const url = `${TPD_DIV_API}?where=1%3D1&outFields=DIVISION&returnGeometry=true&outSR=4326&f=geojson`;
+    const resp = await fetch(url);
+    const geojson = await resp.json();
+
+    // Group sectors by division and merge into single polygons per division
+    const divFeatures = {};
+    geojson.features.forEach(f => {
+      const div = f.properties.DIVISION;
+      if (!divFeatures[div]) divFeatures[div] = [];
+      divFeatures[div].push(f);
+    });
+
+    // Add each division as a colored overlay + center label
+    Object.entries(divFeatures).forEach(([div, features]) => {
+      const color = TPD_DIV_COLORS[div] || '#888';
+      const label = TPD_DIV_SHORT[div] || div;
+
+      // Draw each sector polygon for this division
+      features.forEach(f => {
+        L.geoJSON(f, {
+          style: { color, weight: 2, opacity: 0.8, fillColor: color, fillOpacity: 0.08 }
+        }).addTo(ly.tpdDivisions);
+      });
+
+      // Compute rough center of all sectors for the label
+      let latSum = 0, lngSum = 0, n = 0;
+      features.forEach(f => {
+        const coords = f.geometry.type === 'MultiPolygon'
+          ? f.geometry.coordinates.flat(2)
+          : f.geometry.coordinates.flat(1);
+        coords.forEach(c => { lngSum += c[0]; latSum += c[1]; n++; });
+      });
+
+      if (n > 0) {
+        const divIcon = L.divIcon({
+          className: '',
+          html: `<div style="
+            font-size:13px;font-weight:800;color:${color};
+            text-shadow:0 0 4px rgba(0,0,0,.9),0 0 8px rgba(0,0,0,.7);
+            letter-spacing:2px;white-space:nowrap;pointer-events:none;
+            transform:translate(-50%,-50%);
+          ">${label}</div>`,
+          iconSize: [0, 0],
+        });
+        L.marker([latSum/n, lngSum/n], { icon: divIcon, interactive: false })
+          .addTo(ly.tpdDivisions);
+      }
+    });
+
+    tpdDivisionsLoaded = true;
+  } catch(e) {
+    console.error('TPD Divisions error:', e);
+  }
+}
+
+// =============================================================
+// CRIMINAL TERRITORIES & CORRIDORS
+// =============================================================
+let territoriesLoaded = false;
+
+function loadTerritories() {
+  if (territoriesLoaded) return;
+
+  const popupOpts = { maxWidth: 350, className: 'territory-popup' };
+  function hoverEvents(layer) {
+    const baseFill = layer.options.fillOpacity;
+    layer.on('mouseover', () => layer.setStyle({ fillOpacity: baseFill + 0.12 }));
+    layer.on('mouseout',  () => layer.setStyle({ fillOpacity: baseFill }));
+  }
+  function footer(sources) {
+    return `<div style="margin-top:6px;padding-top:5px;border-top:1px solid var(--border);font-size:9px;color:var(--dim);">`
+      + `Sources: ${sources}<br>Last updated: March 2026</div>`;
+  }
+
+  // --- a) TOHONO O'ODHAM NATION ---
+  const tohono = [
+    [31.95,-112.37],[32.08,-112.37],[32.10,-112.19],[32.08,-111.92],
+    [32.05,-111.75],[31.98,-111.56],[31.88,-111.42],[31.78,-111.42],
+    [31.60,-111.49],[31.50,-111.56],[31.43,-111.76],[31.38,-111.98],
+    [31.35,-112.07],[31.33,-112.20],[31.35,-112.37],[31.50,-112.40],
+    [31.72,-112.40],[31.95,-112.37],
+  ];
+  const tohonoPoly = L.polygon(tohono, {
+    color: '#e74c3c', weight: 2, opacity: 0.5,
+    fillColor: '#e74c3c', fillOpacity: 0.14,
+  }).bindPopup(
+    `<b style="color:#e74c3c;font-size:13px;">&#x1f3f4; Tohono O&#8217;odham Nation</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `62-mile Mexico border, ~2.8M acres. Sinaloa Cartel dominant. `
+    + `Q1 2024: tribal police seized ~2M fentanyl dose units, 700 lbs meth, 97 kg heroin. `
+    + `Jurisdictional complexity (tribal sovereignty) limits federal patrol. `
+    + `Cartel recruits tribal youth as spotters/transporters.</div>`
+    + footer('DEA, DOJ OIG, Tohono O&#8217;odham tribal testimony'),
+    popupOpts
+  ).addTo(ly.territories);
+  hoverEvents(tohonoPoly);
+
+  // --- b) I-19 CORRIDOR (Nogales → Tucson) ---
+  const i19Line = [
+    [31.34,-110.94],[31.40,-110.95],[31.47,-110.96],[31.55,-110.97],
+    [31.63,-110.98],[31.71,-110.98],[31.78,-110.98],[31.84,-110.98],
+    [31.90,-110.97],[31.96,-110.97],[32.01,-110.96],[32.06,-110.96],
+    [32.11,-110.96],[32.16,-110.96],[32.20,-110.96],[32.22,-110.97],
+  ];
+  // Buffer left/right ~0.02 degrees (~2km)
+  const i19Left  = i19Line.map(p => [p[0], p[1] - 0.02]);
+  const i19Right = i19Line.map(p => [p[0], p[1] + 0.02]);
+  const i19Poly  = i19Left.concat(i19Right.reverse());
+  const i19Corridor = L.polygon(i19Poly, {
+    color: '#ff6b35', weight: 2, opacity: 0.5,
+    fillColor: '#ff6b35', fillOpacity: 0.16,
+  }).bindPopup(
+    `<b style="color:#ff6b35;font-size:13px;">&#x1f6e3;&#xfe0f; I-19 Smuggling Corridor</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `Primary drug/human trafficking pipeline from Nogales POE to Tucson. `
+    + `Sinaloa Cartel controlled. Armed rip crews (bajadores) increasingly active `
+    + `in Tubac/Tumacacori area stealing loads. Semi-permanent checkpoint at km 42 `
+    + `forces flanking routes through desert terrain.</div>`
+    + footer('DEA HIDTA, CBP Tucson Sector, DOJ'),
+    popupOpts
+  ).addTo(ly.territories);
+  hoverEvents(i19Corridor);
+
+  // --- c) BARRIO HOLLYWOOD / AZ NEW MEXICAN MAFIA ---
+  const barrioHollywood = [
+    [32.17,-111.02],[32.17,-110.88],[32.20,-110.88],[32.23,-110.90],
+    [32.25,-110.93],[32.25,-110.98],[32.23,-111.02],[32.20,-111.02],
+    [32.17,-111.02],
+  ];
+  const barrioPoly = L.polygon(barrioHollywood, {
+    color: '#9b59b6', weight: 2, opacity: 0.5,
+    fillColor: '#9b59b6', fillOpacity: 0.14,
+  }).bindPopup(
+    `<b style="color:#9b59b6;font-size:13px;">&#x1f3f4; Barrio Hollywood + AZ New Mexican Mafia</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `Largest Tucson street gang alliance. Transport marijuana from border to Tucson/PHX. `
+    + `NMM &ldquo;taxes&rdquo; other gangs on drug distribution &mdash; violent retribution `
+    + `for non-payment. Active sets include Midvale Park Bloods, Manzanita Lynch Mob Crips, `
+    + `Southside Posse, Eastside Mafia Crips.</div>`
+    + footer('FBI Phoenix, Tucson PD Gang Unit, AZDPS'),
+    popupOpts
+  ).addTo(ly.territories);
+  hoverEvents(barrioPoly);
+
+  // --- d) PHOENIX METRO — DISTRIBUTION HUB ---
+  const phxMetro = [
+    [33.20,-112.45],[33.20,-111.70],[33.35,-111.55],[33.55,-111.55],
+    [33.70,-111.70],[33.70,-112.30],[33.55,-112.45],[33.35,-112.50],
+    [33.20,-112.45],
+  ];
+  const phxPoly = L.polygon(phxMetro, {
+    color: '#3498db', weight: 2, opacity: 0.5,
+    fillColor: '#3498db', fillOpacity: 0.12,
+  }).bindPopup(
+    `<b style="color:#3498db;font-size:13px;">&#x1f3d9;&#xfe0f; Phoenix &mdash; National Distribution Hub</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `At peak, ~1 kidnapping/day (368 in 2008). HIKE squad formed to combat. `
+    + `Drop houses in residential neighborhoods hold migrants for ransom. `
+    + `Distribution to Atlanta, Denver, Nashville, Columbus, Philly. `
+    + `Sinaloa cartel scouts with surveillance equipment arrested near Maricopa (Feb 2025).</div>`
+    + footer('DEA, Phoenix PD HIKE, ICE HSI, Maricopa County SO'),
+    popupOpts
+  ).addTo(ly.territories);
+  hoverEvents(phxPoly);
+
+  // --- e) COCHISE CORRIDOR ---
+  const cochise = [
+    [31.33,-110.35],[31.33,-109.80],[31.50,-109.80],[31.65,-109.90],
+    [31.70,-110.10],[31.65,-110.25],[31.55,-110.35],[31.45,-110.38],
+    [31.33,-110.35],
+  ];
+  const cochisePoly = L.polygon(cochise, {
+    color: '#e67e22', weight: 2, opacity: 0.5,
+    fillColor: '#e67e22', fillOpacity: 0.14,
+  }).bindPopup(
+    `<b style="color:#e67e22;font-size:13px;">&#x1f3f4; Cochise Corridor</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `Secondary smuggling route. Agua Prieta plaza (Sinaloa). Known for cartel `
+    + `bounty kidnappings (victims transported across border at Naco). `
+    + `Out-of-state gangs identified: Latin Kings, Spanish Gangster Disciples, `
+    + `Barrio Aztecas.</div>`
+    + footer('DEA, CBP Douglas Station, Cochise County SO'),
+    popupOpts
+  ).addTo(ly.territories);
+  hoverEvents(cochisePoly);
+
+  // --- f) SINALOA CARTEL SCOUT ZONES ---
+  const scoutIcon = diamond('#f1c40f', 12);
+  const scouts = [
+    { lat: 32.85, lon: -112.05,
+      label: 'Maricopa Scout Arrest (Feb 2025)',
+      detail: 'Sinaloa cartel scouts arrested south of Maricopa Mountains with '
+        + 'night-vision optics, encrypted radios, solar-powered surveillance cameras, '
+        + 'and topographic maps. Monitoring BP patrol patterns for smuggling corridor intel.' },
+    { lat: 32.45, lon: -111.45,
+      label: 'Silverbell Mtns Scout Post',
+      detail: 'Known cartel lookout position in Silverbell Mountains NW of Marana. '
+        + 'Spotters relay Border Patrol and law enforcement movements via encrypted '
+        + 'radio to trafficking convoys on Highway 86 and Sandario Road.' },
+  ];
+  scouts.forEach(s => {
+    L.marker([s.lat, s.lon], { icon: scoutIcon }).bindPopup(
+      `<b style="color:#f1c40f;font-size:13px;">&#x1f4a0; ${s.label}</b>`
+      + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">${s.detail}</div>`
+      + footer('CBP, Maricopa County SO, DEA'),
+      popupOpts
+    ).addTo(ly.territories);
+  });
+
+  territoriesLoaded = true;
+}
+
+// =============================================================
+// RAILROADS (lazy-load from Overpass / OpenStreetMap)
+// =============================================================
+let railroadsLoaded = false;
+
+async function loadRailroads() {
+  if (railroadsLoaded) return;
+  setStatus('railroads','loading');
+  try {
+    const [lamin, lomin, lamax, lomax] = C.bboxWide.split(',').map(Number);
+    // Expand bbox for surrounding counties (Pinal, Santa Cruz, Cochise overlap)
+    const bbox = `${lamin - 0.15},${lomin - 0.15},${lamax + 0.15},${lomax + 0.15}`;
+    const query = `[out:json][timeout:30];(way["railway"="rail"](${bbox}););out geom;`;
+    const data = await overpass(query);
+    const railColors = {
+      main:  '#b45309',   // amber-700 for mainline
+      spur:  '#92400e',   // darker for spur/siding
+      yard:  '#78716c',   // gray for yard tracks
+    };
+    let count = 0;
+    data.elements.forEach(el => {
+      if (!el.geometry || el.geometry.length < 2) return;
+      const coords = el.geometry.map(g => [g.lat, g.lon]);
+      const tags = el.tags || {};
+      const service = tags.service || '';
+      const isYard = service === 'yard' || service === 'crossover';
+      const isSpur = service === 'spur' || service === 'siding' || service === 'industrial';
+      const color = isYard ? railColors.yard : isSpur ? railColors.spur : railColors.main;
+      const weight = isYard ? 1.5 : isSpur ? 2 : 3;
+      const name = tags.name || tags.operator || 'Railroad';
+      let popup = `<b style="color:${railColors.main};">&#x1F682; ${name}</b>`;
+      if (tags.operator && tags.operator !== name) popup += `<br>Operator: ${tags.operator}`;
+      if (service) popup += `<br>Type: ${service}`;
+      if (tags.maxspeed) popup += `<br>Speed: ${tags.maxspeed}`;
+      if (tags.usage) popup += `<br>Usage: ${tags.usage}`;
+      L.polyline(coords, {
+        color, weight, opacity: 0.8,
+        dashArray: isYard ? '4 4' : isSpur ? '6 3' : null,
+      }).bindPopup(popup).addTo(ly.railroads);
+      count++;
+    });
+    railroadsLoaded = true;
+    document.getElementById('cnt-railroads').textContent = count.toLocaleString();
+    setStatus('railroads','loaded',`(${count.toLocaleString()})`);
+  } catch(e) {
+    console.error('Railroads error:', e);
+    setStatus('railroads','error',e.message);
+  }
+}
+
+// =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
 // =============================================================
 function addADOTMarker(cam) {
@@ -1497,7 +2160,17 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
       map.addLayer(layer);
       if (cb.dataset.layer === 'aircraft' && !aircraftLoaded) loadAircraft();
       if (cb.dataset.layer === 'stormDrains' && !stormDrainsLoaded) loadStormDrains();
-    } else { map.removeLayer(layer); }
+      if (cb.dataset.layer === 'tpdDivisions' && !tpdDivisionsLoaded) loadTPDDivisions();
+      if (cb.dataset.layer === 'railroads' && !railroadsLoaded) loadRailroads();
+      if (cb.dataset.layer === 'territories' && !territoriesLoaded) loadTerritories();
+      if (cb.dataset.layer === 'territories') {
+        document.getElementById('legend-territories').style.display = '';
+        if (map.getZoom() > 10) map.setView([32.2, -111.5], 8);
+      }
+    } else {
+      map.removeLayer(layer);
+      if (cb.dataset.layer === 'territories') document.getElementById('legend-territories').style.display = 'none';
+    }
   });
 });
 
@@ -1579,6 +2252,76 @@ map.on('click', e => {
   const km = (totalM / 1000).toFixed(2);
   document.getElementById('measure-info').textContent = `Distance: ${mi} mi (${km} km) | ${measurePts.length} points`;
 });
+
+// =============================================================
+// GENEMATAS DR ROUTE (Roller Coaster Rd → 5830 N Genematas Dr)
+// 7.6 miles, ~21 min — traced from reference map
+// =============================================================
+(function buildGenematasRoute() {
+  const GR = ly.genematasRoute;
+
+  // Route: W Roller Coaster Rd area → north on La Cholla → east on Ina → north to Genematas Dr
+  const routeCoords = [
+    // Start: W Roller Coaster Rd / La Cholla area (near Lulu Walker Elementary)
+    [32.3415, -111.0530],
+    [32.3440, -111.0530],
+    // North on La Cholla Blvd
+    [32.3480, -111.0530],
+    [32.3520, -111.0530],
+    [32.3560, -111.0530],
+    [32.3600, -111.0530],
+    [32.3640, -111.0530],
+    [32.3680, -111.0530],
+    // Approach W Ina Rd
+    [32.3720, -111.0530],
+    [32.3755, -111.0530],
+    // Turn east on W Ina Rd
+    [32.3755, -111.0480],
+    [32.3755, -111.0400],
+    [32.3755, -111.0300],
+    [32.3755, -111.0200],
+    [32.3755, -111.0100],
+    [32.3755, -111.0000],
+    // Continue east on Ina Rd past Oracle (Hwy 77)
+    [32.3755, -110.9900],
+    [32.3755, -110.9830],
+    // Jog north toward Genematas Dr
+    [32.3780, -110.9800],
+    [32.3810, -110.9780],
+    [32.3830, -110.9760],
+    // Arrive at 5830 N Genematas Dr area
+    [32.3850, -110.9740],
+  ];
+
+  // Draw route polyline
+  L.polyline(routeCoords, {
+    color: '#4a00e0', weight: 5, opacity: 0.85,
+    dashArray: null,
+  }).bindPopup(
+    `<b style="color:#4a00e0;font-size:13px;">&#x1f697; Genematas Dr Route</b>`
+    + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
+    + `W Roller Coaster Rd area → La Cholla Blvd N → W Ina Rd E → 5830 N Genematas Dr<br>`
+    + `<b>Distance:</b> 7.6 miles &nbsp; <b>Drive time:</b> ~21 min</div>`
+  ).addTo(GR);
+
+  // Start marker
+  L.circleMarker([32.3415, -111.0530], {
+    radius: 7, color: '#4a00e0', fillColor: '#fff', fillOpacity: 1, weight: 3,
+  }).bindPopup(
+    `<b>Route Start</b><br>W Roller Coaster Rd / La Cholla area<br>`
+    + `<small>Near Lulu Walker Elementary</small>`
+  ).bindTooltip('Start', { permanent: true, direction: 'left', offset: [-10, 0], className: 'esc-tag' })
+   .addTo(GR);
+
+  // End marker (red pin location)
+  L.circleMarker([32.3850, -110.9740], {
+    radius: 8, color: '#e00', fillColor: '#e00', fillOpacity: 0.9, weight: 2,
+  }).bindPopup(
+    `<b style="color:#e00;">&#x1f4cd; 5830 N Genematas Drive</b><br>`
+    + `<small>Shadow Hills area</small>`
+  ).bindTooltip('5830 N Genematas Dr', { permanent: true, direction: 'right', offset: [10, 0], className: 'esc-tag' })
+   .addTo(GR);
+})();
 
 // =============================================================
 // ESCAPE ROUTE ANALYSIS: WB I-10 Corridor (2-3 AM scenario)
