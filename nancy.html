@@ -353,10 +353,10 @@
 
   <div class="sec">
     <h3>Data Layers</h3>
-    <label class="lyr"><input type="checkbox" data-layer="routes" checked> Major Routes <span class="cnt" id="cnt-routes">-</span></label>
-    <label class="lyr"><input type="checkbox" data-layer="cameras" checked> Traffic Cameras <span class="cnt" id="cnt-cameras">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="routes"> Major Routes <span class="cnt" id="cnt-routes">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="cameras"> Traffic Cameras <span class="cnt" id="cnt-cameras">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="mines"> Mines &amp; Shafts <span class="cnt" id="cnt-mines">-</span></label>
-    <label class="lyr"><input type="checkbox" data-layer="towers" checked> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="towers"> Cell Towers <span class="cnt" id="cnt-towers">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="trailheads"> Trailheads <span class="cnt" id="cnt-trailheads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="silos"> Titan II Silos <span class="cnt" id="cnt-silos">18</span></label>
     <label class="lyr"><input type="checkbox" data-layer="water"> Water Features <span class="cnt" id="cnt-water">-</span></label>
@@ -419,8 +419,8 @@
     </div>
     <button class="btn" onclick="runDriveTime()" id="btn-drivetime">Calculate Drive-Time Radius</button>
     <button class="btn" onclick="clearDriveTime()">Clear Drive-Time Layers</button>
-    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="maxReach" checked> Max Road-Reach Circle</label>
-    <label class="lyr"><input type="checkbox" data-layer="camOnRoute" checked> &#x1f4f7; Cameras on Routes <span class="cnt" id="cnt-cam-route">-</span></label>
+    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="maxReach"> Max Road-Reach Circle</label>
+    <label class="lyr"><input type="checkbox" data-layer="camOnRoute"> &#x1f4f7; Cameras on Routes <span class="cnt" id="cnt-cam-route">-</span></label>
     <div id="dt-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
     <div id="dt-results" style="font-size:11px;margin-top:6px;max-height:250px;overflow-y:auto;line-height:1.6;"></div>
   </div>
@@ -468,9 +468,9 @@
     <button class="btn" onclick="generateScenario()">&#x1f3b2; Generate Route</button>
     <button class="btn" onclick="batchGenerateScenarios()">&#x1f525; Batch Generate (heatmap)</button>
     <button class="btn" onclick="clearScenarios()">&#x1f5d1; Clear Scenarios</button>
-    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="rsgRoutes" checked> Scenario Routes <span class="cnt" id="cnt-rsg-routes">-</span></label>
-    <label class="lyr"><input type="checkbox" data-layer="rsgCams" checked> Cameras on Scenarios <span class="cnt" id="cnt-rsg-cams">-</span></label>
-    <label class="lyr"><input type="checkbox" data-layer="rsgPOI" checked> Points of Interest <span class="cnt" id="cnt-rsg-poi">-</span></label>
+    <label class="lyr" style="margin-top:6px;"><input type="checkbox" data-layer="rsgRoutes"> Scenario Routes <span class="cnt" id="cnt-rsg-routes">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="rsgCams"> Cameras on Scenarios <span class="cnt" id="cnt-rsg-cams">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="rsgPOI"> Points of Interest <span class="cnt" id="cnt-rsg-poi">-</span></label>
     <div id="rsg-status" style="font-size:11px;color:var(--dim);margin-top:6px;"></div>
     <div id="rsg-results" style="font-size:11px;margin-top:6px;max-height:350px;overflow-y:auto;line-height:1.6;"></div>
   </div>
@@ -929,10 +929,10 @@ tiles.streets.addTo(map);
 // LAYER GROUPS
 // =============================================================
 const ly = {
-  routes:     L.layerGroup().addTo(map),
-  cameras:    L.layerGroup().addTo(map),
+  routes:     L.layerGroup(),
+  cameras:    L.layerGroup(),
   mines:      L.layerGroup(),
-  towers:     L.layerGroup().addTo(map),
+  towers:     L.layerGroup(),
   trailheads: L.layerGroup(),
   silos:      L.layerGroup(),
   water:      L.layerGroup(),
@@ -944,8 +944,8 @@ const ly = {
   measure:    L.layerGroup().addTo(map),
   isochrone:  L.layerGroup().addTo(map),
   routeTraces: L.layerGroup().addTo(map),
-  maxReach:   L.layerGroup().addTo(map),
-  camOnRoute: L.layerGroup().addTo(map),
+  maxReach:   L.layerGroup(),
+  camOnRoute: L.layerGroup(),
   watersheds:  L.layerGroup(),
   aircraft:    L.layerGroup(),
   stormDrains: L.layerGroup(),
@@ -956,9 +956,9 @@ const ly = {
   railroads:    L.layerGroup(),
   territories:  L.layerGroup(),
   quarries:     L.layerGroup(),
-  rsgRoutes:  L.layerGroup().addTo(map),
-  rsgCams:    L.layerGroup().addTo(map),
-  rsgPOI:     L.layerGroup().addTo(map),
+  rsgRoutes:  L.layerGroup(),
+  rsgCams:    L.layerGroup(),
+  rsgPOI:     L.layerGroup(),
 };
 
 // =============================================================
