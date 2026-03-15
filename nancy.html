@@ -376,6 +376,7 @@
       <span class="legend-item"><span class="legend-dot" style="background:#e67e22;"></span> Cochise Corridor</span>
       <span class="legend-item"><span class="legend-dot" style="background:#f1c40f;width:7px;height:7px;transform:rotate(45deg);border-radius:0;"></span> Scout Arrest</span>
     </div>
+    <label class="lyr"><input type="checkbox" data-layer="quarries"> &#x26cf; Rock Quarries &amp; Pits <span class="cnt" id="cnt-quarries">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="genematasRoute"> &#x1f697; Genematas Dr Route (7.6 mi)</label>
     <label class="lyr"><input type="checkbox" data-layer="jammerZone"> &#x1f4f5; WiFi Jammer Disruption Zone</label>
     <div class="legend" style="margin-top:8px;">
@@ -385,6 +386,7 @@
       <span class="legend-item"><span class="legend-dot" style="background:#e74c3c;"></span> OSM Cam</span>
       <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;"></span> Trail</span>
       <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border-radius:0;"></span> Silo</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#2ecc71;border-radius:2px;transform:rotate(45deg);width:8px;height:8px;"></span> Quarry</span>
       <span class="legend-item"><span class="legend-dot" style="background:#0ea5e9;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:8px;height:9px;"></span> Water</span>
       <span class="legend-item"><svg width="10" height="13" viewBox="0 0 14 18" style="vertical-align:middle;"><path d="M7 0C7 0 0 7.5 0 11a7 7 0 0014 0C14 7.5 7 0 7 0z" fill="#1e90ff" stroke="#fff" stroke-width="1.5"/></svg> Wash</span>
       <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#00bcd4;">&#9992;</span> Plane</span>
@@ -953,6 +955,7 @@ const ly = {
   tpdDivisions: L.layerGroup(),
   railroads:    L.layerGroup(),
   territories:  L.layerGroup(),
+  quarries:     L.layerGroup(),
   rsgRoutes:  L.layerGroup().addTo(map),
   rsgCams:    L.layerGroup().addTo(map),
   rsgPOI:     L.layerGroup().addTo(map),
@@ -1990,6 +1993,89 @@ async function loadRailroads() {
 }
 
 // =============================================================
+// ROCK QUARRIES & PITS (MSHA Federal Mine Data — Pima County)
+// =============================================================
+let quarriesLoaded = false;
+
+function loadQuarries() {
+  if (quarriesLoaded) return;
+  // Source: MSHA Open Government Data — https://arlweb.msha.gov/opengovernmentdata/ogimsha.asp
+  // Filtered: Pima County, AZ — Stone / Sand & Gravel / Nonmetal canvass codes
+  // Status: A=Active, I=Intermittent, X=Abandoned
+  const sites = [
+    {id:'0203235',n:'6708 JCI Plant',s:'X',t:'Crushed Stone',lat:31.990277,lon:-110.721666},
+    {id:'0202814',n:'Black Angus Plant',s:'X',t:'Sand & Gravel',lat:32.130556,lon:-110.7425},
+    {id:'0202268',n:'CEMEX - Cortaro Wet',s:'X',t:'Sand & Gravel',lat:32.370277,lon:-111.105833},
+    {id:'0202739',n:'Clay Mine Adobe',s:'X',t:'Common Clays',lat:32.161111,lon:-111.103611},
+    {id:'0203429',n:'Cross Hill',s:'X',t:'Sand & Gravel',lat:32.323056,lon:-110.58},
+    {id:'0201483',n:'Ina Pit',s:'X',t:'Sand & Gravel',lat:32.344167,lon:-111.083056},
+    {id:'0203375',n:'Kerley Pit',s:'X',t:'Sand & Gravel',lat:31.919167,lon:-111.015},
+    {id:'0202162',n:'L A Downey & Sons',s:'X',t:'Sand & Gravel',lat:32.131259,lon:-110.747052},
+    {id:'0203237',n:'Mission',s:'X',t:'Sand & Gravel',lat:31.913611,lon:-110.999166},
+    {id:'0201608',n:'Pantano',s:'X',t:'Crushed Stone',lat:32.41985,lon:-111.177593},
+    {id:'0200109',n:'Pantano Mine',s:'X',t:'Common Clays',lat:32.005,lon:-110.588055},
+    {id:'0203252',n:'Pima Mobile 1',s:'X',t:'Sand & Gravel',lat:32.301111,lon:-111.019167},
+    {id:'0203244',n:'Powerscreen',s:'X',t:'Sand & Gravel',lat:31.913611,lon:-110.999166},
+    {id:'0202976',n:'Sacaton',s:'X',t:'Sand & Gravel',lat:32.147733,lon:-110.943113},
+    {id:'0203139',n:'Sierra Mining & Crushing',s:'X',t:'Sand & Gravel',lat:32.095,lon:-110.9075},
+    {id:'0200704',n:'Sonora Environmental / B&R',s:'X',t:'Sand & Gravel',lat:32.171115,lon:-110.789748},
+    {id:'0200989',n:'Valencia',s:'X',t:'Sand & Gravel',lat:32.216314,lon:-110.771636},
+    {id:'0201238',n:'Valley Rock & Sand',s:'X',t:'Sand & Gravel',lat:32.162536,lon:-110.77154},
+    {id:'0203245',n:'Viewpoint',s:'X',t:'Sand & Gravel',lat:31.913611,lon:-110.999166},
+    {id:'0203236',n:'Wentworth',s:'X',t:'Sand & Gravel',lat:31.913611,lon:-110.999167},
+    {id:'0202585',n:'CEMEX - Apex',s:'A',t:'Sand & Gravel',lat:32.418056,lon:-111.160278,emp:13},
+    {id:'0202670',n:'CEMEX - Pima',s:'A',t:'Sand & Gravel',lat:32.008611,lon:-110.9475,emp:9},
+    {id:'0202919',n:'Marana Plant',s:'A',t:'Sand & Gravel',lat:32.403611,lon:-111.178333,emp:14},
+    {id:'0201203',n:'Orange Grove',s:'A',t:'Sand & Gravel',lat:32.324444,lon:-111.175556,emp:16},
+    {id:'0201138',n:'Rillito Plant',s:'A',t:'Cement',lat:32.411389,lon:-111.149444,emp:150},
+    {id:'0200006',n:'Rillito Quarry',s:'A',t:'Crushed Stone',lat:32.361111,lon:-111.187222,emp:23},
+    {id:'0202368',n:'Santa Rita Plant',s:'A',t:'Crushed Limestone',lat:31.875556,lon:-110.781111,emp:17},
+    {id:'0202848',n:'Silver Bell',s:'A',t:'Dimension Stone',lat:32.388889,lon:-111.450278,emp:3},
+    {id:'0202647',n:'Swan Pit',s:'A',t:'Sand & Gravel',lat:32.0825,lon:-110.888611,emp:15},
+    {id:'0200649',n:'Tangerine Road Pit',s:'A',t:'Sand & Gravel',lat:32.423889,lon:-111.178889,emp:14},
+    {id:'0202283',n:'Twin Peaks Aggregate',s:'A',t:'Sand & Gravel',lat:32.353333,lon:-111.183056,emp:6},
+    {id:'0202832',n:'River Road Plant',s:'I',t:'Sand & Gravel',lat:32.276944,lon:-110.901944,emp:4},
+    {id:'0203442',n:'Smithco Portable 2',s:'I',t:'Crushed Stone',lat:32.130556,lon:-110.743333,emp:4},
+    {id:'0203479',n:'Tanks Wilmot Landfill',s:'I',t:'Sand & Gravel',lat:32.1051,lon:-110.9166,emp:2},
+  ];
+
+  const statusLabel = {A:'Active',I:'Intermittent',X:'Abandoned'};
+  const statusColor = {A:'#2ecc71',I:'#f39c12',X:'#95a5a6'};
+  let count = 0;
+
+  sites.forEach(q => {
+    const color = statusColor[q.s];
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="
+        width:10px;height:10px;border-radius:2px;transform:rotate(45deg);
+        background:${color};border:1.5px solid #fff;
+        box-shadow:0 0 4px rgba(0,0,0,.5);
+      "></div>`,
+      iconSize: [10, 10],
+      iconAnchor: [5, 5],
+    });
+
+    let popup = `<b style="color:${color};">&#x26cf; ${q.n}</b>`
+      + `<br>Status: <span style="color:${color};font-weight:600;">${statusLabel[q.s]}</span>`
+      + `<br>Material: ${q.t}`;
+    if (q.emp) popup += `<br>Employees: ${q.emp}`;
+    popup += `<br>MSHA ID: ${q.id}`
+      + `<br><small>${q.lat.toFixed(5)}, ${q.lon.toFixed(5)}</small>`
+      + `<br><small style="color:var(--dim);">Source: MSHA Federal Mine Safety Data</small>`;
+
+    L.marker([q.lat, q.lon], { icon })
+      .bindPopup(popup)
+      .bindTooltip(q.n, { direction: 'top', offset: [0, -6], className: 'quarry-tip' })
+      .addTo(ly.quarries);
+    count++;
+  });
+
+  quarriesLoaded = true;
+  document.getElementById('cnt-quarries').textContent = count;
+}
+
+// =============================================================
 // LOAD: CAMERAS — ADOT highway cams (authoritative) + Overpass OSM (supplemental)
 // =============================================================
 function addADOTMarker(cam) {
@@ -2163,6 +2249,7 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
       if (cb.dataset.layer === 'tpdDivisions' && !tpdDivisionsLoaded) loadTPDDivisions();
       if (cb.dataset.layer === 'railroads' && !railroadsLoaded) loadRailroads();
       if (cb.dataset.layer === 'territories' && !territoriesLoaded) loadTerritories();
+      if (cb.dataset.layer === 'quarries' && !quarriesLoaded) loadQuarries();
       if (cb.dataset.layer === 'territories') {
         document.getElementById('legend-territories').style.display = '';
         if (map.getZoom() > 10) map.setView([32.2, -111.5], 8);
