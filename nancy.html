@@ -314,6 +314,14 @@
   .a-xref { background:var(--panel); border-radius:var(--radius); padding:14px 18px; border:1px solid var(--border); }
   .a-xref li { font-size:11px; color:var(--dim); line-height:1.6; margin:0 0 8px; }
   .a-xref li b { color:var(--text); }
+  .aadt-table { width:100%; border-collapse:collapse; margin:0 0 12px; font-size:11px; }
+  .aadt-table th { text-align:center; padding:6px 8px; background:var(--section); color:var(--dim); font-size:9px; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--border); }
+  .aadt-table td { padding:6px 8px; border-bottom:1px solid var(--border); text-align:center; font-family:'JetBrains Mono',monospace; }
+  .aadt-table td:first-child { text-align:left; font-family:inherit; }
+  .aadt-table tr:last-child td { border-bottom:none; }
+  .aadt-table .aadt-peak { background:rgba(248,81,73,.06); }
+  .aadt-table .aadt-low { background:rgba(46,160,67,.06); }
+  .aadt-table .aadt-total { font-weight:700; background:var(--section); }
 
   @media (max-width:600px) {
     #analysis-panel { left:0!important; padding:16px; }
@@ -554,11 +562,25 @@
 <div class="a-wrap">
   <div class="a-header">
     <h2>TUCSON TRAFFIC ESTIMATE</h2>
-    <p>Sunday 1:00 - 3:00 AM — instantaneous vehicle count</p>
+    <p>I-10 Tucson Corridor: ADOT AADT Data + Sunday 1-3 AM Traffic Estimate</p>
   </div>
 
   <div class="a-sec-intro" style="margin-bottom:20px;">
     Working estimate. This document distinguishes between data points grounded in published sources and figures derived from structured estimation. All estimated figures should be cross-referenced with local data before use in any published analysis.
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="a-sec">
+    <div class="a-sec-label">Methodology</div>
+    <div class="a-sec-intro">
+      This analysis replaces the ESTIMATED tag on I-10 corridor vehicle counts with sourced ADOT data.
+    </div>
+    <ul class="a-list">
+      <li><b>AADT (Annual Average Daily Traffic)</b> — from ADOT's 2021 Interstate publication. 2021 used as last clean year before Ina-Ruthrauff widening construction disrupted counts.</li>
+      <li><b>FHWA hourly distribution factors</b> — applied to convert AADT to Sunday 1-3 AM volume. FHWA Traffic Monitoring Guide establishes this window carries 0.8-1.2% of AADT per hour on urban interstates. <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></li>
+      <li><b>K Factor</b> — percentage of AADT during 30th-highest hour. K factors of 7-9% in this corridor indicate urban traffic pattern with relatively even hourly distribution. <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></li>
+    </ul>
+    <div class="a-caveat">Confidence upgrade: The central estimate now rests on published ADOT data rather than national averages applied to estimated VMT. Remaining uncertainty is in the hourly distribution factor (0.8-1.2%), a well-bounded range from FHWA continuous count station data.</div>
   </div>
 
   <!-- METRO BASELINE -->
@@ -620,7 +642,7 @@
     <div class="a-sec-intro">Pattern-based reasoning, not Tucson-specific count data. This is the roughest layer of the estimate. <span class="a-tag">ESTIMATED</span></div>
     <table class="a-table">
       <tr><th>Road type</th><th>Est. vehicles</th><th>Notes</th></tr>
-      <tr><td>I-10/I-19 corridors</td><td><b>500-1,000</b></td><td style="color:var(--dim);">Long-haul trucking runs 24/7; bar-close traffic feeds onto I-10 ramps</td></tr>
+      <tr><td>I-10/I-19 corridors <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">DERIVED</span></td><td><b>500-2,400</b></td><td style="color:var(--dim);">ADOT AADT-derived. Range reflects outer segments (472-708/hr) vs core (1,600-2,400/hr). Trucking + I-19 merge.</td></tr>
       <tr><td>Major arterials (Speedway, Broadway, Grant, Oracle, etc.)</td><td><b>1,500-3,000</b></td><td style="color:var(--dim);">Spread across dozens of corridors; rideshare surge around 2 AM bar close</td></tr>
       <tr><td>Collectors + local streets</td><td><b>2,000-4,000</b></td><td style="color:var(--dim);">Bar/restaurant close-out, shift workers (hospitals, hotels, warehouses), convenience runs</td></tr>
     </table>
@@ -658,7 +680,7 @@
         <div class="gap-bar"><div class="gap-fill" style="width:15%;background:#f85149;"></div></div>
         <div class="cam-label">Mostly residential; minimal surveillance until I-10 ramps</div>
       </div>
-      <div class="cc-note">Residential feeder; minimal surveillance; connects to I-10 at Palo Verde/Country Club. Straight south, mostly 45 mph, few signals at night. At 1-3 AM Sunday: expect &lt;50 vehicles on this entire corridor.</div>
+      <div class="cc-note">Residential feeder; minimal surveillance; connects to I-10 at Palo Verde/Country Club. Straight south, mostly 45 mph, few signals at night. At 1-3 AM Sunday: expect &lt;50 vehicles on this entire corridor. I-10 at Country Club (Exit 267) carries 624-936 vehicles/hr at this hour (ADOT AADT-derived).</div>
     </div>
 
     <div class="corridor-card" style="border-left:3px solid #58a6ff;">
@@ -673,7 +695,7 @@
         <div class="gap-bar"><div class="gap-fill" style="width:30%;background:#58a6ff;"></div></div>
         <div class="cam-label">Residential transitioning to commercial near Grant/Speedway</div>
       </div>
-      <div class="cc-note">Residential to commercial transition; hits I-10 at Congress/Speedway area (Exit 258). More witness potential at arterial intersections (Grant, Speedway, Broadway).</div>
+      <div class="cc-note">Residential to commercial transition; hits I-10 at Congress/Speedway area (Exit 258). More witness potential at arterial intersections (Grant, Speedway, Broadway). I-10 at Congress (Exit 258) carries 1,600-2,400 vehicles/hr at this hour — highest segment in corridor (ADOT AADT-derived).</div>
     </div>
 
     <div class="corridor-card" style="border-left:3px solid #2ea043;">
@@ -688,7 +710,7 @@
         <div class="gap-bar"><div class="gap-fill" style="width:18%;background:#2ea043;"></div></div>
         <div class="cam-label">Suburban residential; Oracle Rd has scattered commercial cameras</div>
       </div>
-      <div class="cc-note">Connects to Oracle (SR-77) north toward Oro Valley; or south to I-10 at Ina/Orange Grove area. ADOT cameras at I-10 interchanges (Cortaro, Ina, Orange Grove).</div>
+      <div class="cc-note">Connects to Oracle (SR-77) north toward Oro Valley; or south to I-10 at Ina/Orange Grove area. ADOT cameras at I-10 interchanges (Cortaro, Ina, Orange Grove). I-10 at Cortaro (Exit 246) carries 1,048-1,572 vehicles/hr (ADOT AADT-derived).</div>
     </div>
 
     <div class="corridor-card" style="border-left:3px solid #d2a8ff;">
@@ -703,7 +725,7 @@
         <div class="gap-bar"><div class="gap-fill" style="width:22%;background:#d2a8ff;"></div></div>
         <div class="cam-label">Long residential stretch; thins out toward Vail</div>
       </div>
-      <div class="cc-note">Long residential stretch; connects to I-10 east toward Houghton/Vail. Past Houghton Rd interchange, camera gaps widen to 5+ miles. Lowest post-metro surveillance of any I-10 direction.</div>
+      <div class="cc-note">Long residential stretch; connects to I-10 east toward Houghton/Vail. Past Houghton Rd interchange, camera gaps widen to 5+ miles. Lowest post-metro surveillance of any I-10 direction. I-10 east past Houghton (Exit 275) carries 472-708 vehicles/hr — lowest in corridor (ADOT AADT-derived).</div>
     </div>
 
     <div class="corridor-card" style="border-left:3px solid #7d8998;">
@@ -749,6 +771,48 @@
     </div>
   </div>
 
+  <!-- I-10 SEGMENT AADT -->
+  <div class="a-sec">
+    <div class="a-sec-label">I-10 Tucson: Segment-by-Segment AADT <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">SOURCED</span></div>
+    <div class="a-sec-intro">
+      ADOT 2021 AADT (pre-construction baseline). Sunday 1 AM estimates derived using FHWA hourly factor (0.8-1.2% of AADT). Segments run NW to SE.
+    </div>
+    <table class="aadt-table">
+      <tr><th>Segment</th><th>AADT</th><th>K%</th><th>T%</th><th>Sun 1AM Low</th><th>Sun 1AM Mid</th><th>Sun 1AM High</th></tr>
+      <tr><td>Exit 246 Cortaro to 248 Ina</td><td>131,000</td><td>8</td><td>9</td><td>1,048</td><td>1,310</td><td>1,572</td></tr>
+      <tr><td>Exit 248 Ina to 250 Orange Grove</td><td>143,000</td><td>8</td><td>9</td><td>1,144</td><td>1,430</td><td>1,716</td></tr>
+      <tr><td>Exit 250 Orange Grove to 252 Ruthrauff</td><td>148,000</td><td>8</td><td>9</td><td>1,184</td><td>1,480</td><td>1,776</td></tr>
+      <tr><td>Exit 252 Ruthrauff to 254 Prince</td><td>155,000</td><td>7</td><td>8</td><td>1,240</td><td>1,550</td><td>1,860</td></tr>
+      <tr><td>Exit 254 Prince to 255 Grant</td><td>168,000</td><td>7</td><td>8</td><td>1,344</td><td>1,680</td><td>2,016</td></tr>
+      <tr><td>Exit 255 Grant to 257 Speedway</td><td>184,000</td><td>5</td><td>9</td><td>1,472</td><td>1,840</td><td>2,208</td></tr>
+      <tr><td>Exit 257 Speedway to 258 Congress</td><td>187,000</td><td>7</td><td>10</td><td>1,496</td><td>1,870</td><td>2,244</td></tr>
+      <tr class="aadt-peak"><td>Exit 258 Congress to 259 22nd St</td><td>200,000</td><td>8</td><td>9</td><td>1,600</td><td>2,000</td><td>2,400</td></tr>
+      <tr><td>Exit 259 22nd St to 260 I-19 Jct</td><td>176,000</td><td>8</td><td>8</td><td>1,408</td><td>1,760</td><td>2,112</td></tr>
+      <tr><td>Exit 260 I-19 Jct to 261 6th Ave</td><td>155,000</td><td>8</td><td>8</td><td>1,240</td><td>1,550</td><td>1,860</td></tr>
+      <tr><td>Exit 261 6th Ave to 262 Kino</td><td>137,000</td><td>8</td><td>7</td><td>1,096</td><td>1,370</td><td>1,644</td></tr>
+      <tr><td>Exit 262 Kino to 264 Alvernon</td><td>119,000</td><td>8</td><td>8</td><td>952</td><td>1,190</td><td>1,428</td></tr>
+      <tr><td>Exit 264 Alvernon to 265 Palo Verde</td><td>103,000</td><td>8</td><td>9</td><td>824</td><td>1,030</td><td>1,236</td></tr>
+      <tr><td>Exit 265 Palo Verde to 267 Country Club</td><td>89,000</td><td>8</td><td>10</td><td>712</td><td>890</td><td>1,068</td></tr>
+      <tr><td>Exit 267 Country Club to 268 Kolb</td><td>78,000</td><td>8</td><td>11</td><td>624</td><td>780</td><td>936</td></tr>
+      <tr><td>Exit 268 Kolb to 270 Wilmot</td><td>71,000</td><td>8</td><td>12</td><td>568</td><td>710</td><td>852</td></tr>
+      <tr class="aadt-low"><td>Exit 270 Wilmot to 275 Houghton</td><td>59,000</td><td>9</td><td>14</td><td>472</td><td>590</td><td>708</td></tr>
+      <tr class="aadt-total"><td>TOTAL I-10 TUCSON CORRIDOR</td><td>—</td><td>—</td><td>—</td><td>18,424</td><td>23,030</td><td>27,636</td></tr>
+    </table>
+    <div class="a-caveat">Per-segment, per-hour estimates. Vehicles appear on multiple segments during a trip — corridor total represents segment-level exposure, not unique vehicles.</div>
+  </div>
+
+  <!-- CASE-RELEVANT CORRIDORS: ADOT-ANCHORED -->
+  <div class="a-sec">
+    <div class="a-sec-label">Case-relevant corridors: ADOT-anchored estimates <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">DERIVED</span></div>
+    <table class="a-table">
+      <tr><th>Route from residence</th><th>I-10 Seg AADT</th><th>Sun 1AM Low</th><th>Sun 1AM High</th><th>Notes</th></tr>
+      <tr><td>Swan Rd → I-10 (Exit 267)</td><td>78,000</td><td>624</td><td>936</td><td style="color:var(--dim);">Residential feeder. Minimal surveillance until I-10 ramps.</td></tr>
+      <tr><td>Campbell Ave → I-10 (Exit 258)</td><td>200,000</td><td>1,600</td><td>2,400</td><td style="color:var(--dim);">Highest-volume segment. Commercial intersections add witnesses.</td></tr>
+      <tr><td>Kolb Rd → I-10 East (Exit 268)</td><td>78,000</td><td>624</td><td>936</td><td style="color:var(--dim);">Long residential stretch. Past Houghton, camera gaps widen to 5+ mi.</td></tr>
+      <tr><td>Oracle → I-10 NW (Exit 246)</td><td>131,000</td><td>1,048</td><td>1,572</td><td style="color:var(--dim);">ADOT cameras at Cortaro, Ina, Orange Grove interchanges.</td></tr>
+    </table>
+  </div>
+
   <!-- WHAT THIS MEANS -->
   <div class="a-sec">
     <div class="a-sec-label">What this means for the investigation</div>
@@ -775,15 +839,17 @@
   <div class="a-sec">
     <div class="a-sec-label">Data confidence summary</div>
     <table class="a-table">
-      <tr><th>Data point</th><th>Confidence</th><th>Source / basis</th></tr>
-      <tr><td>Metro population + registered vehicles</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">Census/ACS, ADOT registrations</td></tr>
-      <tr><td>Sunday 1-3 AM = weekly low</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">FHWA, state DOT continuous count stations</td></tr>
-      <tr><td>1-2% of daily / 5-8% of peak ratios</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">Highway Capacity Manual, FHWA Traffic Monitoring Guide</td></tr>
-      <tr><td>AZ bar closing time (2 AM)</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">ARS 4-244 regulatory fact</td></tr>
-      <tr><td>Instantaneous vehicle count (5-6K)</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">National factors applied to Tucson VMT; no local study; +/- 30-40%</td></tr>
-      <tr><td>Road-type breakdown</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">Pattern reasoning only; no Tucson-specific count data</td></tr>
-      <tr><td>Corridor distances / travel times</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">Map tool routing; actual times vary with conditions</td></tr>
-      <tr><td>Camera density assessments</td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">ADOT verified + OSM community-mapped; private cameras not included</td></tr>
+      <tr><th>Data point</th><th>Previous</th><th>Now</th><th>Source</th></tr>
+      <tr><td>I-10 AADT per segment</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">ADOT 2021 Interstate AADT Publication</td></tr>
+      <tr><td>Sunday 1 AM hourly factor (0.8-1.2%)</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">FHWA Traffic Monitoring Guide, HCM</td></tr>
+      <tr><td>I-10 per-segment Sunday 1 AM count</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-sourced" style="color:#58a6ff;">DERIVED</span></td><td style="color:var(--dim);">ADOT AADT × FHWA factor (bounded range)</td></tr>
+      <tr><td>K Factor (design hour %)</td><td>—</td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">ADOT 2021 publication per segment</td></tr>
+      <tr><td>Metro population + registered vehicles</td><td><span class="conf-sourced">SOURCED</span></td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">Census/ACS, ADOT registrations</td></tr>
+      <tr><td>Sunday 1-3 AM = weekly low</td><td><span class="conf-sourced">SOURCED</span></td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">FHWA, state DOT continuous count stations</td></tr>
+      <tr><td>AZ bar closing time (2 AM)</td><td><span class="conf-sourced">SOURCED</span></td><td><span class="conf-sourced">SOURCED</span></td><td style="color:var(--dim);">ARS 4-244 regulatory fact</td></tr>
+      <tr><td>Arterial feeder road counts</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">Still pattern reasoning; needs PAG data</td></tr>
+      <tr><td>&lt;50 vehicles per residential corridor</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-est" style="color:#58a6ff;">PLAUSIBLE</span></td><td style="color:var(--dim);">Consistent with I-10 anchor data but unverified</td></tr>
+      <tr><td>Camera density assessments</td><td><span class="conf-est">ESTIMATED</span></td><td><span class="conf-est">ESTIMATED</span></td><td style="color:var(--dim);">ADOT verified + OSM; private not included</td></tr>
     </table>
   </div>
 
@@ -801,7 +867,20 @@
     </div>
   </div>
 
-  <div class="a-footer">This document is a working analytical estimate. Figures tagged ESTIMATED have not been verified against local data.</div>
+  <!-- DATA REQUEST LIST -->
+  <div class="a-sec">
+    <div class="a-sec-label">Data request list: sources for hourly-level verification</div>
+    <div class="a-sec-intro">The ADOT AADT + FHWA factors approach replaces national guesswork with published data, but raw hourly counts from local sources would be definitive.</div>
+    <ul class="a-list">
+      <li><b>ADOT TDMS Hourly ATR Data</b> — Hourly volume from Automatic Traffic Recorder stations on I-10 (Exits 246-275), Sunday 0100-0300. Available at adot.ms2soft.com. Public, no login. Would replace the 0.8-1.2% FHWA factor with observed Sunday 1 AM counts. <span class="a-tag" style="background:rgba(46,160,67,.15);color:#2ea043;">HIGHEST VALUE</span></li>
+      <li><b>PAG Regional Traffic Count Data</b> — Hourly counts for Swan Rd, Campbell Ave, Oracle Rd, Kolb Rd, Sunrise Dr, Tanque Verde Rd. Via pagregion.com. Contact: PAG, (520) 792-1093. Would validate the &lt;50 vehicles per corridor estimate.</li>
+      <li><b>PAG Regional Traffic Model (Time-of-Day Factors)</b> — Tucson-specific time-of-day VMT distribution factors from 2021 Traffic Count Improvement Project or 2023 Traffic Performance Measure Project. Would replace national FHWA factors with local data.</li>
+      <li><b>TPD/PCSD Calls for Service (FOIA)</b> — Aggregate calls for service, traffic stops, DUI enforcement during Sunday 0100-0300 for East Division / Catalina Foothills. Available via FOIA to TPD and PCSD. Indirect but concrete proxy for traffic volume.</li>
+      <li><b>ALPR Data (FOIA — long shot)</b> — Automated License Plate Reader scan counts (not plate data) at key intersections, aggregated by hour. Definitive vehicle count if obtainable. Likely denied or heavily redacted.</li>
+    </ul>
+  </div>
+
+  <div class="a-footer">Document prepared: March 15, 2026. ADOT data vintage: 2021 (pre-construction baseline). FHWA factors: current edition. Figures tagged ESTIMATED have not been verified against local data.</div>
 </div>
 </div>
 <div id="map"></div>

@@ -208,17 +208,21 @@ li { margin-bottom:4px; }
 <p>Use the <b>MAP</b> / <b>CORRIDOR ANALYSIS</b> toggle buttons at the top of the sidebar to switch between the interactive map and a full traffic estimate document.</p>
 <p>The Corridor Analysis tab includes:</p>
 <ul>
+  <li><b>Methodology</b> &mdash; How ADOT 2021 AADT data and FHWA hourly factors replace earlier national-average estimates</li>
   <li><b>Metro baseline</b> &mdash; Tucson registered vehicles, road network size, and daily VMT</li>
   <li><b>Sunday 1-3 AM snapshot</b> &mdash; Estimated instantaneous vehicle count (5,000-6,000) with sourced FHWA/DOT ratios</li>
-  <li><b>Breakdown by road type</b> &mdash; Estimated vehicles on interstates, arterials, and local streets</li>
+  <li><b>Breakdown by road type</b> &mdash; Vehicles on interstates (now ADOT-derived: 500-2,400/segment), arterials, and local streets</li>
   <li><b>Who is on the road</b> &mdash; Bar close-out, rideshare, shift workers, truckers, etc.</li>
-  <li><b>Egress corridors</b> &mdash; Five routes from 5820 N Camino Escalante with distances, drive times, and camera density</li>
+  <li><b>Egress corridors</b> &mdash; Five routes from 5820 N Camino Escalante with distances, drive times, camera density, and ADOT-anchored I-10 vehicle counts at each corridor's interstate entry point</li>
   <li><b>I-10 camera coverage</b> &mdash; ADOT camera spacing from urban core to open desert</li>
-  <li><b>Data confidence summary</b> &mdash; Each data point tagged SOURCED or ESTIMATED with its basis</li>
+  <li><b>I-10 segment-by-segment AADT</b> &mdash; Full 17-segment table (Cortaro to Houghton) with ADOT AADT, K%, T%, and Sunday 1 AM low/mid/high vehicle counts. Peak segment highlighted (Congress-22nd: 1,600-2,400/hr). Source: ADOT 2021 Interstate AADT Publication.</li>
+  <li><b>Case-relevant corridors (ADOT-anchored)</b> &mdash; Swan, Campbell, Kolb, and Oracle routes linked to their I-10 segment AADT with derived Sunday 1 AM ranges</li>
+  <li><b>Data confidence summary</b> &mdash; Before/after comparison showing which data points upgraded from ESTIMATED to SOURCED or DERIVED</li>
   <li><b>Cross-reference sources</b> &mdash; Where to find harder numbers (Pima County count stations, TPD logs, PAG model, ALPR data)</li>
+  <li><b>Data request list</b> &mdash; Five actionable data sources for hourly-level verification: ADOT TDMS ATR data, PAG regional counts, PAG time-of-day model, TPD/PCSD calls for service (FOIA), and ALPR scan counts (FOIA)</li>
 </ul>
 <div class="note">
-  <b>Note:</b> All corridor travel times in the analysis tab have been reconciled with the map's escape route layer data. Figures tagged ESTIMATED have not been verified against local data.
+  <b>Note:</b> I-10 corridor estimates are now anchored to ADOT 2021 AADT data (pre-construction baseline) with FHWA hourly factors (0.8-1.2% of AADT). All corridor travel times have been reconciled with the map's escape route layer data. Figures tagged ESTIMATED have not been verified against local data. ADOT data source: <b>ADOT 2021 Interstate AADT Publication</b>.
 </div>
 
 <h2>Tools</h2>
@@ -280,7 +284,7 @@ li { margin-bottom:4px; }
 </ul>
 
 <div class="note">
-  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains, TPD divisions), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding), DEA/HIDTA/DOJ/CBP (territory intelligence). All data is fetched live in your browser except territory overlays which are compiled from open-source reports.
+  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), ADOT 2021 Interstate AADT Publication (corridor traffic volumes), FHWA Traffic Monitoring Guide (hourly factors), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains, TPD divisions), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding), DEA/HIDTA/DOJ/CBP (territory intelligence). All data is fetched live in your browser except territory overlays and AADT data which are compiled from published sources.
 </div>
 
 <p style="margin-top:32px;"><a href="nancy" class="back">&larr; Back to Map</a></p>
