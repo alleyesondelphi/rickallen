@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allen Case File Search</title>
+<meta name="description" content="Search 18,000+ document chunks from the Indiana v. Richard M. Allen case files.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0c0b;
+    --surface: #171413;
+    --surface-raised: #1e1a18;
+    --surface-hover: #252120;
+    --border: #2a2523;
+    --border-light: #3a3432;
+    --gold: #c9a84c;
+    --gold-dim: #8a7234;
+    --gold-bright: #e4c15a;
+    --text: #d4cdc5;
+    --text-dim: #8a8279;
+    --text-faint: #5a5450;
+    --red: #a04040;
+    --green: #5a8a5a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+
+  .header .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .header .meta {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin-top: 0.5rem;
+  }
+
+  /* ── Search ── */
+  .search-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .search-box {
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.9rem 3.5rem 0.9rem 1.1rem;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-box input::placeholder {
+    color: var(--text-faint);
+  }
+
+  .search-box input:focus {
+    border-color: var(--gold-dim);
+  }
+
+  .search-box button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    background: var(--gold-dim);
+    border: none;
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .search-box button:hover {
+    background: var(--gold);
+  }
+
+  .search-box button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .search-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .search-controls label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .search-controls select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 2px;
+    outline: none;
+  }
+
+  .search-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  /* ── Results ── */
+  .results-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .result-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold-dim);
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .result-card:hover {
+    border-color: var(--border-light);
+    border-left-color: var(--gold);
+  }
+
+  .result-card.high-relevance {
+    border-left-color: var(--gold);
+  }
+
+  .result-card.low-relevance {
+    border-left-color: var(--text-faint);
+  }
+
+  .result-header {
+    padding: 0.8rem 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .result-meta {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .result-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .result-filing {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+    margin-top: 0.15rem;
+  }
+
+  .result-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    background: var(--surface-raised);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .result-content {
+    padding: 0 1rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .result-content.expanded {
+    max-height: none;
+  }
+
+  .result-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, var(--surface));
+    pointer-events: none;
+  }
+
+  .result-content.expanded::after {
+    display: none;
+  }
+
+  .result-footer {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .result-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    letter-spacing: 0.03em;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .result-actions a,
+  .result-actions button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold-dim);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .result-actions a:hover,
+  .result-actions button:hover {
+    color: var(--gold-bright);
+  }
+
+  /* ── Loading ── */
+  .loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .loading.active {
+    display: block;
+  }
+
+  .loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-top-color: var(--gold-dim);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 0.75rem;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .loading-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .empty-state .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+  }
+
+  .empty-state p {
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .empty-state .suggestions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .suggestion-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.7rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .suggestion-chip:hover {
+    border-color: var(--gold-dim);
+    color: var(--gold);
+  }
+
+  /* ── Error ── */
+  .error-message {
+    background: var(--surface);
+    border: 1px solid var(--red);
+    border-left: 3px solid var(--red);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    letter-spacing: 0.05em;
+  }
+
+  .footer a {
+    color: var(--gold-dim);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: var(--gold);
+  }
+
+  /* ── Mobile responsive ── */
+  @media (max-width: 600px) {
+    .header {
+      padding: 1.5rem 1rem 1rem;
+    }
+
+    .header h1 {
+      font-size: 1.4rem;
+    }
+
+    .search-container {
+      padding: 1rem 1rem 0;
+    }
+
+    .results-container {
+      padding: 0 1rem 2rem;
+    }
+
+    .search-box input {
+      font-size: 0.95rem;
+      padding: 0.8rem 3.2rem 0.8rem 0.9rem;
+    }
+
+    .search-box button {
+      padding: 0 0.7rem;
+      font-size: 0.6rem;
+    }
+
+    .result-header {
+      padding: 0.7rem 0.8rem 0.4rem;
+    }
+
+    .result-content {
+      padding: 0 0.8rem 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .result-footer {
+      padding: 0.4rem 0.8rem;
+    }
+
+    .result-filing {
+      font-size: 0.88rem;
+    }
+
+    .empty-state {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .suggestion-chip {
+      font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .header h1 {
+      font-size: 1.2rem;
+    }
+
+    .header .subtitle {
+      font-size: 0.6rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>Allen Case File Search</h1>
+  <div class="subtitle">Indiana v. Richard M. Allen — Document Intelligence</div>
+  <div class="meta">18,435 indexed chunks from 667 court filings · Oct 2022 – Dec 2025</div>
+</header>
+
+<div class="search-container">
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search case files..."
+      autocomplete="off"
+      autofocus
+    >
+    <button id="searchBtn" onclick="doSearch()">Search</button>
+  </div>
+  <div class="search-controls">
+    <div>
+      <label for="resultCount">Results: </label>
+      <select id="resultCount">
+        <option value="3">3</option>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+    <div id="searchStatus" class="search-status"></div>
+  </div>
+</div>
+
+<div class="results-container" id="results">
+  <div class="empty-state" id="emptyState">
+    <div class="icon">⟁</div>
+    <p>Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Allen case.</p>
+    <div class="suggestions">
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">unspent bullet evidence</span>
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">confessions at Westville</span>
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">motion to disqualify Judge Gull</span>
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">Odinism alternative suspects</span>
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">Franks hearing probable cause</span>
+      <span class="suggestion-chip" onclick="searchSuggestion(this)">search warrant Whiteman Drive</span>
+    </div>
+  </div>
+</div>
+
+<div class="loading" id="loading">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Searching 18,435 document chunks...</div>
+</div>
+
+<footer class="footer">
+  <p>Built by <a href="https://subtxtpress.github.io" target="_blank">Subtxt Press</a> · Documents sourced from public court records · <a href="https://alleyesondelphi.github.io/rickallen" target="_blank">Case resource site</a></p>
+</footer>
+
+<script>
+const API_URL = 'https://sweet-friendship-production-04d5.up.railway.app/search';
+
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+const resultsDiv = document.getElementById('results');
+const loadingDiv = document.getElementById('loading');
+const emptyState = document.getElementById('emptyState');
+const searchStatus = document.getElementById('searchStatus');
+const resultCount = document.getElementById('resultCount');
+
+// Enter key triggers search
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') doSearch();
+});
+
+function searchSuggestion(el) {
+  searchInput.value = el.textContent;
+  doSearch();
+}
+
+async function doSearch() {
+  const query = searchInput.value.trim();
+  if (!query) return;
+
+  const topK = parseInt(resultCount.value);
+
+  // UI state
+  searchBtn.disabled = true;
+  loadingDiv.classList.add('active');
+  emptyState.style.display = 'none';
+  resultsDiv.innerHTML = '';
+  searchStatus.textContent = '';
+
+  try {
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, top_k: topK, threshold: 0.25 }),
+    });
+
+    if (!resp.ok) {
+      throw new Error(`Server error: ${resp.status}`);
+    }
+
+    const data = await resp.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    loadingDiv.classList.remove('active');
+    searchBtn.disabled = false;
+
+    if (!data.results || data.results.length === 0) {
+      searchStatus.textContent = 'No results found.';
+      return;
+    }
+
+    searchStatus.textContent = `${data.results.length} result${data.results.length !== 1 ? 's' : ''} found`;
+    renderResults(data.results);
+
+  } catch (err) {
+    loadingDiv.classList.remove('active');
+    searchBtn.disabled = false;
+    resultsDiv.innerHTML = `<div class="error-message">Search failed: ${err.message}. The API may be warming up — try again in a moment.</div>`;
+  }
+}
+
+function renderResults(results) {
+  resultsDiv.innerHTML = '';
+
+  results.forEach((r, i) => {
+    const similarity = Math.round((r.similarity || 0) * 100);
+    const relevanceClass = similarity >= 60 ? 'high-relevance' : similarity < 40 ? 'low-relevance' : '';
+
+    const card = document.createElement('div');
+    card.className = `result-card ${relevanceClass}`;
+
+    const driveLink = r.drive_link && r.drive_id
+      ? `<a href="${r.drive_link}" target="_blank" rel="noopener">View source</a>`
+      : '';
+
+    const contentId = `content-${i}`;
+
+    // Clean up content for display
+    let content = r.content || '';
+    content = content.replace(/\n/g, '<br>');
+    if (content.length > 500) {
+      content = content.substring(0, 500) + '...';
+    }
+
+    card.innerHTML = `
+      <div class="result-header">
+        <div class="result-meta">
+          <div class="result-date">${r.entry_date || 'Unknown date'}</div>
+          <div class="result-filing">${truncate(r.entry_header || r.filename || 'Court filing', 120)}</div>
+        </div>
+        <span class="result-badge">${similarity}% match</span>
+      </div>
+      <div class="result-content" id="${contentId}">
+        ${content}
+      </div>
+      <div class="result-footer">
+        <span class="result-source">chunk ${(r.chunk_index || 0) + 1}/${r.total_chunks || '?'} · ${r.filename || ''}</span>
+        <div class="result-actions">
+          <button onclick="toggleExpand('${contentId}')">Expand</button>
+          ${driveLink}
+        </div>
+      </div>
+    `;
+
+    resultsDiv.appendChild(card);
+  });
+}
+
+function toggleExpand(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.classList.toggle('expanded');
+  }
+}
+
+function truncate(str, len) {
+  if (!str) return '';
+  return str.length > len ? str.substring(0, len) + '...' : str;
+}
+</script>
+</body>
+</html>
