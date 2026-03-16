@@ -2426,9 +2426,12 @@ map.on('click', e => {
 (function buildGenematasRoute() {
   const GR = ly.genematasRoute;
 
-  // Route: 5830 N Genematas Dr → west on Ina Rd → south on La Cholla → W Roller Coaster Rd area
   const routeCoords = [
-    // Start: 5830 N Genematas Dr (Shadow Hills)
+    // Shadow Hills area (eastern extent)
+    [32.3880, -110.9550],
+    [32.3870, -110.9600],
+    [32.3860, -110.9660],
+    // Near 5830 N Genematas Dr
     [32.3850, -110.9740],
     [32.3830, -110.9760],
     [32.3810, -110.9780],
@@ -2453,8 +2456,17 @@ map.on('click', e => {
     [32.3520, -111.0530],
     [32.3480, -111.0530],
     [32.3440, -111.0530],
-    // Arrive: W Roller Coaster Rd / La Cholla area
+    // W Roller Coaster Rd heading west
     [32.3415, -111.0530],
+    [32.3410, -111.0560],
+    [32.3405, -111.0590],
+    [32.3400, -111.0620],
+    [32.3395, -111.0660],
+    [32.3390, -111.0700],
+    // Past greentoes North, Bashas', Lulu Walker (western extent)
+    [32.3385, -111.0740],
+    [32.3380, -111.0780],
+    [32.3375, -111.0810],
   ];
 
   // Draw route polyline
@@ -2464,27 +2476,22 @@ map.on('click', e => {
   }).bindPopup(
     `<b style="color:#4a00e0;font-size:13px;">&#x1f697; Genematas Dr Route</b>`
     + `<div style="margin-top:4px;font-size:11px;line-height:1.5;">`
-    + `5830 N Genematas Dr → W Ina Rd W → La Cholla Blvd S → W Roller Coaster Rd area<br>`
     + `<b>Distance:</b> 7.6 miles &nbsp; <b>Drive time:</b> ~21 min</div>`
   ).addTo(GR);
 
-  // Start marker (Genematas Dr)
+  // Pin at 5830 N Genematas Dr
   L.circleMarker([32.3850, -110.9740], {
     radius: 8, color: '#e00', fillColor: '#e00', fillOpacity: 0.9, weight: 2,
   }).bindPopup(
-    `<b style="color:#e00;">&#x1f4cd; 5830 N Genematas Drive</b><br>`
-    + `<small>Shadow Hills area — route start</small>`
-  ).bindTooltip('5830 N Genematas Dr', { permanent: true, direction: 'right', offset: [10, 0], className: 'esc-tag' })
-   .addTo(GR);
+    `<b style="color:#e00;">&#x1f4cd; 5830 N Genematas Drive</b>`
+  ).addTo(GR);
 
-  // End marker (W Roller Coaster Rd area)
-  L.circleMarker([32.3415, -111.0530], {
+  // Pin near Shadow Hills
+  L.circleMarker([32.3880, -110.9550], {
     radius: 7, color: '#4a00e0', fillColor: '#fff', fillOpacity: 1, weight: 3,
   }).bindPopup(
-    `<b>Route End</b><br>W Roller Coaster Rd / La Cholla area<br>`
-    + `<small>Near Lulu Walker Elementary</small>`
-  ).bindTooltip('End', { permanent: true, direction: 'left', offset: [-10, 0], className: 'esc-tag' })
-   .addTo(GR);
+    `<b>Shadow Hills</b>`
+  ).addTo(GR);
 })();
 
 // =============================================================
