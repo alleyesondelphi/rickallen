@@ -6,13 +6,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <!-- Required Info -->
-  <title>IN v. RA Court File Search</title>
-  <meta name="description" content="Search the Indiana v. Richard M. Allen court file.">
+  <title>IN v. RA Case File Search</title>
+  <meta name="description" content="Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Richard Allen case.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/search/index.html">
 
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="IN v. RA Court File Search">
-  <meta property="og:description" content="Search the Indiana v. Richard M. Allen court file.">
+  <meta property="og:title" content="IN v. RA Case File Search">
+  <meta property="og:description" content="Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Richard Allen case.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/search/index.html">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
@@ -22,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IN v. RA Court File Search">
-  <meta name="twitter:description" content="Search the Indiana v. Richard M. Allen court file.">
+  <meta name="twitter:title" content="IN v. RA Case File Search">
+  <meta name="twitter:description" content="Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Richard Allen case.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
 
@@ -47,11 +47,11 @@
     --border: #2a2523;
     --border-light: #3a3432;
     --gold: #b48c5a;
-    --gold-dim: #7a6040;
+    --gold-dim: #9a7a50;
     --gold-bright: #c8a468;
     --text: #d4cdc5;
-    --text-dim: #8a8279;
-    --text-faint: #5a5450;
+    --text-dim: #a49a90;
+    --text-faint: #7a726a;
     --red: #a04040;
     --green: #5a8a5a;
   }
@@ -419,6 +419,16 @@
     color: var(--gold);
   }
 
+  .empty-state .cold-start-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-faint);
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    opacity: 0.6;
+    max-width: none;
+  }
+
   /* ── Error ── */
   .error-message {
     background: var(--surface);
@@ -487,6 +497,10 @@
       padding: 0.7rem 0.8rem 0.4rem;
     }
 
+    .result-date {
+      font-size: 0.6rem;
+    }
+
     .result-content {
       padding: 0 0.8rem 0.7rem;
       font-size: 0.8rem;
@@ -497,7 +511,11 @@
     }
 
     .result-filing {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
+    }
+
+    .result-badge {
+      font-size: 0.55rem;
     }
 
     .empty-state {
@@ -523,7 +541,7 @@
 <body>
 
 <header class="header">
-  <h1>Allen Case File Search</h1>
+  <h1>Rick Allen Case File Search</h1>
   <div class="subtitle">Indiana v. Richard M. Allen — Document Intelligence</div>
   <div class="meta">18,435 indexed chunks from 667 court filings · Oct 2022 – Dec 2025</div>
 </header>
@@ -556,7 +574,7 @@
 <div class="results-container" id="results">
   <div class="empty-state" id="emptyState">
     <div class="icon">⟁</div>
-    <p>Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Allen case.</p>
+    <p>Search across hundreds of court filings, motions, orders, transcripts, and exhibits from the Richard Allen case.</p>
     <div class="suggestions">
       <span class="suggestion-chip" onclick="searchSuggestion(this)">unspent bullet evidence</span>
       <span class="suggestion-chip" onclick="searchSuggestion(this)">confessions at Westville</span>
@@ -565,6 +583,7 @@
       <span class="suggestion-chip" onclick="searchSuggestion(this)">Franks hearing probable cause</span>
       <span class="suggestion-chip" onclick="searchSuggestion(this)">search warrant Whiteman Drive</span>
     </div>
+    <p class="cold-start-note">First search may take a few seconds while the server wakes up.</p>
   </div>
 </div>
 
