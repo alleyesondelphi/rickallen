@@ -1805,7 +1805,7 @@ async function loadWells() {
   const bbox = `${b.getWest()},${b.getSouth()},${b.getEast()},${b.getNorth()}`;
   try {
     const params = new URLSearchParams({
-      where: "COUNTY='PIMA'",
+      where: '1=1',
       geometry: bbox,
       geometryType: 'esriGeometryEnvelope',
       inSR: '4326', outSR: '4326',
@@ -1824,7 +1824,7 @@ async function loadWells() {
     (data.features || []).forEach(f => {
       if (!f.geometry) return;
       const lon = f.geometry.x, lat = f.geometry.y;
-      const a = f.properties || {};
+      const a = f.attributes || {};
       const regId = a.REGISTRY_ID || '—';
       const owner = a.OWNER_NAME  || '—';
       const type  = a.WELL_TYPE   || '—';
