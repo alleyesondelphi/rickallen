@@ -1810,7 +1810,7 @@ async function loadWells() {
       geometryType: 'esriGeometryEnvelope',
       inSR: '4326', outSR: '4326',
       spatialRel: 'esriSpatialRelIntersects',
-      outFields: 'REGISTRY_ID,OWNER_NAME,WELL_TYPE,DEPTH,CADASTRAL',
+      outFields: 'REGISTRY_ID,OWNER_NAME,WELLTYPE,WELL_DEPTH,CADASTRAL,COUNTY',
       returnGeometry: 'true',
       f: 'json',
       resultRecordCount: 2000,
@@ -1827,8 +1827,8 @@ async function loadWells() {
       const a = f.attributes || {};
       const regId = a.REGISTRY_ID || '—';
       const owner = a.OWNER_NAME  || '—';
-      const type  = a.WELL_TYPE   || '—';
-      const depth = a.DEPTH != null ? `${a.DEPTH} ft` : '—';
+      const type  = a.WELLTYPE    || '—';
+      const depth = a.WELL_DEPTH != null ? `${a.WELL_DEPTH} ft` : '—';
       const cad   = a.CADASTRAL   || '—';
       const popup =
         `<b style="color:#4db6ac;">&#x1f4a7; Registered Well</b><br>`
