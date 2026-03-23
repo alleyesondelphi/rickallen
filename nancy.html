@@ -371,6 +371,7 @@
     <label class="lyr"><input type="checkbox" data-layer="watersheds"> Washes &amp; Watersheds <span class="cnt" id="cnt-watersheds">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="aircraft"> Aircraft (ADS-B) <span class="cnt" id="cnt-aircraft">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="stormDrains"> Storm Drains <span class="cnt" id="cnt-stormDrains">-</span></label>
+    <label class="lyr"><input type="checkbox" data-layer="wells"> &#x1f4a7; Registered Wells (ADWR) <span class="cnt" id="cnt-wells">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="railroads"> &#x1f682; Railroads <span class="cnt" id="cnt-railroads">-</span></label>
     <label class="lyr"><input type="checkbox" data-layer="hillshade"> Terrain Hillshade</label>
     <label class="lyr" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;"><input type="checkbox" data-layer="escapeRoute"> &#x26a0; WB I-10 Escape Corridor</label>
@@ -400,6 +401,7 @@
       <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#00bcd4;">&#9992;</span> Plane</span>
       <span class="legend-item"><span style="font-size:13px;vertical-align:middle;color:#e91e63;">&#9992;</span> Heli</span>
       <span class="legend-item"><span class="legend-dot" style="background:#607d8b;width:7px;height:7px;border:1.5px solid #90a4ae;"></span> Drain</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#4db6ac;"></span> Well</span>
     </div>
   </div>
 
@@ -1028,6 +1030,7 @@ const ly = {
   watersheds:  L.layerGroup(),
   aircraft:    L.layerGroup(),
   stormDrains: L.layerGroup(),
+  wells:       L.layerGroup(),
   jammerZone:  L.layerGroup(),
   escapeRoute: L.layerGroup(),
   genematasRoute: L.layerGroup(),
@@ -1789,6 +1792,66 @@ async function loadStormDrains() {
 }
 
 // =============================================================
+// REGISTERED WELLS — ADWR Well Registry 2024 (viewport-filtered, re-fetches on pan/zoom)
+// Source: Arizona Dept. of Water Resources, via ArcGIS FeatureServer
+// =============================================================
+const WELLS_API = 'https://services.arcgis.com/C34zQ7veRS0V1t04/ArcGIS/rest/services/Well_Registry_2024/FeatureServer/0/query';
+let wellsActive = false;
+
+async function loadWells() {
+  ly.wells.clearLayers();
+  setStatus('wells', 'loading');
+  const b = map.getBounds();
+  const bbox = `${b.getWest()},${b.getSouth()},${b.getEast()},${b.getNorth()}`;
+  try {
+    const params = new URLSearchParams({
+      where: "COUNTY='PIMA'",
+      geometry: bbox,
+      geometryType: 'esriGeometryEnvelope',
+      inSR: '4326', outSR: '4326',
+      spatialRel: 'esriSpatialRelIntersects',
+      outFields: 'REGISTRY_ID,OWNER_NAME,WELL_TYPE,DEPTH,CADASTRAL',
+      f: 'geojson',
+      resultRecordCount: 2000,
+    });
+    const r = await fetch(`${WELLS_API}?${params}`);
+    if (!r.ok) throw new Error(`ADWR API ${r.status}`);
+    const data = await r.json();
+    if (data.error) throw new Error(data.error.message);
+    if (!wellsActive) return; // toggled off while fetching
+    let count = 0;
+    (data.features || []).forEach(f => {
+      if (!f.geometry) return;
+      const [lon, lat] = f.geometry.coordinates;
+      const a = f.properties || {};
+      const regId = a.REGISTRY_ID || '—';
+      const owner = a.OWNER_NAME  || '—';
+      const type  = a.WELL_TYPE   || '—';
+      const depth = a.DEPTH != null ? `${a.DEPTH} ft` : '—';
+      const cad   = a.CADASTRAL   || '—';
+      const popup =
+        `<b style="color:#4db6ac;">&#x1f4a7; Registered Well</b><br>`
+        + `<b>Registry ID:</b> ${regId}<br>`
+        + `<b>Owner:</b> ${owner}<br>`
+        + `<b>Well Type:</b> ${type}<br>`
+        + `<b>Depth:</b> ${depth}<br>`
+        + `<b>Cadastral:</b> ${cad}<br>`
+        + `<small style="color:var(--dim);">&#9888; Location is approximate &mdash; wells are mapped to cadastral centroid (~10 acres), not physical ground location</small>`;
+      L.circleMarker([lat, lon], {
+        radius: 4, fillColor: '#4db6ac', color: '#80cbc4',
+        weight: 1, fillOpacity: 0.75, opacity: 0.9,
+      }).bindPopup(popup).addTo(ly.wells);
+      count++;
+    });
+    document.getElementById('cnt-wells').textContent = count.toLocaleString();
+    setStatus('wells', 'loaded', `(${count.toLocaleString()})`);
+  } catch(e) {
+    console.error('Wells error:', e);
+    setStatus('wells', 'error', e.message);
+  }
+}
+
+// =============================================================
 // TPD DIVISIONS (lazy-load from City of Tucson ArcGIS)
 // =============================================================
 let tpdDivisionsLoaded = false;
@@ -2329,6 +2392,7 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
       if (cb.dataset.layer === 'railroads' && !railroadsLoaded) loadRailroads();
       if (cb.dataset.layer === 'territories' && !territoriesLoaded) loadTerritories();
       if (cb.dataset.layer === 'quarries' && !quarriesLoaded) loadQuarries();
+      if (cb.dataset.layer === 'wells') { wellsActive = true; loadWells(); }
       if (cb.dataset.layer === 'territories') {
         document.getElementById('legend-territories').style.display = '';
         if (map.getZoom() > 10) map.setView([32.2, -111.5], 8);
@@ -2336,9 +2400,12 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
     } else {
       map.removeLayer(layer);
       if (cb.dataset.layer === 'territories') document.getElementById('legend-territories').style.display = 'none';
+      if (cb.dataset.layer === 'wells') { wellsActive = false; document.getElementById('cnt-wells').textContent = '-'; }
     }
   });
 });
+
+map.on('moveend zoomend', () => { if (wellsActive) loadWells(); });
 
 // =============================================================
 // COORDINATE DISPLAY

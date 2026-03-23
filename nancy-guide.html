@@ -142,6 +142,11 @@ li { margin-bottom:4px; }
   <span class="layer-desc">Underground storm drain locations from the City of Tucson Dept. of Transportation. ~1,800+ points with install/inspection/repair dates. Loads on first toggle.</span>
 </div>
 <div class="layer-row">
+  <span class="layer-icon" style="color:#4db6ac;">&#9679;</span>
+  <span class="layer-name">Registered Wells (ADWR)</span>
+  <span class="layer-desc">Arizona Dept. of Water Resources Well Registry 2024. Loads on first toggle for the current map view; re-fetches automatically as you pan or zoom. Filtered to Pima County. <b>Note:</b> locations are approximate &mdash; wells are geocoded to cadastral centroid (~10-acre precision), not actual ground location. Data via ADWR ArcGIS FeatureServer.</span>
+</div>
+<div class="layer-row">
   <span class="layer-icon">&#9968;</span>
   <span class="layer-name">Terrain Hillshade</span>
   <span class="layer-desc">Semi-transparent elevation shading overlay</span>
@@ -284,7 +289,7 @@ li { margin-bottom:4px; }
 </ul>
 
 <div class="note">
-  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), ADOT 2021 Interstate AADT Publication (corridor traffic volumes), FHWA Traffic Monitoring Guide (hourly factors), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains, TPD divisions), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding), DEA/HIDTA/DOJ/CBP (territory intelligence). All data is fetched live in your browser except territory overlays and AADT data which are compiled from published sources.
+  <b>Data sources:</b> OpenStreetMap / Overpass API, AZ 511 (ADOT cameras), ADOT 2021 Interstate AADT Publication (corridor traffic volumes), FHWA Traffic Monitoring Guide (hourly factors), OpenSky Network (aircraft), Tucson PD / City of Tucson ArcGIS (crime data, storm drains, TPD divisions), Arizona Dept. of Water Resources Well Registry 2024 via ArcGIS FeatureServer (registered wells &mdash; cadastral centroid locations, ~10-acre precision), OSRM (routing), ESRI (basemaps/hillshade), Nominatim (geocoding), DEA/HIDTA/DOJ/CBP (territory intelligence). All data is fetched live in your browser except territory overlays and AADT data which are compiled from published sources.
 </div>
 
 <p style="margin-top:32px;"><a href="nancy" class="back">&larr; Back to Map</a></p>
