@@ -1811,18 +1811,19 @@ async function loadWells() {
       inSR: '4326', outSR: '4326',
       spatialRel: 'esriSpatialRelIntersects',
       outFields: 'REGISTRY_ID,OWNER_NAME,WELL_TYPE,DEPTH,CADASTRAL',
-      f: 'geojson',
+      returnGeometry: 'true',
+      f: 'json',
       resultRecordCount: 2000,
     });
     const r = await fetch(`${WELLS_API}?${params}`);
     if (!r.ok) throw new Error(`ADWR API ${r.status}`);
     const data = await r.json();
-    if (data.error) throw new Error(data.error.message);
+    if (data.error) throw new Error(data.error.message || JSON.stringify(data.error));
     if (!wellsActive) return; // toggled off while fetching
     let count = 0;
     (data.features || []).forEach(f => {
       if (!f.geometry) return;
-      const [lon, lat] = f.geometry.coordinates;
+      const lon = f.geometry.x, lat = f.geometry.y;
       const a = f.properties || {};
       const regId = a.REGISTRY_ID || '—';
       const owner = a.OWNER_NAME  || '—';
