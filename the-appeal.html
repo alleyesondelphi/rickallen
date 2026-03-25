@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Required Info -->
+  <title>Richard Allen Appeal – Analysis</title>
+  <meta name="description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-appeal">
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Richard Allen Appeal | Issue-By-Issue Comparison">
+  <meta property="og:description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-appeal">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-appeal.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Richard Allen Appeal | Issue-By-Issue Comparison">
+  <meta name="twitter:description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-appeal.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+
+  <!-- Favicons -->
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0f;
+    --paper: #f2ede6;
+    --aged: #e0d8cc;
+    --red: #9b1c1c;
+    --gold: #b8860b;
+    --steel: #3a4a5c;
+    --muted: #6b6560;
+    --gap-red: #c0392b;
+    --gap-bg: #fdf0ee;
+    --state-blue: #1a3a5c;
+    --state-bg: #eef3f8;
+    --allen-green: #1a3a2a;
+    --allen-bg: #eef4f0;
+    --warn: #7a4a00;
+    --warn-bg: #fdf5e6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* HEADER */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .masthead-rule {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .masthead h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #aaa;
+  }
+  .masthead-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.12em;
+    margin-top: 14px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .masthead-sub span { color: #bbb; }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* INTRO BAND */
+  .intro-band {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--gold);
+    padding: 20px 28px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: var(--warn);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+  }
+  .intro-band strong { color: var(--ink); }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--aged);
+    padding-bottom: 8px;
+    margin: 40px 0 20px;
+  }
+
+  /* ISSUE BLOCKS */
+  .issue {
+    margin-bottom: 48px;
+    border: 1px solid var(--aged);
+    background: #fff;
+  }
+
+  .issue-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 12px;
+  }
+  .issue-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #888;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+  .issue-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 2.5vw, 18px);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .issue-verdict {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border: 1px solid;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .verdict-gap { color: var(--gap-red); border-color: var(--gap-red); }
+  .verdict-partial { color: var(--gold); border-color: var(--gold); }
+  .verdict-contested { color: #5577aa; border-color: #5577aa; }
+
+  .issue-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .col {
+    padding: 20px 24px;
+  }
+  .col + .col {
+    border-left: 1px solid var(--aged);
+  }
+
+  .col-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .col-allen .col-label { color: var(--allen-green); }
+  .col-state .col-label { color: var(--state-blue); }
+  .col-allen { background: var(--allen-bg); }
+  .col-state { background: var(--state-bg); }
+
+  .col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .col ul li {
+    font-size: 13.5px;
+    line-height: 1.55;
+    padding: 5px 0 5px 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .col ul li:last-child { border-bottom: none; }
+  .col ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .col-allen ul li::before { color: var(--allen-green); }
+  .col-state ul li::before { color: var(--state-blue); }
+
+  /* GAP ROW */
+  .gap-row {
+    background: var(--gap-bg);
+    border-top: 1px solid #e8c8c5;
+    padding: 14px 24px;
+    grid-column: 1 / -1;
+  }
+  .gap-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gap-red);
+    margin-bottom: 8px;
+  }
+  .gap-row ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .gap-row ul li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    background: #fff;
+    border: 1px solid #e8c8c5;
+    color: var(--gap-red);
+    padding: 4px 10px;
+    line-height: 1.4;
+  }
+
+  /* PCA STRIP */
+  .pca-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+    border-left: 6px solid var(--red);
+  }
+  .pca-flag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-right: 1px solid #333;
+    padding-right: 16px;
+    white-space: nowrap;
+  }
+  .pca-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .pca-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .pca-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  .pca-item strong {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+
+  /* BOTTOM LINE */
+  .bottom-line {
+    border: 2px solid var(--ink);
+    padding: 28px 32px;
+    margin-top: 40px;
+    position: relative;
+    background: var(--paper);
+  }
+  .bottom-line::before {
+    content: 'BOTTOM LINE';
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    background: var(--paper);
+    padding: 0 8px;
+    position: absolute;
+    top: -7px;
+    left: 24px;
+    color: var(--muted);
+  }
+  .bottom-line p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #1a1a1a;
+  }
+  .bottom-line p + p { margin-top: 12px; }
+
+  .strength-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--aged);
+    margin-top: 24px;
+    border: 1px solid var(--aged);
+  }
+  .strength-cell {
+    background: #fff;
+    padding: 16px 18px;
+  }
+  .strength-cell .s-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .strength-cell .s-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .strength-cell .s-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .s-red { color: var(--gap-red); }
+  .s-blue { color: var(--state-blue); }
+  .s-gold { color: var(--gold); }
+
+  @media (max-width: 700px) {
+    .issue-body { grid-template-columns: 1fr; }
+    .col + .col { border-left: none; border-top: 1px solid var(--aged); }
+    .pca-items { grid-template-columns: 1fr; }
+    .strength-grid { grid-template-columns: 1fr; }
+    .pca-strip { grid-template-columns: 1fr; }
+    .pca-flag { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid #333; padding: 0 0 10px; }
+    .masthead { padding: 28px 20px 24px; }
+    .container { padding: 0 16px 48px; }
+    .issue-header {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 14px 16px;
+    }
+    .issue-verdict { width: fit-content; }
+    .col { padding: 16px; }
+    .gap-row { padding: 12px 16px; }
+    .gap-row ul { flex-direction: column; }
+    .bottom-line { padding: 20px 18px; }
+    .pca-strip { padding: 20px 18px; }
+    .strength-cell { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-rule">Indiana Court of Appeals · Case No. 25A-CR-00591</div>
+  <h1>Allen <em>v.</em> State</h1>
+  <div class="masthead-sub">
+    <span>APPEAL ANALYSIS</span>
+    <span>ISSUE-BY-ISSUE COMPARISON</span>
+    <span>PCA DEFECTS INTEGRATED</span>
+    <span>MARCH 2026</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro-band">
+    <strong>Context:</strong> Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The <a href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank">corrected PCA</a> — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.
+  </div>
+
+  <div class="section-label">Issue I — Search Warrant / Franks Hearing</div>
+
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">ISSUE I</span>
+      <span class="issue-title">Defective Warrant Affidavit &amp; Fruit of the Poisonous Tree</span>
+      <span class="issue-verdict verdict-gap">STATE GAP</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen argues</div>
+        <ul>
+          <li>Liggett omitted Blair's description of Bridge Guy — young, poofy brown hair, 20s–30s. Allen was 44 with closely cropped hair.</li>
+          <li>Liggett omitted Blair's car description — sharp angles, not black, older model. Inconsistent with Allen's 2016 Focus.</li>
+          <li>Liggett used Carbaugh's later statements and ignored her first interview: tan coat, muddy jeans — not bloody in a blue jacket.</li>
+          <li>Allen never said he wore a blue Carhartt. His wife said it was purchased "a couple years ago" — meaning after 2017.</li>
+          <li>ISP's own 2019 statement: Blair's sketch showed Bridge Guy; Blair and Carbaugh saw different people. State never reversed this publicly — only after Allen's arrest.</li>
+          <li>Without the gun from the search, no Oberg opinion, no arrest, no confessions. Everything is fruit.</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Waived — Allen said "no objection" at trial.</li>
+          <li>Not false — Carbaugh described the man as bloody 16 times in her third interview. Liggett used her most recent statements.</li>
+          <li>Not material — Allen's own statements placed him on the bridge at the right time. Blair's description wasn't the foundation.</li>
+          <li>Clothing argument raised for first time on appeal — waived.</li>
+          <li>Probable cause still exists even corrected.</li>
+          <li>Fruit of the poisonous tree argument called "not cogent" — two sentences.</li>
+        </ul>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">State never addresses</div>
+        <ul>
+          <li>ISP's 2019 public reversal — acknowledged, never explained</li>
+          <li>Presence on trail ≠ probable cause in 2017 — no engagement</li>
+          <li>Initial firearms comparison: 6 test cycles, insufficient agreement — warrant existed before Oberg's opinion</li>
+          <li>HHS vehicle: measurements demonstrate it could not be Allen's Focus</li>
+          <li>Two unknown devices near crime scene at 3:02 and 3:27 pm — neither identified</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Issue II — Confessions / Solitary Confinement</div>
+
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">ISSUE II</span>
+      <span class="issue-title">Voluntariness, Indiana Constitution &amp; Unconstitutional Detention</span>
+      <span class="issue-verdict verdict-gap">MULTIPLE GAPS</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen argues</div>
+        <ul>
+          <li>Reid Technique lies at arrest — before solitary began — told witnesses identified him, gun forensically matched, video/audio matched. All false.</li>
+          <li>13 months in solitary exceeded IDOC's own 30-day SMI policy. Prosecutor monitored real-time confessions; called defense concerns "colorful" the same day IDOC found Allen gravely disabled.</li>
+          <li>Over 60 confessions collected during documented deterioration. Impossible confessions: shooting victims killed by a blade, nuclear war, King Michael, people who don't exist.</li>
+          <li>Indiana standard: voluntariness proven beyond a reasonable doubt, not preponderance. Negligent State conduct suffices — Banks.</li>
+          <li>II.D: Even if voluntary, confessions suppressible as fruit of unconstitutional detention under Article I §§12 and 15. Three-factor fruit test applies.</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Waived — "no objection" to confession documents at trial.</li>
+          <li>No coercive State action — cell had window, food, tablet, visits, chaplain.</li>
+          <li>Confessions predated psychosis and continued after it resolved — no causal connection.</li>
+          <li>Alternative explanations: religious conversion, receipt of legal discovery.</li>
+          <li>§15 claim waived; anyway §15 only covers physical torture. §12 doesn't apply in criminal cases.</li>
+        </ul>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">State never addresses</div>
+        <ul>
+          <li>Banks holding that negligent conduct suffices — State requires coercive action but never refutes Banks directly</li>
+          <li>Issue II.D three-factor fruit test — collapsed into voluntariness, never applied</li>
+          <li>Prosecutor's 9-day delay on emergency transfer motion</li>
+          <li>Impossible confessions: same psychosis can't taint some confessions but not others</li>
+          <li>Reid Technique lies as baseline voluntariness contamination preceding detention</li>
+          <li>Dr. Wala's own concession that solitary likely caused psychosis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Issue III — Evidentiary Rulings (Selected)</div>
+
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">III.B</span>
+      <span class="issue-title">Blair's Sketch Excluded</span>
+      <span class="issue-verdict verdict-partial">PARTIAL ANSWER</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen argues</div>
+        <ul>
+          <li>Sketch shows Bridge Guy as young, poofy brown hair, 20s–30s. Allen was 44 with closely cropped hair. Blair rated it 10/10 accuracy.</li>
+          <li>ISP adopted the sketch as Bridge Guy in 2019 — adoptive admission by the State.</li>
+          <li>State's own closing: identity was the central issue. Excluding the sketch was arbitrary.</li>
+          <li>Constitutional right to present mistaken identity defense overrides the hearsay rule.</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Waived — never offered at trial.</li>
+          <li>Not relevant — Blair never identified Allen.</li>
+          <li>Hearsay — not a prior identification under Rule 801(d)(1)(C).</li>
+          <li>Cumulative — Blair described her observations on cross; jury had the information.</li>
+        </ul>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">State never addresses</div>
+        <ul>
+          <li>Adoptive admission argument — ISP released sketch as "the face of Bridge Guy"</li>
+          <li>Constitutional override — Holmes cited but Allen's specific asymmetry argument not engaged</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">III.C / III.E</span>
+      <span class="issue-title">Tobin Excluded · Confession Context Stripped · Crane v. Kentucky</span>
+      <span class="issue-verdict verdict-gap">STATE GAP</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen argues</div>
+        <ul>
+          <li>Tobin would have forced Oberg to engage PCAST criticism. State told jury Oberg has "never been wrong" — only possible because Tobin was excluded.</li>
+          <li>Solitary audio excluded as hearsay — but statements weren't offered for truth, offered for state of mind. Video alone couldn't convey incoherence; audio showed medical staff ignoring catatonia while discussing cholesterol.</li>
+          <li>April 3 calls excluded — State got to tell the jury Allen confessed because he "gave himself to Jesus." Allen couldn't tell the contemporaneous story.</li>
+          <li>Crane v. Kentucky: stripping a defendant of the ability to describe confession circumstances violates due process.</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Tobin not a firearms examiner, didn't examine evidence — Warren already covered the debate.</li>
+          <li>Audio: hearsay; defendant can't introduce own out-of-court statements to enhance credibility.</li>
+          <li>Completeness doctrine doesn't require admitting every statement; each full call satisfied completeness.</li>
+          <li>Harmless — overwhelming evidence.</li>
+        </ul>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">State never addresses</div>
+        <ul>
+          <li>Crane v. Kentucky — never addressed by name or principle</li>
+          <li>"Never been wrong" closing argument — unchallenged characterization only possible because Tobin excluded</li>
+          <li>Door-opening on Grassian: Harshman's "calm, subdued, solemn" testimony never addressed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">III.F</span>
+      <span class="issue-title">Weber / Napue — False Testimony</span>
+      <span class="issue-verdict verdict-contested">CONTESTED</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen argues</div>
+        <ul>
+          <li>Weber testified he drove straight home after clocking out at 2:02 pm. Surveillance showed him arriving ~2:44 pm; FBI cellphone ping showed ~2:50 pm.</li>
+          <li>State knew this before trial. The 25+ minute gap makes Allen's May 3 confession inconsistent with the actual timeline.</li>
+          <li>Glossip v. Oklahoma (2025): knowing use of false testimony requires reversal if it "could have contributed to the verdict."</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Timestamp on neighbor's video never verified — HHS video was 54 minutes fast.</li>
+          <li>Allen never confronted Weber with the video at trial — strategic choice, not Napue.</li>
+          <li>Weber never testified to an exact arrival time.</li>
+        </ul>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">State never addresses</div>
+        <ul>
+          <li>Glossip v. Oklahoma (2025) — never cited or engaged by name</li>
+          <li>FBI cellphone ping evidence — foundation problem asserted but never explained</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PCA STRIP -->
+  <div class="pca-strip">
+    <div class="pca-flag">Corrected PCA · State's Own Evidence</div>
+    <div class="pca-content">
+      <h3>What the Corrected Probable Cause Affidavit Exposes</h3>
+      <p style="font-size:13.5px; color:#bbb; line-height:1.6;">Reconstructed using only State trial exhibits and witness transcripts. Removes the "defense spin" objection entirely — these are the State's own sources, against the State's own affidavit.</p>
+      <div class="pca-items">
+        <div class="pca-item">
+          <strong>Vehicle ID Failed</strong>
+          Measurements demonstrate the HHS vehicle at 1:27 pm could not be Allen's 2016 Ford Focus. Investigators asserted similarity; measurements contradict it.
+        </div>
+        <div class="pca-item">
+          <strong>Initial Firearms Match Failed</strong>
+          After 6 test cycles, original examiner found insufficient agreement. Oberg's identification opinion came after this failure. The warrant predates any confirmed match.
+        </div>
+        <div class="pca-item">
+          <strong>Two Unknown Devices Unaccounted For</strong>
+          FBI CAST placed unknown Device #2 within 60–100 yards of the crime scene at 3:02 pm; Device #3 at 3:27 pm. Neither belonged to victims or Allen. Neither is identified. Neither appears in the PCA.
+        </div>
+        <div class="pca-item">
+          <strong>Clothing Statement Inverted</strong>
+          Allen said he didn't know what he wore — "probably" blue jeans and either a sweatshirt or black jacket. Wife confirmed a blue Carhartt purchased "a couple years ago" from 2022. The coat didn't exist in 2017.
+        </div>
+        <div class="pca-item">
+          <strong>Reid Technique Lies at Arrest</strong>
+          Before any solitary confinement: told witnesses identified him, gun forensically matched, video/audio matched to him. All false. Allen immediately called bullshit. Contamination precedes Westville.
+        </div>
+        <div class="pca-item">
+          <strong>No Witnesses Place Allen After 1:30 pm</strong>
+          Investigators identified individuals on trail and CR 300 North from 1:30–4:11 pm. None saw anyone matching Allen's description. Allen himself said he left by 1:00–1:30 pm.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIGGEST GAP -->
+  <div class="section-label">The Overarching Gap</div>
+  <div class="issue">
+    <div class="issue-header">
+      <span class="issue-num">STRUCTURAL</span>
+      <span class="issue-title">Cumulative Error — The Doctrine the State Never Answered</span>
+      <span class="issue-verdict verdict-gap">NO STATE ANSWER</span>
+    </div>
+    <div class="issue-body">
+      <div class="col col-allen">
+        <div class="col-label">Allen's structural argument</div>
+        <ul>
+          <li>Cumulative error woven throughout the brief: the collective effect of all evidentiary exclusions denied Allen a fair trial under the 6th and 14th Amendments, even if no single error was individually reversible.</li>
+          <li>Blair's sketch out. Tobin out. Solitary audio out. April 3 calls out. Grassian's foundation gutted. Unknown devices never surfaced for the jury. Weber's timeline never confronted.</li>
+          <li>The sum is greater than any single part.</li>
+        </ul>
+      </div>
+      <div class="col col-state">
+        <div class="col-label">State responds</div>
+        <ul>
+          <li>Every issue receives its own harmless error analysis in isolation.</li>
+          <li>Cumulative error as a doctrine is never addressed anywhere in the State's brief.</li>
+          <li style="font-style:italic; color: var(--gap-red);">There is no answer ready.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-line">
+    <p>The State is entitled to their waiver and harmless error arguments — those are real procedural hurdles — but they're lacking in substance. And the structural gaps are significant. The State has no answer on <em>Glossip v. Oklahoma</em> (2025), no answer on the ISP's own 2019 reversal, no answer on cumulative error, no answer on the <em>Banks</em> negligence standard, and no answer on the Issue II.D three-factor fruit test.</p>
+    <p>The corrected PCA is the most persuasive document in the appeal for Issue I specifically, because it uses only the State's own sources to show what Liggett left out. That removes the adversarial framing problem. The initial firearms comparison failure — six cycles, insufficient agreement — is buried but consequential: the warrant that produced the gun came before any confirmed match existed.</p>
+    <p>Allen's strongest appellate path runs through Issue I (warrant as fruit tree root), cumulative error (unanswered), and the Indiana constitutional claims (analytically distinct from the federal claims, incompletely addressed).</p>
+    <div class="strength-grid">
+      <div class="strength-cell">
+        <div class="s-label">Allen's Strongest Ground</div>
+        <div class="s-val s-red">Cumulative Error</div>
+        <div class="s-desc">The one doctrine the State has no answer for. Court must address or explain its absence.</div>
+      </div>
+      <div class="strength-cell">
+        <div class="s-label">State's Strongest Ground</div>
+        <div class="s-val s-blue">Waiver + Harmless</div>
+        <div class="s-desc">Real procedural barriers. "No objection" at trial is a hard wall on Issues I and II.</div>
+      </div>
+      <div class="strength-cell">
+        <div class="s-label">Critical Unresolved Question</div>
+        <div class="s-val s-gold">Banks Standard</div>
+        <div class="s-desc">Does Indiana Constitution require coercive State action, or does negligence suffice? State never answered.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
