@@ -426,21 +426,48 @@
     <strong>Context:</strong> Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The <a href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank">corrected PCA</a> — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.
   </div>
 
-  <!-- TABLE OF AUTHORITIES CLASSIFICATION WIDGET -->
-  <div class="section-label">TABLE OF AUTHORITIES · CASE CLASSIFICATION</div>
-  <div id="toa-widget">
+  <!-- TABLE OF AUTHORITIES COMPARISON WIDGETS -->
+  <div class="section-label">TABLE OF AUTHORITIES · BRIEF COMPARISON</div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       APPELLANT'S BRIEF · RICHARD ALLEN
+  ════════════════════════════════════════════════════════════ -->
+  <div id="toa-allen">
   <style>
-    #toa-widget {
-      margin-bottom: 40px;
+    #toa-allen {
+      margin-bottom: 0;
       font-family: 'Source Serif 4', Georgia, serif;
     }
-    .toa-tabs {
+    #toa-allen .ta-widget-hdr {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    #toa-allen .ta-hdr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    #toa-allen .ta-hdr-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    #toa-allen .ta-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 0;
       border-bottom: 1px solid var(--aged);
     }
-    .toa-tab {
+    #toa-allen .ta-tab {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.15em;
@@ -454,35 +481,33 @@
       margin-bottom: -1px;
       border-radius: 0;
     }
-    .toa-tab:hover { color: var(--ink); }
-    .toa-tab.toa-active {
+    #toa-allen .ta-tab:hover { color: var(--ink); }
+    #toa-allen .ta-tab.ta-active {
       background: var(--ink);
       color: var(--paper);
       border-color: var(--ink);
     }
-    .toa-panel {
+    #toa-allen .ta-panel {
       border: 1px solid var(--aged);
       border-top: none;
       background: #fff;
       padding: 24px;
     }
-    .toa-panel.toa-hidden { display: none; }
-
-    /* Overview */
-    .toa-meta {
+    #toa-allen .ta-panel.ta-hidden { display: none; }
+    #toa-allen .ta-meta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: var(--muted);
       letter-spacing: 0.05em;
       margin-bottom: 20px;
     }
-    .toa-bar-row {
+    #toa-allen .ta-bar-row {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 9px;
     }
-    .toa-bar-label {
+    #toa-allen .ta-bar-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.04em;
@@ -491,18 +516,15 @@
       flex-shrink: 0;
       line-height: 1.3;
     }
-    .toa-bar-track {
+    #toa-allen .ta-bar-track {
       flex: 1;
       background: var(--aged);
       height: 20px;
       position: relative;
       overflow: hidden;
     }
-    .toa-bar-fill {
-      height: 100%;
-      min-width: 2px;
-    }
-    .toa-bar-n {
+    #toa-allen .ta-bar-fill { height: 100%; min-width: 2px; }
+    #toa-allen .ta-bar-n {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       font-weight: 500;
@@ -510,15 +532,13 @@
       flex-shrink: 0;
       text-align: right;
     }
-
-    /* Filters */
-    .toa-filters {
+    #toa-allen .ta-filters {
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
       margin-bottom: 18px;
     }
-    .toa-fbtn {
+    #toa-allen .ta-fbtn {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.08em;
@@ -531,24 +551,22 @@
       border-radius: 0;
       line-height: 1.4;
     }
-    .toa-fbtn:hover { color: var(--ink); border-color: var(--ink); }
-
-    /* Cards */
-    .toa-grid {
+    #toa-allen .ta-fbtn:hover { color: var(--ink); border-color: var(--ink); }
+    #toa-allen .ta-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 10px;
     }
-    .toa-card {
+    #toa-allen .ta-card {
       border: 1px solid var(--aged);
       background: #fff;
       padding: 13px 15px;
     }
-    .toa-card.toa-odd-card {
+    #toa-allen .ta-card.ta-odd-card {
       background: var(--gap-bg);
       border-color: #e8c8c5;
     }
-    .toa-card-name {
+    #toa-allen .ta-card-name {
       font-family: 'Playfair Display', serif;
       font-size: 13.5px;
       font-weight: 700;
@@ -556,19 +574,20 @@
       margin-bottom: 3px;
       color: var(--ink);
     }
-    .toa-card-cite {
+    #toa-allen .ta-card-cite {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9.5px;
       color: var(--muted);
       margin-bottom: 7px;
       line-height: 1.4;
     }
-    .toa-tags {
+    #toa-allen .ta-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 3px;
+      margin-bottom: 4px;
     }
-    .toa-tag {
+    #toa-allen .ta-tag {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       letter-spacing: 0.08em;
@@ -576,29 +595,90 @@
       padding: 2px 6px;
       border: 1px solid;
       border-radius: 0;
-      color: #fff;
       line-height: 1.5;
     }
-    .toa-odd-flag {
+    #toa-allen .ta-shared-flag {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9.5px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
+      color: var(--state-blue);
+      margin-top: 5px;
+    }
+    #toa-allen .ta-odd-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
       color: var(--gap-red);
-      margin-top: 7px;
+      margin-top: 5px;
       line-height: 1.4;
     }
-
-    /* Multi-category */
-    .toa-multi-card {
+    #toa-allen .ta-multi-card {
       border: 1px solid var(--aged);
       border-left-width: 4px;
       background: #fff;
       padding: 13px 15px;
     }
-
-    /* Oddities tab */
-    .toa-odd-section { margin-bottom: 22px; }
-    .toa-odd-section-hd {
+    /* vs. tab */
+    #toa-allen .ta-vs-note {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--gold);
+      padding: 16px 22px;
+      margin-bottom: 22px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--warn);
+      line-height: 1.7;
+    }
+    #toa-allen .ta-vs-note strong { color: var(--ink); }
+    #toa-allen .ta-vs-section-hd {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--aged);
+      padding-bottom: 7px;
+      margin: 20px 0 12px;
+    }
+    #toa-allen .ta-vs-shared-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      flex-wrap: wrap;
+    }
+    #toa-allen .ta-vs-shared-row:last-child { border-bottom: none; }
+    #toa-allen .ta-vs-shared-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+    #toa-allen .ta-gaps-list {
+      list-style: none;
+      padding: 0;
+    }
+    #toa-allen .ta-gaps-list li {
+      font-size: 13.5px;
+      padding: 7px 0 7px 18px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      line-height: 1.5;
+    }
+    #toa-allen .ta-gaps-list li:last-child { border-bottom: none; }
+    #toa-allen .ta-gaps-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gap-red);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+    }
+    /* oddities tab */
+    #toa-allen .ta-odd-section { margin-bottom: 24px; }
+    #toa-allen .ta-odd-section-hd {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.2em;
@@ -608,13 +688,13 @@
       padding-bottom: 7px;
       margin-bottom: 10px;
     }
-    .toa-odd-item {
+    #toa-allen .ta-odd-item {
       background: var(--gap-bg);
       border: 1px solid #e8c8c5;
       padding: 13px 15px;
       margin-bottom: 7px;
     }
-    .toa-odd-item-flag {
+    #toa-allen .ta-odd-item-flag {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9.5px;
       letter-spacing: 0.12em;
@@ -622,56 +702,592 @@
       color: var(--gap-red);
       margin-bottom: 4px;
     }
-    .toa-odd-item-name {
+    #toa-allen .ta-odd-item-name {
       font-family: 'Playfair Display', serif;
       font-size: 13.5px;
       font-weight: 700;
       margin-bottom: 2px;
       color: var(--ink);
     }
-    .toa-odd-item-cite {
+    #toa-allen .ta-odd-item-cite {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9.5px;
       color: var(--muted);
       margin-bottom: 6px;
     }
-
     @media (max-width: 700px) {
-      .toa-panel { padding: 16px; }
-      .toa-bar-row { flex-wrap: wrap; gap: 4px; }
-      .toa-bar-label { width: 100%; font-size: 9.5px; }
-      .toa-bar-track { flex: 1 0 calc(100% - 34px); }
-      .toa-grid { grid-template-columns: 1fr; }
-      .toa-odd-item { padding: 12px 14px; }
+      #toa-allen .ta-widget-hdr {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 12px 16px;
+      }
+      #toa-allen .ta-panel { padding: 16px; }
+      #toa-allen .ta-bar-row { flex-wrap: wrap; gap: 4px; }
+      #toa-allen .ta-bar-label { width: 100%; font-size: 9.5px; }
+      #toa-allen .ta-bar-track { flex: 1 0 calc(100% - 34px); }
+      #toa-allen .ta-grid { grid-template-columns: 1fr; }
+      #toa-allen .ta-odd-item { padding: 12px 14px; }
+      #toa-allen .ta-vs-shared-row { flex-direction: column; gap: 3px; }
     }
   </style>
 
-  <div class="toa-tabs">
-    <button class="toa-tab toa-active" onclick="toaTab('overview',this)">Overview</button>
-    <button class="toa-tab" onclick="toaTab('allcases',this)">All Cases</button>
-    <button class="toa-tab" onclick="toaTab('multi',this)">Multi-Category</button>
-    <button class="toa-tab" onclick="toaTab('oddities',this)">Oddities</button>
+  <div class="ta-widget-hdr">
+    <span class="ta-hdr-label">Appellant&#39;s Brief &middot; Richard Allen</span>
+    <span></span>
+    <span class="ta-hdr-count">83 Cases &middot; 12 Doctrinal Categories</span>
   </div>
-  <div id="toa-overview" class="toa-panel"></div>
-  <div id="toa-allcases" class="toa-panel toa-hidden"></div>
-  <div id="toa-multi" class="toa-panel toa-hidden"></div>
-  <div id="toa-oddities" class="toa-panel toa-hidden"></div>
+  <div class="ta-tabs">
+    <button class="ta-tab ta-active" onclick="allenTOA_tab('overview-allen',this)">Overview</button>
+    <button class="ta-tab" onclick="allenTOA_tab('allcases-allen',this)">All Cases</button>
+    <button class="ta-tab" onclick="allenTOA_tab('multi-allen',this)">Multi-Category</button>
+    <button class="ta-tab" onclick="allenTOA_tab('vs-allen',this)">vs. State&#39;s Brief</button>
+    <button class="ta-tab" onclick="allenTOA_tab('oddities-allen',this)">Oddities</button>
+  </div>
+  <div id="overview-allen" class="ta-panel"></div>
+  <div id="allcases-allen" class="ta-panel ta-hidden"></div>
+  <div id="multi-allen" class="ta-panel ta-hidden"></div>
+  <div id="vs-allen" class="ta-panel ta-hidden"></div>
+  <div id="oddities-allen" class="ta-panel ta-hidden"></div>
 
   <script>
   (function(){
-    var CATS=[
-      {id:'warrant',  label:'Fourth Amendment / Warrant',   color:'#1a3a5c'},
-      {id:'confess',  label:'Confession voluntariness',      color:'#534AB7'},
-      {id:'appellate',label:'Appellate review / waiver',     color:'#1a3a2a'},
-      {id:'evidence', label:'Evidence admissibility',        color:'#9b1c1c'},
-      {id:'expert',   label:'Expert testimony',              color:'#b8860b'},
-      {id:'hearsay',  label:'Hearsay',                       color:'#993556'},
-      {id:'napue',    label:'Napue / prosecutorial duty',    color:'#3B6D11'},
-      {id:'indconst', label:'Indiana Constitution',          color:'#3a4a5c'},
-      {id:'complete', label:'Rule of completeness',          color:'#185FA5'}
+    var ALLEN_CATS=[
+      {id:'warrant',   label:'Fourth Amendment / Warrant',          color:'#185FA5',light:'#dbeafe'},
+      {id:'confess',   label:'Confession voluntariness',            color:'#534AB7',light:'#ede9fb'},
+      {id:'solitary',  label:'Solitary confinement / due process',  color:'#3a4a5c',light:'#dde4ec'},
+      {id:'evidence',  label:'Evidence admissibility',              color:'#9b1c1c',light:'#fee2e2'},
+      {id:'expert',    label:'Expert testimony',                    color:'#854F0B',light:'#fef3c7'},
+      {id:'hearsay',   label:'Hearsay / confrontation',             color:'#993556',light:'#fce7f3'},
+      {id:'napue',     label:'Napue / false testimony',             color:'#3B6D11',light:'#dcfce7'},
+      {id:'indconst',  label:'Indiana Constitution',                color:'#5F5E5A',light:'#f1efe8'},
+      {id:'harmless',  label:'Harmless error',                      color:'#0F6E56',light:'#d1fae5'},
+      {id:'fruit',     label:'Fruit of poisonous tree',             color:'#1a3a5c',light:'#dce8f5'},
+      {id:'thirdparty',label:'Third-party culpability',             color:'#6b3fa0',light:'#ede8f7'},
+      {id:'cumulative',label:'Cumulative error',                    color:'#c0392b',light:'#fdf0ee'}
     ];
-    var CASES=[
-      {name:'Abruquah v. State',cite:'296 A.3d 961 (Md. 2023)',cats:['expert'],oddity:'Out-of-state — Maryland Court of Appeals'},
+    var ALLEN_CASES=[
+      {name:'Arnett v. Lewis',cite:'870 F. Supp. (D. Ariz. 1994)',cats:['confess'],oddity:'Out-of-state federal district court — D. Arizona'},
+      {name:'Alvarez v. Ercole',cite:'763 F.3d 223 (2d Cir. 2014)',cats:['expert']},
+      {name:'Brooks v. Florida',cite:'389 U.S. (1967)',cats:['confess']},
+      {name:'Bowlds v. State',cite:'834 N.E.2d 669 (Ind. Ct. App. 2005)',cats:['expert']},
+      {name:'Bunnell v. State',cite:'172 N.E.3d (Ind. 2021)',cats:['warrant']},
+      {name:'Chambers v. Florida',cite:'309 U.S. (1940)',cats:['confess']},
+      {name:'Chambers v. Mississippi',cite:'410 U.S. 284 (1973)',cats:['evidence','thirdparty']},
+      {name:'Chapman v. California',cite:'386 U.S. (1967)',cats:['harmless']},
+      {name:'Chatman v. State',cite:'201 N.E.3d 241 (Ind. Ct. App. 2022)',cats:['hearsay']},
+      {name:'Clark v. State',cite:'944 N.E.2d (Ind. 2013)',cats:['evidence']},
+      {name:'Colorado v. Connelly',cite:'479 U.S. (1986)',cats:['confess'],shared:true,oddity:'Appears in both briefs'},
+      {name:'Crane v. Kentucky',cite:'476 U.S. 683 (1986)',cats:['evidence','confess'],oddity:'Cited passim — only passim in Allen\u2019s brief; constitutional right to present confession circumstances'},
+      {name:'Davis v. Alaska',cite:'415 U.S. 308 (1974)',cats:['hearsay']},
+      {name:'Davis v. Ayala',cite:'576 U.S. (2015)',cats:['solitary']},
+      {name:'Donnell v. Myers',cite:'220 A.2d (1966)',cats:['confess'],shared:true,oddity:'Out-of-state (Pa.) \u2014 appears in both briefs'},
+      {name:'D.R.C. v. State',cite:'908 N.E.2d 215 (Ind. 2009)',cats:['evidence','expert']},
+      {name:'Ford Motor Co. v. Ammerman',cite:'705 N.E.2d 539 (Ind. Ct. App. 1999)',cats:['expert'],oddity:'Civil products liability case \u2014 cited for expert standard in criminal appeal'},
+      {name:'Fox v. State',cite:'797 N.E.2d (Ind. Ct. App. 2003)',cats:['warrant']},
+      {name:'Franks v. Delaware',cite:'438 U.S. (1978)',cats:['warrant'],shared:true,oddity:'Appears in both briefs \u2014 core of Issue I; cited passim by State'},
+      {name:'Gerth v. State',cite:'51 N.E.3d (Ind. Ct. App. 2016)',cats:['warrant']},
+      {name:'Glossip v. Oklahoma',cite:'604 U.S. 226 (2025)',cats:['confess','napue'],oddity:'2025 SCOTUS \u2014 most recent citation in either brief; State never addressed it'},
+      {name:'Griffin v. Wisconsin',cite:'483 U.S. (1987)',cats:['solitary']},
+      {name:'Harrison v. Commonwealth',cite:'384 S.E.2d 813 (Ct. App. Va. 1989)',cats:['hearsay'],oddity:'Out-of-state \u2014 Virginia Court of Appeals'},
+      {name:'Hartman v. State',cite:'988 N.E.2d (Ind. 2013)',cats:['solitary']},
+      {name:'Helton v. Miller',cite:'14 Ind. 577 (1860)',cats:['indconst'],shared:true,oddity:'Appears in both briefs \u2014 each side cites it for opposing Ind. Const. propositions'},
+      {name:'Herring v. New York',cite:'422 U.S. 853 (1975)',cats:['evidence']},
+      {name:'Holder v. State',cite:'847 N.E.2d (Ind. 2006)',cats:['warrant']},
+      {name:'Holmes v. South Carolina',cite:'547 U.S. 319 (2006)',cats:['evidence','thirdparty'],shared:true,oddity:'Appears in both briefs \u2014 Allen: establishes third-party right; State: limits it'},
+      {name:'Illinois v. Gates',cite:'462 U.S. 213 (1983)',cats:['warrant'],shared:true},
+      {name:'IPAS v. IDOC',cite:'(Ind.)',cats:['solitary'],oddity:'Civil institutional reform case \u2014 uses State\u2019s own IDOC litigation against it'},
+      {name:'In re Medley',cite:'134 U.S. 160 (1890)',cats:['solitary'],oddity:'Oldest case in either brief (1890) \u2014 SCOTUS establishing solitary as constitutionally harmful'},
+      {name:'In re Winship',cite:'397 U.S. 358 (1970)',cats:['harmless']},
+      {name:'Jaggers v. State',cite:'687 N.E.2d (Ind. 1997)',cats:['warrant']},
+      {name:'Joyner v. State',cite:'678 N.E.2d 386 (Ind. 1997)',cats:['evidence','thirdparty'],shared:true,oddity:'Appears in both briefs for directly opposing propositions'},
+      {name:'Kelly v. State',cite:'257 N.E.3d (Ind. 2025)',cats:['indconst'],shared:true},
+      {name:'Kiefer v. State',cite:'761 N.E.2d 802 (Ind. 2002)',cats:['hearsay']},
+      {name:'Kokenes v. State',cite:'13 N.E.2d (Ind. 1938)',cats:['evidence'],oddity:'1938 \u2014 among the oldest Indiana cases'},
+      {name:'Kucki v. State',cite:'483 N.E.2d 788 (Ind. Ct. App. 1985)',cats:['hearsay']},
+      {name:'Littlefield v. Deland',cite:'641 F.2d (10th Cir. 1981)',cats:['confess'],shared:true},
+      {name:'McIntosh v. Melroe Co.',cite:'729 N.E.2d (Ind. 2000)',cats:['expert'],oddity:'Civil case \u2014 cited for expert standard in criminal appeal'},
+      {name:'Membres v. State',cite:'898 N.E.2d (Ind. 2008)',cats:['evidence']},
+      {name:'Callender v. State',cite:'138 N.E. (Ind. 1923)',cats:['evidence'],oddity:'1923 Indiana authority'},
+      {name:'Moore v. State',cite:'440 N.E.2d 1092 (Ind. 1982)',cats:['hearsay']},
+      {name:'Munoz v. State',cite:'262 N.E.3d 905 (Ind. Ct. App.), trans. denied',cats:['hearsay'],oddity:'Transfer denied \u2014 limited precedential value'},
+      {name:'Napue v. Illinois',cite:'360 U.S. 264 (1953)',cats:['napue'],shared:true},
+      {name:'People v. Vanderpauye',cite:'530 P.3d 1214 (Col. 2023)',cats:['hearsay'],oddity:'Out-of-state \u2014 Colorado Supreme Court, 2023'},
+      {name:'Prewitt v. State',cite:'819 N.E.2d 393 (Ind. Ct. App. 2004)',cats:['expert'],shared:true},
+      {name:'Pruitt v. State',cite:'834 N.E.2d (Ind. 2005)',cats:['confess'],shared:true},
+      {name:'Query v. State',cite:'745 N.E.2d 769 (Ind. 2001)',cats:['warrant'],shared:true},
+      {name:'Ramirez v. State',cite:'174 N.E.3d 181 (Ind. 2021)',cats:['evidence']},
+      {name:'Rock v. Arkansas',cite:'483 U.S. 44 (1987)',cats:['evidence']},
+      {name:'Robbins v. State',cite:'235 N.E.2d (Ind. 1968)',cats:['confess'],shared:true},
+      {name:'Rogers v. Richmond',cite:'365 U.S. (1961)',cats:['confess']},
+      {name:'Rowe v. State',cite:'314 N.E.2d 745 (Ind. 1974)',cats:['hearsay'],shared:true},
+      {name:'Sanchez v. State',cite:'749 N.E.2d (Ind. 2001)',cats:['confess']},
+      {name:'Saylor v. State',cite:'559 N.E.2d 332 (Ind. Ct. App. 1990)',cats:['hearsay']},
+      {name:'Sims v. State',cite:'601 N.E.2d (Ind. 1992)',cats:['solitary']},
+      {name:'Smith v. Brookhart',cite:'996 F.3d 402 (7th Cir. 2021)',cats:['hearsay']},
+      {name:'Spano v. New York',cite:'360 U.S. (1959)',cats:['confess']},
+      {name:'State v. Banks',cite:'2 N.E.3d (Ind. Ct. App. 2013)',cats:['confess','indconst'],shared:true,oddity:'Appears in both briefs \u2014 Banks negligence standard is a documented gap in State\u2019s answer'},
+      {name:'State v. L.H.',cite:'215 A.3d (N.J. 2019)',cats:['evidence'],oddity:'Out-of-state \u2014 New Jersey, 2019'},
+      {name:'State v. Renzulli',cite:'958 N.E.2d (Ind. 2011)',cats:['solitary']},
+      {name:'State v. Vance',cite:'119 N.E.3d (Ind. Ct. App. 2019)',cats:['warrant']},
+      {name:'Stephenson v. State',cite:'796 N.E.2d (Ind. Ct. App. 2003)',cats:['warrant']},
+      {name:'Stidham v. Swenson',cite:'506 F.2d (8th Cir. 1974)',cats:['confess'],oddity:'Out-of-state federal \u2014 8th Circuit'},
+      {name:'Thomas v. Thomas',cite:'577 N.E.2d 216 (Ind. 1991)',cats:['expert']},
+      {name:'Torres v. State',cite:'673 N.E.2d n.1 (Ind. 1996)',cats:['evidence']},
+      {name:'Townsend v. Henderson',cite:'405 F.2d (6th Cir. 1968)',cats:['confess']},
+      {name:'Townsend v. Sain / Keeney v. Tamayo-Reyes',cite:'372 U.S. (1963) / 504 U.S. 1 (1992)',cats:['confess'],oddity:'Cited as overruled \u2014 case appears in TOA to establish its own obsolescence; extremely unusual'},
+      {name:'Tunstall v. Manning',cite:'124 N.E.3d 1193 (Ind. 1999)',cats:['expert']},
+      {name:'Turner v. State',cite:'953 N.E.2d 1039 (Ind. 2011)',cats:['expert'],shared:true},
+      {name:'Turney v. State',cite:'759 N.E.2d 671 (Ind. Ct. App. 2001)',cats:['hearsay']},
+      {name:'U.S. v. D.F.',cite:'115 F.3d (7th Cir. 1997)',cats:['confess'],shared:true},
+      {name:'U.S. v. Koch',cite:'552 F.2d (7th Cir. 1977)',cats:['confess']},
+      {name:'United States v. Moskowitz',cite:'581 F.2d 14 (2d Cir. 1978)',cats:['hearsay']},
+      {name:'U.S. v. Wells',cite:'223 F.3d (8th Cir. 2000)',cats:['warrant']},
+      {name:'U.S.A. v. Hernandez',cite:'135 Fed. App\u2019x 97 (9th Cir. 2005)',cats:['warrant'],oddity:'Unpublished federal memo disposition \u2014 no precedential authority'},
+      {name:'United States v. Karake',cite:'443 F. Supp. 2d 8 (D.D.C. 2006)',cats:['confess'],oddity:'D.D.C. torture confession case \u2014 frames Westville solitary in extreme coercion terms'},
+      {name:'United States v. Sager',cite:'227 F.3d 1138 (9th Cir. 2000)',cats:['expert']},
+      {name:'Welsh v. Commonwealth',cite:'913 S.E.2d 497 (Va. 2025)',cats:['napue','confess'],oddity:'Out-of-state, 2025 \u2014 Virginia Supreme Court; unanswered by State brief'},
+      {name:'Williams v. Sec\u2019y PA Dep\u2019t of Corr.',cite:'848 F.3d (3d Cir. 2017)',cats:['solitary']},
+      {name:'Wong Sun v. United States',cite:'371 U.S. (1963)',cats:['fruit']}
+    ];
+
+    var allenCatMap={};
+    ALLEN_CATS.forEach(function(c){allenCatMap[c.id]=c;});
+    var allenActiveFilter='all';
+
+    function allenTOA_esc(s){
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function allenTOA_tags(cats){
+      return cats.map(function(id){
+        var c=allenCatMap[id]; if(!c) return '';
+        return '<span class="ta-tag" style="background:'+c.light+';border-color:'+c.color+';color:'+c.color+'">'+allenTOA_esc(c.label)+'</span>';
+      }).join('');
+    }
+
+    /* OVERVIEW */
+    function allenTOA_renderOverview(){
+      var counts={};
+      ALLEN_CATS.forEach(function(c){counts[c.id]=0;});
+      ALLEN_CASES.forEach(function(cs){cs.cats.forEach(function(id){counts[id]=(counts[id]||0)+1;});});
+      var sorted=ALLEN_CATS.slice().sort(function(a,b){return counts[b.id]-counts[a.id];});
+      var max=0; sorted.forEach(function(c){if(counts[c.id]>max)max=counts[c.id];});
+      var html='<div class="ta-meta">'+ALLEN_CASES.length+' cases &middot; '+ALLEN_CATS.length+' doctrine categories &middot; sorted by frequency</div>';
+      sorted.forEach(function(c){
+        var n=counts[c.id], pct=max?Math.max(2,Math.round(n/max*100)):2;
+        html+='<div class="ta-bar-row">'
+          +'<div class="ta-bar-label">'+allenTOA_esc(c.label)+'</div>'
+          +'<div class="ta-bar-track"><div class="ta-bar-fill" style="width:'+pct+'%;background:'+c.color+'"></div></div>'
+          +'<div class="ta-bar-n" style="color:'+c.color+'">'+n+'</div>'
+          +'</div>';
+      });
+      document.getElementById('overview-allen').innerHTML=html;
+    }
+
+    /* ALL CASES */
+    function allenTOA_renderAllCases(filter){
+      var list=filter==='all'?ALLEN_CASES:ALLEN_CASES.filter(function(cs){return cs.cats.indexOf(filter)>=0;});
+      var btnHtml='<div class="ta-filters">'
+        +'<button class="ta-fbtn" style="'+(filter==='all'?'background:var(--ink);color:var(--paper);border-color:var(--ink);':'')+'" onclick="allenTOA_filter(\'all\')">All ('+ALLEN_CASES.length+')</button>';
+      ALLEN_CATS.forEach(function(c){
+        var cnt=ALLEN_CASES.filter(function(cs){return cs.cats.indexOf(c.id)>=0;}).length;
+        var act=filter===c.id;
+        btnHtml+='<button class="ta-fbtn" style="'+(act?'background:'+c.color+';border-color:'+c.color+';color:#fff;':'')+'" onclick="allenTOA_filter(\''+c.id+'\')">'+allenTOA_esc(c.label)+' ('+cnt+')</button>';
+      });
+      btnHtml+='</div>';
+      var cardsHtml='<div class="ta-grid">';
+      list.forEach(function(cs){
+        cardsHtml+='<div class="ta-card'+(cs.oddity?' ta-odd-card':'')+'">'
+          +'<div class="ta-card-name">'+allenTOA_esc(cs.name)+'</div>'
+          +'<div class="ta-card-cite">'+allenTOA_esc(cs.cite)+'</div>'
+          +'<div class="ta-tags">'+allenTOA_tags(cs.cats)+'</div>'
+          +(cs.shared?'<div class="ta-shared-flag">&#10150; Also in State\u2019s brief</div>':'')
+          +(cs.oddity?'<div class="ta-odd-flag">&#9873; '+allenTOA_esc(cs.oddity)+'</div>':'')
+          +'</div>';
+      });
+      cardsHtml+='</div>';
+      document.getElementById('allcases-allen').innerHTML=btnHtml+cardsHtml;
+    }
+    window.allenTOA_filter=function(id){allenActiveFilter=id;allenTOA_renderAllCases(id);};
+
+    /* MULTI-CATEGORY */
+    function allenTOA_renderMulti(){
+      var multi=ALLEN_CASES.filter(function(cs){return cs.cats.length>=2;});
+      var html='<div class="ta-meta">'+multi.length+' cases span two or more doctrine categories</div><div class="ta-grid">';
+      multi.forEach(function(cs){
+        var pc=allenCatMap[cs.cats[0]]?allenCatMap[cs.cats[0]].color:'#333';
+        html+='<div class="ta-multi-card" style="border-left-color:'+pc+'">'
+          +'<div class="ta-card-name">'+allenTOA_esc(cs.name)+'</div>'
+          +'<div class="ta-card-cite">'+allenTOA_esc(cs.cite)+'</div>'
+          +'<div class="ta-tags">'+allenTOA_tags(cs.cats)+'</div>'
+          +(cs.shared?'<div class="ta-shared-flag">&#10150; Also in State\u2019s brief</div>':'')
+          +(cs.oddity?'<div class="ta-odd-flag">&#9873; '+allenTOA_esc(cs.oddity)+'</div>':'')
+          +'</div>';
+      });
+      html+='</div>';
+      document.getElementById('multi-allen').innerHTML=html;
+    }
+
+    /* VS. STATE'S BRIEF */
+    function allenTOA_renderVs(){
+      var sharedCases=ALLEN_CASES.filter(function(cs){return cs.shared;});
+      var html='<div class="ta-vs-note">'
+        +'<strong>Brief comparison:</strong> Allen\u2019s brief cites 83 cases across 12 doctrinal categories. '
+        +'The State\u2019s brief cites ~100 cases across 9 categories. '
+        +'<strong>'+sharedCases.length+' cases appear in both briefs</strong>, '
+        +'often cited for opposing propositions. '
+        +'Allen opens <strong>five doctrinal fronts the State never answered</strong>.'
+        +'</div>';
+
+      html+='<div class="ta-vs-section-hd">Shared Cases ('+sharedCases.length+') &mdash; cited by both sides</div>';
+      sharedCases.forEach(function(cs){
+        html+='<div class="ta-vs-shared-row">'
+          +'<span class="ta-vs-shared-name">'+allenTOA_esc(cs.name)+'</span>'
+          +'<span class="ta-tags">'+allenTOA_tags(cs.cats)+'</span>'
+          +(cs.oddity?'<span class="ta-odd-flag">'+allenTOA_esc(cs.oddity)+'</span>':'')
+          +'</div>';
+      });
+
+      html+='<div class="ta-vs-section-hd">Doctrinal Fronts the State Never Answered</div>'
+        +'<ul class="ta-gaps-list">'
+        +'<li><strong>Solitary confinement / due process</strong> &mdash; the State collapses Issue II.D into voluntariness and never applies the three-factor fruit test. The entire solitary category is unaddressed as a constitutional framework.</li>'
+        +'<li><strong>Fruit of the poisonous tree</strong> &mdash; dismissed in two sentences as &ldquo;not cogent.&rdquo; No engagement with Wong Sun or the three-factor analysis.</li>'
+        +'<li><strong>Harmless error standard (Chapman v. California)</strong> &mdash; Allen invokes the constitutional harmless-beyond-a-reasonable-doubt standard. The State applies the lower non-constitutional standard without acknowledging the distinction.</li>'
+        +'<li><strong>Cumulative error</strong> &mdash; the State gives every issue its own isolated harmless-error analysis. The cumulative-error doctrine as a standalone claim is never addressed anywhere in the State\u2019s brief.</li>'
+        +'<li><strong>Third-party culpability as due process right</strong> &mdash; Allen frames exclusion of Holder/Westfall/Perlmutter as a constitutional asymmetry. The State treats it as a standard evidentiary question, never engages the due-process dimension.</li>'
+        +'</ul>';
+
+      document.getElementById('vs-allen').innerHTML=html;
+    }
+
+    /* ODDITIES */
+    function allenTOA_renderOddities(){
+      var secs=[
+        {label:'Sole Passim Citation',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Crane v. Kentucky';})},
+        {label:'2025 SCOTUS Unanswered by State',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Glossip v. Oklahoma';})},
+        {label:'2025 Out-of-State Unanswered by State',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Welsh v. Commonwealth';})},
+        {label:'Case Cited as Overruled',
+         items:ALLEN_CASES.filter(function(cs){return cs.name.indexOf('Townsend v. Sain')===0;})},
+        {label:'Civil Cases in Criminal Brief',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Ford Motor Co. v. Ammerman'||cs.name==='McIntosh v. Melroe Co.';})},
+        {label:'Oldest Case in Either Brief',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='In re Medley';})},
+        {label:'Civil Institutional Reform Case',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='IPAS v. IDOC';})},
+        {label:'Extreme Coercion Framing',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='United States v. Karake';})},
+        {label:'Cited by Both Sides for Opposite Propositions',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Helton v. Miller';})},
+        {label:'Unpublished / Limited-Authority Citations',
+         items:ALLEN_CASES.filter(function(cs){return cs.name==='Munoz v. State'||cs.name==='U.S.A. v. Hernandez';})}
+      ];
+      var html='';
+      secs.forEach(function(sec){
+        if(!sec.items.length) return;
+        html+='<div class="ta-odd-section"><div class="ta-odd-section-hd">'+allenTOA_esc(sec.label)+'</div>';
+        sec.items.forEach(function(cs){
+          html+='<div class="ta-odd-item">'
+            +(cs.oddity?'<div class="ta-odd-item-flag">&#9873; '+allenTOA_esc(cs.oddity)+'</div>':'')
+            +'<div class="ta-odd-item-name">'+allenTOA_esc(cs.name)+'</div>'
+            +'<div class="ta-odd-item-cite">'+allenTOA_esc(cs.cite)+'</div>'
+            +'<div class="ta-tags">'+allenTOA_tags(cs.cats)+'</div>'
+            +'</div>';
+        });
+        html+='</div>';
+      });
+      document.getElementById('oddities-allen').innerHTML=html;
+    }
+
+    window.allenTOA_tab=function(id,btn){
+      document.querySelectorAll('#toa-allen .ta-panel').forEach(function(p){p.classList.add('ta-hidden');});
+      document.querySelectorAll('#toa-allen .ta-tab').forEach(function(t){t.classList.remove('ta-active');});
+      document.getElementById(id).classList.remove('ta-hidden');
+      btn.classList.add('ta-active');
+    };
+
+    allenTOA_renderOverview();
+    allenTOA_renderAllCases('all');
+    allenTOA_renderMulti();
+    allenTOA_renderVs();
+    allenTOA_renderOddities();
+  })();
+  </script>
+  </div><!-- /#toa-allen -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       APPELLEE'S BRIEF · STATE OF INDIANA
+  ════════════════════════════════════════════════════════════ -->
+  <div id="toa-state" style="margin-top:24px">
+  <style>
+    #toa-state {
+      font-family: 'Source Serif 4', Georgia, serif;
+    }
+    #toa-state .ts-widget-hdr {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    #toa-state .ts-hdr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    #toa-state .ts-hdr-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--state-blue);
+      white-space: nowrap;
+    }
+    #toa-state .ts-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 1px solid var(--aged);
+    }
+    #toa-state .ts-tab {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid var(--aged);
+      border-bottom: none;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      margin-bottom: -1px;
+      border-radius: 0;
+    }
+    #toa-state .ts-tab:hover { color: var(--ink); }
+    #toa-state .ts-tab.ts-active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    #toa-state .ts-panel {
+      border: 1px solid var(--aged);
+      border-top: none;
+      background: #fff;
+      padding: 24px;
+    }
+    #toa-state .ts-panel.ts-hidden { display: none; }
+    #toa-state .ts-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    #toa-state .ts-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+    #toa-state .ts-bar-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      width: 200px;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    #toa-state .ts-bar-track {
+      flex: 1;
+      background: var(--aged);
+      height: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    #toa-state .ts-bar-fill { height: 100%; min-width: 2px; }
+    #toa-state .ts-bar-n {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      width: 24px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    #toa-state .ts-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+    #toa-state .ts-fbtn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border: 1px solid var(--aged);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 0;
+      line-height: 1.4;
+    }
+    #toa-state .ts-fbtn:hover { color: var(--ink); border-color: var(--ink); }
+    #toa-state .ts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 10px;
+    }
+    #toa-state .ts-card {
+      border: 1px solid var(--aged);
+      background: #fff;
+      padding: 13px 15px;
+    }
+    #toa-state .ts-card.ts-odd-card {
+      background: var(--gap-bg);
+      border-color: #e8c8c5;
+    }
+    #toa-state .ts-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 3px;
+      color: var(--ink);
+    }
+    #toa-state .ts-card-cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 7px;
+      line-height: 1.4;
+    }
+    #toa-state .ts-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-bottom: 4px;
+    }
+    #toa-state .ts-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border: 1px solid;
+      border-radius: 0;
+      line-height: 1.5;
+    }
+    #toa-state .ts-shared-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+      color: var(--allen-green);
+      margin-top: 5px;
+    }
+    #toa-state .ts-odd-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+      color: var(--gap-red);
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+    #toa-state .ts-multi-card {
+      border: 1px solid var(--aged);
+      border-left-width: 4px;
+      background: #fff;
+      padding: 13px 15px;
+    }
+    #toa-state .ts-odd-section { margin-bottom: 24px; }
+    #toa-state .ts-odd-section-hd {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--aged);
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+    }
+    #toa-state .ts-odd-item {
+      background: var(--gap-bg);
+      border: 1px solid #e8c8c5;
+      padding: 13px 15px;
+      margin-bottom: 7px;
+    }
+    #toa-state .ts-odd-item-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gap-red);
+      margin-bottom: 4px;
+    }
+    #toa-state .ts-odd-item-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+    #toa-state .ts-odd-item-cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    @media (max-width: 700px) {
+      #toa-state .ts-widget-hdr {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 12px 16px;
+      }
+      #toa-state .ts-panel { padding: 16px; }
+      #toa-state .ts-bar-row { flex-wrap: wrap; gap: 4px; }
+      #toa-state .ts-bar-label { width: 100%; font-size: 9.5px; }
+      #toa-state .ts-bar-track { flex: 1 0 calc(100% - 34px); }
+      #toa-state .ts-grid { grid-template-columns: 1fr; }
+      #toa-state .ts-odd-item { padding: 12px 14px; }
+    }
+  </style>
+
+  <div class="ts-widget-hdr">
+    <span class="ts-hdr-label">Appellee&#39;s Brief &middot; State of Indiana</span>
+    <span></span>
+    <span class="ts-hdr-count">~100 Cases &middot; 9 Doctrinal Categories</span>
+  </div>
+  <div class="ts-tabs">
+    <button class="ts-tab ts-active" onclick="stateTOA_tab('overview-state',this)">Overview</button>
+    <button class="ts-tab" onclick="stateTOA_tab('allcases-state',this)">All Cases</button>
+    <button class="ts-tab" onclick="stateTOA_tab('multi-state',this)">Multi-Category</button>
+    <button class="ts-tab" onclick="stateTOA_tab('oddities-state',this)">Oddities</button>
+  </div>
+  <div id="overview-state" class="ts-panel"></div>
+  <div id="allcases-state" class="ts-panel ts-hidden"></div>
+  <div id="multi-state" class="ts-panel ts-hidden"></div>
+  <div id="oddities-state" class="ts-panel ts-hidden"></div>
+
+  <script>
+  (function(){
+    var STATE_CATS=[
+      {id:'warrant',   label:'Fourth Amendment / Warrant',   color:'#185FA5',light:'#dbeafe'},
+      {id:'confess',   label:'Confession voluntariness',     color:'#534AB7',light:'#ede9fb'},
+      {id:'appellate', label:'Appellate review / waiver',    color:'#1a3a2a',light:'#eef4f0'},
+      {id:'evidence',  label:'Evidence admissibility',       color:'#9b1c1c',light:'#fee2e2'},
+      {id:'expert',    label:'Expert testimony',             color:'#854F0B',light:'#fef3c7'},
+      {id:'hearsay',   label:'Hearsay',                      color:'#993556',light:'#fce7f3'},
+      {id:'napue',     label:'Napue / prosecutorial duty',   color:'#3B6D11',light:'#dcfce7'},
+      {id:'indconst',  label:'Indiana Constitution',         color:'#5F5E5A',light:'#f1efe8'},
+      {id:'complete',  label:'Rule of completeness',         color:'#185FA5',light:'#dbeafe'}
+    ];
+    var STATE_CASES=[
+      {name:'Abruquah v. State',cite:'296 A.3d 961 (Md. 2023)',cats:['expert'],oddity:'Out-of-state \u2014 Maryland Court of Appeals'},
       {name:'Ajabu v. State',cite:'693 N.E.2d 921 (Ind. 1998)',cats:['confess']},
       {name:'Albrecht v. State',cite:'185 N.E.3d 412 (Ind. Ct. App. 2022)',cats:['appellate']},
       {name:'Alldredge v. State',cite:'156 N.E.2d 888 (Ind. 1959)',cats:['confess']},
@@ -679,22 +1295,23 @@
       {name:'Ashcraft v. Tennessee',cite:'322 U.S. 143 (1944)',cats:['confess']},
       {name:'Blount v. State',cite:'22 N.E.3d 559 (Ind. 2014)',cats:['hearsay']},
       {name:'Boner v. State',cite:'243 N.E.3d 354 (Ind. Ct. App. 2024)',cats:['evidence']},
-      {name:'Brooks v. Florida',cite:'389 U.S. 413 (1967)',cats:['confess']},
+      {name:'Brooks v. Florida',cite:'389 U.S. (1967)',cats:['confess'],shared:true},
       {name:'Brown v. Mississippi',cite:'297 U.S. 278 (1936)',cats:['confess']},
       {name:'Brown v. State',cite:'929 N.E.2d 204 (Ind. 2010)',cats:['warrant','appellate']},
       {name:'Buzzard v. State',cite:'669 N.E.2d 996 (Ind. Ct. App. 1996)',cats:['expert']},
-      {name:'Chambers v. Mississippi',cite:'410 U.S. 284 (1973)',cats:['evidence']},
+      {name:'Chambers v. Mississippi',cite:'410 U.S. 284 (1973)',cats:['evidence'],shared:true,oddity:'Appears in both briefs \u2014 State uses it to limit third-party admissibility; Allen uses it to establish the right'},
+      {name:'Chapman v. California',cite:'386 U.S. (1967)',cats:['appellate'],shared:true,oddity:'Appears in both briefs \u2014 Allen cites for constitutional harmless error standard; State applies lower standard'},
       {name:'Church v. State',cite:'180 N.E.3d 580 (Ind. 2022)',cats:['confess']},
-      {name:'Colorado v. Connelly',cite:'479 U.S. 157 (1986)',cats:['confess'],oddity:'Cited passim — load-bearing across all confession sub-issues'},
+      {name:'Colorado v. Connelly',cite:'479 U.S. 157 (1986)',cats:['confess'],shared:true,oddity:'Cited passim \u2014 State\u2019s central argument that coercion requires intentional state action'},
       {name:'Cook v. State',cite:'734 N.E.2d 563 (Ind. 2000)',cats:['complete']},
-      {name:'Crossland v. State',cite:'256 N.E.3d 517 (Ind. 2025)',cats:['evidence'],oddity:'Most recent citation — 2025 Indiana Supreme Court'},
+      {name:'Crossland v. State',cite:'256 N.E.3d 517 (Ind. 2025)',cats:['evidence'],oddity:'2025 Indiana Supreme Court \u2014 most recent Indiana primary authority in State\u2019s brief'},
       {name:'Curtis v. State',cite:'948 N.E.2d 1143 (Ind. 2011)',cats:['warrant','appellate']},
       {name:'Darring v. State',cite:'101 N.E.3d 263 (Ind. Ct. App. 2018)',cats:['warrant']},
       {name:'Davis-Martin v. State',cite:'116 N.E.3d 1178 (Ind. Ct. App. 2019)',cats:['napue']},
       {name:'Dickey v. State',cite:'999 N.E.2d 919 (Ind. Ct. App. 2013)',cats:['warrant','appellate']},
-      {name:'Donnell v. Myers',cite:'220 A.2d 376 (Pa. Super. Ct. 1966)',cats:['confess'],oddity:'Out-of-state — Pennsylvania Superior Court'},
+      {name:'Donnell v. Myers',cite:'220 A.2d 376 (Pa. Super. Ct. 1966)',cats:['confess'],shared:true,oddity:'Out-of-state (Pa.) \u2014 appears in both briefs'},
       {name:'Dylak v. State',cite:'850 N.E.2d 401 (Ind. Ct. App. 2006)',cats:['complete']},
-      {name:'Franks v. Delaware',cite:'438 U.S. 154 (1978)',cats:['warrant'],oddity:'Cited passim — central to Issue I warrant challenge'},
+      {name:'Franks v. Delaware',cite:'438 U.S. 154 (1978)',cats:['warrant'],shared:true,oddity:'Cited passim \u2014 core of Issue I; both sides cite Franks'},
       {name:'Fugett v. State',cite:'812 N.E.2d 846 (Ind. Ct. App. 2004)',cats:['evidence']},
       {name:'Hall v. State',cite:'36 N.E.3d 459 (Ind. 2015)',cats:['evidence','confess']},
       {name:'Halliburton v. State',cite:'1 N.E.3d 670 (Ind. 2013)',cats:['warrant','appellate']},
@@ -702,21 +1319,21 @@
       {name:'Hawkins v. State',cite:'884 N.E.2d 939 (Ind. Ct. App. 2008)',cats:['expert']},
       {name:'Hayko v. State',cite:'211 N.E.3d 483 (Ind. 2023)',cats:['evidence']},
       {name:'Haynes v. Washington',cite:'373 U.S. 503 (1963)',cats:['confess']},
-      {name:'Helton v. Miller',cite:'14 Ind. 577 (1860)',cats:['indconst'],oddity:'19th-century anchor case — original understanding of Ind. Const. Art. I \u00a714'},
-      {name:'Holmes v. South Carolina',cite:'547 U.S. 319 (2006)',cats:['evidence']},
+      {name:'Helton v. Miller',cite:'14 Ind. 577 (1860)',cats:['indconst'],shared:true,oddity:'Appears in both briefs \u2014 1860 anchor case; both sides cite for opposing Ind. Const. propositions'},
+      {name:'Holmes v. South Carolina',cite:'547 U.S. 319 (2006)',cats:['evidence'],shared:true,oddity:'Appears in both briefs \u2014 State uses it to limit third-party culpability evidence'},
       {name:'Houser v. State',cite:'823 N.E.2d 693 (Ind. 2005)',cats:['warrant']},
-      {name:'Illinois v. Gates',cite:'462 U.S. 213 (1983)',cats:['warrant']},
+      {name:'Illinois v. Gates',cite:'462 U.S. 213 (1983)',cats:['warrant'],shared:true},
       {name:'In re N.G.',cite:'51 N.E.3d 1167 (Ind. 2016)',cats:['confess']},
       {name:'Jacobs v. State',cite:'76 N.E.3d 846 (Ind. 2017)',cats:['appellate']},
       {name:'Jones v. State',cite:'783 N.E.2d 1132 (Ind. 2003)',cats:['warrant']},
-      {name:'Joyner v. State',cite:'678 N.E.2d 386 (Ind. 1997)',cats:['evidence']},
+      {name:'Joyner v. State',cite:'678 N.E.2d 386 (Ind. 1997)',cats:['evidence'],shared:true,oddity:'Appears in both briefs for directly opposing propositions'},
       {name:'Keeylen v. State',cite:'14 N.E.3d 865 (Ind. Ct. App. 2014)',cats:['warrant']},
-      {name:'Kelly v. State',cite:'257 N.E.3d 782 (Ind. 2025)',cats:['indconst']},
+      {name:'Kelly v. State',cite:'257 N.E.3d 782 (Ind. 2025)',cats:['indconst'],shared:true},
       {name:'Kincaid v. State',cite:'171 N.E.3d 1036 (Ind. Ct. App. 2021)',cats:['expert']},
       {name:'Layman v. State',cite:'42 N.E.3d 972 (Ind. 2015)',cats:['confess']},
       {name:'Lieberenz v. State',cite:'717 N.E.2d 1242 (Ind. Ct. App. 1999)',cats:['expert']},
       {name:'Linthicum v. State',cite:'511 N.E.2d 1026 (Ind. 1987)',cats:['confess']},
-      {name:'Littlefield v. Deland',cite:'641 F.2d 729 (10th Cir. 1981)',cats:['confess']},
+      {name:'Littlefield v. Deland',cite:'641 F.2d 729 (10th Cir. 1981)',cats:['confess'],shared:true},
       {name:'Lush v. State',cite:'783 N.E.2d 1191 (Ind. Ct. App. 2003)',cats:['evidence']},
       {name:'Lynumn v. Illinois',cite:'372 U.S. 528 (1963)',cats:['confess']},
       {name:'Maryland v. Pringle',cite:'540 U.S. 366 (2003)',cats:['warrant']},
@@ -724,23 +1341,23 @@
       {name:'McGaha v. State',cite:'926 N.E.2d 1050 (Ind. Ct. App. 2010)',cats:['complete']},
       {name:'McIntyre v. State',cite:'717 N.E.2d 114 (Ind. 1999)',cats:['evidence','complete']},
       {name:'McQueen v. State',cite:'711 N.E.2d 503 (Ind. 1999)',cats:['confess','indconst']},
-      {name:'McQuigg v. McQuigg',cite:'13 Ind. 294 (1859)',cats:['indconst'],oddity:'19th-century anchor case — original understanding of Ind. Const. Art. I \u00a715'},
-      {name:'Miller v. Fenton',cite:'474 U.S. 104 (1985)',cats:['confess'],oddity:'TYPO IN BRIEF — cited as \u201cMiller v. Felton\u201d; correct case is Miller v. Fenton'},
+      {name:'McQuigg v. McQuigg',cite:'13 Ind. 294 (1859)',cats:['indconst'],oddity:'1859 anchor case \u2014 original understanding of Ind. Const. Art. I \u00a715'},
+      {name:'Miller v. Fenton',cite:'474 U.S. 104 (1985)',cats:['confess'],oddity:'CITATION ERROR in brief \u2014 listed as \u201cMiller v. Felton\u201d; correct case is Miller v. Fenton'},
       {name:'Miller v. Patel',cite:'212 N.E.3d 639 (Ind. 2023)',cats:['warrant','appellate']},
       {name:'Moore v. State (2002)',cite:'771 N.E.2d 46 (Ind. 2002)',cats:['indconst']},
       {name:'Moore v. State (2023)',cite:'No. 22A-CR-3027 (Ind. Ct. App. 2023)',cats:['hearsay'],oddity:'Unpublished memorandum decision'},
-      {name:'Napue v. Illinois',cite:'360 U.S. 264 (1959)',cats:['napue']},
+      {name:'Napue v. Illinois',cite:'360 U.S. 264 (1959)',cats:['napue'],shared:true},
       {name:'Oregon v. Elstad',cite:'470 U.S. 298 (1985)',cats:['confess']},
       {name:'Pelley v. State',cite:'901 N.E.2d 494 (Ind. 2009)',cats:['evidence','complete']},
-      {name:'People v. Rhodes',cite:'729 P.2d 982 (Colo. 1986)',cats:['confess'],oddity:'Out-of-state — Colorado Supreme Court'},
+      {name:'People v. Rhodes',cite:'729 P.2d 982 (Colo. 1986)',cats:['confess'],oddity:'Out-of-state \u2014 Colorado Supreme Court'},
       {name:'Pettiford v. State',cite:'619 N.E.2d 925 (Ind. 1993)',cats:['confess']},
-      {name:'Prewitt v. State',cite:'819 N.E.2d 393 (Ind. Ct. App. 2004)',cats:['expert']},
-      {name:'Pruitt v. State',cite:'834 N.E.2d 90 (Ind. 2005)',cats:['confess']},
-      {name:'Query v. State',cite:'745 N.E.2d 769 (Ind. 2001)',cats:['warrant','indconst']},
+      {name:'Prewitt v. State',cite:'819 N.E.2d 393 (Ind. Ct. App. 2004)',cats:['expert'],shared:true},
+      {name:'Pruitt v. State',cite:'834 N.E.2d 90 (Ind. 2005)',cats:['confess'],shared:true},
+      {name:'Query v. State',cite:'745 N.E.2d 769 (Ind. 2001)',cats:['warrant'],shared:true},
       {name:'Ratliff v. Cohn',cite:'693 N.E.2d 520 (Ind. 1998)',cats:['indconst']},
-      {name:'Robbins v. State',cite:'235 N.E.2d 199 (Ind. 1968)',cats:['confess']},
+      {name:'Robbins v. State',cite:'235 N.E.2d 199 (Ind. 1968)',cats:['confess'],shared:true},
       {name:'Robinson v. State',cite:'682 N.E.2d 806 (Ind. Ct. App. 1997)',cats:['hearsay']},
-      {name:'Rowe v. State',cite:'314 N.E.2d 745 (Ind. 1974)',cats:['hearsay']},
+      {name:'Rowe v. State',cite:'314 N.E.2d 745 (Ind. 1974)',cats:['hearsay'],shared:true},
       {name:'Ruiz v. State',cite:'926 N.E.2d 532 (Ind. Ct. App. 2010)',cats:['hearsay']},
       {name:'Schneckloth v. Bustamonte',cite:'412 U.S. 218 (1973)',cats:['confess']},
       {name:'Shelby v. State',cite:'986 N.E.2d 345 (Ind. Ct. App. 2013)',cats:['expert']},
@@ -750,18 +1367,18 @@
       {name:'Smith v. State (2015)',cite:'34 N.E.3d 1211 (Ind. 2015)',cats:['napue']},
       {name:'Snow v. State',cite:'77 N.E.3d 173 (Ind. 2017)',cats:['evidence']},
       {name:'State v. Allen',cite:'187 N.E.3d 221 (Ind. Ct. App. 2022)',cats:['warrant']},
-      {name:'State v. Banks',cite:'2 N.E.3d 71 (Ind. Ct. App. 2014)',cats:['confess']},
-      {name:'State v. McVay',cite:'617 P.2d 1134 (Ariz. 1980)',cats:['confess'],oddity:'Out-of-state — Arizona Supreme Court'},
+      {name:'State v. Banks',cite:'2 N.E.3d 71 (Ind. Ct. App. 2014)',cats:['confess'],shared:true,oddity:'Appears in both briefs \u2014 Banks negligence standard is a documented gap in State\u2019s answer'},
+      {name:'State v. McVay',cite:'617 P.2d 1134 (Ariz. 1980)',cats:['confess'],oddity:'Out-of-state \u2014 Arizona Supreme Court'},
       {name:'Stephens v. State',cite:'No. 22A-CR-2051 (Ind. Ct. App. 2023)',cats:['appellate'],oddity:'Unpublished memorandum decision'},
       {name:'Steury v. State',cite:'243 N.E.3d 1108 (Ind. Ct. App. 2024)',cats:['napue']},
       {name:'Swaynie v. State',cite:'762 N.E.2d 112 (Ind. 2002)',cats:['evidence']},
       {name:'Sweeney v. State',cite:'704 N.E.2d 86 (Ind. 1998)',cats:['hearsay']},
       {name:'Thomas v. State',cite:'965 N.E.2d 70 (Ind. Ct. App. 2012)',cats:['warrant']},
       {name:'Tibbs v. State',cite:'59 N.E.3d 1005 (Ind. Ct. App. 2016)',cats:['evidence']},
-      {name:'Turner v. State',cite:'953 N.E.2d 1039 (Ind. 2011)',cats:['expert']},
+      {name:'Turner v. State',cite:'953 N.E.2d 1039 (Ind. 2011)',cats:['expert'],shared:true},
       {name:'United States v. Colkley',cite:'899 F.2d 297 (4th Cir. 1990)',cats:['warrant']},
-      {name:'United States v. D.F.',cite:'115 F.3d 413 (7th Cir. 1997)',cats:['confess']},
-      {name:'United States v. Freeman',cite:'650 F.3d 673 (7th Cir. 2011)',cats:['confess','napue'],oddity:'Cited in both confession voluntariness and Napue clusters — bridges both doctrines'},
+      {name:'United States v. D.F.',cite:'115 F.3d 413 (7th Cir. 1997)',cats:['confess'],shared:true},
+      {name:'United States v. Freeman',cite:'650 F.3d 673 (7th Cir. 2011)',cats:['confess','napue'],oddity:'Cited in both confession and Napue clusters \u2014 bridges both doctrines'},
       {name:'United States v. Giles',cite:'935 F.3d 553 (7th Cir. 2019)',cats:['confess']},
       {name:'United States v. Guerro',cite:'983 F.2d 1001 (10th Cir. 1993)',cats:['confess']},
       {name:'United States v. Kiendra',cite:'663 F.2d 349 (1st Cir. 1981)',cats:['confess']},
@@ -771,145 +1388,140 @@
       {name:'Utley v. State',cite:'589 N.E.2d 232 (Ind. 1992)',cats:['warrant']},
       {name:'Wainscott v. State',cite:'210 N.E.3d 853 (Ind. Ct. App. 2023)',cats:['warrant']},
       {name:'Ware v. State',cite:'859 N.E.2d 708 (Ind. Ct. App. 2007)',cats:['warrant']},
-      {name:'Washington v. State',cite:'808 N.E.2d 617 (Ind. 2004)',cats:['evidence'],oddity:'Cited passim — central to third-party culpability / evidence cluster'},
+      {name:'Washington v. State',cite:'808 N.E.2d 617 (Ind. 2004)',cats:['evidence'],oddity:'Cited passim \u2014 central to third-party culpability / evidence cluster'},
       {name:'Weedman v. State',cite:'21 N.E.3d 873 (Ind. Ct. App. 2014)',cats:['expert']},
       {name:'Weisheit v. State',cite:'26 N.E.3d 3 (Ind. 2015)',cats:['confess']},
       {name:'Wilkes v. State',cite:'917 N.E.2d 675 (Ind. 2009)',cats:['confess']},
       {name:'Zoeller v. Sweeney',cite:'19 N.E.3d 749 (Ind. 2014)',cats:['confess']}
     ];
 
-    var catMap={};
-    CATS.forEach(function(c){catMap[c.id]=c;});
+    var stateCatMap={};
+    STATE_CATS.forEach(function(c){stateCatMap[c.id]=c;});
+    var stateActiveFilter='all';
 
-    function esc(s){
+    function stateTOA_esc(s){
       return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
-
-    function tags(cats){
+    function stateTOA_tags(cats){
       return cats.map(function(id){
-        var c=catMap[id];
-        if(!c) return '';
-        return '<span class="toa-tag" style="background:'+c.color+';border-color:'+c.color+'">'+esc(c.label)+'</span>';
+        var c=stateCatMap[id]; if(!c) return '';
+        return '<span class="ts-tag" style="background:'+c.light+';border-color:'+c.color+';color:'+c.color+'">'+stateTOA_esc(c.label)+'</span>';
       }).join('');
     }
 
-    /* ── OVERVIEW ─────────────────────────────────────── */
-    function renderOverview(){
+    /* OVERVIEW */
+    function stateTOA_renderOverview(){
       var counts={};
-      CATS.forEach(function(c){counts[c.id]=0;});
-      CASES.forEach(function(cs){cs.cats.forEach(function(id){counts[id]=(counts[id]||0)+1;});});
-      var sorted=CATS.slice().sort(function(a,b){return counts[b.id]-counts[a.id];});
-      var max=0;
-      sorted.forEach(function(c){if(counts[c.id]>max)max=counts[c.id];});
-      var html='<div class="toa-meta">'+CASES.length+' cases &middot; '+CATS.length+' doctrine categories &middot; sorted by frequency</div>';
+      STATE_CATS.forEach(function(c){counts[c.id]=0;});
+      STATE_CASES.forEach(function(cs){cs.cats.forEach(function(id){counts[id]=(counts[id]||0)+1;});});
+      var sorted=STATE_CATS.slice().sort(function(a,b){return counts[b.id]-counts[a.id];});
+      var max=0; sorted.forEach(function(c){if(counts[c.id]>max)max=counts[c.id];});
+      var html='<div class="ts-meta">'+STATE_CASES.length+' cases &middot; '+STATE_CATS.length+' doctrine categories &middot; sorted by frequency</div>';
       sorted.forEach(function(c){
-        var n=counts[c.id];
-        var pct=max?Math.max(2,Math.round(n/max*100)):2;
-        html+='<div class="toa-bar-row">'
-          +'<div class="toa-bar-label">'+esc(c.label)+'</div>'
-          +'<div class="toa-bar-track"><div class="toa-bar-fill" style="width:'+pct+'%;background:'+c.color+'"></div></div>'
-          +'<div class="toa-bar-n" style="color:'+c.color+'">'+n+'</div>'
+        var n=counts[c.id], pct=max?Math.max(2,Math.round(n/max*100)):2;
+        html+='<div class="ts-bar-row">'
+          +'<div class="ts-bar-label">'+stateTOA_esc(c.label)+'</div>'
+          +'<div class="ts-bar-track"><div class="ts-bar-fill" style="width:'+pct+'%;background:'+c.color+'"></div></div>'
+          +'<div class="ts-bar-n" style="color:'+c.color+'">'+n+'</div>'
           +'</div>';
       });
-      document.getElementById('toa-overview').innerHTML=html;
+      document.getElementById('overview-state').innerHTML=html;
     }
 
-    /* ── ALL CASES ────────────────────────────────────── */
-    var activeFilter='all';
-
-    function renderAllCases(filter){
-      var list=filter==='all'?CASES:CASES.filter(function(cs){return cs.cats.indexOf(filter)>=0;});
-      var btnHtml='<div class="toa-filters">'
-        +'<button class="toa-fbtn" style="'+(filter==='all'?'background:var(--ink);color:var(--paper);border-color:var(--ink);':'')+'" onclick="toaFilter(\'all\')">All ('+CASES.length+')</button>';
-      CATS.forEach(function(c){
-        var cnt=CASES.filter(function(cs){return cs.cats.indexOf(c.id)>=0;}).length;
+    /* ALL CASES */
+    function stateTOA_renderAllCases(filter){
+      var list=filter==='all'?STATE_CASES:STATE_CASES.filter(function(cs){return cs.cats.indexOf(filter)>=0;});
+      var btnHtml='<div class="ts-filters">'
+        +'<button class="ts-fbtn" style="'+(filter==='all'?'background:var(--ink);color:var(--paper);border-color:var(--ink);':'')+'" onclick="stateTOA_filter(\'all\')">All ('+STATE_CASES.length+')</button>';
+      STATE_CATS.forEach(function(c){
+        var cnt=STATE_CASES.filter(function(cs){return cs.cats.indexOf(c.id)>=0;}).length;
         var act=filter===c.id;
-        btnHtml+='<button class="toa-fbtn" style="'+(act?'background:'+c.color+';border-color:'+c.color+';color:#fff;':'')+'" onclick="toaFilter(\''+c.id+'\')">'+esc(c.label)+' ('+cnt+')</button>';
+        btnHtml+='<button class="ts-fbtn" style="'+(act?'background:'+c.color+';border-color:'+c.color+';color:#fff;':'')+'" onclick="stateTOA_filter(\''+c.id+'\')">'+stateTOA_esc(c.label)+' ('+cnt+')</button>';
       });
       btnHtml+='</div>';
-      var cardsHtml='<div class="toa-grid">';
+      var cardsHtml='<div class="ts-grid">';
       list.forEach(function(cs){
-        cardsHtml+='<div class="toa-card'+(cs.oddity?' toa-odd-card':'')+'">'
-          +'<div class="toa-card-name">'+esc(cs.name)+'</div>'
-          +'<div class="toa-card-cite">'+esc(cs.cite)+'</div>'
-          +'<div class="toa-tags">'+tags(cs.cats)+'</div>'
-          +(cs.oddity?'<div class="toa-odd-flag">&#9873; '+esc(cs.oddity)+'</div>':'')
+        cardsHtml+='<div class="ts-card'+(cs.oddity?' ts-odd-card':'')+'">'
+          +'<div class="ts-card-name">'+stateTOA_esc(cs.name)+'</div>'
+          +'<div class="ts-card-cite">'+stateTOA_esc(cs.cite)+'</div>'
+          +'<div class="ts-tags">'+stateTOA_tags(cs.cats)+'</div>'
+          +(cs.shared?'<div class="ts-shared-flag">&#10150; Also in Allen\u2019s brief</div>':'')
+          +(cs.oddity?'<div class="ts-odd-flag">&#9873; '+stateTOA_esc(cs.oddity)+'</div>':'')
           +'</div>';
       });
       cardsHtml+='</div>';
-      document.getElementById('toa-allcases').innerHTML=btnHtml+cardsHtml;
+      document.getElementById('allcases-state').innerHTML=btnHtml+cardsHtml;
     }
+    window.stateTOA_filter=function(id){stateActiveFilter=id;stateTOA_renderAllCases(id);};
 
-    window.toaFilter=function(id){activeFilter=id;renderAllCases(id);};
-
-    /* ── MULTI-CATEGORY ───────────────────────────────── */
-    function renderMulti(){
-      var multi=CASES.filter(function(cs){return cs.cats.length>=2;});
-      var html='<div class="toa-meta">'+multi.length+' cases span two or more doctrine categories</div>'
-        +'<div class="toa-grid">';
+    /* MULTI-CATEGORY */
+    function stateTOA_renderMulti(){
+      var multi=STATE_CASES.filter(function(cs){return cs.cats.length>=2;});
+      var html='<div class="ts-meta">'+multi.length+' cases span two or more doctrine categories</div><div class="ts-grid">';
       multi.forEach(function(cs){
-        var pc=catMap[cs.cats[0]]?catMap[cs.cats[0]].color:'#333';
-        html+='<div class="toa-multi-card" style="border-left-color:'+pc+'">'
-          +'<div class="toa-card-name">'+esc(cs.name)+'</div>'
-          +'<div class="toa-card-cite">'+esc(cs.cite)+'</div>'
-          +'<div class="toa-tags">'+tags(cs.cats)+'</div>'
-          +(cs.oddity?'<div class="toa-odd-flag">&#9873; '+esc(cs.oddity)+'</div>':'')
+        var pc=stateCatMap[cs.cats[0]]?stateCatMap[cs.cats[0]].color:'#333';
+        html+='<div class="ts-multi-card" style="border-left-color:'+pc+'">'
+          +'<div class="ts-card-name">'+stateTOA_esc(cs.name)+'</div>'
+          +'<div class="ts-card-cite">'+stateTOA_esc(cs.cite)+'</div>'
+          +'<div class="ts-tags">'+stateTOA_tags(cs.cats)+'</div>'
+          +(cs.shared?'<div class="ts-shared-flag">&#10150; Also in Allen\u2019s brief</div>':'')
+          +(cs.oddity?'<div class="ts-odd-flag">&#9873; '+stateTOA_esc(cs.oddity)+'</div>':'')
           +'</div>';
       });
       html+='</div>';
-      document.getElementById('toa-multi').innerHTML=html;
+      document.getElementById('multi-state').innerHTML=html;
     }
 
-    /* ── ODDITIES ─────────────────────────────────────── */
-    function renderOddities(){
+    /* ODDITIES */
+    function stateTOA_renderOddities(){
       var secs=[
-        {label:'Citation Typo',
-         test:function(cs){return cs.name==='Miller v. Fenton';}},
+        {label:'Citation Error (Typo in Brief)',
+         items:STATE_CASES.filter(function(cs){return cs.name==='Miller v. Fenton';})},
         {label:'Unpublished Memorandum Decisions',
-         test:function(cs){return cs.oddity&&cs.oddity.indexOf('Unpublished')===0;}},
+         items:STATE_CASES.filter(function(cs){return cs.oddity&&cs.oddity.indexOf('Unpublished')===0;})},
         {label:'Out-of-State Non-Federal Citations',
-         test:function(cs){return cs.oddity&&cs.oddity.indexOf('Out-of-state')===0;}},
+         items:STATE_CASES.filter(function(cs){return cs.oddity&&cs.oddity.indexOf('Out-of-state')===0;})},
         {label:'19th-Century Anchor Cases',
-         test:function(cs){return cs.oddity&&cs.oddity.indexOf('19th-century')===0;}},
+         items:STATE_CASES.filter(function(cs){return cs.name==='Helton v. Miller'||cs.name==='McQuigg v. McQuigg';})},
         {label:'Dual-Doctrine Bridge',
-         test:function(cs){return cs.name==='United States v. Freeman';}},
-        {label:'Most Recent Citation (2025)',
-         test:function(cs){return cs.name==='Crossland v. State';}},
-        {label:'Cited Passim — Load-Bearing Authorities',
-         test:function(cs){return cs.oddity&&cs.oddity.indexOf('Cited passim')===0;}}
+         items:STATE_CASES.filter(function(cs){return cs.name==='United States v. Freeman';})},
+        {label:'Most Recent Indiana Authority (2025)',
+         items:STATE_CASES.filter(function(cs){return cs.name==='Crossland v. State';})},
+        {label:'Cited Passim \u2014 Load-Bearing Authorities',
+         items:STATE_CASES.filter(function(cs){return cs.oddity&&cs.oddity.indexOf('Cited passim')===0;})}
       ];
       var html='';
       secs.forEach(function(sec){
-        var items=CASES.filter(sec.test);
-        if(!items.length) return;
-        html+='<div class="toa-odd-section"><div class="toa-odd-section-hd">'+esc(sec.label)+'</div>';
-        items.forEach(function(cs){
-          html+='<div class="toa-odd-item">'
-            +(cs.oddity?'<div class="toa-odd-item-flag">&#9873; '+esc(cs.oddity)+'</div>':'')
-            +'<div class="toa-odd-item-name">'+esc(cs.name)+'</div>'
-            +'<div class="toa-odd-item-cite">'+esc(cs.cite)+'</div>'
-            +'<div class="toa-tags">'+tags(cs.cats)+'</div>'
+        if(!sec.items.length) return;
+        html+='<div class="ts-odd-section"><div class="ts-odd-section-hd">'+stateTOA_esc(sec.label)+'</div>';
+        sec.items.forEach(function(cs){
+          html+='<div class="ts-odd-item">'
+            +(cs.oddity?'<div class="ts-odd-item-flag">&#9873; '+stateTOA_esc(cs.oddity)+'</div>':'')
+            +'<div class="ts-odd-item-name">'+stateTOA_esc(cs.name)+'</div>'
+            +'<div class="ts-odd-item-cite">'+stateTOA_esc(cs.cite)+'</div>'
+            +'<div class="ts-tags">'+stateTOA_tags(cs.cats)+'</div>'
+            +(cs.shared?'<div class="ts-shared-flag">&#10150; Also in Allen\u2019s brief</div>':'')
             +'</div>';
         });
         html+='</div>';
       });
-      document.getElementById('toa-oddities').innerHTML=html;
+      document.getElementById('oddities-state').innerHTML=html;
     }
 
-    window.toaTab=function(id,btn){
-      document.querySelectorAll('#toa-widget .toa-panel').forEach(function(p){p.classList.add('toa-hidden');});
-      document.querySelectorAll('#toa-widget .toa-tab').forEach(function(t){t.classList.remove('toa-active');});
-      document.getElementById('toa-'+id).classList.remove('toa-hidden');
-      btn.classList.add('toa-active');
+    window.stateTOA_tab=function(id,btn){
+      document.querySelectorAll('#toa-state .ts-panel').forEach(function(p){p.classList.add('ts-hidden');});
+      document.querySelectorAll('#toa-state .ts-tab').forEach(function(t){t.classList.remove('ts-active');});
+      document.getElementById(id).classList.remove('ts-hidden');
+      btn.classList.add('ts-active');
     };
 
-    renderOverview();
-    renderAllCases('all');
-    renderMulti();
-    renderOddities();
+    stateTOA_renderOverview();
+    stateTOA_renderAllCases('all');
+    stateTOA_renderMulti();
+    stateTOA_renderOddities();
   })();
   </script>
-  </div>
+  </div><!-- /#toa-state -->
 
   <div class="section-label">Issue I — Search Warrant / Franks Hearing</div>
 
