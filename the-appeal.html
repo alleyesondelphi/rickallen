@@ -7,23 +7,23 @@
 
   <!-- Required Info -->
   <title>Richard Allen Appeal – Analysis</title>
-  <meta name="description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <meta name="description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-appeal">
 
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:title" content="Richard Allen Appeal | Issue-By-Issue Comparison">
-  <meta property="og:description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <meta property="og:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-appeal">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-appeal.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta property="og:site_name" content="All Eyes on Delphi">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Richard Allen Appeal | Issue-By-Issue Comparison">
-  <meta name="twitter:description" content="Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The corrected PCA — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.">
+  <meta name="twitter:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-appeal.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
 
@@ -268,56 +268,50 @@
 
   /* PCA STRIP */
   .pca-strip {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 28px 32px;
-    margin: 40px 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
-    align-items: start;
-    border-left: 6px solid var(--red);
+    background: var(--aged);
+    color: var(--ink);
+    padding: 24px 28px;
+    margin: 48px 0 24px;
+    border-left: 3px solid var(--muted);
+    opacity: 0.85;
   }
   .pca-flag {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--red);
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    border-right: 1px solid #333;
-    padding-right: 16px;
-    white-space: nowrap;
+    color: var(--muted);
+    margin-bottom: 10px;
   }
   .pca-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin-bottom: 14px;
+    font-size: 16px;
+    margin-bottom: 10px;
     line-height: 1.2;
+    color: var(--ink);
   }
   .pca-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 14px;
   }
   .pca-item {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid #333;
-    padding: 12px 14px;
-    font-size: 12.5px;
+    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 12px;
+    font-size: 12px;
     line-height: 1.5;
-    color: #ccc;
+    color: var(--muted);
   }
   .pca-item strong {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: 9.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 5px;
+    color: var(--ink);
+    margin-bottom: 4px;
   }
 
   /* BOTTOM LINE */
@@ -388,8 +382,7 @@
     .col + .col { border-left: none; border-top: 1px solid var(--aged); }
     .pca-items { grid-template-columns: 1fr; }
     .strength-grid { grid-template-columns: 1fr; }
-    .pca-strip { grid-template-columns: 1fr; }
-    .pca-flag { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid #333; padding: 0 0 10px; }
+    .pca-flag { font-size: 9px; }
     .masthead { padding: 28px 20px 24px; }
     .container { padding: 0 16px 48px; }
     .issue-header {
@@ -404,10 +397,74 @@
     .bottom-line { padding: 20px 18px; }
     .pca-strip { padding: 20px 18px; }
     .strength-cell { padding: 14px 16px; }
+    /* Collapsible issues on mobile */
+    .issue-body { display: none; }
+    .issue-body.is-open { display: grid; grid-template-columns: 1fr; }
+    .issue-header { cursor: pointer; user-select: none; }
+    .issue-header::after {
+      content: '+';
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 18px;
+      color: #888;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .issue-header.is-open::after { content: '−'; color: #ccc; }
+    /* Mobile sticky jump nav */
+    .mobile-jump { display: flex; }
+    /* Section labels as jump anchors */
+    .section-label { scroll-margin-top: 60px; }
+    .masthead-sub { gap: 12px; }
+    .masthead-sub span { font-size: 9px; }
+    .intro-band { padding: 14px 16px; }
+  }
+
+  /* Mobile jump nav — hidden on desktop */
+  .mobile-jump {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-bottom: 2px solid var(--red);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mobile-jump::-webkit-scrollbar { display: none; }
+  .mobile-jump a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    white-space: nowrap;
+    padding: 12px 14px;
+    text-decoration: none;
+    border-right: 1px solid #222;
+    flex-shrink: 0;
+    display: block;
+  }
+  .mobile-jump a:hover, .mobile-jump a:active { color: var(--paper); background: #111; }
+
+  @media (max-width: 700px) {
+    .mobile-jump { display: flex; }
   }
 </style>
 </head>
 <body>
+
+<!-- Mobile sticky jump navigation -->
+<nav class="mobile-jump" aria-label="Jump to section">
+  <a href="#toa-allen">Allen TOA</a>
+  <a href="#toa-state">State TOA</a>
+  <a href="#toa-reply">Reply Brief</a>
+  <a href="#issue-i">Issue I</a>
+  <a href="#issue-ii">Issue II</a>
+  <a href="#issue-iii">Issue III</a>
+  <a href="#issue-iv">Issue IV</a>
+  <a href="#bottom">Bottom Line</a>
+</nav>
 
 <div class="masthead">
   <div class="masthead-rule">Indiana Court of Appeals · Case No. 25A-CR-00591</div>
@@ -415,15 +472,15 @@
   <div class="masthead-sub">
     <span>APPEAL ANALYSIS</span>
     <span>ISSUE-BY-ISSUE COMPARISON</span>
-    <span>PCA DEFECTS INTEGRATED</span>
     <span>MARCH 2026</span>
+    <span style="color:var(--red);border:1px solid var(--red);padding:2px 8px;">REPLY BRIEF INTEGRATED</span>
   </div>
 </div>
 
 <div class="container">
 
   <div class="intro-band">
-    <strong>Context:</strong> Allen's appeal raises three structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. The <a href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank">corrected PCA</a> — reconstructed using only the State's own trial exhibits and witness transcripts — reveals what Liggett omitted. Every gap below is a place where the State's brief has no answer ready.
+    <strong>Context:</strong> Allen's appeal raises four structural issues with extensive sub-issues. The State responds primarily on waiver and harmless error. Every gap below is a place where the State's brief has no answer ready. <strong>The Reply Brief section below tracks new authorities added in the reply.</strong> Key additions: <em>Glossip v. Oklahoma</em> (604 U.S. ___, 2025) on <em>Napue</em> duty; IPAS Settlement paragraph-level citations; Mullin's "None" admission (Tr. XIX, 113); and Indiana's own <em>Napue</em> cases — <em>Smith v. State</em> (Ind. 2015) and <em>Steury v. State</em> (Ind. Ct. App. 2024).
   </div>
 
   <!-- TABLE OF AUTHORITIES COMPARISON WIDGETS -->
@@ -734,7 +791,7 @@
   <div class="ta-widget-hdr">
     <span class="ta-hdr-label">Appellant&#39;s Brief &middot; Richard Allen</span>
     <span></span>
-    <span class="ta-hdr-count">83 Cases &middot; 12 Doctrinal Categories</span>
+    <span class="ta-hdr-count">83 + 9 Reply Cases &middot; 12 Doctrinal Categories</span>
   </div>
   <div class="ta-tabs">
     <button class="ta-tab ta-active" onclick="allenTOA_tab('overview-allen',this)">Overview</button>
@@ -845,9 +902,15 @@
       {name:'U.S.A. v. Hernandex',cite:'135 Fed. App\u2019x 97 (9th Cir. 2005)',cats:['warrant'],oddity:'Unpublished federal memo disposition \u2014 no precedential authority; NAME TYPO in brief (should be Hernandez)'},
       {name:'United States v. Karake',cite:'443 F. Supp. 2d 8 (D.D.C. 2006)',cats:['confess'],oddity:'D.D.C. torture confession case \u2014 frames Westville solitary in extreme coercion terms'},
       {name:'United States v. Sager',cite:'227 F.3d 1138 (9th Cir. 2000)',cats:['expert']},
-      {name:'Welsh v. Commonwealth',cite:'913 S.E.2d 497 (Va. 2025)',cats:['napue','confess'],oddity:'Out-of-state, 2025 \u2014 Virginia Supreme Court; unanswered by State brief'},
+      {name:'Welsh v. Commonwealth',cite:'913 S.E.2d 497 (Va. 2025)',cats:['napue','confess'],oddity:'Out-of-state, 2025 — Virginia Supreme Court; unanswered by State brief'},
       {name:'Williams v. Sec\u2019y PA Dep\u2019t of Corr.',cite:'848 F.3d (3d Cir. 2017)',cats:['solitary']},
-      {name:'Wong Sun v. United States',cite:'371 U.S. (1963)',cats:['fruit']}
+      {name:'Wong Sun v. United States',cite:'371 U.S. (1963)',cats:['fruit']},
+      {name:'Smith v. State',cite:'34 N.E.3d 1211 (Ind. 2015)',cats:['napue'],oddity:'Indiana Supreme Court applying Napue — cited in Reply Brief; already in State\u2019s TOA. Allen\u2019s opening brief omitted it.'},
+      {name:'Steury v. State',cite:'243 N.E.3d 1108 (Ind. Ct. App. 2024)',cats:['napue'],oddity:'Indiana Court of Appeals 2024 applying Napue — cited in Reply Brief; already in State\u2019s TOA.'},
+      {name:'Gerth v. State',cite:'51 N.E.3d 368 (Ind. Ct. App. 2016)',cats:['warrant'],oddity:'Added in Reply Brief — reckless disregard pattern in Franks claims'},
+      {name:'State v. Banks',cite:'2 N.E.3d 71 (Ind. Ct. App. 2013)',cats:['confess','indconst'],shared:true,oddity:'Appears in both briefs — Banks negligence standard is a documented gap in State\u2019s answer'},
+      {name:'Robbins v. State',cite:'235 N.E.2d 199 (Ind. 1968)',cats:['confess','indconst'],shared:true,oddity:'Indiana voluntariness standard: freely self-determined by rational intellect'},
+      {name:'Pruitt v. State',cite:'834 N.E.2d 90 (Ind. 2005)',cats:['confess','indconst'],shared:true,oddity:'State must prove voluntariness beyond a reasonable doubt under Indiana Constitution'}
     ];
 
     var allenCatMap={};
@@ -931,11 +994,12 @@
     function allenTOA_renderVs(){
       var sharedCases=ALLEN_CASES.filter(function(cs){return cs.shared;});
       var html='<div class="ta-vs-note">'
-        +'<strong>Brief comparison:</strong> Allen\u2019s brief cites 83 cases across 12 doctrinal categories. '
-        +'The State\u2019s brief cites ~100 cases across 9 categories. '
+        +'<strong>Brief comparison:</strong> Allen\'s opening brief cites 83 cases across 12 doctrinal categories. '
+        +'The Reply Brief adds 9 authorities, closing three of the five previously unanswered doctrinal fronts. '
+        +'The State\'s brief cites ~100 cases across 9 categories. '
         +'<strong>'+sharedCases.length+' cases appear in both briefs</strong>, '
         +'often cited for opposing propositions. '
-        +'Allen opens <strong>five doctrinal fronts the State never answered</strong>.'
+        +'<strong>After the Reply, two doctrinal fronts remain without a State answer.</strong>'
         +'</div>';
 
       html+='<div class="ta-vs-section-hd">Shared Cases ('+sharedCases.length+') &mdash; cited by both sides</div>';
@@ -947,13 +1011,16 @@
           +'</div>';
       });
 
-      html+='<div class="ta-vs-section-hd">Doctrinal Fronts the State Never Answered</div>'
+      var openTag='<span style="color:var(--gap-red);font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:.1em;font-weight:500;">STILL OPEN &mdash;</span> ';
+      var closedTag='<span style="color:#1a7a3a;font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:.1em;font-weight:500;">REPLY CLOSED &mdash;</span> ';
+
+      html+='<div class="ta-vs-section-hd">Doctrinal Fronts &mdash; Status After Reply Brief</div>'
         +'<ul class="ta-gaps-list">'
-        +'<li><strong>Solitary confinement / due process</strong> &mdash; the State collapses Issue II.D into voluntariness and never applies the three-factor fruit test. The entire solitary category is unaddressed as a constitutional framework.</li>'
-        +'<li><strong>Fruit of the poisonous tree</strong> &mdash; dismissed in two sentences as &ldquo;not cogent.&rdquo; No engagement with Wong Sun or the three-factor analysis.</li>'
-        +'<li><strong>Harmless error standard (Chapman v. California)</strong> &mdash; Allen invokes the constitutional harmless-beyond-a-reasonable-doubt standard. The State applies the lower non-constitutional standard without acknowledging the distinction.</li>'
-        +'<li><strong>Cumulative error</strong> &mdash; the State gives every issue its own isolated harmless-error analysis. The cumulative-error doctrine as a standalone claim is never addressed anywhere in the State\u2019s brief.</li>'
-        +'<li><strong>Third-party culpability as due process right</strong> &mdash; Allen frames exclusion of Holder/Westfall/Perlmutter as a constitutional asymmetry. The State treats it as a standard evidentiary question, never engages the due-process dimension.</li>'
+        +'<li>'+openTag+'<strong>Fruit of the poisonous tree</strong> &mdash; dismissed in two sentences as &ldquo;not cogent.&rdquo; Reply sharpens the argument. State has no counter filed. No engagement with <em>Wong Sun</em> or the three-factor analysis.</li>'
+        +'<li>'+openTag+'<strong>Cumulative error</strong> &mdash; the State gives every issue its own isolated harmless-error analysis. The cumulative-error doctrine as a standalone claim is never addressed anywhere in the State\'s brief. The Reply makes this explicit.</li>'
+        +'<li>'+closedTag+'<strong>Napue / false testimony (Weber van + Holeman)</strong> &mdash; Reply adds <em>Glossip v. Oklahoma</em> (604 U.S. ___, 2025), <em>Smith v. State</em> (Ind. 2015), and <em>Steury v. State</em> (Ind. Ct. App. 2024). Also develops Holeman\'s trial testimony as an independent Napue violation. State\'s brief never engaged <em>Glossip</em>.</li>'
+        +'<li>'+closedTag+'<strong>IPAS Settlement paragraph-level analysis</strong> &mdash; Reply cites specific paragraphs (29, 30, 33, 41): no safekeeper exception, Westville not listed as an authorized mental health unit, 30-day provision requires clinical not administrative determination. State never engaged the text of the Settlement.</li>'
+        +'<li>'+closedTag+'<strong>Indiana Rule 103(b) pending amendment</strong> &mdash; Reply frames the Oct. 2025 proposed amendment as the Indiana Supreme Court\'s own institutional acknowledgment that the current preservation rule inadequately addresses exactly Allen\'s situation. State never addressed this equitable argument.</li>'
         +'</ul>';
 
       document.getElementById('vs-allen').innerHTML=html;
@@ -1521,8 +1588,196 @@
   })();
   </script>
   </div><!-- /#toa-state -->
+  <div class="section-label">REPLY BRIEF · NEW AUTHORITIES &amp; CLOSED GAPS</div>
 
-  <div class="section-label">Issue I — Search Warrant / Franks Hearing</div>
+  <div id="toa-reply">
+  <style>
+    #toa-reply { font-family: 'Source Serif 4', Georgia, serif; margin-bottom: 0; }
+    #toa-reply .tr-hdr {
+      background: var(--red);
+      color: #fff;
+      padding: 14px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    #toa-reply .tr-hdr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    #toa-reply .tr-hdr-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+    }
+    #toa-reply .tr-note {
+      background: var(--gap-bg);
+      border-left: 4px solid var(--gap-red);
+      padding: 14px 22px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--warn);
+      line-height: 1.65;
+      border: 1px solid #e8c8c5;
+      border-left-width: 4px;
+      border-top: none;
+    }
+    #toa-reply .tr-note strong { color: var(--ink); }
+    #toa-reply .tr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0;
+      border: 1px solid var(--aged);
+      border-top: none;
+    }
+    #toa-reply .tr-card {
+      padding: 16px 18px;
+      border-right: 1px solid var(--aged);
+      border-bottom: 1px solid var(--aged);
+      background: #fff;
+    }
+    #toa-reply .tr-card:nth-child(even) { background: #fafaf9; }
+    #toa-reply .tr-status {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      padding: 2px 7px;
+      display: inline-block;
+      border: 1px solid;
+    }
+    .tr-status-new { color: var(--gap-red); border-color: var(--gap-red); }
+    .tr-status-closes { color: #1a7a3a; border-color: #1a7a3a; background: #f0faf3; }
+    .tr-status-fix { color: var(--gold); border-color: var(--gold); background: #fdf8ec; }
+    #toa-reply .tr-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+    #toa-reply .tr-cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 7px;
+      line-height: 1.4;
+    }
+    #toa-reply .tr-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #333;
+    }
+    #toa-reply .tr-issue {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    @media (max-width: 700px) {
+      #toa-reply .tr-hdr { grid-template-columns: 1fr; gap: 5px; padding: 12px 16px; }
+      #toa-reply .tr-grid { grid-template-columns: 1fr; }
+      #toa-reply .tr-card { padding: 14px 16px; }
+      #toa-reply .tr-note { padding: 12px 16px; }
+    }
+  </style>
+
+  <div class="tr-hdr">
+    <span class="tr-hdr-label">Reply Brief &middot; New &amp; Reinforced Authorities</span>
+    <span></span>
+    <span class="tr-hdr-count">9 Cases / Provisions &middot; 4 Issues Strengthened</span>
+  </div>
+  <div class="tr-note">
+    <strong>What changed between the Appellant's Brief and the Reply Brief:</strong> Three gaps that the State left open in its Appellee's Brief are now directly addressed with new authority. The Reply also adds Indiana-specific <em>Napue</em> case law the opening brief omitted, fixes the <em>Napue</em> year error, deploys the IPAS Settlement at paragraph-level, and introduces the Rule 103(b) pending amendment as an equitable argument the State has not answered.
+  </div>
+  <div class="tr-grid">
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-closes">Closes State Gap</div>
+      <div class="tr-name">Glossip v. Oklahoma</div>
+      <div class="tr-cite">604 U.S. ___, slip op. (Feb. 25, 2025)</div>
+      <div class="tr-desc">5&ndash;4 opinion authored by Justice Sotomayor. Reaffirms <em>Napue</em>: duty to correct false testimony runs to the State, not the defense. Defense cross-examination doesn't cure the violation. Credibility-only false testimony is covered. &ldquo;A lie is a lie, no matter what its subject.&rdquo; New trial is the remedy. <strong>The State's brief never cited or engaged this case.</strong></div>
+      <div class="tr-issue">Issues II (Holeman) &amp; IV (Weber)</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-new">New Indiana Authority</div>
+      <div class="tr-name">Smith v. State</div>
+      <div class="tr-cite">34 N.E.3d 1211 (Ind. 2015)</div>
+      <div class="tr-desc">Indiana Supreme Court applying <em>Napue</em>: conviction obtained through knowing use of false evidence must fall. Already in the State's TOA but omitted from Allen's opening brief. Reply adds it to give the <em>Napue</em> argument Indiana Supreme Court grounding.</div>
+      <div class="tr-issue">Issues II &amp; IV</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-new">New Indiana Authority</div>
+      <div class="tr-name">Steury v. State</div>
+      <div class="tr-cite">243 N.E.3d 1108 (Ind. Ct. App. 2024)</div>
+      <div class="tr-desc">Indiana Court of Appeals 2024 applying <em>Napue</em>. Confirms the State has a duty to correct false testimony when it appears. Already in the State's TOA but absent from Allen's opening brief. Reply adds it as direct Indiana precedent for Issues II and IV.</div>
+      <div class="tr-issue">Issues II &amp; IV</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-closes">Closes State Gap</div>
+      <div class="tr-name">IPAS Settlement, Paras. 18, 29, 30, 33, 41</div>
+      <div class="tr-cite">Case 1:08-cv-01317-TWP-MJD, Doc. 496 (Jan. 27, 2016)</div>
+      <div class="tr-desc">Para. 18: SMI definition includes brief psychotic disorder. Para. 29: removal &ldquo;at earliest opportunity&rdquo; when prisoner becomes SMI. Para. 30: 30-day provision requires <em>clinical</em> determination, not administrative label. Para. 33: DOC can involuntarily transfer even refusing prisoner. Para. 41: Westville not listed as authorized mental health unit. <strong>State never engaged the Settlement text directly.</strong></div>
+      <div class="tr-issue">Issue II</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-new">Record Anchor</div>
+      <div class="tr-name">Mullin: &ldquo;None&rdquo; (Tr. XIX, 113)</div>
+      <div class="tr-cite">Trial Testimony, Nov. 1, 2024</div>
+      <div class="tr-desc">Defense called Investigator Mullin. Q: How many times before Allen was arrested and placed in solitary at Westville did he confess? A: &ldquo;None.&rdquo; Unimpeached. Demolishes the State's &ldquo;before and after psychosis&rdquo; framing. All confessions post-date the solitary confinement that caused documented psychosis.</div>
+      <div class="tr-issue">Issue II</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-closes">Closes State Gap</div>
+      <div class="tr-name">Indiana Evid. Rule 103(b) — Pending Amendment</div>
+      <div class="tr-cite">Ind. Supreme Court Proposed Rules (Oct. 2025)</div>
+      <div class="tr-desc">Indiana Supreme Court proposed amendment would allow a party to request a definitive ruling before trial without requiring renewal at trial to preserve for appeal — exactly Allen's situation. Comment period closed Nov. 17, 2025. Reply uses the pending amendment as the Court's own institutional acknowledgment that the current rule is inadequate for Allen's scenario.</div>
+      <div class="tr-issue">Issues I &amp; II (Waiver)</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-new">New Issue II Authority</div>
+      <div class="tr-name">Napue / Holeman Trial Testimony</div>
+      <div class="tr-cite">Tr. XV, 78–101 and 119 (Oct. 25, 2024)</div>
+      <div class="tr-desc">Reply develops a <em>new</em> Napue argument not in the opening brief: Holeman's direct trial testimony about the Oct. 26, 2022 interrogation presented that session as legitimate investigation without disclosing the false representations he later conceded on cross (Tr. XV, 119). Under <em>Glossip</em>, the duty to correct runs to the State whether or not defense cross-examined on it.</div>
+      <div class="tr-issue">Issue II</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-new">Reinforced Authority</div>
+      <div class="tr-name">Gerth v. State</div>
+      <div class="tr-cite">51 N.E.3d 368 (Ind. Ct. App. 2016)</div>
+      <div class="tr-desc">Pattern of reckless disregard is actionable under Franks even without direct evidence of intent to deceive. Reply adds this to the warrant argument to rebut the State's claim that Liggett's omissions were innocent. Liggett personally conducted the 2019 Blair interview containing everything he omitted.</div>
+      <div class="tr-issue">Issue I</div>
+    </div>
+
+    <div class="tr-card">
+      <div class="tr-status tr-status-fix">Error Corrected</div>
+      <div class="tr-name">Napue v. Illinois — Year Fixed</div>
+      <div class="tr-cite">360 U.S. 264 (1959) &mdash; not 1953</div>
+      <div class="tr-desc">Allen's opening brief listed <em>Napue</em> as decided in 1953. The correct year is 1959. The State's brief had the correct year. The Reply Brief corrects the citation. The State did not raise the error as an argument, but an uncorrected citation error in a brief is still a credibility concern.</div>
+      <div class="tr-issue">Issues II &amp; IV</div>
+    </div>
+
+  </div>
+  </div><!-- /#toa-reply -->
+
+
+
+  <div class="section-label" id="issue-i">Issue I — Search Warrant / Franks Hearing</div>
 
   <div class="issue">
     <div class="issue-header">
@@ -1566,7 +1821,7 @@
     </div>
   </div>
 
-  <div class="section-label">Issue II — Confessions / Solitary Confinement</div>
+  <div class="section-label" id="issue-ii">Issue II — Confessions / Solitary Confinement</div>
 
   <div class="issue">
     <div class="issue-header">
@@ -1596,14 +1851,15 @@
         </ul>
       </div>
       <div class="gap-row">
-        <div class="gap-label">State never addresses</div>
+        <div class="gap-label">State never addresses (Reply strengthened these)</div>
         <ul>
-          <li>Banks holding that negligent conduct suffices — State requires coercive action but never refutes Banks directly</li>
+          <li><strong>Reply added:</strong> Mullin's unimpeached trial testimony — zero confessions before Westville (Tr. XIX, 113) — directly refutes the State's "before and after psychosis" framing</li>
+          <li><strong>Reply added:</strong> IPAS Settlement paragraph-level analysis (Paras. 29, 30, 33, 41) — Westville not authorized, no safekeeper exception in the Settlement text, clinical not administrative determination required</li>
+          <li><em>Banks</em> holding that negligent conduct suffices — State requires coercive action but never refutes <em>Banks</em> directly</li>
           <li>Issue II.D three-factor fruit test — collapsed into voluntariness, never applied</li>
           <li>Prosecutor's 9-day delay on emergency transfer motion</li>
           <li>Impossible confessions: same psychosis can't taint some confessions but not others</li>
-          <li>Reid Technique lies as baseline voluntariness contamination preceding detention</li>
-          <li>Dr. Wala's own concession that solitary likely caused psychosis</li>
+          <li>Reid Technique lies as baseline voluntariness contamination preceding detention — Reply anchors this to Ex. 291 at 23:41 (voice experts) and Tr. XV, 119 (Holeman's concession)</li>
         </ul>
       </div>
     </div>
@@ -1644,7 +1900,7 @@
     </div>
   </div>
 
-  <div class="section-label">Issue III — Evidentiary Rulings (Selected)</div>
+  <div class="section-label" id="issue-iii">Issue III — Evidentiary Rulings (Selected)</div>
 
   <div class="issue">
     <div class="issue-header">
@@ -1743,10 +1999,11 @@
         </ul>
       </div>
       <div class="gap-row">
-        <div class="gap-label">State never addresses</div>
+        <div class="gap-label">State never addresses (gaps persist after Reply)</div>
         <ul>
-          <li>Glossip v. Oklahoma (2025) — never cited or engaged by name</li>
-          <li>FBI cellphone ping evidence — foundation problem asserted but never explained</li>
+          <li><strong>Reply closed:</strong> <em>Glossip v. Oklahoma</em> (2025) now cited in Reply Brief with Indiana <em>Napue</em> cases — State's brief is final and cannot respond</li>
+          <li>FBI cellphone ping evidence — State asserted foundation problem but never explained why ping data in its own possession is inadmissible</li>
+          <li>Holeman's trial testimony as an independent <em>Napue</em> violation — new argument developed in Reply that State's brief never anticipated</li>
         </ul>
       </div>
     </div>
@@ -1862,12 +2119,14 @@
     </div>
   </div>
 
+  <div class="section-label" style="margin-top:56px; opacity:0.6;">Appendix · Background Reference</div>
+
   <!-- PCA STRIP -->
-  <div class="pca-strip">
-    <div class="pca-flag">Corrected PCA · State's Own Evidence</div>
+  <div class="pca-strip" id="pca">
+    <div class="pca-flag">Reference · Corrected Probable Cause Affidavit · State's Own Evidence</div>
     <div class="pca-content">
-      <h3>What the Corrected Probable Cause Affidavit Exposes</h3>
-      <p style="font-size:13.5px; color:#bbb; line-height:1.6;">Reconstructed using only State trial exhibits and witness transcripts. Removes the "defense spin" objection entirely — these are the State's own sources, against the State's own affidavit.</p>
+      <h3>What the Corrected PCA Exposes</h3>
+      <p style="font-size:12px; color:var(--muted); line-height:1.6;">Reconstructed using only State trial exhibits and witness transcripts. Provided as background context — not a brief issue. <a href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank" style="color:var(--muted);">Full document ↗</a></p>
       <div class="pca-items">
         <div class="pca-item">
           <strong>Vehicle ID Failed</strong>
@@ -1898,7 +2157,7 @@
   </div>
 
   <!-- BIGGEST GAP -->
-  <div class="section-label">State's Strongest Evidence — Consciousness of Guilt</div>
+  <div class="section-label" id="issue-iv">Issue IV / State's Strongest — Motion to Correct Error &amp; Consciousness of Guilt</div>
   <div class="issue">
     <div class="issue-header">
       <span class="issue-num">STATE</span>
@@ -1954,10 +2213,10 @@
     </div>
   </div>
 
-  <div class="bottom-line">
-    <p>The State is entitled to their waiver and harmless error arguments — those are real procedural hurdles — and their consciousness-of-guilt evidence (timeline change, "it's over," missing phone) is the strongest substantive counterweight to Allen's arguments. But the structural gaps remain significant. The State has no answer on <em>Glossip v. Oklahoma</em> (2025), no answer on the ISP's own 2019 reversal, no answer on cumulative error, no answer on the <em>Banks</em> negligence standard, and no answer on the Issue II.D three-factor fruit test.</p>
-    <p>The context in the reconstructed PCA is the most persuasive for the appeal, for Issue I specifically, because it uses only the State's own sources to show what Liggett left out. It removes the adversarial framing problem. The initial firearms comparison failure — six cycles, insufficient agreement — is buried but consequential: the warrant that produced the gun came before any confirmed match existed...not to mention, Liggett had to put false words in the victim's mouth about a gun just to get the warrant, presumably, because the (ultimately) inconclusive results from the firearms examiner's examination was a flat-out bluff.</p>
-    <p>Allen's strongest appellate path runs through Issue I (warrant as fruit of the poisonous tree), cumulative error (unanswered), and the Indiana constitutional claims (analytically distinct from the federal claims, incompletely addressed). The State's strongest counterargument beyond waiver is the consciousness-of-guilt evidence Allen doesn't address.</p>
+  <div class="bottom-line" id="bottom">
+    <p>The State is entitled to their waiver and harmless error arguments — those are real procedural hurdles — and their consciousness-of-guilt evidence (timeline change, "it's over," missing phone) is the strongest substantive counterweight to Allen's arguments. But the structural gaps remain significant. After the Reply Brief, the State still has no answer on <em>Glossip v. Oklahoma</em> (2025), no answer on the ISP's own 2019 reversal, no answer on cumulative error, and no answer on the Issue II.D three-factor fruit test. The <em>Banks</em> negligence standard remains unrefuted.</p>
+    <p>The Reply Brief's most significant additions: (1) Mullin's unimpeached "None" — zero confessions before Westville — demolishes the State's "before and after" narrative; (2) the IPAS Settlement at paragraph level exposes the safekeeper exception as a legal fiction the Settlement itself doesn't authorize; (3) <em>Glossip v. Oklahoma</em> (2025) gives the Weber/Napue argument current Supreme Court authority the State's brief never anticipated; (4) Indiana Rule 103(b)'s pending amendment reframes the preservation argument as having the Indiana Supreme Court's own institutional backing.</p>
+    <p>Allen's strongest appellate path remains Issue I (warrant as fruit of the poisonous tree), cumulative error (still unanswered), and the Indiana constitutional claims (analytically distinct from federal claims, incompletely addressed). The State's strongest counterargument beyond waiver remains the consciousness-of-guilt evidence — particularly the timeline change and the "it's over" statement — which the Reply Brief does not directly confront.</p>
     <div class="strength-grid">
       <div class="strength-cell">
         <div class="s-label">Allen's Strongest Ground</div>
@@ -1978,5 +2237,41 @@
   </div>
 
 </div>
+<script>
+// Collapsible issue blocks on mobile
+(function(){
+  function isMobile(){ return window.innerWidth <= 700; }
+  function initCollapsible(){
+    if(!isMobile()) return;
+    document.querySelectorAll('.issue-header').forEach(function(hdr){
+      var body = hdr.nextElementSibling;
+      if(!body || !body.classList.contains('issue-body')) return;
+      // Already initialized?
+      if(hdr.dataset.collapsible) return;
+      hdr.dataset.collapsible = '1';
+      hdr.setAttribute('tabindex','0');
+      hdr.setAttribute('role','button');
+      hdr.setAttribute('aria-expanded','false');
+      hdr.addEventListener('click', function(){
+        var open = body.classList.contains('is-open');
+        body.classList.toggle('is-open', !open);
+        hdr.classList.toggle('is-open', !open);
+        hdr.setAttribute('aria-expanded', String(!open));
+      });
+      hdr.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); hdr.click(); }
+      });
+    });
+  }
+  // Initialize on load and on resize crossing the threshold
+  var wasM = isMobile();
+  initCollapsible();
+  window.addEventListener('resize', function(){
+    var isM = isMobile();
+    if(isM && !wasM){ initCollapsible(); wasM = true; }
+    else if(!isM){ wasM = false; }
+  });
+})();
+</script>
 </body>
 </html>
