@@ -417,7 +417,19 @@
     .masthead-sub { gap: 12px; }
     .masthead-sub span { font-size: 9px; }
     .intro-band { padding: 14px 16px; }
+    /* Glossary: single column on mobile so terms aren't squeezed */
+    details > div[style*="columns: 2"] { columns: 1 !important; }
+    /* Filings card grid: allow narrower cards on small phones */
+    #filings-latest > div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+    /* Reply Brief badge key: single column on small phones */
+    #toa-reply .tr-note > div > div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
   }
+  /* Global safety: prevent horizontal page overflow */
+  html, body { overflow-x: hidden; max-width: 100%; }
 
   /* Mobile jump nav — hidden on desktop */
   .mobile-jump {
@@ -809,6 +821,8 @@
         gap: 6px;
         padding: 12px 16px;
       }
+      #toa-allen .ta-hdr-label,
+      #toa-allen .ta-hdr-count { white-space: normal; word-break: break-word; }
       #toa-allen .ta-panel { padding: 16px; }
       #toa-allen .ta-bar-row { flex-wrap: wrap; gap: 4px; }
       #toa-allen .ta-bar-label { width: 100%; font-size: 9.5px; }
@@ -1345,6 +1359,8 @@
         gap: 6px;
         padding: 12px 16px;
       }
+      #toa-state .ts-hdr-label,
+      #toa-state .ts-hdr-count { white-space: normal; word-break: break-word; }
       #toa-state .ts-panel { padding: 16px; }
       #toa-state .ts-bar-row { flex-wrap: wrap; gap: 4px; }
       #toa-state .ts-bar-label { width: 100%; font-size: 9.5px; }
@@ -1714,6 +1730,8 @@
     }
     @media (max-width: 700px) {
       #toa-reply .tr-hdr { grid-template-columns: 1fr; gap: 5px; padding: 12px 16px; }
+      #toa-reply .tr-hdr-label,
+      #toa-reply .tr-hdr-count { white-space: normal; word-break: break-word; }
       #toa-reply .tr-grid { grid-template-columns: 1fr; }
       #toa-reply .tr-card { padding: 14px 16px; }
       #toa-reply .tr-note { padding: 12px 16px; }
