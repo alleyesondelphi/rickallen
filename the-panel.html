@@ -598,6 +598,7 @@
   <a href="#vaidik">Vaidik</a>
   <a href="#brown">Brown</a>
   <a href="#altice">Altice</a>
+  <a href="#overlaps">Overlaps</a>
   <a href="#dynamics">Dynamics</a>
   <a href="#issues">By Issue</a>
   <a href="#oral">Oral Arg.</a>
@@ -900,6 +901,417 @@
 
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PANEL OVERLAP WIDGET
+  ════════════════════════════════════════════════════════════ -->
+  <div class="section-label" id="overlaps">CRIMINAL CASE OVERLAPS · HAVE THESE JUDGES WORKED TOGETHER?</div>
+
+  <div id="overlap-widget">
+  <style>
+    #overlap-widget { font-family: 'Source Serif 4', Georgia, serif; margin-bottom: 48px; }
+    #overlap-widget .ow-hdr {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    #overlap-widget .ow-hdr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    #overlap-widget .ow-hdr-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    #overlap-widget .ow-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 1px solid var(--aged);
+    }
+    #overlap-widget .ow-tab {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border: 1px solid var(--aged);
+      border-bottom: none;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      margin-bottom: -1px;
+      border-radius: 0;
+    }
+    #overlap-widget .ow-tab:hover { color: var(--ink); }
+    #overlap-widget .ow-tab.ow-active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    #overlap-widget .ow-panel {
+      border: 1px solid var(--aged);
+      border-top: none;
+      background: #fff;
+      padding: 24px;
+    }
+    #overlap-widget .ow-panel.ow-hidden { display: none; }
+    #overlap-widget .ow-stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--aged);
+      border: 1px solid var(--aged);
+      margin-bottom: 20px;
+    }
+    #overlap-widget .ow-stat {
+      background: #fff;
+      padding: 14px 16px;
+      text-align: center;
+    }
+    #overlap-widget .ow-stat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    #overlap-widget .ow-stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    #overlap-widget .ow-case-row {
+      display: grid;
+      grid-template-columns: 1fr 120px 200px;
+      gap: 0;
+      border-bottom: 1px solid var(--aged);
+      padding: 10px 0;
+      align-items: center;
+      font-size: 13px;
+    }
+    #overlap-widget .ow-case-row:last-child { border-bottom: none; }
+    #overlap-widget .ow-case-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    #overlap-widget .ow-case-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+    }
+    #overlap-widget .ow-case-outcome {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+    .ow-reversed { color: var(--gap-red); }
+    .ow-affirmed { color: var(--steel); }
+    .ow-mixed { color: var(--gold); }
+    .ow-dissent-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gap-red);
+      border: 1px solid var(--gap-red);
+      padding: 1px 6px;
+      display: inline-block;
+      margin-left: 6px;
+    }
+    #overlap-widget .ow-note {
+      background: var(--warn-bg);
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--warn);
+      line-height: 1.55;
+      margin-top: 16px;
+    }
+    #overlap-widget .ow-note strong { color: var(--ink); }
+    #overlap-widget .ow-agreement-bar {
+      height: 24px;
+      background: var(--aged);
+      position: relative;
+      margin: 8px 0 16px;
+      overflow: hidden;
+    }
+    #overlap-widget .ow-agree-fill {
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #overlap-widget .ow-agree-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--ink);
+      position: absolute;
+      right: 8px;
+      top: 5px;
+    }
+    #overlap-widget .ow-key-case {
+      background: var(--gap-bg);
+      border: 1px solid #e8c8c5;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+    #overlap-widget .ow-key-flag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gap-red);
+      margin-bottom: 6px;
+    }
+    #overlap-widget .ow-key-case p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #333;
+    }
+    @media (max-width: 700px) {
+      #overlap-widget .ow-stat-row { grid-template-columns: 1fr 1fr; }
+      #overlap-widget .ow-case-row { grid-template-columns: 1fr; gap: 4px; }
+      #overlap-widget .ow-case-date, #overlap-widget .ow-case-outcome { text-align: left; }
+      #overlap-widget .ow-panel { padding: 16px; }
+    }
+  </style>
+
+  <div class="ow-hdr">
+    <div class="ow-hdr-label">Cross-Referenced Opinion Data</div>
+    <div style="font-family: 'Playfair Display', serif; font-size: clamp(14px, 2vw, 17px); font-weight: 700;">Criminal Panel Overlaps</div>
+    <div class="ow-hdr-count">32+ SHARED CASES</div>
+  </div>
+
+  <div class="ow-tabs">
+    <button class="ow-tab ow-active" onclick="owTab('ow-overview',this)">Overview</button>
+    <button class="ow-tab" onclick="owTab('ow-ab',this)">Altice + Brown (12)</button>
+    <button class="ow-tab" onclick="owTab('ow-av',this)">Altice + Vaidik (14)</button>
+    <button class="ow-tab" onclick="owTab('ow-vb',this)">Vaidik + Brown (6+)</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="ow-panel" id="ow-overview">
+    <div class="ow-stat-row">
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--altice);">12</div>
+        <div class="ow-stat-label">Altice + Brown</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--vaidik);">14</div>
+        <div class="ow-stat-label">Altice + Vaidik</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--brown);">6+</div>
+        <div class="ow-stat-label">Vaidik + Brown</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--red);">0</div>
+        <div class="ow-stat-label">All Three Together</div>
+      </div>
+    </div>
+
+    <p style="font-size: 14px; line-height: 1.65; color: #222; margin-bottom: 14px;"><strong>The Allen appeal appears to be the first criminal case all three judges have decided together.</strong> The working relationships are all pairwise — but the pairwise data is extensive, consistent, and revealing.</p>
+
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px;">Agreement Rates — Criminal Cases</div>
+
+    <div style="margin-bottom: 12px;">
+      <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 4px;">
+        <span style="color: var(--vaidik);">Altice + Vaidik</span>
+        <span style="font-weight: 500;">100% (14/14)</span>
+      </div>
+      <div class="ow-agreement-bar">
+        <div class="ow-agree-fill" style="width: 100%; background: var(--vaidik);"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 4px;">
+        <span style="color: var(--brown);">Vaidik + Brown</span>
+        <span style="font-weight: 500;">100% (6/6 sampled)</span>
+      </div>
+      <div class="ow-agreement-bar">
+        <div class="ow-agree-fill" style="width: 100%; background: var(--brown);"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 4px;">
+        <span style="color: var(--altice);">Altice + Brown</span>
+        <span style="font-weight: 500;">83% (10/12)</span>
+      </div>
+      <div class="ow-agreement-bar">
+        <div class="ow-agree-fill" style="width: 83%; background: var(--altice);"></div>
+      </div>
+    </div>
+
+    <div class="ow-key-case">
+      <div class="ow-key-flag">Key Finding</div>
+      <p>Vaidik and Altice have never disagreed on a criminal case — not once across 14 shared opinions. When Vaidik writes, Altice concurs. When Altice writes, Vaidik concurs. This includes the <em>Young</em> murder reversal, where Altice chose Vaidik's position over a dissenting colleague. Brown is the most independent voice, but her two disagreements with Altice were on the <em>scope</em> of affirmances — not on the direction. When any two of these judges reverse, they reverse unanimously.</p>
+    </div>
+
+    <div class="ow-note">
+      <strong>Methodology:</strong> Cross-referenced from published criminal opinion lists on Indiana Appellate Decisions (public.courts.in.gov). Altice list: 64 opinions (complete). Vaidik list: 250+ opinions (sampled). Brown list: 204 opinions (sampled). Additional overlaps beyond those catalogued here are likely present in the unsampled portions of the Vaidik and Brown lists. The Vaidik-Brown count (6+) is a floor, not a ceiling.
+    </div>
+  </div>
+
+  <!-- ALTICE + BROWN TAB -->
+  <div class="ow-panel ow-hidden" id="ow-ab">
+    <div class="ow-stat-row">
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--altice);">12</div>
+        <div class="ow-stat-label">Total Cases</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--allen-green);">6</div>
+        <div class="ow-stat-label">Involved Reversal</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--gap-red);">1</div>
+        <div class="ow-stat-label">Brown Dissent</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--gold);">1</div>
+        <div class="ow-stat-label">Brown Partial Split</div>
+      </div>
+    </div>
+
+    <div class="ow-case-row" style="border-bottom: 2px solid var(--aged); padding-bottom: 6px; margin-bottom: 4px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">Case</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: center;">Date</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: right;">Outcome</div>
+    </div>
+    <div class="ow-case-row"><div class="ow-case-name">Lopez Sanchez v. State</div><div class="ow-case-date">Jul 2025</div><div class="ow-case-outcome ow-reversed">Reversed &amp; Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Sorgdrager v. State</div><div class="ow-case-date">Apr 2023</div><div class="ow-case-outcome ow-affirmed">Affirmed <span class="ow-dissent-flag">BROWN SPLIT</span></div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Bailey v. State</div><div class="ow-case-date">Jan 2023</div><div class="ow-case-outcome ow-mixed">Affirmed / Rev'd / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Passarelli v. State</div><div class="ow-case-date">Jan 2023</div><div class="ow-case-outcome ow-affirmed">Affirmed / Remanded <span class="ow-dissent-flag">BROWN DISSENT</span></div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Teising v. State</div><div class="ow-case-date">Dec 2022</div><div class="ow-case-outcome ow-reversed">Reversed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Tanoos v. State</div><div class="ow-case-date">Dec 2019</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Watson v. State</div><div class="ow-case-date">Oct 2019</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Martin v. State</div><div class="ow-case-date">Oct 2019</div><div class="ow-case-outcome ow-mixed">Affirmed / Vacated / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Coleman v. State</div><div class="ow-case-date">Jan 2016</div><div class="ow-case-outcome ow-reversed">Reversed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Eckelbarger v. State</div><div class="ow-case-date">Dec 2015</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Hmurovic v. State</div><div class="ow-case-date">Oct 2015</div><div class="ow-case-outcome ow-mixed">Affirmed / Rev'd / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Lothamer v. State</div><div class="ow-case-date">Sep 2015</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+
+    <div class="ow-note">
+      <strong>Pattern:</strong> Brown disagreed with Altice twice — one full dissent (<em>Passarelli</em>) and one concur-in-part/dissent-in-part (<em>Sorgdrager</em>). Both disagreements were on the scope of affirmances, not on reversals. When this pair reverses, Brown is on board. Half their shared cases (6/12) involved some form of reversal or remand — a notably active correction rate.
+    </div>
+  </div>
+
+  <!-- ALTICE + VAIDIK TAB -->
+  <div class="ow-panel ow-hidden" id="ow-av">
+    <div class="ow-stat-row">
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--vaidik);">14</div>
+        <div class="ow-stat-label">Total Cases</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--allen-green);">4</div>
+        <div class="ow-stat-label">Involved Reversal</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--gap-red);">0</div>
+        <div class="ow-stat-label">Disagreements</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--red);">1</div>
+        <div class="ow-stat-label">Murder Reversal</div>
+      </div>
+    </div>
+
+    <div class="ow-key-case">
+      <div class="ow-key-flag">Marquee Case · Young v. State (2022)</div>
+      <p>Vaidik authored a rare murder conviction reversal on insufficient evidence. Altice concurred over a dissent from Judge Crone. Vaidik wrote that appellate courts have an affirmative duty to ensure proof is sufficient and warned against courts that rubber-stamp trial determinations. <strong>Two of the three Allen panelists reversed a murder conviction together — and have never disagreed on a criminal case.</strong></p>
+    </div>
+
+    <div class="ow-case-row" style="border-bottom: 2px solid var(--aged); padding-bottom: 6px; margin-bottom: 4px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">Case</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: center;">Date</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: right;">Outcome</div>
+    </div>
+    <div class="ow-case-row"><div class="ow-case-name">Mendenhall v. State</div><div class="ow-case-date">Mar 2026</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Ramos-Osario v. State</div><div class="ow-case-date">Apr 2025</div><div class="ow-case-outcome ow-reversed">Reversed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Quartier v. State</div><div class="ow-case-date">Apr 2025</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Cameron Banks v. State</div><div class="ow-case-date">Mar 2024</div><div class="ow-case-outcome ow-mixed">Affirmed / Rev'd / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name" style="color: var(--red);">Young v. State ★</div><div class="ow-case-date">May 2022</div><div class="ow-case-outcome ow-reversed" style="font-weight: 500;">MURDER — Reversed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Elston v. State</div><div class="ow-case-date">Sep 2022</div><div class="ow-case-outcome ow-mixed">Affirmed / Reversed in Part</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Angulo v. State</div><div class="ow-case-date">Jul 2022</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Galloway v. State</div><div class="ow-case-date">May 2022</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Blackburn v. State</div><div class="ow-case-date">Aug 2019</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">McMillan v. State</div><div class="ow-case-date">Feb 2018</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Hopson v. State</div><div class="ow-case-date">Feb 2018</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Darring v. State</div><div class="ow-case-date">May 2018</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Hill v. State</div><div class="ow-case-date">Jan 2018</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Fields v. State</div><div class="ow-case-date">Dec 2017</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+
+    <div class="ow-note">
+      <strong>Pattern:</strong> Zero disagreements across 14 criminal cases spanning 9 years (2017–2026). This is the strongest alignment signal on the panel. When Vaidik leans a direction, Altice has historically followed — every single time in the criminal context.
+    </div>
+  </div>
+
+  <!-- VAIDIK + BROWN TAB -->
+  <div class="ow-panel ow-hidden" id="ow-vb">
+    <div class="ow-stat-row">
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--brown);">6+</div>
+        <div class="ow-stat-label">Confirmed Cases</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--allen-green);">3</div>
+        <div class="ow-stat-label">Involved Reversal</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--gap-red);">0</div>
+        <div class="ow-stat-label">Disagreements</div>
+      </div>
+      <div class="ow-stat">
+        <div class="ow-stat-n" style="color: var(--gold);">1</div>
+        <div class="ow-stat-label">Over a Dissent</div>
+      </div>
+    </div>
+
+    <div class="ow-case-row" style="border-bottom: 2px solid var(--aged); padding-bottom: 6px; margin-bottom: 4px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">Case</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: center;">Date</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: right;">Outcome</div>
+    </div>
+    <div class="ow-case-row"><div class="ow-case-name">Desmond Banks v. State</div><div class="ow-case-date">Feb 2024</div><div class="ow-case-outcome ow-mixed">Affirmed / Rev'd / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Konkle v. State</div><div class="ow-case-date">Jan 2024</div><div class="ow-case-outcome ow-reversed">Reversed &amp; Remanded <span class="ow-dissent-flag">BRADFORD DISSENT</span></div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Owens v. State</div><div class="ow-case-date">Dec 2023</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Koziski v. State</div><div class="ow-case-date">Jun 2021</div><div class="ow-case-outcome ow-mixed">Affirmed / Rev'd / Remanded</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Utley v. State</div><div class="ow-case-date">Apr 2021</div><div class="ow-case-outcome ow-affirmed">Affirmed</div></div>
+    <div class="ow-case-row"><div class="ow-case-name">Hubbert v. State</div><div class="ow-case-date">Mar 2021</div><div class="ow-case-outcome ow-reversed">Reversed &amp; Remanded</div></div>
+
+    <div class="ow-note">
+      <strong>Pattern:</strong> Zero disagreements in the sampled cases. Notably, in <em>Konkle</em>, Vaidik and Brown reversed together over a dissent from Judge Bradford — meaning Brown was willing to reverse over opposition when she agreed with Vaidik's reasoning. This is a partial sample (6 of likely many more overlaps). Brown's 204 opinions and Vaidik's 250+ were not exhaustively cross-referenced.
+    </div>
+  </div>
+
+  </div><!-- /#overlap-widget -->
+  <script>
+  function owTab(id, btn) {
+    document.querySelectorAll('#overlap-widget .ow-panel').forEach(function(p){ p.classList.add('ow-hidden'); });
+    document.querySelectorAll('#overlap-widget .ow-tab').forEach(function(t){ t.classList.remove('ow-active'); });
+    document.getElementById(id).classList.remove('ow-hidden');
+    btn.classList.add('ow-active');
+  }
+  </script>
 
   <!-- ═══════════════════════════════════════════════════════
        PANEL DYNAMICS
