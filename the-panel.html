@@ -66,7 +66,7 @@
     background: var(--paper);
     color: var(--ink);
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 15px;
+    font-size: clamp(13px, 2vw, 15px);
     line-height: 1.65;
   }
 
@@ -87,7 +87,7 @@
   }
   .masthead-rule {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8px, 1.5vw, 10px);
     letter-spacing: 0.2em;
     color: #666;
     text-transform: uppercase;
@@ -107,12 +107,12 @@
   }
   .masthead-sub {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-size: clamp(9px, 1.8vw, 11px);
     color: #888;
     letter-spacing: 0.12em;
     margin-top: 14px;
     display: flex;
-    gap: 24px;
+    gap: clamp(12px, 3vw, 24px);
     flex-wrap: wrap;
   }
   .masthead-sub span { color: #bbb; }
@@ -128,9 +128,9 @@
   .intro-band {
     background: var(--warn-bg);
     border-left: 4px solid var(--gold);
-    padding: 20px 28px;
-    margin: 32px 0;
-    font-size: 14px;
+    padding: clamp(14px, 3vw, 20px) clamp(16px, 4vw, 28px);
+    margin: clamp(20px, 4vw, 32px) 0;
+    font-size: clamp(12px, 2vw, 14px);
     color: var(--warn);
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.6;
@@ -140,13 +140,13 @@
   /* SECTION LABEL */
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8.5px, 1.8vw, 10px);
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--muted);
     border-bottom: 1px solid var(--aged);
     padding-bottom: 8px;
-    margin: 48px 0 20px;
+    margin: clamp(28px, 6vw, 48px) 0 clamp(12px, 3vw, 20px);
     scroll-margin-top: 60px;
   }
 
@@ -219,7 +219,7 @@
   }
 
   .judge-col p {
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     line-height: 1.65;
     margin-bottom: 10px;
     color: #222;
@@ -241,13 +241,13 @@
   }
   .stat-cell .stat-n {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-size: clamp(20px, 4vw, 26px);
     font-weight: 700;
     line-height: 1;
   }
   .stat-cell .stat-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
+    font-size: clamp(7.5px, 1.5vw, 9px);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
@@ -268,26 +268,26 @@
   .opinion-card:last-child { margin-bottom: 0; }
   .opinion-name {
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
+    font-size: clamp(12px, 2.2vw, 14px);
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 4px;
   }
   .opinion-cite {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8.5px, 1.5vw, 10px);
     color: var(--muted);
     letter-spacing: 0.04em;
     margin-bottom: 8px;
   }
   .opinion-card p {
-    font-size: 13px;
+    font-size: clamp(11.5px, 2vw, 13px);
     line-height: 1.55;
     color: #333;
   }
   .opinion-outcome {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 9.5px;
+    font-size: clamp(8px, 1.5vw, 9.5px);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 2px 8px;
@@ -359,7 +359,7 @@
   .dynamics-block::before {
     content: attr(data-label);
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8.5px, 1.8vw, 10px);
     letter-spacing: 0.25em;
     background: var(--paper);
     padding: 0 8px;
@@ -370,7 +370,7 @@
     text-transform: uppercase;
   }
   .dynamics-block p {
-    font-size: 14.5px;
+    font-size: clamp(12.5px, 2.2vw, 14.5px);
     line-height: 1.7;
     color: #1a1a1a;
   }
@@ -423,14 +423,14 @@
   }
   .young-callout .yc-flag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8.5px, 1.8vw, 10px);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gap-red);
     margin-bottom: 8px;
   }
   .young-callout p {
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     line-height: 1.65;
     color: #333;
   }
@@ -444,7 +444,7 @@
   }
   .state-gaps .sg-flag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(8.5px, 1.8vw, 10px);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--warn);
@@ -1025,13 +1025,13 @@
     }
     #overlap-widget .ow-stat-n {
       font-family: 'Playfair Display', serif;
-      font-size: 28px;
+      font-size: clamp(22px, 4vw, 28px);
       font-weight: 700;
       line-height: 1;
     }
     #overlap-widget .ow-stat-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: clamp(7.5px, 1.5vw, 9px);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
@@ -1049,19 +1049,19 @@
     #overlap-widget .ow-case-row:last-child { border-bottom: none; }
     #overlap-widget .ow-case-name {
       font-family: 'Playfair Display', serif;
-      font-size: 13.5px;
+      font-size: clamp(11.5px, 2vw, 13.5px);
       font-weight: 700;
       line-height: 1.3;
     }
     #overlap-widget .ow-case-date {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: clamp(8.5px, 1.5vw, 10px);
       color: var(--muted);
       text-align: center;
     }
     #overlap-widget .ow-case-outcome {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: clamp(8.5px, 1.5vw, 10px);
       letter-spacing: 0.06em;
       text-align: right;
     }
@@ -1249,7 +1249,8 @@
     </div>
 
     <div class="ow-note">
-      <strong>Methodology:</strong> Cross-referenced from published criminal opinion lists on Indiana Appellate Decisions (public.courts.in.gov). All three lists exhaustively scanned: Altice (63 opinions, complete), Brown (107 opinions, complete), Vaidik (148 opinions, all 84 pages scanned). Every case where any two panel judges appeared together has been catalogued. Pre-2008 Vaidik opinions excluded because they predate Brown's appointment; pre-2012 opinions excluded for Altice overlaps.
+      <strong>Methodology:</strong> Cross-referenced from published criminal opinion lists on Indiana Appellate Decisions (public.courts.in.gov). All three lists exhaustively scanned: Altice (63 opinions), Brown (107 opinions), Vaidik (148 opinions). Every case where any two panel judges appeared together has been catalogued. Pre-2008 Vaidik opinions excluded because they predate Brown's appointment; pre-2012 opinions excluded for Altice overlaps.
+      <p style="margin-top: 12px; font-size: clamp(11px, 1.8vw, 12px);"><a href="https://raw.githubusercontent.com/alleyesondelphi/rickallen/main/criminal-opinions/judge-opinions-master.csv" style="color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red);">Download master data (CSV)</a> — All extracted opinions and panel compositions.</p>
     </div>
   </div>
 
