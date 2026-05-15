@@ -6,13 +6,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <!-- Required Info -->
-  <title>The Panel – Allen Appeal Judges</title>
-  <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <title>RA v. IN | The 3-Panel Appellate Judges | Vaidik · Brown · Altice</title>
+  <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana Court of Appeals judges assigned to 25A-CR-591.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-panel">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="The Panel | Allen Appeal Judges – Vaidik · Brown · Altice">
-  <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <meta property="og:title" content="RA v. IN | The 3-Panel Appellate Judges | Vaidik · Brown · Altice">
+  <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana Court of Appeals judges assigned to 25A-CR-591.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-panel">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-panel.png">
@@ -22,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Panel | Allen Appeal Judges – Vaidik · Brown · Altice">
-  <meta name="twitter:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
+  <meta name="twitter:title" content="RA v. IN | The 3-Panel Appellate Judges | Vaidik · Brown · Altice">
+  <meta name="twitter:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana Court of Appeals judges assigned to 25A-CR-591.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-panel.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
 
@@ -540,24 +540,61 @@
   /* MOBILE */
   @media (max-width: 700px) {
     .masthead { padding: 28px 20px 24px; }
-    .masthead-sub { gap: 12px; }
-    .masthead-sub span { font-size: 9px; }
+    .masthead h1 { font-size: 28px; }
+    .masthead-sub { gap: 10px; }
+    .masthead-sub span { font-size: 9px; letter-spacing: 0.08em; }
     .container { padding: 0 16px 48px; }
-    .intro-band { padding: 14px 16px; }
+    .intro-band { padding: 12px 14px; font-size: 12.5px; line-height: 1.5; }
+    .section-label { font-size: 9px; letter-spacing: 0.2em; margin: 32px 0 16px; scroll-margin-top: 60px; }
     .judge-body { grid-template-columns: 1fr; }
     .judge-col + .judge-col { border-left: none; border-top: 1px solid var(--aged); }
-    .judge-col { padding: 18px 16px; }
-    .judge-header { padding: 18px 16px; grid-template-columns: 1fr; gap: 8px; }
-    .judge-role-badge { width: fit-content; }
+    .judge-col { padding: 16px 14px; }
+    .judge-col p { font-size: 13px; line-height: 1.55; }
+    .judge-header { padding: 16px 14px; grid-template-columns: 1fr; gap: 6px; }
+    .judge-name { font-size: 22px; }
+    .judge-seat { font-size: 9px; }
+    .judge-role-badge { width: fit-content; font-size: 9px; }
+    .judge-col-label { font-size: 9px; letter-spacing: 0.15em; margin-bottom: 10px; }
     .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell { padding: 10px 8px; }
+    .stat-cell .stat-n { font-size: 22px; }
+    .stat-cell .stat-label { font-size: 8px; }
+    .opinion-card { padding: 12px 14px; }
+    .opinion-name { font-size: 13px; }
+    .opinion-cite { font-size: 9.5px; }
+    .opinion-card p { font-size: 12px; line-height: 1.5; }
+    .opinion-outcome { font-size: 9px; }
+    .judge-full-row { padding: 14px; }
+    .judge-quote { padding: 8px 14px; font-size: 13px; line-height: 1.5; }
+    .judge-quote-src { font-size: 9px; }
+    .relevance-tags { gap: 5px; }
+    .rel-tag { font-size: 9px; padding: 3px 7px; }
     .issue-assess { grid-template-columns: 1fr; }
-    .judge-full-row { padding: 16px; }
-    .dynamics-block { padding: 20px 18px; }
+    .ia-cell { padding: 14px 16px; }
+    .ia-cell .ia-val { font-size: 16px; }
+    .ia-cell .ia-desc { font-size: 11.5px; }
+    .ia-cell .ia-label { font-size: 9px; }
+    .dynamics-block { padding: 18px 16px; }
+    .dynamics-block p { font-size: 13px; line-height: 1.6; }
+    .young-callout { padding: 14px 16px; }
+    .young-callout .yc-flag { font-size: 9px; }
+    .young-callout p { font-size: 12.5px; line-height: 1.55; }
+    .state-gaps { padding: 14px 16px; }
+    .state-gaps .sg-flag { font-size: 9px; }
     .state-gaps ul { flex-direction: column; }
-    .oral-block { padding: 18px 16px; }
+    .state-gaps ul li { font-size: 10.5px; }
+    .oral-block { padding: 16px 14px; }
+    .oral-block .ob-label { font-size: 9px; }
+    .oral-block p { font-size: 12.5px; line-height: 1.55; }
     .filings-grid { grid-template-columns: 1fr; }
     .mobile-jump { display: flex; }
-    .section-label { scroll-margin-top: 60px; }
+    /* Research notes section */
+    .research-grid { grid-template-columns: 1fr !important; }
+    .research-grid p { font-size: 12px !important; line-height: 1.5 !important; }
+    /* Sources collapse */
+    details > div[style*="columns: 2"] { columns: 1 !important; }
+    details { padding: 12px 14px !important; }
+    details summary { font-size: 10px !important; }
   }
 
   html, body { overflow-x: hidden; max-width: 100%; }
@@ -610,8 +647,7 @@
   <h1>The Panel</h1>
   <div class="masthead-sub">
     <span>JUDGE PROFILES</span>
-    <span>CRIMINAL OPINION RECORDS</span>
-    <span>MAY 2026</span>
+    <span>CRIMINAL OPINION RULINGS</span>
     <span style="color:var(--gold);border:1px solid var(--gold);padding:2px 8px;">VAIDIK · BROWN · ALTICE</span>
   </div>
 </div>
@@ -619,10 +655,10 @@
 <div class="container">
 
   <div class="intro-band" style="background: #fff8e6; border-left: 4px solid var(--gold); padding: 16px 22px; margin-bottom: 14px;">
-    <strong>Who decides the Allen appeal:</strong> Three judges of the Indiana Court of Appeals — Nancy H. Vaidik, Elaine B. Brown, and Robert R. Altice, Jr. — will decide whether Richard Allen's murder conviction stands, gets reversed, or gets remanded for a new trial. Between them: 50+ years of combined appellate service, prosecution backgrounds, extensive trial court experience, and — critically — a track record that includes reversing a murder conviction together.
+    <strong>Who decides the Allen appeal:</strong> Three judges of the Indiana Court of Appeals — Nancy H. Vaidik, Elaine B. Brown, and Robert R. Altice, Jr. — will decide whether Richard Allen's murder conviction stands, gets reversed, or gets remanded for a new trial. Between them: 50+ years of combined appellate service, prosecution backgrounds, extensive trial court experience, and&mdash;critically&mdash;a track record that includes reversing a murder conviction together.
   </div>
   <div class="intro-band">
-    <strong>How to read this page:</strong> Each judge profile includes background, judicial philosophy, key criminal opinions, and an assessment of how their record maps onto Allen's three appellate issues (search warrant, involuntary confessions, exclusion of defense evidence). The Panel Dynamics section at the bottom synthesizes how the three judges are likely to interact on this case. <strong>This is analytical, not predictive</strong> — appellate outcomes depend on the record and the law, not personality profiles.
+    <strong>A look at the judges:</strong> Each judge profile includes background, judicial philosophy, key criminal opinions, and an assessment of how their record maps onto Allen's three appellate issues (search warrant, involuntary confessions, exclusion of defense evidence). The Panel Dynamics section at the bottom synthesizes how the three judges are likely to interact on this case. <strong>This is analytical, not predictive</strong> — appellate outcomes depend on the record and the law, not personality profiles.
   </div>
 
   <!-- ═══════════════════════════════════════════════════════
@@ -1085,10 +1121,46 @@
       color: #333;
     }
     @media (max-width: 700px) {
+      #overlap-widget .ow-hdr {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 12px 16px;
+      }
+      #overlap-widget .ow-hdr-label,
+      #overlap-widget .ow-hdr-count { white-space: normal; word-break: break-word; }
+      #overlap-widget .ow-tabs { flex-wrap: wrap; }
+      #overlap-widget .ow-tab {
+        padding: 8px 12px;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        flex: 1 1 auto;
+        text-align: center;
+        min-width: 0;
+      }
+      #overlap-widget .ow-panel { padding: 14px 16px; }
       #overlap-widget .ow-stat-row { grid-template-columns: 1fr 1fr; }
-      #overlap-widget .ow-case-row { grid-template-columns: 1fr; gap: 4px; }
-      #overlap-widget .ow-case-date, #overlap-widget .ow-case-outcome { text-align: left; }
-      #overlap-widget .ow-panel { padding: 16px; }
+      #overlap-widget .ow-stat { padding: 10px 8px; }
+      #overlap-widget .ow-stat-n { font-size: 22px; }
+      #overlap-widget .ow-stat-label { font-size: 8px; letter-spacing: 0.06em; }
+      #overlap-widget .ow-case-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+        padding: 8px 0;
+      }
+      #overlap-widget .ow-case-name { font-size: 12.5px; }
+      #overlap-widget .ow-case-date,
+      #overlap-widget .ow-case-outcome { text-align: left; font-size: 9.5px; }
+      #overlap-widget .ow-note {
+        padding: 10px 12px;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+      #overlap-widget .ow-key-case { padding: 12px 14px; }
+      #overlap-widget .ow-key-case p { font-size: 12px; line-height: 1.5; }
+      #overlap-widget .ow-key-flag { font-size: 8.5px; }
+      #overlap-widget .ow-agreement-bar { height: 20px; }
+      .ow-dissent-flag { font-size: 8px; padding: 1px 4px; margin-left: 4px; }
+      #overlap-widget .ow-case-row[style*="border-bottom: 2px"] { display: none; }
     }
   </style>
 
@@ -1467,7 +1539,7 @@
 
     <div style="margin-top: 20px; background: #fafaf9; border: 1px solid var(--aged); padding: 20px 24px;">
       <p style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px;">Still needed for complete panel analysis</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px; line-height: 1.55; color: #333;">
+      <div class="research-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px; line-height: 1.55; color: #333;">
         <div>
           <p style="margin-bottom: 8px;"><strong>Deeper opinion mining:</strong> Google Scholar and CourtListener for each judge — opinions involving cumulative error doctrine, <em>Franks v. Delaware</em> challenges, involuntary confessions, third-party suspect evidence, prosecutorial misconduct.</p>
           <p style="margin-bottom: 8px;"><strong>Split decisions and dissents:</strong> Dissents reveal judicial philosophy more than majority opinions.</p>
