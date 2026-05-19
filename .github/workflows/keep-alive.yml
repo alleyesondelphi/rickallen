@@ -1,0 +1,23 @@
+name: Keep Alive
+
+on:
+  schedule:
+    - cron: '0 12 */5 * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping search API
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://allen-embed-api-584866993732.us-central1.run.app/search" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"test","top_k":1}' \
+            --max-time 60)
+
+          echo "Response status: $STATUS"
+          if [ "$STATUS" -ne 200 ]; then
+            echo "::warning::Search API returned $STATUS"
+          fi
