@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Delphi Timeline</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Required Info -->
+  <title>Timeline | IN v. RA</title>
+  <meta name="description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/timeline/witnesses">
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Delphi Murders | Investigation">
+  <meta property="og:description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/timeline/witnesses">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/timeline/img/witnesses.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Delphi Murders | Investigation">
+  <meta name="twitter:description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/timeline/img/witnesses.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+  <!-- Favicons -->
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
+  <!-- JS -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; height: 100dvh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0a0a0a; overflow: hidden; display: flex; flex-direction: column; }
-
-    #map-wrap { position: relative; flex: 1; min-height: 0; }
-    #map { position: absolute; inset: 0; }
-
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+    }
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      height: 100dvh; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
+      background: #0a0a0a; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    #map-wrap { 
+      position: relative; 
+      flex: 1; 
+      min-height: 0; 
+    }
+    #map { 
+      position: absolute; 
+      inset: 0; 
+    }
     #hud {
       flex-shrink: 0;
       background: rgba(10,10,10,0.92);
@@ -23,9 +68,15 @@
       flex-direction: column;
       gap: 7px;
     }
-
-    #witness-tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    #witness-tabs::-webkit-scrollbar { display: none; }
+    #witness-tabs { 
+      display: flex; 
+      gap: 6px; 
+      overflow-x: auto; 
+      scrollbar-width: none; 
+      -webkit-overflow-scrolling: touch; }
+    #witness-tabs::-webkit-scrollbar { 
+      display: none; 
+    }
     .tab {
       padding: 5px 14px;
       border-radius: 16px;
@@ -38,7 +89,10 @@
       transition: all 0.15s;
       white-space: nowrap;
     }
-    .tab.active { border-color: transparent; color: #000; }
+    .tab.active { 
+      border-color: transparent; 
+      color: #000; 
+    }
     .tab[data-witness="betsy"].active  { background: #00e600; }
     .tab[data-witness="rick"].active   { background: #00e5ff; }
     .tab[data-witness="girls"].active  { background: #ff9900; }
@@ -54,7 +108,6 @@
       display: none;
       padding: 2px 0;
     }
-
     /* Pill + time row */
     #pill-row {
       display: none;
@@ -83,12 +136,15 @@
       text-overflow: ellipsis;
     }
     #event-pill .dot {
-      width: 9px; height: 9px;
+      width: 9px; 
+      height: 9px;
       border-radius: 50%;
       flex-shrink: 0;
     }
-
-    #slider-row { display: flex; align-items: center; gap: 10px; }
+    #slider-row { 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; }
     #timeline-slider {
       -webkit-appearance: none;
       appearance: none;
@@ -101,32 +157,39 @@
     }
     #timeline-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 18px; height: 18px;
+      width: 18px; 
+      height: 18px;
       border-radius: 50%;
       background: #fff;
       cursor: pointer;
       box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
     }
     #timeline-slider::-moz-range-thumb {
-      width: 18px; height: 18px;
+      width: 18px; 
+      height: 18px;
       border-radius: 50%;
       background: #fff;
       border: none;
       cursor: pointer;
     }
     #play-btn {
-      width: 36px; height: 36px;
+      width: 36px; 
+      height: 36px;
       border-radius: 50%;
       border: none;
       background: rgba(255,255,255,0.12);
       color: #fff;
       font-size: 14px;
       cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
       flex-shrink: 0;
       transition: background 0.15s;
     }
-    #play-btn:hover { background: rgba(255,255,255,0.22); }
+    #play-btn:hover { 
+      background: rgba(255,255,255,0.22); 
+    }
     #step-counter {
       font-size: 11px;
       color: rgba(255,255,255,0.35);
@@ -135,17 +198,19 @@
       min-width: 48px;
       text-align: right;
     }
-
     #legend {
       position: absolute;
-      top: 12px; left: 12px;
+      top: 12px; 
+      left: 12px;
       z-index: 1;
       display: flex;
       flex-direction: column;
       gap: 5px;
     }
     .legend-item {
-      display: flex; align-items: center; gap: 7px;
+      display: flex; 
+      align-items: center; 
+      gap: 7px;
       background: rgba(10,10,10,0.75);
       backdrop-filter: blur(6px);
       border-radius: 12px;
@@ -154,8 +219,11 @@
       font-weight: 600;
       color: #fff;
     }
-    .legend-swatch { width: 22px; height: 3px; border-radius: 2px; }
-
+    .legend-swatch { 
+      width: 22px; 
+      height: 3px; 
+      border-radius: 2px; 
+    }
     .mapboxgl-popup-content {
       background: rgba(10,10,10,0.88);
       color: #fff;
@@ -165,7 +233,9 @@
       font-weight: 600;
       box-shadow: 0 2px 12px rgba(0,0,0,0.5);
     }
-    .mapboxgl-popup-tip { border-top-color: rgba(10,10,10,0.88) !important; }
+    .mapboxgl-popup-tip { 
+      border-top-color: rgba(10,10,10,0.88) !important; 
+    }
   </style>
 </head>
 <body>
