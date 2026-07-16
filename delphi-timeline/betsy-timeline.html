@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delphi Timeline</title>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100dvh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0a0a0a; overflow: hidden; display: flex; flex-direction: column; }
+
+    #map-wrap { position: relative; flex: 1; min-height: 0; }
+    #map { position: absolute; inset: 0; }
+
+    #hud {
+      flex-shrink: 0;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 16px max(20px, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    #witness-tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    #witness-tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      padding: 5px 14px;
+      border-radius: 16px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .tab.active { border-color: transparent; color: #000; }
+    .tab[data-witness="betsy"].active  { background: #00e600; }
+    .tab[data-witness="rick"].active   { background: #00e5ff; }
+    .tab[data-witness="girls"].active  { background: #ff9900; }
+    .tab[data-witness="abby"].active   { background: #ff3399; }
+    .tab[data-witness="all"].active    { background: #e0e0e0; }
+
+    #clock-display {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      font-family: ui-monospace, "SF Mono", "Menlo", monospace;
+      letter-spacing: 3px;
+      display: none;
+      padding: 2px 0;
+    }
+
+    /* Pill + time row */
+    #pill-row {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+    #pill-time {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.4);
+      padding-left: 2px;
+    }
+    #event-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      width: fit-content;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #event-pill .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    #slider-row { display: flex; align-items: center; gap: 10px; }
+    #timeline-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.15);
+      outline: none;
+      cursor: pointer;
+    }
+    #timeline-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+    }
+    #timeline-slider::-moz-range-thumb {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #play-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    #play-btn:hover { background: rgba(255,255,255,0.22); }
+    #step-counter {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 48px;
+      text-align: right;
+    }
+
+    #legend {
+      position: absolute;
+      top: 12px; left: 12px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(10,10,10,0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .legend-swatch { width: 22px; height: 3px; border-radius: 2px; }
+
+    .mapboxgl-popup-content {
+      background: rgba(10,10,10,0.88);
+      color: #fff;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    .mapboxgl-popup-tip { border-top-color: rgba(10,10,10,0.88) !important; }
+  </style>
+</head>
+<body>
+
+<div id="map-wrap">
+<div id="map"></div>
+
+<div id="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:#00e600"></div>Betsy — L1</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#9b00f5"></div>Betsy — L2</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#f5f000"></div>Betsy — L3</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#00e5ff"></div>Rick Allen</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#ff9900"></div>4 Girls</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#ff3399"></div>Abby &amp; Libby</div>
+</div>
+
+</div><!-- #map-wrap -->
+
+<div id="hud">
+  <div id="witness-tabs">
+    <button class="tab active" data-witness="betsy">Betsy Blair</button>
+    <button class="tab" data-witness="rick">Rick Allen</button>
+    <button class="tab" data-witness="girls">4 Girls</button>
+    <button class="tab" data-witness="abby">Abby &amp; Libby</button>
+    <button class="tab" data-witness="all">All Witnesses</button>
+  </div>
+  <div id="pill-row">
+    <div id="clock-display"></div>
+    <div id="pill-time"></div>
+    <div id="event-pill"><span class="dot"></span><span id="pill-text"></span></div>
+  </div>
+  <div id="slider-row">
+    <button id="play-btn">&#9654;</button>
+    <input type="range" id="timeline-slider" min="0" max="25" value="0" step="1" />
+    <span id="step-counter">— / 25</span>
+  </div>
+</div>
+
+<script>
+mapboxgl.accessToken = 'MAPBOX_TOKEN_HERE';
+
+const WITNESSES = {
+  betsy: { segments: [{"name":"(1) HHS: vehicle eastbound, arrives","label":"HHS arrives 12:02","color":"#ffffff","coords":[[-86.649592,40.593188],[-86.648959,40.592975],[-86.648196,40.592758],[-86.646833,40.592568],[-86.64685,40.59251]],"time":"12:02 PM"},{"name":"(2) Mears \u2192 split ","label":"L1: Mears\u2192split","color":"#00e600","coords":[[-86.64685,40.59251],[-86.646969,40.592168],[-86.647156,40.591878]],"time":"12:04\u201312:06 PM"},{"name":"(3) split \u2192 MHB ","label":"L1: split\u2192MHB","color":"#00e600","coords":[[-86.647156,40.591878],[-86.646857,40.591659],[-86.646426,40.591329],[-86.645808,40.590811],[-86.645125,40.59026],[-86.644882,40.590099],[-86.644574,40.589901],[-86.644192,40.589703],[-86.643546,40.589398],[-86.643546,40.589398]],"time":"12:06\u201312:10 PM"},{"name":"(4) MHB \u2192 split","label":"L1: MHB\u2192split","color":"#00e600","coords":[[-86.643546,40.589398],[-86.644192,40.589703],[-86.644573,40.589901],[-86.644882,40.590099],[-86.645125,40.59026],[-86.645808,40.590812],[-86.646428,40.591331],[-86.646856,40.591659],[-86.647156,40.591878]],"time":"12:10\u201312:14 PM"},{"name":"(5) split \u2192 501 half way","label":"L1: split\u2192501","color":"#00e600","coords":[[-86.647156,40.591878],[-86.647176,40.591815],[-86.647177,40.591748],[-86.647156,40.591684],[-86.647175,40.591626]],"time":"12:14\u201312:19 PM"},{"name":"(6) 501 half way \u2192 split","label":"L1: 501\u2192split","color":"#00e600","coords":[[-86.647175,40.591626],[-86.647156,40.591684],[-86.647177,40.591748],[-86.647176,40.591815],[-86.647156,40.591878]],"time":"12:19\u201312:24 PM"},{"name":"(7) split \u2192 FB","label":"L1: split\u2192FB","color":"#00e600","coords":[[-86.647157,40.591878],[-86.64729,40.591981],[-86.647771,40.592229],[-86.648089,40.592356],[-86.64861,40.592535],[-86.649183,40.592686],[-86.650061,40.59282],[-86.650808,40.592903],[-86.651315,40.592964],[-86.65175,40.593019],[-86.652098,40.593084],[-86.652445,40.59317],[-86.653024,40.593351],[-86.653456,40.593501],[-86.65368,40.593581],[-86.653789,40.593629],[-86.653957,40.593691],[-86.654038,40.593737],[-86.654083,40.593795],[-86.654103,40.593858],[-86.654118,40.593896]],"time":"12:24\u201312:32 PM"},{"name":"(8) FB \u2192 split ","label":"L1: FB\u2192split","color":"#00e600","coords":[[-86.654118,40.593896],[-86.654103,40.593858],[-86.654083,40.593795],[-86.654038,40.593737],[-86.653957,40.593691],[-86.653879,40.593662],[-86.653789,40.593628],[-86.65368,40.593581],[-86.653456,40.593501],[-86.653024,40.593352],[-86.652446,40.59317],[-86.652098,40.593084],[-86.65175,40.593019],[-86.651315,40.592964],[-86.650808,40.592903],[-86.650061,40.59282],[-86.649183,40.592686],[-86.64861,40.592535],[-86.648089,40.592356],[-86.647771,40.592228],[-86.64729,40.591981],[-86.647156,40.591878]],"time":"12:32\u201312:39 PM"},{"name":"(9) split \u2192 MHB ","label":"L2: split\u2192MHB","color":"#9b00f5","coords":[[-86.647156,40.591878],[-86.646857,40.591659],[-86.646426,40.591329],[-86.645808,40.590811],[-86.645125,40.59026],[-86.644882,40.590099],[-86.644574,40.589901],[-86.644192,40.589703],[-86.643546,40.589398],[-86.643546,40.589398]],"time":"12:39\u201312:43 PM"},{"name":"(10) MHB \u2192 split","label":"L2: MHB\u2192split","color":"#9b00f5","coords":[[-86.643546,40.589398],[-86.644192,40.589703],[-86.644573,40.589901],[-86.644882,40.590099],[-86.645125,40.59026],[-86.645808,40.590812],[-86.646428,40.591331],[-86.646856,40.591659],[-86.647156,40.591878]],"time":"12:43\u201312:47 PM"},{"name":"(11) split \u2192 501 half way","label":"L2: split\u2192501","color":"#9b00f5","coords":[[-86.647156,40.591878],[-86.647176,40.591815],[-86.647177,40.591748],[-86.647156,40.591684],[-86.647175,40.591626]],"time":"12:47\u201312:52 PM"},{"name":"(12) 501 half way \u2192 split","label":"L2: 501\u2192split","color":"#9b00f5","coords":[[-86.647175,40.591626],[-86.647156,40.591684],[-86.647177,40.591748],[-86.647176,40.591815],[-86.647156,40.591878]],"time":"12:52\u201312:57 PM"},{"name":"(13) split \u2192 FB","label":"L2: split\u2192FB","color":"#9b00f5","coords":[[-86.647157,40.591878],[-86.64729,40.591981],[-86.647771,40.592229],[-86.648089,40.592356],[-86.64861,40.592535],[-86.649183,40.592686],[-86.650061,40.59282],[-86.650808,40.592903],[-86.651315,40.592964],[-86.65175,40.593019],[-86.652098,40.593084],[-86.652445,40.59317],[-86.653024,40.593351],[-86.653456,40.593501],[-86.65368,40.593581],[-86.653789,40.593629],[-86.653957,40.593691],[-86.654038,40.593737],[-86.654083,40.593795],[-86.654103,40.593858],[-86.654118,40.593896]],"time":"12:57\u20131:05 PM"},{"name":"(14) FB \u2192 split ","label":"L2: FB\u2192split","color":"#9b00f5","coords":[[-86.654118,40.593896],[-86.654103,40.593858],[-86.654083,40.593795],[-86.654038,40.593737],[-86.653957,40.593691],[-86.653879,40.593662],[-86.653789,40.593628],[-86.65368,40.593581],[-86.653456,40.593501],[-86.653024,40.593352],[-86.652446,40.59317],[-86.652098,40.593084],[-86.65175,40.593019],[-86.651315,40.592964],[-86.650808,40.592903],[-86.650061,40.59282],[-86.649183,40.592686],[-86.64861,40.592535],[-86.648089,40.592356],[-86.647771,40.592228],[-86.64729,40.591981],[-86.647156,40.591878]],"time":"1:05\u20131:13 PM"},{"name":"(15) split \u2192 Mears","label":"L2: split\u2192Mears","color":"#9b00f5","coords":[[-86.647156,40.591878],[-86.647063,40.592023],[-86.646969,40.592168],[-86.64685,40.592511]],"time":"1:13\u20131:15 PM"},{"name":"(16) HHS: vehicle westbound, departs","label":"HHS departs 1:15","color":"#ffffff","coords":[[-86.64685,40.592511],[-86.646833,40.592568],[-86.648197,40.592758],[-86.648961,40.592976],[-86.649593,40.593188]],"time":"1:15 PM"},{"name":"(17) HHS: vehicle eastbound, arrives","label":"HHS arrives 1:46","color":"#ffffff","coords":[[-86.649592,40.593188],[-86.648959,40.592975],[-86.648196,40.592758],[-86.646833,40.592568],[-86.64685,40.59251]],"time":"1:46 PM"},{"name":"(18) Mears \u2192 split ","label":"L3: Mears\u2192split","color":"#f5f000","coords":[[-86.64685,40.59251],[-86.646969,40.592168],[-86.647156,40.591878]],"time":"1:47\u20131:48 PM"},{"name":"(19) split \u2192 MHB ","label":"L3: split\u2192MHB","color":"#f5f000","coords":[[-86.647156,40.591878],[-86.646857,40.591659],[-86.646426,40.591329],[-86.645808,40.590811],[-86.645125,40.59026],[-86.644882,40.590099],[-86.644574,40.589901],[-86.644192,40.589703],[-86.643546,40.589398],[-86.643546,40.589398]],"time":"1:48\u20131:53 PM"},{"name":"(20) MHB \u2192 split","label":"L3: MHB\u2192split","color":"#f5f000","coords":[[-86.643546,40.589398],[-86.644192,40.589703],[-86.644573,40.589901],[-86.644882,40.590099],[-86.645125,40.59026],[-86.645808,40.590812],[-86.646428,40.591331],[-86.646856,40.591659],[-86.647156,40.591878]],"time":"1:53\u20131:58 PM"},{"name":"(21) split \u2192 501 half way","label":"L3: split\u2192501","color":"#f5f000","coords":[[-86.647156,40.591878],[-86.647176,40.591815],[-86.647177,40.591748],[-86.647156,40.591684],[-86.647175,40.591626]],"time":"1:58\u20132:03 PM"},{"name":"(22) 501 half way \u2192 split","label":"L3: 501\u2192split","color":"#f5f000","coords":[[-86.647175,40.591626],[-86.647156,40.591684],[-86.647177,40.591748],[-86.647176,40.591815],[-86.647156,40.591878]],"time":"2:03\u20132:08 PM"},{"name":"(23) split \u2192 FB","label":"L3: split\u2192FB","color":"#f5f000","coords":[[-86.647157,40.591878],[-86.64729,40.591981],[-86.647771,40.592229],[-86.648089,40.592356],[-86.64861,40.592535],[-86.649183,40.592686],[-86.650061,40.59282],[-86.650808,40.592903],[-86.651315,40.592964],[-86.65175,40.593019],[-86.652098,40.593084],[-86.652445,40.59317],[-86.653024,40.593351],[-86.653456,40.593501],[-86.65368,40.593581],[-86.653789,40.593629],[-86.653957,40.593691],[-86.654038,40.593737],[-86.654083,40.593795],[-86.654103,40.593858],[-86.654118,40.593896]],"time":"2:08\u20132:13 PM"},{"name":"(24) FB \u2192 split ","label":"L3: FB\u2192split","color":"#f5f000","coords":[[-86.654118,40.593896],[-86.654103,40.593858],[-86.654083,40.593795],[-86.654038,40.593737],[-86.653957,40.593691],[-86.653879,40.593662],[-86.653789,40.593628],[-86.65368,40.593581],[-86.653456,40.593501],[-86.653024,40.593352],[-86.652446,40.59317],[-86.652098,40.593084],[-86.65175,40.593019],[-86.651315,40.592964],[-86.650808,40.592903],[-86.650061,40.59282],[-86.649183,40.592686],[-86.64861,40.592535],[-86.648089,40.592356],[-86.647771,40.592228],[-86.64729,40.591981],[-86.647156,40.591878]],"time":"2:13\u20132:18 PM"},{"name":"(25) split \u2192 Mears","label":"L3: split\u2192Mears","color":"#f5f000","coords":[[-86.647156,40.591878],[-86.647063,40.592023],[-86.646969,40.592168],[-86.64685,40.592511]],"time":"2:18 PM"},{"name":"(26) HHS: vehicle westbound, departs","label":"HHS departs 2:18","color":"#ffffff","coords":[[-86.64685,40.592511],[-86.646833,40.592568],[-86.648197,40.592758],[-86.648961,40.592976],[-86.649593,40.593188]],"time":"2:18:59 PM"}], step: 0 },
+  abby:  { segments: [{"name":"(1) Mears → trail split","label":"Mears→trail split","color":"#ff3399","coords":[[-86.64685,40.592511],[-86.646969,40.592168],[-86.647065,40.591798]],"time":"1:47–1:49 PM"},{"name":"(2) trail split → MHB","label":"trail split→MHB","color":"#ff3399","coords":[[-86.647065,40.591798],[-86.646856,40.591659],[-86.646427,40.591331],[-86.645808,40.590811],[-86.645125,40.59026],[-86.644882,40.590099],[-86.644574,40.589901],[-86.644192,40.589703],[-86.643546,40.589398],[-86.643226,40.589252]],"time":"1:49–1:55 PM"},{"name":"(3) MHB → Platform 2","label":"MHB→Platform 2","color":"#ff3399","coords":[[-86.643226,40.589252],[-86.642616,40.588974],[-86.642616,40.588974]],"time":"1:55–2:05 PM"},{"name":"(4) 📷 Snapchat, Platform 2","label":"📷 Snapchat @ Platform 2","color":"#ff99cc","coords":[[-86.642616,40.588973],[-86.64239,40.588864]],"time":"2:05 PM"},{"name":"(5) Platform 2 → Platform 3","label":"Platform 2→Platform 3","color":"#ff3399","coords":[[-86.642391,40.588862],[-86.64219,40.588753]],"time":"2:05–2:07 PM"},{"name":"(6) 📷 Snapchat, Platform 3","label":"📷 Snapchat @ Platform 3","color":"#ff99cc","coords":[[-86.64219,40.588753],[-86.642204,40.588741]],"time":"2:07 PM"},{"name":"(7) Platform 3 → end of MHB","label":"Platform 3→end of MHB","color":"#ff3399","coords":[[-86.642204,40.588741],[-86.64219,40.588753],[-86.641735,40.588556],[-86.641306,40.58831],[-86.640833,40.58812],[-86.640698,40.588068]],"time":"2:07–2:13 PM"},{"name":"(8) 🎥 cell phone video","label":"🎥 video, end of MHB","color":"#ff99cc","coords":[[-86.640698,40.588068],[-86.640585,40.588025]],"time":"2:13–2:14 PM"},{"name":"(9) end of MHB → down the hill","label":"MHB→down the hill","color":"#ff3399","coords":[[-86.640585,40.588025],[-86.640554,40.588053],[-86.640534,40.588071],[-86.640518,40.588089],[-86.640501,40.588107],[-86.640529,40.588111],[-86.640579,40.588116],[-86.640638,40.588112],[-86.640669,40.588104],[-86.640696,40.588101],[-86.640736,40.588111],[-86.640777,40.588123],[-86.640792,40.588149]],"time":"2:14–2:20 PM"},{"name":"(10) down the hill → creek","label":"down hill→creek","color":"#ff3399","coords":[[-86.640792,40.58815],[-86.639345,40.588564]],"time":"2:20–2:26 PM"},{"name":"(11) creek → Rawn's land","label":"creek→Rawn's land","color":"#ff3399","coords":[[-86.639346,40.588564],[-86.639806,40.58927]],"time":"2:26–2:32 PM"}], step: 0 },
+  girls: { segments: [{"name":"(1) Delphi → Old SR 25","label":"Delphi→Old SR 25","color":"#ff9900","coords":[[-86.657195,40.594684],[-86.656901,40.594614],[-86.65668,40.594575]],"time":"12:20–12:22 PM"},{"name":"(2) Old SR 25 → FB","label":"Old SR 25→FB","color":"#ff9900","coords":[[-86.65668,40.594575],[-86.656543,40.594544],[-86.656297,40.594492],[-86.655721,40.594337],[-86.655409,40.59425],[-86.655122,40.594168]],"time":"12:22–12:25 PM"},{"name":"(3) Bre Snapchat, FB","label":"📷 Snapchat @ FB","color":"#ffff00","coords":[[-86.655122,40.594168],[-86.654751,40.594068]],"time":"12:25 PM"},{"name":"(4) FB → trail split","label":"FB→trail split","color":"#ff9900","coords":[[-86.654751,40.594068],[-86.654496,40.594007],[-86.654224,40.593935],[-86.654119,40.593896],[-86.654103,40.593858],[-86.654083,40.593795],[-86.654038,40.593737],[-86.653957,40.593691],[-86.653883,40.593657],[-86.65368,40.593581],[-86.653456,40.593501],[-86.653024,40.593351],[-86.652446,40.593171],[-86.652098,40.593084],[-86.65175,40.593019],[-86.651315,40.592964],[-86.650808,40.592903],[-86.650061,40.59282],[-86.649183,40.592686],[-86.648609,40.592535],[-86.648089,40.592356],[-86.647771,40.592229],[-86.64729,40.591981]],"time":"12:25–12:35 PM"},{"name":"(5) trail split → MHB","label":"trail split→MHB","color":"#ff9900","coords":[[-86.64729,40.591981],[-86.647156,40.591878],[-86.646428,40.591331],[-86.645807,40.590812],[-86.645125,40.59026],[-86.644883,40.590099],[-86.644573,40.589901],[-86.644192,40.589703],[-86.643546,40.589398],[-86.643226,40.589252]],"time":"12:35–12:43 PM"},{"name":"(6) Bre Snapchat, MHB","label":"📷 Snapchat @ MHB","color":"#ffff00","coords":[[-86.643226,40.589252],[-86.643168,40.589225]],"time":"12:43 PM"},{"name":"(7) MHB → creek","label":"MHB→creek","color":"#ff9900","coords":[[-86.643168,40.589225],[-86.643103,40.589129]],"time":"12:43–12:58 PM"},{"name":"(8) creek → MHB","label":"creek→MHB","color":"#ff9900","coords":[[-86.643103,40.589129],[-86.643226,40.589252]],"time":"12:58–1:13 PM"},{"name":"(9) MHB → trail split ","label":"MHB→trail split","color":"#ff9900","coords":[[-86.643226,40.589252],[-86.643546,40.589398],[-86.644193,40.589703],[-86.644573,40.589901],[-86.644882,40.590099],[-86.645125,40.59026],[-86.645808,40.590812],[-86.646427,40.591331],[-86.646856,40.591659],[-86.647156,40.591878]],"time":"1:13–1:19 PM"},{"name":"(10) trail split → bench","label":"trail split→bench","color":"#ff9900","coords":[[-86.647156,40.591878],[-86.64729,40.591981],[-86.64777,40.592229],[-86.648089,40.592356],[-86.648609,40.592534],[-86.649183,40.592686],[-86.649178,40.592702]],"time":"1:19–1:26 PM"},{"name":"(11) Bre Snapchat, bench","label":"📷 Snapchat @ bench","color":"#ffff00","coords":[[-86.649178,40.592702],[-86.649183,40.592686]],"time":"1:26 PM"},{"name":"(12) bench → FB","label":"bench→FB","color":"#ff9900","coords":[[-86.649183,40.592686],[-86.650061,40.59282],[-86.650808,40.592903],[-86.651314,40.592964],[-86.65175,40.593019],[-86.652098,40.593084],[-86.652446,40.59317],[-86.653024,40.593351],[-86.653456,40.5935],[-86.65368,40.593581],[-86.653883,40.593657],[-86.653957,40.593691],[-86.654038,40.593737],[-86.654083,40.593796],[-86.654103,40.593858],[-86.654118,40.593896]],"time":"1:26–1:30 PM"},{"name":"(13) FB → Old SR 25","label":"FB→Old SR 25","color":"#ff9900","coords":[[-86.654118,40.593896],[-86.654224,40.593935],[-86.654496,40.594007],[-86.654751,40.594068],[-86.655122,40.594168],[-86.655409,40.594249],[-86.65572,40.594337],[-86.656297,40.594492],[-86.656543,40.594544],[-86.656679,40.594575]],"time":"1:30–1:33 PM"},{"name":"(14) Old SR 25 → Delphi","label":"Old SR 25→Delphi","color":"#ff9900","coords":[[-86.65668,40.594575],[-86.656901,40.594614],[-86.657195,40.594684]],"time":"1:33–1:35 PM"}], step: 0 },
+  rick:  { segments: [{"name":"(1) Old SR 25 \u2192 FB","label":"Old SR 25\u2192FB","color":"#00e5ff","coords":[[-86.657027,40.59454],[-86.656965,40.594576],[-86.656901,40.594614],[-86.656679,40.594575],[-86.656543,40.594543],[-86.656297,40.594492],[-86.65572,40.594337],[-86.655409,40.594249],[-86.655122,40.594168]],"time":"12:00\u201312:03 PM"},{"name":"(2) FB \u2192 trail split ","label":"FB\u2192trail split","color":"#00e5ff","coords":[[-86.655122,40.594168],[-86.654751,40.594068],[-86.654496,40.594007],[-86.654402,40.593984],[-86.654224,40.593935],[-86.654118,40.593896],[-86.654103,40.593858],[-86.654083,40.593796],[-86.654038,40.593737],[-86.653957,40.593691],[-86.653883,40.593657],[-86.65368,40.593581],[-86.653456,40.593501],[-86.653024,40.593352],[-86.652445,40.59317],[-86.652098,40.593084],[-86.65175,40.59302],[-86.651315,40.592964],[-86.650809,40.592904],[-86.650061,40.59282],[-86.649183,40.592686],[-86.64861,40.592535],[-86.648089,40.592356],[-86.647771,40.592229],[-86.64729,40.591981]],"time":"12:03\u201312:13 PM"},{"name":"(3) trail split \u2192 MHB","label":"trail split\u2192MHB","color":"#00e5ff","coords":[[-86.64729,40.591981],[-86.647156,40.591878],[-86.647065,40.591797],[-86.646857,40.591659],[-86.646428,40.591331],[-86.645808,40.590812],[-86.645125,40.59026],[-86.644882,40.590099],[-86.644574,40.589901],[-86.644193,40.589703],[-86.643547,40.589398],[-86.643226,40.589252],[-86.643059,40.589155]],"time":"12:13\u201312:19 PM"},{"name":"(4) MHB \u2192 Platform 1","label":"MHB\u2192Platform 1","color":"#00e5ff","coords":[[-86.643059,40.589155],[-86.643103,40.589129]],"time":"12:19\u201312:23 PM"},{"name":"(5) Platform 1 \u2192 MHB ","label":"Platform 1\u2192MHB","color":"#00e5ff","coords":[[-86.643103,40.589129],[-86.643059,40.589155]],"time":"12:23\u201312:27 PM"},{"name":"(6) MHB \u2192 trail split","label":"MHB\u2192trail split","color":"#00e5ff","coords":[[-86.643059,40.589155],[-86.643226,40.589252],[-86.643546,40.589398],[-86.644192,40.589703],[-86.644573,40.589901],[-86.644882,40.590099],[-86.645125,40.59026],[-86.645808,40.590812],[-86.646427,40.591331],[-86.646857,40.591659],[-86.647065,40.591798],[-86.647156,40.591878]],"time":"12:27\u201312:33 PM"},{"name":"(7) trail split \u2192 Overlook bench","label":"trail split\u2192Overlook bench","color":"#00e5ff","coords":[[-86.647156,40.591878],[-86.647235,40.591867]],"time":"12:33\u201312:39 PM"},{"name":"(8) Overlook bench \u2192 FB","label":"Overlook bench\u2192FB","color":"#00e5ff","coords":[[-86.647235,40.591867],[-86.647156,40.591878],[-86.64729,40.591981],[-86.647771,40.592229],[-86.648089,40.592356],[-86.64861,40.592535],[-86.649183,40.592686],[-86.650061,40.59282],[-86.650808,40.592903],[-86.651315,40.592964],[-86.65175,40.593019],[-86.652098,40.593084],[-86.652446,40.59317],[-86.653024,40.593352],[-86.653456,40.593501],[-86.65368,40.593581],[-86.653883,40.593657],[-86.653957,40.593691],[-86.654038,40.593737],[-86.654083,40.593796],[-86.654103,40.593858],[-86.654118,40.593896]],"time":"12:39\u201312:43 PM"},{"name":"(9) FB \u2192 Old SR 25","label":"FB\u2192Old SR 25","color":"#00e5ff","coords":[[-86.654118,40.593896],[-86.654224,40.593935],[-86.654402,40.593985],[-86.654496,40.594007],[-86.654751,40.594068],[-86.655122,40.594168],[-86.655409,40.594249],[-86.655721,40.594337],[-86.656297,40.594492],[-86.656543,40.594544],[-86.656679,40.594575],[-86.656901,40.594614],[-86.656965,40.594576],[-86.657027,40.59454]],"time":"12:43\u201312:46 PM"}],  step: 0 },
+};
+
+const LABEL_POINTS = [{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.655409,40.594249,0]},"properties":{"name":"FB entrance","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dc3-8129-11f1-a335-2187a023676f"},"bbox":[-86.655409,40.594249,-86.655409,40.594249]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.654224,40.593935,0]},"properties":{"name":"FB exit","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dc4-8129-11f1-a335-2187a023676f"},"bbox":[-86.654224,40.593935,-86.654224,40.593935]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.65379,40.593628,0]},"properties":{"name":"MHB trail entrance","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dc5-8129-11f1-a335-2187a023676f"},"bbox":[-86.65379,40.593628,-86.65379,40.593628]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.647441,40.591511,0]},"properties":{"name":"Niches end","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dc7-8129-11f1-a335-2187a023676f"},"bbox":[-86.647441,40.591511,-86.647441,40.591511]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.639806,40.58927,0]},"properties":{"name":"Crime scene","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dc8-8129-11f1-a335-2187a023676f"},"bbox":[-86.639806,40.58927,-86.639806,40.58927]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.649494,40.593447,0]},"properties":{"name":"HHS camera","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dcb-8129-11f1-a335-2187a023676f"},"bbox":[-86.649494,40.593447,-86.649494,40.593447]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.640606,40.587989,0]},"properties":{"name":"MHB (south end)","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dd3-8129-11f1-a335-2187a023676f"},"bbox":[-86.640606,40.587989,-86.640606,40.587989]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.643226,40.589252,0]},"properties":{"name":"MHB (north end)","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dd4-8129-11f1-a335-2187a023676f"},"bbox":[-86.643226,40.589252,-86.643226,40.589252]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.647235,40.591867,0]},"properties":{"name":"Overlook bench","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92de1-8129-11f1-a335-2187a023676f"},"bbox":[-86.647235,40.591867,-86.647235,40.591867]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.64685,40.592511,0]},"properties":{"name":"Mears lot","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92de5-8129-11f1-a335-2187a023676f"},"bbox":[-86.64685,40.592511,-86.64685,40.592511]},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.647156,40.591878,0]},"properties":{"name":"Trail split","styleUrl":"#m_ylw-pushpin","icon-scale":1.1,"icon-offset":[20,2],"icon-offset-units":["pixels","pixels"],"icon":"http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png","@id":"77d92dec-8129-11f1-a335-2187a023676f"},"bbox":[-86.647156,40.591878,-86.647156,40.591878]}];
+
+// Minutes from midnight for each segment's start time
+const SEG_TIMES = {
+  betsy: [722,724,726,730,734,739,744,752,759,763,767,772,777,785,793,795,826,827,828,833,838,843,848,853,858,859],
+  abby:  [827,829,835,845,845,847,847,853,854,860,866],
+  girls: [740,742,745,745,755,763,763,778,793,799,806,806,810,813],
+  rick:  [720,723,733,739,743,747,753,759,763,780],
+};
+const TIME_START  = 720; // 12:00 PM
+const TIME_END    = 872; // 2:32 PM
+const SEC_PER_MIN = 3;   // animation speed: 1 real minute = 3 seconds
+
+let activeWitness = 'betsy';
+let playTimer     = null;
+let isPlaying     = false;
+let isAllMode     = false;
+let allMinutes    = TIME_START;
+let playStartMs   = null;
+let playStartMin  = null;
+
+// compute bbox from all witness segment coordinates
+const _allCoords = Object.values(WITNESSES).flatMap(w => w.segments.flatMap(s => s.coords));
+const _lngs = _allCoords.map(c => c[0]);
+const _lats = _allCoords.map(c => c[1]);
+const ANIM_BOUNDS = [
+  [Math.min(..._lngs), Math.min(..._lats)],
+  [Math.max(..._lngs), Math.max(..._lats)]
+];
+
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/satellite-streets-v12',
+  bounds: ANIM_BOUNDS,
+  fitBoundsOptions: { padding: 50 },
+});
+
+map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+
+map.on('load', () => {
+  Object.entries(WITNESSES).forEach(([wid, w]) => {
+    w.segments.forEach((seg, i) => {
+      const id = `${wid}-seg-${i}`;
+      map.addSource(id, {
+        type: 'geojson',
+        lineMetrics: true,
+        data: { type: 'Feature', geometry: { type: 'LineString', coordinates: seg.coords }, properties: {} }
+      });
+      map.addLayer({
+        id, type: 'line', source: id,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': seg.color, 'line-width': 3, 'line-opacity': 0, 'line-trim-offset': [0, 1] }
+      });
+    });
+  });
+
+  const CURSOR_BG = { betsy: '#00e600', abby: '#ff3399', girls: '#ff9900', rick: '#00e5ff' };
+  const CURSOR_FG = { betsy: '#000000', abby: '#ffffff', girls: '#000000', rick: '#000000' };
+
+  // Cursor layers — one per witness (circle + label)
+  Object.keys(WITNESSES).forEach(wid => {
+    map.addSource(`${wid}-cursor`, {
+      type: 'geojson',
+      data: { type: 'Feature', geometry: { type: 'Point', coordinates: [0, 0] }, properties: { label: '' } }
+    });
+    map.addLayer({
+      id: `${wid}-cursor-dot`, type: 'circle', source: `${wid}-cursor`,
+      paint: {
+        'circle-radius': 7,
+        'circle-color': '#ffffff',
+        'circle-stroke-width': 2.5,
+        'circle-stroke-color': '#111111',
+        'circle-opacity': 0,
+        'circle-stroke-opacity': 0,
+      }
+    });
+    map.addLayer({
+      id: `${wid}-cursor-label`, type: 'symbol', source: `${wid}-cursor`,
+      layout: {
+        'text-field': ['get', 'label'],
+        'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+        'text-size': 12,
+        'text-offset': [0, -1.8],
+        'text-anchor': 'bottom',
+        'text-allow-overlap': true,
+        'text-ignore-placement': true,
+      },
+      paint: {
+        'text-color': CURSOR_FG[wid],
+        'text-halo-color': CURSOR_BG[wid],
+        'text-halo-width': 2,
+        'text-opacity': 0,
+      }
+    });
+  });
+
+  LABEL_POINTS.forEach(pt => {
+    const [lng, lat] = pt.geometry.coordinates;
+    new mapboxgl.Marker({ color: '#cccccc', scale: 0.6 })
+      .setLngLat([lng, lat])
+      .setPopup(new mapboxgl.Popup({ offset: 12, closeButton: false }).setText(pt.properties.name))
+      .addTo(map);
+  });
+
+  renderStep(0);
+});
+
+const CURSOR_NAMES = { betsy: 'Betsy', abby: 'Abby & Libby', girls: '4 Girls', rick: 'Rick' };
+const drawTimers = {};
+
+function pointAlongLine(coords, t) {
+  if (coords.length < 2) return coords[0];
+  let total = 0;
+  const segs = [];
+  for (let i = 0; i < coords.length - 1; i++) {
+    const dx = coords[i+1][0] - coords[i][0], dy = coords[i+1][1] - coords[i][1];
+    const d = Math.sqrt(dx*dx + dy*dy);
+    segs.push({ a: coords[i], b: coords[i+1], d });
+    total += d;
+  }
+  let rem = Math.min(t, 1) * total;
+  for (let i = 0; i < segs.length; i++) {
+    const s = segs[i];
+    if (rem <= s.d || i === segs.length - 1) {
+      const f = s.d > 0 ? Math.min(1, rem / s.d) : 1;
+      return [s.a[0] + f * (s.b[0] - s.a[0]), s.a[1] + f * (s.b[1] - s.a[1])];
+    }
+    rem -= s.d;
+  }
+  return coords[coords.length - 1];
+}
+
+function showCursor(wid, coords, t, label) {
+  const src = map.getSource(`${wid}-cursor`);
+  if (!src) return;
+  src.setData({
+    type: 'Feature',
+    geometry: { type: 'Point', coordinates: pointAlongLine(coords, t) },
+    properties: { label: label || '' }
+  });
+  if (!map.getLayer(`${wid}-cursor-dot`)) return;
+  if (map.getPaintProperty(`${wid}-cursor-dot`, 'circle-opacity') === 0) {
+    map.setPaintProperty(`${wid}-cursor-dot`, 'circle-opacity', 1);
+    map.setPaintProperty(`${wid}-cursor-dot`, 'circle-stroke-opacity', 1);
+    map.setPaintProperty(`${wid}-cursor-label`, 'text-opacity', 1);
+  }
+}
+
+function hideCursor(wid) {
+  if (!map.getLayer(`${wid}-cursor-dot`)) return;
+  map.setPaintProperty(`${wid}-cursor-dot`, 'circle-opacity', 0);
+  map.setPaintProperty(`${wid}-cursor-dot`, 'circle-stroke-opacity', 0);
+  map.setPaintProperty(`${wid}-cursor-label`, 'text-opacity', 0);
+}
+
+function animateDraw(layerId, duration, coords, label) {
+  if (drawTimers[layerId]) cancelAnimationFrame(drawTimers[layerId]);
+  const wid = layerId.split('-seg-')[0];
+  const start = Date.now();
+  function frame() {
+    const t = Math.min(1, (Date.now() - start) / duration);
+    if (map.getLayer(layerId)) map.setPaintProperty(layerId, 'line-trim-offset', [t, 1]);
+    showCursor(wid, coords, t, label);
+    if (t < 1) drawTimers[layerId] = requestAnimationFrame(frame);
+    else delete drawTimers[layerId];
+  }
+  drawTimers[layerId] = requestAnimationFrame(frame);
+}
+
+function renderStep(step) {
+  const w = WITNESSES[activeWitness];
+  w.step = step;
+
+  const slider   = document.getElementById('timeline-slider');
+  const counter  = document.getElementById('step-counter');
+  const pillRow  = document.getElementById('pill-row');
+  const pillTime = document.getElementById('pill-time');
+  const pill     = document.getElementById('event-pill');
+  const pillText = document.getElementById('pill-text');
+  const total    = w.segments.length;
+
+  slider.max   = total;
+  slider.value = step;
+  counter.textContent = step === 0 ? `— / ${total}` : `${step} / ${total}`;
+
+  w.segments.forEach((seg, i) => {
+    const id = `${activeWitness}-seg-${i}`;
+    if (!map.getLayer(id)) return;
+    if (i < step) {
+      map.setPaintProperty(id, 'line-opacity', 0.9);
+      if (i === step - 1) {
+        map.setPaintProperty(id, 'line-trim-offset', [0, 1]);
+        animateDraw(id, 750, seg.coords, `${CURSOR_NAMES[activeWitness] || activeWitness}\n${seg.time || ''}`);
+      } else {
+        map.setPaintProperty(id, 'line-trim-offset', [1, 1]);
+      }
+    } else {
+      map.setPaintProperty(id, 'line-opacity', 0);
+      map.setPaintProperty(id, 'line-trim-offset', [0, 1]);
+    }
+  });
+
+  if (step === 0) hideCursor(activeWitness);
+
+  pillRow.style.display = step === 0 ? 'none' : 'flex';
+  if (step > 0) {
+    const seg   = w.segments[step - 1];
+    const color = seg.color;
+    pillText.textContent = seg.label;
+    pillTime.textContent = seg.time || '';
+    pillTime.style.display = seg.time ? 'block' : 'none';
+    const dot = pill.querySelector('.dot');
+    dot.style.background  = color === '#ffffff' ? '#666' : color;
+    dot.style.border      = color === '#ffffff' ? '1.5px solid #999' : 'none';
+    pill.style.background = color === '#ffffff' ? 'rgba(255,255,255,0.15)' : color;
+    pill.style.color      = (color === '#f5f000' || color === '#00e5ff' || color === '#ffffff') ? '#000' : '#000';
+  }
+}
+
+function minToClockStr(min) {
+  const h24 = Math.floor(min / 60);
+  const m   = min % 60;
+  const ampm = h24 >= 12 ? 'PM' : 'AM';
+  const h12  = h24 % 12 || 12;
+  return `${h12}:${String(m).padStart(2,'0')} ${ampm}`;
+}
+
+function renderAllStep(minutes) {
+  allMinutes = Math.max(TIME_START, Math.min(TIME_END, minutes));
+
+  const clockEl  = document.getElementById('clock-display');
+  const pillRow  = document.getElementById('pill-row');
+  const pill     = document.getElementById('event-pill');
+  const pillTime = document.getElementById('pill-time');
+  const slider   = document.getElementById('timeline-slider');
+  const counter  = document.getElementById('step-counter');
+
+  clockEl.textContent   = minToClockStr(Math.floor(allMinutes));
+  clockEl.style.display = 'block';
+  pill.style.display    = 'none';
+  pillTime.style.display = 'none';
+  pillRow.style.display  = 'flex';
+
+  const span = TIME_END - TIME_START;
+  slider.value = ((allMinutes - TIME_START) / span * 100).toFixed(2);
+  counter.textContent = minToClockStr(Math.floor(allMinutes));
+
+  Object.entries(SEG_TIMES).forEach(([wid, times]) => {
+    let cursorCoords = null, cursorT = 0, cursorVisible = false;
+
+    times.forEach((startMin, i) => {
+      const id = `${wid}-seg-${i}`;
+      if (!map.getLayer(id)) return;
+      const endMin = Math.max(times[i + 1] || TIME_END, startMin + 1);
+      if (allMinutes < startMin) {
+        map.setPaintProperty(id, 'line-opacity', 0);
+        map.setPaintProperty(id, 'line-trim-offset', [0, 1]);
+      } else if (allMinutes >= endMin) {
+        map.setPaintProperty(id, 'line-opacity', 0.9);
+        map.setPaintProperty(id, 'line-trim-offset', [1, 1]);
+        // cursor stays at endpoint of last completed segment
+        cursorCoords = WITNESSES[wid].segments[i].coords;
+        cursorT = 1;
+        cursorVisible = true;
+      } else {
+        const progress = (allMinutes - startMin) / (endMin - startMin);
+        map.setPaintProperty(id, 'line-opacity', 0.9);
+        map.setPaintProperty(id, 'line-trim-offset', [progress, 1]);
+        cursorCoords = WITNESSES[wid].segments[i].coords;
+        cursorT = progress;
+        cursorVisible = true;
+      }
+    });
+
+    if (cursorVisible) showCursor(wid, cursorCoords, cursorT, CURSOR_NAMES[wid] || wid);
+    else hideCursor(wid);
+  });
+}
+
+function enterAllMode() {
+  isAllMode = true;
+  const slider = document.getElementById('timeline-slider');
+  slider.min  = 0;
+  slider.max  = 100;
+  slider.step = 0.1;
+  // hide per-witness layers except all
+  Object.keys(WITNESSES).forEach(wid => {
+    WITNESSES[wid].segments.forEach((_, i) => {
+      const id = `${wid}-seg-${i}`;
+      if (!map.getLayer(id)) return;
+      map.setPaintProperty(id, 'line-opacity', 0);
+      map.setPaintProperty(id, 'line-trim-offset', [0, 1]);
+    });
+  });
+  renderAllStep(TIME_START);
+}
+
+function leaveAllMode() {
+  isAllMode = false;
+  const slider = document.getElementById('timeline-slider');
+  slider.min  = 0;
+  slider.step = 1;
+  document.getElementById('clock-display').style.display = 'none';
+  // hide all witness segments so switching to a single tab starts clean
+  Object.keys(WITNESSES).forEach(wid => {
+    WITNESSES[wid].segments.forEach((_, i) => {
+      const id = `${wid}-seg-${i}`;
+      if (!map.getLayer(id)) return;
+      map.setPaintProperty(id, 'line-opacity', 0);
+      map.setPaintProperty(id, 'line-trim-offset', [0, 1]);
+    });
+    WITNESSES[wid].step = 0;
+    hideCursor(wid);
+  });
+}
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    stopPlay();
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const witness = btn.dataset.witness;
+    if (witness === 'all') {
+      activeWitness = 'all';
+      enterAllMode();
+    } else {
+      if (isAllMode) leaveAllMode();
+      // hide cursors for all other witnesses
+      Object.keys(WITNESSES).forEach(w => { if (w !== witness) hideCursor(w); });
+      activeWitness = witness;
+      renderStep(WITNESSES[activeWitness].step);
+    }
+  });
+});
+
+document.getElementById('timeline-slider').addEventListener('input', e => {
+  stopPlay();
+  if (isAllMode) {
+    const pct = parseFloat(e.target.value);
+    renderAllStep(TIME_START + (pct / 100) * (TIME_END - TIME_START));
+  } else {
+    renderStep(parseInt(e.target.value));
+  }
+});
+
+document.getElementById('play-btn').addEventListener('click', () => {
+  if (isPlaying) { stopPlay(); return; }
+
+  if (isAllMode) {
+    if (allMinutes >= TIME_END) renderAllStep(TIME_START);
+    isPlaying    = true;
+    playStartMs  = Date.now();
+    playStartMin = allMinutes;
+    document.getElementById('play-btn').innerHTML = '&#9646;&#9646;';
+    function tickAll() {
+      if (!isPlaying) return;
+      const elapsed = (Date.now() - playStartMs) / 1000; // seconds elapsed
+      const simMin  = playStartMin + elapsed / SEC_PER_MIN;
+      if (simMin >= TIME_END) {
+        renderAllStep(TIME_END);
+        stopPlay();
+        return;
+      }
+      renderAllStep(simMin);
+      playTimer = requestAnimationFrame(tickAll);
+    }
+    playTimer = requestAnimationFrame(tickAll);
+  } else {
+    const w = WITNESSES[activeWitness];
+    if (w.step >= w.segments.length) renderStep(0);
+    isPlaying = true;
+    document.getElementById('play-btn').innerHTML = '&#9646;&#9646;';
+    playTimer = setInterval(() => {
+      const ww = WITNESSES[activeWitness];
+      if (ww.step >= ww.segments.length) { stopPlay(); return; }
+      renderStep(ww.step + 1);
+    }, 900);
+  }
+});
+
+function stopPlay() {
+  isPlaying = false;
+  if (isAllMode) {
+    cancelAnimationFrame(playTimer);
+  } else {
+    clearInterval(playTimer);
+  }
+  playTimer = null;
+  document.getElementById('play-btn').innerHTML = '&#9654;';
+}
+</script>
+</body>
+</html>
