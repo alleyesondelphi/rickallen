@@ -5,21 +5,21 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- Required Info -->
   <title>Timeline | IN v. RA</title>
-  <meta name="description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <meta name="description" content="Animated map tracing the movements of key witnesses on February 13, 2017.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/timeline/witnesses">
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="Delphi Murders | Investigation">
-  <meta property="og:description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <meta property="og:title" content="Timeline | IN v. RAn">
+  <meta property="og:description" content="Animated map tracing the movements of key witnesses on February 13, 2017.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/timeline/witnesses">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/timeline/img/witnesses.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta property="og:site_name" content="Timeline | IN v. RA">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Delphi Murders | Investigation">
-  <meta name="twitter:description" content="Reconstructed reports chronicling the Delphi murders investigation from 2017 through arrest.">
+  <meta name="twitter:title" content="Timeline | IN v. RA">
+  <meta name="twitter:description" content="Animated map tracing the movements of key witnesses on February 13, 2017.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/timeline/img/witnesses.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
@@ -97,7 +97,7 @@
     .tab[data-witness="rick"].active   { background: #00e5ff; }
     .tab[data-witness="girls"].active  { background: #ff9900; }
     .tab[data-witness="abby"].active   { background: #ff3399; }
-    .tab[data-witness="all"].active    { background: #e0e0e0; }
+    .tab[data-witness="all"].active    { background: #00e600; }
 
     #clock-display {
       font-size: 26px;
@@ -256,8 +256,8 @@
 
 <div id="hud">
   <div id="witness-tabs">
-    <button class="tab" data-witness="all">All Witnesses</button>
-    <button class="tab active" data-witness="betsy">Betsy Blair</button>
+    <button class="tab active" data-witness="all">All Witnesses</button>
+    <button class="tab" data-witness="betsy">Betsy Blair</button>
     <button class="tab" data-witness="rick">Rick Allen</button>
     <button class="tab" data-witness="girls">4 Girls</button>
     <button class="tab" data-witness="abby">Abby &amp; Libby</button>
@@ -297,10 +297,10 @@ const TIME_START  = 720; // 12:00 PM
 const TIME_END    = 872; // 2:32 PM
 const SEC_PER_MIN = 3;   // animation speed: 1 real minute = 3 seconds
 
-let activeWitness = 'betsy';
+let activeWitness = 'all';
 let playTimer     = null;
 let isPlaying     = false;
-let isAllMode     = false;
+let isAllMode     = true;
 let allMinutes    = TIME_START;
 let playStartMs   = null;
 let playStartMin  = null;
@@ -388,7 +388,7 @@ map.on('load', () => {
       .addTo(map);
   });
 
-  renderStep(0);
+  enterAllMode();
 });
 
 const CURSOR_NAMES = { betsy: 'Betsy', abby: 'Abby & Libby', girls: '4 Girls', rick: 'Rick' };
