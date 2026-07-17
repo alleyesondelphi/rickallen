@@ -1,0 +1,3364 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.657042,
+                    40.594632,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SR 25 start",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b00-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.657042,
+                40.594632,
+                -86.657042,
+                40.594632
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656679,
+                    40.594575,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SR 25 overpass",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b01-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656679,
+                40.594575,
+                -86.656679,
+                40.594575
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656297,
+                    40.594492,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FB parking lot",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b02-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656297,
+                40.594492,
+                -86.656297,
+                40.594492
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.655409,
+                    40.594249,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FB entrance",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b03-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.655409,
+                40.594249,
+                -86.655409,
+                40.594249
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654224,
+                    40.593935,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FB exit",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b04-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654224,
+                40.593935,
+                -86.654224,
+                40.593935
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65379,
+                    40.593628,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MHB trail entrance",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b05-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65379,
+                40.593628,
+                -86.65379,
+                40.593628
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647175,
+                    40.591626,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Niches half way",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b06-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647175,
+                40.591626,
+                -86.647175,
+                40.591626
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647441,
+                    40.591511,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Niches end",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b07-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647441,
+                40.591511,
+                -86.647441,
+                40.591511
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.639806,
+                    40.58927,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Crime scene",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b08-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.639806,
+                40.58927,
+                -86.639806,
+                40.58927
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.636727,
+                    40.592448,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Rawn home",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b09-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.636727,
+                40.592448,
+                -86.636727,
+                40.592448
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.639659,
+                    40.591012,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Cemetary gate",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b0a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.639659,
+                40.591012,
+                -86.639659,
+                40.591012
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.649494,
+                    40.593447,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HHS camera",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b0b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.649494,
+                40.593447,
+                -86.649494,
+                40.593447
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654346,
+                    40.595832,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Old CPS building",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b0c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654346,
+                40.595832,
+                -86.654346,
+                40.595832
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654136,
+                    40.594939,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Older model car",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f41b0d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654136,
+                40.594939,
+                -86.654136,
+                40.594939
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.64261,
+                    40.588979,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 2",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44210-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.64261,
+                40.588979,
+                -86.64261,
+                40.588979
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.642204,
+                    40.588741,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 3",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44211-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.642204,
+                40.588741,
+                -86.642204,
+                40.588741
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.641734,
+                    40.588556,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 4",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44212-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.641734,
+                40.588556,
+                -86.641734,
+                40.588556
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.641306,
+                    40.58831,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 5",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44213-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.641306,
+                40.58831,
+                -86.641306,
+                40.58831
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640833,
+                    40.58812,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 6",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44214-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.640833,
+                40.58812,
+                -86.640833,
+                40.58812
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640606,
+                    40.587989,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MHB (south end)",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44215-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.640606,
+                40.587989,
+                -86.640606,
+                40.587989
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643226,
+                    40.589252,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MHB (north end)",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44216-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643226,
+                40.589252,
+                -86.643226,
+                40.589252
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643059,
+                    40.589155,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Platform 1",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44217-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643059,
+                40.589155,
+                -86.643059,
+                40.589155
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643103,
+                    40.589129,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MHB creek (north end)",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44218-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643103,
+                40.589129,
+                -86.643103,
+                40.589129
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643381,
+                    40.589379,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Secluded path entrance",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44219-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643381,
+                40.589379,
+                -86.643381,
+                40.589379
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.639637,
+                    40.590216,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "secluded path fork",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.639637,
+                40.590216,
+                -86.639637,
+                40.590216
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.642513,
+                    40.590016,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Secluded path point 1",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.642513,
+                40.590016,
+                -86.642513,
+                40.590016
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.641417,
+                    40.590211,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Secluded path point 2",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.641417,
+                40.590211,
+                -86.641417,
+                40.590211
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640252,
+                    40.590229,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Secluded path point 3 (gavel pit)",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.640252,
+                40.590229,
+                -86.640252,
+                40.590229
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640698,
+                    40.588068,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Down the hill",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421e-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.640698,
+                40.588068,
+                -86.640698,
+                40.588068
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640706,
+                    40.587969,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Off to the side",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4421f-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.640706,
+                40.587969,
+                -86.640706,
+                40.587969
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.639346,
+                    40.588564,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Sand bar",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44220-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.639346,
+                40.588564,
+                -86.639346,
+                40.588564
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.638124,
+                    40.588005,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Weber window/line of sight to scene",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44221-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.638124,
+                40.588005,
+                -86.638124,
+                40.588005
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.644266,
+                    40.584934,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Private drive entrance",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44222-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.644266,
+                40.584934,
+                -86.644266,
+                40.584934
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647235,
+                    40.591867,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Overlook bench",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44223-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647235,
+                40.591867,
+                -86.647235,
+                40.591867
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.649178,
+                    40.592702,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Bench 2",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44224-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.649178,
+                40.592702,
+                -86.649178,
+                40.592702
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.648075,
+                    40.592372,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Bench 3",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44225-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.648075,
+                40.592372,
+                -86.648075,
+                40.592372
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653031,
+                    40.593338,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Bench 1",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44226-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653031,
+                40.593338,
+                -86.653031,
+                40.593338
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.64685,
+                    40.592511,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Mears lot",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44227-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.64685,
+                40.592511,
+                -86.64685,
+                40.592511
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.657027,
+                    40.59454,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "RA parked",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44228-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.657027,
+                40.59454,
+                -86.657027,
+                40.59454
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.646969,
+                    40.592168,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Mears to trail split",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44229-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.646969,
+                40.592168,
+                -86.646969,
+                40.592168
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.651315,
+                    40.592964,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "between bench 1 and 2",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.651315,
+                40.592964,
+                -86.651315,
+                40.592964
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654083,
+                    40.593795,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "pavilion",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654083,
+                40.593795,
+                -86.654083,
+                40.593795
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.652098,
+                    40.593084,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.652098,
+                40.593084,
+                -86.652098,
+                40.593084
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647177,
+                    40.591748,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647177,
+                40.591748,
+                -86.647177,
+                40.591748
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647156,
+                    40.591878,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Trail split",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422e-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647156,
+                40.591878,
+                -86.647156,
+                40.591878
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647156,
+                    40.591684,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4422f-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647156,
+                40.591684,
+                -86.647156,
+                40.591684
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647176,
+                    40.591816,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44230-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647176,
+                40.591816,
+                -86.647176,
+                40.591816
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.644882,
+                    40.590099,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Half way to MHB",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44231-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.644882,
+                40.590099,
+                -86.644882,
+                40.590099
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.644192,
+                    40.589703,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44232-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.644192,
+                40.589703,
+                -86.644192,
+                40.589703
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643546,
+                    40.589398,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44233-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643546,
+                40.589398,
+                -86.643546,
+                40.589398
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643305,
+                    40.58944,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44234-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643305,
+                40.58944,
+                -86.643305,
+                40.58944
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.643206,
+                    40.589528,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44235-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.643206,
+                40.589528,
+                -86.643206,
+                40.589528
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.64291,
+                    40.589777,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44236-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.64291,
+                40.589777,
+                -86.64291,
+                40.589777
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.642104,
+                    40.590205,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44237-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.642104,
+                40.590205,
+                -86.642104,
+                40.590205
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.644574,
+                    40.589901,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44238-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.644574,
+                40.589901,
+                -86.644574,
+                40.589901
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.645125,
+                    40.59026,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44239-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.645125,
+                40.59026,
+                -86.645125,
+                40.59026
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.645808,
+                    40.590811,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.645808,
+                40.590811,
+                -86.645808,
+                40.590811
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.646427,
+                    40.591331,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.646427,
+                40.591331,
+                -86.646427,
+                40.591331
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.646856,
+                    40.591659,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.646856,
+                40.591659,
+                -86.646856,
+                40.591659
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647065,
+                    40.591798,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647065,
+                40.591798,
+                -86.647065,
+                40.591798
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.64729,
+                    40.591981,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423e-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.64729,
+                40.591981,
+                -86.64729,
+                40.591981
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.647771,
+                    40.592229,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4423f-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.647771,
+                40.592229,
+                -86.647771,
+                40.592229
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.648089,
+                    40.592356,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44240-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.648089,
+                40.592356,
+                -86.648089,
+                40.592356
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.64861,
+                    40.592535,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44241-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.64861,
+                40.592535,
+                -86.64861,
+                40.592535
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.649183,
+                    40.592686,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44242-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.649183,
+                40.592686,
+                -86.649183,
+                40.592686
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.650061,
+                    40.59282,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44243-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.650061,
+                40.59282,
+                -86.650061,
+                40.59282
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.650808,
+                    40.592903,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44244-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.650808,
+                40.592903,
+                -86.650808,
+                40.592903
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65175,
+                    40.593019,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44245-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65175,
+                40.593019,
+                -86.65175,
+                40.593019
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.652446,
+                    40.59317,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44246-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.652446,
+                40.59317,
+                -86.652446,
+                40.59317
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653024,
+                    40.593351,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44247-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653024,
+                40.593351,
+                -86.653024,
+                40.593351
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653456,
+                    40.593501,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44248-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653456,
+                40.593501,
+                -86.653456,
+                40.593501
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65368,
+                    40.593581,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44249-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65368,
+                40.593581,
+                -86.65368,
+                40.593581
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653957,
+                    40.593691,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653957,
+                40.593691,
+                -86.653957,
+                40.593691
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654038,
+                    40.593737,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654038,
+                40.593737,
+                -86.654038,
+                40.593737
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653883,
+                    40.593657,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653883,
+                40.593657,
+                -86.653883,
+                40.593657
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654119,
+                    40.593896,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654119,
+                40.593896,
+                -86.654119,
+                40.593896
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654751,
+                    40.594068,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424e-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654751,
+                40.594068,
+                -86.654751,
+                40.594068
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.655122,
+                    40.594168,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4424f-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.655122,
+                40.594168,
+                -86.655122,
+                40.594168
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654496,
+                    40.594007,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44250-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654496,
+                40.594007,
+                -86.654496,
+                40.594007
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654402,
+                    40.593985,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44251-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654402,
+                40.593985,
+                -86.654402,
+                40.593985
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654103,
+                    40.593858,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44252-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654103,
+                40.593858,
+                -86.654103,
+                40.593858
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654173,
+                    40.593928,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44253-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654173,
+                40.593928,
+                -86.654173,
+                40.593928
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654289,
+                    40.594211,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44254-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654289,
+                40.594211,
+                -86.654289,
+                40.594211
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653831,
+                    40.594461,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44255-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653831,
+                40.594461,
+                -86.653831,
+                40.594461
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654159,
+                    40.594378,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44256-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654159,
+                40.594378,
+                -86.654159,
+                40.594378
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65426,
+                    40.594315,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44257-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65426,
+                40.594315,
+                -86.65426,
+                40.594315
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654282,
+                    40.59428,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44258-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654282,
+                40.59428,
+                -86.654282,
+                40.59428
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654029,
+                    40.594403,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44259-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654029,
+                40.594403,
+                -86.654029,
+                40.594403
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65421,
+                    40.594357,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425a-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65421,
+                40.594357,
+                -86.65421,
+                40.594357
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654082,
+                    40.594389,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425b-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654082,
+                40.594389,
+                -86.654082,
+                40.594389
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653955,
+                    40.594419,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425c-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653955,
+                40.594419,
+                -86.653955,
+                40.594419
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.653873,
+                    40.594528,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425d-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.653873,
+                40.594528,
+                -86.653873,
+                40.594528
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654192,
+                    40.594007,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425e-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654192,
+                40.594007,
+                -86.654192,
+                40.594007
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.654253,
+                    40.59412,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f4425f-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.654253,
+                40.59412,
+                -86.654253,
+                40.59412
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.65572,
+                    40.594337,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44260-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.65572,
+                40.594337,
+                -86.65572,
+                40.594337
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656049,
+                    40.594416,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44261-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656049,
+                40.594416,
+                -86.656049,
+                40.594416
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656543,
+                    40.594543,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44262-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656543,
+                40.594543,
+                -86.656543,
+                40.594543
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656199,
+                    40.594459,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44263-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656199,
+                40.594459,
+                -86.656199,
+                40.594459
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.657195,
+                    40.594684,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44264-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.657195,
+                40.594684,
+                -86.657195,
+                40.594684
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656901,
+                    40.594614,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44265-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656901,
+                40.594614,
+                -86.656901,
+                40.594614
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.656965,
+                    40.594576,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "path bend",
+                "styleUrl": "#m_ylw-pushpin",
+                "icon-scale": 1.1,
+                "icon-offset": [
+                    20,
+                    2
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "pixels"
+                ],
+                "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
+                "@id": "24f44266-822e-11f1-a17a-4532374c1984"
+            },
+            "bbox": [
+                -86.656965,
+                40.594576,
+                -86.656965,
+                40.594576
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 0, 230, 1)",
+                "name": "(1) Fred Coghill's vehicle driving eastbound on HHS video",
+                "@id": "2bf4b540-822e-11f1-a17a-4532374c1984"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.649531,
+                        40.593169
+                    ],
+                    [
+                        -86.648976,
+                        40.592976
+                    ],
+                    [
+                        -86.648198,
+                        40.592759
+                    ],
+                    [
+                        -86.647175,
+                        40.592612
+                    ],
+                    [
+                        -86.646234,
+                        40.592495
+                    ],
+                    [
+                        -86.646028,
+                        40.592478
+                    ],
+                    [
+                        -86.640129,
+                        40.592489
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.649531,
+                40.592478,
+                -86.640129,
+                40.593169
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 0, 230, 1)",
+                "name": "(2) Cemetery",
+                "@id": "3b9a7200-822e-11f1-a17a-4532374c1984"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.640129,
+                        40.59249
+                    ],
+                    [
+                        -86.640138,
+                        40.591707
+                    ],
+                    [
+                        -86.639593,
+                        40.591707
+                    ],
+                    [
+                        -86.639581,
+                        40.592491
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.640138,
+                40.591707,
+                -86.639581,
+                40.592491
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 0, 251, 1)",
+                "name": "(3) Cemetery to Rawn's",
+                "@id": "4b470c90-822e-11f1-a17a-4532374c1984"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.639581,
+                        40.592493
+                    ],
+                    [
+                        -86.637394,
+                        40.59253
+                    ],
+                    [
+                        -86.637153,
+                        40.592574
+                    ],
+                    [
+                        -86.636508,
+                        40.592874
+                    ],
+                    [
+                        -86.635146,
+                        40.593047
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.639581,
+                40.592493,
+                -86.635146,
+                40.593047
+            ]
+        }
+    ]
+}
