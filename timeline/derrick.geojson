@@ -3,34 +3,6 @@
     "features": [
         {
             "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "name": "(2) Sitting in vehicle",
-                "@id": "6ac76fa0-81a8-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.64685,
-                        40.59251
-                    ],
-                    [
-                        -86.646839,
-                        40.592555
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.64685,
-                40.59251,
-                -86.646839,
-                40.592555
-            ]
-        },
-        {
-            "type": "Feature",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -52,7 +24,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3580-81a6-11f1-9d88-098214be68b6"
+                "@id": "3485fab0-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.657042,
@@ -84,7 +56,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3581-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c0-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656679,
@@ -116,7 +88,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3582-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c1-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656297,
@@ -148,7 +120,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3583-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c2-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.655409,
@@ -180,7 +152,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3584-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c3-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654224,
@@ -212,7 +184,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3585-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c4-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65379,
@@ -244,7 +216,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3586-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c5-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647175,
@@ -276,7 +248,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3587-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c6-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647441,
@@ -308,7 +280,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3588-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c7-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.639806,
@@ -340,7 +312,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3589-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c8-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.636727,
@@ -372,7 +344,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358a-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621c9-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.639659,
@@ -404,7 +376,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358b-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ca-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.649494,
@@ -436,7 +408,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358c-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621cb-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654346,
@@ -468,7 +440,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358d-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621cc-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654136,
@@ -500,7 +472,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358e-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621cd-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.64261,
@@ -532,7 +504,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d358f-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ce-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.642204,
@@ -564,7 +536,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3590-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621cf-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.641734,
@@ -596,7 +568,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3591-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d0-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.641306,
@@ -628,7 +600,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3592-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d1-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.640833,
@@ -660,7 +632,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3593-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d2-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.640606,
@@ -692,7 +664,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3594-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d3-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643226,
@@ -724,7 +696,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3595-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d4-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643059,
@@ -756,7 +728,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3596-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d5-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643103,
@@ -788,7 +760,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3597-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d6-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643381,
@@ -820,7 +792,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3598-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d7-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.639637,
@@ -852,7 +824,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d3599-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d8-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.642513,
@@ -884,7 +856,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359a-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621d9-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.641417,
@@ -916,7 +888,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359b-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621da-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.640252,
@@ -948,7 +920,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359c-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621db-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.640698,
@@ -980,7 +952,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359d-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621dc-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.640706,
@@ -1012,7 +984,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359e-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621dd-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.639346,
@@ -1044,7 +1016,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d359f-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621de-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.638124,
@@ -1076,7 +1048,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a0-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621df-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.644266,
@@ -1108,7 +1080,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a1-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e0-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647235,
@@ -1140,7 +1112,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a2-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e1-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.649178,
@@ -1172,7 +1144,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a3-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e2-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.648075,
@@ -1204,7 +1176,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a4-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e3-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653031,
@@ -1236,7 +1208,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a5-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e4-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.64685,
@@ -1268,7 +1240,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a6-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e5-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.657027,
@@ -1300,7 +1272,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a7-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e6-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.646969,
@@ -1332,7 +1304,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a8-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e7-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.651315,
@@ -1364,7 +1336,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35a9-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e8-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654083,
@@ -1396,7 +1368,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35aa-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621e9-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.652098,
@@ -1428,7 +1400,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ab-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ea-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647177,
@@ -1460,7 +1432,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ac-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621eb-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647156,
@@ -1492,7 +1464,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ad-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ec-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647156,
@@ -1524,7 +1496,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ae-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ed-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647176,
@@ -1556,7 +1528,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35af-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ee-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.644882,
@@ -1588,7 +1560,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b0-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ef-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.644192,
@@ -1620,7 +1592,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b1-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f0-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643546,
@@ -1652,7 +1624,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b2-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f1-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643305,
@@ -1684,7 +1656,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b3-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f2-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.643206,
@@ -1716,7 +1688,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b4-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f3-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.64291,
@@ -1748,7 +1720,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b5-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f4-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.642104,
@@ -1780,7 +1752,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b6-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f5-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.644574,
@@ -1812,7 +1784,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b7-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f6-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.645125,
@@ -1844,7 +1816,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b8-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f7-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.645808,
@@ -1876,7 +1848,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35b9-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f8-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.646427,
@@ -1908,7 +1880,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ba-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621f9-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.646856,
@@ -1940,7 +1912,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35bb-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621fa-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647065,
@@ -1972,7 +1944,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35bc-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621fb-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.64729,
@@ -2004,7 +1976,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35bd-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621fc-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.647771,
@@ -2036,7 +2008,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35be-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621fd-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.648089,
@@ -2068,7 +2040,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35bf-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621fe-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.64861,
@@ -2100,7 +2072,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c0-81a6-11f1-9d88-098214be68b6"
+                "@id": "348621ff-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.649183,
@@ -2132,7 +2104,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c1-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862200-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.650061,
@@ -2164,7 +2136,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c2-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862201-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.650808,
@@ -2196,7 +2168,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c3-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862202-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65175,
@@ -2228,7 +2200,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c4-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862203-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.652446,
@@ -2260,7 +2232,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c5-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862204-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653024,
@@ -2292,7 +2264,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c6-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862205-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653456,
@@ -2324,7 +2296,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c7-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862206-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65368,
@@ -2356,7 +2328,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c8-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862207-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653957,
@@ -2388,7 +2360,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35c9-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862208-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654038,
@@ -2420,7 +2392,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ca-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862209-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653883,
@@ -2452,7 +2424,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35cb-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220a-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654119,
@@ -2484,7 +2456,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35cc-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220b-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654751,
@@ -2516,7 +2488,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35cd-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220c-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.655122,
@@ -2548,7 +2520,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35ce-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220d-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654496,
@@ -2580,7 +2552,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35cf-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220e-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654402,
@@ -2612,7 +2584,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d0-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486220f-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654103,
@@ -2644,7 +2616,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d1-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862210-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654173,
@@ -2676,7 +2648,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d2-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862211-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654289,
@@ -2708,7 +2680,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d3-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862212-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653831,
@@ -2740,7 +2712,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d4-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862213-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654159,
@@ -2772,7 +2744,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d5-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862214-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65426,
@@ -2804,7 +2776,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d6-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862215-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654282,
@@ -2836,7 +2808,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d7-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862216-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654029,
@@ -2868,7 +2840,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d8-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862217-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65421,
@@ -2900,7 +2872,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35d9-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862218-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654082,
@@ -2932,7 +2904,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35da-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862219-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653955,
@@ -2964,7 +2936,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35db-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221a-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.653873,
@@ -2996,7 +2968,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35dc-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221b-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654192,
@@ -3028,7 +3000,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35dd-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221c-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.654253,
@@ -3060,7 +3032,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35de-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221d-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.65572,
@@ -3092,7 +3064,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35df-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221e-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656049,
@@ -3124,7 +3096,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35e0-81a6-11f1-9d88-098214be68b6"
+                "@id": "3486221f-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656543,
@@ -3156,7 +3128,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35e1-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862220-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656199,
@@ -3188,7 +3160,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35e2-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862221-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.657195,
@@ -3220,7 +3192,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35e3-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862222-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656901,
@@ -3252,7 +3224,7 @@
                     "pixels"
                 ],
                 "icon": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png",
-                "@id": "108d35e4-81a6-11f1-9d88-098214be68b6"
+                "@id": "34862223-81b7-11f1-88f2-afc2763c30a8"
             },
             "bbox": [
                 -86.656965,
@@ -3266,35 +3238,27 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 102, 255, 1)",
-                "name": "(1) Derrick arrives",
-                "@id": "191e33c0-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(255, 1, 1, 1)",
+                "name": "(1)",
+                "@id": "3b58f540-81b7-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -86.636778,
-                        40.592741
+                        -86.637495,
+                        40.592527
                     ],
                     [
-                        -86.637175,
-                        40.592569
+                        -86.646001,
+                        40.592477
                     ],
                     [
-                        -86.637352,
-                        40.592535
+                        -86.646238,
+                        40.592492
                     ],
                     [
-                        -86.640131,
-                        40.592488
-                    ],
-                    [
-                        -86.646006,
-                        40.592478
-                    ],
-                    [
-                        -86.646836,
+                        -86.646831,
                         40.592568
                     ],
                     [
@@ -3305,9 +3269,9 @@
             },
             "bbox": [
                 -86.64685,
-                40.592478,
-                -86.636778,
-                40.592741
+                40.592477,
+                -86.637495,
+                40.592568
             ]
         },
         {
@@ -3315,175 +3279,32 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 94, 255, 1)",
-                "name": "(3) Mears to trail split",
-                "@id": "28727520-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(2)",
+                "@id": "4c2a39b0-81b7-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -86.646849,
-                        40.59251
+                        -86.646832,
+                        40.592568
                     ],
                     [
-                        -86.646969,
-                        40.592168
-                    ],
-                    [
-                        -86.647065,
-                        40.591798
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.647065,
-                40.591798,
-                -86.646849,
-                40.59251
-            ]
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "stroke": "rgba(0, 79, 255, 1)",
-                "name": "(4) Talking to Dave",
-                "@id": "37eeff00-81a6-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.647064,
-                        40.591797
-                    ],
-                    [
-                        -86.647157,
-                        40.591878
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.647157,
-                40.591797,
-                -86.647064,
-                40.591878
-            ]
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "stroke": "rgba(0, 87, 255, 1)",
-                "name": "(5) Trail split to 501 trail",
-                "@id": "65262930-81a6-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.647156,
-                        40.591878
-                    ],
-                    [
-                        -86.647176,
-                        40.591816
-                    ],
-                    [
-                        -86.647177,
-                        40.591748
-                    ],
-                    [
-                        -86.647156,
-                        40.591684
-                    ],
-                    [
-                        -86.647175,
-                        40.591626
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.647177,
-                40.591626,
-                -86.647156,
-                40.591878
-            ]
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "name": "(6) Return to trail split",
-                "@id": "6de03340-81a6-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.647175,
-                        40.591626
-                    ],
-                    [
-                        -86.647156,
-                        40.591684
-                    ],
-                    [
-                        -86.647177,
-                        40.591748
-                    ],
-                    [
-                        -86.647176,
-                        40.591816
-                    ],
-                    [
-                        -86.647156,
-                        40.591878
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.647177,
-                40.591626,
-                -86.647156,
-                40.591878
-            ]
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "stroke": "rgba(0, 94, 255, 1)",
-                "name": "(7) Trail split to Mears",
-                "@id": "7c350600-81a6-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.647156,
-                        40.591878
-                    ],
-                    [
-                        -86.646969,
-                        40.592168
+                        -86.64684,
+                        40.592539
                     ],
                     [
                         -86.64685,
-                        40.592513
+                        40.592511
                     ]
                 ]
             },
             "bbox": [
-                -86.647156,
-                40.591878,
                 -86.64685,
-                40.592513
+                40.592511,
+                -86.646832,
+                40.592568
             ]
         },
         {
@@ -3491,9 +3312,9 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 94, 255, 1)",
-                "name": "(8) Mears to trail split",
-                "@id": "84c4cbc0-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(3)",
+                "@id": "551d2e10-81b7-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
@@ -3524,9 +3345,42 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 87, 255, 1)",
-                "name": "(9) Trail split to FB",
-                "@id": "8fbc1ba0-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(4)",
+                "@id": "5be62110-81b8-11f1-88f2-afc2763c30a8"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.64685,
+                        40.592511
+                    ],
+                    [
+                        -86.646969,
+                        40.592168
+                    ],
+                    [
+                        -86.647156,
+                        40.591878
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.647156,
+                40.591878,
+                -86.64685,
+                40.592511
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(5)",
+                "@id": "674fe1d0-81b8-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
@@ -3536,8 +3390,164 @@
                         40.591878
                     ],
                     [
-                        -86.64777,
-                        40.592227
+                        -86.647169,
+                        40.591888
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.647169,
+                40.591878,
+                -86.647157,
+                40.591888
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 30, 0, 1)",
+                "name": "(6)",
+                "@id": "71828220-81b8-11f1-88f2-afc2763c30a8"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.647157,
+                        40.591878
+                    ],
+                    [
+                        -86.647176,
+                        40.591816
+                    ],
+                    [
+                        -86.647177,
+                        40.591748
+                    ],
+                    [
+                        -86.647156,
+                        40.591684
+                    ],
+                    [
+                        -86.647175,
+                        40.591626
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.647177,
+                40.591626,
+                -86.647156,
+                40.591878
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(7)",
+                "@id": "7a804bf0-81b8-11f1-88f2-afc2763c30a8"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.647175,
+                        40.591626
+                    ],
+                    [
+                        -86.647156,
+                        40.591684
+                    ],
+                    [
+                        -86.647178,
+                        40.591748
+                    ],
+                    [
+                        -86.647176,
+                        40.591816
+                    ],
+                    [
+                        -86.647157,
+                        40.591878
+                    ],
+                    [
+                        -86.646969,
+                        40.592168
+                    ],
+                    [
+                        -86.64685,
+                        40.592511
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.647178,
+                40.591626,
+                -86.64685,
+                40.592511
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke": "rgba(255, 0, 0, 1)",
+                "stroke-opacity": 1,
+                "name": "(8)",
+                "@id": "00db4920-81b9-11f1-88f2-afc2763c30a8"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.64685,
+                        40.592511
+                    ],
+                    [
+                        -86.646969,
+                        40.592168
+                    ],
+                    [
+                        -86.647156,
+                        40.591878
+                    ]
+                ]
+            },
+            "bbox": [
+                -86.647156,
+                40.591878,
+                -86.64685,
+                40.592511
+            ]
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke-width": 1,
+                "stroke-opacity": 1,
+                "stroke": "rgba(255, 1, 1, 1)",
+                "name": "(9)",
+                "@id": "0df44080-81b9-11f1-88f2-afc2763c30a8"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -86.647157,
+                        40.591878
+                    ],
+                    [
+                        -86.64729,
+                        40.591981
+                    ],
+                    [
+                        -86.647771,
+                        40.592229
                     ],
                     [
                         -86.648089,
@@ -3552,15 +3562,15 @@
                         40.592686
                     ],
                     [
-                        -86.65006,
+                        -86.650061,
                         40.59282
                     ],
                     [
-                        -86.650808,
+                        -86.650809,
                         40.592904
                     ],
                     [
-                        -86.651314,
+                        -86.651315,
                         40.592964
                     ],
                     [
@@ -3568,11 +3578,11 @@
                         40.593019
                     ],
                     [
-                        -86.652099,
+                        -86.652098,
                         40.593084
                     ],
                     [
-                        -86.652445,
+                        -86.652446,
                         40.59317
                     ],
                     [
@@ -3580,27 +3590,31 @@
                         40.593351
                     ],
                     [
+                        -86.653456,
+                        40.593501
+                    ],
+                    [
                         -86.65368,
                         40.593581
                     ],
                     [
-                        -86.653789,
-                        40.593628
+                        -86.65379,
+                        40.593629
                     ],
                     [
-                        -86.65388,
-                        40.593662
+                        -86.653883,
+                        40.593658
                     ],
                     [
                         -86.653957,
                         40.593691
                     ],
                     [
-                        -86.654038,
-                        40.593737
+                        -86.654039,
+                        40.593738
                     ],
                     [
-                        -86.654084,
+                        -86.654083,
                         40.593795
                     ],
                     [
@@ -3621,9 +3635,9 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 71, 255, 1)",
-                "name": "(10) FB to trail split",
-                "@id": "a8fd68d0-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(255, 0, 0, 1)",
+                "name": "(10)",
+                "@id": "379d13d0-81b9-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
@@ -3633,7 +3647,7 @@
                         40.593858
                     ],
                     [
-                        -86.654084,
+                        -86.654083,
                         40.593795
                     ],
                     [
@@ -3641,24 +3655,28 @@
                         40.593737
                     ],
                     [
-                        -86.65396,
-                        40.593692
+                        -86.653957,
+                        40.593691
                     ],
                     [
-                        -86.65388,
-                        40.593662
+                        -86.653883,
+                        40.593657
                     ],
                     [
-                        -86.653679,
+                        -86.653789,
+                        40.593628
+                    ],
+                    [
+                        -86.65368,
                         40.593581
                     ],
                     [
                         -86.653456,
-                        40.5935
+                        40.593501
                     ],
                     [
                         -86.653024,
-                        40.593351
+                        40.593352
                     ],
                     [
                         -86.652445,
@@ -3673,7 +3691,7 @@
                         40.593019
                     ],
                     [
-                        -86.651315,
+                        -86.651314,
                         40.592964
                     ],
                     [
@@ -3698,7 +3716,11 @@
                     ],
                     [
                         -86.647771,
-                        40.592227
+                        40.592229
+                    ],
+                    [
+                        -86.64729,
+                        40.591981
                     ],
                     [
                         -86.647157,
@@ -3718,15 +3740,15 @@
             "properties": {
                 "stroke-width": 1,
                 "stroke-opacity": 1,
-                "stroke": "rgba(0, 125, 255, 1)",
-                "name": "(11) Trail split to Mears",
-                "@id": "c152f670-81a6-11f1-9d88-098214be68b6"
+                "stroke": "rgba(254, 0, 0, 1)",
+                "name": "(11)",
+                "@id": "557d6490-81b9-11f1-88f2-afc2763c30a8"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -86.647156,
+                        -86.647157,
                         40.591878
                     ],
                     [
@@ -3740,38 +3762,10 @@
                 ]
             },
             "bbox": [
-                -86.647156,
+                -86.647157,
                 40.591878,
                 -86.64685,
                 40.592511
-            ]
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                "name": "(12) Sitting in vehicle",
-                "@id": "cf9ea170-81a6-11f1-9d88-098214be68b6"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -86.64685,
-                        40.59251
-                    ],
-                    [
-                        -86.646839,
-                        40.592555
-                    ]
-                ]
-            },
-            "bbox": [
-                -86.64685,
-                40.59251,
-                -86.646839,
-                40.592555
             ]
         }
     ]
