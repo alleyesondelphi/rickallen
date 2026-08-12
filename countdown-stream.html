@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Required Info -->
+  <title>Countdown Stream</title>
+  <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/countdown-stream">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Countdown Stream">
+  <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/countdown-stream">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/countdown-stream.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:site_name" content="RA v. IN | All Eyes on Delphi">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Countdown Stream">
+  <meta name="twitter:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/countdown-stream.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+  <!-- Favicons -->
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
+  <!-- Styles-->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:            #0d0d10;
+    --surface:       #16161b;
+    --surface-2:     #1d1d24;
+    --border:        #272730;
+    --accent:        #c9a24e;
+    --accent-dim:    rgba(201,162,78,0.12);
+    --text:          #e2ddd4;
+    --text-muted:    #96928a;
+    --text-dim:      #3a3940;
+    --red:           #a82828;
+    --vaidik:        #5a9fd4;
+    --vaidik-bg:     #0a1620;
+    --brown-c:       #5fa870;
+    --brown-bg:      #0a1810;
+    --altice:        #c4756a;
+    --altice-bg:     #1c0c0c;
+    --issue-1:       #c4756a;
+    --issue-1-bg:    #1c0c0c;
+    --issue-2:       #5fa870;
+    --issue-2-bg:    #0a1810;
+    --issue-3:       #c9a24e;
+    --issue-3-bg:    #181000;
+    --issue-4:       #9b8fd4;
+    --issue-4-bg:    #0e0c1c;
+    --issue-4-dim:   rgba(155,143,212,0.14);
+  }
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  html { 
+    scroll-behavior: smooth; 
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  /* ── Progress dots ── */
+  #progress-nav {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    z-index: 200;
+  }
+  .p-dot {
+    width: 5px; 
+    height: 5px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+    flex-shrink: 0;
+  }
+  .p-dot.active { 
+    background: var(--accent); 
+    transform: scale(1.8); 
+  }
+  .p-dot:hover  { 
+    background: var(--text-muted); 
+  }
+  /* ── Base slide ── */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 80px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .slide-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 54px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 36px;
+    letter-spacing: -0.02em;
+    /*text-wrap: balance;*/
+  }
+  /* ── Split slide layout ── */
+  .split-slide {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+    border-bottom: 1px solid var(--border);
+  }
+  .split-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 48px 36px;
+  }
+  .split-left-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+  }
+  .split-left-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .split-left-rate {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 4px;
+    letter-spacing: -0.04em;
+  }
+  .split-left-rate-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 18px;
+  }
+  .split-left-meta {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+  }
+  .split-right {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .split-right h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 34px);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .split-section { 
+    margin-bottom: 28px; 
+  }
+  .split-section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .split-section p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+  .split-section p em { 
+    font-style: italic; 
+    color: var(--text); 
+  }
+  /* ── Cards ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 26px 28px;
+  }
+  .card-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .card p em { 
+    font-style: italic; 
+    color: var(--text); 
+  }
+  .card p strong { 
+    color: var(--text); 
+    font-weight: 600; 
+  }
+  .three-col { 
+    display: grid; 
+    grid-template-columns: repeat(3,1fr); 
+    gap: 16px; 
+  }
+  .two-col { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 16px; 
+  }
+  /* ── Badges ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid;
+    padding: 4px 10px;
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+  .badge.red    { 
+    color: var(--issue-1); 
+    border-color: var(--issue-1); 
+  }
+  .badge.green  { 
+    color: var(--issue-2); 
+    border-color: var(--issue-2); 
+  }
+  .badge.amber  { 
+    color: var(--accent);  
+    border-color: var(--accent); 
+  }
+  .badge.purple { 
+    color: var(--issue-4); 
+    border-color: var(--issue-4); 
+  }
+  /* ── Callout / pull quote ── */
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 22px 26px;
+    margin-bottom: 20px;
+  }
+  .callout p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.78;
+  }
+  .callout p em { 
+    font-style: normal; 
+    color: var(--accent); 
+    font-weight: 600; 
+  }
+  /* Italic caption */
+  .italic-caption {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.72;
+  }
+  /* ── S1: Hero ── */
+  #s1 { 
+    align-items: center; 
+    text-align: center; 
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .hero-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(110px, 20vw, 200px);
+    font-weight: 700;
+    line-height: 0.85;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+  }
+  .hero-unit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(12px, 2vw, 20px);
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+  .hero-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9px, 1.4vw, 12px);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .hero-rick {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3.5vw, 42px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 48px;
+  }
+  .meta-strip { 
+    display: flex; gap: 12px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+  }
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+  .meta-pill strong {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+  /* ── S2: Expectations vs Reality ── */
+  .evr-quote {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 36px 40px;
+    margin-bottom: 28px;
+  }
+  .evr-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .case-badge {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+  }
+  /* ── S3: Quick Review ── */
+  .body-text { 
+    font-size: 15px;
+    color: var(--text-muted); 
+    line-height: 1.8; 
+  }
+  .tonight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .tonight-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .tonight-card p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  /* ── S5: OA Stats ── */
+  .stat-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .stat-box {
+    background: var(--surface);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .stat-box .big-n {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .stat-box .stat-desc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  /* ── S7: Panel Overview ── */
+  .circle-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .judge-circle-wrap { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 14px;
+  }
+  .judge-circle {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; 
+    font-weight: 700;
+    border: 2px solid;
+  }
+  .judge-circle.vc { 
+    background: var(--vaidik-bg); 
+    border-color: var(--vaidik); 
+    color: var(--vaidik); 
+  }
+  .judge-circle.bc { 
+    background: var(--brown-bg);  
+    border-color: var(--brown-c); 
+    color: var(--brown-c); 
+  }
+  .judge-circle.ac { 
+    background: var(--altice-bg); 
+    border-color: var(--altice);  
+    color: var(--altice); 
+  }
+  .circle-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; 
+    font-weight: 700; 
+    color: var(--text);
+  }
+  .circle-rate {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .circle-rate.vc { 
+    color: var(--vaidik); 
+  }
+  .circle-rate.bc { 
+    color: var(--brown-c); 
+  }
+  .circle-rate.ac { 
+    color: var(--altice); 
+  }
+  .circle-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .circle-note {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  /* ── S11: Alignment ── */
+  .alignment-hero {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .frac-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(100px, 18vw, 180px);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.05em;
+  }
+  .frac-denom {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(13px, 2vw, 20px);
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .alignment-body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    gap: 18px;
+  }
+  .alignment-body p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px; 
+    color: var(--text); 
+    line-height: 1.55;
+  }
+  .alignment-body em {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic; 
+    font-size: 17px;
+    color: var(--text-muted); 
+    line-height: 1.6;
+    display: block;
+  }
+  /* ── S12: First Pass ── */
+  .four-col {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .issue-overview-card {
+    background: var(--surface);
+    padding: 28px 22px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px;
+  }
+  .roman {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; 
+    font-weight: 700; 
+    line-height: 1;
+  }
+  .roman.i1 { 
+    color: var(--issue-1); 
+  }
+  .roman.i2 { 
+    color: var(--issue-2); 
+  }
+  .roman.i3 { 
+    color: var(--issue-3); 
+  }
+  .roman.i4 { 
+    color: var(--issue-4); 
+  }
+  .issue-overview-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; 
+    font-weight: 700; 
+    color: var(--text); 
+    line-height: 1.25;
+  }
+  .issue-overview-desc {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 13px; 
+    color: var(--text-muted);
+    line-height: 1.6; 
+    font-style: italic; 
+    flex: 1;
+  }
+  .issue-badge {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; 
+    font-weight: 500;
+    letter-spacing: 0.1em; 
+    text-transform: uppercase;
+    padding: 5px 12px; 
+    text-align: center;
+    margin-top: auto;
+    border: 1px solid;
+  }
+  .ib-red    { 
+    color: var(--issue-1); 
+    border-color: var(--issue-1); 
+    background: var(--issue-1-bg); 
+  }
+  .ib-green  { 
+    color: var(--issue-2); 
+    border-color: var(--issue-2); 
+    background: var(--issue-2-bg); 
+  }
+  .ib-teal   { 
+    color: var(--issue-3); 
+    border-color: var(--issue-3); 
+    background: rgba(90,184,158,0.07); 
+  }
+  .ib-purple { 
+    color: var(--issue-4); 
+    border-color: var(--issue-4); 
+    background: var(--issue-4-bg); 
+  }
+  /* ── S20: State's Silence ── */
+  .big-silence {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 700; 
+    color: var(--text);
+    line-height: 1.05; 
+    margin-bottom: 8px; 
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .subtitle-italic {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 15px; 
+    font-style: italic;
+    color: var(--text-muted); 
+    margin-bottom: 28px;
+  }
+  .mock-quote {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--text-dim);
+    padding: 24px 28px; 
+    margin-bottom: 20px;
+  }
+  .mock-quote p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px; 
+    font-style: italic; 
+    color: var(--text); 
+    line-height: 1.78;
+  }
+  .loud-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  /* ── S23: What's Next ── */
+  .next-list { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+  }
+  .next-item {
+    display: flex; 
+    align-items: flex-start; 
+    gap: 20px;
+    padding: 20px 0; 
+    border-bottom: 1px solid var(--border);
+  }
+  .next-item:first-child { 
+    border-top: 1px solid var(--border); 
+  }
+  .next-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; 
+    font-weight: 500;
+    letter-spacing: 0.1em; 
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid;
+    flex-shrink: 0; 
+    min-width: 52px; 
+    text-align: center; 
+    margin-top: 3px;
+  }
+  .np-next { 
+    background: var(--accent); 
+    color: #0d0d10; 
+    border-color: var(--accent); 
+  }
+  .np-then { 
+    background: transparent; 
+    color: var(--text-muted); 
+    border-color: var(--border); 
+  }
+  .np-last { 
+    background: var(--issue-4-dim); 
+    color: var(--issue-4); 
+    border-color: var(--issue-4); 
+  }
+  .next-item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; 
+    font-weight: 700; 
+    color: var(--text); 
+    margin-bottom: 4px;
+  }
+  .next-item-sub {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 13px; 
+    color: var(--text-muted); 
+    line-height: 1.55;
+  }
+  /* ── S24: September 21 ── */
+  .s24-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(60px, 12vw, 120px);
+    font-weight: 700; 
+    line-height: 0.95;
+    color: var(--text); 
+    letter-spacing: -0.03em; 
+    margin-bottom: 16px;
+  }
+  .s24-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 46px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent); 
+    margin-bottom: 36px;
+  }
+  .s24-url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px; color: var(--text-muted); 
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .s24-footer {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; 
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  .xlink { 
+    color: var(--text); 
+    text-decoration: underline; 
+    text-underline-offset: 2px; 
+  }
+  .xlink:hover { 
+    text-decoration: none; 
+    color: var(--accent); 
+  }
+  .reminder {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 10px; 
+    color: rgb(107, 103, 103); 
+    line-height: 1.6;
+    padding-top: 5%;
+    font-style: italic;
+  }
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .slide { 
+      padding: 40px 28px; 
+    }
+    .split-slide { 
+      grid-template-columns: 1fr; 
+    }
+    .split-left { 
+      padding: 32px 28px; 
+      min-height: 180px; 
+    }
+    .split-right { 
+      padding: 36px 28px; 
+    }
+    .three-col, .two-col { 
+      grid-template-columns: 1fr; 
+      gap: 1px; 
+      background: var(--border); 
+    }
+    .four-col, .stat-grid-4 { 
+      grid-template-columns: 1fr; 
+    }
+    .circle-grid { 
+      grid-template-columns: 1fr; 
+    }
+    #progress-nav { 
+      right: 8px; 
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="progress-nav">
+  <a class="p-dot active" href="#s1"  data-t="s1"  title="31 Days"></a>
+  <a class="p-dot" href="#s2"  data-t="s2"  title="Expectations vs. Reality"></a>
+  <a class="p-dot" href="#s3"  data-t="s3"  title="Quick Review"></a>
+  <a class="p-dot" href="#s4"  data-t="s4"  title="The Appeal"></a>
+  <a class="p-dot" href="#s5"  data-t="s5"  title="OA Stats"></a>
+  <a class="p-dot" href="#s6"  data-t="s6"  title="Motion Granted"></a>
+  <a class="p-dot" href="#s7"  data-t="s7"  title="The Panel"></a>
+  <a class="p-dot" href="#s8"  data-t="s8"  title="Judge Vaidik"></a>
+  <a class="p-dot" href="#s9"  data-t="s9"  title="Judge Brown"></a>
+  <a class="p-dot" href="#s10" data-t="s10" title="Judge Altice"></a>
+  <a class="p-dot" href="#s11" data-t="s11" title="19 for 19"></a>
+  <a class="p-dot" href="#s12" data-t="s12" title="First Pass"></a>
+  <a class="p-dot" href="#s13" data-t="s13" title="Issue I: Franks"></a>
+  <a class="p-dot" href="#s14" data-t="s14" title="Issue I: Altice"></a>
+  <a class="p-dot" href="#s15" data-t="s15" title="Issue II: Confessions"></a>
+  <a class="p-dot" href="#s16" data-t="s16" title="Issue II: Brown"></a>
+  <a class="p-dot" href="#s17" data-t="s17" title="Issue III: Defense"></a>
+  <a class="p-dot" href="#s18" data-t="s18" title="Issue III: Passarelli"></a>
+  <a class="p-dot" href="#s19" data-t="s19" title="Issue IV: Sleeper"></a>
+  <a class="p-dot" href="#s20" data-t="s20" title="State's Silence"></a>
+  <a class="p-dot" href="#s21" data-t="s21" title="Popcorn Ready"></a>
+  <a class="p-dot" href="#s22" data-t="s22" title="Four Unanswered"></a>
+  <a class="p-dot" href="#s23" data-t="s23" title="What's Next"></a>
+  <a class="p-dot" href="#s24" data-t="s24" title="September 21"></a>
+</nav>
+
+
+<!-- S1: HERO -->
+<section class="slide" id="s1">
+  <div class="hero-eyebrow">All Eyes On Delphi</div>
+  <div class="hero-number">30</div>
+  <div class="hero-unit">Days</div>
+  <div class="hero-sub">to Oral Arguments</div>
+  <div class="hero-rick">Rick vs. Dick</div>
+  <div class="meta-strip">
+    <div class="meta-pill"><strong>September 21, 2026</strong>Oral Arguments</div>
+    <div class="meta-pill"><strong>IN COA 25A-CR-00591</strong>Allen v. State</div>
+    <div class="meta-pill"><strong>10:00 AM ET</strong>Indianapolis</div>
+    <div class="meta-pill"><strong>30 min per side</strong>IN.gov/judiciary</div>
+  </div>
+</section>
+
+
+<!-- S2: EXPECTATIONS VS. REALITY -->
+<section class="slide" id="s2">
+  <div class="slide-label">Lock In</div>
+  <h2 class="slide-title">Expectations vs. Reality</h2>
+  <div class="evr-quote">
+    <p>The 3-judge panel assembled to decide Allen's fate have already reversed a murder conviction together.</p>
+  </div>
+  <div><span class="case-badge">Case No. 25A-CR-00591</span></div>
+</section>
+
+
+<!-- S3: QUICK REVIEW -->
+<section class="slide" id="s3">
+  <div class="slide-label">Re-Orienting</div>
+  <h2 class="slide-title">Quick review</h2>
+  <div class="two-col" style="align-items:stretch;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <p class="body-text">For new people coming in, the basics: Richard Allen was convicted in November 2024 of the 2017 murders of Abigail Williams and Liberty German on the Monon High Bridge Trail in Delphi, Indiana. He was sentenced to 130 years in prison and he's currently housed in an Oklahoma prison.</p>
+      <p class="body-text">His appeal is now fully briefed before the Indiana Court of Appeals, Case No. 25A-CR-00591. Oral arguments are scheduled for September 21, 2026.</p>
+    </div>
+    <div class="tonight-card">
+      <div class="tonight-label">Tonight:</div>
+      <p>Re-orienting after the case lull, and hiatus.</p>
+    </div>
+  </div>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S4: AGENDA -->
+<section class="slide" id="s4">
+  <div class="slide-label">The Appeal</div>
+  <h2 class="slide-title">Four issues, three judges, less than 1%</h2>
+  <div class="three-col">
+    <div class="card">
+      <div class="card-title">The Appeal</div>
+      <p><a class="xlink" href="https://alleyesondelphi.github.io/rickallen/the-appeal">Issue-by-issue comparison</a> of all three briefs: Allen's opening, the State's response, and Allen's reply. Versus what the State doesn't answer for each issue. Tables of Authorities for all three briefs: every case each party cited, tagged by doctrine, notes on oddities.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The Panel</div>
+      <p><a class="xlink" href="https://alleyesondelphi.github.io/rickallen/the-panel">Full profiles</a> of Vaidik, Brown, and Altice built from published opinions, official bios, and Indiana Lawyer profiles. Judicial philosophy sections drawn from their own statements. 148 Vaidik opinions, 107 Brown, 63 Altice, including every case where any two of them sat together. 59 shared cases across three pairings.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The Chances</div>
+      <p><a class="xlink" href="https://drive.google.com/file/d/1DHDIw6M5QPzVlA1futTmazXKOLUGDoQ_/view?usp=drive_link">Downloadable master list</a> of all opinions and panel compositions is linked in the description for anyone who wants to dig deeper into the judges' records and run their own analyses. Tonight we're doing more orienting and fellowshipping than getting into the statistical weeds.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- S5: OA STATS -->
+<section class="slide" id="s5">
+  <div class="slide-label">Why Oral Arguments Are Significant</div>
+  <h2 class="slide-title">Indiana COA only grants arguments in roughly 3% of all cases</h2>
+  <div class="stat-grid-4">
+    <div class="stat-box">
+      <div class="big-n">~3%</div>
+      <div class="stat-desc">Overall grant rate<br>(all appeals)</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-n">1.1%</div>
+      <div class="stat-desc">Criminal cases<br>2003, the low</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-n">2.9%</div>
+      <div class="stat-desc">Criminal cases<br>2024, the high</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-n">3/3</div>
+      <div class="stat-desc">Judges who<br>concurred</div>
+    </div>
+  </div>
+  <p class="italic-caption">Even in 2024, the highest criminal grant rate in the dataset, more than 97 out of every 100 criminal defendants who appealed never got to stand in front of the panel and speak. Allen's appellate attorneys will.</p>
+</section>
+
+
+<!-- S6: THE GRANT -->
+<section class="slide" id="s6">
+  <div class="slide-label">Motion Granted</div>
+  <h2 class="slide-title">A test, not an indicator</h2>
+  <div class="two-col" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-title">What it means</div>
+      <p>At least one judge had a question the written briefs didn't fully answer. Not surprising in a case this complex with this many issues and this many briefing gaps. But all three concurred and none pushed back on granting.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">What it doesn't mean</div>
+      <p>Courts grant argument in cases they affirm all the time. It is not a signal of reversal, it's a pressure test for both sides. The defense gets its opportunity and the State will be under a microscope for every briefing gap they left open.</p>
+    </div>
+  </div>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:0.08em;">Sept 21 &nbsp;·&nbsp; 10:00 AM Indianapolis &nbsp;·&nbsp; Room 315, Indiana Supreme Court &nbsp;·&nbsp; IN.gov/judiciary</p>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S7: PANEL OVERVIEW -->
+<section class="slide" id="s7">
+  <div class="slide-label">The Panel</div>
+  <div class="circle-grid">
+    <div class="judge-circle-wrap">
+      <div class="judge-circle vc">V</div>
+      <div class="circle-name">Vaidik</div>
+      <div class="circle-rate vc">Reversal rate ~42%</div>
+      <div class="circle-meta">26 yrs &nbsp;·&nbsp; Former Chief Deputy Prosecutor</div>
+      <div class="circle-note">Most senior. Co-wrote the book on persuasive oral advocacy.</div>
+    </div>
+    <div class="judge-circle-wrap">
+      <div class="judge-circle bc">B</div>
+      <div class="circle-name">Brown</div>
+      <div class="circle-rate bc">Reversal rate ~36%</div>
+      <div class="circle-meta">18 yrs &nbsp;·&nbsp; Presiding Judge, 5th District</div>
+      <div class="circle-note">Drug court creator. The likely swing vote.</div>
+    </div>
+    <div class="judge-circle-wrap">
+      <div class="judge-circle ac">A</div>
+      <div class="circle-name">Altice</div>
+      <div class="circle-rate ac">Reversal rate ~37%</div>
+      <div class="circle-meta">Chief Judge &nbsp;·&nbsp; 25 murder trials as prosecutor</div>
+      <div class="circle-note">Heaviest criminal law résumé on the panel.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- S8: JUDGE VAIDIK -->
+<div class="split-slide" id="s8">
+  <div class="split-left" style="background:var(--vaidik-bg);">
+    <div class="split-left-label">Judge</div>
+    <div class="split-left-name">Vaidik</div>
+    <div class="split-left-rate">~42%</div>
+    <div class="split-left-rate-label">Reversal rate</div>
+    <div class="split-left-meta">
+      26 years on COA<br>
+      Former Chief Deputy Prosecutor<br>
+      Co-author: <em>Point Well Made</em>
+    </div>
+  </div>
+  <div class="split-right">
+    <h2>Nancy H. Vaidik</h2>
+    <div class="split-section">
+      <div class="split-section-label">Key data point: <em>Young v. State</em> (2022)</div>
+      <p>Reversed a murder conviction on insufficient evidence and explicitly warned against courts that rubber-stamp trial determinations. This is the most important single opinion in the panel profiles.</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">What to know for September 21</div>
+      <p>She co-wrote the book on persuasive oral advocacy. She knows exactly what a briefing gap looks like and is not shy about exposing one in real time. A sharp question from Vaidik in that courtroom doesn't mean she's against you. It's just how she approaches oral argument.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- S9: JUDGE BROWN -->
+<div class="split-slide" id="s9">
+  <div class="split-left" style="background:var(--brown-bg);">
+    <div class="split-left-label">Judge</div>
+    <div class="split-left-name">Brown</div>
+    <div class="split-left-rate" style="color:var(--brown-c)">~36%</div>
+    <div class="split-left-rate-label">Reversal rate</div>
+    <div class="split-left-meta">
+      18 years on COA<br>
+      Presiding Judge, 5th District<br>
+      Drug court + mental health court creator
+    </div>
+  </div>
+  <div class="split-right">
+    <h2>Elaine B. Brown</h2>
+    <div class="split-section">
+      <div class="split-section-label">The swing vote</div>
+      <p>When Brown and Vaidik split, Vaidik was the hardliner. Brown is the gatekeeper, not the skeptic. Her own words: <em>"Getting to make decisions that are fair and in accordance with the law is most rewarding. On the opposite end are decisions that don't seem fair but nonetheless are what the law demands."</em></p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">Most receptive judge on Issue II (confessions)</div>
+      <p>She didn't just advocate for drug courts, she built them. Her career is premised on the belief that mental illness interacts with the justice system in ways the system isn't equipped to handle fairly. Allen's confession argument maps directly onto that premise. More on this when we get into Issue II.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- S10: JUDGE ALTICE -->
+<div class="split-slide" id="s10">
+  <div class="split-left" style="background:var(--altice-bg);">
+    <div class="split-left-label">Chief Judge</div>
+    <div class="split-left-name">Altice</div>
+    <div class="split-left-rate" style="color:var(--altice)">~37%</div>
+    <div class="split-left-rate-label">Reversal rate</div>
+    <div class="split-left-meta">
+      25 murder trials as prosecutor<br>
+      75 as trial judge &nbsp;·&nbsp; 7 death penalty cases<br>
+      Pence appointee
+    </div>
+  </div>
+  <div class="split-right">
+    <h2>Robert R. Altice Jr.</h2>
+    <div class="split-section">
+      <div class="split-section-label">The steepest hill on Issue I specifically</div>
+      <p>His overall reversal rate (~37%) is nearly identical to Brown's. The challenge on Issue I isn't his numbers, it's his professional history. He wrote probable cause affidavits as a prosecutor. He evaluated them from the bench for a decade. A <em>Franks</em> challenge accuses the affiant of deliberate falsehood or reckless disregard. That accusation lands differently on a judge who spent years being the person on the other side of it.</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">But he's not a wall</div>
+      <p><a class="xlink" href="https://law.justia.com/cases/indiana/supreme-court/2026/26s-cr-00198.html"><em>Ramos-Osario</em></a> (April 2025): Altice authored the Fourth Amendment reversal when the State's evidentiary foundation was objectively insufficient. The officer didn't testify. He reversed. When the failure is factual and in the record, he will act on it.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- S11: 19 FOR 19 -->
+<section class="slide" id="s11">
+  <div class="slide-label">Panel Alignment</div>
+  <div class="alignment-hero">
+    <div>
+      <div class="frac-num">19</div>
+      <div class="frac-denom">for 19</div>
+    </div>
+    <div class="alignment-body">
+      <p>Vaidik and Altice have agreed on every criminal case they've decided together. Zero disagreements.</p>
+      <em>When Vaidik leans in a direction, Altice has followed every time.</em>
+    </div>
+  </div>
+  <div class="three-col">
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--vaidik);margin-bottom:6px;">100%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Vaidik + Altice &nbsp;(19/19)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--brown-c);margin-bottom:6px;">90%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Vaidik + Brown &nbsp;(19/21)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--altice);margin-bottom:6px;">89%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Altice + Brown &nbsp;(17/19)</div>
+    </div>
+  </div>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S12: FIRST PASS -->
+<section class="slide" id="s12">
+  <div class="slide-label">The Four Issues</div>
+  <h2 class="slide-title">First Pass</h2>
+  <div class="four-col">
+    <div class="issue-overview-card">
+      <div class="roman i1">I</div>
+      <div class="issue-overview-title">The Search Warrant</div>
+      <div class="issue-overview-desc"><em>Franks v. Delaware</em> challenge. If the warrant falls, the gun becomes irrelevant.</div>
+      <div class="issue-badge ib-red">Steepest hill</div>
+    </div>
+    <div class="issue-overview-card">
+      <div class="roman i2">II</div>
+      <div class="issue-overview-title">The Confessions</div>
+      <div class="issue-overview-desc">Psychotic deterioration under solitary confinement at Westville was involuntary.</div>
+      <div class="issue-badge ib-green">Strongest path</div>
+    </div>
+    <div class="issue-overview-card">
+      <div class="roman i3">III</div>
+      <div class="issue-overview-title">Excluded Evidence</div>
+      <div class="issue-overview-desc">Right to a complete defense. Third-party culpability + <em>Napue</em> issues.</div>
+      <div class="issue-badge ib-teal">Strong path</div>
+    </div>
+    <div class="issue-overview-card">
+      <div class="roman i4">IV</div>
+      <div class="issue-overview-title">Cumulative Error</div>
+      <div class="issue-overview-desc">Sum of errors denied a fair trial. The State never addressed it.</div>
+      <div class="issue-badge ib-purple">The sleeper</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- S13: ISSUE I: FRANKS -->
+<div class="split-slide" id="s13">
+  <div class="split-left" style="background:var(--issue-1-bg);">
+    <div class="split-left-label">Issue I</div>
+    <div class="split-left-name" style="font-size:26px;">The Search<br>Warrant</div>
+  </div>
+  <div class="split-right">
+    <h2>Issue I: The <em>Franks</em> Challenge</h2>
+    <div class="split-section">
+      <div class="split-section-label">The core question</div>
+      <p>Was the probable cause affidavit (PCA) for Allen's home fundamentally misleading? Under <em>Franks v. Delaware</em>: if the warrant was secured through deliberate falsehood or reckless disregard for the truth, the evidence it produced falls, including the gun.</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">The fruit question</div>
+      <p>If the warrant falls, the physical evidence falls. Fruit of the poisonous tree. This is why Issue I matters structurally even when it carries the steepest hill label.</p>
+    </div>
+    <div>
+      <span class="badge red">Steepest hill</span>
+      <span style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:var(--text-muted);font-style:italic;margin-left:10px;">Altice will be the most skeptical. Vaidik and Brown will be more open.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- S14: ISSUE I: WHY HARDEST FOR ALTICE -->
+<section class="slide" id="s14">
+  <div class="slide-label">Issue I</div>
+  <h2 class="slide-title">Why Issue I Is the Hardest Sell for Altice</h2>
+  <div class="three-col">
+    <div class="card">
+      <div class="card-title">He wrote affidavits</div>
+      <p>As a deputy prosecutor and Chief of the Felony Division in Marion County, Altice drafted and supervised probable cause affidavits. He knows what goes in, what gets left out, and where the line between advocacy and misrepresentation sits in practice. A <em>Franks</em> challenge accuses that person of deliberate dishonesty. That accusation lands differently on a judge who spent years being the person on the other side.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">He evaluated them from the bench</div>
+      <p>Marion Superior Court Criminal Division 2, 2001 to 2012: 250 major felony jury trials, 75 murder trials, 7 death penalty cases. He spent a decade deciding whether affidavits were sufficient. His internal standard for what constitutes a defective affidavit was formed by seeing hundreds of them. That instinct doesn't disappear when you move to the appellate bench.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The ceiling</div>
+      <p>Being the steepest hill doesn't make him a wall. <em>Ramos-Osario</em> (April 2025): Altice authored the Fourth Amendment reversal when the State's evidentiary foundation was objectively insufficient. He reversed and Vaidik concurred. He will reverse on Fourth Amendment grounds when the State simply hasn't done the work. The question for Issue I: are the PCA defects that clear-cut and objective?</p>
+    </div>
+  </div>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S15: ISSUE II: CONFESSIONS -->
+<div class="split-slide" id="s15">
+  <div class="split-left" style="background:var(--issue-2-bg);">
+    <div class="split-left-label">Issue II</div>
+    <div class="split-left-name" style="font-size:26px;color:var(--brown-c)">The<br>Confessions</div>
+  </div>
+  <div class="split-right">
+    <h2>Issue II: The Involuntary Confession Argument</h2>
+    <div class="split-section">
+      <div class="split-section-label">The core question</div>
+      <p>Were Allen's jail confessions the product of psychotic deterioration under extended solitary confinement at Westville? The defense argues he was not mentally capable of voluntary waiver by the time he made those statements. The <em>IPAS Settlement</em>, a federal court settlement governing mentally ill prisoners in IDOC, is central to the conditions argument.</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">Why the confessions impeach themselves</div>
+      <p>Allen confessed to things family members denied at trial. In one case, he could not remember confessing days later. The defense argues the confessions don't just raise voluntariness questions, they raise questions about what was actually said and remembered. The State's counter is <em>Connelly</em>: coercion requires intentional state action, not just adverse conditions. That argument is most likely to resonate with Altice.</p>
+    </div>
+    <div><span class="badge green">Strongest path</span></div>
+  </div>
+</div>
+
+
+<!-- S16: ISSUE II: WHY BROWN MOST RECEPTIVE -->
+<section class="slide" id="s16">
+  <div class="slide-label">Issue II</div>
+  <h2 class="slide-title">Why Brown Is the Most Receptive on Issue II</h2>
+  <div class="three-col">
+    <div class="card">
+      <div class="card-title">The drug court she built</div>
+      <p>Brown didn't just advocate for drug courts, she created Dubois County's drug court, its Community Corrections Advisory Board, and the Substance Abuse Council. She has spent her career building structures premised on the belief that mental illness interacts with the justice system in ways the system isn't equipped to handle fairly. Allen's confession argument is premised on exactly that reasoning.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The Tillett dissent</div>
+      <p><em>Tillett v. State</em> (March 2025): Brown reversed a conviction to protect a defendant with schizophrenia spectrum disorder's right to present an insanity defense. Altice dissented. The Indiana Supreme Court later reversed Brown. At the COA level, where Allen's case is decided first, her threshold for taking psychotic deterioration seriously as a legal claim is lower than the Supreme Court's. That's the level that matters here.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Her own words</div>
+      <p><em>"Getting to make decisions that are fair and in accordance with the law is most rewarding. On the opposite end are the decisions that don't seem fair but nonetheless are what the law demands."</em> That tension is precisely what Issue II asks the panel to sit with. A man smearing feces, drinking toilet water, confessing to things his family denied. Fair and lawful is the question.</p>
+    </div>
+  </div>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S17: ISSUE III: COMPLETE DEFENSE -->
+<div class="split-slide" id="s17">
+  <div class="split-left" style="background:var(--issue-3-bg);">
+    <div class="split-left-label">Issue III</div>
+    <div class="split-left-name" style="font-size:24px;color:var(--issue-3)">Excluded<br>Evidence</div>
+  </div>
+  <div class="split-right">
+    <h2>Issue III: The Right to Present a Complete Defense</h2>
+    <div class="split-section">
+      <div class="split-section-label">Thread A: Third-party culpability</div>
+      <p>The Odinism/ritualistic theory the trial court largely excluded. The defense wasn't floating speculation. They were arguing a specific alternative explanation for the physical evidence the jury had a right to evaluate for themselves as the fact-finders. Doctrine: <em>Chambers v. Mississippi</em>, <em>Holmes v. South Carolina</em>, <em>Lashbrook v. State</em>.</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">Thread B: The Napue duty</div>
+      <p>Did the prosecution allow false or misleading testimony to stand uncorrected? The Weber van. The Holeman testimony. <em>Glossip v. Oklahoma</em> (2025), one of the State's four briefing gaps, reaffirmed and sharpened the <em>Napue</em> doctrine after the State filed its response. They have no written position on what it means for this case.</p>
+    </div>
+    <div><span class="badge amber">Strong path</span></div>
+  </div>
+</div>
+
+
+<!-- S18: ISSUE III: PASSARELLI -->
+<section class="slide" id="s18">
+  <div class="slide-label">Issue III</div>
+  <h2 class="slide-title">The <em>Passarelli</em> Signal: Brown vs. Altice on the Record</h2>
+  <div class="two-col" style="margin-bottom:22px;">
+    <div class="card">
+      <div class="card-title">Altice: <em>Passarelli</em> Majority</div>
+      <p>Authored the opinion affirming exclusion of a murder defendant's PTSD expert testimony. Reasoning: the legal test uses an objective "reasonable person" standard, so testimony about the defendant's individual mental state doesn't change the applicable standard and doesn't belong before the jury. Deference to the trial court's evidentiary call.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Brown: <em>Passarelli</em> Dissent</div>
+      <p>Dissented. Position: PTSD colors a person's perception of danger in ways genuinely relevant to what the jury needs to understand. The testimony should have been admitted. She broke from Altice specifically on whether this murder defendant had the right to put this evidence before the jury. The fault line in <em>Passarelli</em> is the same fault line in Allen's Issue III.</p>
+    </div>
+  </div>
+  <p class="italic-caption">Vaidik is the deciding factor and her record suggests she sides closer to Brown's instinct on a defendant's right to present a defense than to Altice's instinct on deference to the trial court.</p>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S19: ISSUE IV: THE SLEEPER -->
+<div class="split-slide" id="s19">
+  <div class="split-left" style="background:var(--issue-4-bg);">
+    <div class="split-left-label">Issue IV</div>
+    <div class="split-left-name" style="font-size:24px;color:var(--issue-4)">Cumulative<br>Error</div>
+  </div>
+  <div class="split-right">
+    <h2>Issue IV: The Sleeper Issue</h2>
+    <div class="split-section">
+      <div class="split-section-label">What the doctrine says</div>
+      <p>Indiana courts will reverse when the combined weight of trial errors, taken together, denied the defendant a fundamentally fair trial, even if no individual error would have reversed alone. The question stops being "was this one ruling reversible error?" It becomes: was this a fair trial?</p>
+    </div>
+    <div class="split-section">
+      <div class="split-section-label">Why it's the sleeper issue</div>
+      <p>Some may dismiss this as the backup argument. It isn't. It operates at a different level. It doesn't need to win any single argument, it needs to win the math. The near-misses on Issues I, II, and III don't stay close calls in isolation, they stack. The standard becomes: was this a fair trial, or not?</p>
+    </div>
+    <div><span class="badge purple">The unanswered argument</span></div>
+  </div>
+</div>
+
+
+<!-- S20: THE STATE'S SILENCE -->
+<section class="slide" id="s20">
+  <div class="slide-label">Issue IV</div>
+  <div class="big-silence">The State's Silence</div>
+  <p class="subtitle-italic">On paper, an unanswered argument is still heard. The harm is quiet but real.</p>
+  <div class="mock-quote">
+    <p>'Counsel, the appellant raised cumulative error in their opening brief. You didn't address it in your response. Why not? Do you concede the doctrine applies?'</p>
+  </div>
+  <div class="loud-line">At oral argument, quiet harm becomes loud.</div>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--text-muted);line-height:1.72;">Vaidik knows what a briefing gap looks like. Brown has shown she finds for defendants when the equities are bad enough. Altice, as a former prosecutor, knows you don't leave arguments unanswered. Unanswered arguments look like concessions.</p>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S21: GET YER POPCORN READY -->
+<section class="slide" id="s21">
+  <div class="slide-label">The Brief Comparison</div>
+  <h2 class="slide-title">Get yer popcorn ready</h2>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;color:var(--text-muted);line-height:1.68;margin-bottom:28px;">After three rounds of briefing, four arguments the State doesn't have an answer for are going before the judges.</p>
+  <div class="callout">
+    <p>Oral argument favors the defense when the gaps in the State's brief are harder to paper over in live questioning. When a judge asks 'What is your response to the cumulative error argument?' and there's no written answer, the State's attorney has to improvise in real time.</p>
+  </div>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--accent);font-style:italic;margin-top:4px;">May Rokita's goons trip over their own dicks improvising tho...</p>
+</section>
+
+
+<!-- S22: FOUR UNANSWERED -->
+<section class="slide" id="s22">
+  <div class="slide-label">The Brief Comparison</div>
+  <h2 class="slide-title" style="font-size:clamp(20px,3.5vw,42px);margin-bottom:28px;">The four arguments the State left unanswered through three rounds of briefing</h2>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">01 &nbsp;·&nbsp; <em>Glossip v. Oklahoma</em> (2025)</div>
+      <p>SCOTUS reaffirmed and sharpened the <em>Napue</em> doctrine after the State filed its response. Allen's reply raises it directly. The State walks into Sept 21 with a controlling Supreme Court decision on one of Rick's arguments and no written position on it.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">02 &nbsp;·&nbsp; Cumulative Error</div>
+      <p>Three rounds of briefing. The State never engaged with the doctrine. They didn't argue it doesn't apply, didn't dispute the errors add up. They said nothing. At oral argument, that is an open target in front of three judges.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">03 &nbsp;·&nbsp; Issue II.D: The Fruit Test</div>
+      <p>If the confession is involuntary, does that also suppress everything police found after Allen confessed? The State chose not to answer. Their written defense of that downstream evidence is blank.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">04 &nbsp;·&nbsp; The ISP's 2019 Reversal</div>
+      <p>Internal ISP documents cast doubt on how the investigation characterized the Blair/Carbaugh statements. The State's brief doesn't engage with their own agency's paper trail. The silence is more notable because of it.</p>
+    </div>
+  </div>
+  <div class="reminder">check chat</div>
+</section>
+
+
+<!-- S23: WHAT'S NEXT -->
+<section class="slide" id="s23">
+  <div class="slide-label">What's Next</div>
+  <h2 class="slide-title">Four issues.</h2>
+  <ul class="next-list">
+    <li class="next-item">
+      <span class="next-pill np-next">Next</span>
+      <div>
+        <div class="next-item-title">Issue I: The Warrant</div>
+        <div class="next-item-sub">Technical Fourth Amendment argument. Why the defense says it was built on false or reckless assertions.</div>
+      </div>
+    </li>
+    <li class="next-item">
+      <span class="next-pill np-then">Then</span>
+      <div>
+        <div class="next-item-title">Issue II: Confessions</div>
+        <div class="next-item-sub">The strongest path. What happened to Allen at Westville and why the defense says it breaks the confessions.</div>
+      </div>
+    </li>
+    <li class="next-item">
+      <span class="next-pill np-then">Then</span>
+      <div>
+        <div class="next-item-title">Issue III: Excluded Evidence</div>
+        <div class="next-item-sub">Third-party culpability. The Napue duty. What the jury never got to hear, and the Passarelli fault line in the panel.</div>
+      </div>
+    </li>
+    <li class="next-item">
+      <span class="next-pill np-last">Last</span>
+      <div>
+        <div class="next-item-title">Issue IV: Cumulative Error</div>
+        <div class="next-item-sub">The capstone that threads everything else together. The State had their chance to answer. They didn't take it.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+<!-- S24: SEPTEMBER 21 -->
+<section class="slide" id="s24">
+  <div class="s24-big">September 21.</div>
+  <div class="s24-sub">Cranks descend on Indianapolis</div>
+  <div class="s24-url">alleyesondelphi.github.io/rickallen</div>
+  <div class="s24-footer">IN.gov/judiciary &nbsp;·&nbsp; Webcast &nbsp;·&nbsp; Room 315, Indiana Supreme Court &nbsp;·&nbsp; 30 minutes per side</div>
+</section>
+
+
+<script>
+  const ids = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10',
+               's11','s12','s13','s14','s15','s16','s17','s18','s19','s20',
+               's21','s22','s23','s24'];
+  const dots = document.querySelectorAll('.p-dot');
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio > 0.35) {
+        const id = e.target.id;
+        dots.forEach(d => d.classList.toggle('active', d.dataset.t === id));
+      }
+    });
+  }, { threshold: 0.35 });
+
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) obs.observe(el);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.getElementById(dot.dataset.t);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
