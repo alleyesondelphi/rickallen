@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <!-- Required Info -->
   <title>The Panel | Vaidik · Brown · Altice</title>
   <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
@@ -30,35 +28,37 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
   <link rel="manifest" href="assets/icons/site.webmanifest">
-
+<!-- Styles -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e0e0f;
-    --paper: #f2ede6;
-    --aged: #e0d8cc;
-    --red: #9b1c1c;
-    --gold: #b8860b;
-    --steel: #3a4a5c;
-    --muted: #6b6560;
-    --gap-red: #c0392b;
-    --gap-bg: #fdf0ee;
-    --state-blue: #6e89a6;
-    --state-bg: #eef3f8;
-    --allen-green: #1a3a2a;
-    --allen-bg: #eef4f0;
-    --warn: #7a4a00;
-    --warn-bg: #fdf5e6;
-    --vaidik: #5b3256;
+    --ink:          #0e0e0f;
+    --paper:        #f2ede6;
+    --aged:         #e0d8cc;
+    --red:          #9b1c1c;
+    --gold:         #b8860b;
+    --steel:        #3a4a5c;
+    --muted:        #6b6560;
+    --gap-red:      #c0392b;
+    --gap-bg:       #fdf0ee;
+    --state-blue:   #6e89a6;
+    --state-bg:     #eef3f8;
+    --allen-green:  #1a3a2a;
+    --allen-bg:     #eef4f0;
+    --warn:         #7a4a00;
+    --warn-bg:      #fdf5e6;
+    --vaidik:       #5b3256;
     --vaidik-light: #f5eef4;
-    --brown: #2a5a3a;
-    --brown-light: #eef5f0;
-    --altice: #2c4a6e;
+    --brown:        #2a5a3a;
+    --brown-light:  #eef5f0;
+    --altice:       #2c4a6e;
     --altice-light: #edf2f8;
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
   body {
     background: var(--paper);
     color: var(--ink);
@@ -66,7 +66,6 @@
     font-size: clamp(13px, 2vw, 15px);
     line-height: 1.65;
   }
-
   /* HEADER */
   .masthead {
     background: var(--ink);
@@ -78,7 +77,9 @@
   .masthead::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0; 
+    left: 0; 
+    right: 0;
     height: 4px;
     background: var(--red);
   }
@@ -112,15 +113,15 @@
     gap: clamp(12px, 3vw, 24px);
     flex-wrap: wrap;
   }
-  .masthead-sub span { color: #bbb; }
-
+  .masthead-sub span { 
+    color: #bbb; 
+  }
   /* LAYOUT */
   .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px 64px;
   }
-
   /* INTRO BAND */
   .intro-band {
     background: var(--warn-bg);
@@ -132,8 +133,9 @@
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.6;
   }
-  .intro-band strong { color: var(--ink); }
-
+  .intro-band strong { 
+    color: var(--ink); 
+  }
   /* SECTION LABEL */
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
@@ -146,7 +148,6 @@
     margin: clamp(28px, 6vw, 48px) 0 clamp(12px, 3vw, 20px);
     scroll-margin-top: 60px;
   }
-
   /* ─── JUDGE PROFILE CARDS ─── */
   .judge-profile {
     border: 1px solid var(--aged);
@@ -161,10 +162,18 @@
     gap: 16px;
     position: relative;
   }
-  .judge-header.vaidik-hdr { background: var(--vaidik); color: #fff; }
-  .judge-header.brown-hdr { background: var(--brown); color: #fff; }
-  .judge-header.altice-hdr { background: var(--altice); color: #fff; }
-
+  .judge-header.vaidik-hdr { 
+    background: var(--vaidik); 
+    color: #fff; 
+  }
+  .judge-header.brown-hdr { 
+    background: var(--brown); 
+    color: #fff; 
+  }
+  .judge-header.altice-hdr { 
+    background: var(--altice); 
+    color: #fff; 
+  }
   .judge-name {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 3vw, 28px);
@@ -190,20 +199,17 @@
     flex-shrink: 0;
     margin-top: 4px;
   }
-
   .judge-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
   }
-
   .judge-col {
     padding: 24px 28px;
   }
   .judge-col + .judge-col {
     border-left: 1px solid var(--aged);
   }
-
   .judge-col-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -214,15 +220,15 @@
     border-bottom: 1px solid var(--aged);
     color: var(--muted);
   }
-
   .judge-col p {
     font-size: clamp(12px, 2vw, 14px);
     line-height: 1.65;
     margin-bottom: 10px;
     color: #222;
   }
-  .judge-col p:last-child { margin-bottom: 0; }
-
+  .judge-col p:last-child { 
+    margin-bottom: 0; 
+  }
   .stat-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -250,11 +256,15 @@
     color: var(--muted);
     margin-top: 4px;
   }
-
-  .vaidik-hdr ~ .judge-body .stat-n { color: var(--vaidik); }
-  .brown-hdr ~ .judge-body .stat-n { color: var(--brown); }
-  .altice-hdr ~ .judge-body .stat-n { color: var(--altice); }
-
+  .vaidik-hdr ~ .judge-body .stat-n { 
+    color: var(--vaidik); 
+  }
+  .brown-hdr ~ .judge-body .stat-n { 
+    color: var(--brown); 
+  }
+  .altice-hdr ~ .judge-body .stat-n { 
+    color: var(--altice); 
+  }
   /* Key opinion cards */
   .opinion-card {
     border: 1px solid var(--aged);
@@ -262,7 +272,9 @@
     margin-bottom: 10px;
     background: #fafaf9;
   }
-  .opinion-card:last-child { margin-bottom: 0; }
+  .opinion-card:last-child { 
+    margin-bottom: 0; 
+  }
   .opinion-name {
     font-family: 'Playfair Display', serif;
     font-size: clamp(12px, 2.2vw, 14px);
@@ -292,18 +304,28 @@
     border: 1px solid;
     margin-bottom: 8px;
   }
-  .outcome-reversed { color: var(--gap-red); border-color: var(--gap-red); }
-  .outcome-affirmed { color: var(--steel); border-color: var(--steel); }
-  .outcome-critical { color: var(--red); border-color: var(--red); background: var(--gap-bg); }
-
+  .outcome-reversed { 
+    color: var(--gap-red); 
+    border-color: var(--gap-red); 
+  }
+  .outcome-affirmed { 
+    color: var(--steel); 
+    border-color: var(--steel); 
+  }
+  .outcome-critical { 
+    color: var(--red); 
+    border-color: var(--red); 
+    background: var(--gap-bg); 
+  }
   /* Full-width rows inside judge cards */
   .judge-full-row {
     grid-column: 1 / -1;
     padding: 20px 28px;
     border-top: 1px solid var(--aged);
   }
-  .judge-full-row .judge-col-label { margin-top: 0; }
-
+  .judge-full-row .judge-col-label { 
+    margin-top: 0; 
+  }
   /* Relevance tags */
   .relevance-tags {
     display: flex;
@@ -325,7 +347,6 @@
     color: var(--gold);
     background: var(--warn-bg);
   }
-
   /* Philosophy quote */
   .judge-quote {
     font-style: italic;
@@ -344,7 +365,6 @@
     margin-top: 6px;
     font-style: normal;
   }
-
   /* ─── PANEL DYNAMICS ─── */
   .dynamics-block {
     border: 2px solid var(--ink);
@@ -371,8 +391,9 @@
     line-height: 1.7;
     color: #1a1a1a;
   }
-  .dynamics-block p + p { margin-top: 12px; }
-
+  .dynamics-block p + p { 
+    margin-top: 12px; 
+  }
   /* Issue assessment grid */
   .issue-assess {
     display: grid;
@@ -406,11 +427,18 @@
     margin-top: 6px;
     line-height: 1.45;
   }
-  .ia-strong { color: var(--allen-green); }
-  .ia-moderate { color: var(--gold); }
-  .ia-hard { color: var(--gap-red); }
-  .ia-sleeper { color: var(--steel); }
-
+  .ia-strong { 
+    color: var(--allen-green); 
+  }
+  .ia-moderate { 
+    color: var(--gold); 
+  }
+  .ia-hard { 
+    color: var(--gap-red); 
+  }
+  .ia-sleeper { 
+    color: var(--steel); 
+  }
   /* Young reversal callout */
   .young-callout {
     background: var(--gap-bg);
@@ -431,7 +459,6 @@
     line-height: 1.65;
     color: #333;
   }
-
   /* State gaps callout */
   .state-gaps {
     background: var(--warn-bg);
@@ -462,7 +489,6 @@
     padding: 4px 10px;
     line-height: 1.4;
   }
-
   /* Oral argument block */
   .oral-block {
     background: var(--ink);
@@ -483,7 +509,6 @@
     line-height: 1.65;
     color: #ccc;
   }
-
   /* Filings grid - reuse from the-appeal */
   .filings-grid {
     display: grid;
@@ -515,7 +540,10 @@
     text-decoration: none;
     border-bottom: 1px solid var(--aged);
   }
-  .filing-card .fc-title a:hover { border-color: var(--red); color: var(--red); }
+  .filing-card .fc-title a:hover { 
+    border-color: var(--red); 
+    color: var(--red); 
+  }
   .filing-card .fc-meta {
     font-size: 13px;
     line-height: 1.6;
@@ -533,72 +561,208 @@
     font-size: 11px;
     color: var(--muted);
   }
-
   /* MOBILE */
   @media (max-width: 700px) {
-    .masthead { padding: 28px 20px 24px; }
-    .site-nav { padding: 8px 16px !important; gap: 12px !important; }
-    .site-nav a { font-size: 9px !important; }
-    .masthead h1 { font-size: 26px; }
-    .masthead-sub { gap: 10px; }
-    .masthead-sub span { font-size: 8px; letter-spacing: 0.08em; }
-    .container { padding: 0 14px 48px; }
-    .intro-band { padding: 12px 14px; font-size: 11.5px; line-height: 1.5; }
-    .section-label { font-size: 8.5px; letter-spacing: 0.2em; margin: 28px 0 14px; scroll-margin-top: 60px; }
-    .judge-body { grid-template-columns: 1fr; }
-    .judge-col + .judge-col { border-left: none; border-top: 1px solid var(--aged); }
-    .judge-col { padding: 14px 12px; }
-    .judge-col p { font-size: 12px; line-height: 1.5; }
-    .judge-header { padding: 14px 12px; grid-template-columns: 1fr; gap: 6px; }
-    .judge-name { font-size: 20px; }
-    .judge-seat { font-size: 8.5px; }
-    .judge-role-badge { width: fit-content; font-size: 8.5px; }
-    .judge-col-label { font-size: 8.5px; letter-spacing: 0.15em; margin-bottom: 8px; }
-    .stat-grid { grid-template-columns: 1fr 1fr; }
-    .stat-cell { padding: 8px 6px; }
-    .stat-cell .stat-n { font-size: 20px; }
-    .stat-cell .stat-label { font-size: 7.5px; }
-    .opinion-card { padding: 10px 12px; }
-    .opinion-name { font-size: 12px; }
-    .opinion-cite { font-size: 9px; }
-    .opinion-card p { font-size: 11px; line-height: 1.45; }
-    .opinion-outcome { font-size: 8.5px; }
-    .judge-full-row { padding: 12px; }
-    .judge-quote { padding: 8px 12px; font-size: 12px; line-height: 1.5; }
-    .judge-quote-src { font-size: 8.5px; }
-    .relevance-tags { gap: 4px; }
-    .rel-tag { font-size: 8.5px; padding: 2px 6px; }
-    .issue-assess { grid-template-columns: 1fr; }
-    .ia-cell { padding: 12px 14px; }
-    .ia-cell .ia-val { font-size: 14px; }
-    .ia-cell .ia-desc { font-size: 10.5px; }
-    .ia-cell .ia-label { font-size: 8.5px; }
-    .dynamics-block { padding: 16px 14px; }
-    .dynamics-block p { font-size: 12px; line-height: 1.55; }
-    .young-callout { padding: 12px 14px; }
-    .young-callout .yc-flag { font-size: 8.5px; }
-    .young-callout p { font-size: 11.5px; line-height: 1.5; }
-    .state-gaps { padding: 12px 14px; }
-    .state-gaps .sg-flag { font-size: 8.5px; }
-    .state-gaps ul { flex-direction: column; }
-    .state-gaps ul li { font-size: 10px; }
-    .oral-block { padding: 14px 12px; }
-    .oral-block .ob-label { font-size: 8.5px; }
-    .oral-block p { font-size: 11.5px; line-height: 1.5; }
-    .filings-grid { grid-template-columns: 1fr; }
-    .mobile-jump { display: flex; }
+    .masthead { 
+      padding: 28px 20px 24px; 
+    }
+    .site-nav { 
+      padding: 8px 16px !important; 
+      gap: 12px !important; 
+    }
+    .site-nav a { 
+      font-size: 9px !important; 
+    }
+    .masthead h1 { 
+      font-size: 26px; 
+    }
+    .masthead-sub { 
+      gap: 10px; 
+    }
+    .masthead-sub span { 
+      font-size: 8px; 
+      letter-spacing: 0.08em; 
+    }
+    .container { 
+      padding: 0 14px 48px; 
+    }
+    .intro-band { 
+      padding: 12px 14px; 
+      font-size: 11.5px; 
+      line-height: 1.5; 
+    }
+    .section-label { 
+      font-size: 8.5px; 
+      letter-spacing: 0.2em; 
+      margin: 28px 0 14px; 
+      scroll-margin-top: 60px; 
+    }
+    .judge-body { 
+      grid-template-columns: 1fr; 
+    }
+    .judge-col + .judge-col { 
+      border-left: none; 
+      border-top: 1px solid var(--aged); 
+    }
+    .judge-col { 
+      padding: 14px 12px; 
+    }
+    .judge-col p { 
+      font-size: 12px; 
+      line-height: 1.5; 
+    }
+    .judge-header { 
+      padding: 14px 12px; 
+      grid-template-columns: 1fr; 
+      gap: 6px; 
+    }
+    .judge-name { 
+      font-size: 20px; 
+    }
+    .judge-seat { 
+      font-size: 8.5px; 
+    }
+    .judge-role-badge { 
+      width: fit-content; 
+      font-size: 8.5px; 
+    }
+    .judge-col-label { 
+      font-size: 8.5px; 
+      letter-spacing: 0.15em; 
+      margin-bottom: 8px; 
+    }
+    .stat-grid { 
+      grid-template-columns: 1fr 1fr; 
+    }
+    .stat-cell { 
+      padding: 8px 6px; 
+    }
+    .stat-cell .stat-n { 
+      font-size: 20px; 
+    }
+    .stat-cell .stat-label { 
+      font-size: 7.5px; 
+    }
+    .opinion-card { 
+      padding: 10px 12px; 
+    }
+    .opinion-name { 
+      font-size: 12px; 
+    }
+    .opinion-cite { 
+      font-size: 9px; 
+    }
+    .opinion-card p { 
+      font-size: 11px; 
+      line-height: 1.45; 
+    }
+    .opinion-outcome { 
+      font-size: 8.5px; 
+    }
+    .judge-full-row { 
+      padding: 12px; 
+    }
+    .judge-quote { 
+      padding: 8px 12px; 
+      font-size: 12px; 
+      line-height: 1.5; 
+    }
+    .judge-quote-src { 
+      font-size: 8.5px; 
+    }
+    .relevance-tags { 
+      gap: 4px; 
+    }
+    .rel-tag { 
+      font-size: 8.5px; 
+      padding: 2px 6px; 
+    }
+    .issue-assess { 
+      grid-template-columns: 1fr; 
+    }
+    .ia-cell { 
+      padding: 12px 14px; 
+    }
+    .ia-cell .ia-val { 
+      font-size: 14px; 
+    }
+    .ia-cell .ia-desc { 
+      font-size: 10.5px; 
+    }
+    .ia-cell .ia-label { 
+      font-size: 8.5px; 
+    }
+    .dynamics-block { 
+      padding: 16px 14px; 
+    }
+    .dynamics-block p { 
+      font-size: 12px; 
+      line-height: 1.55; 
+    }
+    .young-callout { 
+      padding: 12px 14px; 
+    }
+    .young-callout .yc-flag { 
+      font-size: 8.5px; 
+    }
+    .young-callout p { 
+      font-size: 11.5px; 
+      line-height: 1.5; 
+    }
+    .state-gaps { 
+      padding: 12px 14px; 
+    }
+    .state-gaps .sg-flag { 
+      font-size: 8.5px; 
+    }
+    .state-gaps ul { 
+      flex-direction: column; 
+    }
+    .state-gaps ul li { 
+      font-size: 10px; 
+    }
+    .oral-block { 
+      padding: 14px 12px; 
+    }
+    .oral-block .ob-label { 
+      font-size: 8.5px; 
+    }
+    .oral-block p { 
+      font-size: 11.5px; 
+      line-height: 1.5; 
+    }
+    .filings-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .mobile-jump { 
+      display: flex; 
+    }
     /* Research notes section */
-    .research-grid { grid-template-columns: 1fr !important; }
-    .research-grid p { font-size: 11px !important; line-height: 1.45 !important; }
-    .reversal-grid { grid-template-columns: 1fr !important; }
+    .research-grid { 
+      grid-template-columns: 1fr !important; 
+    }
+    .research-grid p { 
+      font-size: 11px !important; 
+      line-height: 1.45 !important; 
+    }
+    .reversal-grid { 
+      grid-template-columns: 1fr !important; 
+    }
     /* Sources collapse */
-    details > div[style*="columns: 2"] { columns: 1 !important; }
-    details { padding: 10px 12px !important; }
-    details summary { font-size: 9px !important; }
+    details > div[style*="columns: 2"] { 
+      columns: 1 !important; 
+    }
+    details { 
+      padding: 10px 12px !important; 
+    }
+    details summary { 
+      font-size: 9px !important; 
+    }
   }
-
-  html, body { overflow-x: hidden; max-width: 100%; }
-
+  html, body { 
+    overflow-x: hidden; 
+    max-width: 100%; 
+  }
   /* Mobile jump nav */
   .mobile-jump {
     display: none;
@@ -611,7 +775,9 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .mobile-jump::-webkit-scrollbar { display: none; }
+  .mobile-jump::-webkit-scrollbar { 
+    display: none; 
+  }
   .mobile-jump a {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -625,11 +791,13 @@
     flex-shrink: 0;
     display: block;
   }
-  .mobile-jump a:hover, .mobile-jump a:active { color: var(--paper); background: #111; }
+  .mobile-jump a:hover, .mobile-jump a:active { 
+    color: var(--paper); 
+    background: #111; 
+    }
 </style>
 </head>
 <body>
-
 <!-- Mobile sticky jump navigation -->
 <nav class="mobile-jump" aria-label="Jump to section">
   <a href="#vaidik">Vaidik</a>

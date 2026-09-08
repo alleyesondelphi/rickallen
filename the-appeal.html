@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <!-- Required Info -->
   <title>RA vs. IN | Appeal Analysis</title>
   <meta name="description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
@@ -34,25 +32,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e0e0f;
-    --paper: #f2ede6;
-    --aged: #e0d8cc;
-    --red: #9b1c1c;
-    --gold: #b8860b;
-    --steel: #3a4a5c;
-    --muted: #6b6560;
-    --gap-red: #c0392b;
-    --gap-bg: #fdf0ee;
-    --state-blue: #6e89a6;/*#1a3a5c;*/
-    --state-bg: #eef3f8;
+    --ink:         #0e0e0f;
+    --paper:       #f2ede6;
+    --aged:        #e0d8cc;
+    --red:         #9b1c1c;
+    --gold:        #b8860b;
+    --steel:       #3a4a5c;
+    --muted:       #6b6560;
+    --gap-red:     #c0392b;
+    --gap-bg:      #fdf0ee;
+    --state-blue:  #6e89a6;/*#1a3a5c;*/
+    --state-bg:    #eef3f8;
     --allen-green: #1a3a2a;
-    --allen-bg: #eef4f0;
-    --warn: #7a4a00;
-    --warn-bg: #fdf5e6;
+    --allen-bg:    #eef4f0;
+    --warn:        #7a4a00;
+    --warn-bg:     #fdf5e6;
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
   body {
     background: var(--paper);
     color: var(--ink);
@@ -60,7 +60,6 @@
     font-size: 15px;
     line-height: 1.65;
   }
-
   /* HEADER */
   .masthead {
     background: var(--ink);
@@ -106,15 +105,15 @@
     gap: 24px;
     flex-wrap: wrap;
   }
-  .masthead-sub span { color: #bbb; }
-
+  .masthead-sub span { 
+    color: #bbb; 
+  }
   /* LAYOUT */
   .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px 64px;
   }
-
   /* INTRO BAND */
   .intro-band {
     background: var(--warn-bg);
@@ -126,8 +125,9 @@
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.6;
   }
-  .intro-band strong { color: var(--ink); }
-
+  .intro-band strong { 
+    color: var(--ink); 
+  }
   /* SECTION LABEL */
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
@@ -139,14 +139,12 @@
     padding-bottom: 8px;
     margin: 40px 0 20px;
   }
-
   /* ISSUE BLOCKS */
   .issue {
     margin-bottom: 48px;
     border: 1px solid var(--aged);
     background: #fff;
   }
-
   .issue-header {
     background: var(--ink);
     color: var(--paper);
@@ -180,23 +178,29 @@
     white-space: nowrap;
     margin-top: 2px;
   }
-  .verdict-gap { color: var(--gap-red); border-color: var(--gap-red); }
-  .verdict-partial { color: var(--gold); border-color: var(--gold); }
-  .verdict-contested { color: #5577aa; border-color: #5577aa; }
-
+  .verdict-gap { 
+    color: var(--gap-red); 
+    border-color: var(--gap-red); 
+  }
+  .verdict-partial { 
+    color: var(--gold); 
+    border-color: var(--gold); 
+  }
+  .verdict-contested { 
+    color: #5577aa; 
+    border-color: #5577aa; 
+  }
   .issue-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
   }
-
   .col {
     padding: 20px 24px;
   }
   .col + .col {
     border-left: 1px solid var(--aged);
   }
-
   .col-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -206,11 +210,18 @@
     padding-bottom: 8px;
     border-bottom: 1px solid var(--aged);
   }
-  .col-allen .col-label { color: var(--allen-green); }
-  .col-state .col-label { color: var(--state-blue); }
-  .col-allen { background: var(--allen-bg); }
-  .col-state { background: var(--state-bg); }
-
+  .col-allen .col-label { 
+    color: var(--allen-green); 
+  }
+  .col-state .col-label { 
+    color: var(--state-blue); 
+  }
+  .col-allen { 
+    background: var(--allen-bg); 
+  }
+  .col-state { 
+    background: var(--state-bg); 
+  }
   .col ul {
     list-style: none;
     padding: 0;
@@ -222,7 +233,9 @@
     border-bottom: 1px solid rgba(0,0,0,0.05);
     position: relative;
   }
-  .col ul li:last-child { border-bottom: none; }
+  .col ul li:last-child { 
+    border-bottom: none; 
+  }
   .col ul li::before {
     content: '—';
     position: absolute;
@@ -230,9 +243,12 @@
     color: var(--muted);
     font-size: 11px;
   }
-  .col-allen ul li::before { color: var(--allen-green); }
-  .col-state ul li::before { color: var(--state-blue); }
-
+  .col-allen ul li::before { 
+    color: var(--allen-green); 
+  }
+  .col-state ul li::before { 
+    color: var(--state-blue); 
+  }
   /* GAP ROW */
   .gap-row {
     background: var(--gap-bg);
@@ -263,7 +279,6 @@
     padding: 4px 10px;
     line-height: 1.4;
   }
-
   /* PCA STRIP */
   .pca-strip {
     background: var(--aged);
@@ -311,7 +326,6 @@
     color: var(--ink);
     margin-bottom: 4px;
   }
-
   /* BOTTOM LINE */
   .bottom-line {
     border: 2px solid var(--ink);
@@ -337,8 +351,9 @@
     line-height: 1.7;
     color: #1a1a1a;
   }
-  .bottom-line p + p { margin-top: 12px; }
-
+  .bottom-line p + p { 
+    margin-top: 12px; 
+  }
   .strength-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -371,18 +386,38 @@
     margin-top: 4px;
     line-height: 1.4;
   }
-  .s-red { color: var(--gap-red); }
-  .s-blue { color: var(--state-blue); }
-  .s-gold { color: var(--gold); }
-
+  .s-red { 
+    color: var(--gap-red); 
+  }
+  .s-blue { 
+    color: var(--state-blue); 
+  }
+  .s-gold { 
+    color: var(--gold); 
+  }
   @media (max-width: 700px) {
-    .issue-body { grid-template-columns: 1fr; }
-    .col + .col { border-left: none; border-top: 1px solid var(--aged); }
-    .pca-items { grid-template-columns: 1fr; }
-    .strength-grid { grid-template-columns: 1fr; }
-    .pca-flag { font-size: 9px; }
-    .masthead { padding: 28px 20px 24px; }
-    .container { padding: 0 16px 48px; }
+    .issue-body { 
+      grid-template-columns: 1fr; 
+    }
+    .col + .col { 
+      border-left: none; 
+      border-top: 1px solid var(--aged); 
+    }
+    .pca-items { 
+      grid-template-columns: 1fr; 
+    }
+    .strength-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .pca-flag { 
+      font-size: 9px; 
+    }
+    .masthead { 
+      padding: 28px 20px 24px; 
+    }
+    .container { 
+      padding: 0 16px 48px; 
+    }
     .issue-header {
       grid-template-columns: 1fr;
       gap: 8px;
@@ -407,16 +442,31 @@
       line-height: 1;
       margin-top: 2px;
     }
-    .issue-header.is-open::after { content: '−'; color: #ccc; }
+    .issue-header.is-open::after { 
+      content: '−'; 
+      color: #ccc; 
+    }
     /* Mobile sticky jump nav */
-    .mobile-jump { display: flex; }
+    .mobile-jump { 
+      display: flex; 
+    }
     /* Section labels as jump anchors */
-    .section-label { scroll-margin-top: 60px; }
-    .masthead-sub { gap: 12px; }
-    .masthead-sub span { font-size: 9px; }
-    .intro-band { padding: 14px 16px; }
+    .section-label { 
+      scroll-margin-top: 60px; 
+    }
+    .masthead-sub { 
+      gap: 12px; 
+    }
+    .masthead-sub span { 
+      font-size: 9px; 
+    }
+    .intro-band { 
+      padding: 14px 16px; 
+    }
     /* Glossary: single column on mobile so terms aren't squeezed */
-    details > div[style*="columns: 2"] { columns: 1 !important; }
+    details > div[style*="columns: 2"] { 
+      columns: 1 !important; 
+    }
     /* Filings card grid: allow narrower cards on small phones */
     #filings-latest > div[style*="grid-template-columns"] {
       grid-template-columns: 1fr !important;
@@ -427,8 +477,10 @@
     }
   }
   /* Global safety: prevent horizontal page overflow */
-  html, body { overflow-x: hidden; max-width: 100%; }
-
+  html, body { 
+    overflow-x: hidden; 
+    max-width: 100%; 
+  }
   /* Mobile jump nav — hidden on desktop */
   .mobile-jump {
     display: none;
@@ -441,7 +493,9 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .mobile-jump::-webkit-scrollbar { display: none; }
+  .mobile-jump::-webkit-scrollbar { 
+    display: none; 
+  }
   .mobile-jump a {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -455,10 +509,14 @@
     flex-shrink: 0;
     display: block;
   }
-  .mobile-jump a:hover, .mobile-jump a:active { color: var(--paper); background: #111; }
-
+  .mobile-jump a:hover, .mobile-jump a:active { 
+    color: var(--paper); 
+    background: #111; 
+  }
   @media (max-width: 700px) {
-    .mobile-jump { display: flex; }
+    .mobile-jump { 
+      display: flex; 
+    }
   }
 </style>
 </head>
