@@ -541,9 +541,25 @@
       .nav-links a:hover { 
         color: var(--ink) !important; 
       }
-      .masthead-text { 
-        left: 20px; 
-        bottom: 52px; 
+      .masthead {
+        height: 55vh;
+        min-height: 340px;
+      }
+      .masthead-img {
+        object-fit: cover;
+        object-position: center top;
+      }
+      .masthead::after {
+        background: linear-gradient(
+          180deg,
+          rgba(0,0,0,0.60)  0%,
+          rgba(0,0,0,0.45) 40%,
+          rgba(0,0,0,0.80) 100%
+        );
+      }
+      .masthead-text {
+        left: 20px;
+        bottom: 52px;
       }
       .content-section { 
         padding: 32px 16px 56px; 
@@ -585,6 +601,12 @@
       }
       .drive-card-cta { 
         font-size: 8px; 
+      }
+    }
+    @media (max-width: 400px) {
+    .masthead-img {
+        object-fit: contain;
+        object-position: center 50%;
       }
     }
   </style>
