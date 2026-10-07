@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
   <title>Appellate Docket | RA v. IN</title>
   <meta name="description" content="Chronological case summary of the direct appeal with links to the filings, orders, and motions.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/appellate-docket">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) --> 
+  <!-- Open Graph -->
   <meta property="og:title" content="Appellate Docket">
   <meta property="og:description" content="Chronological case summary of the direct appeal with links to the filings, orders, and motions.">
   <meta property="og:type" content="website">
@@ -16,9 +15,9 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:site_name" content="RA v. IN | All Eyes on Delphi">
-  <!-- Twitter Card --> 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Appellate Docket"> 
+  <meta name="twitter:title" content="Appellate Docket">
   <meta name="twitter:description" content="Chronological case summary of the direct appeal with links to the filings, orders, and motions.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/appellate-docket.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
@@ -31,622 +30,1264 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #8080B0;
+        --text-muted:          rgba(152, 152, 164, 0.38);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #8080B0;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #8080B0;
+      --text-muted:          rgba(152, 152, 164, 0.38);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #8080B0;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active {
+      color: var(--peach);
+    }
+    .nav-links a.active:hover {
+      color: #fff;
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active {
+      color: var(--accent);
+    }
+    .site-nav.scrolled .nav-links a.active:hover {
+      color: var(--text-heading);
+    }
+    .active a:hover {
+      color: #fff;
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36, 22, 32, 0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+      .drive-card { 
+        flex-direction: column; 
+        align-items: flex-start; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+      .drive-card { 
+        padding: 14px; 
+        gap: 12px; 
+        flex-direction: row !important; 
+        align-items: center !important; 
+      }
+      .drive-icon { 
+        width: 32px; 
+        height: 32px; 
+        font-size: 14px; 
+      }
+      .drive-card-title { 
+        font-size: 0.9rem; 
+        margin-bottom: 0; 
+      }
+      .drive-card-desc { 
+        font-size: 11px; 
+        line-height: 1.4; 
+      }
+      .drive-card-cta { 
+        font-size: 8px; 
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="appellate-docket" class="active">Appellate Docket</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Richard Allen">
+    <div class="masthead-text" data-aos="fade-up">
+      <p class="masthead-kicker">Appellate Docket</p>
+      <h1 class="masthead-title">Rick vs. Dick</h1>
+    </div>
+  </div>
+
+  <section class="content-section">
+
+    <!-- Case Summary Card -->
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar">
+        <h2>Richard M. Allen v. State of Indiana</h2>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-item"><strong>Case Number:</strong> 25A-CR-00591</div>
+        <div class="case-meta-item"><strong>Court:</strong> Indiana Court of Appeals</div>
+        <div class="case-meta-item"><strong>Case Type:</strong> CR – Direct Appeals</div>
+        <div class="case-meta-item"><strong>Judges:</strong> <a class="filing-link" href="" target="_blank">Altice, Brown, Vaidik</a></div>
+        <div class="case-meta-item"><strong>Appellant:</strong> Rick Allen, Mark Leeman, Stacy Uliana</div>
+        <div class="case-meta-item"><strong>Notice of Appeal Filed:</strong> <a class="filing-link" href="https://drive.google.com/file/d/1X_5Q-7duZy4jLWrVDaQZjWguWMkNT7Ni/view?usp=drive_link" target="_blank">Mar. 11, 2025</a></div>
+        <div class="case-meta-item"><strong>Appellee:</strong> Angela Sanchez, Ellen Meilaender, Jodi Stein</div>
+        <div class="case-meta-item"><strong>Appellant's Brief Filed:</strong> <a class="filing-link" href="https://drive.google.com/file/d/1KX0jnjX0Lg1ZIWQJK3NbYsqK14AFnIyi/view?usp=drive_link" target="_blank">Dec. 17, 2025</a></div>
+        <div class="case-meta-item"><strong>Brief of Appellee Filed:</strong> <a class="filing-link" href="https://drive.google.com/file/d/1RRg9FIZDnHKIOx2s0j6fYlcEZZpLCnXU/view?usp=drive_link" target="_blank">Mar. 25, 2026</a></div> 
+        <div class="case-meta-item"><strong>Appellant's Reply Brief Filed:</strong> <a class="filing-link" href="https://drive.google.com/file/d/1jpxX1TCcBsp0YBZXhdfhg9Hf0nnSoPDs/view?usp=drive_link" target="_blank">Apr. 27, 2026</a></div>
+        <div class="case-meta-item"><strong>Oral Arguments Held:</strong> <a class="filing-link" href="https://drive.google.com/drive/folders/1Mgq6ZcT7Sr-t9GdWpkHb6Q9qy8GRTQ7h?usp=drive_link" target="_blank">Sept. 21, 2026</a></div>
+        <div class="case-meta-item"><strong>Opinion Issued:</strong> <a class="filing-link" href="" target="_blank">Pending..</a></div>
+      </div>
     </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
+    <!-- ════════════════════════════════════════════════════════
+      DECEMBER 2024
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>December 2024</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">12-30-2024</div>
+        <div class="filing-content">Amy Karozos files a <a class="filing-link" href="https://drive.google.com/file/d/1aggv8HCIRXLb--OdEsl_yJ9Tm4PjddMU/view?usp=drive_link" target="_blank">Motion for Authorization to Appoint Two Appellate Attorneys</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JANUARY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>January 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">01-03-2025</div>
+        <div class="filing-content">Judge Gull enters an <a class="filing-link" href="https://drive.google.com/file/d/1qIjUbE9Aa_WPdWAl8ebJkkQC1GjrVx9r/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">The State Public Defender files a Motion for Authorization to Appoint Two Appellate Attorneys. The Court authorizes the State Public Defender to appoint two attorneys to perfect the direct appeal in this cause.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-08-2025</div>
+        <div class="filing-content">Amy Karozos files an <a class="filing-link" href="https://drive.google.com/file/d/1kSF4pRMEotP7AuMKNxEMzyArAT5gBRdc/view?usp=drive_link" target="_blank">Acceptance of Appointment and Formal Notice of Appointment of Outside Counsel</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-09-2025</div>
+        <div class="filing-content">Judge Gull enters an <a class="filing-link" href="https://drive.google.com/file/d/1p1pVSUFiok5KPl8zT_rR3KZ1CWg0ED63/view?usp=drive_link" target="_blank">Order of Record Concurring in Appointment</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MARCH 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>March 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">03-11-2025</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file Richard Allen's <a class="filing-link" href="https://drive.google.com/file/d/1X_5Q-7duZy4jLWrVDaQZjWguWMkNT7Ni/view?usp=drive_link" target="_blank">Notice of Appeal</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-12-2025</div>
+        <div class="filing-content"><span class="filing-bold">Notice Received from Court of Appeals.</span>
+          <div class="filing-note">NOA Service to Trial Court.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-12-2025</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span>
+          <div class="filing-note">Transcript Not Yet Completed Certificate of Service &mdash; Method Not Provided/Not Specified 03/13/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-13-2025</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1wznXD5nXhCTtW7rMCrBP7unyW7zxbAMM/view?usp=drive_link" target="_blank">Notice of Completion of Clerk's Record</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-17-2025</div>
+        <div class="filing-content"><span class="filing-bold">Appearance</span> by Deputy AG.
+          <div class="filing-note">(A. Sanchez and E. Meilaender) Certificate of Service &mdash; Electronically Served 03/17/25.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      APRIL 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>April 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">04-17-2025</div>
+        <div class="filing-content"><span class="filing-bold">Court Reporter's Motion for Extension of Time</span> mailed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-22-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1ghJnHu1uJvqIfILJkAvcYYP5o_QdPrlr/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Court Reporter Jodie Williams has filed a Verified Motion for Extension of Time to File Transcript. Having reviewed the matter, the Court finds and orders as follows: 1. The Verified Motion for Extension of Time to File Transcript is granted. 2. The transcript is due on June 9, 2025. 3. The Clerk is directed to send this order to the parties and Court Reporter.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-22-2025</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JUNE 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>June 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">06-03-2025</div>
+        <div class="filing-content">Jodie Williams files <span class="filing-bold">Court Reporter's Motion for Extension of Time</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-06-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1S_ACOJvfA1phl_6EKZRd49hUjOp89q5P/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Having reviewed the matter, the Court finds and orders as follows: 1. The Verified Motion for Extension of Time to File Transcript is granted in part. 2. The transcript is due on July 9, 2025. 3. The Clerk is directed to send this order to the parties and Court Reporter Jodie Williams.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JULY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>July 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">07-02-2025</div>
+        <div class="filing-content">Jodie Williams files a <a class="filing-link" href="https://drive.google.com/file/d/1XQaT3qLAjxXtzu5adNi7NNJHEe8cHXcR/view?usp=drive_link" target="_blank">Notice of Filing Transcript</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-06-2025</div>
+        <div class="filing-content"><span class="filing-bold">Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-07-2025</div>
+        <div class="filing-content"><span class="filing-bold">Notice of Completion of Transcript.</span>
+          <div class="filing-note">Certificate of Service &mdash; Method Not Provided/Not Specified 07/07/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-29-2025</div>
+        <div class="filing-content">Mark Leeman files the <a class="filing-link" href="https://drive.google.com/file/d/1fVAHyGorJc7S2sxU0BGuld0jonE_-Mcf/view?usp=drive_link" target="_blank">Appellant's Verified Motion for Extension of Time to File Appellant's Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-29-2025</div>
+        <div class="filing-content">Loretta Rush enters an <a class="filing-link" href="https://drive.google.com/file/d/1pFHhNLOyRtbrwOrpVPJWSZRY9yNXsb8D/view?usp=drive_link" target="_blank">Order Approving Minimum Fees for Legal Services of the State Public Defender and Appointed Public Defenders</a>.
+          <div class="filing-note">Pursuant to Indiana Code section 33-40-2-3, the State Public Defender has presented to this Court a schedule of minimum fees for attorneys appointed by that office in trial and appellate cases. Effective January 1, 2023, in Non-Capital Cases, all in-court and out-of-court work shall be compensated at the hourly rate of not less than 75% of the capital rate required under Indiana Criminal Rule 24(C)(1), rounded up or down to the nearest $10/hour. Done at Indianapolis, Indiana, on 7/29/2022.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      AUGUST 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>August 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">08-04-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1aI2CSwMFZ8MVVBwUgmgpS9bjtYEXO7oM/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Appellant has filed a Verified Motion for Extension of Time to File Appellant's Brief. Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Verified Motion for Extension of Time to File Appellant's Brief is granted. 2. Appellant's brief is due on September 5, 2025.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-28-2025</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file the <a class="filing-link" href="https://drive.google.com/file/d/1vFek5ckJ_QicMjxUzPdb_UX_tYhxtxCs/view?usp=drive_link" target="_blank">Appellant's Second Verified Motion for Extension of Time to File Appellant's Brief</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      SEPTEMBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>September 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">09-03-2025</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/1xVQlCSGAQWPKoE2ltjMG9wTu7eL8JGjg/view?usp=drive_link" target="_blank">Motion for Authorization for Funds for Attorney-Client Visit</a> with the trial court.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-08-2025</div>
+        <div class="filing-content">Judge Gull issues an <a class="filing-link" href="https://drive.google.com/file/d/1MLhLDH0RAN6QGdbJn1msyqp2EsfTULvt/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">This Court, having reviewed and considered Allen's Motion for Authorization of Funds for Attorney-Visit, hereby GRANTS the Motion and FINDS that an in-person confidential attorney-client visit is a necessary part of the representation in this cause of Mr. Allen on appeal. As such, this Court ORDERS that reasonable expenses associated with counsels' travel to and from the attorney-client visit in Oklahoma are authorized.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-17-2025</div>
+        <div class="filing-content">Mark Leeman files a <a class="filing-link" href="https://drive.google.com/file/d/1LtXJwA22CABvXXlUzNvxo2jJKFlOTpx6/view?usp=drive_link" target="_blank">Verified Motion to Compel Transmission of Exhibits and New Due Date</a> and <a class="filing-link" href="https://drive.google.com/drive/folders/1wEcZezcU6GaX5Er4uz5Nn6nBYQRcbBXh?usp=drive_link" target="_blank">Exhibits</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      OCTOBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>October 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">10-03-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1BHy290QB_C_g2DzUwFi6lPfb0UxxrpxE/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">(1) Appellant has filed a Verified Motion to Compel Transmission of Exhibits and New Due Date. These exhibits are part of the Clerk's Record and should be provided in Appellant's Appendix. (2) Appellant's Verified Motion to Compel Transmission of Exhibits and New Due Date is granted in part as a final extension. Appellant's Brief is due on October 21, 2025.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-06-2025</div>
+        <div class="filing-content">Leeman and Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/1-nJykkkqYVZEeVdWntl9oNWg86dxllax/view?usp=drive_link" target="_blank">Motion for Reconsideration of Appellant's Motion to Compel Transmission of Exhibits and New Due Date</a> and <a class="filing-link" href="https://drive.google.com/drive/folders/1hCfA-QukwwSAbTydUATb0d5PldzMSLLg?usp=drive_link" target="_blank">Exhibits</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-06-2025</div>
+        <div class="filing-content">Meilaender files the Attorney General's <a class="filing-link" href="https://drive.google.com/file/d/1ULrTdw0UedQtkGBUrOqlPJRjl0pGCCDR/view?usp=drive_link" target="_blank">Verified Response to Motion for Reconsideration of Motion to Compel Transmission of Exhibits and New Due Date</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-22-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1O9tsKUTpR-ojChjcLbjP2Rfy0rpniXJ6/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Motion for Reconsideration is granted. 2. Within twenty (20) days of the date of this order, Court Reporter Jodie Williams is ordered to prepare and file Supplemental Exhibits volumes containing the missing exhibits. 3. Within five (5) days of the date the Supplemental Exhibits volumes are filed, the Carroll Circuit and Superior Courts Clerk shall file an Amended Notice of Completion of Transcript. 4. Appellant's brief and appendix are due within thirty (30) days of the date the Amended Notice of Completion of Transcript is served. 7. The Carroll Circuit and Superior Courts Clerk is directed to file this order under Cause Number 08C01-2210-MR-1.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-22-2025</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-22-2025</div>
+        <div class="filing-content"><span class="filing-bold">Note.</span>
+          <div class="filing-note">A copy of the Appellant's Motion to Consider and related attachments were mailed to Court Reporter Jodie Williams per the order issued 10/22/25.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      NOVEMBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>November 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">11-10-2025</div>
+        <div class="filing-content">Jodie Williams files a <a class="filing-link" href="https://drive.google.com/file/d/1PfjWFwMcIFLtVv6l46aUuc-gVNfhkB4H/view?usp=drive_link" target="_blank">Notice of Filing of Supplemental Exhibit Volumes</a>.
+          <div class="filing-note">Certificate of Service Electronically Served 11/10/25.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      DECEMBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>December 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">12-01-2025</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file Richard Allen's <a class="filing-link" href="https://drive.google.com/file/d/1TKtiTTxzRqr2bwe2oJpKfh2r1qXWtEfZ/view?usp=drive_link" target="_blank">Belated Motion for Permission to File Oversized Appellant's Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-01-2025</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file Richard Allen's <a class="filing-link" href="https://drive.google.com/file/d/17N3i3JYLQ9PiR3t1uRyRi5dz_wt_1eYC/view?usp=drive_link" target="_blank">Motion for Final Extension of Time in Which to File Appellant's Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-08-2025</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1UbTxLavgzMVmftMLsaG5iyAc3blcJX4u/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">[1] Appellant has filed a Belated Motion for Permission to File Oversized Appellant's Brief and a Motion for Final Extension of Time in which to File Appellant's Brief. [2] Having reviewed the matter: 1. Appellant's Belated Motion for Permission to File Oversized Appellant's Brief is granted. 2. Appellant may file an oversized brief that contains no more than 24,000 words. 3. Appellant's Motion for Final Extension of Time is granted as a final extension. 4. Appellant's Brief is due on December 17, 2025.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-17-2025</div>
+        <div class="filing-content">Jodi Kathryn Stein files an <a class="filing-link" href="https://drive.google.com/file/d/1EelhlfZhzyOkckS_8h-r7F16ASFUd8rQ/view?usp=drive_link" target="_blank">Appearance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-17-2025</div>
+        <div class="filing-content">Leeman and Uliana file a <span class="filing-bold">Notice of Exclusion of Confidential Information</span>.
+          <div class="filing-note">(Appendix) Certificate of Service &mdash; Electronically Served 12/17/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-17-2025</div>
+        <div class="filing-content">Leeman and Uliana file the <a class="filing-link" href="https://drive.google.com/drive/folders/1o4okg405C88GhkOrD-TXZ25XlC2Qb3gk?usp=drive_link" target="_blank">Appellant's Appendix Volumes 1&ndash;13</a>.
+          <div class="filing-note">Volumes of Appendices: Thirteen (13). *Public Access and Not for Public Access versions tendered of volumes 2&ndash;4, 6&ndash;7, 10&ndash;11.* Note: Volume 13 is labeled Public Access and contains orders with a notation of Confidential and Sealed. A court order dated 04/10/25 unsealed these documents and can be found on page 7 of Volume 13. Certificate of Service &mdash; Electronically Served 12/17/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-17-2025</div>
+        <div class="filing-content">Leeman and Uliana file the <a class="filing-link" href="https://drive.google.com/file/d/1KX0jnjX0Lg1ZIWQJK3NbYsqK14AFnIyi/view?usp=drive_link" target="_blank">Appellant's Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-17-2025</div>
+        <div class="filing-content">Leeman and Uliana file an <a class="filing-link" href="https://drive.google.com/file/d/1mpbgBIG3LyX2KclLGBFT85f5CEzLE4bN/view?usp=drive_link" target="_blank">Appealed Order</a>.
+          <div class="filing-note">*Confidential* Certificate of Service &mdash; Electronically Served 12/17/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-18-2025</div>
+        <div class="filing-content">The Indiana Court of Appeals Clerk files a <a class="filing-link" href="https://drive.google.com/file/d/1FIf2wniX0ixGm1WLi33LtLT3uu8bNa-h/view?usp=drive_link" target="_blank">Request for Transcript</a>.
+          <div class="filing-note">Document Transmitted.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2025</div>
+        <div class="filing-content"><span class="filing-bold">Electronic Documents Received from Trial Court Clerk.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; Fifteen (15). *Public Access and Not for Public Access versions tendered.* Received Electronically 12/19/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2025</div>
+        <div class="filing-content"><span class="filing-bold">Electronic Documents Received from Trial Court Clerk.</span>
+          <div class="filing-note">Volumes of Transcripts &mdash; Twenty-one (21). Volumes of T/C &mdash; One (1). Received Electronically 12/19/25.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-24-2025</div>
+        <div class="filing-content"><span class="filing-bold">Received from Trial Court/Agency Clerk.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; Two (2). *Public and Confidential versions tendered.* Supplemental Volumes of Exhibits &mdash; One (1). *Public and Confidential versions tendered.* Received By-Hand, Delivered 12/24/2025.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-31-2025</div>
+        <div class="filing-content"><span class="filing-bold">Note.</span>
+          <div class="filing-note">The flash drive for Defendant's Exhibit 3B (Motion to Correct Errors Hearing) contains one (1) PDF file and one (1) video clip. The PDF will not open, an error message is given when attempting to open it. The video clip does play.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-31-2025</div>
+        <div class="filing-content"><span class="filing-bold">Documents Released to Attorney/Party.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; Two (2). *Public and Confidential versions.* Supplemental Volumes of Exhibits &mdash; One (1). *Public and Confidential versions.* Party/Atty: Stein, Jodi Kathryn.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JANUARY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>January 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">01-07-2026</div>
+        <div class="filing-content">Meilaender files the State's <a class="filing-link" href="https://drive.google.com/file/d/1Xgt_mli0NKlxMzDF-yQfF1D4kOC9-jMC/view?usp=drive_link" target="_blank">Verified Motion for Extension of Time to File Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2026</div>
+        <div class="filing-content">Meilaender files the State's <a class="filing-link" href="https://drive.google.com/file/d/1L4e8s_xqVJqpBVh0mlWvAwn7AQerHFCY/view?usp=drive_link" target="_blank">Motion for Permission to File Oversized Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-09-2026</div>
+        <div class="filing-content">Chief Judge Altice issues an <a class="filing-link" href="https://drive.google.com/file/d/1L4e8s_xqVJqpBVh0mlWvAwn7AQerHFCY/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a>.
+          <div class="filing-note">[1] Appellee, by counsel, has filed a Verified Motion for Extension of Time to File Brief. [2] Appellee's Verified Motion for Extension of Time to File Brief is granted in part. Appellee's Brief is due on February 16, 2026.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-09-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-16-2026</div>
+        <div class="filing-content">Chief Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1MpQuji41KSv-27OVPOYPnqVSL0L8Z-as/view?usp=drive_link" target="_blank">Order Granting Motion to File Oversized Document</a>.
+          <div class="filing-note">[1] Appellee has filed a Motion for Permission to File Oversized Brief. [2] Appellee's Motion for Permission to File Oversized Brief is granted. Appellee may file an oversized brief containing up to 24,000 words. [3] Bradford, Weissmann, JJ., Najam, Sr.J., concur. For the Court, Elizabeth F. Tavitas.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-16-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-23-2026</div>
+        <div class="filing-content">Meilaender files the State's <a class="filing-link" href="https://drive.google.com/file/d/1XAZNjxQwbUEv-iMigY6Nkkk7j0PBgNWj/view?usp=drive_link" target="_blank">Verified Motion To Transmit Supplemental Documentary Exhibit Volumes</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-27-2026</div>
+        <div class="filing-content">Chief Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1_Cn8zLaUI7VoflEwoEjlUzOMxX6-Flv8/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Having reviewed the matter, the Court finds and orders as follows: 1. Appellee's Verified Motion to Transmit Supplemental Documentary Exhibit Volumes is granted. 2. Within five (5) days of the date of this order, the Carroll Circuit and Superior Courts Clerk is ordered to transmit the exhibit volumes filed on November 10, 2025 in Cause Number 08C01-2210-MR-1 to the Clerk of this Court. 3. Appellee's Brief is due within thirty (30) days of the date the exhibit volumes are received by the Clerk of this Court.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-27-2026</div>
+        <div class="filing-content"><span class="filing-bold">Retransmission of Order.</span>
+          <div class="filing-note">Order issued 1/27/26 is retransmitted to serve the trial court.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-27-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted</span> (x2).</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-27-2026</div>
+        <div class="filing-content"><span class="filing-bold">Electronic Documents Received from Trial Court Clerk.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; Five (5) Supplemental. *Public Access and Not for Public Access versions tendered.* Received Electronically 01/27/26.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      FEBRUARY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>February 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">02-18-2026</div>
+        <div class="filing-content">Meilaender files the State's <a class="filing-link" href="https://drive.google.com/file/d/1SrWne_ETVgEpakAN3TAPg_eaWNyz6deH/view?usp=drive_link" target="_blank">Verified Motion for Second Extension of Time to File Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content">Chief Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1ujtxrRhanOBEEpcLBnRVMw_Yepim2jSY/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a>.
+          <div class="filing-note">[1] Appellee has filed a Verified Motion for Second Extension of Time to File Brief. [2] Appellee's Verified Motion for Second Extension of Time to File Brief is granted as a final extension. Appellee's Brief is due on March 30, 2026.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MARCH 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>March 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">03-25-2026</div>
+        <div class="filing-content"><span class="filing-bold">Documents Returned from Attorney/Party.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; Two (2). *Public and Confidential versions.* Supplemental Volumes of Exhibits &mdash; One (1). *Public and Confidential versions.*</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-25-2026</div>
+        <div class="filing-content">Meilaender files the State's <a class="filing-link" href="https://drive.google.com/file/d/1RRg9FIZDnHKIOx2s0j6fYlcEZZpLCnXU/view?usp=drive_link" target="_blank">Appellee Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-30-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/11Vu9WT7JTSm4Bt4OsIB8H3jzaRDKqrdt/view?usp=drive_link" target="_blank">Verified Motion for Extension of Time for Filing Appellant's Reply Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-30-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/1M5CsjXLOG1HGqhHPLCquVLTOEoqV9I_h/view?usp=drive_link" target="_blank">Belated Motion for Permission to File Oversized Appellant's Reply Brief</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      APRIL 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>April 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">04-01-2026</div>
+        <div class="filing-content">Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1YQBvM6-NOmQWiorRKRZ9ZLulVmfTD1e2/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a>.
+          <div class="filing-note">Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Verified Motion for Extension of Time for Filing Appellant's Reply Brief is granted as a final extension. 2. Appellant's Reply Brief is due on April 23, 2026.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-01-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-06-2026</div>
+        <div class="filing-content">Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1K8QgpkpRcFuleU5Vbyv-ML_5VkmrSgTr/view?usp=drive_link" target="_blank">Order Granting Motion to File Oversized Document</a>.
+          <div class="filing-note">[1] Appellant has filed a Belated Motion for Permission to File Oversized Appellant's Reply Brief. [2] Having reviewed the matter: 1. Appellant's Belated Motion for Permission to File Oversized Appellant's Reply Brief is granted. 2. Appellant's reply brief may contain up to 12,000 words. 3. Appellant's reply brief remains due on April 23, 2026. [3] Ordered: 4/6/2026. Vaidik, Foley, JJ., Najam, Sr. J. concur.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-06-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-15-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file <a class="filing-link" href="https://drive.google.com/file/d/1RL6pjnDnYDWqXZ0WpMzk2zak0us1tTx-/view?usp=drive_link" target="_blank">Second Verified Motion for Extension of Time for Filing Appellant's Reply Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-20-2026</div>
+        <div class="filing-content">Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1YQOdNhx_RBVcwOpkdCii8H9w2DGgTmCn/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a>.
+          <div class="filing-note">[1] Appellant has filed a Second Verified Motion for Extension of Time for Filing Appellant's Reply Brief. [2] Having reviewed the matter: 1. Appellant's Second Verified Motion for Extension of Time for Filing Appellant's Reply Brief is granted as a final extension. 2. Appellant's Reply Brief is due on April 27, 2026.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-20-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-27-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file <a class="filing-link" href="https://drive.google.com/file/d/1jpxX1TCcBsp0YBZXhdfhg9Hf0nnSoPDs/view?usp=drive_link" target="_blank">Appellant's Reply Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-27-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/1mcp1mM07cUV3EI41UErIdLHXVMGBOcaS/view?usp=drive_link" target="_blank">Motion for Oral Arguments</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-29-2026</div>
+        <div class="filing-content"><span class="filing-bold">Case Fully Briefed.</span>
+          <div class="filing-note">Oral Argument Requested: Yes.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-29-2026</div>
+        <div class="filing-content"><span class="filing-bold">Transmitted to Court of Appeals.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">04-29-2026</div>
+        <div class="filing-content"><span class="filing-bold">Documents Released to Court Administration.</span>
+          <div class="filing-note">Volumes of Exhibits &mdash; 6.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MAY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>May 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">05-14-2026</div>
+        <div class="filing-content"><span class="filing-bold">Opinion Issued.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-14-2026</div>
+        <div class="filing-content"><span class="filing-bold">Corrected Entry.</span>
+          <div class="filing-note">The docket is corrected to show the proper event code for the order issued 5/14/26.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-14-2026</div>
+        <div class="filing-content">Chief Judge Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1ZVOQpqI8ArRAEg98sqdKqhDvDFM684wh/view?usp=drive_link" target="_blank">Order Granting Motion for Oral Argument</a>.
+          <div class="filing-note">[1] Appellant has filed a Motion for Oral Argument. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Motion for Oral Argument is granted. 2. The Oral Argument is scheduled for Monday, September 21, 2026; 10:00 a.m., Indianapolis Time; Supreme Court Courtroom; State House, Room 315; Indianapolis, Indiana 46204. 3. The argument will be web-cast at www.IN.gov/judiciary and will be televised on a monitor outside of the Courtroom. 4. Each side will be allotted thirty (30) minutes for argument. 5. The scheduled panel members are Judges Vaidik, Brown, and Altice.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-14-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-14-2026</div>
+        <div class="filing-content"><span class="filing-bold">Acknowledgment of Order Setting Oral Argument.</span>
+          <div class="filing-note">*Appellant* Certificate of Service &mdash; Electronically Served 05/14/26.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-15-2026</div>
+        <div class="filing-content"><span class="filing-bold">Acknowledgment of Order Setting Oral Argument.</span>
+          <div class="filing-note">*Appellee* Certificate of Service &mdash; Electronically Served 05/15/26.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      AUGUST 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>August 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">08-18-2026</div>
+        <div class="filing-content">Indiana Supreme Court Chief Justice Tavitas issues an <a class="filing-link" href="https://drive.google.com/file/d/1nGMTC1n0LlM4aHxg5OS3ocOWaIHpKsEB/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Having reviewed the matter, the Court finds and orders as follows: 1. Within ten (10) days of the date of this order, the Court Reporter is ordered to file with the Carroll Circuit and Superior Courts Clerk a conventional, physical exhibit volume containing new copies of Defendant's Exhibits HHH, III, and KKK. 2. Within five (5) days of the date the exhibit volume is filed, the Carroll Circuit and Superior Courts Clerk is ordered to transmit the exhibit volume to the Clerk of this Court. 4. The Carroll Circuit and Superior Courts Clerk is directed to file this order under Cause Number 08C01-2210-MR-1.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-18-2026</div>
+        <div class="filing-content"><span class="filing-bold">Document Transmitted.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-24-2026</div>
+        <div class="filing-content">Jodie Williams files a <a class="filing-link" href="https://drive.google.com/file/d/1kMx5CLciBuln5VgT3_URPcPYG6xqdU1R/view?usp=drive_link" target="_blank">Notice of Filing of Supplemental Exhibit Volume</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-25-2026</div>
+        <div class="filing-content"><span class="filing-bold">Received Document</span> (postmarked 08/25/26).
+          <div class="filing-note">Notice of Filing of Supplemental Exhibit Volume.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      SEPTEMBER 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>September 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">09-21-2026</div>
+        <div class="filing-content"><span class="filing-bold">Oral Argument.</span>
+          <div class="filing-note">Session: 09/21/2026 @ 10:00 AM. Comment: Supreme Court Courtroom &mdash; EBB/NHV/RRA.<br>
+            <a class="filing-link" href="https://drive.google.com/file/d/1comfNFlF_7UK1xjx2aeG-IT_TsVdurxq/view?usp=drive_link" target="_blank">Video</a> 
+            | <a class="filing-link" href="https://drive.google.com/file/d/1q6TtmVsD5P0N8fQfUbNWAHZHe1NwtISg/view?usp=drive_link" target="_blank">Transcript</a>
+          </div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-23-2026</div>
+        <div class="filing-content">Mark Leeman and Stacy Uliana file a <a class="filing-link" href="https://drive.google.com/file/d/1f6oYd3zOqw7XH_554PJXnXXXQx0iKJa4/view?usp=drive_link" target="_blank">Notice of Additional Authorities</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-xx-2026</div>
+        <div class="filing-content">Meilaender files the State's <span class="filing-bold">Response to Notice of Additional Authorities</span> on October xx, 2026.</div>
+      </div>
+
+    </details>
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+      <div class="drive-card-body">
+        <h3 class="drive-card-title">Google Drive</h3>
+        <p class="drive-card-desc">Full archive of filings, orders, briefs, transcripts, and exhibits.</p>
+      </div>
+      <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
+  </footer>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 500, once: true, offset: 60 });
 
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>    
-    </nav><!-- end of side menu navigation -->
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Seciton -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Appellate Docket</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- appellate-docket wrapper -->
-    <div id="wrapper">
-
-      <!-- Appellate Docket Section -->
-      <section id="page-section" class="page-section section">
-
-        <!-- Case Summary -->
-        <div class="container section-title">
-        <h2>Richard M. Allen v. State of Indiana</h2>
-          <p>
-            <strong>Case Number:</strong> 25A-CR-00591<br>
-            <strong>Court:</strong> Indiana Court of Appeals</br>
-            <strong>Case Type:</strong> CR - Direct Appeals (Non Capital, Non-LWOP)</br>
-            <strong>Appellee:</strong> Angela Sanchez, Ellen Meilaender, Jodi Stein<br>
-            <strong>Appellant:</strong> Mark E. Leeman and Stacy R. Uliana</br>
-            <strong>Notice of Appeal Filed:</strong> March 11, 2025</br>
-            <strong>Appellant's Brief Filed:</strong> December 17, 2025</br>
-            <strong>Appellee's Reply Brief Filed:</strong> March 25, 2026</br>
-            <strong>Appellant's ReplyBrief Filed:</strong> April 27, 2026</br>
-            <strong>Oral Arguments Held:</strong> September 21, 2026</br>
-            <strong>Panel Judges:</strong> Robert R. Altice, Elaine B. Brown, Nancy H. Vaidik</br>
-          </p>
-        </div><!-- End of Case Summary -->
-
-        <!-- December 2024 -->
-        <div class="container section-title">
-        <h2>December 2024</h2>
-          <p>
-            Amy Karozos files a <strong><a class="link" href="https://drive.google.com/file/d/1aggv8HCIRXLb--OdEsl_yJ9Tm4PjddMU/view?usp=drive_link" blank="_blank">Motion for Authorization to Appoint Two Appellate Attorneys</a></strong> on December 30, 2024.
-          </p>
-        </div><!-- End of December 2024 -->
-
-        <!-- January 2025 -->
-        <div class="container section-title">
-          <h2>January 2025</h2>
-            <p>
-              Judge Gull enters an <strong><a class="link" href="https://drive.google.com/file/d/1qIjUbE9Aa_WPdWAl8ebJkkQC1GjrVx9r/view?usp=drive_link" target="_blank">Order</a></strong> on January 3, 2025.
-              <ul class="docket-entry">
-                <li>The State Public Defender files a Motion for Authorization to Appoint Two Appellate Attorneys. The Court authorizes the State Public Defender to appoint two attorneys to perfect the direct appeal in this cause.</li>
-              </ul>
-            </p>
-            <p>
-            Amy Karozos files an <strong><a class="link" href="https://drive.google.com/file/d/1kSF4pRMEotP7AuMKNxEMzyArAT5gBRdc/view?usp=drive_link" target="_blank">Acceptance of Appointment and Formal Notice of Appointment of Outside Counsel</a></strong> on January 8, 2025.
-          </p>
-          <p>
-            Judge Gull enters an <strong><a class="link" href="https://drive.google.com/file/d/1p1pVSUFiok5KPl8zT_rR3KZ1CWg0ED63/view?usp=drive_link" target="_blank">Order of Record Concurring in Appointment</a></strong> on January 9, 2025.
-          </p>
-        </div><!-- End of January 2025 -->
-
-        <!-- March 2025 -->
-        <div class="container section-title">
-          <h2>March 2025</h2>
-          <p>
-            Mark Leeman and Stacy Uliana file Richard Allen's <strong><a class="link" href="https://drive.google.com/file/d/1X_5Q-7duZy4jLWrVDaQZjWguWMkNT7Ni/view?usp=drive_link" blank="_target">Notice of Appeal</a></strong> on March 11, 2025.
-          </p>
-          <p>
-            <strong>Notice Received from Court of Appeals</strong> on March 12, 2025.
-            <ul class="docket-entry">
-              <li>NOA Service to Trial Court.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on March 12, 2025.
-            <ul class="docket-entry">
-              <li>Transcript Not Yet Completed Certificate of Service &mdash; Method Not Provided/Not Specified 03/13/25.</li>
-            </ul>
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1wznXD5nXhCTtW7rMCrBP7unyW7zxbAMM/view?usp=drive_link" target="_blank">Notice of Completion of Clerk's Record</a></strong> on March 13, 2025.
-          </p>
-          <p>
-            <strong>Appearance</strong> by Deputy AG on March 17, 2025.
-            <ul class="docket-entry">
-              <li>(A. Sanchez and E. Meilaender) Certificate of Service &mdash; Electronically Served 03/17/25.</li>
-            </ul>
-          </p>
-        </div><!-- End of March 2025 -->
-
-        <!-- April 2025 -->
-        <div class="container section-title">
-          <h2>April 2025</h2>
-          <p>
-            <strong>Court Reporter's Motion for Extension of Time</strong> mailed on April 17, 2025.
-          </p>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1ghJnHu1uJvqIfILJkAvcYYP5o_QdPrlr/view?usp=drive_link" target="_blank">Order</a></strong> on April 22, 2025.
-            <ul class="docket-entry">
-              <li>Court Reporter Jodie Williams has filed a Verified Motion for Extension of Time to File Transcript. Having reviewed the matter, the Court finds and orders as follows: 1. The Verified Motion for Extension of Time to File Transcript is granted. 2. The transcript is due on June 9, 2025. 3. The Clerk is directed to send this order to the parties and Court Reporter Ordered: 4/22/2025.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on April 22, 2025.
-          </p>
-        </div><!-- End of April 2025 -->
-
-        <!-- June 2025 -->
-        <div class="container section-title">
-          <h2>June 2025</h2>
-          <p>
-            Jodie Williams files <strong>Court Reporter's Motion for Extension of Time</strong> on June 3, 2025.
-          </p>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1S_ACOJvfA1phl_6EKZRd49hUjOp89q5P/view?usp=drive_link" target="_blank">Order</a></strong> on June 6, 2025.
-            <ul class="docket-entry">
-              <li>Having reviewed the matter, the Court finds and orders as follows: 1. The Verified Motion for Extension of Time to File Transcript is granted in part. 2. The transcript is due on July 9, 2025. 3. The Clerk is directed to send this order to the parties and Court Reporter Jodie Williams.</li>
-            </ul>
-          </p>
-        </div><!-- End of June 2025 -->
-
-        <!-- July 2025 -->
-        <div class="container section-title">
-          <h2>July 2025</h2>
-          <p>
-            Jodie Williams files a <strong><a class="link" href="https://drive.google.com/file/d/1XQaT3qLAjxXtzu5adNi7NNJHEe8cHXcR/view?usp=drive_link" target="_blank">Notice of Filing Transcript</a></strong> on July 2, 2025.
-          </p>
-          <p>
-            <strong>Transmitted</strong> on July 6, 2025.
-          </p>
-          <p>
-            <strong>Notice of Completion of Transcript</strong> on July 7, 2025.
-            <ul class="docket-entry">
-              <li>Certificate of Service &mdash; Method Not Provided/Not Specified 07/07/25</li>
-            </ul>
-          </p>
-          <p>
-            Mark Leeman files the <strong><a class="link" href="https://drive.google.com/file/d/1fVAHyGorJc7S2sxU0BGuld0jonE_-Mcf/view?usp=drive_link" target="_blank">Appellant's Verified Motion for Extension of Time to File Appellant's Brief</a></strong> on July 29, 2025.
-          </p>
-          <p>
-            Loretta Rush enters an <strong><a class="link" href="https://drive.google.com/file/d/1pFHhNLOyRtbrwOrpVPJWSZRY9yNXsb8D/view?usp=drive_link" target="_blank">Order Approving Minimum Fees for Legal Services of the State Public Defender and Appointed Public Defenders</a></strong> on July 29, 2025.
-            <ul class="docket-entry">
-              <li>Pursuant to Indiana Code section 33-40-2-3, the State Public Defender has presented to this Court a schedule of minimum fees for attorneys appointed by that office in trial and appellate cases. The schedule aligns with changes directed by the Indiana Public Defender Commission to its Standards for Indigent Defense Services in Non-Capital Cases, and specifically Standard H - Compensation of Assigned Counsel. The Commission standards will be made effective January 1, 2023, for counties participating in the Commission's reimbursement program. We approve the State Public Defender's proposed schedule as set forth below. When the State Public Defender appoints public defenders in trial and appellate cases, with the concurring appointment of the requesting Judge as set forth in Indiana Code section 33- 40-2-2, the reasonable fees are charged to the requesting county. When the State Public Defender appoints outside counsel to represent an indigent petitioner in a post-conviction matter, the reasonable fees are paid by the Office of the State Public Defender. Since criminal cases vary greatly in the time and labor required, depending upon complexity of evidence, legal issues, and other matters, a flat fee system is not workable. In both instances, reasonable fees shall be determined on the basis of the hours required to perform the service. Further, the appointing court and the Office of the State Public Defender shall require a bill which clearly states the services performed, the expenses incurred, and the reasons for same. Effective January 1, 2023, in Non-Capital Cases, all in-court and out-of-court work (including client consultation, legal research, witness interviewing, legal drafting, hearings, etc.) shall be compensated at the hourly rate of not less than 75% of the capital rate required under Indiana Criminal Rule 24(C)(1), rounded up or down to the nearest $10/hour, with supporting documentation as to time spent. The effective date of any increases shall tier with the capital rate increases described below. Where delay not due to appointed counsel occurs, such time may also be billed. In Capital Cases all attorney time, in-court or out-of-court, will be billed at the rate established biennially by the Chief Administrative Officer of the Indiana Supreme Court, pursuant to Indiana Criminal Rule 24(C)(1) for cases filed or remanded after appeal on or after January 1 of each odd year. Post-conviction relief actions are initiated when post-conviction. Counsel files an appearance, notice of intent to petition for post-conviction relief or request to extend stay of execution under Criminal Rule 24(H). A successive petition is initiated when the Supreme Court authorizes its filing under Indiana Post-Conviction Rule 1(12). In both Non-Capital and Capital Cases use of an automobile, lodging, and meals when traveling for the client's business shall be compensated at the rates established by the Indiana Department of Administration and approved by the Indiana State Budget Agency. In addition, the attorney's salary for travel time is compensable. Costs and expenses incurred on the client's behalf shall be reimbursed where said costs were reasonably necessary for representation of the client. Charges for pre-authorized experts, accountants, investigators, medical doctors, and similar items will be borne by the county in cases where public defense counsel has been assigned at the court's requests and by the State Public Defender where the State Public Defender has appointed outside counsel. Done at Indianapolis, Indiana, on 7/29/2022.</li>
-            </ul>
-          </p>
-        </div><!-- end of July 2025 -->
-
-        <!-- August 2025 -->
-        <div class="container section-title">
-          <h2>August 2025</h2>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1aI2CSwMFZ8MVVBwUgmgpS9bjtYEXO7oM/view?usp=drive_link" target="_blank">Order</a></strong> on August 4, 2025.
-            <ul class="docket-entry">
-              <li>Appellant has filed a Verified Motion for Extension of Time to File Appellant's Brief. Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Verified Motion for Extension of Time to File Appellant's Brief is granted. 2. Appellant's brief is due on September 5, 2025. Ordered: 8/4/2025</li>
-            </ul>
-          </p>
-          <p>
-            Mark Leeman and Stacy Uliana file the <strong><a class="link" href="https://drive.google.com/file/d/1vFek5ckJ_QicMjxUzPdb_UX_tYhxtxCs/view?usp=drive_link" target="_blank">Appellant's Second Verified Motion for Extension of Time to File Appellant's Brief</a></strong> on August 28, 2025.
-          </p>
-        </div><!-- end of August 2025 -->
-
-        <!-- September 2025 -->
-        <div class="container section-title">
-          <h2>September 2025</h2>
-          <p>
-            Mark Leeman and Stacy Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/1xVQlCSGAQWPKoE2ltjMG9wTu7eL8JGjg/view?usp=drive_link" target="_blank">Motion for Authorization for Funds for Attorney-Client Visit</a></strong> with the trial court on September 3, 2025.
-          </p>
-          <p>
-            Judge Gull issues an <strong><a class="link" href="https://drive.google.com/file/d/1MLhLDH0RAN6QGdbJn1msyqp2EsfTULvt/view?usp=drive_link" target="_blank">Order</a></strong> on September 8, 2025.
-            <ul class="docket-entry">
-              <li>This Court, having reviewed and considered Allen's Motion for  Authorization of Funds for Attorney-Visit, hereby GRANTS the Motion and  FINDS that an in-person confidential attorney-client visit is a necessary part of  the representation in this cause of Mr. Allen on appeal. As such, this Court  ORDERS that reasonable expenses associated with counsels' travel to and from the attorney-client visit in Oklahoma are authorized.</li>
-            </ul>
-          </p>
-          <p>
-            Mark Leeman files a <strong><a class="link" href="https://drive.google.com/file/d/1LtXJwA22CABvXXlUzNvxo2jJKFlOTpx6/view?usp=drive_link" target="_blank">Verified Motion to Compel Transmission of Exhibits and New Due Date</a></strong> and <strong><a class="link" href="https://drive.google.com/drive/folders/1wEcZezcU6GaX5Er4uz5Nn6nBYQRcbBXh?usp=drive_link" target="_blank">Exhibits</a></strong> on September 17, 2025.
-          </p>
-        </div><!-- end of September 2025 -->
-
-        <!-- October 2025 -->
-        <div class="container section-title">
-          <h2>October 2025</h2>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1BHy290QB_C_g2DzUwFi6lPfb0UxxrpxE/view?usp=drive_link" target="_blank">Order</a></strong> on October 3, 2025.
-            <ul class="docket-entry">
-              <li>(1) Appellant has filed a Verified Motion to Compel Transmission of Exhibits and New Due Date. Appellant states the transcript does not include certain exhibits. Specifically, the exhibits filed with Appellant's September 18, 2023 Motion for Franks Hearing and Exhibits 3A and 3B that were filed with Appellant's January 20, 2025 Motion to Correct Error. These exhibits were not offered or admitted during trial or a hearing. Thus, they are not part of the transcript. However, these exhibits are part of the Clerk's Record. See Ind. Appellate Rule 2(E). As such, the exhibits should be provided in Appellant's Appendix. See Ind. Appellate Rule 50(B). (2) Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Verified Motion to Compel Transmission of Exhibits and New Due Date is granted in part as a final extension. 2. Appellant's Brief is due on October 21, 2025.</li>
-            </ul>
-          </p>
-          <p>
-            Leeman and Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/1-nJykkkqYVZEeVdWntl9oNWg86dxllax/view?usp=drive_link" target="_blank">Motion for Reconsideration of Appellant's Motion to Compel Transmission of Exhibits and New Due Date</a></strong> and <strong><a href="https://drive.google.com/drive/folders/1hCfA-QukwwSAbTydUATb0d5PldzMSLLg?usp=drive_link" target="_blank">Exhibits</a></strong> on October 6, 2025.
-          </p>
-          <p>
-            Meilaeder files the Attorney General's <strong><a class="link" href="https://drive.google.com/file/d/1ULrTdw0UedQtkGBUrOqlPJRjl0pGCCDR/view?usp=drive_link" target="_blank">Verified Response to Motion for Reconsideration of Motion to Compel Transmission of Exhibits and New Due Date</a></strong> on October 6, 2025.
-          </p>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1O9tsKUTpR-ojChjcLbjP2Rfy0rpniXJ6/view?usp=drive_link" target="_blank">Order</a></strong> on October 22, 2025.
-            <ul class="docket-entry">
-              <li>Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Motion for Reconsideration of Appellant's Motion to Compel Transmission of Exhibits and New Due Date is granted. 2. Within twenty (20) days of the date of this order, Court Reporter Jodie Williams is ordered to prepare and file with the trial court clerk Supplemental Exhibits volumes (both documentary and conventional/physical) containing the missing exhibits to Appellant's (a) September 18, 2023 Motion for Franks Hearing and (b) January 20, 2025 Motion to Correct Error as listed in the attachments submitted with the instant Appellant's Motion for Reconsideration of Appellant's Motion to Compel Transmission of Exhibits and New Due Date. 3. Within five (5) days of the date the Supplemental Exhibits volumes are filed, the Carroll Circuit and Superior Courts Clerk shall file an Amended Notice of Completion of Transcript with the Clerk of this Court and serve a copy of the Amended Notice on the parties. 4. Appellant's brief and appendix are due within thirty (30) days of the date the Amended Notice of Completion of Transcript is served. 5. The Clerk of this Court is directed to send this order and to the parties, the trial court, Special Judge Francis C. Gull, Court Reporter Jodie Williams, and the Carroll Circuit and Superior Courts Clerk. 6. The Clerk of the Court shall also send a copy of the instant Appellant's Motion for Reconsideration of Appellant's Motion to Compel Transmission of Exhibits and New Due Date, including all attachments, to Court Reporter Williams. 7. The Carroll Circuit and Superior Courts Clerk is directed to file this order under Cause Number 08C01-2210-MR-1 and, pursuant to Indiana Trial Rule 77(D), the Clerk shall place the contents of this order in the Record of Judgments and Orders.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on October 22, 2025.
-          </p>
-          <p>
-            <strong>Note</strong> on October 22, 2025.
-            <ul class="docket-entry">
-              <li>A copy of the Appellant's Motion to Consider and related attachments were mailed to Court Reporter Jodie Williams per the order issued 10/22/25.</li>
-            </ul>
-          </p>
-        </div><!-- end of October 2025 -->
-
-        <!-- November 2025 -->
-        <div class="container section-title">
-          <h2>November 2025</h2>
-          <p>
-            Jodie Williams files a <strong><a class="link" href="https://drive.google.com/file/d/1PfjWFwMcIFLtVv6l46aUuc-gVNfhkB4H/view?usp=drive_link" target="_blank">Notice of Filing of Supplemental Exhibit Volumes</a></strong> on November 10, 2025.
-              <ul class="docket-entry">
-                <li>Certificate of Service Electronically Served 11/10/25.</li>
-              </ul>
-          </p>
-        </div><!-- end of November 2025 -->
-
-        <!-- December 2025 -->
-        <div class="container section-title">
-          <h2>December 2025</h2>
-          <p>
-            Mark Leeman and Stacy Uliana file Richard Allen's <strong><a class="link" href="https://drive.google.com/file/d/1TKtiTTxzRqr2bwe2oJpKfh2r1qXWtEfZ/view?usp=drive_link" target="_blank">Belated Motion for Permission to File Oversized Appellant's Brief</a></strong> on December 1, 2025.
-          </p>
-          <p>
-            Mark Leeman and Stacy Uliana file Richard Allen's <strong><a class="link" href="https://drive.google.com/file/d/17N3i3JYLQ9PiR3t1uRyRi5dz_wt_1eYC/view?usp=drive_link" target="_blank">Motion for Final Extension of Time in Which to File Appellant's Brief</a></strong> on December 1, 2025.
-          </p>
-          <p>
-            Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1UbTxLavgzMVmftMLsaG5iyAc3blcJX4u/view?usp=drive_link" target="_blank">Order</a></strong> on December 8, 2025.
-            <ul class="docket-entry">
-              <li>[1] Appellant has filed a Belated Motion for Permission to File Oversized Appellant's Brief and a Motion for Final Extension of Time in which to File Appellant's Brief. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Belated Motion for Permission to File Oversized Appellant's Brief is granted. 2. Appellant may file an oversized brief that contains no more than 24,000 words. 3. Appellant's Motion for Final Extension of Time in which to File Appellant's Brief is granted as a final extension. 4. Appellant's Brief is due on December 17, 2025. Ordered: 12/8/2025 May, Bradford, JJ., Najam, Sr.J., concur.</li>
-            </ul>
-          </p>
-          <p>
-            Jodi Kathryn Stein files an <strong><a class="link" href="https://drive.google.com/file/d/1EelhlfZhzyOkckS_8h-r7F16ASFUd8rQ/view?usp=drive_link" target="_blank">Appearance</a></strong> on December 17, 2025.
-          </p>
-          <p>
-            Leeman and Uliana file a <strong>Notice of Exclusion of Confidential Information</strong> on December 17, 2025.
-            <ul class="docket-entry">
-              <li>(Appendix) Certificate of Service&mdash;Electronically Served 12/17/25.</li>
-            </ul>
-          </p>
-          <p>
-            Leeman and Uliana file the <strong><a class="link" href="https://drive.google.com/drive/folders/1o4okg405C88GhkOrD-TXZ25XlC2Qb3gk?usp=drive_link" target="_blank">Appellant's Appendix Volumes 1-13</a></strong> on December 17, 2025.
-            <ul class="docket-entry">
-              <li>Volumes of Appendices: Thirteen (13) *Public Access and Not for Public Access versions tendered of volumes 2-4, 6-7, 10-11.  * Note: Volume 13 is labeled Public Access and contains orders with a notation of Confidential and Sealed. A court order dated 04/10/25 unsealed these documents and can be found on page 7 of Volume 13. Certificate of Service&mdash;Electronically Served 12/17/25.</li>
-            </ul>
-          </p>
-          <p>
-            Leeman and Uliana file the <strong><a class="link" href="https://drive.google.com/file/d/1KX0jnjX0Lg1ZIWQJK3NbYsqK14AFnIyi/view?usp=drive_link" target="_blank">Appellant's Brief</a></strong> on December 17, 2025.
-          </p>
-          <p>
-            Leeman and Uliana file an <strong><a class="link" href="https://drive.google.com/file/d/1mpbgBIG3LyX2KclLGBFT85f5CEzLE4bN/view?usp=drive_link" target="_blank">Appealed Order</a></strong> on December 17, 2025.
-            <ul class="docket-entry">
-              <li>*Confidential* Certificate of Service&mdash;Electronically Served 12/17/25.</li>
-            </ul> 
-          </p>
-          <p>
-            The Indiana Court of Appeals Clerk files a <strong><a class="link" href="https://drive.google.com/file/d/1FIf2wniX0ixGm1WLi33LtLT3uu8bNa-h/view?usp=drive_link" target="_blank">Request for Transcript</a></strong> on December 18, 2025.
-            <ul class="docket-entry">
-              <li>Document Transmitted.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Electronic Documents Received from Trial Court Clerk</strong> on Decemeber 19, 2025.
-            <ul class="docket-entry">
-              <li>Volumes of Exhibits &mdash; Fifteen (15). *Public Access and Not for Public Access versions tendered*<br>
-                  Received Electronically 12/19/25.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Electronic Documents Received from Trial Court Clerk</strong> on Decemeber 19, 2025.
-            <ul class="docket-entry">
-              <li>Volumes of Transcripts &mdash; Twenty-one (21). Volumes of T/C &mdash; One (1). Received Electronically 12/19/25.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Received from Trial Court/Agency Clerk</strong> on Decemeber 24, 2025.
-            <ul class="docket-entry">
-              <li>Volumes of Exhibits &mdash; Two (2). *Public and Confidential versions tendered*. Supplemental Volumes of Exhibits &mdash; One (1). *Public and Confidential versions tendered*. Received By-Hand, Delivered 12/24/2025.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Note</strong> on Decemeber 31, 2025.
-            <ul class="docket-entry">
-              <li>The flash drive for Defendant's Exhibit 3B (Motion to Correct Errors Hearing) contains one (1) PDF file and one (1) video clip. The PDF will not open, an error message is given when attempting to open it. The video clip does play.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Documents Released to Attorney/Party</strong> on Decemeber 31, 2025.
-            <ul class="docket-entry">
-              <li>Volumes of Exhibits &mdash; Two (2). *Public and Confidential versions*. Supplemental Volumes of Exhibits &mdash; One (1). *Public and Confidential versions*. Party/Atty: Stein, Jodi Kathryn.</li>
-            </ul>
-          </p>
-        </div> <!-- end of December 2025 -->
-
-        <!-- January 2026 -->
-        <div class="container section-title">
-          <h2>January 2026</h2>
-          <p>
-            Meileander files the State's <strong><a class="link" href="https://drive.google.com/file/d/1Xgt_mli0NKlxMzDF-yQfF1D4kOC9-jMC/view?usp=drive_link" target="_blank">Verified Motion for Extension of Time to File Brief</a></strong> on January 7, 2026.
-          </p>
-          <p>
-            Meileander files the State's <strong><a class="link" href="https://drive.google.com/file/d/1L4e8s_xqVJqpBVh0mlWvAwn7AQerHFCY/view?usp=drive_link" target="_blank">Motion for Permission to File Oversized Brief</a></strong> on January 7, 2026.
-          </p>
-          <p>
-           Chief Judge Altice issues an <strong><a class="link" href="https://drive.google.com/file/d/1L4e8s_xqVJqpBVh0mlWvAwn7AQerHFCY/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a></strong> on January 9, 2026.
-            <ul class="docket-entry">
-              <li>
-                [1] Appellee, by counsel, has filed a Verified Motion for Extension of Time to File Brief. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellee's Verified Motion for Extension of Time to File Brief is granted in part. 2. Appellee's Brief is due on February 16, 2026.
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on January 9, 2026.
-          </p>
-          <p>
-           Chief Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1MpQuji41KSv-27OVPOYPnqVSL0L8Z-as/view?usp=drive_link" target="_blank">Order Granting Motion to File Oversized Document</a></strong> on January 16, 2026.
-            <ul class="docket-entry">
-              <li>
-                [1] Appellee has filed a Motion for Permission to File Oversized Brief. [2] Having reviewed the matter, the Court finds and orders as follows: (1) Appellee's Motion for Permission to File Oversized Brief is granted. (2)Appellee may file an oversized brief containing up to 24,000 words. [3] Bradford, Weissmann, JJ., Najam, Sr.J., concur. For the Court, Elizabeth F. Tavitas
-              </li>
-            </ul> 
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on January 16, 2026.
-          </p>
-          <p>
-            Meileander files the State's <strong><a class="link" href="https://drive.google.com/file/d/1XAZNjxQwbUEv-iMigY6Nkkk7j0PBgNWj/view?usp=drive_link" target="_blank">Verified Motion To Transmit Supplemental Documentary Exhibit Volumes</a></strong> on January 23, 2026.
-          </p>
-          <p>
-            Chief Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1_Cn8zLaUI7VoflEwoEjlUzOMxX6-Flv8/view?usp=drive_link" target="_blank">Order</a></strong> on January 27, 2026.
-            <ul class="docket-entry"> 
-              <li>Having reviewed the matter, the Court finds and orders as follows: 1. Appellee's Verified Motion to Transmit Supplemental Documentary Exhibit Volumes is granted.  2. Within five (5) days of the date of this order, the Carroll Circuit and Superior Courts Clerk is ordered to transmit the exhibit volumes filed on November 10, 2025 in Cause Number 08C01-2210-MR-1 to the Clerk of this Court. 3. Appellee's Brief is due within thirty (30) days of the date the exhibit volumes are received by the Clerk of this Court. 4. The Clerk is directed to send this order to the parties, the trial court, and the Carroll Circuit and Superior Courts Clerk. 5. The Carroll Circuit and Superior Courts Clerk is directed to file this order under Cause Number 08C01-2210-MR-1, and, pursuant to Indiana Trial Rule 77(D), the Clerk shall place the contents of this order in the Record of Judgments and Orders.</li>
-          </p>
-          <p>
-           <strong>Retransmission of Order</strong> on January 27, 2026.
-            <ul class="docket-entry">
-              <li>
-                Order issued 1/27/26 is retransmitted to serve the trial court.
-              </li>
-            </ul> 
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on January 27, 2026.
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on January 27, 2026.
-          </p>
-          <p>
-            <strong>Electronic Documents Received from Trial Court Clerk</strong> on January 27, 2026.
-              <ul class="docket-entry">
-                <li>Volumes of Exhibits - Five (5) Supplemental *Public Access and Not for Public Access versions tendered* Received Electronically 01/27/26.</li>
-              </ul>
-          </p>
-        </div><!-- end of January 2026 -->
-
-        <!-- February 2026 -->
-        <div class="container section-title">
-          <h2>February 2026</h2>
-          <p>
-             Meilaender files the State's <strong><a class="link" href="https://drive.google.com/file/d/1SrWne_ETVgEpakAN3TAPg_eaWNyz6deH/view?usp=drive_link" target="_blank">Verified Motion for Second Extension of Time to File Brief</a></strong> on February 18, 2026.
-          </p>
-          <p>
-            Chief Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1ujtxrRhanOBEEpcLBnRVMw_Yepim2jSY/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a></strong> on February 23, 2026.
-              <ul class="docket-entry">
-                <li>
-                  [1] Appellee has filed a Verified Motion for Second Extension of Time to File Brief. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellee's Verified Motion for Second Extension of Time to File Brief is granted as a final extension.  2. Appellee's Brief is due on March 30, 2026.
-                </li>
-              </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on February 23, 2026.
-          </p> 
-        </div><!-- end of February 2026 -->
-
-        <!-- March 2026 -->
-        <div class="container section-title">
-          <h2>March 2026</h2>
-          <p>
-             <strong>Documents Returned from Attorney/Party</strong> on March 25, 2026.
-              <ul class="docket-entry">
-                <li>Volumes of Exhibits -Two (2) *Public and Confidential versions* Supplemental Volumes of Exhibits - One (1) *Public and Confidential versions*</li>
-              </ul>
-          </p> 
-          <p>
-             Meileander files the State's <strong><a class="link" href="https://drive.google.com/file/d/1RRg9FIZDnHKIOx2s0j6fYlcEZZpLCnXU/view?usp=drive_link" target="_blank">Appellee Brief</a></strong> on March 25, 2026.
-          </p> 
-          <p>
-             Mark Leeman and Stacy Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/11Vu9WT7JTSm4Bt4OsIB8H3jzaRDKqrdt/view?usp=drive_link" target="_blank">Verified Motion for Extension of Time for Filing Appellant’s Reply Brief</a></strong> on March 30, 2026.
-          </p>
-          <p>
-             Mark Leeman and Stacy Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/1M5CsjXLOG1HGqhHPLCquVLTOEoqV9I_h/view?usp=drive_link" target="_blank">Belated Motion for Permission to File Oversized Appellant’s Reply Brief</a></strong> on March 30, 2026.
-          </p>
-        </div><!-- end of March 2026 -->
-
-        <!-- April 2026 -->
-        <div class="container section-title">
-          <h2>April 2026</h2>
-          <p>
-             Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1YQBvM6-NOmQWiorRKRZ9ZLulVmfTD1e2/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a></strong> on April 1, 2026.
-             <ul class="docket-entry">
-              <li>Having reviewed the matter, the Court finds and orders as follows: 1. Appellant's Verified Motion for Extension of Time for Filing Appellant's Reply Brief is granted as a final extension. 2. Appellant's Reply Brief is due on April 23, 2026.</li>
-             </ul>
-          </p> 
-          <p>
-            <strong>Document Transmitted</strong> on April 1, 2026.
-          </p> 
-          <p>
-             Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1K8QgpkpRcFuleU5Vbyv-ML_5VkmrSgTr/view?usp=drive_link" target="_blank">Order Granting Motion to File Oversized Document</a></strong> on April 6, 2026.
-             <ul class="docket-entry">
-              <li>[1] Appellant has filed a Belated Motion for Permission to File Oversized Appellant’s Reply Brief. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellant’s Belated Motion for Permission to File Oversized Appellant’s Reply Brief is granted. 2. Appellant’s reply brief may contain up to 12,000 words. 3. Appellant’s reply brief remains due on April 23, 2026. [3] Ordered: 4/6/2026. Vaidik, Foley, JJ., Najam, Sr. J. concur.</li>
-             </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on April 6, 2026.
-          </p>
-          <p>
-             Mark Leeman and Stacy Uliana file <strong><a class="link" href="https://drive.google.com/file/d/1RL6pjnDnYDWqXZ0WpMzk2zak0us1tTx-/view?usp=drive_link" target="_blank">Second Verified Motion for Extension of Time for Filing Appellant's Reply Brief</a></strong> on April 15, 2026.
-          </p>
-          <p>
-             Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1YQOdNhx_RBVcwOpkdCii8H9w2DGgTmCn/view?usp=drive_link" target="_blank">Order Granting Motion for Extension of Time To File Brief</a></strong> on April 20, 2026.
-             <ul class="docket-entry">
-              <li>[1] Appellant has filed a Second Verified Motion for Extension of Time for Filing Appellant’s Reply Brief. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellant’s Second Verified Motion for Extension of Time for Filing Appellant’s Reply Brief is granted as a final extension. 2. Appellant’s Reply Brief is due on April 27, 2026.</li>
-             </ul>
-          </p>
-          <p>
-             <strong>Document Transmitted</strong> on April 20, 2026.
-          </p> 
-          <p>
-             Mark Leeman and Stacy Uliana file <strong><a class="link" href="https://drive.google.com/file/d/1jpxX1TCcBsp0YBZXhdfhg9Hf0nnSoPDs/view?usp=drive_link" target="_blank">Appellant's Reply Brief</a></strong> on April 27, 2026.
-          </p>
-          <p>
-             Mark Leeman and Stacy Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/1mcp1mM07cUV3EI41UErIdLHXVMGBOcaS/view?usp=drive_link" target="_blank">Motion for Oral Arguments</a></strong> on April 27, 2026.
-          </p>
-          <p>
-             <strong>Case Fully Briefed</strong> on April 29, 2026.
-             <ul class="docket-entry">
-                <li>Oral Argument Requested: Yes</li> 
-              </ul>
-          </p> 
-          <p>
-             <strong>Transmitted to Court of Appeals</strong> on April 29, 2026.
-          </p> 
-          <p>
-             <strong>Documents released to Court Administration</strong> on April 29, 2026.
-             <ul class="docket-entry">
-                <li>Volumes of Exhibits 6</li> 
-              </ul>
-          </p> 
-        </div><!-- end of April 2026 -->
-
-        <!-- May 2026 -->
-        <div class="container section-title">
-          <h2>May 2026</h2>
-          <p>
-            <strong>Opinion Issued</strong> on May 14, 2026.
-          </p>
-          <p>
-            <strong>Corrected Entry</strong> on May 14, 2026.
-              <ul class="docket-entry">
-                <li>The docket is corrected to show the proper event code for the order issued 5/14/26.</li> 
-              </ul>
-          </p>
-          <p>
-            Chief Judge Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1ZVOQpqI8ArRAEg98sqdKqhDvDFM684wh/view?usp=drive_link" target="_blank">Order Granting Motion for Oral Argument</a></strong> on May 14, 2026.
-              <ul class="docket-entry">
-                <li>
-                  [1] Appellant has filed a Motion for Oral Argument. [2] Having reviewed the matter, the Court finds and orders as follows: 1. Appellant’s Motion for Oral Argument is granted. 2. The Oral Argument is scheduled for the following date, time, and place: Monday, September 21, 2026; 10:00 a.m., Indianapolis Time; Supreme Court Courtroom; State House, Room 315; Indianapolis, Indiana 46204. 3. The argument will be web-cast at www.IN.gov/judiciary and will be  televised on a monitor outside of the Courtroom. 4. Attorneys who plan to sit at counsel’s table should arrive at least fifteen  (15) minutes before the scheduled start of the argument. 5. Each side will be allotted thirty (30) minutes for argument. 6. The scheduled panel members are Judges Vaidik, Brown, and Altice. 7. The contact person for the Court is Emily Mertz who can be reached at  (317) 234-4859 or by e-mail at emily.mertz@courts.in.gov. 8. In accordance with Indiana Appellate Rule 52(C), counsel of record shall  file with the Clerk an acknowledgment of this order no later than fifteen  (15) days after service of the order. 9. The parties are reminded to comply with the Indiana Rules on Access to  Court Records and Indiana Appellate Rule 53(H). 
-                </li>
-              </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on May 14, 2026.
-          </p> 
-          <p>
-            <strong>Acknowledgment of Order Setting Oral Argument</strong> on May 14, 2026.
-            <ul class="docket-entry">
-              <li>*Appellant* Certificate of Service- Electronically Served 05/14/26.</li>
-            </ul>
-          </p> 
-          <p>
-            <strong>Acknowledgment of Order Setting Oral Argument</strong> on May 15, 2026.
-            <ul class="docket-entry">
-              <li>*Appellee* Certificate of Service- Electronically Served 05/15/26.</li>
-            </ul>
-          </p> 
-        </div><!-- end of May 2026 -->
-
-        <!-- August 2026 -->
-        <div class="container section-title">
-          <h2>August 2026</h2>
-          <p>
-            Indiana Supreme Court Chief Justice Tavitas issues an <strong><a class="link" href="https://drive.google.com/file/d/1nGMTC1n0LlM4aHxg5OS3ocOWaIHpKsEB/view?usp=drive_link" target="_blank">Order</a></strong> on August 18, 2026.
-            <ul class="docket-entry">
-              <li>Having reviewed the matter, the Court finds and orders as follows: 1. Within ten (10) days of the date of this order, the Court Reporter is ordered to file with the Carroll Circuit and Superior Courts Clerk a conventional, physical exhibit volume containing new copies of Defendant's Exhibits HHH, III, and KKK. 2. Within five (5) days of the date the exhibit volume is filed, the Carroll Circuit and Superior Courts Clerk is ordered to transmit the exhibit volume to the Clerk of this Court. 3. The Clerk is directed to send this order to the parties, Court Reporter Jodie Williams, the trial court, and the Carroll Circuit and Superior Courts Clerk. 4. The Carroll Circuit and Superior Courts Clerk is directed to file this order under Cause Number 08C01-2210-MR-1, and, pursuant to Indiana Trial Rule 77(D), the Clerk shall place the contents of this order in the Record of Judgments and Orders.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Document Transmitted</strong> on August 18, 2026.
-          </p> 
-          <p>
-            Jodie Williams files a <strong><a class="link" href="https://drive.google.com/file/d/1kMx5CLciBuln5VgT3_URPcPYG6xqdU1R/view?usp=drive_link" target="_blank">Notice of Filing of Supplemental Exhibit Volume</a></strong> on August 24, 2026.
-          </p> 
-          <p>
-            <strong>Received Document</strong> postmarked on August 25, 2026.
-            <ul class="docket-entry">
-              <li>Receive Date: 08/25/26 Notice of Filing of Supplemental Exhibit Volume</li>
-            </ul>
-          </p> 
-        </div><!-- end of August 2026 -->
-
-        <!-- September 2026 -->
-        <div class="container section-title">
-          <h2>September 2026</h2>
-          <p>
-            <strong>Oral Argument</strong> scheduled for September 21, 2026.
-            <ul class="docket-entry">
-              <li>Session: 09/21/2026 @ 10:00 AM. Comment: Supreme Court Courtroom - EBB/NHV/RRA. <a class="link" href="https://drive.google.com/file/d/1q6TtmVsD5P0N8fQfUbNWAHZHe1NwtISg/view?usp=drive_link" target="_blank">Transcript</a></li>
-            </ul>
-          </p>
-          <p>
-            Mark Leeman and Stacy Uliana file a <strong><a class="link" href="https://drive.google.com/file/d/1f6oYd3zOqw7XH_554PJXnXXXQx0iKJa4/view?usp=drive_link" target="_blank">Notice of Additional Authorities</a></strong> on September 23, 2026.
-          </p>
-          <p>
-            Meilaender files the State's <strong><a class="link" href="" target="_blank">Response to Notice of Additional Authorities</a></strong> on October xx, 2026.
-          </p> 
-        </div><!-- end of September 2026 -->
-
-      </section><!-- End of Appellate Docket Section -->
-
-    </div> <!-- end of appellate-docket wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
