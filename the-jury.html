@@ -595,6 +595,18 @@ strong {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media (max-width: 480px) {
+  .jury-grid .jc-badge span {
+    font-size: 0.46rem;
+    padding: 1px 2px;
+  }
+  .jury-grid .jc-num {
+    font-size: 0.62rem;
+  }
+  .jury-grid .jc-icon {
+    font-size: 0.85rem;
+  }
+}
 .jury-grid .jc-ref {
   font-size: clamp(0.5rem, 1.1vw, 0.6rem);
   color: var(--muted);
@@ -602,9 +614,9 @@ strong {
   line-height: 1.3;
 }
 .jury-grid .jc-label {
-  font-size: 0.63rem;
+  font-size: 0.6rem;
   color: var(--muted);
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -632,11 +644,12 @@ strong {
 <!-- ═══════════════════════════════════════════════════════ -->
 
 <div class="block">
-  <p>12 regular jurors + 4 alternates selected from two pools across two days. Judge Gull presiding. McLeland conducted all State voir dire; Rozzi led Round 1 defense voir dire; Baldwin handled subsequent rounds. Five rounds Day 1 (pool of 60); four rounds Day 2 (new pool of 52). Jurors sequestered for the duration of trial.</p>
-  <p><strong>Strikes:</strong> State used 9 peremptory; Defense used 7. Four initially accepted jurors removed before trial. <strong>Gender (final panel):</strong> 8 male, 8 female.</p>
+  <p>12 regular jurors + 4 alternates selected from two pools across two days. <strong>Gender (final panel):</strong> 8 male, 8 female.</p>
+  <p>McLeland conducted all State voir dire; Rozzi led Round 1 defense voir dire; Baldwin handled subsequent rounds.<br>
+    Five rounds Day 1 (pool of 60); four rounds Day 2 (new pool of 52). Jurors sequestered for the duration of trial.</p>
+  <p><strong>Strikes:</strong> State used 9 peremptory; Defense used 7. Four initially accepted jurors removed before trial.</p>
 
   <div class="block-heading" style="margin-top:16px">Jury Box Seating Chart</div>
-  <p style="font-size:0.82rem;color:var(--muted);margin-bottom:10px">Layout per voir dire transcripts and trial observer notes.</p>
   <div style="margin-bottom:8px">
     <div class="jc-label">Back row</div>
     <div class="jury-grid">
@@ -648,14 +661,17 @@ strong {
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♀</div>
         <div class="jc-num" style="color:var(--steel)">08</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♀</div>
         <div class="jc-num" style="color:var(--steel)">09</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♂</div>
         <div class="jc-num" style="color:var(--steel)">10</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
       <div class="jc" style="background:#eef4f0;border:1px solid #a8c4b0">
         <div class="jc-icon" style="color:var(--allen-green)">♂</div>
@@ -686,10 +702,12 @@ strong {
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♀</div>
         <div class="jc-num" style="color:var(--steel)">03</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♀</div>
         <div class="jc-num" style="color:var(--steel)">04</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
       <div class="jc" style="background:#fdf5e6;border:1px solid #d4b86a">
         <div class="jc-icon" style="color:var(--warn)">♀</div>
@@ -700,13 +718,12 @@ strong {
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
         <div class="jc-icon" style="color:var(--muted)">♂</div>
         <div class="jc-num" style="color:var(--steel)">06</div>
+        <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc">?</span></div>
       </div>
     </div>
   </div>
   <p style="font-size:0.72rem;color:var(--muted);margin-bottom:12px">
-    Purple = confirmed identity (interview on record).<br>
-    Gold = candidate match (voir dire).<br>
-    Note: Exact seat positions from observer notes not determined. Seat 05 discrepancy: observer chart shows F/early 70s (Lucy Lou); Jurors.docx records D2-Pool #30 (male, promoted from alternate) for Seat 5. One source is wrong about the seat numbering.</p>
+    <strong>Purple = </strong>confirmed identity (interview on record). <strong>Gold = </strong>candidate match (voir dire). <strong>Note: </strong>Exact seat positions from observer notes not determined. <strong>Seat 05 discrepancy: </strong>observer chart shows F/early 70s (Lucy Lou); Jurors doc records D2-Pool #30 (male, promoted from alternate) for Seat 5. One source is wrong about the seat numbering.</p>
 
   <div class="block-heading" style="margin-top:16px">Seated Regular Jurors</div>
   <div class="table-scroll"><table class="roster">
@@ -721,85 +738,85 @@ strong {
     </thead>
     <tbody>
       <tr>
-        <td class="jury-num">D1-Pool #39</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S01</td>
-        <td>F</td>
-        <td>Nurse; aunt murdered in CA (before she was born); no opinion formed from media</td>
-        <td>Consistency: "if you're telling the truth, it's easier to tell the truth consistently"</td>
-      </tr>
-      <tr>
-        <td class="jury-num">D1-Pool #19</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S03</td>
-        <td>M</td>
-        <td>No hardship; no media exposure; evidence-focused</td>
-        <td>Phones, location, testimony, witness evidence</td>
-      </tr>
-      <tr>
-        <td class="jury-num">D1-Pool #01</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S08</td>
+        <td class="jury-num">D1-R1 #01</td>
+        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S08</a></td>
         <td>F</td>
         <td>Son is Fort Wayne police officer; watches kids; no effect on impartiality stated</td>
         <td>Consistency of the story; skeptical of circumstantial alone</td>
       </tr>
       <tr>
-        <td class="jury-num">D1-Pool #42</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S10</td>
-        <td>F</td>
-        <td>Fewest identifying markers of any seated juror; minimal biographical disclosure; invoked "fingerprints" as expected evidence type unprompted <span class="tag tag-match">Lucy Lou Candidate</span></td>
-        <td>Location at time of crime; <em>fingerprints</em>; behavior/pacing/nervousness; won't give extra credibility to police or clergy</td>
+        <td class="jury-num">D1-R1 #19</td>
+        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S03</a></td>
+        <td>M</td>
+        <td>No hardship; no media exposure; evidence-focused</td>
+        <td>Phones, location, testimony, witness evidence</td>
       </tr>
       <tr class="highlight-row">
-        <td class="jury-num">D1-Pool #21</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S12</td>
+        <td class="jury-num">D1-R1 #21</td>
+        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S12</a></td>
         <td>M</td>
         <td>Public school system; 3 prior criminal juries (all drug-related; 2 guilty, 1 not guilty); acquitted one because prosecution was "stretching it" <span class="tag tag-foreman">Likely Foreman</span></td>
         <td>Not extensively detailed; participated in group discussions</td>
       </tr>
       <tr>
-        <td class="jury-num">D1-Pool #36</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">D1 R2</a> S04</td>
-        <td>M, 73</td>
-        <td>Prior jury service (criminal assault, ~40 years ago, found it difficult); no media opinion; oldest juror on panel</td>
-        <td>Body language</td>
+        <td class="jury-num">D1-R1 #39</td>
+        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
+        <td>F</td>
+        <td>Nurse; aunt murdered in CA (before she was born); no opinion formed from media</td>
+        <td>Consistency: "if you're telling the truth, it's easier to tell the truth consistently"</td>
+      </tr>
+      <tr>
+        <td class="jury-num">D1-R1 #42</td>
+        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S10</a></td>
+        <td>F</td>
+        <td>Fewest identifying markers of any seated juror; minimal biographical disclosure; invoked "fingerprints" as expected evidence type unprompted <span class="tag tag-match">Lucy Lou Candidate</span></td>
+        <td>Location at time of crime; <em>fingerprints</em>; behavior/pacing/nervousness; won't give extra credibility to police or clergy</td>
       </tr>
       <tr class="highlight-row">
-        <td class="jury-num">D1-Pool #08</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">D1 R2</a> S06</td>
+        <td class="jury-num">D1-R2 #08</td>
+        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
         <td>F</td>
         <td>No prior jury service; no law enforcement connections; one of 3–4 undecided jurors; described deliberations as worst experience; post-trial Reddit reading <span class="tag tag-match">Mia McHaffey</span></td>
         <td>DNA, motive, weapon; acknowledged DNA won't be in every case; open to convicting without a weapon</td>
       </tr>
       <tr>
-        <td class="jury-num">D1-Pool #45</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">D1 R2</a> S11</td>
+        <td class="jury-num">D1-R2 #36</td>
+        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S04</a></td>
+        <td>M</td>
+        <td>Prior jury service (criminal assault, ~40 years ago, found it difficult); no media opinion; oldest juror on panel</td>
+        <td>Body language</td>
+      </tr>
+      <tr>
+        <td class="jury-num">D1-R2 #45</td>
+        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S11</a></td>
         <td>M</td>
         <td>Cousin is police officer; articulate about not requiring any single evidence type</td>
         <td>Variety of evidence types; open to totality; "can't say have to have any one piece"</td>
       </tr>
       <tr>
-        <td class="jury-num">D1-Pool #54</td>
-        <td><a href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank" rel="noopener">D1 R3</a> S02</td>
+        <td class="jury-num">D1-R3 #54</td>
+        <td><a href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank" rel="noopener">S02</a></td>
         <td>F</td>
         <td>Has children and works; moderate media exposure; pragmatic about sequestration hardship</td>
         <td>Not extensively detailed</td>
       </tr>
       <tr>
-        <td class="jury-num">D1-Pool #16</td>
-        <td><a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">D1 R4</a> S09</td>
+        <td class="jury-num">D1-R4 #16</td>
+        <td><a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
         <td>M</td>
         <td>Robbed at work (2017); confirmed would not hold frustration against officers in this case</td>
         <td>Body posture, eye contact, voice: "all those things"</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-Pool #01</td>
-        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">D2 R1</a> S01</td>
+        <td class="jury-num">D2-R1 #01</td>
+        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
         <td>F</td>
         <td>Family in law enforcement; prior murder case jury; both parties agreed without using strikes; most articulate and perceptive juror in Day 2 pool</td>
         <td>Body mechanics, vocabulary, facial expressions; "probably guilty" is NOT enough to convict</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-Pool #30</td>
-        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">D2 R1</a> S05</td>
+        <td class="jury-num">D2-R1 #30</td>
+        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
         <td>M</td>
         <td>Read media; no opinion formed; originally selected as alternate; <strong>promoted to regular jury when Juror 51 was struck for cause on Day 2</strong></td>
         <td>Take all evidence, combine into "overall hypothesis"; consistency-based</td>
@@ -819,25 +836,25 @@ strong {
     </thead>
     <tbody>
       <tr>
-        <td class="jury-num">D2-Pool #11<br><small style="color:var(--muted);font-weight:400">D2 R1 · S09</small></td>
+        <td class="jury-num">D2-R1 #11 <a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
         <td>Alt 01</td>
         <td>M</td>
         <td>Caregiver; no other caregivers available; formed opinion from media but says can set aside</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-Pool #02<br><small style="color:var(--muted);font-weight:400">D2 R1 · S12</small></td>
+        <td class="jury-num">D2-R1 #02 <a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S12</a><br><small style="color:var(--muted);font-weight:400"></small></td>
         <td>Alt 02</td>
         <td>F</td>
         <td>Works for Indiana Dept. of Education; family in law enforcement; formed media opinion; practical about sequestration work concerns</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-Pool #10<br><small style="color:var(--muted);font-weight:400">D2 R2 · S06</small></td>
+        <td class="jury-num">D2-R2 #10 <a href="https://drive.google.com/file/d/1Xs932cgff-cblVMFI3B2DMdw9fx1-vpE/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
         <td>Alt 03</td>
         <td>M</td>
         <td>Self-described "follower": "I don't really speak out much"; would NOT call out improper deliberation behavior; alternates were present in deliberation room but barred from speaking</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-Pool #09<br><small style="color:var(--muted);font-weight:400">D2 R3 · S07</small></td>
+        <td class="jury-num">D2-R3 #09 <a href="https://drive.google.com/file/d/1sOQHMNCt6X1gQEX8kJYrKMCMBYjKwO4_/view?usp=drive_link" target="_blank" rel="noopener">S07</a></td>
         <td>Alt 04</td>
         <td>F</td>
         <td>Guardian of high school girl; last juror selected for the entire trial; nearly struck (McLeland misheard her say daughter "can't be left alone" — court corrected: "she said she could make arrangements"); evidence-first standard: "You can't just jump on somebody and say, 'You're guilty'"</td>
@@ -847,12 +864,15 @@ strong {
 
   <div class="block-heading" style="margin-top:4px">Removed Before Trial <span class="tag tag-removed">Removed</span></div>
   <ul class="removed-list">
-    <li><strong>Juror #35</strong> (<a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">D1 R1</a> S09): Under felony court supervision (case 02C01-2409-F6-1351); failed to disclose during voir dire; revealed to Lt. Hogan while being escorted out. Court: "he's under court supervision and failed to share that with any of you...Obviously, he's ineligible to serve."</li>
-    <li><strong>Juror #50</strong> (<a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">D1 R4</a> S06): Diabetic professor requiring cell phone for glucose monitoring via app/sensor; bailiff could not monitor phone in hotel room during sequestration. Struck for cause Day 2 morning by agreement. Referred to by Court as "the theological gentleman" and "the professor."</li>
-    <li><strong>Juror #12</strong> (<a href="https://drive.google.com/file/d/14TPIZG0LmKh2q1SOVJ8go7KmTkSwTdtw/view?usp=drive_link" target="_blank" rel="noopener">D1 R5</a> S02): Female; accepted as first alternate in Round 5; called Day 2 morning reporting no childcare for 3-year-old (husband on business trip). Court called it potential "buyer's remorse"; Diener: "Yeah. We kind of ignored it."; Struck for cause by agreement.</li>
-    <li><strong>Juror #51</strong> (<a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">D1 R2</a> S10): Female; shorter, dark-haired; father was police officer; never disclosed she was breastfeeding during voir dire; issue surfaced Day 2 when bailiff reported it. Rozzi: "I think she just doesn't want to be here."; Court: "Well, but tough crap."; Struck for cause by agreement. Her removal promoted D2-Pool #30 from alternate to regular juror.</li>
+    <li><strong>Juror #35</strong> (D1-R1 <a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S09</a>): Under felony court supervision (case 02C01-2409-F6-1351); failed to disclose during voir dire; revealed to Lt. Hogan while being escorted out. Court: "he's under court supervision and failed to share that with any of you...Obviously, he's ineligible to serve."</li>
+    <li><strong>Juror #51</strong> (D1-R2 <a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S10</a>): Female; shorter, dark-haired; father was police officer; never disclosed she was breastfeeding during voir dire; issue surfaced Day 2 when bailiff reported it. Rozzi: "I think she just doesn't want to be here."; Court: "Well, but tough crap."; Struck for cause by agreement. Her removal promoted D2-Pool #30 from alternate to regular juror.</li>
+    <li><strong>Juror #50</strong> (D1-R4 <a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">S06</a>): Diabetic professor requiring cell phone for glucose monitoring via app/sensor; bailiff could not monitor phone in hotel room during sequestration. Struck for cause Day 2 morning by agreement. Referred to by Court as "the theological gentleman" and "the professor."</li>
+    <li><strong>Juror #12</strong> (D1-R5 <a href="https://drive.google.com/file/d/14TPIZG0LmKh2q1SOVJ8go7KmTkSwTdtw/view?usp=drive_link" target="_blank" rel="noopener">S02</a>): Female; accepted as first alternate in Round 5; called Day 2 morning reporting no childcare for 3-year-old (husband on business trip). Court called it potential "buyer's remorse"; Diener: "Yeah. We kind of ignored it."; Struck for cause by agreement.</li>
   </ul>
-  <p class="note"><strong>Cross-reference note:</strong> A juror who identified herself on a podcast as "Juror Number 5" and said she was in "the very first group called in" (Day 1 Round 1) is identified here as a strong candidate for <strong>D1-Pool #42</strong> (Day 1, Round 1, accepted to Voir Dire Seat 10). She disclosed the fewest biographical details of any D1R1 candidate, and specifically invoked "fingerprints" as an expected evidence type when asked an open-ended evidence question during the State's voir dire — the same conceptual framework Lucy Lou later applied to Melissa Oberg's cartridge comparison testimony ("just like a fingerprint"). No other D1R1 juror used that term in that context. She confirmed no law enforcement family ties, no prior jury service, and no biographical markers Lucy Lou has claimed in any interview. Pool Juror #5 from Day 1 was a male excused for impartiality. "Juror Number 5" refers to trial seating number, not voir dire pool number. The Jurors.docx records D2-Pool #30 (male, promoted from alternate) as Seat 5 in the final panel; the discrepancy with Lucy Lou's Seat 5 claim is unresolved. She first came forward May 28, 2025 on The Unsolved YouTube channel (Tim's juror), then appeared April 21, 2026 on "True Crime Talk With Frankmeister" under the alias Lucy Lou 29. Both presentations treat her as the same person; detail and emphasis differ across the two interviews.<br><br><strong>Juror notes provenance:</strong> Handwritten notes attributed to "Juror #5" were circulated through The Unsolved channel. The notes shown in the May 2025 video record October 30 testimony by Monica Wala (clinical psychologist, Westville Dept. of Corrections) and include the notation <em>"only publish 303"</em>; the juror herself noted during Wala's testimony that Exhibit 304 was not published to the jury. The 4/4/23 and 4/5/23 confession phrases ("Am I dead?", "Can I die now?", "Poor little girls", "didn't want them to suffer") appear in the notes under the Oct. 30 / Monica Wala entry. A separate provenance analysis disputes these notes as mechanically inconsistent with genuine jury notes, arguing this phrase cluster does not appear in any in-court source and that the "didn't want them to suffer" phrasing derives from a sustained objection; the notes' own attribution to Wala's in-court testimony directly conflicts with that conclusion. Whether Wala testified to this content on Oct. 30 is not resolved from available sources.</p>
+  <p class="note"><strong>
+    Cross-reference note:</strong> A juror who identified herself on a podcast as "Juror #05" and said she was in "the very first group called in" (D1–R1) is identified here as a strong candidate for D1-R1 #42 S10. She disclosed the fewest biographical details of any D1–R1 candidate, and specifically invoked "fingerprints" as an expected evidence type when asked an open-ended evidence question during the State's voir dire&mdash;the same conceptual framework Lucy Lou later applied to Melissa Oberg's cartridge comparison testimony ("just like a fingerprint"). No other D1R1 juror used that term in that context. She confirmed no law enforcement family ties, no prior jury service, and no biographical markers Lucy Lou has claimed in any interview.<br>
+    Pool Juror #05 from Day 1 was a male excused for impartiality. "Juror #05" refers to trial seating number, not voir dire pool number. The Jurors doc records D2-R1 #30 (male, promoted from alternate) as S05 in the final panel; the discrepancy with Lucy Lou's Seat 05 claim is unresolved. She first came forward May 28, 2025 on The Unsolved YouTube channel (Trust Me Tim's juror), then appeared Apr. 21, 2026 on "True Crime Talk With Ickkmeister" under the alias Lucy Lou 29. Both presentations treat her as the same person; detail and emphasis differ across the two interviews.<br><br>
+    <strong>Juror notes provenance:</strong> Handwritten notes attributed to "Juror #05" were circulated through The Unsolved channel. The notes shown in the May 2025 video record Oct. 30 testimony by Monica Wala (clinical psychologist, Westville Dept. of Corrections) and include the notation <em>"only publish 303"</em>; the juror herself noted during Wala's testimony that Exhibit 304 was not published to the jury. The 04-04-2023 and 04-05-2023 confession phrases ("Am I dead?", "Can I die now?", "Poor little girls", "didn't want them to suffer") appear in the notes under the Oct. 30 / Monica Wala entry. A separate provenance analysis disputes these notes as mechanically inconsistent with genuine jury notes, arguing this phrase cluster does not appear in any in-court source and that the "didn't want them to suffer" phrasing derives from a sustained objection; the notes' own attribution to Wala's in-court testimony directly conflicts with that conclusion. Whether Wala testified to this content on Oct. 30 is not resolved from available sources.</p>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -860,21 +880,21 @@ strong {
 <!-- ═══════════════════════════════════════════════════════ -->
 
 <div class="block">
-  <p>The Murder Sheet podcast juror confirms the foreman was <strong>male</strong>, chosen by written ballot (jurors each wrote down names; the person with the most became foreman), and "had been on juries in the past." She describes him as "the absolute best choice," "a very like professional, well spoken person." She did not vote for him personally. Juror Number 1 (Oct. 7, 2026 interview) independently corroborates the written-ballot method and adds that the foreman ensured everyone got to speak, prevented interruptions, and bore the weight of managing the group visibly. No verbal vote was taken for any purpose; all votes, including the foreman selection and the daily verdict polls, were conducted in writing.</p>
-  <p>The foreman directed the deliberation structure: timeline-building on Day 1, small-group breakouts on Day 2, and the know-vs.-believe framework on Day 4. On Day 4 he asked undecided jurors to list what they knew as fact, what they believed, and whether what they didn&rsquo;t believe created reasonable doubt. That framework was the pivot that led to the unanimous verdict.</p>
+  <p>The Murder Sheet podcast juror confirms the foreman was <strong>male</strong>, chosen by written ballot (jurors each wrote down names; the person with the most became foreman), and "had been on juries in the past." She describes him as "the absolute best choice," "a very like professional, well spoken person." She did not vote for him personally. Juror #01 (Oct. 7, 2026 interview) independently corroborates the written-ballot method and adds that the foreman ensured everyone got to speak, prevented interruptions, and bore the weight of managing the group visibly. No verbal vote was taken for any purpose; all votes, including the foreman selection and the daily verdict polls, were conducted in writing.</p>
+  <p>The foreman directed the deliberation structure: timeline-building on Day 1, small-group breakouts on Day 2, and the know-vs.-believe framework on Day 4. On Day 4 he asked undecided jurors to list what they knew as fact, what they believed, and whether what they didn't believe created reasonable doubt. That framework was the pivot that led to the unanimous verdict.</p>
   <div class="two-col">
     <div>
-      <div class="col-label">Juror #21 (D1 R1 S12): Stronger Candidate <span class="tag tag-foreman">Likely</span></div>
+      <div class="col-label">Juror #21 (D1–R1 S12): Stronger Candidate <span class="tag tag-foreman">Likely</span></div>
       <ul>
         <li>Three prior criminal juries, the most prior jury experience of any seated juror</li>
         <li>Works in institutional setting (public school system)</li>
         <li>Prior acquittal shows willingness to hold State to burden</li>
-        <li>Only seated male from the Day 1 Round 1 pool with prior jury service</li>
+        <li>Only seated male from the D1–R1 pool with prior jury service</li>
         <li>Foreman chosen by nomination and vote, consistent with professional background</li>
       </ul>
     </div>
     <div>
-      <div class="col-label">D2-Pool #30: Weaker Candidate</div>
+      <div class="col-label">Juror #30 (D2–R1 S05): Weaker Candidate</div>
       <ul>
         <li>Had prior jury service (raised hand when asked)</li>
         <li>Promoted from alternate on Day 2; less established presence with the group</li>
@@ -898,14 +918,14 @@ strong {
   <p>When a commenter (Christine Salzer) claimed she broke the sequester order, Mia rebutted directly:</p>
   <div class="block-quote">"Please show me the proof on my profile I "broke the sequester order. I didn't have my phone, watch tv, or see my family for 3.5 weeks. But yeah, I'm just a random person claiming to have been on the jury. If you've looked back at my profile two years, you should've seen what I looked like then."</div>
   <div class="block-quote">"I sat second row, next to Bob Motta, Erica Morse, and Kathy Allen. You posted on Facebook in the middle of trial."</div>
-  <p>The courtroom seating reference (proximity to the families of the victims and one of Richard Allen's family members in the gallery) is corroborating detail a fabricator would not have. She also responded to a question about her juror number with "<strong>#2</strong>,"" which appears to be a trial seating number (not her voir dire pool number).</p>
+  <p>The courtroom seating reference (proximity to the families of the victims and one of Richard Allen's family members in the gallery) is corroborating detail a fabricator would not have. She also responded to a question about her juror number with #02, which appears to be a trial seating number (not her voir dire pool number).</p>
   <p>The 3.5-week sequestration claim is internally consistent with the trial record.</p>
   <p><strong>Post-trial career:</strong> In the Oct. 7, 2026 Murder Sheet interview, Mia confirmed she became a paralegal not long after the trial, working primarily in children and families matters. She described jury work and juror welfare as her long-term passion and expressed interest in eventually working across all sides of the legal system. Law school remains possible but undecided.</p>
   <p><strong>Reflection on earlier public statements:</strong> Mia disclosed in the Oct. 7 interview that she may contradict some of what she said in her original public statement, noting she now speaks from greater distance: "I'm finally able to talk about it and also not from the standpoint of, 'I feel like I need to protect the case.'" She attributed the shift to two years of reflection since the trial and said she wanted to move beyond purely defensive framing when engaging with ongoing public debate about the verdict.</p>
 </div>
 
 <div class="block">
-  <div class="block-heading">Probable Juror Profile Match: Murder Sheet Podcast Juror / Juror 08 (D1 R2 S6) <span class="tag tag-match">Strong Match</span></div>
+  <div class="block-heading">Probable Juror Profile Match: Murder Sheet Podcast Juror / Juror #08 (D1–R2 S6) <span class="tag tag-match">Strong Match</span></div>
   <div class="two-col">
     <div>
       <div class="col-label">Murder Sheet Juror (voir dire profile)</div>
@@ -917,7 +937,7 @@ strong {
         <li>Post-trial reading Reddit "probably unhealthily"</li>
         <li>Judge Gull offered personal counseling contact</li>
         <li>Self-described as into fashion, emotional, gullible, and a gossip; made one close female friend on the jury</li>
-      </ul>
+      </ul> 
     </div>
     <div>
       <div class="col-label">Mia McHaffey (Facebook)</div>
@@ -931,10 +951,10 @@ strong {
       </ul>
     </div>
   </div>
-  <p style="margin-top:4px"><strong>Assessment:</strong> The parallel on the van confession is highly distinctive. The van mention was the sole confession element she found credible in both accounts. Combined with the no-prior-jury-service match and the emotional profile, this strongly suggests Mia McHaffey is the Murder Sheet podcast juror, most likely <strong>Juror 08 (Day 1, Round 2, Seat 6)</strong>. Her self-reported trial seat number of #2 is not necessarily inconsistent, as jury box seating assignments do not track voir dire pool numbers.</p>
-</div>
+  <p style="margin-top:4px"><strong>Assessment:</strong> The parallel on the van confession is highly distinctive. The van mention was the sole confession element she found credible in both accounts. Combined with the no-prior-jury-service match and the emotional profile, this strongly suggests Mia McHaffey is the Murder Sheet podcast juror, most likely <strong>Juror #08 (D1–R2 S06)</strong>. Her self-reported trial seat number of #02 is not necessarily inconsistent, as jury box seating assignments do not track voir dire pool numbers.</p>
+</div> 
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════ --> 
 <div class="section-label">What She Relied On: Evidence Analysis</div>
 <!-- ═══════════════════════════════════════════════════════ -->
 
@@ -1001,7 +1021,7 @@ strong {
       </ul>
       <li>Afternoon spent discussing opinions, described as "the hard part"; some people talking over others</li>
       <li>Sarah Carbaugh's testimony was questioned and removed from the timeline</li>
-      <li>End of day vote: <span class="vote-pill vote-split">9 Guilty / 3 Undecided</span> <em>(timing disputed: Juror Number 1 places this vote on Day 1/Thursday; Mia places it on Day 2/Friday)</em></li>
+      <li>End of day vote: <span class="vote-pill vote-split">9 Guilty / 3 Undecided</span> <em>(timing disputed: Juror #01 places this vote on Day 1/Thursday; Mia places it on Day 2/Friday)</em></li>
       <li>Decided to request video evidence for Saturday; gave advance notice to court <em>(Mia places this request on Day 2/Friday)</em></li>
     </ul>
   </div>
@@ -1013,7 +1033,7 @@ strong {
       <li>Watched both police interviews; primarily wanted to rewatch Mullin; something specific they wanted to see again</li>
       <li>Watched remastered/stabilized bridge guy video and audio-only version of bridge guy video</li>
       <li>Little discussion due to time constraints</li>
-      <li>End of day vote: <span class="vote-pill vote-split">8 Guilty / 4 Undecided</span>: <strong>Juror Number 1 changed her vote to undecided</strong> — she has since explained this was a deliberate personal decision to ensure she had adequate reflection time before Monday, not a change in her assessment of the evidence</li>
+      <li>End of day vote: <span class="vote-pill vote-split">8 Guilty / 4 Undecided</span>: <strong>Juror #01 changed her vote to undecided</strong>. She has since explained this was a deliberate personal decision to ensure she had adequate reflection time before Monday, not a change in her assessment of the evidence</li>
     </ul>
   </div>
 
@@ -1075,9 +1095,9 @@ strong {
 
 <div class="block">
   <div class="block-heading">Identity &amp; Profile</div>
-  <p>Juror Number 1 is a female juror who participated anonymously in the Oct. 7, 2026 Murder Sheet podcast (Part 2) alongside Mia McHaffey. She is the second juror to speak on the record in a named-host interview, though she declined to identify herself publicly. Her voir dire identity is confirmed as <strong>D1-Pool #39</strong> (Day 1, Round 1, Seat 1) by the Round 1 selection announcement at Volume 7, page 183: "Juror 39 in seat 1, you have been accepted to serve." Her voir dire responses further match: she self-identified as a nurse (V7, p.165), noted familiarity with distressing circumstances at work, described her credibility standard as internal consistency, and was the juror Rozzi addressed first when he opened defense voir dire with the brother/robbery behavioral hypothetical (V7, pp.155–156). The seating chart independently records Seat 01 as the youngest-looking juror in the front row.</p>
+  <p>Juror #01 is a female juror who participated anonymously in the Oct. 7, 2026 Murder Sheet podcast (Part 2) alongside Mia McHaffey. She is the second juror to speak on the record in a named-host interview, though she declined to identify herself publicly. Her voir dire identity is confirmed as <strong>D1-R1 #39</strong> (D1–R1 S01) by the Round 1 selection announcement at V7, p. 183: "Juror 39 in seat 1, you have been accepted to serve." Her voir dire responses further match: she self-identified as a nurse (V7, p.165), noted familiarity with distressing circumstances at work, described her credibility standard as internal consistency, and was the juror Rozzi addressed first when he opened defense voir dire with the brother/robbery behavioral hypothetical (V7, pp.155–156). The seating chart independently records S01 as the youngest-looking juror in the front row.</p>
   <p>She describes forming emotional connections with courtroom regulars she never spoke to. She returned to Delphi roughly a year after trial and, without prior arrangement, stopped at the courthouse and spoke with McLeland and Diener: "They had so many questions." She is open to speaking with the defense if they want to reach her through the Murder Sheet hosts.</p>
-</div>
+</div> 
 
 <div class="block">
   <div class="block-heading">Most Affecting Evidence</div>
@@ -1087,33 +1107,28 @@ strong {
 
 <div class="block">
   <div class="block-heading">Defense Impressions</div>
-  <p>Juror Number 1 had strongly negative feelings about the defense attorneys while separating those feelings from the defendant himself. She describes Rozzi"s voir dire as frustrating because he kept pressing a question she had already answered and would not adjust his approach. Her initial negative impression was reinforced repeatedly during trial: "little thing after little thing that kept reinforcing that initial opinion." She found the defense's use of courtroom time wasteful. Both she and Mia mentioned the "probable cause" defense argument as particularly confusing or ineffective with the jury.</p>
+  <p>Juror #01 had strongly negative feelings about the defense attorneys while separating those feelings from the defendant himself. She describes Rozzi"s voir dire as frustrating because he kept pressing a question she had already answered and would not adjust his approach. Her initial negative impression was reinforced repeatedly during trial: "little thing after little thing that kept reinforcing that initial opinion." She found the defense's use of courtroom time wasteful. Both she and Mia mentioned the "probable cause" defense argument as particularly confusing or ineffective with the jury.</p>
 </div>
 
 <div class="block">
   <div class="block-heading">Judge Gull's Post-Verdict Statement to Jurors <span class="tag tag-new">New</span></div>
-  <p>After the verdict, Judge Gull spoke privately with the jury. Juror Number 1 quotes her directly: "I tried to keep the defense from wasting your time&hellip;this could have been done maybe a week or two earlier." Juror Number 1 acknowledged the defense's time use as a complaint but framed the overall timeline as necessary: "I think the process, this whole thing was what it needed to be. I think it went as long as it needed to."</p>
+  <p>After the verdict, Judge Gull spoke privately with the jury. Juror #01 quotes her directly: "I tried to keep the defense from wasting your time&hellip;this could have been done maybe a week or two earlier." Juror #01 acknowledged the defense's time use as a complaint but framed the overall timeline as necessary: "I think the process, this whole thing was what it needed to be. I think it went as long as it needed to."</p>
   <p>This is the only on-record disclosure of Gull's private post-verdict communication with the jury. It is significant for the appeal insofar as it reflects the presiding judge's own characterization of the defense's conduct as time-wasting.</p> 
 </div>
 
 <div class="block">
   <div class="block-heading">Security During Trial</div>
-  <p>Juror Number 1 describes being driven back to the hotel at roughly 90 mph on at least one occasion after being told someone was following the van. She also recalls vans with blacked-out windows on the first day to prevent people from photographing the jury, and awareness of a YouTuber attempting to obtain juror license plate numbers. She expressed appreciation for Judge Gull's and the bailiffs' efforts to keep the jury safe throughout.</p>
+  <p>Juror #01 describes being driven back to the hotel at roughly 90 mph on at least one occasion after being told someone was following the van. She also recalls vans with blacked-out windows on the first day to prevent people from photographing the jury, and awareness of a YouTuber attempting to obtain juror license plate numbers. She expressed appreciation for Judge Gull's and the bailiffs' efforts to keep the jury safe throughout.</p>
 </div>
 
 <div class="block">
   <div class="block-heading">Trial Notes &amp; Courtroom Observations <span class="tag tag-new">Oct. 7, 2026</span></div>
-  <p>Juror Number 1 took approximately <strong>2.5 legal pads</strong> of handwritten notes during the trial. She describes a practice of staring directly at Richard Allen during sidebar conferences — the intervals when attorneys approached the bench — using those pauses to study him. She says she learned a great deal from watching him in those unguarded moments. She confirms she was <strong>not in Indiana in 2017</strong> when the murders occurred; her connection to the case came entirely through subsequent media coverage rather than any regional or community awareness.</p>
-</div>
-
-<div class="block">
-  <div class="block-heading">Partial Name Disclosure <span class="tag tag-new">Oct. 7, 2026</span></div>
-  <p>At approximately the <strong>31:10 mark</strong> of the Oct. 7, 2026 Murder Sheet interview, host Áine appears to address Juror Number 1 directly as <strong>"Ben"</strong> before continuing with the conversation. The moment is brief and not acknowledged on-air. If accurate, this represents the only partial name disclosure for any anonymous juror in the Richard Allen case to date.</p>
+  <p>Juror #01 took approximately <strong>2.5 legal pads</strong> of handwritten notes during the trial. She describes a practice of staring directly at Richard Allen during sidebar conferences, using those pauses to study him. She says she learned a great deal from watching him in those unguarded moments. She confirms she was not in Indiana in 2017 when the murders occurred; her connection to the case came entirely through subsequent media coverage rather than any regional or community awareness.</p>
 </div>
 
 <div class="block">
   <div class="block-heading">On the Deliberation Sequence</div>
-  <p>Juror Number 1 describes a deliberate sequencing in how the jury worked through the evidence: the group first established whether Richard Allen was the <strong>"Bridge Guy"</strong> from Libby's video — resolving placement and identity — before moving to evaluate the confessions, and then finally the bullet and cartridge evidence. This structure aligns precisely with Mia McHaffey's account in the same interview: "Bridge Guy equals Allen was first. Really, just things that he reported himself is really what got me closest."</p>
+  <p>Juror #01 describes a deliberate sequencing in how the jury worked through the evidence: the group first established whether Richard Allen was the "Bridge Guy" from Libby's video, resolving placement and identity, before moving to evaluate the confessions, and then finally the bullet and cartridge evidence. This structure aligns precisely with Mia McHaffey's account in the same interview: "Bridge Guy equals Allen was first. Really, just things that he reported himself is really what got me closest."</p>
   <p>This sequencing has direct appeal relevance: it suggests the jury anchored the verdict on self-placement and identity evidence before reaching the forensic questions. If the cartridge methodology is successfully challenged, the deliberation sequence the jurors themselves describe suggests the conviction was not built on that foundation.</p>
 </div>
 
@@ -1124,7 +1139,7 @@ strong {
 <div class="block">
   <div class="block-heading">On a New Trial: Mia McHaffey</div>
   <div class="block-quote">"I welcome another trial if it's deemed most constitutional. I don't think my opinion really matters as far as predicted outcome, but I do think another trial would silence a lot of the public opinion surrounding the process."</div>
-  <p>This was the most significant statement for the appeal from her Sept. 25, 2026 Facebook disclosures. In her Oct. 7, 2026 Murder Sheet interview, Mia refined this position: "I personally, based on the appeal and the hearing and the brief, I don't think the claims, one would change anything, but it's not my call to decide if something's unconstitutional or not." She continued: "What I will say is if it was in any sense, even one percent, then I would want Richard Allen to have a fair trial… I would bet money on it. It'd be the same outcome." Juror Number 1 stated flatly: "I believe he did [get a fair trial], yes." The combined picture from both jurors: procedural openness to a retrial, high confidence in the same outcome, and no substantive concession to the defense's appeal arguments.</p>
+  <p>This was the most significant statement for the appeal from her Sept. 25, 2026 Facebook disclosures. In her Oct. 7, 2026 Murder Sheet interview, Mia refined this position: "I personally, based on the appeal and the hearing and the brief, I don't think the claims, one would change anything, but it's not my call to decide if something's unconstitutional or not." She continued: "What I will say is if it was in any sense, even one percent, then I would want Richard Allen to have a fair trial…I would bet money on it. It'd be the same outcome." Juror #01 stated flatly: "I believe he did [get a fair trial], yes." The combined picture from both jurors: procedural openness to a retrial, high confidence in the same outcome, and no substantive concession to the defense's appeal arguments.</p>
 </div>
 
 <div class="block">
@@ -1149,21 +1164,21 @@ strong {
   <div class="block-heading">Potential Deliberation Misconduct Issues <span class="tag tag-appeal">Appeal</span></div>
   <p><strong>"If not Allen, then who?"</strong> The Murder Sheet juror reports at least one juror asked "if it wasn't Richard Allen, then who could it have possibly been" She identified this as "a wrong question to ask because that's not what this is about. We're not seeing if it could be anyone else." This reverses the burden of proof. If this argument influenced other jurors, it could support a claim of improper deliberation.</p>
   <p><strong>Pressure on undecided jurors.</strong> The Murder Sheet juror stated: "At some point, someone alluded to, we don't need to make a decision out of sympathy for people that are undecided to feel bad. And that really got to me that day." This suggests social pressure on holdout jurors to conform, which could support a coercion claim if the undecided jurors felt pressured into a verdict.</p>
-  <p><strong>Vote movement on Day 3.</strong> The vote went from 9–3 (guilty–undecided) on Friday to 8–4 on Saturday after watching the interrogation videos. In the Oct. 7, 2026 Murder Sheet interview, Juror Number 1 identified herself as the juror who changed her vote to undecided on Day 3. Her stated reason: she wanted to ensure she had adequate personal reflection time before the Monday session, not because she had doubts about guilt. She explicitly framed it as a deliberate methodological choice ("I wanted to make sure that if anybody else had changed theirs from undecided to guilty, that I at least had time to think about it longer"). Her subsequent return to guilty on Monday and the unanimous verdict were not framed as the result of external pressure. This disclosure substantially reframes the Day 3 movement: what had appeared to be a potential pressure or coercion indicator is, per the juror's own account, a conscious personal quality-control step.</p>
-  <p><strong>Alternates present during deliberations.</strong> The Murder Sheet juror confirms alternates were in the deliberation room but "weren't allowed to say anything at all. And their notes were not allowed to be used."" Their mere presence is standard in some jurisdictions but could be challenged if it created pressure or if any alternate spoke. Cross-reference: D2-Pool #10 (Alternate 3) self-described as a "follower" who would not call out improper behavior; if this alternate was present and observed misconduct, they would not have reported it. <strong>Note:</strong> Lucy Lou separately states that the alternate she refers to as "Fig" was housed in a <em>completely different location</em> from the rest of the jury during sequestration, and was seen only when walking into the courtroom. If accurate, at least one alternate was effectively excluded from the deliberation environment, and the question of which alternates were in the room during deliberations requires further clarification.</p>
-  <p><strong>Ballistics divergence between named jurors.</strong> Mia McHaffey states she "did not take into account any of the confessions or any of the ballistics" and specifically says she "threw out the science of the bullet." Lucy Lou (Juror #5 / Frankmeister interview) states the witness who made the most impact on her was <strong>Melissa Oberg, the firearms/weapons expert</strong>, describing the cartridge mark comparison as "just like a fingerprint." The Unsolved interview independently corroborates this: in response to the question about compelling witnesses, the juror names "Melissa Oberg, forensic firearms examiner. She was on the stand the entire day. We watched videos of how to look for specific markings that a particular firearm could cause as the inside toolings are not the same." She also named "C. Cecil" as compelling. Two named jurors from the same deliberation reached opposite relationships to the same physical evidence. This divergence cuts both ways for the appeal: it establishes the ballistics evidence was not uniformly relied upon, but also that at least one juror found it dispositive.</p>
+  <p><strong>Vote movement on Day 3.</strong> The vote went from 9–3 (guilty–undecided) on Friday to 8–4 on Saturday after watching the interrogation videos. In the Oct. 7, 2026 Murder Sheet interview, Juror #01 identified herself as the juror who changed her vote to undecided on Day 3. Her stated reason: she wanted to ensure she had adequate personal reflection time before the Monday session, not because she had doubts about guilt. She explicitly framed it as a deliberate methodological choice ("I wanted to make sure that if anybody else had changed theirs from undecided to guilty, that I at least had time to think about it longer"). Her subsequent return to guilty on Monday and the unanimous verdict were not framed as the result of external pressure. This disclosure substantially reframes the Day 3 movement: what had appeared to be a potential pressure or coercion indicator is, per the juror's own account, a conscious personal quality-control step.</p>
+  <p><strong>Alternates present during deliberations.</strong> The Murder Sheet juror confirms alternates were in the deliberation room but "weren't allowed to say anything at all. And their notes were not allowed to be used."" Their mere presence is standard in some jurisdictions but could be challenged if it created pressure or if any alternate spoke. Cross-reference: #10 D2-R2 S06 (Alt 03) self-described as a "follower" who would not call out improper behavior; if this alternate was present and observed misconduct, they would not have reported it. <strong>Note:</strong> Lucy Lou separately states that the alternate she refers to as "Fig" was housed in a <em>completely different location</em> from the rest of the jury during sequestration, and was seen only when walking into the courtroom. If accurate, at least one alternate was effectively excluded from the deliberation environment, and the question of which alternates were in the room during deliberations requires further clarification.</p>
+  <p><strong>Ballistics divergence between named jurors.</strong> Mia McHaffey states she "did not take into account any of the confessions or any of the ballistics" and specifically says she "threw out the science of the bullet." Lucy Lou (Juror #05 / Ickkmeister interview) states the witness who made the most impact on her was Melissa Oberg, the firearms/weapons expert, describing the cartridge mark comparison as "just like a fingerprint." The Unsolved interview independently corroborates this: in response to the question about compelling witnesses, the juror names "Melissa Oberg, forensic firearms examiner. She was on the stand the entire day. We watched videos of how to look for specific markings that a particular firearm could cause as the inside toolings are not the same." She also named "C. Cecil" as compelling. Two named jurors from the same deliberation reached opposite relationships to the same physical evidence. This divergence cuts both ways for the appeal: it establishes the ballistics evidence was not uniformly relied upon, but also that at least one juror found it dispositive.</p>
   <p><strong>Bridge Guy video re-watch during deliberations.</strong> Lucy Lou confirms the jury requested to re-watch Libby's Bridge Guy video during deliberations. The request was not unanimous: a few jurors wanted to re-hear it; not all needed to. During the re-watch, jurors were permitted to sit closer to the screen rather than in their assigned seats, and the room was quieter. Lucy Lou states she heard "that be a gun" on the audio. The request to replay evidence during deliberations, and the physical repositioning of jurors, is on the record as a deliberation room event.</p>
   <p><strong>Timeline inconsistency as deliberation factor.</strong> Lucy Lou specifically identifies Allen's changing timeline as a key factor in the verdict: he stated he was at the trail between 1:30 and 3:30 in his original statement; told investigators "a little before noon, around noon, 1, 1:30, 1:45" in his interrogation; and "kept changing" across three different accounts. The jurors used a "big poster of the entire trail" to map each witness's stated time and location, with Allen's shifting placement as the central inconsistency.</p>
-  <p><strong>Lucy Lou / "Juror #5" post-trial contamination.</strong> Lucy Lou confirms she learned specific facts <em>after</em> the trial that she referenced as though they were trial knowledge: the wife's lawnmower phone story ("at the time and during trial, I did not know that); the Cass County jail threat video (judge excluded as too prejudicial, jury never saw it). She may be conflating post-trial media consumption with trial testimony across other claims as well. Her sex addiction attribution (to "one of the doctors") may also be a post-trial conflation: the trial record attributes that claim to Dr. Gate Closure, whose notes were subsequently destroyed. This pattern of contamination materially limits her reliability as a source on what the jury actually heard and weighed.</p>
+  <p><strong>Lucy Lou / "Juror #05" post-trial contamination.</strong> Lucy Lou confirms she learned specific facts <em>after</em> the trial that she referenced as though they were trial knowledge: the wife's lawnmower phone story ("at the time and during trial, I did not know that); the Cass County jail threat video (judge excluded as too prejudicial, jury never saw it). She may be conflating post-trial media consumption with trial testimony across other claims as well. Her sex addiction attribution (to "one of the doctors") may also be a post-trial conflation: the trial record attributes that claim to Dr. Gate Closure, whose notes were subsequently destroyed. This pattern of contamination materially limits her reliability as a source on what the jury actually heard and weighed.</p>
   <details class="claims">
     <summary>Fact-check: 64 claims from the Lucy Lou interview with Ickkmeister &amp; Backdoor  &middot; <a href="https://drive.google.com/file/d/1pGyiKyTPBbz0SGLwVWGFUkdMSC_nmitC/view?usp=drive_link" target="_blank" rel="noopener" class="masthead-link">full PDF</a></summary>
     <div class="claims-body">
-      <p>A 27-page claim-by-claim review of the April 21, 2026 interview against the trial record. The following contradictions are most significant for evaluating her reliability:</p>
+      <p>A 27-page claim-by-claim review of the Apr. 21, 2026 interview against the trial record. The following contradictions are most significant for evaluating her reliability:</p>
       <ul>
         <li><strong>Blown-up posters (Claim 36):</strong> Lucy Lou describes prosecution exhibits at 60x magnification. The record shows those posters were <em>defense</em> exhibits, conditionally admitted. She attributes to the prosecution evidence that belongs to the defense.</li>
         <li><strong>"Just like a fingerprint" (Claim 37):</strong> Lucy Lou states a witness testified the cartridge match was "just like a fingerprint." No witness used that phrase in testimony. The record does not contain it.</li>
         <li><strong>"Markings were right on" / first attempts failed (Claims 32, 38):</strong> Lucy Lou characterizes the match as definitive. The record shows Oberg's first six manual-cycle attempts failed to produce a match; she supplemented with additional research before reaching her conclusion.</li>
-        <li><strong>"And when I went back" (Claim 34):</strong> Lucy Lou describes Allen making an inadvertent admission during interrogation, implying he scouted the trail earlier that morning. The record shows "Nope."" at the relevant exchange point.</li>
+        <li><strong>"And when I went back" (Claim 34):</strong> Lucy Lou describes Allen making an inadvertent admission during interrogation, implying he scouted the trail earlier that morning. The record shows "Nope." at the relevant exchange point.</li>
         <li><strong>Post-trial contamination (Claims 62–64):</strong> The lawnmower/phone story, the Cass County jail threat video, and the sex addiction attribution were all learned <em>after</em> the trial. Lucy Lou references them as though they were trial knowledge. None of these items was ever before the jury.</li>
       </ul>
     </div>
@@ -1177,14 +1192,14 @@ strong {
 
 <div class="block">
   <div class="block-heading">Where Accounts Align</div>
-  <p>Lucy Lou (Frankmeister/Ickmeister, April 2026) and The Unsolved juror (Tim's channel, May 2025) make essentially identical points on several key issues despite claiming not to have coordinated:</p>
-  <p><strong>Confessions predated Haldol.</strong> The single most consistent talking point across both interviews. Lucy Lou states the first confession was 19 days post-arrest, before any medication. The Unsolved juror's notes confirm Haldol wasn't introduced until 5/2/23. Both frame pre-medication confessions as dispositive on voluntariness. That framing is precisely what the State wants, and exactly what the defense's appellate brief challenges on different grounds (the Banks negligence standard; fruit-of-the-poisonous-tree).</p>
+  <p>Lucy Lou (Ickmeister, Apr. 2026) and The Unsolved juror (Trust Me Tim's channel, May 2025) make essentially identical points on several key issues despite claiming not to have coordinated:</p>
+  <p><strong>Confessions predated Haldol.</strong> The single most consistent talking point across both interviews. Lucy Lou states the first confession was 19 days post-arrest, before any medication. The Unsolved juror's notes confirm Haldol wasn't introduced until 05-02-2023. Both frame pre-medication confessions as dispositive on voluntariness. That framing is precisely what the State wants, and exactly what the defense's appellate brief challenges on different grounds (the Banks negligence standard; fruit-of-the-poisonous-tree).</p>
   <p><strong>Feigning mental illness.</strong> Both jurors asked or noted whether Allen was faking symptoms to avoid general population. Lucy Lou says she personally asked a psychiatrist and was told yes, it's possible. The Unsolved juror cites Dr. Dwenger confirming "it is possible he was feigning his mental health."</p>
   <p><strong>Allen's voice = Bridge Guy's voice.</strong> Both describe a visceral reaction to hearing Allen's voice. Lucy Lou calls it one of the most compelling moments. The Unsolved juror wrote: "the hairs stood up on my arms"; she says she "absolutely believed that was the same voice."</p>
   <p><strong>Melissa Oberg / firearms testimony.</strong> Both name her as a compelling witness. Both also characterize the defense's firearms experts as having reviewed only photographs, while the prosecution's experts handled the physical evidence directly.</p>
-  <p><strong>Missing 2017 cell phone.</strong> Both flag it independently. Lucy Lou: "he had all these other phones, 20 cell phones and two pagers&hellip; but they didn't have that one." The Unsolved juror: "where is his cell phone from 2017! When they searched his house he had a whole bag full of other old cell phones!"</p>
+  <p><strong>Missing 2017 cell phone.</strong> Both flag it independently. Lucy Lou: "he had all these other phones, 20 cell phones and two pagers&hellip;but they didn't have that one." The Unsolved juror: "where is his cell phone from 2017! When they searched his house he had a whole bag full of other old cell phones!"</p>
   <p><strong>Kathy Allen.</strong> Both express belief that Allen's wife recognized something was wrong and tried to keep him quiet. Lucy Lou describes phone calls where family cut him off from confessing. The Unsolved juror: "RA's wife. You tried to keep him quiet on the phone. You knew."</p>
-  <p><strong>Allen's daughter.</strong> Both describe her as emotional and not looking at her father during testimony. Lucy Lou: "she wouldn't even look at him&hellip; she was up there balling." The Unsolved juror confirms she was a defense witness, correcting misinformation that she was not present.</p>
+  <p><strong>Allen's daughter.</strong> Both describe her as emotional and not looking at her father during testimony. Lucy Lou: "she wouldn't even look at him&hellip;she was up there balling." The Unsolved juror confirms she was a defense witness, correcting misinformation that she was not present.</p>
   <p><strong>Defense strategy.</strong> Both characterize the defense as focused almost entirely on Allen's mental state and prison treatment, with neither identifying strong exculpatory evidence from the defense.</p>
 </div>
 
@@ -1192,7 +1207,7 @@ strong {
   <div class="block-heading">Key Divergences <span class="tag tag-appeal">Appeal</span></div>
   <p><strong>Ballistics: confirmed jury-room fault line across all three named jurors.</strong> This is not a difference in interview framing; it is a documented split in how jurors individually weighted the same physical evidence:</p>
   <ul>
-    <li><strong>Lucy Lou (Frankmeister):</strong> Emphatic believer. Describes blown-up posters at 60&times; magnification, the comparison microscope, watching an entire day of video on how firearms are manufactured. Says the cartridge markings "were right on" and calls Oberg her most impactful witness largely because of the ballistics.</li>
+    <li><strong>Lucy Lou (Ickkmeister):</strong> Emphatic believer. Describes blown-up posters at 60&times;magnification, the comparison microscope, watching an entire day of video on how firearms are manufactured. Says the cartridge markings "were right on" and calls Oberg her most impactful witness largely because of the ballistics.</li>
     <li><strong>The Unsolved juror:</strong> Names Oberg as compelling but focuses on the process distinction (prosecution handled physical evidence; defense reviewed only photographs). Does not express Lucy Lou's level of personal conviction about the match itself.</li>
     <li><strong>Murder Sheet juror (Mia McHaffey):</strong> Explicitly says she "threw out the science of the bullet" and "didn't consider it at all." Between Warren's testimony and the defense's cross of Oberg, she became "skeptical on the bullet."</li>
   </ul>
@@ -1206,7 +1221,7 @@ strong {
 
 <div class="block">
   <div class="block-heading">Credibility and Structural Observations</div>
-  <p>The two Juror #5 accounts are broadly consistent in ways that suggest both women were in that courtroom: the same witnesses, same exhibits, same emotional weight. Their differences are mostly in emphasis and which details stuck with each person, which is what you would expect from two genuine independent observers. If they were coordinating or one was copying the other, you would expect more uniformity in what each highlights as pivotal. The van, for example, is central to Lucy Lou and absent from The Unsolved juror's account; the "caught lying on the bridge" framing is central to The Unsolved juror and handled differently by Lucy Lou.</p>
+  <p>The two Juror #05 accounts are broadly consistent in ways that suggest both women were in that courtroom: the same witnesses, same exhibits, same emotional weight. Their differences are mostly in emphasis and which details stuck with each person, which is what you would expect from two genuine independent observers. If they were coordinating or one was copying the other, you would expect more uniformity in what each highlights as pivotal. The van, for example, is central to Lucy Lou and absent from The Unsolved juror's account; the "caught lying on the bridge" framing is central to The Unsolved juror and handled differently by Lucy Lou.</p>
   <p>The Murder Sheet juror is clearly distinct from both: younger, first-time juror, describes herself as emotional and "a gossip person," decided to pursue law school after the trial, and was one of the undecided holdouts who switched to guilty on the final day. Her account is the most valuable for appellate analysis because she provides the vote progression (9–3 &rarr; 8–4 &rarr; 12–0), discloses what evidence she discarded (bullet, Carbaugh), and is transparent about what troubled her (Holman interrogation, the possibility of psychosis-driven confessions). She is the only named juror who acknowledges excluded evidence as a genuine unknown rather than dismissing it outright.</p>
 </div>
 
@@ -1223,10 +1238,10 @@ strong {
 </div>
 
 <div class="bottom-line">
-  <p>Mia McHaffey's public statements remain the most substantive named-juror disclosures in this case. Cross-referenced against the voir dire profiles, she is a strong candidate for <strong>Juror 08 (Day 1, Round 2, Seat 6)</strong>, identified as the Murder Sheet podcast juror, based on the near-identical approach to the van confession, disregard for the cartridge evidence, no prior jury service, and emotional profile consistent across both sources. Post-trial she became a paralegal and confirmed in the Oct. 7, 2026 Murder Sheet interview that jury work and juror welfare are her long-term professional goals.</p>
-  <p>The deliberation record now includes a direct account from Juror Number 1, the second anonymous juror in the Oct. 7, 2026 Murder Sheet interview. Her disclosures resolve two previously open questions: (a) the Day 3 vote regression from 9–3 to 8–4 was driven by her own deliberate decision to remain in "undecided" status through the weekend as a personal quality-control step, not by doubt or external pressure; and (b) foreman selection was by written ballot, not verbal nomination, which reduces the social-pressure concern associated with that process. She also disclosed Judge Gull's post-verdict statement to the jury characterizing the defense's time use as something she tried to contain. Additional Oct. 7 disclosures: she took 2.5 legal pads of notes during trial, was not in Indiana in 2017, stared at Allen during sidebar conferences as an observational technique, and describes deliberations as proceeding in a deliberate sequence (Bridge Guy identity first, confessions second, bullet evidence last). Host Áine briefly addressed her as "Ben" at the 31:10 mark of the interview before continuing — the only known partial name disclosure for any anonymous juror in this case.</p>
-  <p>Mia <strong>defends the verdict on evidentiary grounds</strong> and in the October interview hardened her position on the appeal: "I don't think the claims, one would change anything." She and Juror Number 1 both remain procedurally open to a retrial if the appellate court finds a constitutional violation, while both expressing high confidence in the same outcome. Her most significant evidentiary contributions remain: (a) first named juror to confirm she did not rely on ballistics, (b) van confession detail was load-bearing for her, and (c) unfamiliarity with excluded material ("the drug angle") confirms genuine jury-room insulation from some excluded evidence.</p>
-  <p>The juror identified as "Juror #5," who appeared as Tim's juror on The Unsolved (May 28, 2025) and as Lucy Lou 29 on the Frankmeister interview (April 21, 2026), adds a competing data point across two separate disclosures: she found Melissa Oberg (forensic firearms examiner) to be a singularly impactful witness, described the cartridge comparison as "just like a fingerprint," immediately recognized Allen's voice from the interrogation video as Bridge Guy's, found Sarah Carbaugh credible, and placed Allen's shifting timeline as a central deliberation factor. Cross-referenced against Mia's account, these two named jurors had fundamentally different evidentiary anchors: Mia weighted the van confession and disregarded ballistics; Juror #5 weighted Oberg, voice recognition, and timeline inconsistencies. Her handwritten notes shown in The Unsolved video contain the notation "only publish 303" (the juror's own record that Exhibit 304 was not published to the jury) and attribute the 4/4/23 confession phrases to Monica Wala's in-court testimony; a separate provenance analysis disputes this attribution, and the conflict is unresolved. Her Frankmeister interview contains confirmed post-trial contamination across at least three specific factual claims.</p>
+  <p>Mia McHaffey's public statements remain the most substantive named-juror disclosures in this case. Cross-referenced against the voir dire profiles, she is a strong candidate for <strong>Juror #08 (D1–R2 S06)</strong>, identified as the Murder Sheet podcast juror, based on the near-identical approach to the van confession, disregard for the cartridge evidence, no prior jury service, and emotional profile consistent across both sources. Post-trial she became a paralegal and confirmed in the Oct. 7, 2026 Murder Sheet interview that jury work and juror welfare are her long-term professional goals.</p>
+  <p>The deliberation record now includes a direct account from Juror #01, the second anonymous juror in the Oct. 7, 2026 Murder Sheet interview. Her disclosures resolve two previously open questions: (a) the Day 3 vote regression from 9–3 to 8–4 was driven by her own deliberate decision to remain in "undecided" status through the weekend as a personal quality-control step, not by doubt or external pressure; and (b) foreman selection was by written ballot, not verbal nomination, which reduces the social-pressure concern associated with that process. She also disclosed Judge Gull's post-verdict statement to the jury characterizing the defense's time use as something she tried to contain. Additional Oct. 7 disclosures: she took 2.5 legal pads of notes during trial, was not in Indiana in 2017, stared at Allen during sidebar conferences as an observational technique, and describes deliberations as proceeding in a deliberate sequence (Bridge Guy identity first, confessions second, bullet evidence last). Host Áine briefly addressed her as "Ben" at the 31:10 mark of the interview before continuing — the only known partial name disclosure for any anonymous juror in this case.</p>
+  <p>Mia <strong>defends the verdict on evidentiary grounds</strong> and in the October interview hardened her position on the appeal: "I don't think the claims, one would change anything." She and Juror #01 both remain procedurally open to a retrial if the appellate court finds a constitutional violation, while both expressing high confidence in the same outcome. Her most significant evidentiary contributions remain: (a) first named juror to confirm she did not rely on ballistics, (b) van confession detail was load-bearing for her, and (c) unfamiliarity with excluded material ("the drug angle") confirms genuine jury-room insulation from some excluded evidence.</p>
+  <p>The juror identified as "Juror #5," who appeared as Tim's juror on The Unsolved (May 28, 2025) and as Lucy Lou 29 on the Ickkmeister interview (Apr. 21, 2026), adds a competing data point across two separate disclosures: she found Melissa Oberg (forensic firearms examiner) to be a singularly impactful witness, described the cartridge comparison as "just like a fingerprint," immediately recognized Allen's voice from the interrogation video as Bridge Guy's, found Sarah Carbaugh credible, and placed Allen's shifting timeline as a central deliberation factor. Cross-referenced against Mia's account, these two named jurors had fundamentally different evidentiary anchors: Mia weighted the van confession and disregarded ballistics; Juror #5 weighted Oberg, voice recognition, and timeline inconsistencies. Her handwritten notes shown in The Unsolved video contain the notation "only publish 303" (the juror's own record that Exhibit 304 was not published to the jury) and attribute the 4/4/23 confession phrases to Monica Wala's in-court testimony; a separate provenance analysis disputes this attribution, and the conflict is unresolved. Her Ickkmeister interview contains confirmed post-trial contamination across at least three specific factual claims.</p>
 </div>
 
 </div>
