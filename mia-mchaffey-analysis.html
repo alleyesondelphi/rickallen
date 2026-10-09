@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mia McHaffey Shit Show</title>
+<style>
+  :root {
+    --bg:       #f5f5f5;
+    --surface:  #ffffff;
+    --border:   #e0e0e0;
+    --ink:      #1a1a1a;
+    --muted:    #6b6b6b;
+    --accent:   #0a63c8;
+    --accent-h: #084fa0;
+    --tag-bg:   #eef4fd;
+    --tag-ink:  #0a63c8;
+    --card-top: #f0f7ff;
+    --warn-bg:  #fff8e6;
+    --warn-bdr: #ddb24e;
+    --warn-ink: #a79869;
+    --tab-act:  #0a63c8;
+    --tab-ink:  #555;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:       #18191a;
+      --surface:  #242526;
+      --border:   #3a3b3c;
+      --ink:      #e4e6eb;
+      --muted:    #9a9ea6;
+      --accent:   #5badde;
+      --accent-h: #7fcaef;
+      --tag-bg:   #1c2a3d;
+      --tag-ink:  #5badde;
+      --card-top: #1c2a3d;
+      --warn-bg:  #2a2200;
+      --warn-bdr: #e1b95b;
+      --warn-ink: #e2bf6b;
+      --tab-act:  #5badde;
+      --tab-ink:  #9a9ea6;
+    }
+  }
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .wrapper {
+    width: 80%;
+    margin: auto;
+  }
+  @media (max-width: 720px) {
+    .wrapper { 
+      width: 100%;
+      padding: 2%;
+    }
+  }
+  /* ── Header ── */
+  .page-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1% 2%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 8px;
+  }
+  .page-header h1 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .page-header .subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .back-link {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .back-link:hover { 
+    text-decoration: underline; 
+  }
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    margin-top: 10px;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { 
+    display: none; 
+  }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--tab-ink);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn.active {
+    color: var(--tab-act);
+    border-bottom-color: var(--tab-act);
+  }
+  .tab-btn:hover:not(.active) {
+    color: var(--ink);
+  }
+  /* ── Content ── */
+  .tab-panel { 
+    display: none; 
+    margin: 1% auto; 
+  }
+  .tab-panel.active { 
+    display: block; 
+  }
+  /* ── Section label ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 1% 2%;
+  }
+  .section-label:first-child { 
+    margin-top: 0; 
+  }
+  .count-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+    border-radius: 99px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  /* ── Question lists ── */
+  .q-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .q-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1% 2%;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .q-num {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    min-width: 24px;
+    padding-top: 1px;
+  }
+  .q-text { 
+    flex: 1; 
+  }
+  /* ── To-Mia list (asker label) ── */
+  .to-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .to-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1% 2%;
+  }
+  .asker {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 3px;
+    
+  }
+  /* ── Interview claim blocks ── */
+  .claim-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .claim-block .claim-tag {
+    background: var(--card-top);
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .claim-block p {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  /* ── Assertion cards ── */
+  .assertion-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .assertion-card .card-topic {
+    background: var(--card-top);
+    padding: 1% 2%;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .assertion-card blockquote {
+    margin: 0;
+    padding: 1% 2%;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+  }
+  /* ── Inconsistency cards ── */
+  .conflict-card {
+    background: var(--surface);
+    border: 1px solid var(--warn-bdr);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .conflict-card .card-head {
+    background: var(--warn-bg);
+    padding: 1% 2%;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--warn-ink);
+    border-bottom: 1px solid var(--warn-bdr);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .conflict-num {
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--warn-bdr);
+    color: var(--surface);
+    border-radius: 99px;
+    padding: 1px 7px;
+    flex-shrink: 0;
+  }
+  .conflict-card .card-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .conflict-item {
+    border-left: 3px solid var(--border);
+    padding: 6px 10px;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg);
+    border-radius: 0 4px 4px 0;
+  }
+  .conflict-item .conflict-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .conflict-item.side-a { 
+    border-left-color: #a74136; 
+  }
+  .conflict-item.side-b { 
+    border-left-color: #34649c; 
+  }
+  .conflict-note {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    padding: 0 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="page-header">
+  <a class="back-link" href="juror-thread-threaded.html">← Juror Thread</a>
+  <h1>Mia McHaffey: Thread Analysis</h1>
+  <p class="subtitle">Questions, assertions, and inconsistencies from the comment thread and juror interviews</p>
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" role="tab" onclick="showTab('by-mia')">Questions by Mia <span class="count-badge">10</span></button>
+    <button class="tab-btn" role="tab" onclick="showTab('to-mia')">Questions to Mia <span class="count-badge">38</span></button>
+    <button class="tab-btn" role="tab" onclick="showTab('assertions')">Answers &amp; Claims</button>
+    <button class="tab-btn" role="tab" onclick="showTab('conflicts')">Inconsistencies <span class="count-badge">7</span></button>
+    <button class="tab-btn" role="tab" onclick="showTab('interviews')">Juror Interviews</button>
+  </div>
+</div>
+
+<!-- ── TAB 1: Questions BY Mia ── -->
+<div id="by-mia" class="tab-panel active">
+  <p class="section-label">Questions posed by Mia McHaffey <span class="count-badge">10</span></p>
+  <ol class="q-list">
+    <li><span class="q-num">1</span><span class="q-text">How would you explain the video of the girls on the bridge?</span></li>
+    <li><span class="q-num">2</span><span class="q-text">@Tony Hunt: who photoshopped it? The police?</span></li>
+    <li><span class="q-num">3</span><span class="q-text">@Brandy Ellis: what's the relevance?</span></li>
+    <li><span class="q-num">4</span><span class="q-text">Please elaborate how you arrive to me admitting there are no facts? How did you come to that conclusion?</span></li>
+    <li><span class="q-num">5</span><span class="q-text">@Tony Hunt: because she was just in her car? That is not unlikely at all.</span></li>
+    <li><span class="q-num">6</span><span class="q-text">Tammy Allen McCray: was the motion granted?</span></li>
+    <li><span class="q-num">7</span><span class="q-text">@Christine Salzer: Christine where did you go? I'm still waiting on some proof of these defamatory claims.</span></li>
+    <li><span class="q-num">8</span><span class="q-text">@Tony Hunt: when did I ever say I'm running the show??</span></li>
+    <li><span class="q-num">9</span><span class="q-text">@Adam Hanabarger: and why is that?</span></li>
+    <li><span class="q-num">10</span><span class="q-text">@Breeun McNeil-Buhrkuhl: see above. <em>(re: her juror number, after answering #2)</em></span></li>
+  </ol>
+</div>
+
+<!-- ── TAB 2: Questions TO Mia ── -->
+<div id="to-mia" class="tab-panel">
+  <p class="section-label">Questions directed to Mia McHaffey <span class="count-badge">38</span></p>
+  <ul class="to-list">
+    <li><div class="asker">Tony Hunt</div>@Mia McHaffey: What did you do, guess? Did you ever wonder if the girls were actually dropped off in the first place?</li>
+    <li><div class="asker">Judy Hataway</div>When the state said "I believe" or "we believe," why didn't the jurors ask for facts/proof of what they believed?</li>
+    <li><div class="asker">Danielle Hawkins · Brenda K. Simonton Kopka · Melissa Martin · Jamie Anderson-Wilkins · TCC</div>What evidence shown made your decision? What was the full picture? What did you take into consideration, bc that's all they had? So please tell, what evidence did you base your decision on?</li>
+    <li><div class="asker">Brandy Ellis</div>Do you believe Lindsay Clancy is guilty?</li>
+    <li><div class="asker">Brandy Ellis</div>What facts did you base your guilty verdict on? What evidence proves that RA did this with zero doubt? Did you watch the interrogation videos?</li>
+    <li><div class="asker">Misty Porter</div>What do you think about all the information that the jury wasn't allowed to see? What about the drug angle? Would you like to hear more about that in a new trial?</li>
+    <li><div class="asker">Danielle Hawkins</div>Are you not the least bit angry at LE for leading the jury to believe Rick was the only one out on the bridge that day? From the outside looking in, we could see everything you were not allowed to see, so now, what do you think? Do you think he got a fair trial?</li>
+    <li><div class="asker">Tony Hunt</div>Why didn't they find them the first night with the whole town searching? Why was Kelsi's hair wrapped in Abby's hand?</li>
+    <li><div class="asker">Tony Hunt</div>@Mia McHaffey: What are you waiting for, for me to fabricate a lie just like the timeline?</li>
+    <li><div class="asker">Tammy Allen McCray</div>Since the trial, after learning that LE lied under oath, after seeing Blair's sketch which she says is 10/10 who she saw. Do you second guess your verdict?</li>
+    <li><div class="asker">Tammy Allen McCray</div>So we convicted a man because he went for a walk wearing blue jeans?</li>
+    <li><div class="asker">Caitlin Marie Daugherty</div>They had his phone info back in 2017 and that info was sent to ISP. Does that not concern you?</li>
+    <li><div class="asker">Tammy Allen McCray</div>Have you read the motion to correct error?</li>
+    <li><div class="asker">Jessica Brehon</div>Do you think this 10/10 sketch of a young tall beautiful man looks like Richard Allen?</li>
+    <li><div class="asker">TCC</div>You mentioned the clothes, the van, and that no one else that looked like him was there, right? So what else brought you to a guilty decision?</li>
+    <li><div class="asker">Leslie Walker</div>The second set of girls saw a different guy who was approximately 5'10", taller than Reilly V. (5'7"). RA is 5'4". How is he and the girls on the bridge at the same time?</li>
+    <li><div class="asker">Christy Sharp</div>What other claims? Confessions?</li>
+    <li><div class="asker">Tonya L. Burris</div>Was the whole "looking at the stock ticker" on his phone not true?</li>
+    <li><div class="asker">Leigh S. Lovell · Caitlin Marie Daugherty</div>How influential was the bullet they found at the scene in your decision? What EXACTLY made him BG to you WITHOUT A REASONABLE DOUBT, if not confessions... bullet? Voice? <em>(Note: the bullet was not found at the time the bodies were discovered; Allen's DNA and fingerprints were not on it; the defense's metallurgist was barred from testifying.)</em></li>
+    <li><div class="asker">Mike Sims</div>The judge already had her mind made up. Who is she covering for?</li>
+    <li><div class="asker">Anabella Maysen</div>What did convince you beyond a reasonable doubt? Since the defense was not allowed to bring in evidence of third party suspects and y'all never heard about the other men on the bridge, would that have made a difference?</li>
+    <li><div class="asker">Tonya Hatton</div>Do you think it would've made a difference if the defense had been allowed to present 3rd party culprit evidence? Or the explanation of the sticks and the connection to the Odinist Brad Holder?</li>
+    <li><div class="asker">Kelsey Birkett</div>You were a juror on his first trial?</li>
+    <li><div class="asker">Ridge Nappier</div>What convinced you bridge guy killed the girls?</li>
+    <li><div class="asker">Christine Salzer</div>Did you drastically change your appearance during trial? I was there every single day and don't seem to remember you. Where in the box did you sit? There is proof on your profile that you broke the sequester order. Did one of the escorts allow it? If so, which one?</li>
+    <li><div class="asker">Classic Over Thinker</div>How/why did the jury disregard the DNA evidence? There is male DNA on the girls' genitals, breasts, and 1 pair of underwear that is not Rick's. Did the jury believe the girls were sexually active beforehand? Errors have been found in the transcript. Do you believe this is incorrect? Which part are you saying is untrue?</li>
+    <li><div class="asker">Tony Hunt</div>I'm starting to believe you're on some sort of mind-altering medication. Did they check all jurors to see if there were any mental diagnoses?</li>
+    <li><div class="asker">Breeun McNeil-Buhrkuhl</div>What juror # were you?</li>
+    <li><div class="asker">Nana Foster</div>Did you dig into this case more after trial, or were you D-U-N done?</li>
+    <li><div class="asker">Barbie Mitchell</div>Do you know you and 11 others convicted a 100% innocent man who they tortured in a maximum security prison to the point where he went into psychosis, all as a pre-trial detainee?</li>
+    <li><div class="asker">Christine Salzer · Angie Hopkins</div>Why would you put forth this lie?</li>
+    <li><div class="asker">Brenda K. Simonton Kopka</div>I would love to know what, if what you stated was not considered or relevant, what was? Just statements made by law enforcement?</li>
+    <li><div class="asker">Danielle Hawkins</div>Now, we know there were at least 50 people on the trails that day and the jury was only given one option. Does that not bother you?</li>
+    <li><div class="asker">Caitlin Marie Daugherty</div>See photo. How about the fact that they had his phone info back in 2017; they marked him as "cleared." Does that not concern you?</li>
+    <li><div class="asker">Tammy Allen McCray</div>How about the CCTV of Weber's van arriving home 15–30 mins after the state's TOD? How could the killer be spooked by a van that doesn't arrive for another 15–30 mins?</li>
+    <li><div class="asker">Tammy Allen McCray</div>How do you feel about the state claiming Libby said "dat be a gun," now that the BG video has been released and we all heard it was "this is the path we go down"?</li>
+    <li><div class="asker">Barbie Mitchell · Nana Foster</div>Do you know you convicted a 100% innocent man? Have you done any research into the case since the trial?</li>
+    <li><div class="asker">Classic Over Thinker</div>Perhaps you should read the transcripts? Errors have been found. Do you believe this is incorrect?</li>
+  </ul>
+</div>
+
+<!-- ── TAB 3: Answers & Claims ── -->
+<div id="assertions" class="tab-panel">
+  <p class="section-label">Substantive answers and assertions made by Mia McHaffey</p>
+
+  <div class="assertion-card">
+    <div class="card-topic">Juror status</div>
+    <blockquote>"Yes ma'am." <em>(confirming she was on the jury, to Michelle Filoni Maleta)</em></blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Confessions &amp; ballistics</div>
+    <blockquote>"As a juror on this trial, I did not take into account any of the confessions or any of the ballistics. I don't think the disclosure of those things made a difference ultimately in the decision."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">What evidence she used: her full account</div>
+    <blockquote>"Richard Allen told us he was there that day and what time. He mentioned seeing a group of girls. That group of girls also saw Richard Allen. He was there, they saw each other, that is fact. Then, he said he was on the bridge looking at the fish, but didn't see the girls. There is no way that if he was on the bridge at the time he was there he didn't see the girls. He also said he was wearing a blue jacket, jeans, boots or tennis shoes, and had a hat. In one of his confessions, he mentioned a white van driving down and frightening him during the crime. After investigation, a white van was actually there near the scene at the time of the crime. No one would know that but the killer. No other man with similar clothing or anything was seen by anyone else there that day. The bullet found in his keepsake box had the same exact bullet brand and type. Even though all of those facts wouldn't stand on their own, the presence of all of them makes it unreasonable to believe Richard Allen isn't guilty of the crime."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the interrogation</div>
+    <blockquote>"That interrogation wasn't close to mental torture lol."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On van confession proof</div>
+    <blockquote>"If you can show me proof that Richard Allen or anyone else was aware of the van before he made that specific confession to Dr. Wala, I'll acknowledge that. I can prove everything I am saying with true, factual information from the record."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On Odinist theory &amp; Blair sketch</div>
+    <blockquote>"My take is that the sketches and Odinist theory specifically wouldn't have changed the outcome. I think they were rightfully not included in trial. BUT, I welcome another trial if it's deemed most constitutional."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the drug angle</div>
+    <blockquote>"I haven't heard about the drug angle."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On LE leading the jury</div>
+    <blockquote>"It was not my job to police their investigation, rather make a decision based off of the facts provided to me. I don't think we were led to believe he was the only one. Just that he was the only one there that all of the puzzle pieces fit."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On Blair's sketch causing doubt</div>
+    <blockquote>"I don't think someone's interpretation of how someone looked in a split second in a seemingly unimportant situation at the time is enough 'evidence' to cause reasonable doubt. Anything surrounding a sketch is too subjective to hold much weight for me."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the "just blue jeans" argument</div>
+    <blockquote>"Assuming he was convicted for his jeans is crazy... The guilt comes from him clearly lying about seeing the girls, and he was wearing the same clothing as BG, as reported by him."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On RA's phone / geofence data</div>
+    <blockquote>"I wasn't aware that his phone date confirmed that he wasn't at the scene. If you could point me to where this information is, I'd be more than happy to look at it."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the missing phone</div>
+    <blockquote>"His phone probably was left at home. He said he was there so I don't get how this matters or proves anything other than that his phone was not with him."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the motion to correct error</div>
+    <blockquote>"I have not seen it. But the thing is, anything can be said in a motion, but until there is something on the record, or a video or evidence that I can see, none of that proves anything for me. When it's something this serious, and so many people spew untruths, anything that will change my stance has to be substantive."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On DNA claims</div>
+    <blockquote>"These claims just aren't factually true." <em>(no elaboration provided)</em></blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">On the sequester</div>
+    <blockquote>"I didn't have my phone, watch TV, or see my family for 3.5 weeks."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Juror number</div>
+    <blockquote>"#2"</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Closing statement to the thread</div>
+    <blockquote>"I really appreciate the people with opposing views and opinions who were respectful and sympathetic. Whether you believe that Richard Allen is guilty or not, it can also be possible that both sides of this are made up of people who are just trying to do what they think is right... I know I will truly never be the same. Please take these things into consideration before making posts and comments. And most importantly, RIP Abby and Libby."</blockquote>
+  </div>
+</div>
+
+<!-- ── TAB 4: Inconsistencies ── -->
+<div id="conflicts" class="tab-panel">
+  <p class="section-label">Conflicting statements and reasoning <span class="count-badge">7</span></p>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">1</span> Confessions not used, but confession content is cited as key evidence</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Said this</div>
+        "I did not take into account <strong>any</strong> of the confessions or any of the ballistics. I don't think the disclosure of those things made a difference ultimately in the decision."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Also said this</div>
+        "In one of his confessions, he mentioned a white van driving down and frightening him during the crime... <strong>No one would know that but the killer.</strong>"
+      </div>
+      <p class="conflict-note">The van detail is drawn directly from the Dr. Wala confession. She uses it as her single most compelling "only the killer would know" piece of evidence while simultaneously saying confessions played no role in her decision.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">2</span> Ballistics not used, but the bullet is cited as corroborating evidence</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Said this</div>
+        "I did not take into account any of the confessions or <strong>any of the ballistics</strong>."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Also said this</div>
+        "The bullet found in his keepsake box had the same exact bullet brand and type."
+      </div>
+      <p class="conflict-note">She explicitly invokes the bullet match in her evidentiary summary, the same category she told the thread she disregarded.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">3</span> RA "lied" about seeing the girls, but may have seen a different group</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Her claim</div>
+        "There is no way that if he was on the bridge at the time he was there he didn't see the girls... he clearly lied about seeing the girls."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Complicating fact</div>
+        RA said he saw a group of girls. The defense argued this was Collier, Matta, and Herrera, not Libby and Abby. Her inference that he "lied" assumes the group he saw was the victims.
+      </div>
+      <p class="conflict-note">She treats the identification as settled when it is the premise in dispute.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">4</span> RA's missing phone: suspicious absence vs. innocent explanation</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Framing 1 (implying guilt)</div>
+        "His phone was never found." <em>(said while agreeing the missing phone from a pile of phones he kept is noteworthy)</em>
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Framing 2 (trivializing absence)</div>
+        "His phone probably was left at home. He said he was there so I don't get how this matters or proves anything other than that his phone was not with him."
+      </div>
+      <p class="conflict-note">Both framings are deployed in the same thread within hours. The framing shifts depending on which argument she is countering.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">5</span> Van confession: only the killer would know, but she can't use the confession</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Claims the van proves guilt</div>
+        "No one would know that but the killer."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Challenges others to disprove it</div>
+        "If you can show me proof that Richard Allen or anyone else was aware of the van before he made that specific confession to Dr. Wala, I'll acknowledge that."
+      </div>
+      <div class="conflict-item side-a">
+        <div class="conflict-label">But also said</div>
+        "I did not take into account any of the confessions."
+      </div>
+      <p class="conflict-note">She simultaneously excludes confessions from her deliberative framework, uses confession content as definitive proof, and challenges others to disprove that confession content, all within the same exchange.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">6</span> Sketch too subjective, but RA's self-reported clothing description is reliable</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">On eyewitness sketches</div>
+        "Anything surrounding a sketch is too subjective to hold much weight for me."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">On RA's own recollection</div>
+        She treats RA's self-reported description of his clothing that day as reliable corroboration that he matched BG's appearance.
+      </div>
+      <p class="conflict-note">A skepticism filter is applied to third-party sketch descriptions but not to RA's self-reported recollection. Both are subject memory under imperfect conditions.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">7</span> Claims of factual certainty vs. refusal to engage specifics</div>
+    <div class="card-body">
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Asserts documentary proof</div>
+        "I can prove everything I am saying with true, factual information from the record."
+      </div>
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Deflects when pressed</div>
+        "You're conveniently picking specific comments out of a full picture. But go off lol." / "I'm just gonna send this one back and ask that you do more research. Because the majority of your claims in this comment are false." / "These claims just aren't factually true." <em>(no specifics given in any instance)</em>
+      </div>
+      <p class="conflict-note">She repeatedly asserts the ability to rebut specific claims with evidence but declines to produce citations when challenged on individual points.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── TAB 5: Juror Interviews ── -->
+<div id="interviews" class="tab-panel">
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;padding:10px 12px;background:var(--card-top);border-radius:6px;border-left:3px solid var(--accent);">
+    Mia McHaffey was Juror #2 at trial. She is the anonymous juror interviewed by <em>The Delphi Murders: First Person</em> podcast (Murder Sheet); she was referred to as Juror #8 there, which was her voir dire number. The Juror #5 interview below is a separate juror on the same panel.
+  </p>
+
+  <h2 style="font-size:15px;font-weight:700;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Juror #5: <em>The Unsolved</em> (May 2025)</h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Written Q&amp;A via email, published by journalist Tim (The Unsolved channel). Juror served Oct 14 &ndash; Nov 12, 2024.</p>
+
+  <h3 style="font-size:13px;font-weight:700;color:var(--accent);margin:0 0 10px;">Assertions &amp; Reasoning</h3>
+
+  <div class="claim-block">
+    <div class="claim-tag">Confessions</div>
+    <p>Allen's confessions preceded Haldol and other psychiatric medications. "Many of his confessions were before those drugs were ever introduced to him at all." The juror viewed the pre-medication timeline as significant and undermining the defense's coercion argument.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Confessions</div>
+    <p>From juror notes: Allen's 04-04-2023 confession to suicide companion Monica Walla: "Am I dead? Can I die now? I need to talk to God. Richard Allen doesn't know why he did it. He lost everything." Asks for something he can kill himself with. Says he killed Abby and Libby. Says "poor little girls." States "I'm sorry." Then on 04-05-2023: "Killed Abby and Libby. I'm sorry. Richard Allen says he made sure they were dead. Didn't want them to suffer."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Confessions</div>
+    <p>05-03-2023 confession: "Drank beer that day, laid in wait, saw the girls, followed them onto the bridge, said he was doing something with his gun and thinks that's when the bullet fell out." The juror found this the most compelling individual confession alongside the van reference.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Confessions</div>
+    <p>Allen stated "the girls died in order for him to find God." He admitted being an alcoholic and "exhibited a bizarre smile." After Haldol was introduced on 5/2/23, he didn't want it, became paranoid, confessed again, and said "I will kill everyone. When I die I will kill everyone."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Interrogation</div>
+    <p>Allen was "caught lying" about the bridge. He first said he didn't go out on the bridge; when confronted ("You said you walked out onto the first platform"), he responded "Of course I was. I told you that. I told you I was on the bridge." The juror flagged this self-contradiction as deceptive.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Interrogation</div>
+    <p>Allen initially said he would have been wearing a black Carhartt-like jacket and hoodie. When shown the photo of Bridge Guy, he said he "could have been wearing a blue jacket." The juror noted the shift and also flagged that his 2017 cell phone was never found despite him having "a whole bag full of other old cell phones" at his house.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Voice identification</div>
+    <p>"When I watched the first interview video and heard Richard Allen speak, the hairs stood up on my arms." In subsequent emails the juror confirmed she believed Allen's voice matched the Bridge Guy audio immediately, with no doubt in her mind.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Courtroom demeanor</div>
+    <p>Allen's behavior during trial: "He fidgeted a lot. Rolled his eyes often. Laughed at times. I noticed his attorney AB coddled him, placed his arm around Richard Allen often."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Defense strategy</div>
+    <p>"In my opinion the defense focused fully on Richard Allen's mental state. How he was treated in prison." The juror did not view this as a credible innocence argument. Defense witness Dr. Dwenger "oversees mental health of prisoners. She never met Richard Allen! Discussed Richard Allen's mental illness." Juror asked Dr. Dwenger whether Allen could be feigning symptoms to avoid general population (due to inmate threats). Dwenger answered: "Yes, it is possible he was feigning his mental health. Richard Allen was examined for delirium and he did not have it."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Identity as Bridge Guy</div>
+    <p>"Richard Allen described himself as the bridge guy. Witnesses saw Bridge Guy but not Richard Allen because Richard Allen had his identity hidden behind his overdressed coat, hat, and tucking himself. Not one witness saw two persons dressed exactly the same." On supporters claiming no DNA means innocence: "All I have to say is they should have been in the courtroom, because everything they've heard and seen is not the whole picture. There is more that they haven't heard and haven't seen."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Sarah Carbaugh</div>
+    <p>Contradicting Mia McHaffey's account (below), this juror stated she believed Sarah Carbaugh's testimony. She shared notes on the subject and indicated she found Carbaugh credible.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Richard Allen's family</div>
+    <p>"I am sorry for Richard Allen's daughter. I can't imagine the adverse effects. Richard Allen's wife. You tried to keep him quiet on the phone. You knew." The juror believed Kathy Allen had knowledge of her husband's involvement.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Credibility of Richard Allen's daughter</div>
+    <p>Correcting a public misconception: "They said Richard Allen's daughter wasn't there. But she was, she was a witness for the defense." The juror pushed back on claims circulating online that the daughter was absent from the courtroom.</p>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:var(--warn-ink);margin:16px 0 10px;">Internal Inconsistencies</h3>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">1</span> "Defense focused on mental state" vs. juror actively probing the mental state theory herself</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Criticism of defense strategy</div>
+        "In my opinion the defense focused fully on Richard Allen's mental state. How he was treated in prison." Framed as a failure of the defense to mount a real innocence argument.
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Her own engagement with the mental state theory</div>
+        She personally asked Dr. Dwenger whether Allen could be feigning symptoms to avoid general population. She found Dwenger's answer ("yes, it is possible") significant enough to document. If the mental state defense was irrelevant, the question and its answer would not warrant inclusion in her account.
+      </div>
+      <p class="conflict-note">She dismisses the mental health defense as a distraction while simultaneously treating a question about feigned mental illness as a meaningful data point in her reasoning.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">2</span> States Allen "described himself as the Bridge Guy" as settled fact, but this is an inference</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Presents it as self-identification</div>
+        "Richard Allen described himself as the bridge guy from what he was wearing." Stated flatly, as though Allen said those words.
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">What actually happened</div>
+        Allen described his clothing that day; investigators and analysts concluded that description matched Bridge Guy. Allen never said "I am Bridge Guy." The juror collapses an inference into a direct admission.
+      </div>
+      <p class="conflict-note">Treating a clothing-match inference as a verbal self-identification overstates the directness of the evidence and removes a layer of analytical work the juror claims she was rigorous about.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">3</span> Post-trial conclusion about Kathy Allen stated as trial-based fact</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Asserts Kathy knew</div>
+        "Richard Allen's wife. You tried to keep him quiet on the phone. You knew." Stated in the present tense, addressed directly to Kathy Allen, as a confident conclusion.
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Source of this belief is unclear</div>
+        The juror acknowledges she researched the case after trial ("I've been doing a little too much Reddit"). Whether "you tried to keep him quiet on the phone" comes from trial evidence or post-verdict online discussion is never specified. The juror did not distinguish trial-based conclusions from post-trial research in this assertion.
+      </div>
+      <p class="conflict-note">A juror who emphasizes basing decisions only on evidence presented at trial cannot cleanly attribute a post-trial belief about Kathy Allen to the verdict itself.</p>
+    </div>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;">
+
+  <h2 style="font-size:15px;font-weight:700;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Mia McHaffey (Juror #02 at trial, Voir Dire #08): <em>The Delphi Murders: First Person</em> Podcast (Jan. 2025)</h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Audio interview with hosts Aine and Kevin (Murder Sheet). Mia was identified anonymously as "Juror #08" (her voir dire number). She was one of the initial undecided voters and ultimately voted guilty.</p>
+
+  <h3 style="font-size:13px;font-weight:700;color:var(--accent);margin:0 0 10px;">Assertions &amp; Reasoning</h3>
+
+  <div class="claim-block">
+    <div class="claim-tag">Deliberation process</div>
+    <p>First vote (day two of deliberations): 9 guilty, 3 undecided. After rewatching interview and bridge videos on Saturday: 8 guilty, 4 undecided. Final Monday vote: unanimous guilty. The three-day shift was driven by weekend reflection and Monday open discussion between undecided and decided jurors.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Timeline</div>
+    <p>"What we got to first" was establishing that Richard Allen was Bridge Guy. The jury built a physical timeline using sticky notes on the large map exhibit, placing phone activity, sightings, and clothing descriptions in order. Once the clothing self-identification was confirmed, the juror said "you really can't" dispute that Richard Allen is Bridge Guy. From there, she found it "pretty easy to add all of those things together."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Confessions</div>
+    <p>The van mention was the standout from the confession evidence. "Looking back, I think, like, who would confess that many times that doesn't actually do that? I can't think of how that would ever happen." The juror gave minimal weight to other confession details, but the van reference stood out as specific and unprompted.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Bullet / Oberg testimony</div>
+    <p>This juror gave no weight to the bullet evidence in reaching her verdict. "I kind of threw out...the whole science of the bullet. It wasn't Oberg as a person at all. I think she was so professional...She believes in her clients." The skepticism arose from the defense's cross-examination and the testimony of defense expert Warren, who evaluated only photographs rather than the physical evidence. "I just can't say that I believe for sure that the evidence is exact."</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Interrogation</div>
+    <p>On the Holman interview: found it "overdone" and felt Allen's response was consistent with someone who genuinely didn't know how a bullet could have ended up at the scene. "If I was being asked those questions and I didn't know how that got there, how am I going to explain how it did if I don't know?" She viewed Allen as "just too calm" and appearing like he "really didn't know anything to have done" it. The interrogation video caused the vote to dip from 9–3 to 8-4 after Saturday viewing.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Sarah Carbaugh</div>
+    <p>This juror said the group decided "as a whole" to "throw out" Sarah Carbaugh's testimony. "Not that she's an unlike[able], she's a hard to believe person. But I think the defense did a good job trying to discount her." The juror applied the standard: "If we didn't believe that, would that change the outcome?" For Carbaugh, the answer was no, so the testimony was set aside.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Westville prison videos</div>
+    <p>"Going into it, it wasn't as bad as I expected." The juror had anticipated much more severe footage. Allen appeared "black and blue" in one segment where he had hit his head. In cell videos, a "Little Max" (assistant Max Baker) mixed up which segments showed Allen clothed vs. unclothed, causing some jurors to see content out of order.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Deliberation fairness</div>
+    <p>One juror raised the question: "If it wasn't Richard Allen, then who could it have possibly been?" This juror pushed back on that framing. "That seems like a wrong question to ask because that's not what this is about. We're not seeing if it could be anyone else. Is there enough evidence showing that it's him specifically?" She tried to keep deliberations focused on the standard of proof, not alternative suspects.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Prosecution shortcomings</div>
+    <p>A jury question about how many cars matched Allen's vehicle model existed, and the prosecution had to look it up on the spot. The juror was critical: "I can't believe you wouldn't have thought to do that already." She also noted recurring technology failures with the courtroom monitor as a source of frustration, citing the waste of sequestration time.</p>
+  </div>
+
+  <div class="claim-block">
+    <div class="claim-tag">Defense attorneys</div>
+    <p>Brad Rosie came across as "intimidating" and his questioning felt like "smoke and mirrors." Defense preparation generally appeared "scrambled, confused, not knowing what they're going to do next." Andrew Baldwin was viewed more favorably. Jennifer Ojeda was a standout positive: "She has a little bit of attitude. And I feel like that, from what I would picture like a defense attorney to be, I just, I liked it."</p>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;">
+
+  <h3 style="font-size:13px;font-weight:700;color:var(--warn-ink);margin:16px 0 10px;">Internal Inconsistencies</h3>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">1</span> Discarded bullet evidence but analyzed it in exhaustive detail</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Claims to have set it aside</div>
+        "I kind of threw out the whole science of the bullet... in making my decision, I didn't consider it at all."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Engaged with it substantively</div>
+        She evaluated Oberg's methodology, compared it to Warren's photo-only approach, concluded the defense expert's method was inferior ("you're definitely not supposed to do that"), and formed a specific view on why the science was uncertain. The level of engagement goes well beyond something she "threw out."
+      </div>
+      <p class="conflict-note">Disregarding evidence and concluding it is scientifically unreliable are two different things. Her reasoning process shows she did consider the bullet; she simply concluded the science was too uncertain to rely on. That is a substantive finding, not a non-consideration.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">2</span> "Timeline more important than confessions" vs. the van confession stood out</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Downplays confessions as a category</div>
+        "Things that he reported himself is really what got me closest." Emphasizes the timeline and clothing self-description over the confession record. Host Aine also confirms: "the timeline was perhaps more important than any of this sort of flashier confessions."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">The van was the one exception she couldn't dismiss</div>
+        "Of course, what stands out to everyone is the van." She singles out the van mention as "one of the things that I had that stood out to me in a sense of thinking that he could be guilty." She is unable to hold the position that confessions were irrelevant while granting the van reference its own category of weight.
+      </div>
+      <p class="conflict-note">She claims the timeline drove her verdict but cannot cleanly separate that from the van confession, which she acknowledges carried independent weight. The two framings of her decision-making sit in tension.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">3</span> Claims rigorous devil's advocate approach while describing emotional collapse</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Presents herself as a skeptical, deliberate reasoner</div>
+        "I really tried to play devil's advocate and just see it from the defense's perspective... I did try to question everything. I just, it felt like a really hard thing to do. And I just didn't want to get it wrong, no matter what."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Also describes being emotionally overwhelmed</div>
+        "Towards the end, I was kind of a mess." "I was just, like, I already knew, like, I was going to be done. And just, it was such an overwhelming feeling." "I would say out of everyone, I definitely had the worst time." She describes crying when the unanimous vote was read.
+      </div>
+      <p class="conflict-note">She presents her process as methodical skepticism but simultaneously describes a level of emotional distress that raises questions about whether the devil's advocate framing reflects how she actually experienced deliberations, or how she prefers to describe them in retrospect.</p>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">4</span> Interrogation video looked favorable to Allen, but she voted guilty</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Found the Holman interrogation sympathetic to Allen</div>
+        "Especially Holman, he just kept going on and going on and going on... I just felt like it was overdone." She put herself in Allen's position: "If I was being asked those questions and I didn't know how that got there, how am I going to explain how it did if I don't know?" She found his demeanor consistent with innocence.
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">The video shifted votes toward undecided, then she voted guilty anyway</div>
+        After the Saturday rewatch, the count moved from 9-3 (guilty/undecided) to 8-4. The video evidently moved at least one guilty vote to undecided. Yet Mia, who described the interrogation most sympathetically, ultimately voted guilty. She does not explain how she reconciled her reading of the interrogation with her final verdict.
+      </div>
+      <p class="conflict-note">Her stated interpretation of the Holman video would logically support an undecided or not guilty position. She offers no account of what overrode that reading.</p>
+    </div>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;">
+
+  <h2 style="font-size:15px;font-weight:700;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Cross-juror Discrepancy</h2>
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">!</span> Sarah Carbaugh credibility</div>
+    <div class="card-body">
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Juror #05: Believed her</div>
+        "The question about Sarah Carbaugh. I believed her." Juror shared trial notes supporting Carbaugh's account of the muddy, bloody figure seen on County Road 300 North.
+      </div>
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Mia McHaffey: Discarded her</div>
+        "I think kind of as a whole, we decided to just throw that one out." Juror said the defense succeeded in casting doubt and the group applied the standard: if we remove this testimony, does it change the outcome? Answer: no.
+      </div>
+      <p class="conflict-note">These two jurors give directly opposing accounts of how the group treated Carbaugh's testimony, suggesting either different recollections of consensus or that the jury was not fully unified on this point.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+</body>
+</html>
