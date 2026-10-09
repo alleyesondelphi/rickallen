@@ -1,0 +1,69 @@
+=== MHTML IMAGE EXTRACTION REPORT ===
+
+New images saved: 15
+Already present (duplicates): 29
+Skipped (emoji/tiny/UI): 75
+
+--- NEWLY SAVED ---
+  photo-36.jpg  (24,648B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825279786_122103330555487768_1394531075303118740_n.jpg?stp=dst-jpg_tt6&cstp=mx1179x1432&ctp=p350x350&_nc_cat=103&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=Vet3dXguTLoQ7kNvwGfFrTX&_nc_oc=AdpAtnwzVXoOvPUa-j8kuqjpH6qNFkV_NaOFkXJKABlkv6v4YZuNt-Bk22tGwEHP1qH8m7HdLsm5ZhjZshpz_KJh&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=fd3XvIk2LE_FeNoz_eV2hw&_nc_ss=7b2a8&oh=00_AQNxsYFFlqnUb4EqWhzsLl8Pt7vxrbQ0Yq3Nv7m1lzdgdw&oe=6ACE2623
+  photo-37.jpg  (21,189B)
+    https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825274247_122102826723487768_5647987627667133106_n.jpg?stp=dst-jpg_tt6&cstp=mx931x1594&ctp=p261x260&_nc_cat=105&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=fejQa5584cYQ7kNvwGm-5QP&_nc_oc=AdqlXZuecaxfAbzE-bvarNE1v5ccbb0b-cCS5UjaUqZLX6S4lkUJaAKcw2LbZCm30LiUU_L-LTKr3QuZZ5THrgDr&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=9lUsdOLtMu6BiStVQM2zKw&_nc_ss=7b2a8&oh=00_AQOLZKDrfm97IDRP1gOLaFnXwDtKjvro9MITeT_tcrAwCw&oe=6ACE215C
+  photo-38.jpg  (60,516B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825327470_3826306227508417_3619512239864305815_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2003&ctp=s480x480&_nc_cat=102&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=xTbB-oQjfAIQ7kNvwGVKmb0&_nc_oc=Adq_JaJSFCEeJ8LXpyaBCip0YbL_8UuolUq13212FyiT25nN85aPp4xhiqNy7dL6L_104gVWgTLNO4zhqJArQxYB&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=Mos-FoAt4Q2D8Bh4ag3avA&_nc_ss=7b2a8&oh=00_AQM1fpIkucVNxXo6qffebRLlLo9f3mZiVOdFDccFyEwZJA&oe=6ACE119A
+  photo-39.jpg  (34,879B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/828939928_28998829666417749_7893679260738874369_n.jpg?stp=dst-jpg_tt6&cstp=mx587x583&ctp=s480x480&_nc_cat=101&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=Y_xOEbzgQGkQ7kNvwFfrxID&_nc_oc=AdrVBHIbrC-sawS9ooiF3FY7njwOpcJW4-nIQQRY0WSGD6-gf2B-dKiK045eYT1McdpCefF-qzdOdp8t5YdtuwAe&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=SeagiPJep6eIJTIq_lLHew&_nc_ss=7b2a8&oh=00_AQNUDm-xD5IDeijrYF5VeVGJ5Wsh3AeJgdym6JcJ1p_Vgw&oe=6ACE18D0
+  photo-40.jpg  (38,835B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/824133620_28936748082625908_6413880515006983349_n.jpg?stp=dst-jpg_tt6&cstp=mx586x585&ctp=s480x480&_nc_cat=101&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=BzI6cNgvF-8Q7kNvwHyRsq8&_nc_oc=AdrdLD2h1pKCFM-jVv2P0wctuqx3k9d_9y3PDEAmVBCdZxrk9T0OJvf0Bj4HqdCP_QR6-KVc4acaRgbeRTuoRZT2&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=SeagiPJep6eIJTIq_lLHew&_nc_ss=7b2a8&oh=00_AQMD8-fuDO3SgYN-pnf0gZDrahzBhi8gzn7jSzxA0eob4A&oe=6ACE173E
+  photo-41.jpg  (37,364B)
+    https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/820224436_28936612722639444_4945744814060230551_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2040x1530&ctp=s526x395&_nc_cat=105&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=49zOSp-y998Q7kNvwEWelsm&_nc_oc=AdoBC_84lsxtwOQF1nVQMRp5LPTHCeXuGvWDjf8JAZFOFNmC8Ca9Z0FLfyxRLhYMW4lchGgL96EenZgqae94OIpl&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=tHSl3sHhAcKly29deqiMNA&_nc_ss=7b2a8&oh=00_AQNjBCTBRMc7l9F7UsiqJGVHHy8Dz3nNOtnkBnrDYnlmWA&oe=6ACDF439
+  photo-42.jpg  (15,321B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/820548765_28936591235974926_5698431273816976695_n.jpg?stp=dst-jpg_tt6&cstp=mx539x960&ctp=p240x240&_nc_cat=103&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=I3RA-PqzbnAQ7kNvwGyTOmA&_nc_oc=Adov1JRODi8w9QiLxv8ToTI3WBktZqKIeWXHnRzji5U3k-J9QWYsGpzmKrZQxzqE3GRA7gJBJYIZgQVUko6T-6Nq&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=tHSl3sHhAcKly29deqiMNA&_nc_ss=7b2a8&oh=00_AQO6qF-Q5DomPXd5msob8VaWDpyV-awqkcDL6mqXg3PmGA&oe=6ACE02B4
+  photo-43.jpg  (30,505B)
+    https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/819481101_28936587095975340_1972768185886886173_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x960&ctp=p417x417&_nc_cat=108&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=RurWTH0H6IgQ7kNvwHcnPTO&_nc_oc=Adr3YW27qjopZB0rCUu3xGcjm8JdgRLxYu5QYdV5FEWM445DXe-Miau-Snx30yHyLF7hxddPjkVE2ByRaPWi2QZ_&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&_nc_gid=tHSl3sHhAcKly29deqiMNA&_nc_ss=7b2a8&oh=00_AQM7JhMOiixcGMb9sTRaeYC5DML8rGS-X1Ci6mAVvS-0BA&oe=6ACE0CC1
+  photo-44.jpg  (21,159B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/821478631_28462850270020392_3604349253083679595_n.jpg?stp=dst-jpg_tt6&cstp=mx2340x1080&ctp=p240x240&_nc_cat=103&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=BXVSADDQ_kIQ7kNvwHZxCet&_nc_oc=Adq5HQY8cIa2Lps17agB2F2doygthG2RjuLXGCdptBOQcvUmI2ltZ40izPkryk96T34mtjckPr9VNLJK6dTDyYcL&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=9VBWLZ629bnuqhDva3rfMQ&_nc_ss=7b2a8&oh=00_AQMaiLHIXNDqjHRp8Lp1s2wkMczsmcqpPoUHJklE4L9GFg&oe=6ACDF6AD
+  photo-45.jpg  (19,245B)
+    https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/822536068_1657535859228302_8031255686647009410_n.jpg?stp=dst-jpg_tt6&cstp=mx827x837&ctp=p417x417&_nc_cat=108&ccb=1-7&_nc_sid=bd9a62&_nc_ohc=0gSrGmAE-iYQ7kNvwFOvoWe&_nc_oc=Adp_wvZ9chgkcDejXt_kP20m8OZOHi6gpmvbwycVAEejuS4pDQYARsQlGuqGrAdDRNW3RgZEeY8_QC8uvNFRg09h&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&_nc_gid=6HPZF1ssNERTYhltED_p1A&_nc_ss=7b2a8&oh=00_AQNzyjLx2AR0GZWLaxUWI7sRSQVIL5EaorduysyzJd2PKg&oe=6ACE262C
+  photo-46.gif  (196,787B)
+    https://external-dfw5-3.xx.fbcdn.net/emg1/v/t13/10109587015152436855?url=https%3A%2F%2Fmedia.tenor.com%2FzMpDzJVHtB8AAAAM%2Fclient-innocent.gif&fb_obo=1&utld=tenor.com&_nc_sid=9e3c15&_nc_ht=external-dfw5-3.xx.fbcdn.net&stp=dst-gif_fr_q75&ccb=18-1&_nc_gid=_bvK_-cY05TxZI0zkp7N-Q&_nc_zt=3&oh=06_Q3_EASy6Hb4hGg-NXpY2n9Iu_vR0eI9BVwIkVxwJk2fxMNwu&oe=6ACA1ABB
+  photo-47.jpg  (105,783B)
+    https://scontent-dfw6-1.xx.fbcdn.net/v/t39.99422-6/819655090_1060608746816906_8757118435652664836_n.png?stp=dst-jpg_tt6&cstp=mx1280x1600&ctp=s1080x2048&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=y8RARNPdd_0Q7kNvwF9YXzN&_nc_oc=AdoyWi2NGseBJnGPRCqyHNluL3l8MVfCQujZ65izpJM7p3d5baJ8zMxMBvJeQ2o6GwdvKMXPhjbDaQN5-CTCa7GR&_nc_zt=14&_nc_ht=scontent-dfw6-1.xx&_nc_gid=_ituuKtww8jFISCVcdTDEQ&_nc_ss=7b2a8&oh=00_AQOJHVZQfg49UgNYV6wF1LLu2nktJos44bKOZvzKFWU2NQ&oe=6ACE27B3
+  photo-48.jpg  (18,165B)
+    https://scontent-dfw5-3.xx.fbcdn.net/v/t45.1600-4/833071372_10168392467013206_8382541976325048736_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=p320x320&_nc_cat=1&ccb=1-7&_nc_sid=526594&_nc_ohc=42qi8YhWWbUQ7kNvwERnHE_&_nc_oc=Ado0QrWPl4atTS7rF8PRzgRqL-nzOvZOGM12csi2KcZBEu-gGC3G0nAgu1uPRHkm-FEKKr8hIF0fZElto9w5AFMX&_nc_zt=1&_nc_ht=scontent-dfw5-3.xx&_nc_gid=zUF2cYZ7yW0McXSIy2yfEg&_nc_ss=7b2a8&oh=00_AQNYlZojwlFF28uyVZ_4Ya9hXvvooFwu1H8NxBWW5FQiqA&oe=6ACE0CE7
+  photo-49.jpg  (56,771B)
+    https://scontent-dfw5-1.xx.fbcdn.net/v/t45.1600-4/802900193_122306578226218391_5828276163275274080_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=526594&_nc_ohc=FMFQw7yTo2EQ7kNvwELOAQ_&_nc_oc=Adr6gtLCTHjVjw5hCMFTERt9BbZQyfOYJPnOD1Cf1KLHhFKWfXhMDb50SLd_dRvdhdVW7m8G3apZcqbuBMKn-5Re&_nc_zt=1&_nc_ht=scontent-dfw5-1.xx&_nc_gid=zUF2cYZ7yW0McXSIy2yfEg&_nc_ss=7b2a8&oh=00_AQOE0PChjxgGC3Sg31j5ydVXFxRWWUYnZu8fJf8klKsknQ&oe=6ACDEE0A
+  photo-50.jpg  (135,832B)
+    https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/839806407_10164095298302739_3370006832159374255_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1125x1436&ctp=s1080x2048&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=HR5RG-dZBE4Q7kNvwFG_iHS&_nc_oc=Ado73-t5Hp9E9NDWWSTqnqzy_tpwXoS1qtYsWi3frpyJu5gn0yV2UvO8dPU4T4mhIuEDscUGNCLrB2Yfk7MhyBVM&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&_nc_gid=65sn1YMx4Z7f-XvbgNqdKA&_nc_ss=7b2a8&oh=00_AQNUJ041jWAqO7EDvLWHfbiQFf4I9NM40AVRLSIchjlQVQ&oe=6ACE1C92
+
+--- ALREADY IN FOLDER ---
+  photo-34.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/825328546_122133912957311755_6650655861666444392_
+  photo-33.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/817043171_10165357059493764_677991438405840087_n.
+  photo-32.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/799525919_10165357059673764_6117599694992716296_n
+  photo-31.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/821414912_4406143709715039_5670367694601570041_n.
+  photo-30.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825327535_122106381159487707_9196669528794246090_
+  photo-30.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825327610_122105566749487707_8252806735813713180_
+  photo-28.gif  ←  https://external-dfw5-3.xx.fbcdn.net/emg1/v/t13/2278787491602034341?url=https%3A%2F%2Fmedia2.giphy.c
+  photo-27.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/794525488_2314940092694544_1253840198307564462_n.
+  photo-23.gif  ←  https://external-dfw5-3.xx.fbcdn.net/emg1/v/t13/1467631411890985768?url=https%3A%2F%2Fmedia4.giphy.c
+  photo-22.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825336424_10245912608617807_8031461284788941712_n
+  photo-21.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/825271162_122106394947487707_9009469817560189165_
+  photo-19.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825281520_122101848231487707_1991835143899741775_
+  photo-18.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825336758_10245912633418427_549968451734048984_n.
+  photo-17.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825271127_122107419015487707_2167272801619080432_
+  photo-15.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825281524_122101831701487707_3854570508747898468_
+  photo-06.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825327682_122107416915487707_3858214314118708214_
+  photo-12.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825278828_122103298593487768_3602249620855931587_
+  photo-13.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825353115_122102847819487768_5640355390058012191_
+  photo-14.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/825273665_122100989835487768_9078069631483233763_
+  photo-09.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825286512_122133939387311755_3461559665364805453_
+  photo-30.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825271370_122105565057487707_760239442974695371_n
+  photo-30.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/825327570_122105563449487707_3478969067445461113_
+  photo-01.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825327407_122105522901487707_6272243234780605945_
+  photo-01.jpg  ←  https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/825327246_122105520495487707_7981727634002867683_
+  photo-01.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/825271480_3826292090843164_123459706380826219_n.j
+  photo-11.jpg  ←  https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/821656406_10163704030313693_5708516107621837834_n
+  photo-10.jpg  ←  https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/819938900_10163703645768693_3243165960673135375_n
+  photo-07.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/820291831_1657534252561796_5015221074849341250_n.
+  photo-05.jpg  ←  https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/819602716_39708121095453532_2654577696639111573_n
+
