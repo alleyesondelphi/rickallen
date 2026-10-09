@@ -19,9 +19,9 @@ DEBUG    = "missing-comments-debug.txt"
 
 # ── Avatar color palette (matches existing file) ──────────────────────────────
 COLORS = [
-    "#27ae60","#2980b9","#8e44ad","#c0392b","#16a085",
-    "#2c3e50","#1e8449","#7f8c8d","#1a5276","#d35400",
-    "#784212","#6c3483","#1abc9c","#2ecc71","#3498db",
+    "#1a7a45","#1a6494","#8e44ad","#c0392b","#0d7a65",
+    "#2c3e50","#196e3c","#596a6b","#1a5276","#b84500",
+    "#784212","#6c3483","#0a7260","#147535","#1a72b3",
 ]
 
 def avatar_color(name: str) -> str:
