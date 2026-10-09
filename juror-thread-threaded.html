@@ -50,6 +50,33 @@ h1 {
 .capture-link:hover { 
   color: #0a63c8; 
 }
+.headline-box {
+  background: #1c1e21;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  border-top: 4px solid #4e4d4d;
+  border-bottom: 4px solid #4e4d4d;
+  font-size: 13px;
+  color: #333;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.cover-box {
+  background: #1c1e21;
+  border-radius: 8px;
+  margin-bottom: 2%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+.cover-box img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 6px 0 0 0;
+  border-radius: 8px;
+}
 .post-box {
   background: #fff;
   border-radius: 8px;
@@ -119,8 +146,18 @@ h1 {
   word-break: break-word;
   margin-top: 2px;
 }
-.mention { 
-  font-weight: 600; 
+.mention {
+  font-weight: 600;
+}
+.ext-link {
+  color: #0a63c8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-all;
+}
+.ext-link:hover {
+  color: #084fa0;
+  text-decoration-thickness: 2px;
 }
 img.comment-photo {
   display: block;
@@ -195,9 +232,11 @@ img.comment-photo {
   h1 { 
     color: #e4e6eb; 
   }
-  .meta, .ts { 
-    color: #9a9ea6; 
+  .meta, .ts {
+    color: #9a9ea6;
   }
+  .ext-link { color: #5badde; }
+  .ext-link:hover { color: #7fcaef; }
   .post-box { 
     background: #242526; 
     color: #d8dadf; 
@@ -261,8 +300,17 @@ img.comment-photo {
 </head>
 <body>
 <div class="page-wrap">
-  <h1>Juror #02 Thread in Ashleigh Banfield Facebook Post on Sept. 25, 2026</h1>
+  <div class="headline-box">
+    <h1>Juror #02 Thread in Ashleigh Banfield Facebook Post on Sept. 25, 2026</h1>
   <p class="meta">1,786 comments extracted · <a href="last-captured.html" target="_blank" class="capture-link">Last captured on Oct. 8, 2026</a> · <a href="the-jury.html" target="_blank" class="capture-link">The Jury</a></p>
+  </div>
+
+  <div class="cover-box">
+    <img src="juror-thread-images/cover-1.png" />
+    <img src="juror-thread-images/cover-2.png" />
+    <img src="juror-thread-images/cover-3.png" />
+  </div>
+
   <div class="post-box">
     <strong>Kevin Lucas</strong> shared: A juror commented on this post, only reason I shared.<br><br>
     Richard Allen has asked the Indiana Court of Appeals to overturn his conviction and 130-year sentence.
@@ -278,12 +326,6 @@ img.comment-photo {
   <div class="comment-body">As a juror on this trial, I did not take into account any of the confessions or any of the ballistics. I don’t think the disclosure of those things made a difference ultimately in the decision. Like</div>
 </div>
 
-
-
-
-
-
-
 <div class="comment" style="margin-left:28px;border-left:3px solid #ccc;background:#fafafa;">
   <div class="comment-header">
     <span class="avatar" style="background:#1a7a45;">MM</span>
@@ -292,12 +334,6 @@ img.comment-photo {
   </div>
   <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> you were on this jury Like</div>
 </div>
-
-
-
-
-
-
 
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
@@ -308,12 +344,6 @@ img.comment-photo {
   <div class="comment-body">Michelle Filoni Maleta yes ma’am Like</div>
 </div>
 
-
-
-
-
-
-
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
     <span class="avatar" style="background:#1a7a45;">JB</span>
@@ -322,10 +352,6 @@ img.comment-photo {
   </div>
   <div class="comment-body">Delphi docs collected all the mentions of a van from far before Wala’s “confession”””. We heard about a van in 2017 Like</div>
 </div>
-
-
-
-
 
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
@@ -336,10 +362,6 @@ img.comment-photo {
   <div class="comment-body">Ron Logan wore the bridge guy costume on the news and the FBI found out he arranged a fake alibi before the girls were found and his cell phone pinged at the crime scene. Like</div>
 </div>
 
-
-
-
-
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
     <span class="avatar" style="background:#1a7a45;">JB</span>
@@ -348,10 +370,6 @@ img.comment-photo {
   </div>
   <div class="comment-body">Webers van is seen on the neighbors camera entering the private drive at 2:44pm. Like</div>
 </div>
-
-
-
-
 
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
@@ -362,10 +380,6 @@ img.comment-photo {
   <div class="comment-body">Mia McHaffey any thoughts on Webers van is seen on the neighbors camera entering the private drive at 2:44pm. Like</div>
 </div>
 
-
-
-
-
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
     <span class="avatar" style="background:#1a7a45;">MM</span>
@@ -375,12 +389,6 @@ img.comment-photo {
   <div class="comment-body">Mia i personally think you guys got it right Like</div>
 </div>
 
-
-
-
-
-
-
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
     <span class="avatar" style="background:#b84500;">BB</span>
@@ -389,12 +397,6 @@ img.comment-photo {
   </div>
   <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> I think you guys did a great job.  Don&#x27;t listen to all these losers thinking you got it wrong.  There all gonna support child molesting and child killers no matter what Like</div>
 </div>
-
-
-
-
-
-
 
 <div class="comment" style="margin-left:52px;border-left:2px solid #eee;background:#fff;">
   <div class="comment-header">
@@ -4155,7 +4157,7 @@ img.comment-photo {
     <span class="author" style="color:#6c3483;">Kevin Lucas</span>
     <span class="ts">1d</span>
   </div>
-  <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> The scholarship is seemingly now defunct, but its website hosts a precious set of portraiture. Thank you and your fellow jurors for getting this verdict right. https://impact.ivytech.edu/project/9663 Like</div>
+  <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> The scholarship is seemingly now defunct, but its website hosts a precious set of portraiture. Thank you and your fellow jurors for getting this verdict right. <a href="https://impact.ivytech.edu/project/9663" class="ext-link" target="_blank" rel="noopener">https://impact.ivytech.edu/project/9663</a> Like</div>
 </div>
 
 
@@ -4185,7 +4187,7 @@ img.comment-photo {
     <span class="author" style="color:#6c3483;">Kevin Lucas</span>
     <span class="ts">1d</span>
   </div>
-  <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> A truly precious, priceless treasure for posterity! https://youtu.be/VwaV33U8Uls?si=pzoa3nocx_16fn1p Like</div>
+  <div class="comment-body"><span class="mention" style="color:#1a7a45;font-weight:600;">@Mia McHaffey</span> A truly precious, priceless treasure for posterity! <a href="https://youtu.be/VwaV33U8Uls?si=pzoa3nocx_16fn1p" class="ext-link" target="_blank" rel="noopener">https://youtu.be/VwaV33U8Uls?si=pzoa3nocx_16fn1p</a> Like</div>
 </div>
 
 
@@ -11509,7 +11511,7 @@ img.comment-photo {
     <span class="author" style="color:#596a6b;">Christopher Robinette</span>
     <span class="ts">1w</span>
   </div>
-  <div class="comment-body">https://www.facebook.com/share/r/1Fr6JmJvPp/?mibextid=wwXIfr Like</div>
+  <div class="comment-body"><a href="https://www.facebook.com/share/r/1Fr6JmJvPp/?mibextid=wwXIfr" class="ext-link" target="_blank" rel="noopener">https://www.facebook.com/share/r/1Fr6JmJvPp/?mibextid=wwXIfr</a> Like</div>
 </div>
 
 
@@ -11522,7 +11524,7 @@ img.comment-photo {
     <span class="author" style="color:#1a5276;">Raymond Tillotson</span>
     <span class="ts">1w</span>
   </div>
-  <div class="comment-body">https://www.facebook.com/share/1UsNmVY7sm/ Like</div>
+  <div class="comment-body"><a href="https://www.facebook.com/share/1UsNmVY7sm/" class="ext-link" target="_blank" rel="noopener">https://www.facebook.com/share/1UsNmVY7sm/</a> Like</div>
 </div>
 
 
@@ -18400,7 +18402,7 @@ img.comment-photo {
     <span class="author" style="color:#1a5276;">Mia McHaffey</span>
     <span class="ts">?</span>
   </div>
-  <div class="comment-body">any thoughts on Webers van is seen on the neighbors camera entering the private drive at 2:44pm. The state claims the girls were killed at 2:32pm. How could the killer be spooked by a van that doesn’t arrive for another 15-30 mins? Screenshot on cctv here:https://www.reddit.com/r/DelphiDocs/comments/1i6jof3/richard_allen_motion_to_correct_error_and_hearing/</div>
+  <div class="comment-body">any thoughts on Webers van is seen on the neighbors camera entering the private drive at 2:44pm. The state claims the girls were killed at 2:32pm. How could the killer be spooked by a van that doesn’t arrive for another 15-30 mins? Screenshot on cctv here: <a href="https://www.reddit.com/r/DelphiDocs/comments/1i6jof3/richard_allen_motion_to_correct_error_and_hearing/" class="ext-link" target="_blank" rel="noopener">https://www.reddit.com/r/DelphiDocs/comments/1i6jof3/richard_allen_motion_to_correct_error_and_hearing/</a></div>
 </div>
 
 <div class="comment" style="margin-left:0;border-left:2px solid #ddd;background:#fafafa;">
@@ -18454,7 +18456,7 @@ img.comment-photo {
     <span class="author" style="color:#1a7a45;">Jessica Brehon</span>
     <span class="ts">1w</span>
   </div>
-  <div class="comment-body">David McCain was taking photographs at the bridge for 1/2 an hour between 2-3pm https://drive.google.com/file/d/11mnooHg_SFHBgRywLFbm4-u_J4F_u1fn/view<br><img class="comment-photo" src="juror-thread-images/photo-36.jpg" alt="Photo posted by Jessica Brehon" loading="lazy"></div>
+  <div class="comment-body">David McCain was taking photographs at the bridge for 1/2 an hour between 2-3pm <a href="https://drive.google.com/file/d/11mnooHg_SFHBgRywLFbm4-u_J4F_u1fn/view" class="ext-link" target="_blank" rel="noopener">https://drive.google.com/file/d/11mnooHg_SFHBgRywLFbm4-u_J4F_u1fn/view</a><br><img class="comment-photo" src="juror-thread-images/photo-36.jpg" alt="Photo posted by Jessica Brehon" loading="lazy"></div>
 </div>
 
 <div class="comment" style="margin-left:0;border-left:2px solid #ddd;background:#fafafa;">
