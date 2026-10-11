@@ -211,19 +211,6 @@
   .q-text { 
     flex: 1; 
   }
-  /* ── To-Mia list (asker label) ── */
-  .to-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .to-list li {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1% 2%;
-  }
   .asker {
     font-size: 11px;
     font-weight: 700;
@@ -365,62 +352,62 @@
 <div id="by-mia" class="tab-panel active">
   <p class="section-label">Questions posed by Mia McHaffey <span class="count-badge">10</span></p>
   <ol class="q-list">
-    <li><span class="q-num">1</span><span class="q-text">How would you explain the video of the girls on the bridge?</span></li>
-    <li><span class="q-num">2</span><span class="q-text">@Tony Hunt: who photoshopped it? The police?</span></li>
-    <li><span class="q-num">3</span><span class="q-text">@Brandy Ellis: what's the relevance?</span></li>
-    <li><span class="q-num">4</span><span class="q-text">Please elaborate how you arrive to me admitting there are no facts? How did you come to that conclusion?</span></li>
-    <li><span class="q-num">5</span><span class="q-text">@Tony Hunt: because she was just in her car? That is not unlikely at all.</span></li>
-    <li><span class="q-num">6</span><span class="q-text">Tammy Allen McCray: was the motion granted?</span></li>
-    <li><span class="q-num">7</span><span class="q-text">@Christine Salzer: Christine where did you go? I'm still waiting on some proof of these defamatory claims.</span></li>
-    <li><span class="q-num">8</span><span class="q-text">@Tony Hunt: when did I ever say I'm running the show??</span></li>
-    <li><span class="q-num">9</span><span class="q-text">@Adam Hanabarger: and why is that?</span></li>
-    <li><span class="q-num">10</span><span class="q-text">@Breeun McNeil-Buhrkuhl: see above. <em>(re: her juror number, after answering #2)</em></span></li>
+    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: How would you explain the video of the girls on the bridge?</span></li>
+    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: who photoshopped it? The police?</span></li>
+    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis: what's the relevance?</span></li>
+    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis: Please elaborate how you arrive to me admitting there are no facts? How did you come to that conclusion?</span></li>
+    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: because she was just in her car? That is not unlikely at all.</span></li>
+    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tammy Allen McCray: was the motion granted?</span></li>
+    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Christine Salzer: Christine where did you go? I'm still waiting on some proof of these defamatory claims.</span></li>
+    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: when did I ever say I'm running the show??</span></li>
+    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Adam Hanabarger: and why is that?</span></li>
+    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Breeun McNeil-Buhrkuhl: see above. <em>(re: her juror number, after answering #2)</em></span></li>
   </ol>
 </div>
 
 <!-- ── TAB 2: Questions TO Mia ── -->
 <div id="to-mia" class="tab-panel">
   <p class="section-label">Questions directed to Mia McHaffey <span class="count-badge">38</span></p>
-  <ul class="to-list">
-    <li><div class="asker">Tony Hunt</div>@Mia McHaffey: What did you do, guess? Did you ever wonder if the girls were actually dropped off in the first place?</li>
-    <li><div class="asker">Judy Hataway</div>When the state said "I believe" or "we believe," why didn't the jurors ask for facts/proof of what they believed?</li>
-    <li><div class="asker">Danielle Hawkins · Brenda K. Simonton Kopka · Melissa Martin · Jamie Anderson-Wilkins · TCC</div>What evidence shown made your decision? What was the full picture? What did you take into consideration, bc that's all they had? So please tell, what evidence did you base your decision on?</li>
-    <li><div class="asker">Brandy Ellis</div>Do you believe Lindsay Clancy is guilty?</li>
-    <li><div class="asker">Brandy Ellis</div>What facts did you base your guilty verdict on? What evidence proves that RA did this with zero doubt? Did you watch the interrogation videos?</li>
-    <li><div class="asker">Misty Porter</div>What do you think about all the information that the jury wasn't allowed to see? What about the drug angle? Would you like to hear more about that in a new trial?</li>
-    <li><div class="asker">Danielle Hawkins</div>Are you not the least bit angry at LE for leading the jury to believe Rick was the only one out on the bridge that day? From the outside looking in, we could see everything you were not allowed to see, so now, what do you think? Do you think he got a fair trial?</li>
-    <li><div class="asker">Tony Hunt</div>Why didn't they find them the first night with the whole town searching? Why was Kelsi's hair wrapped in Abby's hand?</li>
-    <li><div class="asker">Tony Hunt</div>@Mia McHaffey: What are you waiting for, for me to fabricate a lie just like the timeline?</li>
-    <li><div class="asker">Tammy Allen McCray</div>Since the trial, after learning that LE lied under oath, after seeing Blair's sketch which she says is 10/10 who she saw. Do you second guess your verdict?</li>
-    <li><div class="asker">Tammy Allen McCray</div>So we convicted a man because he went for a walk wearing blue jeans?</li>
-    <li><div class="asker">Caitlin Marie Daugherty</div>They had his phone info back in 2017 and that info was sent to ISP. Does that not concern you?</li>
-    <li><div class="asker">Tammy Allen McCray</div>Have you read the motion to correct error?</li>
-    <li><div class="asker">Jessica Brehon</div>Do you think this 10/10 sketch of a young tall beautiful man looks like Richard Allen?</li>
-    <li><div class="asker">TCC</div>You mentioned the clothes, the van, and that no one else that looked like him was there, right? So what else brought you to a guilty decision?</li>
-    <li><div class="asker">Leslie Walker</div>The second set of girls saw a different guy who was approximately 5'10", taller than Reilly V. (5'7"). RA is 5'4". How is he and the girls on the bridge at the same time?</li>
-    <li><div class="asker">Christy Sharp</div>What other claims? Confessions?</li>
-    <li><div class="asker">Tonya L. Burris</div>Was the whole "looking at the stock ticker" on his phone not true?</li>
-    <li><div class="asker">Leigh S. Lovell · Caitlin Marie Daugherty</div>How influential was the bullet they found at the scene in your decision? What EXACTLY made him BG to you WITHOUT A REASONABLE DOUBT, if not confessions... bullet? Voice? <em>(Note: the bullet was not found at the time the bodies were discovered; Allen's DNA and fingerprints were not on it; the defense's metallurgist was barred from testifying.)</em></li>
-    <li><div class="asker">Mike Sims</div>The judge already had her mind made up. Who is she covering for?</li>
-    <li><div class="asker">Anabella Maysen</div>What did convince you beyond a reasonable doubt? Since the defense was not allowed to bring in evidence of third party suspects and y'all never heard about the other men on the bridge, would that have made a difference?</li>
-    <li><div class="asker">Tonya Hatton</div>Do you think it would've made a difference if the defense had been allowed to present 3rd party culprit evidence? Or the explanation of the sticks and the connection to the Odinist Brad Holder?</li>
-    <li><div class="asker">Kelsey Birkett</div>You were a juror on his first trial?</li>
-    <li><div class="asker">Ridge Nappier</div>What convinced you bridge guy killed the girls?</li>
-    <li><div class="asker">Christine Salzer</div>Did you drastically change your appearance during trial? I was there every single day and don't seem to remember you. Where in the box did you sit? There is proof on your profile that you broke the sequester order. Did one of the escorts allow it? If so, which one?</li>
-    <li><div class="asker">Classic Over Thinker</div>How/why did the jury disregard the DNA evidence? There is male DNA on the girls' genitals, breasts, and 1 pair of underwear that is not Rick's. Did the jury believe the girls were sexually active beforehand? Errors have been found in the transcript. Do you believe this is incorrect? Which part are you saying is untrue?</li>
-    <li><div class="asker">Tony Hunt</div>I'm starting to believe you're on some sort of mind-altering medication. Did they check all jurors to see if there were any mental diagnoses?</li>
-    <li><div class="asker">Breeun McNeil-Buhrkuhl</div>What juror # were you?</li>
-    <li><div class="asker">Nana Foster</div>Did you dig into this case more after trial, or were you D-U-N done?</li>
-    <li><div class="asker">Barbie Mitchell</div>Do you know you and 11 others convicted a 100% innocent man who they tortured in a maximum security prison to the point where he went into psychosis, all as a pre-trial detainee?</li>
-    <li><div class="asker">Christine Salzer · Angie Hopkins</div>Why would you put forth this lie?</li>
-    <li><div class="asker">Brenda K. Simonton Kopka</div>I would love to know what, if what you stated was not considered or relevant, what was? Just statements made by law enforcement?</li>
-    <li><div class="asker">Danielle Hawkins</div>Now, we know there were at least 50 people on the trails that day and the jury was only given one option. Does that not bother you?</li>
-    <li><div class="asker">Caitlin Marie Daugherty</div>See photo. How about the fact that they had his phone info back in 2017; they marked him as "cleared." Does that not concern you?</li>
-    <li><div class="asker">Tammy Allen McCray</div>How about the CCTV of Weber's van arriving home 15–30 mins after the state's TOD? How could the killer be spooked by a van that doesn't arrive for another 15–30 mins?</li>
-    <li><div class="asker">Tammy Allen McCray</div>How do you feel about the state claiming Libby said "dat be a gun," now that the BG video has been released and we all heard it was "this is the path we go down"?</li>
-    <li><div class="asker">Barbie Mitchell · Nana Foster</div>Do you know you convicted a 100% innocent man? Have you done any research into the case since the trial?</li>
-    <li><div class="asker">Classic Over Thinker</div>Perhaps you should read the transcripts? Errors have been found. Do you believe this is incorrect?</li>
-  </ul>
+  <ol class="q-list">
+    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: What did you do, guess? Did you ever wonder if the girls were actually dropped off in the first place?</span></li>
+    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Judy Hataway</div>@Mia McHaffey: When the state said "I believe" or "we believe," why didn't the jurors ask for facts/proof of what they believed?</span></li>
+    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Danielle Hawkins · Brenda K. Simonton Kopka · Melissa Martin · Jamie Anderson-Wilkins · TCC</div>@Mia McHaffey: What evidence shown made your decision? What was the full picture? What did you take into consideration, bc that's all they had? So please tell, what evidence did you base your decision on?</span></li>
+    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Brandy Ellis</div>@Mia McHaffey: Do you believe Lindsay Clancy is guilty?</span></li>
+    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Brandy Ellis</div>@Mia McHaffey: What facts did you base your guilty verdict on? What evidence proves that RA did this with zero doubt? Did you watch the interrogation videos?</span></li>
+    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Misty Porter</div>@Mia McHaffey: What do you think about all the information that the jury wasn't allowed to see? What about the drug angle? Would you like to hear more about that in a new trial?</span></li>
+    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Danielle Hawkins</div>@Mia McHaffey: Are you not the least bit angry at LE for leading the jury to believe Rick was the only one out on the bridge that day? From the outside looking in, we could see everything you were not allowed to see, so now, what do you think? Do you think he got a fair trial?</span></li>
+    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: Why didn't they find them the first night with the whole town searching? Why was Kelsi's hair wrapped in Abby's hand?</span></li>
+    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: What are you waiting for, for me to fabricate a lie just like the timeline?</span></li>
+    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: Since the trial, after learning that LE lied under oath, after seeing Blair's sketch which she says is 10/10 who she saw. Do you second guess your verdict?</span></li>
+    <li><span class="q-num">11</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: So we convicted a man because he went for a walk wearing blue jeans?</span></li>
+    <li><span class="q-num">12</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div>@Mia McHaffey: They had his phone info back in 2017 and that info was sent to ISP. Does that not concern you?</span></li>
+    <li><span class="q-num">13</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: Have you read the motion to correct error?</span></li>
+    <li><span class="q-num">14</span><span class="q-text"><div class="asker">Jessica Brehon</div>@Mia McHaffey: Do you think this 10/10 sketch of a young tall beautiful man looks like Richard Allen?</span></li>
+    <li><span class="q-num">15</span><span class="q-text"><div class="asker">TCC</div>@Mia McHaffey: You mentioned the clothes, the van, and that no one else that looked like him was there, right? So what else brought you to a guilty decision?</span></li>
+    <li><span class="q-num">16</span><span class="q-text"><div class="asker">Leslie Walker</div>@Mia McHaffey: The second set of girls saw a different guy who was approximately 5'10", taller than Reilly V. (5'7"). RA is 5'4". How is he and the girls on the bridge at the same time?</span></li>
+    <li><span class="q-num">17</span><span class="q-text"><div class="asker">Christy Sharp</div>@Mia McHaffey: What other claims? Confessions?</span></li>
+    <li><span class="q-num">18</span><span class="q-text"><div class="asker">Tonya L. Burris</div>@Mia McHaffey: Was the whole "looking at the stock ticker" on his phone not true?</span></li>
+    <li><span class="q-num">19</span><span class="q-text"><div class="asker">Leigh S. Lovell · Caitlin Marie Daugherty</div>@Mia McHaffey: How influential was the bullet they found at the scene in your decision? What EXACTLY made him BG to you WITHOUT A REASONABLE DOUBT, if not confessions...bullet? Voice? <em>(Note: the bullet was not found at the time the bodies were discovered; Allen's DNA and fingerprints were not on it; the defense's metallurgist was barred from testifying.)</em></span></li>
+    <li><span class="q-num">20</span><span class="q-text"><div class="asker">Mike Sims</div>@Mia McHaffey: The judge already had her mind made up. Who is she covering for?</span></li>
+    <li><span class="q-num">21</span><span class="q-text"><div class="asker">Anabella Maysen</div>@Mia McHaffey: What did convince you beyond a reasonable doubt? Since the defense was not allowed to bring in evidence of third party suspects and y'all never heard about the other men on the bridge, would that have made a difference?</span></li>
+    <li><span class="q-num">22</span><span class="q-text"><div class="asker">Tonya Hatton</div>@Mia McHaffey: Do you think it would've made a difference if the defense had been allowed to present 3rd party culprit evidence? Or the explanation of the sticks and the connection to the Odinist Brad Holder?</span></li>
+    <li><span class="q-num">23</span><span class="q-text"><div class="asker">Kelsey Birkett</div>@Mia McHaffey: You were a juror on his first trial?</span></li>
+    <li><span class="q-num">24</span><span class="q-text"><div class="asker">Ridge Nappier</div>What convinced you bridge guy killed the girls?</span></li>
+    <li><span class="q-num">25</span><span class="q-text"><div class="asker">Christine Salzer</div>@Mia McHaffey: Did you drastically change your appearance during trial? I was there every single day and don't seem to remember you. Where in the box did you sit? There is proof on your profile that you broke the sequester order. Did one of the escorts allow it? If so, which one?</span></li>
+    <li><span class="q-num">26</span><span class="q-text"><div class="asker">Classic Over Thinker</div>@Mia McHaffey: How/why did the jury disregard the DNA evidence? There is male DNA on the girls' genitals, breasts, and 1 pair of underwear that is not Rick's. Did the jury believe the girls were sexually active beforehand? Errors have been found in the transcript. Do you believe this is incorrect? Which part are you saying is untrue?</span></li>
+    <li><span class="q-num">27</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: I'm starting to believe you're on some sort of mind-altering medication. Did they check all jurors to see if there were any mental diagnoses?</span></li>
+    <li><span class="q-num">28</span><span class="q-text"><div class="asker">Michelle Filoni Maleta · Breeun McNeil-Buhrkuhl</div>@Mia McHaffey: What juror # were you?</span></li>
+    <li><span class="q-num">29</span><span class="q-text"><div class="asker">Nana Foster</div>Did you dig into this case more after trial, or were you D-U-N done?</span></li>
+    <li><span class="q-num">30</span><span class="q-text"><div class="asker">Barbie Mitchell</div>@Mia McHaffey: Do you know you and 11 others convicted a 100% innocent man who they tortured in a maximum security prison to the point where he went into psychosis, all as a pre-trial detainee?</span></li>
+    <li><span class="q-num">31</span><span class="q-text"><div class="asker">Christine Salzer · Angie Hopkins</div>Why would you put forth this lie?</span></li>
+    <li><span class="q-num">32</span><span class="q-text"><div class="asker">Brenda K. Simonton Kopka</div>@Mia McHaffey: I would love to know what, if what you stated was not considered or relevant, what was? Just statements made by law enforcement?</span></li>
+    <li><span class="q-num">33</span><span class="q-text"><div class="asker">Danielle Hawkins</div>@Mia McHaffey: Now, we know there were at least 50 people on the trails that day and the jury was only given one option. Does that not bother you?</span></li>
+    <li><span class="q-num">34</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div>@Mia McHaffey: See photo. How about the fact that they had his phone info back in 2017; they marked him as "cleared." Does that not concern you?</span></li>
+    <li><span class="q-num">35</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: How about the CCTV of Weber's van arriving home 15–30 mins after the state's TOD? How could the killer be spooked by a van that doesn't arrive for another 15–30 mins?</span></li>
+    <li><span class="q-num">36</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: How do you feel about the state claiming Libby said "dat be a gun," now that the BG video has been released and we all heard it was "this is the path we go down"?</span></li>
+    <li><span class="q-num">37</span><span class="q-text"><div class="asker">Barbie Mitchell · Nana Foster</div>@Mia McHaffey: Do you know you convicted a 100% innocent man? Have you done any research into the case since the trial?</span></li>
+    <li><span class="q-num">38</span><span class="q-text"><div class="asker">Classic Over Thinker</div>@Mia McHaffey: Perhaps you should read the transcripts? Errors have been found. Do you believe this is incorrect?</span></li>
+  </ol>
 </div>
 
 <!-- ── TAB 3: Answers & Claims ── -->
@@ -429,12 +416,12 @@
 
   <div class="assertion-card">
     <div class="card-topic">Juror status</div>
-    <blockquote>"Yes ma'am." <em>(confirming she was on the jury, to Michelle Filoni Maleta)</em></blockquote>
+    <blockquote><div class="asker">Mia McHaffey</div> @Michelle Filoni Maleta: "Yes ma'am." <em>(confirming she was on the jury.</em></blockquote>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">Confessions &amp; ballistics</div>
-    <blockquote>"As a juror on this trial, I did not take into account any of the confessions or any of the ballistics. I don't think the disclosure of those things made a difference ultimately in the decision."</blockquote>
+    <blockquote><div class="asker">Mia McHaffey</div> (First post, replying to Ashleyy Banfield's story): "As a juror on this trial, I did not take into account any of the confessions or any of the ballistics. I don't think the disclosure of those things made a difference ultimately in the decision."</blockquote>
   </div>
 
   <div class="assertion-card">
