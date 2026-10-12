@@ -51,6 +51,21 @@ body {
     margin: 0 auto;
   }
 }
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 10px 0 16px;
+  font-size: 12px;
+}
+.site-nav a {
+  color: #8a8d91;
+  text-decoration: none;
+}
+.site-nav a:hover {
+  color: #6891f8;
+  text-decoration: underline;
+}
 .c {
   display: flex;
   gap: 8px;
@@ -264,6 +279,12 @@ body {
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <a href="index">Home</a>
+  <a href="the-jury">The Jury</a>
+  <a href="mia-mchaffey-analysis">Juror Analysis</a>
+  <a href="juror-thread.pdf">Thread PDF</a>
+</nav>
 <div class="c">
   <div class="c-left"><div class="av" style="background:#1a7a45;color:#fff">M</div><div class="av-line"></div></div>
   <div class="c-right">
