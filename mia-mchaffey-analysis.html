@@ -1526,8 +1526,10 @@ function showTab(id) {
   document.body.appendChild(lb);
   var lbImg=document.getElementById('lb-img');
   var lbPdf=document.getElementById('lb-pdf');
+  var isMobileSafari=/iP(hone|ad|od)/i.test(navigator.userAgent);
   function open(src){
     var isPdf=/\.pdf(\?|$)/i.test(src);
+    if(isPdf&&isMobileSafari){window.open(src,'_blank');return;}
     if(isPdf){lbImg.style.display='none';lbPdf.style.display='';lbPdf.src=src;}
     else{lbPdf.style.display='none';lbImg.style.display='';lbImg.src=src;}
     lb.classList.add('open');document.body.style.overflow='hidden';
