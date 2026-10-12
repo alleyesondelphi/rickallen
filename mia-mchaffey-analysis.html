@@ -330,6 +330,39 @@
     font-style: italic;
     padding: 0 2px;
   }
+  .embed-img {
+    display: block;
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 14px 0;
+    cursor: zoom-in;
+  }
+  .fig-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--card-bg, #1e1e1e);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin: 12px 0;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--muted);
+    user-select: none;
+  }
+  .fig-placeholder:hover { border-color: #555; color: var(--text); }
+  .fig-placeholder .fig-icon { font-size: 15px; flex-shrink: 0; }
+  .fig-placeholder .fig-label { flex: 1; }
+  .fig-placeholder .fig-hint { font-size: 11px; opacity: .6; }
+  #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;}
+  #lb.open{display:flex;}
+  #lb img{max-width:92vw;max-height:92vh;border-radius:10px;object-fit:contain;}
+  #lb-x{position:fixed;top:16px;right:20px;color:#fff;font-size:28px;line-height:1;cursor:pointer;user-select:none;opacity:.8;}
 </style>
 </head>
 <body>
@@ -340,9 +373,9 @@
   <h1>Mia McHaffey: Thread Analysis</h1>
   <p class="subtitle">Questions, assertions, and inconsistencies from the comment thread and juror interviews</p>
   <div class="tabs" role="tablist">
-    <button class="tab-btn active" role="tab" onclick="showTab('by-mia')">Questions by Mia <span class="count-badge">11</span></button>
-    <button class="tab-btn" role="tab" onclick="showTab('to-mia')">Questions to Mia <span class="count-badge">44</span></button>
-    <button class="tab-btn" role="tab" onclick="showTab('assertions')">Answers &amp; Claims</button>
+    <button class="tab-btn active" role="tab" onclick="showTab('by-mia')">Questions by Mia <span class="count-badge">10</span></button>
+    <button class="tab-btn" role="tab" onclick="showTab('to-mia')">Questions to Mia <span class="count-badge">52</span></button>
+    <button class="tab-btn" role="tab" onclick="showTab('assertions')">Answers &amp; Claims <span class="count-badge">21</span></button>
     <button class="tab-btn" role="tab" onclick="showTab('conflicts')">Inconsistencies <span class="count-badge">9</span></button>
     <button class="tab-btn" role="tab" onclick="showTab('interviews')">Juror Interviews</button>
   </div>
@@ -350,70 +383,77 @@
 
 <!-- ── TAB 1: Questions BY Mia ── -->
 <div id="by-mia" class="tab-panel active">
-  <p class="section-label">Questions posed by Mia McHaffey <span class="count-badge">11</span></p>
+  <p class="section-label">Questions posed by Mia McHaffey <span class="count-badge">10</span></p>
   <ol class="q-list">
-    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: How would you explain the video of the girls on the bridge?</span></li>
-    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: who photoshopped it? The police?</span></li>
-    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis: what's the relevance? The only thing your "one question" insinuates is that you overlook differences and details that completely change the circumstances to fit your narrative.</span></li>
-    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis: what is the relevance? Your "one question" tells me more about your inability to decipher differences in circumstance to fit your narrative. Even based off the fact that I was in the courtroom every single day for this trial, and was not for Lindsey Clancy — my opinion on her guilt is a moot point. <em>(Second separate comment; different wording and context from #3.)</em></span></li>
-    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis: Please elaborate how you arrive to me admitting there are no facts? How did you come to that conclusion?</span></li>
-    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: because she was just in her car? That is not unlikely at all.</span></li>
-    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tammy Allen McCray: was the motion granted?</span></li>
-    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Christine Salzer: Christine where did you go? I'm still waiting on some proof of these defamatory claims.</span></li>
-    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt: when did I ever say I'm running the show??</span></li>
-    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Adam Hanabarger: and why is that?</span></li>
-    <li><span class="q-num">11</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Breeun McNeil-Buhrkuhl: see above. <em>(re: her juror number, after answering #2)</em></span></li>
+    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt this is an insane take lol what evidence at all supports this. How would you explain the video of the girls on the bridge?</span></li>
+    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt who photoshopped it? The police? Also, the video was captured almost 10 years ago.</span></li>
+    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis what&#x27;s the relevance? The only thing your &quot;one question&quot; insinuates is that you overlook differences and details that completely change the circumstances to fit your narrative.</span></li>
+    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis what is the relevance? Your &quot;one question&quot; tells me more about your inability to decipher differences in circumstance (possible voluntary inability) to fit your narrative. Even based off the fact that I was in the courtroom every single day for this trial, and was not for Lindsey Clancy. My opinion on her guilt is a moot point.</span></li>
+    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Brandy Ellis as expected, you&#x27;re manipulating things to fit your narrative. If you can show me proof that Richard Allen or anyone else at that matter, was aware of the van before he made that specific confession to Dr. Wala, I&#x27;ll acknowledge that. I can prove everything I am saying with true, factual information from the record. Please elaborate how you arrive to me adimitting there are no facts? How did you come to that conclusion? That interrogation wasn&#x27;t close to mental torture lol</span></li>
+    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt because she was just in her car? That is not unlikely at all. Also, just because you&#x27;re saying the evidence I&#x27;m mentioning isn&#x27;t real, doesn&#x27;t mean I&#x27;m not providing anything to you. Couldn&#x27;t say the same about you though. Still waiting...</span></li>
+    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tammy Allen McCray was the motion granted? I have not seen it. But the thing is, anything can be said in a motion, but until there is something on the record, or a video or evidence that I can see, none of that proves anything for me. When it&#x27;s something this serious, and so many people spew untruths, anything that will change my stance has to be substantive.</span></li>
+    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Christine Salzer Christine where did you go? I&#x27;m still waiting on some proof of these defamatory claims 🤨🤨</span></li>
+    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Tony Hunt when did I ever say I&#x27;m running the show?? Also, it&#x27;s so ironic how idiotic you sound and you don&#x27;t even know it lol you&#x27;d think as someone who believes RA is innocent you would want people on the jury whom are are able to sympathize with mental health issues.</span></li>
+    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Mia McHaffey</div> @Adam Hanabarger and why is that?</span></li>
   </ol>
 </div>
 
 <!-- ── TAB 2: Questions TO Mia ── -->
 <div id="to-mia" class="tab-panel">
-  <p class="section-label">Questions directed to Mia McHaffey <span class="count-badge">44</span></p>
+  <p class="section-label">Questions directed to Mia McHaffey <span class="count-badge">52</span></p>
   <ol class="q-list">
-    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: What did you do, guess? Did you ever wonder if the girls were actually dropped off in the first place?</span></li>
-    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Judy Hataway</div>@Mia McHaffey: When the state said "I believe" or "we believe," why didn't the jurors ask for facts/proof of what they believed?</span></li>
-    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Danielle Hawkins · Brenda K. Simonton Kopka · Melissa Martin · Jamie Anderson-Wilkins · TCC</div>@Mia McHaffey: What evidence shown made your decision? What was the full picture? What did you take into consideration, bc that's all they had? So please tell, what evidence did you base your decision on?</span></li>
-    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Brandy Ellis</div>@Mia McHaffey: Do you believe Lindsay Clancy is guilty?</span></li>
-    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Brandy Ellis</div>@Mia McHaffey: What facts did you base your guilty verdict on? What evidence proves that RA did this with zero doubt? Did you watch the interrogation videos?</span></li>
-    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Misty Porter</div>@Mia McHaffey: What do you think about all the information that the jury wasn't allowed to see? What about the drug angle? Would you like to hear more about that in a new trial?</span></li>
-    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Danielle Hawkins</div>@Mia McHaffey: Are you not the least bit angry at LE for leading the jury to believe Rick was the only one out on the bridge that day? From the outside looking in, we could see everything you were not allowed to see, so now, what do you think? Do you think he got a fair trial?</span></li>
-    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: Why didn't they find them the first night with the whole town searching? Why was Kelsi's hair wrapped in Abby's hand?</span></li>
-    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: What are you waiting for, for me to fabricate a lie just like the timeline?</span></li>
-    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: Since the trial, after learning that LE lied under oath, after seeing Blair's sketch which she says is 10/10 who she saw. Do you second guess your verdict?</span></li>
-    <li><span class="q-num">11</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: So we convicted a man because he went for a walk wearing blue jeans?</span></li>
-    <li><span class="q-num">12</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div>@Mia McHaffey: They had his phone info back in 2017 and that info was sent to ISP. Does that not concern you?</span></li>
-    <li><span class="q-num">13</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: Have you read the motion to correct error?</span></li>
-    <li><span class="q-num">14</span><span class="q-text"><div class="asker">Jessica Brehon</div>@Mia McHaffey: Do you think this 10/10 sketch of a young tall beautiful man looks like Richard Allen?</span></li>
-    <li><span class="q-num">15</span><span class="q-text"><div class="asker">TCC</div>@Mia McHaffey: You mentioned the clothes, the van, and that no one else that looked like him was there, right? So what else brought you to a guilty decision?</span></li>
-    <li><span class="q-num">16</span><span class="q-text"><div class="asker">Leslie Walker</div>@Mia McHaffey: The second set of girls saw a different guy who was approximately 5'10", taller than Reilly V. (5'7"). RA is 5'4". How is he and the girls on the bridge at the same time?</span></li>
-    <li><span class="q-num">17</span><span class="q-text"><div class="asker">Christy Sharp</div>@Mia McHaffey: What other claims? Confessions?</span></li>
-    <li><span class="q-num">18</span><span class="q-text"><div class="asker">Tonya L. Burris</div>@Mia McHaffey: Was the whole "looking at the stock ticker" on his phone not true?</span></li>
-    <li><span class="q-num">19</span><span class="q-text"><div class="asker">Leigh S. Lovell · Caitlin Marie Daugherty</div>@Mia McHaffey: How influential was the bullet they found at the scene in your decision? What EXACTLY made him BG to you WITHOUT A REASONABLE DOUBT, if not confessions...bullet? Voice? <em>(Note: the bullet was not found at the time the bodies were discovered; Allen's DNA and fingerprints were not on it; the defense's metallurgist was barred from testifying.)</em></span></li>
-    <li><span class="q-num">20</span><span class="q-text"><div class="asker">Mike Sims</div>@Mia McHaffey: The judge already had her mind made up. Who is she covering for?</span></li>
-    <li><span class="q-num">21</span><span class="q-text"><div class="asker">Anabella Maysen</div>@Mia McHaffey: What did convince you beyond a reasonable doubt? Since the defense was not allowed to bring in evidence of third party suspects and y'all never heard about the other men on the bridge, would that have made a difference?</span></li>
-    <li><span class="q-num">22</span><span class="q-text"><div class="asker">Tonya Hatton</div>@Mia McHaffey: Do you think it would've made a difference if the defense had been allowed to present 3rd party culprit evidence? Or the explanation of the sticks and the connection to the Odinist Brad Holder?</span></li>
-    <li><span class="q-num">22a</span><span class="q-text"><div class="asker">Unknown</div>@Mia McHaffey: Would the evidence of the ritualistic/pagan sacrifice have assisted you in any way? Or the evidence of the fact that one of the state's witnesses would have testified that he is not the person that she saw?</span></li>
-    <li><span class="q-num">23</span><span class="q-text"><div class="asker">Kelsey Birkett</div>@Mia McHaffey: You were a juror on his first trial?</span></li>
-    <li><span class="q-num">24</span><span class="q-text"><div class="asker">Ridge Nappier</div>What convinced you bridge guy killed the girls?</span></li>
-    <li><span class="q-num">25</span><span class="q-text"><div class="asker">Christine Salzer</div>@Mia McHaffey: Did you drastically change your appearance during trial? I was there every single day and don't seem to remember you. Where in the box did you sit? There is proof on your profile that you broke the sequester order. Did one of the escorts allow it? If so, which one?</span></li>
-    <li><span class="q-num">26</span><span class="q-text"><div class="asker">Classic Over Thinker</div>@Mia McHaffey: How/why did the jury disregard the DNA evidence? There is male DNA on the girls' genitals, breasts, and 1 pair of underwear that is not Rick's. Did the jury believe the girls were sexually active beforehand? Errors have been found in the transcript. Do you believe this is incorrect? Which part are you saying is untrue?</span></li>
-    <li><span class="q-num">26a</span><span class="q-text"><div class="asker">Bec Edwards</div>@Mia McHaffey: Why do you think LE refused to use a private lab to do the DNA testing that the state lab couldn't? <em>(Both cervical swabs were presumptive positive for seminal material; the state lab did not run confirmatory tests or examine slides under microscope. Unidentified male DNA was found on both girls' genitals and on one pair of underwear.)</em></span></li>
-    <li><span class="q-num">27</span><span class="q-text"><div class="asker">Tony Hunt</div>@Mia McHaffey: I'm starting to believe you're on some sort of mind-altering medication. Did they check all jurors to see if there were any mental diagnoses?</span></li>
-    <li><span class="q-num">28</span><span class="q-text"><div class="asker">Michelle Filoni Maleta · Breeun McNeil-Buhrkuhl</div>@Mia McHaffey: What juror # were you?</span></li>
-    <li><span class="q-num">28a</span><span class="q-text"><div class="asker">Unknown</div>@Mia McHaffey: I would like to know what evidence you did use for your decision. Also, did you receive any advice from the Judge on how to decide the case?</span></li>
-    <li><span class="q-num">29</span><span class="q-text"><div class="asker">Nana Foster</div>Did you dig into this case more after trial, or were you D-U-N done?</span></li>
-    <li><span class="q-num">30</span><span class="q-text"><div class="asker">Barbie Mitchell</div>@Mia McHaffey: Do you know you and 11 others convicted a 100% innocent man who they tortured in a maximum security prison to the point where he went into psychosis, all as a pre-trial detainee?</span></li>
-    <li><span class="q-num">30a</span><span class="q-text"><div class="asker">Unknown</div>@Mia McHaffey: What did you think of Kathy and his daughter? Do you think they believed he's innocent? They must have known.</span></li>
-    <li><span class="q-num">31</span><span class="q-text"><div class="asker">Christine Salzer · Angie Hopkins</div>Why would you put forth this lie?</span></li>
-    <li><span class="q-num">32</span><span class="q-text"><div class="asker">Brenda K. Simonton Kopka</div>@Mia McHaffey: I would love to know what, if what you stated was not considered or relevant, what was? Just statements made by law enforcement?</span></li>
-    <li><span class="q-num">33</span><span class="q-text"><div class="asker">Danielle Hawkins</div>@Mia McHaffey: Now, we know there were at least 50 people on the trails that day and the jury was only given one option. Does that not bother you?</span></li>
-    <li><span class="q-num">34</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div>@Mia McHaffey: See photo. How about the fact that they had his phone info back in 2017; they marked him as "cleared." Does that not concern you?</span></li>
-    <li><span class="q-num">35</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: How about the CCTV of Weber's van arriving home 15–30 mins after the state's TOD? How could the killer be spooked by a van that doesn't arrive for another 15–30 mins?</span></li>
-    <li><span class="q-num">36</span><span class="q-text"><div class="asker">Tammy Allen McCray</div>@Mia McHaffey: How do you feel about the state claiming Libby said "dat be a gun," now that the BG video has been released and we all heard it was "this is the path we go down"?</span></li>
-    <li><span class="q-num">37</span><span class="q-text"><div class="asker">Barbie Mitchell · Nana Foster</div>@Mia McHaffey: Do you know you convicted a 100% innocent man? Have you done any research into the case since the trial?</span></li>
-    <li><span class="q-num">38</span><span class="q-text"><div class="asker">Classic Over Thinker</div>@Mia McHaffey: Perhaps you should read the transcripts? Errors have been found. Do you believe this is incorrect?</span></li>
-    <li><span class="q-num">39</span><span class="q-text"><div class="asker">Alicia Nicholette</div>@Mia McHaffey: After seeing Richard Allen, do you think he's tall, muscular, and handsome? Those are descriptions the witnesses gave. Can you honestly say that you have no reasonable doubt? <em>(Also raises: RA was held in solitary 400+ days on involuntary Haldol injections; LE lost 70+ days of interviews; the white van didn't arrive until ~15 minutes after the state's TOD; a witness named Cheyenne saw a "grumpy/doesn't say hi" man matching BG's demeanor after the BG video was recorded.)</em></span></li>
-    <li><span class="q-num">40</span><span class="q-text"><div class="asker">April Vasquez</div>@Mia McHaffey: The geofence shows when his phone appeared and left the area — it's not as simple as "he left his phone at home." The defense fought to have it admitted but lost. How can the state argue the geofence is unreliable when they used it to locate and identify others in and around the area? Allen's lead sheet was marked cleared for a reason.</span></li>
+    <li><span class="q-num">1</span><span class="q-text"><div class="asker">Tony Hunt</div> @Mia McHaffey What did you do guess? Did you ever wonder if the girls were actually dropped off in the first place?</span></li>
+    <li><span class="q-num">2</span><span class="q-text"><div class="asker">Danielle Hawkins</div> @Mia McHaffey so, what evidence shown made your decision?</span></li>
+    <li><span class="q-num">3</span><span class="q-text"><div class="asker">Brenda K. Simonton Kopka</div> @Mia McHaffey that is easy to do!.. as a juror, the rules are clear.. reasonable Doubt means there&#x27;s doubt and you don&#x27;t convict. I would love to know what, if what you stated was not considered or relevant, what was?? just statements made by law enforcement?</span></li>
+    <li><span class="q-num">4</span><span class="q-text"><div class="asker">Judy Hataway</div> @Mia McHaffey also when the state said I believe or we believe, why didn&#x27;t the jurors ask for facts/ proof of what they believed? One of their experts even googled an answer.</span></li>
+    <li><span class="q-num">5</span><span class="q-text"><div class="asker">Brandy Ellis</div> @Mia McHaffey one question! Do you believe Lindsay Clancy is guilty?</span></li>
+    <li><span class="q-num">6</span><span class="q-text"><div class="asker">Brandy Ellis</div> @Mia McHaffey no because people like you are not looking at facts! What facts did you base your guilty verdict on?</span></li>
+    <li><span class="q-num">7</span><span class="q-text"><div class="asker">Brandy Ellis</div> @Mia McHaffey no it&#x27;s not because it will tell the rest of us if you actually base things on facts, opinions or hearsay. What evidence proves that RA did this with zero doubt?</span></li>
+    <li><span class="q-num">8</span><span class="q-text"><div class="asker">Brandy Ellis</div> @Mia McHaffey we ALL knew about the van before. And everything you described he said he was also told. So no those are not facts. That&#x27;s still a person that was mentally tortured by LE. Did you watch the interrogation videos? So you&#x27;re admitting there are NO FACTS! A bullet can&#x27;t be tested like that.</span></li>
+    <li><span class="q-num">9</span><span class="q-text"><div class="asker">Misty Porter</div> @Mia McHaffey What do you think about all the information that the jury wasn&#x27;t allowed to see?</span></li>
+    <li><span class="q-num">10</span><span class="q-text"><div class="asker">Misty Porter</div> @Mia McHaffey What about the drug angle? Would you like to hear more about that in a new trial?</span></li>
+    <li><span class="q-num">11</span><span class="q-text"><div class="asker">Danielle Hawkins</div> @Mia McHaffey Are you not the least bit angry at LE for leading the jury to believe Rick was the only one out on the bridge that day? Now, we know there were at least 50 people and the jury was only given one option? Others have confessed and not one witness looked at Rick in court that day and said, Yes!, that&#x27;s the man I saw! Respectfully asking because I would want all facts before convicting and ruining a man&#x27;s life based on a lie and lil manbaby egos. I&#x27;m sorry, I know this wasn&#x27;t easy for anyone on the jury, but he 100% did not do this.</span></li>
+    <li><span class="q-num">12</span><span class="q-text"><div class="asker">Danielle Hawkins</div> @Mia McHaffey I understand you were not there to investigate. From the outside looking in, we could see everything you were not allowed to see so now, what do you think? If you feel comfortable saying? Do you think he got a fair trial? And thank you for speaking and answering hard questions.</span></li>
+    <li><span class="q-num">13</span><span class="q-text"><div class="asker">Leslie Walker</div> @Mia McHaffey A dad who trafficked drugs, who snitched on other drug traffickers and possibly owed them money who never came out to fight for justice for his daughter. They sent him a message. Message received. They didn&#x27;t present this. They covered it up. Why? Because LE and others in Indiana higher ups are likely involved in underground activity. LE sought to hide evidence as to who was out there from day one. There were about 16 people out there that day. RA saw a group of girls when he was out there earlier. He wasn&#x27;t there during the murder time the state gives. Those girls are Collier, Matta and Herrera. Dan Pearson was likely who BB saw on the bridge. Guess what? He&#x27;s the first one who ran to the police. He did the first sketch. Why was he not in the trial? Go watch The Vault series on CasexCase. Go read Eye on Delphi&#x27;s Docs and her videos. Go read Delphi Docs documents. If I were a juror I would be pissed at having been fooled by a corrupt prosecution who covered their own butts and used practically the only man in town without a record as a patsy. It&#x27;s sickening.</span></li>
+    <li><span class="q-num">14</span><span class="q-text"><div class="asker">Alicia Nicholette</div> @Mia McHaffey After seeing Richard Allen, do you think he&#x27;s tall, muscular, and handsome? Those are descriptions the witnesses gave. How did the other people on the trails at the time of the alleged crime not hear or see anything? Do you think it&#x27;s okay to hold an innocent person in a prison in solitary confinement for 400 days? He wasn&#x27;t allowed to have a visit with his wife for over 6 months. He was given involuntary haldol injections, yet people can&#x27;t sign legal documents if they are under the influence. Does it not bother that law enforcement lost over 70 days of interviews, lied numerous times? Why would someone who was going to SA someone but got spooked then proceed to unalive 2 girls and then spend over another hour at the crime scene placing sticks/branches over the girls bodies and blood? One of the branches was 3x taller/longer than the alleged killer and weighed probably as much as he did. The white van that spooked him didn&#x27;t actually show up until about 15 minutes later than the state said and at the time the girls were allegedly already dead according to what the state says happened. Also what about the grumpy/doesn&#x27;t say hi guy Cheyenne seen that also matches the demeanor of BG? Cheyenne witnessed him after the BG video was recorded. Can you honestly say that you have no reasonable doubt?</span></li>
+    <li><span class="q-num">15</span><span class="q-text"><div class="asker">Tony Hunt</div> @Mia McHaffey Oh, thats simple! They were murdered somewhere else and this whole timeline, BG, story, everything we assume as facts are simply not facts! And the search was fabricated too, by fire fighters and the guilty party&#x27;s . Why didn&#x27;t they find them the first night with the whole town searching?</span></li>
+    <li><span class="q-num">16</span><span class="q-text"><div class="asker">Tony Hunt</div> @Mia McHaffey Likewise on the girls being there on the 13th! Prove it!!! Why was kelsis hair wrapped in Abby&#x27;s hand?</span></li>
+    <li><span class="q-num">17</span><span class="q-text"><div class="asker">Tony Hunt</div> @Mia McHaffey What are you waiting for, for me to fabricate a lie just like the timeline? Not one human being seen them there that day, phone pics, video, BG evidence should have been thrown out as hear say 101. It&#x27;s simply not factual and when you put it with all the lies from LE and the families something should have clicked unless your a sheep. Thats exactly why this isn&#x27;t solved yet because of what I&#x27;m saying! It was a good story for a minute but something had to give. Libby&#x27;s phone pinging across town too, oh but not aloud to use that evidence hummm 😄</span></li>
+    <li><span class="q-num">18</span><span class="q-text"><div class="asker">Tammy Allen McCray</div> @Mia McHaffey since the trial, after learning that LE lied under oath, after seeing Blairs sketch which she says is 10/10 who she saw, etc do you second guess your verdict? Im genuinely asking. Because I truly belueve he is the wrong guy</span></li>
+    <li><span class="q-num">19</span><span class="q-text"><div class="asker">Tammy Allen McCray</div> @Mia McHaffey so we convicted a man because he went for a walk wearing blue jeans? Thats truly scary</span></li>
+    <li><span class="q-num">20</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div> @Mia McHaffey Oh apologies, so the phone was important to you. How about the fact that they had his phone info back in 2017 and that info was sent to ISP? It&#x27;s on the tip sheet they also marked him as &quot;cleared.&quot; So while no, he did not have the phone from 2017 anymore, he had it when he spoke to them the very first time and they took his phone data down. See photo. I imagine you found that out by now, does that not concern you?</span></li>
+    <li><span class="q-num">21</span><span class="q-text"><div class="asker">Tammy Allen McCray</div> @Mia McHaffey have you read the motion to correct error? According to the state the girls were dead by 2:32. Thats why the phone stopped moving. They also say Weber spooked him when he came home at 2:30 in his van. Problem is, there is surveillance video from another home showing that van heading down the road at 2:47 and connected with his house wifi at 2:52 So the van wasnt there to spook anyone at 2:30</span></li>
+    <li><span class="q-num">22</span><span class="q-text"><div class="asker">TCC</div> @Mia McHaffey so what was the full picture then? You mentioned the clothes, the van, and that no one else that looked like him was there, right? So what else brought you to a guilty decision?</span></li>
+    <li><span class="q-num">23</span><span class="q-text"><div class="asker">Leslie Walker</div> @Mia McHaffey He didn&#x27;t see the girls. He saw Herrera, Collier and Matta who were conveniently excluded from discovery to defense because prosecution &quot;lost it&quot;. The second set of girls saw a different guy who was approximately 5&#x27;10&quot; because he was taller than Reilly V (sp?) who was 5&#x27;7&quot;. RA is 5&#x27;4&quot;. He would be noticeably short to anyone who saw him. The state ran a scam of a trial and Gull was in on it.</span></li>
+    <li><span class="q-num">24</span><span class="q-text"><div class="asker">Leslie Walker</div> @Mia McHaffey So was a whole bunch of other people! He left by 1:30. His agreement to time is that he was there at part of the 1-3pm they asked about. So he said yes. But he was not there the entire time. He left by 1:30. He did not park at CPS. He parked on the other side of the highway. Not one person saw a short chubby man out there that was there. Daniel, Shelby, Cheyenne, Cheryl, both McCains were all out there at the time the girls were supposedly on the bridge. Daniel Pearson was standing on the bridge when the girls would have crossed. He did not see them. How is he and the girls on the bridge at the same time? This info is from phone records and witness interviews yet it was blocked.</span></li>
+    <li><span class="q-num">25</span><span class="q-text"><div class="asker">Christy Sharp</div> @Mia McHaffey What other claims ? Confessions ?</span></li>
+    <li><span class="q-num">26</span><span class="q-text"><div class="asker">Tonya L Burris</div> @Mia McHaffey wait....was the whole &quot;looking at the stock ticker&quot; on his phone not true?</span></li>
+    <li><span class="q-num">27</span><span class="q-text"><div class="asker">April Vasquez</div> @Mia McHaffey If you were to see the geofence; you would see when his phone appears in the area and no longer appears in the area. It&#x27;s not as simple as &quot;he left his phone at home&quot;. He went there, we know that. What is being disputed is what time he arrived and what time he left. The geofence clears that up. The defense did fight to have that admitted but the state fought back and won based on &quot;privacy of others and the reliability of it&quot;. How can the state fight it based on reliability when they literally used it to locate and identify people that were in and around the area? Allen&#x27;s lead sheet was marked cleared for a reason. I thank you for doing your duty. I am sorry that you were forced to do so without hearing all of the facts.</span></li>
+    <li><span class="q-num">28</span><span class="q-text"><div class="asker">Caitlin Marie Daugherty</div> @Mia McHaffey So after reading some of your comments, I&#x27;m curious - what EXACTLY, for you, was what made him BG to you WITHOUT A REASONABLE DOUBT - if not confessions...bullet? Voice?</span></li>
+    <li><span class="q-num">29</span><span class="q-text"><div class="asker">Mike Sims</div> @Mia McHaffey the judge already had her mind made up, who is she covering for?</span></li>
+    <li><span class="q-num">30</span><span class="q-text"><div class="asker">Jamie Anderson-Wilkins</div> @Mia McHaffey so please tell what evidence did you base your decision on?</span></li>
+    <li><span class="q-num">31</span><span class="q-text"><div class="asker">Anabella Maysen</div> @Mia McHaffey Can I respectfully ask what did convince you beyond a reasonable doubt? Since the defense was not allowed to bring in evidence of third party suspects &amp;amp; yall never heard about the other men on the bridge, would that have made a difference?</span></li>
+    <li><span class="q-num">32</span><span class="q-text"><div class="asker">Tonya Hatton</div> @Mia McHaffey from interviews, it would seem that for most of the jury it came down to.. he was the only one there. Do you think it would&#x27;ve made a difference if the defense would&#x27;ve been allowed to present it&#x27;s 3rd party culprit evidence? Such as, Libby had been catfished by a online predator and they were there that day because they were supposed to meet him. Do you think it would&#x27;ve changed things if you had been allowed to hear the defenses explanation of the sticks and placement of them and the connection to the odinist brad holder who was Abby&#x27;s boyfriend&#x27;s dad and all the crazy things he posted around that time?</span></li>
+    <li><span class="q-num">33</span><span class="q-text"><div class="asker">Marissa Edens-Rosa</div> @Mia May I ask why do you think there was not blood found in Richard Allens car?</span></li>
+    <li><span class="q-num">34</span><span class="q-text"><div class="asker">Kelsey Birkett</div> @Mia McHaffey you were a juror on his first trial?</span></li>
+    <li><span class="q-num">35</span><span class="q-text"><div class="asker">Ridge Nappier</div> @Mia McHaffey what convinced you bridge guy killed the girls? For all I know he could have just been warning them not to fall off the hill? No hate just wondering</span></li>
+    <li><span class="q-num">36</span><span class="q-text"><div class="asker">Christine Salzer</div> @Mia McHaffey did you drastically change your appearance during trial? I was there every single day and don&#x27;t seem to remember you. Where in the box did you sit? Also...if you really were a juror, there is proof on your profile that you broke the sequester order. The rules were pretty clear. Did one of the escorts allow it? If so, which one?</span></li>
+    <li><span class="q-num">37</span><span class="q-text"><div class="asker">Angie Hopkins</div> @Christine Salzer @Mia McHaffey was sequestered and didn&#x27;t have a device. Why would you put forth this lie? It&#x27;s interesting that you don&#x27;t recognize her, yet you were assisting Baldwin &amp;amp; Rozzi with Erica Morse. You literally sat at the front in a guaranteed seat as I saw myself daily.</span></li>
+    <li><span class="q-num">38</span><span class="q-text"><div class="asker">Tony Hunt</div> @Mia McHaffey Look who&#x27;s talking!!! And you&#x27;re not running the show! Im starting to believe your on some sort of mind altering medication, did they check all jurors to see if there were any mental diagnoses ? (They sure as hell should&#x27;ve !!!)</span></li>
+    <li><span class="q-num">39</span><span class="q-text"><div class="asker">Classic Over Thinker</div> @Mia McHaffey I really want to understand how/why the jury disregarded the DNA evidence? I don&#x27;t mean to be disrespectful at all, I just honestly don&#x27;t understand? There is male DNA on the girls genitals, breasts and the 1 pair of underwear that is not Ricks? Plus seminal fluid inside both girls 😢. Did the jury believe the girls were sexually active before hand (Which is fine if that was the thought process and I am NOT &#x27;slut shaming&#x27; at all!)? Thats the only explanation I can think of? As the mother of a daughter this truly horrifies me and I want whoever had there filthy paws all over Abby and Libby locked up 😑 . I would really like to reconcile this in my brain?? TY</span></li>
+    <li><span class="q-num">40</span><span class="q-text"><div class="asker">Bec Edwards</div> @Mia McHaffey which part, I&#x27;ve read the transcripts so many times? There was lots of unidentified male DNA on the girls 😢. From the r@pe kits, BOTH girls swabs were presumptive positive for seminal material. Unfortunately the lab didn&#x27;t bother doing the confirmatory tests or even lking at it under a microscope (apparently that&#x27;s not part of there work flow 😔). The presumptive tests do have an approx 10% false positive rate, however the chance of both tests being false positive when you add in the unidentified male DNA on the genitals and underwear would be under 1% 🙈🙈. Why do you think LE refused to use a private lab to do the DNA testing that the state lab couldn&#x27;t?</span></li>
+    <li><span class="q-num">41</span><span class="q-text"><div class="asker">Classic Over Thinker</div> @Mia McHaffey which part are you saying is untrue? Here is part of Stacy Bozinovski&#x27;s testimony regarding the seminal material</span></li>
+    <li><span class="q-num">42</span><span class="q-text"><div class="asker">Classic Over Thinker</div> @Mia McHaffey perhaps you should read the transcripts? Errors have been found in the transcript, do you believe this is incorrect?</span></li>
+    <li><span class="q-num">43</span><span class="q-text"><div class="asker">Breeun McNeil-Buhrkuhl</div> @Mia McHaffey thank you. What juror # were you?</span></li>
+    <li><span class="q-num">44</span><span class="q-text"><div class="asker">Nana Foster</div> @Mia McHaffey thank you for getting it right. Sorry you have to deal with the b@tsh*t crazy Crime QAnon conspiracy loons who think 1% possibility = 99% fact, and 99% fact is only 1% plausible. The whole headphone jack saga was outrageous and didn&#x27;t even prove anything regarding his guilt/innocence. Water damage plain and simple, and sad that state experts ultimately dropped the ball on that. Did you dig into this case more after trial, or were you D-U-N done? You know that his phone never pinged at the trail, disproving his lie about being online looking at a stock ticker (his phone was either turned off/in airplane mode unable to access any online stock ticker/or left behind at home). And of course the only phone missing from the pile of phones he had kept. I can&#x27;t remember the exact reason the cell tower ping/google geofence info wasn&#x27;t allowed at trial, but I remember an interview McLeland did where he said it was a tit for tat legal procedure thing that would&#x27;ve opened the door for defense to bring up other evidence at trial that would&#x27;ve just confused the jurors.</span></li>
+    <li><span class="q-num">45</span><span class="q-text"><div class="asker">Barbie Mitchell</div> @Mia McHaffey Do you know you and 11 others convicted a 100% innocent man who they tortured in a maximum security prison to the point where he went into psychosis and all this was as a pre-trial detainee? There are hundreds of thousands of people all over the globe fighting for justice for this man. I honestly could not live with myself if I convicted an innocent man and then researched the case after the trial finding out he had nothing to do with it. I would join the fight to help Free Richard Allen, that&#x27;s the least you can do before this innocent man dies in prison!</span></li>
+    <li><span class="q-num">46</span><span class="q-text"><div class="asker">Jessica Brehon</div> @Mia McHaffey BGs jacket doesn&#x27;t look like a black carhartt jacket at all though, which is what Rick said he wore in the first interrogation. Did you read the Ron Logan PCA I linked you? Or the records of van sightings going back to 2017? The CCTV of Webers van arriving home 15-30 mins after the states TOD? What do you think of &quot;dat be a gun&quot; now that we&#x27;ve heard the video ourselves where Libby says &quot;this is the path that we go down&quot; ?</span></li>
+    <li><span class="q-num">47</span><span class="q-text"><div class="asker">Jessica Brehon</div> @Mia McHaffey how do you feel about the state claiming that Libby said &quot;dat be a gun&quot;, now that the bg video has been released and we all heard it was actually &quot;this is the path we go down&quot;?</span></li>
+    <li><span class="q-num">48</span><span class="q-text"><div class="asker">Melissa Martin</div> @Mia McHaffey then what exactly did you take into consideration bc that&#x27;s all they had..??</span></li>
+    <li><span class="q-num">49</span><span class="q-text"><div class="asker">Jessica Brehon</div> @Mia McHaffey any thoughts on Webers van is seen on the neighbors camera entering the private drive at 2:44pm. The state claims the girls were killed at 2:32pm. How could the killer be spooked by a van that doesn&#x27;t arrive for another 15-30 mins? Screenshot on cctv here: https://www.reddit.com/r/DelphiDocs/comments/1i6jof3/richard_allen_motion_to_correct_error_and_hearing/</span></li>
+    <li><span class="q-num">50</span><span class="q-text"><div class="asker">Jessica Brehon</div> @Mia McHaffey Do you think this 10/10 sketch of a young tall beautiful man looks like Richard Allen?</span></li>
+    <li><span class="q-num">51</span><span class="q-text"><div class="asker">Caron Williams</div> @Mia McHaffey so what did you base your decision on? There was fuck all evidence against him. You previously said if not him who else. It&#x27;s bizarre that you think that way yet work as a paralegal</span></li>
+    <li><span class="q-num">52</span><span class="q-text"><div class="asker">Leigh S. Lovell</div> @Mia McHaffey how influential was the bullet they found at the scene in your decision? They were unable to replicate the markings on the evidence bullet with his gun by just ejecting the round. So, they fired rounds then claimed fired casings matched the unfired round. The metallurgist was not allowed to testify (denied by the judge). Allen&#x27;s DNA wasn&#x27;t found nor were his fingerprints. The bullet was not even found at the time the bodies were.As a firearms enthusiast, hunter, and with experience in reloading ammo, I find the state&#x27;s claims and &amp;ldquo;evidence&amp;rdquo; that it matched his firearm sketchy at the very least.Extractor marks are often used to determine type and model of firearm - Glock, sig, Beretta - obviously caliber and sometimes can narrow down production range. Unless the firearm has unique wear the FBI, NIST, Foundation of firearms and Tool Mark Identification, amongst other entities entrenched in all things firearms and ammunition all agree that extraction marks alone rarely point to a specific firearm.Since the firearm taken from Allen is one of the most popular firearms in the US, and the other firearms taken and tested in this case were not even tested the same way, I simply don&#x27;t believe the round matched his weapon based on their testing and evidence presented. Their testing method was flawed. They also didn&#x27;t fire the other guns they tested. His was the only one fired.It&#x27;s been a while since I read trial transcript so I can&#x27;t recall how much if this was discussed in trial.Sorry for the long winded post. Just wondered how much the bullet came into the guilty verdict.</span></li>
   </ol>
 </div>
 
@@ -502,6 +542,31 @@
   </div>
 
   <div class="assertion-card">
+    <div class="card-topic">Core guilt reasoning (fuller statement)</div>
+    <blockquote>"The presence isn't guilt. The guilt comes from him clearly lying about seeing the girls, and he was wearing the same clothing as BG, as reported by him. I'll acknowledge that it's a common thing for men to wear, but there is zero information pointing to the fact that there was anyone else wearing those clothes other than him. Only the killer would know about the van. Or at the very least, someone that was at the crime scene. It's him being there along with all of the other 'coincidences'. As much as presence doesn't confirm guilt, a various amount of circumstances pointing to his guilt doesn't confirm reasonable doubt. Inferences can be made without meaning there is doubt."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Timeline impossibility</div>
+    <blockquote>"In fact, he said he didn't see the girls. Which would have been chronologically impossible if we believe the other claims that he made."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Allen's missing phone</div>
+    <blockquote>"They had every phone they've ever owned since the 90s, but not that one." <em>(agreeing with commenter's point about Allen's phone inventory)</em></blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">Phone never recovered</div>
+    <blockquote>"His phone was never found."</blockquote>
+  </div>
+
+  <div class="assertion-card">
+    <div class="card-topic">BG jacket color discrepancy</div>
+    <blockquote>"Looks like different color jackets to me." <em>(@Jessica Brehon, on whether BG's jacket in the video matched the black Carhartt Allen said he wore in his first interrogation)</em></blockquote>
+  </div>
+
+  <div class="assertion-card">
     <div class="card-topic">Closing statement to the thread</div>
     <blockquote>"I really appreciate the people with opposing views and opinions who were respectful and sympathetic. Whether you believe that Richard Allen is guilty or not, it can also be possible that both sides of this are made up of people who are just trying to do what they think is right... I know I will truly never be the same. Please take these things into consideration before making posts and comments. And most importantly, RIP Abby and Libby."</blockquote>
   </div>
@@ -522,7 +587,12 @@
         <div class="conflict-label">Also said this</div>
         "In one of his confessions, he mentioned a white van driving down and frightening him during the crime... <strong>No one would know that but the killer.</strong>"
       </div>
-      <p class="conflict-note">The van detail is drawn directly from the Dr. Wala confession. She uses it as her single most compelling "only the killer would know" piece of evidence while simultaneously saying confessions played no role in her decision.</p>
+      <p class="conflict-note">The van detail is drawn directly from the confession Dr. Wala purports to have documented from Rick. Mia uses it as her single most compelling "only the killer would know" piece of evidence while simultaneously saying confessions played no role in her decision.</p>
+      <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.jpeg">
+        <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+        <span class="fig-label">Screenshot: only the killer would know</span>
+        <span class="fig-hint">click to view</span>
+      </div>
     </div>
   </div>
 
@@ -552,7 +622,7 @@
         <div class="conflict-label">Complicating fact</div>
         RA said he saw a group of girls. There were numerous groups of girls (and men, and boys) at the the trail that day, both earlier and later in the day. Her inference that he "lied" assumes the group he saw was the victims and/or the group of 4 girls who left while Betsy Blair was still at the libray.
       </div>
-      <p class="conflict-note">She treats the identification as settled when it is the premise in dispute.</p>
+      <p class="conflict-note">She treats the the timeline and identification as settled when neither have ever been confirmed.</p>
     </div>
   </div>
 
@@ -567,7 +637,7 @@
         <div class="conflict-label">Framing 2 (trivializing absence)</div>
         "His phone probably was left at home. He said he was there so I don't get how this matters or proves anything other than that his phone was not with him."
       </div>
-      <p class="conflict-note">Both framings are deployed in the same thread within hours. The framing shifts depending on which argument she is countering. In reality, Rick gave his phone to Dulin and his phone info was sent to ISP and he was cleared the next day.</p>
+      <p class="conflict-note">Both framings are deployed in the same thread within hours. The framing shifts depending on which argument she is countering. In reality, Rick gave his phone to Dulin on Feb. 18, 2017 to look at it inside and out, his phone info was sent to ISP, and Rick was cleared the next day.</p>
     </div>
   </div>
 
@@ -587,6 +657,11 @@
         "I did not take into account any of the confessions."
       </div>
       <p class="conflict-note">She simultaneously excludes confessions from her deliberative framework, uses confession content as definitive proof, and challenges others to disprove that confession content, all within the same exchange.</p>
+    <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.jpeg">
+        <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+        <span class="fig-label">Screenshot: only the killer would know</span>
+        <span class="fig-hint">click to view</span>
+      </div>
     </div>
   </div>
 
@@ -654,10 +729,10 @@
 <!-- ── TAB 5: Juror Interviews ── -->
 <div id="interviews" class="tab-panel">
   <p style="font-size:13px;color:var(--muted);margin-bottom:16px;padding:10px 12px;background:var(--card-top);border-radius:6px;border-left:3px solid var(--accent);">
-    Mia McHaffey was Juror #2 at trial. She is the anonymous juror interviewed by <em>The Delphi Murders: First Person</em> podcast (Murder Sheet); she was referred to as Juror #8 there, which was her voir dire number. The Juror #5 interview below is a separate juror on the same panel.
+    Mia McHaffey was Juror #02 at trial. She is the anonymous juror interviewed by <em>The Delphi Murders: First Person</em> podcast (Murder Sheet); she was referred to as Juror #08 there, which was her voir dire number. The Juror #05 interview below is a separate juror on the same panel.
   </p>
 
-  <h2 style="font-size:15px;font-weight:700;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Juror #5: <em>The Unsolved</em> (May 2025)</h2>
+  <h2 style="font-size:15px;font-weight:700;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Juror #05: <em>The Unsolved</em> (May 2025)</h2>
   <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Written Q&amp;A via email, published by journalist Tim (The Unsolved channel). Juror served Oct 14 &ndash; Nov 12, 2024.</p>
 
   <h3 style="font-size:13px;font-weight:700;color:var(--accent);margin:0 0 10px;">Assertions &amp; Reasoning</h3>
@@ -921,6 +996,21 @@ function showTab(id) {
   document.getElementById(id).classList.add('active');
   event.currentTarget.classList.add('active');
 }
+(function(){
+  var lb=document.createElement('div');lb.id='lb';
+  lb.innerHTML='<span id="lb-x">&#x2715;</span><img id="lb-img" src="" alt="">';
+  document.body.appendChild(lb);
+  var lbImg=document.getElementById('lb-img');
+  function open(src){lbImg.src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lbImg.src='';document.body.style.overflow='';}
+  document.addEventListener('click',function(e){
+    var fig=e.target.closest('.fig-placeholder');
+    if(fig){open(fig.dataset.src);}
+    else if(e.target.classList.contains('embed-img')){open(e.target.src);}
+    else if(e.target===lb||e.target.id==='lb-x'){close();}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
 </script>
 </body>
 </html>
