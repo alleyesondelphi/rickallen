@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Click Docket | IN v. RA</title>
+  <title>Todd Click Docket | AEOD</title>
   <meta name="description" content="Todd Click was a key defense witness in the case against Richard Allen. He was charged with forgery and official misconduct following court testimony which undermined the State's case-in-chief.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/click-docket">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Todd Click Docket">
   <meta property="og:description" content="Todd Click was a key defense witness in the case against Richard Allen. He was charged with forgery and official misconduct following court testimony which undermined the State's case-in-chief.">
   <meta property="og:type" content="website">
@@ -15,7 +14,7 @@
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/click-docket.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Todd Click Docket">
@@ -31,725 +30,1383 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after { 
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,0.95) 95%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { border-bottom: none; }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead::after {
+        background: linear-gradient(180deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.80) 100%);
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
 </head>
-<body class="index-page">
+<body>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="click-docket" class="active">Click Docket</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1PDajmUBXU3IZInRp8H1TU2mnaD8NSgFW?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Todd Click Docket">
+    <div class="masthead-text" data-aos="fade-up">
+      <p class="masthead-kicker">Related Docket</p>
+      <h1 class="masthead-title">State v. Todd Click</h1>
+    </div>
+  </div>
+
+  <section class="content-section">
+
+    <!-- Case Summary Card -->
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar">
+        <h2>State of Indiana v. Todd Click</h2>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-item"><strong>Court:</strong> Ripley Superior Court</div>
+        <div class="case-meta-item"><strong>Judge:</strong> Jeffrey L. Sharp</div>
+        <div class="case-meta-item"><strong>Charges:</strong> Forgery, Official Misconduct</div>
+        <div class="case-meta-item"><strong>Prosecutor:</strong> Richard J. Hertel / Rae Schuler</div>
+        <div class="case-meta-item"><strong>Defense Counsel:</strong> Paul W. Barada, Jr.</div>
+        <div class="case-meta-item"><strong>Charges Filed:</strong> September 26, 2024</div>
+        <div class="case-meta-item"><strong>Outcome:</strong> Conditional Plea Agreement</div>
+        <div class="case-meta-item"><strong>Disposition:</strong> October 6, 2026</div>
+      </div>
     </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
+    <!-- ════════════════════════════════════════════════════════
+      SEPTEMBER 2024
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>September 2024</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">09-26-2024</div>
+        <div class="filing-content">Hertel files <a class="filing-link" href="https://drive.google.com/file/d/1zIgkc3DpwJI3r9AcbEOMvE88IUBs9loG/view?usp=drivesdk" target="_blank">Motion to Seal Arrest Warrant, Probable Cause Affidavit, and Charging Information</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-26-2024</div>
+        <div class="filing-content">Hertel files <a class="filing-link" href="https://drive.google.com/file/d/1_vXX8NAgON42EDHwI-Pgsvq72l39U0Vh/view?usp=drivesdk" target="_blank">Charging Information</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-26-2024</div>
+        <div class="filing-content">Hertel files <a class="filing-link" href="https://drive.google.com/file/d/1vyzzSEs1Z0T-ifqVlcEZZpLCnXU/view?usp=drive_link" target="_blank">Probable Cause Affidavit</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-26-2024</div>
+        <div class="filing-content">Judge Sharp enters an <a class="filing-link" href="https://drive.google.com/file/d/1TjL-ZccX4Kg3Yjv8x8rLIiomL_rgLFhZ/view?usp=drivesdk" target="_blank">Order</a>.
+          <div class="filing-note">Comes now the State of Indiana, 80th Judicial Circuit, by Prosecuting Attorney Richard J. Hertel, and files herein its Motion to seal the Arrest Warrant, Probable Cause Affidavit, and Charging Informations. The Court, being duly advised, hereby grants said Motion. IT IS THEREFORE ORDERED that the arrest warrant, probable cause affidavit and charging information are sealed in this case. IT IS FURTHER ORDERED that the seal will be automatically lifted upon the defendant's arrest. Signed By: Honorable Jeffrey L. Sharp. Distribution: Prosecutor.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-26-2024</div>
+        <div class="filing-content">Judge Sharp enters an <a class="filing-link" href="https://drive.google.com/file/d/1dEyWctgW9P8SsYUFOowTtJCOrVhXIKMh/view?usp=drivesdk" target="_blank">Order</a>.
+          <div class="filing-note">The Court, after reviewing this matter, FINDS that there are sufficient facts to establish probable cause in this matter. The Court finds that a warrant shall be issued for the arrest of Todd Click. No bond shall be set in this matter, until the defendant, Todd Click appears in Court. Signed By: JEFFREY SHARP, Judge Ripley Superior Court. Distribution: Ripley County Prosecuting Attorney, Ripley County Sheriff's Department, Ripley County Communications.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-27-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1uxFFO64mLDeofVqH4vtyxay9xNWOPBDu/view?usp=drivesdk" target="_blank">Warrant or Writ of Attmnt for the Body of a Person</a> issued by Judge Sharp.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-27-2024</div>
+        <div class="filing-content">Hertel enters his <a class="filing-link" href="https://drive.google.com/file/d/1VpHVphbC6zEBeKEdS77DpIgQGXX6RdnB/view?usp=drivesdk" target="_blank">Appearance</a> on behalf of the State.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      OCTOBER 2024
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>October 2024</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">10-03-2024</div>
+        <div class="filing-content"><span class="filing-bold">Warrant or Writ of Attmnt for the Body of a Person</span> served by Ripley County Sheriff.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-03-2024</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Initial Hearing scheduled for 10/07/2024 at 9:00 am.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-04-2024</div>
+        <div class="filing-content">Barada enters his <a class="filing-link" href="https://drive.google.com/file/d/1CrwpNsn1AujXrLKMLxVIzdAG89AleY9e/view?usp=drivesdk" target="_blank">Appearance</a> on behalf of Todd Click.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-04-2024</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1fbVwzcH_8_ZJibbGPTljbLu_J5TQuVPu/view?usp=drivesdk" target="_blank">Motion to Set Bond</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-04-2024</div>
+        <div class="filing-content">Barada files the <a class="filing-link" href="https://drive.google.com/file/d/1l7HZqGxMi4HlrO94cRtrC6i39vPOHL-p/view?usp=drivesdk" target="_blank">Defendant's Motion for Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content"><span class="filing-bold">Initial Hearing</span> held.
+          <div class="filing-note">Session: 10/07/2024 9:00 am. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Pretrial Conference scheduled for 11/12/2024 at 11:00 am.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Final Pretrial Hearing/Conference scheduled for 01/27/2025 at 3:00 pm.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Jury Trial scheduled for 02/18/2025 at 9:00 am.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content">Judge Sharp enters an <a class="filing-link" href="https://drive.google.com/file/d/1xeU7RsEFrie1Ly3XLRzJ6oS_1C1rQsJH/view?usp=drivesdk" target="_blank">Initial Hearing Order</a>.
+          <div class="filing-note">Initial Hearing Held. Defendant released on his own recognizance. Pretrial Hearing November 12, 2024 at 11:00 am. Final Pretrial Hearing January 27, 2025 at 3:00 pm and Jury Trial February 18, 2025 at 9:00 am.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content"><span class="filing-bold">Notice Filed.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2024</div>
+        <div class="filing-content">Judge Sharp signs a <a class="filing-link" href="https://drive.google.com/file/d/1ZLch3OB2YyOrkF8mAxjnj8tbowds-Nn0/view?usp=drivesdk" target="_blank">Bond Order</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-24-2024</div>
+        <div class="filing-content">Hertel files a <a class="filing-link" href="https://drive.google.com/file/d/1LWJxNChRfGw0PEeYJ8o2ugsEhAh27bm-/view?usp=drivesdk" target="_blank">Motion to Compel Subject to Provide Handwriting Exemplar</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-25-2024</div>
+        <div class="filing-content"><span class="filing-bold">Hertel Certificate of Service.</span></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Barada files an <a class="filing-link" href="https://drive.google.com/file/d/1m44uq3f_x1cRnnFeYuOP1rtMECVLiI0z/view?usp=drivesdk" target="_blank">Objection to Motion to Compel Subject to Provide Handwriting Exemplar</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-31-2024</div>
+        <div class="filing-content">Judge Sharp enters an <a class="filing-link" href="https://drive.google.com/file/d/1nF-bIU-Cq9TbohUTBe41RtYGKCooww5T/view?usp=drivesdk" target="_blank">Order to Provide Handwriting Exemplars</a>.
+          <div class="filing-note">COMES NOW the State of Indiana and having filed its "Motion to Compel Subject to Provide Handwriting Exemplars," and the Court having now considered said pleading finds that it should be GRANTED. WHEREFORE, the subject, Todd Click, is ORDERED to provide NATURAL HANDWRITING EXEMPLARS per the request of Special Agent Mike Lepper with the Indiana Office of Inspector General at a mutually agreed upon time and place.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      NOVEMBER 2024
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>November 2024</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">11-07-2024</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/14J1b6RiLdTGYyLnUcleLKl8P9g3s-Fsd/view?usp=drivesdk" target="_blank">State's Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-12-2024</div>
+        <div class="filing-content"><span class="filing-bold">Pretrial Conference</span> held.
+          <div class="filing-note">Session: 11/12/2024 11:00 am. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JANUARY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>January 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">01-03-2025</div>
+        <div class="filing-content">Barada files the <a class="filing-link" href="https://drive.google.com/file/d/1ZopnnQGAV6rfudztCm3sCBEfu6qrTUus/view?usp=drivesdk" target="_blank">Defendant's Demand For Cross Examination</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-14-2025</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1hQsjzqzXM4k3BlZz11rsF7nbLFUDJi4I/view?usp=drive_link" target="_blank">Motion for Continuance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-14-2025</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Final PreTrial Hearing/Conference scheduled for 01/27/2025 at 3:00 PM was cancelled. Jury Trial scheduled for 02/18/2025 at 9:00 AM was cancelled. Final PreTrial Hearing/Conference scheduled for 04/28/2025 at 3:00 PM. Jury Trial scheduled for 05/20/2025 at 9:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-14-2025</div>
+        <div class="filing-content">Judge Sharp enters an <a class="filing-link" href="https://drive.google.com/file/d/14DDDgImh2KRzhK8jHk65eG_Hci3O9-lZ/view?usp=drivesdk" target="_blank">Order Resetting Hearings</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following dates: APRIL 28, 2025 AT 3:00 PM. Final Pre-Trial Conference for: Jury Trial for MAY 20, 2025 AT 9:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-15-2025</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/14J1b6RiLdTGYyLnUcleLKl8P9g3s-Fsd/view?usp=drive_link" target="_blank">State's First Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-27-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 01/27/2025 3:00 pm. Judicial Officer: Sharp, Jeffrey. CANCELLED. Reason: Other.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      FEBRUARY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>February 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">02-18-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 02/18/2025 9:00 am. Judicial Officer: Sharp, Jeffrey. CANCELLED. Reason: Other.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      APRIL 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>April 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">04-28-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 04/28/2025 3:00 pm. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MAY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>May 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">05-20-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 05/20/2025 9:00 AM. Cancelled. Reason: Other.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JULY 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>July 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">07-03-2025</div>
+        <div class="filing-content">Tucker files the <a class="filing-link" href="https://drive.google.com/file/d/1vMwXTAJifwSpv30PoDXMkvmoodqt74xF/view?usp=drivesdk" target="_blank">State's Second Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-16-2025</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1O8OdjX6NDZbwA9ROGA6ABkZHbv6qR141/view?usp=drivesdk" target="_blank">Motion For Continuance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-17-2025</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1110F_BLrDsKsfHytGpWO_PGErgXA6VzH/view?usp=drivesdk" target="_blank">Order Resetting Hearings</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click by counsel, Paul W. Barada, Jr., and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: SEPTEMBER 29, 2025 AT 1:00 P.M. Final Pre-Trial Conference: OCTOBER 21, 2025 AT 9:00 A.M.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-28-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 07/28/2025 1:00 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-29-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 09/29/2025 1:00 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      AUGUST 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>August 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">08-19-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 08/19/2025 9:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      SEPTEMBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>September 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">09-25-2025</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1ieQcg89IIFtTwjkqNsSUE6m8h1AQft2H/view?usp=drive_link" target="_blank">Motion for Continuance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 9/29/2025.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Jury Trial scheduled for 10/21/2025 at 9:00 AM was cancelled. Reason: Other.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Final PreTrial Hearing/Conference scheduled for 12/15/2025 at 1:00 PM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Jury Trial scheduled for 01/20/2026 at 9:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/16nQqcqZqkr-XSZhkAJfefGbGYLtdzDFt/view?usp=drive_link" target="_blank">Order Granting Motion for Continuance</a>.
+          <div class="filing-note">Jury Trial scheduled for 01/20/2026 at 9:00 AM.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      OCTOBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>October 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">10-21-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Reason: Other. Session: 10/21/2025 9:00 AM. Cancelled.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      DECEMBER 2025
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>December 2025</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">12-11-2025</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1hQsjzqzXM4k3BlZz11rsF7nbLFUDJi4I/view?usp=drive_link" target="_blank">Motion for Continuance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-15-2025</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1Jnvcsp46NOrcQq0Xq-sKVZZLSCpFVvyj/view?usp=drive_link" target="_blank">Order Resetting Hearings</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click by counsel, Paul W. Barada, Jr., and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: Final Pre-Trial Conference: February 23, 2026 at 1:00 PM. Jury Trial: March 24, 2026 at 9:00 AM. <strong>No further continuances will be granted.</strong></div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-15-2025</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 12/15/2025 1:00 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2025</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/16SUZGw98ij5F682IfG2Jmv0V364sfDbQ/view?usp=drive_link" target="_blank">State's Fourth Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JANUARY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>January 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">01-20-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Reason: Other. Session: 01/20/2026 9:00 AM. Cancelled.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      FEBRUARY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>February 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Jury Trial scheduled for 03/24/2026 at 9:00 AM was cancelled. Reason: Other.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Final PreTrial Hearing/Conference scheduled for 06/29/2026 at 1:00 PM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Jury Trial scheduled for 07/21/2026 at 9:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-23-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1hf3vltT9j3neJFQSOcK4qr5XWQ9_HzT4/view?usp=drive_link" target="_blank">Order</a>.
+          <div class="filing-note">Hearing was held at which time the State of Indiana appeared by Rae Schuler and the Defendant did appear, in person or by counsel Paul Barada. Trial is scheduled before Judge, jury on July 21, 2026 at 9:00 AM. Deadline to have written plea agreement filed is June 29, 2026 at 1:00 PM. Final Pretrial is scheduled for June 29, 2026 at 1:00 PM. <strong>No further continuances will be granted.</strong></div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MARCH 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>March 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">03-24-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 03/24/2026 9:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      MAY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>May 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">05-11-2026</div>
+        <div class="filing-content">Barada files the <a class="filing-link" href="https://drive.google.com/file/d/1DqCIUdYcv0ti2ZV7oRbiIObuOQpC027w/view?usp=drive_link" target="_blank">Defendant's Witness and Exhibit Lists</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-15-2026</div>
+        <div class="filing-content">Barada files the <a class="filing-link" href="https://drive.google.com/file/d/1rBfe6vwigGf6rbm_NG0AqYNSk_uyQny8/view?usp=drive_link" target="_blank">Amended Defendant's Witness and Exhibit Lists</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1cD4Wie9z75LWw3iAMC4iAi2diezwkc2/view?usp=drive_link" target="_blank">State's Fifth Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1fl4hvK5i2aI7nZnRZ66qu3v1bBF35Kgv/view?usp=drive_link" target="_blank">Subpoena for Anthony Baker</a> to appear at trial.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1pWgRu-ynD4WLa39Tiogsj_vDhfyN8xIF/view?usp=drive_link" target="_blank">Subpoena for Connie Winters</a> to appear at trial.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1AU8IG2Vx9IToq1Bm5MWnlEFb0Gfu7HDM/view?usp=drive_link" target="_blank">Subpoena for Darren Schneider</a> to appear at trial.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1HN_ZwviE4Az2aIB0KxoqHHhFMjyr7euW/view?usp=drive_link" target="_blank">Subpoena for Margaret Brunner</a> to appear at trial.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-28-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1D6vqxB5WLd9rqUO1-ZPFg6Rcavm_kd9I/view?usp=drive_link" target="_blank">Subpoena for Terri Sims</a> to appear at trial.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JUNE 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>June 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">06-03-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1YVMTu6Gfv3r5o7h_7eN2BxHKVP1FJRo1/view?usp=drive_link" target="_blank">Subpoena for Special Agent Michael Lepper</a> to appear at trial.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-05-2026</div>
+        <div class="filing-content">Barada files <a class="filing-link" href="https://drive.google.com/file/d/1PzmMLZxsTE4pnXsp6IU_4z5FFyc8Wc3j/view?usp=drive_link" target="_blank">Second Amended Defendant's Witness and Exhibit Lists</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-09-2026</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1McD7hqm2UxPtCkcgsvJEX4iyE3FTUS2o/view?usp=drive_link" target="_blank">Motion in Limine to Exclude Evidence of Defendant's Resignation from Department of Child Services</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-09-2026</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1b362CpudqlegvDyrPNNdxgPa9urCh8_z/view?usp=drive_link" target="_blank">Motion in Limine to Exclude or Substantially Limit Forensic Document Examination Testimony</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-10-2026</div>
+        <div class="filing-content">Barada files a <a class="filing-link" href="https://drive.google.com/file/d/1HjNgIJOgs6jJKW11OwWJjHiY-T-D1Gf7/view?usp=drive_link" target="_blank">Motion to Set Attorney's Only Telephonic Conference with Judge</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-11-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1fiY9dRCY2S2Klvkzuj1JdnvCGJZgV41W/view?usp=drive_link" target="_blank">State's Motion in Limine</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-11-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1xbKF3RZ6pjfQXcUomWsxT0gX9QOw58Ov/view?usp=drive_link" target="_blank">State's 404(b) Evidence Disclosure</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-12-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1HfSlxaRUDyigyWrKYoV8A3GJS8rWOXOW/view?usp=drive_link" target="_blank">Motion for Pre-Trial Ruling on Admissibility of Evidence</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-12-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1biLB4UCyH7flLzzpwLyR-HCD4YkFw8T6/view?usp=drive_link" target="_blank">State's Sixth Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-12-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/19Ty7qCxBzfk0NMguvLUAbStTEmFaeKDh/view?usp=drive_link" target="_blank">Subpoena for Susan Anderson</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2026</div>
+        <div class="filing-content"><span class="filing-bold">Service Returned Served (E-Filing).</span>
+          <div class="filing-note">Amended Subpoena #7 Return Redacted.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2026</div>
+        <div class="filing-content"><span class="filing-bold">Service Returned Served (E-Filing).</span>
+          <div class="filing-note">Amended Subpoena #7 Return NPA.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1qYCTmdnV-1qzUcrV1sRsIHXqLTMWl_PL/view?usp=drive_link" target="_blank">Order Setting Hearing for Motion in Limine</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Motion in Limine herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and sets the same for the following: June 30, 2026 at 1:45 PM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1EZhfPRhusXkYouwPNi7v_KDut0jS6-Bj/view?usp=drive_link" target="_blank">Order Setting Hearing on State's Motion for Pre-Trial Ruling on Admissibility of Evidence</a>.
+          <div class="filing-note">IT IS HEREBY ORDERED that a pre-trial hearing in this matter is scheduled for: June 30, 2026 at 1:45 PM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1pnFDJuVzD7VtBeCOj0ijyAuDZ1sffdRR/view?usp=drive_linkg" target="_blank">Order Setting Hearing</a> (Telephonic Conference).
+          <div class="filing-note">Attorney's Only Telephonic Conference with Judge set for: June 18, 2026 at 11:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-17-2026</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/19Ee5BPu0mkmuVK2d4xb6wMhpOSk3IgzS/view?usp=drive_link" target="_blank">Service Returned Served</a>.
+          <div class="filing-note">Subpoena Duces Tecum served to law enforcement by Ripley County officer J Davidson 2062 on 06/17/2026 AT 1600.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-18-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing</span> held.
+          <div class="filing-note">Session: 06/18/2026 1:00 PM. Judicial Officer: Sharp, Jeffrey. Comment: telephonic.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-18-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1Ui3LRTWR3-zUViqmMkTyZdzq2n7bNu5U/view?usp=drive_link" target="_blank">State's Seventh Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-19-2026</div>
+        <div class="filing-content">Barada files the <a class="filing-link" href="https://drive.google.com/file/d/1lH2VZA5EnOSf8fSfuWUhZkchy4LD6iuY/view?usp=drive_link" target="_blank">Defendant's Objection to State's Motion for Pre-Trial Ruling on Admissibility of Evidence</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-22-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Final PreTrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 06/22/2026 1:00 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-22-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1DM6CeZ1M4Kwokle088-FQ-vDPj67A9ak/view?usp=drive_link" target="_blank">State's Eighth Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-22-2026</div>
+        <div class="filing-content">Schuler files the <a class="filing-link" href="https://drive.google.com/file/d/1Kqurt5LFh182_oL697ySr7X5B9gqC250/view?usp=drive_link" target="_blank">State's Ninth Supplemental Response to Reciprocal Order of Discovery</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-29-2026</div>
+        <div class="filing-content">Schuler files a <a class="filing-link" href="https://drive.google.com/file/d/1GOY-jXW3Z3BnGXdGHhfXx--JgPpyKzxv/view?usp=drive_link" target="_blank">Motion for Continuance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-29-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1y5j6hVgOUjBqVHoqAYKq9ptx8FMpRc_u/view?usp=drive_link" target="_blank">Order Resetting Hearings</a>.
+          <div class="filing-note">The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: Hearing on Motion in Limine will be set closer to trial date. Hearing on State's Motion for Pre-Trial Ruling on Admissibility of Evidence: September 28, 2026 at 1:00 PM. Jury Trial: October 20, 2026 at 9:00 AM.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1ZviLtYsAqJ0xnSD4gTQQFCJ_LOtgygtO/view?usp=drive_link" target="_blank">Subpoena for Susan Anderson</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/137BjGt31O3B3mWry70jTcfUbroZHXjqN/view?usp=drive_link" target="_blank">Subpoena for Anthony Baker</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1QR2KRq6RRJ7v-4n1ixdBUinBhzcO19rP/view?usp=drive_link" target="_blank">Subpoena for Connie Winters</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1vzqYA0jobwI0QF_C4fmEOGqvgpDBMQTu/view?usp=drive_link" target="_blank">Subpoena for Darren Schneider</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1a3c0CB1qSoU66x1_M2sZ5CnLumoMnn5y/view?usp=drive_link" target="_blank">Subpoena for Margaret Brunner</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/1RyiMCpOpGmMtXYZOHAI2FAvJuTQ2_Dgm/view?usp=drive_link" target="_blank">Subpoena for Terri Sims</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">Schuler issues a <a class="filing-link" href="https://drive.google.com/file/d/19Z7t3ICxz9iK2NknACpff2AQTy3ncj_r/view?usp=drive_link" target="_blank">Subpoena for Special Agent Michael Lepper</a> to appear at trial on October 20, 2026.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Hearing.</span>
+          <div class="filing-note">Session: 06/30/2026 1:45 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-30-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Hearing on Motion in Limine.</span>
+          <div class="filing-note">Session: 06/30/2026 1:45 PM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      JULY 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>July 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">07-21-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 07/21/2026 9:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      AUGUST 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>August 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">08-14-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/11mfVywqEinWRTH_FFN_WGts9qXPnVTki/view?usp=drive_link" target="_blank">Order Setting Hearing on Motion in Limine</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Motion in Limine herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and sets the same for the following: HEARING on September 11, 2026, starting at 9:00 a.m. and lasting a full day.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-14-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing Scheduling Activity.</span>
+          <div class="filing-note">Hearing on Motion in Limine scheduled for 09/11/2026 at 09:00 AM.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      SEPTEMBER 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>September 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">09-11-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing on Motion in Limine.</span>
+          <div class="filing-note">Session: 09/11/2026 at 09:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-21-2026</div>
+        <div class="filing-content">Barada files <a class="filing-link" href="https://drive.google.com/file/d/19o55M8NGuHX7-pe80gBVaHygt9L65_lo/view?usp=drive_link" target="_blank">Defendant's Third Motion in Limine to Exclude Evidence of Defendant's Poor Job Performance</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-23-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1ehwGJAI8tUMIql5R9o8acv9-Qn_AeR4U/view?usp=drive_link" target="_blank">Order Setting Hearing</a>.
+          <div class="filing-note">Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Defendant's Third Motion in Limine to Exclude Evidence of Defendant's Poor Job Performance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and sets the same for the following: HEARING: Tuesday, October 6, 2026, at 9:00 a.m.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-28-2026</div>
+        <div class="filing-content"><span class="filing-bold">Final Pretrial Hearing/Conference.</span>
+          <div class="filing-note">Session: 09/28/2026 9:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-28-2026</div>
+        <div class="filing-content">Judge Sharp issues a <a class="filing-link" href="https://drive.google.com/file/d/1q4Vs0qIY9iWkEJ__YJhbPoTjST6yzjsc/view?usp=drive_link" target="_blank">Pretrial Order</a>.
+          <div class="filing-note">Hearing was held at which time the State of Indiana appeared by [blank] and the Defendant Todd Click appear, in person or by counsel, Paul Barada. Deadline to have written plea agreement filed is October 6, 2026 at 9:00 A.M. Jury Trial date is confirmed for October 20, 2026 AT 9:00 A.M. Hearing on all pending pretrial motions remains set for October 6, 2026 at 9:00 A.M.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-30-2026</div>
+        <div class="filing-content">Barada issues a <a class="filing-link" href="https://drive.google.com/file/d/1ww_jHpsLNvw_vOHD5F_HiJ_2vOSG3lGo/view?usp=drive_link" target="_blank">Subpoena for Corporal Conrad Reichert</a>.</div>
+      </div>
+
+    </details>
+
+    <!-- ════════════════════════════════════════════════════════
+      OCTOBER 2026
+    ════════════════════════════════════════════════════════ -->
+
+    <details class="month-details" data-aos="fade-up">
+      <summary class="month-summary"><h2>October 2026</h2></summary>
+
+      <div class="filing">
+        <div class="filing-date">10-06-2026</div>
+        <div class="filing-content"><span class="filing-bold">Hearing on Motion in Limine.</span>
+          <div class="filing-note">Session: 10/06/2026 9:00 AM. Judicial Officer: Sharp, Jeffrey.</div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-06-2026</div>
+        <div class="filing-content">Judge Sharp issues a <a class="filing-link" href="https://drive.google.com/file/d/1r2HLo8W6N2fibxAYEEyAiRdohYJcCFYX/view?usp=drive_link" target="_blank">Judgement of Conviction and Sentencing Order</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-06-2026</div>
+        <div class="filing-content">Judge Sharp issues an <a class="filing-link" href="https://drive.google.com/file/d/1t8MgkQVX82OwMJWrdez3yvPZy-rd0sXI/view?usp=drive_link" target="_blank">Abstract of Judgement</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-06-2026</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1r8_uKBV5sZ-Sf_ifxRkGtzV_cTOOakiS/view?usp=drive_link" target="_blank">Joint Motion in Tender of Conditional Plea Agreement</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-20-2026</div>
+        <div class="filing-content">CANCELLED. <span class="filing-bold">Jury Trial.</span>
+          <div class="filing-note">Session: 10/20/2026 9:00 AM. Judicial Officer: Sharp, Jeffrey. REASON: Plea Agreement.</div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1PDajmUBXU3IZInRp8H1TU2mnaD8NSgFW?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+      <div class="drive-card-body">
+        <h3 class="drive-card-title">Google Drive</h3>
+        <p class="drive-card-desc">Folder archive of filings, orders, briefs, etc.</p>
+      </div>
+      <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
+  </footer>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 500, once: true, offset: 60 });
 
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Seciton -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Todd Click Docket</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- click-docket wrapper -->
-    <div id="wrapper">
-
-      <!-- Todd Click Docket Section -->
-      <section id="page-section" class="page-section section">
-
-        <!-- September 2024 -->
-        <div class="container section-title">
-        <h2>September 2024</h2>
-          <p>
-            Hertel files <strong><a class="link" href="https://drive.google.com/file/d/1zIgkc3DpwJI3r9AcbEOMvE88IUBs9loG/view?usp=drivesdk" target="_blank">Motion to Seal Arrest Warrant, Probable Cause Affidavit, and Charging Information</a></strong> on September 26, 2024.
-          </p>
-          <p>
-            Hertel files <strong><a class="link" href="https://drive.google.com/file/d/1_vXX8NAgON42EDHwI-Pgsvq72l39U0Vh/view?usp=drivesdk" target="_blank">Charging Information</a></strong> on September 26, 2024.
-          </p>
-          <p>
-            Hertel files <strong><a class="link" href="https://drive.google.com/file/d/1vyzzSEs1Z0T-ifqVlnNh081v6zkQqjEZ/view?usp=drive_link" target="_blank">Probable Cause Affidavit</a></strong> on September 26, 2024.
-          </p>
-          <p>
-            Judge Sharp enters an Judge Sharp enters an <strong><a class="link" href="https://drive.google.com/file/d/1TjL-ZccX4Kg3Yjv8x8rLIiomL_rgLFhZ/view?usp=drivesdk" target="_blank">Order</a></strong> on September 26, 2024.
-            <ul class="docket-entry">
-              <li>Comes now the State of Indiana, 80th Judicial Circuit, by Prosecuting Attorney Richard J. Hertel, and files herein its Motion to seal the Arrest Warrant, Probable Cause Affidavit, and Charging Informations. The Court, being duly advised, how grants said Motion. IT IS THEREFORE ORDERED that the arrest warrant, probable cause affidavit and charging information are sealed in this case. IT IS FURTHER ORDERED that the seal will be automatically lifted upon the defendant's arrest. SO ORDERED: September. 26, 2024. Signed By: Honorable Jeffrey L. Sharp. Distribution: Prosecutor.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp enters an Judge Sharp enters an <strong><a class="link" href="https://drive.google.com/file/d/1dEyWctgW9P8SsYUFOowTtJCOrVhXIKMh/view?usp=drivesdk" target="_blank">Order</a></strong> on September 26, 2024. on September 26, 2024.
-            <ul class="docket-entry">
-              <li>The Court, after reviewing this matter, FINDS that there are sufficient facts to establish probable cause in this matter. The Court finds that a warrant shall be issued for the arrest of Todd Click. No bond shall be set in this matter, until the defendant, Todd Click appears in Court. SO ORDERED this 26th day of September, 2024 at 4:18 pm. Signed By: JEFFREY SHARP, Judge Ripley Superior Court. Distribution: Ripley County Prosecuting Attorney, Ripley County Sheriff's Department, Ripley County Communications.</li>
-            </ul>
-          </p>
-          <p>
-            Warrant or <strong><a class="link" href="https://drive.google.com/file/d/1uxFFO64mLDeofVqH4vtyxay9xNWOPBDu/view?usp=drivesdk" target="_blank">Writ of Attmnt for the Body of a Person</a></strong> Issued by Judge Sharp on September 27, 2024.
-          </p>
-          <p>
-            Hertel enters his <strong><a class="link" href="https://drive.google.com/file/d/1VpHVphbC6zEBeKEdS77DpIgQGXX6RdnB/view?usp=drivesdk" target="_blank">Appearance</a></strong> on behalf of the State on September 27, 2024.
-          </p>
-        </div><!-- End of September 2024 -->
-
-        <!-- October 2024 -->
-        <div class="container section-title">
-        <h2>October 2024</h2>
-          <p>
-            <strong>Warrant or Writ of Attmnt for the Body of a Person</strong> Served by Ripley County Sheriff on October 3, 2024.
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on October 3, 2024.
-            <ul class="docket-entry">
-              <li>Initial Hearing scheduled for 10/07/2024 at 9:00 am.</li>
-            </ul>
-          </p>
-          <p>
-            Barada enters his <strong><a class="link" href="https://drive.google.com/file/d/1CrwpNsn1AujXrLKMLxVIzdAG89AleY9e/view?usp=drivesdk" target="_blank">Appearance</a></strong> on behalf of Todd Click on October 4, 2024.
-          </p>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1fbVwzcH_8_ZJibbGPTljbLu_J5TQuVPu/view?usp=drivesdk" target="_blank">Motion to Set Bond</a></strong> on October 4, 2024.
-          </p>
-          <p>
-            Barada files the <strong><a class="link" href="https://drive.google.com/file/d/1l7HZqGxMi4HlrO94cRtrC6i39vPOHL-p/view?usp=drivesdk" target="_blank">Defendant's Motion for Discovery</a></strong> on October 4, 2024.
-          </p>
-          <p>
-            <strong>Initial Hearing</strong> Held on October 7, 2024.
-            <ul class="docket-entry">
-              <li>Session: 10/07/2024 9:00 am, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on October 7, 2024.
-            <ul class="docket-entry">
-              <li>Pretrial Conference scheduled for 11/12/2024 at 11:00 am.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on October 7, 2024.
-            <ul class="docket-entry">
-              <li>Final Pretrial Hearing/Conference scheduled for 01/27/2025 at 3:00 pm.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on October 7, 2024.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 02/18/2025 at 9:00 am.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp enters an <strong><a class="link" href="https://drive.google.com/file/d/1xeU7RsEFrie1Ly3XLRzJ6oS_1C1rQsJH/view?usp=drivesdk" target="_blank">Initial Hearing Order</a></strong> on October 7, 2024.
-            <ul class="docket-entry">
-              <li>Initial Hearing Held. Defendant released on his own recognizance. Pretrial Hearing November 12, 2024 at 11:00 am. Final Pretrial Hearing January 27, 2025 at 3:00 pm and Jury Trial February 18, 2025 at 9:00 am.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Notice Filed</strong> on October 7, 2024.
-          </p>
-          <p>
-            Judge Sharp signs a <strong><a class="link" href="https://drive.google.com/file/d/1ZLch3OB2YyOrkF8mAxjnj8tbowds-Nn0/view?usp=drivesdk" target="_blank">Bond Order</a></strong> on October 7, 2024.
-          </p>
-          <p>
-            Hertel files a <strong><a class="link" href="https://drive.google.com/file/d/1LWJxNChRfGw0PEeYJ8o2ugsEhAh27bm-/view?usp=drivesdk" target="_blank">Motion to Compel Subject to Provide Handwriting Exemplar</a></strong> on October 24, 2024.
-          </p>
-          <p>
-            <strong>Hertel Certificate of Service</strong> on October 25, 2024.
-            <ul class="docket-entry">
-              <li>Certificate of Service</li>
-            </ul>
-          </p>
-          <p>
-            Barada files an <strong><a class="link" href="https://drive.google.com/file/d/1m44uq3f_x1cRnnFeYuOP1rtMECVLiI0z/view?usp=drivesdk" target="_blank">Objection to Motion to Compel Subject to Provide Handwriting Exemplar</a></strong> on October 28, 2024.  
-          </p>
-          <p>
-            Judge Sharp enters an <strong><a class="link" href="https://drive.google.com/file/d/1nF-bIU-Cq9TbohUTBe41RtYGKCooww5T/view?usp=drivesdk" target="_blank">Order to Provide Handwriting Exemplars</a></strong> on October 31, 2024.
-            <ul class="docket-entry">
-              <li>COMES NOW the State of Indiana and having filed its “Motion to Compel Subject to Provide Handwriting Exemplars,” and the Court having now considered said pleading finds that is should be GRANTED. WHEREFORE, the subject, Todd Click, is ORDERED to provide NATURAL HANDWRITING EXEMPLARS per the request of Special Agent Mike Lepper with the Indiana Office of Inspector General at a mutually agreed upon time and place.</li>
-            </ul>
-          </p>
-        </div><!-- end of October 2024-->
-
-        <!-- November 2024 -->
-        <div class="container section-title">
-        <h2>November 2024</h2>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/14J1b6RiLdTGYyLnUcleLKl8P9g3s-Fsd/view?usp=drivesdk" target="_blank">State's Response to Reciprocal Order of Discovery</a></strong> on November 7, 2024.
-          </p>
-          <p>
-            <strong>Pretrial Conference</strong> on November 12, 2024.
-            <ul class="docket-entry">
-              <li>Session: 11/12/2024 11:00 am, Judicial Officer: Sharp, Jeffrey. </li>
-            </ul>
-          </p>
-        </div><!-- end of November 2024 -->
-
-        <!-- January 2025 -->
-        <div class="container section-title">
-          <h2>January 2025</h2>
-          <p>
-            Barada files the <strong><a class="link" href="https://drive.google.com/file/d/1ZopnnQGAV6rfudztCm3sCBEfu6qrTUus/view?usp=drivesdk" target="_blank">Defendant's Demand For Cross Examination</a></strong> on January 3, 2025.
-          </p>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1hQsjzqzXM4k3BlZz11rsF7nbLFUDJi4I/view?usp=drive_link" target="_blank">Motion for Continuance</a></strong> on January 14, 2025.
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on January 14, 2025.
-            <ul class="docket-entry">
-              <li>Final PreTrial Hearing/Conference scheduled for 01/27/2025 at 3:00 PM was cancelled. Reason: Other. Jury Trial scheduled for 02/18/2025 at 9:00 AM was cancelled. Reason: Other. Final PreTrial Hearing/Conference scheduled for 04/28/2025 at 3:00 PM. Jury Trial scheduled for 05/20/2025 at 9:00 AM.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp enters an <strong><a class="link" href="https://drive.google.com/file/d/14DDDgImh2KRzhK8jHk65eG_Hci3O9-lZ/view?usp=drivesdk" target="_blank">Order Resetting Hearings</a></strong> on January 14, 2025.
-            <ul class="docket-entry">
-              <li>Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr, and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following dates: APRIL 28, 2025 AT 3:00 PM. Final Pre-Trial Conference for: Jury Trial for MAY 20, 2025 AT 9:00 AM. ALL OF WHICH IS ORDERED THIS January 14, 2025.</li>
-            </ul>
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/14J1b6RiLdTGYyLnUcleLKl8P9g3s-Fsd/view?usp=drive_link" target="_blank">State's First Supplemental Response to Reciprocal Order of Discovery</a></strong> on January 15, 2025.
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on January 27, 2025.
-            <ul class="docket-entry">
-              <li>Session: 01/27/2025 3:00 pm, Judicial Officer: Sharp, Jeffrey. CANCELLED. Reason: Other.</li>
-            </ul>
-          </p>
-        </div><!-- end of January 2025 -->
-
-        <!-- February 2025 -->
-        <div class="container section-title">
-        <h2>February 2025</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> on February 18, 2025.
-            <ul class="docket-entry">
-              <li>Session: 02/18/2025 9:00 am, Judicial Officer: Sharp, Jeffrey. CANCELLED. Reason: Other.</li>
-            </ul>
-          </p>
-        </div><!-- end of February 2025 -->
-
-        <!-- April 2025 -->
-        <div class="container section-title">
-        <h2>April 2025</h2>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on April 28, 2025.
-            <ul class="docket-entry">
-              <li>Session: 04/28/2025 3:00 pm, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of April 2025 -->
-
-        <!-- May 2025 -->
-        <div class="container section-title">
-        <h2>May 2025</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> on May 20, 2025.
-            <ul class="docket-entry">
-              <li>Reason: Other. Session: 05/20/2025 9:00 AM, Cancelled.</li>
-            </ul>
-          </p>
-        </div><!-- end of May 2025 -->
-
-        <!-- July 2025 -->
-        <div class="container section-title">
-        <h2>July 2025</h2>
-          <p>
-            Tucker files the <strong><a class="link" href="https://drive.google.com/file/d/1vMwXTAJifwSpv30PoDXMkvmoodqt74xF/view?usp=drivesdk" target="_blank">State's Second Supplemental Response to Reciprocal Order of Discovery</a></strong> on July 3, 2025.
-          </p>
-          <p>
-            Barada filed a <strong><a class="link" href="https://drive.google.com/file/d/1O8OdjX6NDZbwA9ROGA6ABkZHbv6qR141/view?usp=drivesdk" target="_blank">Motion For Continuance</a></strong> on July 16, 2025.
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1110F_BLrDsKsfHytGpWO_PGErgXA6VzH/view?usp=drivesdk" target="_blank">Order Resetting Hearings</a></strong> on July 17, 2025.
-            <ul class="docket-entry">
-              <li>Comes now the Defendant, Todd Click by counsel, Paul W. Barada, Jr., and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: SEPTEMBER 29, 2025 AT 1:00 P.M. Final Pre-Trial Conference: OCTOBER 21, 2025 AT 9:00 A.M.</li>
-            </ul>
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on July 28, 2025.
-            <ul class="docket-entry">
-              <li>Session: 07/28/2025 1:00 PM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on July 29, 2025.
-            <ul class="docket-entry">
-              <li>Session: 09/29/2025 1:00 PM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of July 2025 -->
-
-        <!-- August 2025 -->
-        <div class="container section-title">
-        <h2>August 2025</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> August 19, 2025.
-            <ul class="docket-entry">
-              <li>08/19/2025 9:00 AM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of August 2025 -->
-
-        <!-- September 2025 -->
-        <div class="container section-title">
-        <h2>September 2025</h2>
-          <p>
-            Barada files a <strong><a class="link" href=https://drive.google.com/file/d/1ieQcg89IIFtTwjkqNsSUE6m8h1AQft2H/view?usp=drive_link"" target="_blank">Motion for Continuance</a></strong> on September 25, 2025.
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on September 29, 2025.
-            <ul class="docket-entry">
-              <li>Session: 9/29/2025</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on September 29, 2025.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 10/21/2025 at 9:00 AM was cancelled. Reason: Other.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on September 29, 2025.
-            <ul class="docket-entry">
-              <li>Final PreTrial Hearing/Conference scheduled for 12/15/2025 at 1:00 PM.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on September 29, 2025.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 01/20/2026 at 9:00 AM.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/16nQqcqZqkr-XSZhkAJfefGbGYLtdzDFt/view?usp=drive_link" target="_blank">Order Granting Motion for Continuance</a></strong> on September 29, 2025.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 01/20/2026 at 9:00 AM.</li>
-            </ul>
-          </p>
-        </div><!-- end of September 2025 -->
-
-        <!-- October 2025 -->
-        <div class="container section-title">
-        <h2>October 2025</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> on October 21, 2025.
-            <ul class="docket-entry">
-              <li>Reason: Other. 10/21/2025 9:00 AM, Cancelled</li>
-            </ul>
-          </p>
-        </div><!-- end of October 2025 -->
-
-        <!-- December 2025 -->
-        <div class="container section-title">
-        <h2>December 2025</h2>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1hQsjzqzXM4k3BlZz11rsF7nbLFUDJi4I/view?usp=drive_link" target="_blank">Motion for Continuance</a></strong> on December 11, 2025.
-          </p>
-           <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1Jnvcsp46NOrcQq0Xq-sKVZZLSCpFVvyj/view?usp=drive_link" target="_blank">Order Resetting Hearings</a></strong> on December 15, 2025.
-            <ul class="docket-entry">
-              <li>
-                Comes now the Defendant, Todd Click by counsel, Paul W. Barada, Jr., and files his Motion for Continuance herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: Final Pre-Trial Conference: February 23, 2026 at 1:00 PM. Jury Trial: March 24, 2025 at 9:00 AM.<br>
-                **No further continuances will be granted.**
-              </li>
-            </ul>
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> on December 15, 2025.
-            <ul class="docket-entry">
-              <li>Session: 12/15/2025 1:00 PM, Judicial Officer: Sharp, Jeffrey</li>
-            </ul>
-          </p>
-          <p>
-            Schuler files a <strong><a class="link" href="https://drive.google.com/file/d/16SUZGw98ij5F682IfG2Jmv0V364sfDbQ/view?usp=drive_link" target="_blank">State's Fourth Supplemental Response to Reciprocal Order of Discovery</a></strong> on December 19, 2025.
-          </p>
-        </div><!-- end of December 2025 -->
-
-        <!-- January 2026 -->
-        <div class="container section-title">
-        <h2>January 2026</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> on January 20, 2026.
-            <ul class="docket-entry">
-              <li>Reason: Other. Session: 01/20/2026 9:00 AM, Cancelled.</li>
-            </ul>
-          </p>
-        </div><!-- end of January 2026 -->
-
-        <!-- February 2026 -->
-        <div class="container section-title">
-        <h2>February 2026</h2>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on February 23, 2026.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 03/24/2026 at 9:00 AM was cancelled. Reason: Other.</li>
-            </ul>
-          </p>
-          <p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on February 23, 2026.
-            <ul class="docket-entry">
-              <li>Final PreTrial Hearing/Conference scheduled for 06/29/2026 at 1:00 PM.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on February 23, 2026.
-            <ul class="docket-entry">
-              <li>Jury Trial scheduled for 07/21/2026 at 9:00 AM.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1hf3vltT9j3neJFQSOcK4qr5XWQ9_HzT4/view?usp=drive_link" target="_blank">Order</a></strong> on February 23, 2026.
-            <ul class="docket-entry">
-              <li>Hearing was held at which time the State of Indiana Appeared by Rae Schuler and the Defendant did appear, in person or by counsel Paul Barada. Trial is scheduled before Judge, jury on July 21, 2026 at 9:00 AM. Deadline to have written plea agreement filed is June 29, 2026 at 1:00 PM. Final Pretrial is scheduled for June 29, 2026 at 1:00 PM. No further continuances will be granted.</li>
-            </ul>
-          </p>
-        </div><!-- end of February 2026 -->
-        
-        <!-- March 2026 -->
-        <div class="container section-title">
-        <h2>March 2026</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> scheduled for March 24, 2026.
-            <ul class="docket-entry">
-              <li>Session: 03/24/2026 9:00 AM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of March 2026 -->
-
-        <!-- May 2026 -->
-        <div class="container section-title">
-        <h2>May 2026</h2>
-          <p>
-            Barada files the <strong><a class="link" href="https://drive.google.com/file/d/1DqCIUdYcv0ti2ZV7oRbiIObuOQpC027w/view?usp=drive_link" target="_blank">Defendant's Witness and Exhibit Lists</a></strong> on May 11, 2026.
-          </p>
-          <p>
-            Barada files the <strong><a class="link" href="https://drive.google.com/file/d/1rBfe6vwigGf6rbm_NG0AqYNSk_uyQny8/view?usp=drive_link" target="_blank">Amended Defendant's Witness and Exhibit Lists</a></strong> on May 15, 2026.
-          </p> 
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1cD4Wie9z75LWw3iANDVIO_z5diezwkc2/view?usp=drive_link" target="_blank">State’s Fifth Supplemental Response to Reciprocal Order of Discovery</a></strong> on May 28, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1fl4hvK5i2aI7nZnRZ66qu3v1bBF35Kgv/view?usp=drive_link" target="_blank">Subpoena for Anthony Baker</a></strong> to appear at trial on May 28, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1pWgRu-ynD4WRa39Tiogsj_vDhfyN8xIF/view?usp=drive_link" target="_blank">Subpoena for Connie Winters</a></strong> to appear at trial on May 28, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1AU8IG2Vx9IToq1Bm5MWnlEFb0Gfu7HDM/view?usp=drive_link" target="_blank">Subpoena for Darren Schneider</a></strong> to appear at trial on May 28, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1HN_ZwviE4Az2aIB0KxoqHHhFMjyr7euW/view?usp=drive_link" target="_blank">Subpoena for Margaret Brunner</a></strong> to appear at trial on May 28, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1D6vqxB5WLd9rqUO1-ZPFg6Rcavm_kd9I/view?usp=drive_link" target="_blank">Subpoena for Terri Sims</a></strong> to appear at trial on May 28, 2026.
-          </p>
-        </div><!-- end of May 2026 -->
- 
-        <!-- June 2026 -->
-        <div class="container section-title">
-        <h2>June 2026</h2>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1YVMTu6Gfv3r5o7h_7eN2BxHKVP1FJRo1/view?usp=drive_link" target="_blank">Subpoena for Special Agent Michael Lepper</a></strong> to appear at trial on June 3, 2026.
-          </p>
-          <p>
-            Barada files <strong><a class="link" href="https://drive.google.com/file/d/1PzmMLZxsTE4pnXsp6IU_4z5FFyc8Wc3j/view?usp=drive_link" target="_blank">Second Amended Defendant's Witness and Exhibit Lists</a></strong> on June 5, 2026.
-          </p>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1McD7hqm2UxPtCkcgsvJEX4iyE3FTUS2o/view?usp=drive_link" target="_blank">Motion in Limine to Exclude Evidence of Defendants Resignation from Department Of Child Services</a></strong> on June 9, 2026.
-          </p>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1b362CpudqlegvDyrPNNdxgPa9urCh8_z/view?usp=drive_link" target="_blank">Motion in Limine to Exclude or Substantially Limit Forensic Document Examination Testimony</a></strong> on June 9, 2026.
-          </p>
-          <p>
-            Barada files a <strong><a class="link" href="https://drive.google.com/file/d/1HjNgIJOgs6jJKW11OwWJjHiY-T-D1Gf7/view?usp=drive_link" target="_blank">Motion to Set Attorney’s Only Telephonic Conference with Judge</a></strong> on June 10, 2026.
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1fiY9dRCY2S2Klvkzuj1JdnvCGJZgV41W/view?usp=drive_link" target="_blank">State's Motion in Limine</a></strong> on June 11, 2026.
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1xbKF3RZ6pjfQXcUomWsxT0gX9QOw58Ov/view?usp=drive_link" target="_blank">State's 404(b) Evidence Disclosure</a></strong> on June 11, 2026.
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1HfSlxaRUDyigyWrKYoV8A3GJS8rWOXOW/view?usp=drive_link" target="_blank">Motion for Pre-Trial Ruling on Admissibility of Evidence</a></strong> on June 12, 2026.
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1biLB4UCyH7flLzzpwLyR-HCD4YkFw8T6/view?usp=drive_link" target="_blank">State's Sixth Supplemental Response to Reciprocal Order of Discovery</a></strong> on June 12, 2026.
-          </p>
-          <p>
-            Schuler Schuler issues a <strong><a class="link" href="https://drive.google.com/file/d/19Ty7qCxBzfk0NMguvLUAbStTEmFaeKDh/view?usp=drive_link" target="_blank">Subpoena for Susan Anderson</a></strong> on June 12, 2026.
-          </p>
-          <p>
-            <strong>Service Returned Served (E-Filing)</strong> on June 15, 2026.
-            <ul class="docket-entry">
-              <li>Amended Subpoena #7 Return Redacted.</li>
-            </ul>
-          </p>
-           <p>
-            <strong>Service Returned Served (E-Filing)</strong> on June 15, 2026.
-            <ul class="docket-entry">
-              <li>Amended Subpoena #7 Return NPA.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1qYCTmdnV-1qzUcrV1sRsIHXqLTMWl_PL/view?usp=drive_link" target="_blank">Order Setting Hearing for Motion in Limine</a></strong> on June 15, 2026.
-            <ul class="docket-entry">
-              <li>Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Motion in Limine herein. The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and sets the same for the following: June 30, 2026 at 1:45 PM.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1EZhfPRhusXkYouwPNi7v_KDut0jS6-Bj/view?usp=drive_link" target="_blank">Order Setting Hearing fon State's Motion for Pre-Trial Ruling on Admissibility of Evidence</a></strong> on June 15, 2026.
-            <ul class="docket-entry">
-              <li>Comes now the State of Indiana, 80th Judicial Circuit, by Deputy Prosecuting Attorney Rae Schuler, and files herein its Motion for Pre-Trial Ruling on Admissibility of Evidence. And the Court having reviewed said Motion, finds that said request shall be granted. IT IS HEREBY ORDERED that a pre-trial hearing in this matter is scheduled for: June 30, 2026 at 1:45 PM.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1pnFDJuVzD7VtBeCOj0ijyAuDZ1sffdRR/view?usp=drive_linkg" target="_blank">Order Setting Hearing</a></strong> on June 15, 2026.
-            <ul class="docket-entry">
-              <li> Comes now the Defendant, Todd Click by counsel, Paul W. Barada, Jr., and files his Motion to Set Attorney's Only Telephonic Conference with Judge herein. Respectfully, Counsel offers scheduling options for this hearing to be set prior to the Defendant's Final Pre-Trial Conference currently set on June 22, 2026:<br><br>
-              Monday, June 15, 2026: 8:30 a.m., 9:00 a.m., 9:30 a.m. availability<br>
-              Tuesday, June 16, 2026: 9:30 a.m., 10:00 a.m., 1:00 p.m.-4:00 p.m. availability<br>
-              Thursday, June 18, 2026: 8:30 a.m., 11:00 a.m., 11:30 a.m., 3:00 p.m., 3:30 p.m.<br>
-              Friday, June 19, 2026: All day availability<br><br>
-              The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and sets the same for the following: Attorney’s Only Telephonic Conference with Judge: June 18, 2026 at 11:00 AM.
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/19Ee5BPu0mkmuVK2d4xb6wMhpOSk3IgzS/view?usp=drive_link" target="_blank">Service Returned Served</a></strong> on June 17, 2026.
-            <ul class="docket-entry">
-              <li>Subpoena Duces Tecum served to law enforcement by Ripley County officer J Davidson 2062 on 06/17/2026 AT 1600.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Hearing</strong> held on June 18, 2026.
-            <ul class="docket-entry">
-              <li>Session: 06/18/2026 1:00 PM, Judicial Officer: Sharp, Jeffrey. Comment: telephonic.</li>
-            </ul>
-          </p>
-           <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1Ui3LRTWR3-zUViqmMkTyZdzq2n7bNu5U/view?usp=drive_link" target="_blank">State’s Seventh Supplemental Response to Reciprocal Order of Discovery</a></strong> on June 18, 2026.
-          </p>
-          <p>
-            Barada files the <strong><a class="link" href="https://drive.google.com/file/d/1lH2VZA5EnOSf8fSfuWUhZkchy4LD6iuY/view?usp=drive_link" target="_blank">Defendant’s Objection to State’s Motion for Pre-Trial Ruling on Admissibility of Evidence</a></strong> on June 19, 2026.
-          </p>
-          <p>
-            CANCELLED. <strong>Final PreTrial Hearing/Conference</strong> scheduled for June 22, 2026.
-            <ul class="docket-entry">
-              <li>Session: 06/22/2026 1:00 PM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1DM6CeZ1M4Kwokle088-FQ-vDPj67A9ak/view?usp=drive_link" target="_blank">State's Eighth Supplemental Response to Reciprocal Order of Discovery</a></strong> on June 22, 2026.
-          </p>
-          <p>
-            Schuler files the <strong><a class="link" href="https://drive.google.com/file/d/1Kqurt5LFh182_oL697ySr7X5B9gqC250/view?usp=drive_link" target="_blank">State's Ninth Supplemental Response to Reciprocal Order of Discovery</a></strong> on June 22, 2026.
-          </p>
-          <p>
-            Schuler files a <strong><a class="link" href="https://drive.google.com/file/d/1GOY-jXW3Z3BnGXdGHhfXx--JgPpyKzxv/view?usp=drive_link" target="_blank">Motion for Continuance</a></strong> on June 29, 2026.
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1y5j6hVgOUjBqVHoqAYKq9ptx8FMpRc_u/view?usp=drive_link" target="_blank">Order Resetting Hearings</a></strong> on June 29, 2026.
-            <ul class="docket-entry">
-              <li>The Court having reviewed the same and being duly advised in the premises, now hereby grants the request made herein, and resets the same for the following: Hearing on Motion in Limine will be set closer to trial date. Hearing on State’s Motion for Pre-Trial Ruling on Admissibility of Evidence: September 28, 2026 at 1:00 PM. Jury Trial: October 20, 2026 at 9:00 AM.</li>
-            </ul>
-          </p>
-          <p>
-            Schuler issues a <strong><a class="link" href="https://drive.google.com/file/d/1ZviLtYsAqJ0xnSD4gTQQFCJ_LOtgygtO/view?usp=drive_link" target="_blank">Subpoena for Susan Anderson</a></strong> on June 30, 2026 to appear at trial on October 20, 2026
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/137BjGt31O3B3mWry70jTcfUbroZHXjqN/view?usp=drive_link" target="_blank">Subpoena for Anthony Baker</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1QR2KRq6RRJ7v-4n1ixdBUinBhzcO19rP/view?usp=drive_link" target="_blank">Subpoena for Connie Winters</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1vzqYA0jobwI0QF_C4fmEOGqvgpDBMQTu/view?usp=drive_link" target="_blank">Subpoena for Darren Schneider</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1a3c0CB1qSoU66x1_M2sZ5CnLumoMnn5y/view?usp=drive_link" target="_blank">Subpoena for Margaret Brunner</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/1RyiMCpOpGmMtXYZOHAI2FAvJuTQ2_Dgm/view?usp=drive_link" target="_blank">Subpoena for Terri Sims</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            Schular issues a <strong><a class="link" href="https://drive.google.com/file/d/19Z7t3ICxz9iK2NknACpff2AQTy3ncj_r/view?usp=drive_link" target="_blank">Special Agent Michael Lepper</a></strong> on June 30, 2026 to appear at trial on October 20, 2026.
-          </p>
-          <p>
-            CANCELLED. <strong>Hearing</strong> scheduled for June 30, 2026.
-            <ul class="docket-entry">
-              <li>Session: 06/30/2026 1:45 PM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-          <p>
-            CANCELLED. <strong>Hearing on Motion in Limine</strong> scheduled for June 30, 2026.
-            <ul class="docket-entry">
-              <li>Session: 06/30/2026 1:45 PM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of June 2026 -->
-
-        <!-- July 2026 -->
-        <div class="container section-title">
-        <h2>July 2026</h2>
-          <p>
-            CANCELLED. <strong>Jury Trial</strong> scheduled for July 21, 2026.
-            <ul class="docket-entry">
-              <li>Session: 07/21/2026 9:00 AM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-        </div><!-- end of July 2026 -->
-
-        <!-- August 2026 -->
-        <div class="container section-title">
-        <h2>August 2026</h2>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/11mfVywqEinWRTH_FFN_WGts9qXPnVTki/view?usp=drive_link" target="_blank">Order Setting Hearing on Motion in Limine</a></strong> on August 14, 2026.
-              <ul class="docket-entry">
-                <li>Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his Motion in Limine herein. The Court having reviewed the same and being duly advised in the premises, now hereby  grants the request made herein, and sets the same for the following:<br>
-                HEARING on September 11, 2026, starting at 9:00 a.m. and lasting a full day. ALL OF WHICH IS ORDERED THIS August 14, 2026.</li>
-              </ul>
-          </p>
-          <p>
-            <strong>Hearing Scheduling Activity</strong> on August 14, 2026.
-              <ul class="docket-entry">
-                <li>Hearing on Motion in Limine scheduled for 09/11/2026 at 09:00 AM.</li>
-              </ul>
-          </p>
-        </div><!-- end of August 2026 -->
-
-        <!-- September 2026 -->
-        <div class="container section-title">
-        <h2>September 2026</h2>
-          <p>
-            <strong>Hearing on Motion in Limine</strong> scheduled for September 11, 2026.
-              <ul class="docket-entry">
-                <li>Session: 09/11/2026 at 09:00 AM. Judicial Officer: Sharp, Jeffrey.</li>
-              </ul>
-          </p>
-          <p>
-            Barada files <strong><a class="link" href="https://drive.google.com/file/d/19o55M8NGuHX7-pe80gBVaHygt9L65_lo/view?usp=drive_link" target="_blank">Defendant's Third Motion in Limine To Exclude Evidence of Defendent's Poor Job Performance</a></strong> on September 21, 2026.
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1ehwGJAI8tUMIql5R9o8acv9-Qn_AeR4U/view?usp=drive_link" target="_blank">Order Setting Hearing</a></strong> on September 23, 2026.
-            <ul class="docket-entry">
-              <li>Comes now the Defendant, Todd Click, by counsel, Paul W. Barada, Jr., and files his  Defendant’s Third Motion in Limine to Exclude Evidence of Defendant’s Poor Job Performance herein. The Court having reviewed the same and being duly advised in the premises, now hereby  grants the request made herein, and sets the same for the following: HEARING: Tuesday, October 6, 2026, at 9:00 a.m. ALL OF WHICH IS ORDERED THIS September 23, 2026.</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Final Pretrial Hearing/Conference</strong> scheduled for September 28, 2026.
-              <ul class="docket-entry">
-                <li>Session: 09/28/2026 9:00 AM, Judicial Officer: Sharp, Jeffrey.</li>
-              </ul>
-          </p>
-          <p>
-            Judge Sharp issues a <strong><a class="link" href="https://drive.google.com/file/d/1q4Vs0qIY9iWkEJ__YJhbPoTjST6yzjsc/view?usp=drive_link" target="_blank">Pretrial Order</a></strong> on September 28, 2026.
-              <ul class="docket-entry">
-                <li>Hearing was held at which time the State of Indiana Appeared by [blank] and the Defendant Todd Click appear, in person or by counsel, Paul Barada. Deadline to have written plea agreement filed is October 6, 2026 at 9:00 A.M. Jury Trial date is confirmed for October 20, 2026 AT 9:00 A.M. Hearing on all pending pretrial motions remains set for October 6, 2026 at 9:00 A.M. Dated at Versailles, Indiana this 28th day of September 2026.</li>
-              </ul>
-          </p>
-          <p>
-            Barada issues a <strong><a class="link" href="https://drive.google.com/file/d/1ww_jHpsLNvw_vOHD5F_HiJ_2vOSG3lGo/view?usp=drive_link" target="_blank">Subpoena for Corporal Conrad Reichert</a></strong> on September 30, 2026.
-          </p>
-        </div><!-- end of September 2026 -->
-
-        <!-- October 2026 -->
-        <div class="container section-title">
-        <h2>October 2026</h2>
-          <p>
-            <strong>Hearing on Motion in Limine</strong> scheduled for October 6, 2026.
-            <ul class="docket-entry">
-              <li>Session: 10/06/2026 9:00 AM, Judicial Officer: Sharp, Jeffrey.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1r2HLo8W6N2fibxAYEEyAiRdohYJcCFYX/view?usp=drive_link" target="_blank">Judgement of Conviction andSentencing Order</a></strong> on October 6, 2026.
-          </p>
-          <p>
-            Judge Sharp issues an <strong><a class="link" href="https://drive.google.com/file/d/1t8MgkQVX82OwMJWrdez3yvPZy-rd0sXI/view?usp=drive_link" target="_blank">Abstract of Judgement</a></strong> on October 6, 2026.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1r8_uKBV5sZ-Sf_ifxRkGtzV_cTOOakiS/view?usp=drive_link" target="_blank">Join Motion in Tender of Conditional Plea Agreement</a></strong> filed on October 6, 2026.
-          </p>
-          <p>
-            Cancelled.<strong>Jury Trial</strong> scheduled for October 20, 2026.
-            <ul class="docket-entry">
-              <li>Session: 10/20/2026 9:00 AM, Judicial Officer: Sharp, Jeffrey. REASON: Plea Agreement.</li>
-            </ul>
-          </p>
-        </div><!-- end of October 2026 -->
-
-      </section><!-- End of Todd Click Docket Section -->
-
-    </div> <!-- end of click-docket wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
