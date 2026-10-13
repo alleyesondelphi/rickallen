@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Case Against Rick</title>
+  <meta name="description" content="Court documents, transcripts, exhibits, and ongoing analysis for the case against Richard Allen from arrest through the direct appeal.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen">
+  <meta property="og:title" content="The Case Against Rick">
+  <meta property="og:description" content="Court documents, transcripts, exhibits, and ongoing analysis for the case against Richard Allen from arrest through the direct appeal.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/home.png">
+  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Case Against Rick">
+  <meta name="twitter:description" content="Court documents, transcripts, exhibits, and ongoing analysis for the case against Richard Allen from arrest through the direct appeal.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/home.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    :root {
+      --ink:    #0e0e0f;
+      --paper:  #f2ede6;
+      --aged:   #e0d8cc;
+      --red:    #9b1c1c;
+      --gold:   #b8860b;
+      --steel:  #3a4a5c;
+      --muted:  #6b6560;
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { 
+      color: inherit; 
+      text-decoration: none; 
+    }
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0;
+      border-top: 4px solid var(--red);
+    }
+    .masthead-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 22px;
+    }
+    .masthead-rule {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .masthead h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--paper);
+      margin-bottom: 10px;
+    }
+    .masthead h1 em {
+      font-weight: 700;
+      color: rgba(242,237,230,0.6);
+    }
+    .masthead-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-top: 8px;
+      margin-bottom: 6px;
+    }
+    .masthead-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #888;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 20px;
+    }
+    .masthead-meta a { 
+      color: #aaa; 
+    }
+    .masthead-meta a:hover { 
+      color: var(--paper); 
+    }
+    /* ── NAV ── */
+    .site-nav {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .site-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .site-nav-inner::-webkit-scrollbar { 
+      display: none; 
+    }
+    .site-nav a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaa;
+      padding: 10px 12px;
+      display: block;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .site-nav a:hover { 
+      color: var(--paper); 
+    }
+    .site-nav a.active { 
+      color: var(--paper); 
+    }
+
+    /* ── LEDE ── */
+    .lede {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+    }
+    .lede-text {
+      max-width: 740px;
+      font-size: clamp(13.5px, 1.8vw, 15px);
+      line-height: 1.65;
+      color: var(--ink);
+      border-left: 3px solid var(--steel);
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+    .lede-text p { 
+      margin-bottom: 10px; 
+    }
+    .lede-text p:last-child { 
+      margin-bottom: 0; 
+    }
+    .lede-text a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .lede-text a:hover {
+      color: var(--red);
+    }
+    .landing-links {
+      color: var(--red);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .landing-links:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    /* ── STATUS BAR ── */
+    .status-bar {
+      max-width: 1100px;
+      margin: 20px auto 0;
+      padding: 0 24px;
+    }
+    .status-pill {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 4px 10px;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+    .status-pill.red { 
+      background: var(--red); 
+    }
+    .status-pill-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    /* ── CONTENT ── */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+    }
+    /* ── SECTION ── */
+    .section { 
+      margin-bottom: 44px; 
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .section-head h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(9px, 1.4vw, 10px);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .section-head .section-desc {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+    /* ── FEATURED CARDS (Analysis) ── */
+    .card-grid-featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--aged);
+      border: 1px solid var(--aged);
+    }
+    .card-featured {
+      background: #faf9f7;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.15s;
+      position: relative;
+    }
+    .card-featured:hover { background: #fff; }
+    .card-featured .card-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card-featured h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(15px, 2vw, 17px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .card-featured h3 a::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+    .card-featured h3 a { 
+      color: inherit; 
+    }
+    .card-featured p {
+      font-size: clamp(11.5px, 1.6vw, 13px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .card-featured .card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid rgba(155,28,28,0.3);
+      padding: 2px 6px;
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    /* ── COMPACT LIST GRID (Record + Tools) ── */
+    .card-grid-compact {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--aged);
+      border: 1px solid var(--aged);
+    }
+    .card-compact {
+      background: #faf9f7;
+      padding: 13px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+      transition: background 0.15s;
+    }
+    .card-compact:hover { 
+      background: #fff; 
+    }
+    .card-compact h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(10.5px, 1.5vw, 12px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .card-compact h3 a::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+    .card-compact h3 a { 
+      color: inherit; 
+    }
+    .card-compact p {
+      font-size: clamp(10.5px, 1.4vw, 11.5px);
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    /* ── TLDR ── */
+    .tldr {
+      border: 1px solid var(--aged);
+      border-left: 3px solid var(--gold);
+      background: #faf9f7;
+      padding: 20px 24px;
+      margin-bottom: 44px;
+    }
+    .tldr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+    .tldr p {
+      font-size: clamp(12.5px, 1.7vw, 14px);
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .tldr p:last-child { 
+      margin-bottom: 0; 
+    }
+    .tldr a {
+      color: var(--steel);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .tldr a:hover { 
+      color: var(--red); 
+    }
+    /* ── VIDEO ── */
+    .vid-block {
+      max-width: 640px;
+      margin: 24px auto 32px;
+    }
+    .vid-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .vid-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--red);
+      padding: 2px 6px;
+      flex-shrink: 0;
+    }
+    .vid-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .vid-wrap {
+      position: relative;
+      padding-bottom: min(56.25%, 360px);
+      height: 0;
+      overflow: hidden;
+      border: 1px solid var(--aged);
+    }
+    .vid-wrap iframe {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      border: none;
+    }
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink);
+      color: #666;
+      padding: 20px 24px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .site-footer a { 
+      color: #888; 
+    }
+    .site-footer a:hover { 
+      color: var(--paper); 
+    }
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .masthead-inner, .lede, .status-bar, .content { 
+        padding-left: 16px; 
+        padding-right: 16px; 
+      }
+      .card-grid-featured { 
+        grid-template-columns: 1fr; 
+      }
+      .card-grid-compact  { 
+        grid-template-columns: 1fr 1fr; 
+      }
+    }
+    @media (max-width: 400px) {
+      .card-grid-compact { 
+        grid-template-columns: 1fr; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-rule">08C01-2210-MR-1 &nbsp;|&nbsp; 25A-CR-591</div>
+    <h1>The Case Against Rick</h1>
+    <div class="masthead-subtitle">Court documents, transcripts, exhibits &amp; analysis</div>
+    <div class="masthead-meta">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+      <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index" class="active">Home</a>
+      <a href="trial-docket">Trial Docket</a>
+      <a href="appellate-docket">Appellate Docket</a>
+      <a href="exhibits">Exhibits</a>
+      <a href="transcripts">Transcripts</a>
+      <a href="timeline">Timeline</a>
+      <a href="the-jury">The Jury</a>
+      <a href="the-appeal">The Appeal</a>
+      <a href="search/index">Search</a>
+    </div>
+  </nav>
+</header>
+
+<div class="content">
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-label">Case Summary</div>
+    <p>Rick Allen, a long-time resident of Delphi, Indiana, is serving a 130-year sentence for a crime the prosecution was unable to find any physical or digital evidence connecting him to. Despite growing concerns about investigative errors and prosecutorial overreach, the trial court withheld a substantial number of <a class="landing-links" href="exhibits">exhibits</a> from the public, restricting access to a select group of journalists allotted 15 minutes per day.</p>
+    <p>Mr. Allen is now on direct appeal. The <a class="landing-links" href="https://drive.google.com/file/d/1KX0jnjX0Lg1ZIWQJK3NbYsqK14AFnIyi/view?usp=drive_link" target="_blank">Appellant's Brief</a> was filed Dec. 17, 2025; the <a class="landing-links" href="https://drive.google.com/file/d/1RRg9FIZDnHKIOx2s0j6fYlcEZZpLCnXU/view?usp=drive_link" target="_blank">Appellee Brief</a> on Mar. 25, 2026; the <a class="landing-links" href="https://drive.google.com/file/d/1jpxX1TCcBsp0YBZXhdfhg9Hf0nnSoPDs/view?usp=drive_link" target="_blank">Reply Brief</a> on Apr. 27, 2026. Oral arguments were heard Sept. 21, 2026 before a three-judge panel: Nancy H. Vaidik, Elaine B. Brown, and Robert R. Altice, Jr. See <a class="landing-links" href="the-panel">The Panel</a> for judge profiles and <a class="landing-links" href="the-appeal">The Appeal</a> for issue-by-issue analysis.</p>
+  </div>
+
+  <div class="vid-block">
+    <div class="vid-header">
+      <span class="vid-label">Video</span>
+      <span class="vid-title">All Eyes and DB: The Case Against Rick</span>
+    </div>
+    <div class="vid-wrap">
+      <iframe src="https://drive.google.com/file/d/1gF5vaO9wOrwXoP7ZOdEkIogTtG3GGz22/preview" allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <!-- ANALYSIS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Analysis</h2>
+      <span class="section-desc"></span>
+    </div>
+    <div class="card-grid-featured">
+
+      <div class="card-featured">
+        <div class="card-label">Appeal</div>
+        <h3><a href="the-appeal">The Appeal</a></h3>
+        <p>Issue-by-issue comparison of Richard Allen's appellate brief against the State's reply. Tracks each constitutional claim, the record citations, and the arguments on both sides.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Appellate Panel</div>
+        <h3><a href="the-panel">The Panel</a></h3>
+        <p>Profiles, prior criminal opinion records, and panel dynamics for the three COA judges assigned to 25A-CR-591: Vaidik, Brown, and Altice.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Jury</div>
+        <h3><a href="the-jury">The Jury</a></h3>
+        <p>Voir dire profiles, seating chart, credibility standards, and post-trial public statements for the twelve jurors who convicted Richard Allen.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Juror #02 — Mia McHaffey</div>
+        <h3><a href="mia-mchaffey">Juror #02 Analysis</a></h3>
+        <p>Claim-by-claim analysis of Mia McHaffey's public Facebook thread, cross-referenced against the court record. Includes inconsistency index and interview comparison.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Juror #02 — FB Thread</div>
+        <h3><a href="juror-thread">Juror Facebook Thread</a></h3>
+        <p>Annotated capture of Mia McHaffey's public Facebook thread about the case, with record citations inline.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Juror #05 — Lucy Lou</div>
+        <h3><a href="lucy-lou">Juror #05 Interview</a></h3>
+        <p>64-claim fact-check of Lucy Lou's Apr. 21, 2026 interview on True Crime Tak With Frankmeister, each claim checked against the trial record and voir dire transcript.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Forensics</div>
+        <h3><a href="magic-bullet">Magic Bullet</a></h3>
+        <p>All four firearms examinations conducted during the Delphi investigation, with exhibits. Documents the chain of custody and conflicting findings on the unspent cartridge.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Forensics</div>
+        <h3><a href="franks-memo">Franks Memo</a></h3>
+        <p>Franks hearings I through IV and background on Greg Ferency's role in the investigation. Tracks what investigators knew and when.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Confinement</div>
+        <h3><a href="prison-timeline">Prison Timeline</a></h3>
+        <p>Comprehensive summary of Richard Allen's confinement conditions at Westville, including all known Haldol injections and the solitary confinement period challenged on appeal.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Forensics — WIP</div>
+        <h3><a href="phone-data">Phone Data</a></h3>
+        <p>Forensic analysis of Libby German's LG phone, including the KnowledgeC.db data, Snapchat metadata, and what the extraction record shows about Feb. 13, 2017.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Background</div>
+        <h3><a href="safekeeping-order">Arrest &amp; Safekeeping Saga</a></h3>
+        <p>Detailed timeline of Richard Allen's arrest, transfer to Westville, and the Safekeeping Order litigation.</p>
+      </div>
+
+      <div class="card-featured">
+        <div class="card-label">Background</div>
+        <h3><a href="investigation">Investigation</a></h3>
+        <p>Reconstructed reports chronicling the Delphi investigation from Feb. 2017 through arrest in Oct. 2022.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CASE RECORD -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Case Record</h2>
+      <span class="section-desc"></span>
+    </div>
+    <div class="card-grid-compact">
+
+      <div class="card-compact">
+        <h3><a href="appellate-docket">Appellate Docket</a></h3>
+        <p>Chronological filing summary for 25A-CR-591 linking to each court document.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="trial-docket">Trial Docket</a></h3>
+        <p>Full trial court docket linking to the case filings.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="transcripts">Transcripts</a></h3>
+        <p>Court transcripts by hearing, trial day, and individual witness.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="exhibits">Exhibits</a></h3>
+        <p>All currently available pretrial and trial exhibits.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="state-exhibits">State Exhibits</a></h3>
+        <p>State exhibit list with availability status.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="defense-exhibits">Defense Exhibits</a></h3>
+        <p>Defense exhibit list with availability status.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="audio-exhibits">Audio Exhibits</a></h3>
+        <p>8 recorded calls between Richard, Kathy, Janis, and/or Marvin Allen.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="video-exhibits">Video Exhibits</a></h3>
+        <p>Drone footage, the Bridge Guy video, and interrogation recordings.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="https://drive.google.com/drive/folders/1o4okg405C88GhkOrD-TXZ25XlC2Qb3gk?usp=drive_link" target="_blank">Appellant Exhibit Volumes</a></h3>
+        <p>Appellant's appendix exhibit volumes 1 through 13 (Google Drive).</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="related-dockets">Related Dockets</a></h3>
+        <p>Dockets for James Luttrull, Shane Meehan, and Todd Click.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOOLS & REFERENCE -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Tools &amp; Reference</h2>
+      <span class="section-desc"></span>
+    </div>
+    <div class="card-grid-compact">
+
+      <div class="card-compact">
+        <h3><a href="search/index">Court File Search</a></h3>
+        <p>Full-text search across hundreds of filings, motions, orders, transcripts, and exhibits.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="timeline">First 48 Hours Timeline</a></h3>
+        <p>Witness timelines and forensic data for Feb. 13, 2017.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="timeline/witnesses">Timeline Animation</a></h3>
+        <p>Animated map of key witness movements on Feb. 13, 2017. Work in progress.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="interview-hub">Interview Hub</a></h3>
+        <p>Publicly accessible index of post-trial juror and witness interviews.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="expenses">Defense Expenses</a></h3>
+        <p>Breakdown of expenses from Rick's trial counsel and the fundraiser.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="delphi-playlists">Delphi Playlists</a></h3>
+        <p>Trial day livestreams: Andrea Burkhart, Lawyer Lee, Defense Diaries, and others.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="delphi-librarians">Delphi Librarians</a></h3>
+        <p>Local librarians and Cranks: AI testimony read-throughs, required reading, and shenanigans.</p>
+      </div>
+
+      <div class="card-compact">
+        <h3><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></h3>
+        <p>All source documents for this case in one place.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /.content -->
+
+<footer class="site-footer">
+  <span>Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1 &nbsp;|&nbsp; All Eyes on Delphi &nbsp;|&nbsp;</span>
+  <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+</footer>
+
+</body>
+</html>
