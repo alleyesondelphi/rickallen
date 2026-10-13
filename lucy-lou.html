@@ -56,6 +56,7 @@ body {
   font-size: clamp(13px, 2vw, 15px);
   line-height: 1.65;
   min-width: 300px;
+  max-width: 1900px;
 }
 a { 
   color: var(--steel); 
@@ -119,10 +120,12 @@ a:hover {
   color: #f17070; 
 }
 /* LAYOUT */
-.container {
+.wrapper {
   max-width: 860px;
   margin: 0 auto;
-  padding: 0 24px 64px;
+}
+.container {
+  padding: 0 24px;
 }
 /* SECTION HEADERS */
 .section-label {
@@ -137,43 +140,52 @@ a:hover {
 }
 /* INDEX */
 .claim-index {
-  background: rgba(224,216,204,0.25);
+  background: #faf9f7;
   border: 1px solid var(--aged);
-  padding: 14px 18px;
+  padding: 0;
   margin: 20px 0 0;
+  overflow: hidden;
 }
 .claim-index-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(8.5px,1.6vw,9.5px);
-  letter-spacing: 0.2em;
+  font-size: clamp(8px,1.4vw,9px);
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 10px;
+  background: rgba(224,216,204,0.35);
+  border-bottom: 1px solid var(--aged);
+  padding: 7px 18px;
 }
 .claim-index-list {
   list-style: none;
   columns: 2;
-  column-gap: 24px;
+  column-gap: 0;
+  padding: 14px 18px;
+  margin: 0;
 }
-@media (max-width: 540px) { 
-  .claim-index-list { 
-    columns: 1; 
-  } 
+@media (max-width: 540px) {
+  .claim-index-list {
+    columns: 1;
+  }
 }
 .claim-index-list li {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(8.5px,1.6vw,10px);
+  font-size: clamp(9px,1.5vw,10.5px);
   color: var(--muted);
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   break-inside: avoid;
 }
 .claim-index-list li a {
   color: var(--steel);
   text-decoration: none;
 }
-.claim-index-list li a:hover { 
-  color: var(--red); 
-  text-decoration: underline; 
+.claim-index-list li a:hover {
+  color: var(--red);
+  text-decoration: underline;
+}
+.claim-range {
+  color: var(--muted);
+  opacity: 0.7;
 }
 /* CLAIM BLOCK */
 .claim-block {
@@ -369,19 +381,19 @@ a:hover {
 
 /* INTRO NOTE */
 .intro-note {
-  background: rgba(224,216,204,0.3);
+  background: #faf9f7;
   border: 1px solid var(--aged);
-  border-left: 4px solid var(--gold);
+  border-left: 3px solid var(--steel);
   padding: 16px 20px;
   margin: 20px 0 0;
   font-size: clamp(12.5px,1.8vw,14px);
-  line-height: 1.6;
+  line-height: 1.55;
 }
-.intro-note p { 
-  margin-bottom: 8px; 
+.intro-note p {
+  margin-bottom: 10px;
 }
-.intro-note p:last-child { 
-  margin-bottom: 0; 
+.intro-note p:last-child {
+  margin-bottom: 0;
 }
 p { 
   margin-bottom: 10px; 
@@ -392,8 +404,8 @@ p:last-child {
 </style>
 </head>
 <body>
-
-<div class="masthead">
+<div class="wrapper">
+  <div class="masthead">
   <div class="masthead-rule">Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1</div>
   <h1>Juror #05 Interview <em>Claim vs. Record</em></h1>
   <div class="masthead-sub">
@@ -415,17 +427,17 @@ p:last-child {
   <div class="claim-index">
     <div class="claim-index-label">Sections</div>
     <ul class="claim-index-list">
-      <li><a href="#jury-selection">Jury Selection &amp; Process</a> &mdash; #1–6</li>
-      <li><a href="#confessions">Confessions &amp; Mental Health</a> &mdash; #7–21</li>
-      <li><a href="#physical">Physical &amp; Forensic Evidence</a> &mdash; #22–35</li>
-      <li><a href="#firearms">Unspent Cartridge &amp; Firearms</a> &mdash; #36–38</li>
-      <li><a href="#witnesses">Witness Testimony</a> &mdash; #39–41</li>
-      <li><a href="#demeanor">Allen's Behavior at Trial</a> &mdash; #42–49</li>
-      <li><a href="#crime-scene">Crime Scene &amp; Theory</a> &mdash; #50–52</li>
-      <li><a href="#sequestration">Jury Sequestration</a> &mdash; #53–56</li>
-      <li><a href="#deliberations">Deliberations</a> &mdash; #57–60</li>
-      <li><a href="#defense">Defense Counsel</a> &mdash; #61</li>
-      <li><a href="#post-trial">Post-Trial Knowledge</a> &mdash; #62–64</li>
+      <li><a href="#jury-selection">Jury Selection &amp; Process</a> <span class="claim-range">(#1–6)</span></li>
+      <li><a href="#confessions">Confessions &amp; Mental Health</a> <span class="claim-range">(#7–21)</span></li>
+      <li><a href="#physical">Physical &amp; Forensic Evidence</a> <span class="claim-range">(#22–35)</span></li>
+      <li><a href="#firearms">Unspent Cartridge &amp; Firearms</a> <span class="claim-range">(#36–38)</span></li>
+      <li><a href="#witnesses">Witness Testimony</a> <span class="claim-range">(#39–41)</span></li>
+      <li><a href="#demeanor">Allen's Behavior at Trial</a> <span class="claim-range">(#42–49)</span></li>
+      <li><a href="#crime-scene">Crime Scene &amp; Theory</a> <span class="claim-range">(#50–52)</span></li>
+      <li><a href="#sequestration">Jury Sequestration</a> <span class="claim-range">(#53–56)</span></li>
+      <li><a href="#deliberations">Deliberations</a> <span class="claim-range">(#57–60)</span></li>
+      <li><a href="#defense">Defense Counsel</a> <span class="claim-range">(#61)</span></li>
+      <li><a href="#post-trial">Post-Trial Knowledge</a> <span class="claim-range">(#62–64)</span></li>
     </ul>
   </div>
 
@@ -1570,5 +1582,6 @@ p:last-child {
   </div>
 
 </div><!-- /container -->
+</div>
 </body>
 </html>

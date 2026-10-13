@@ -43,8 +43,8 @@
   --muted:       #6b6560;
   --gap-red:     #c0392b;
   --gap-bg:      #fdf0ee;
-  --warn:        #7a4a00;
-  --warn-bg:     #fdf5e6;
+  --warn:        #3a4a5c;
+  --warn-bg:     #eef1f5;
   --allen-green: #1a3a2a;
   --allen-bg:    #eef4f0;
   --purple:      #5b3256;
@@ -61,6 +61,8 @@ body {
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: clamp(13px, 2vw, 15px);
   line-height: 1.65;
+  min-width: 300px;
+  max-width: 1900px;
 }
 /* ── LINKS ── */
 a {
@@ -134,11 +136,33 @@ a:hover {
   color: #f17070;
   text-decoration-color: rgba(255,255,255,0.6);
 }
+.seat-link span,
+.seat-link {
+  color: var(--steel);
+  white-space: nowrap;
+}
+.seat-link {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.seat-link:hover {
+  text-decoration: underline;
+  color: var(--muted);
+  text-decoration-color: rgba(255,255,255,0.9);
+  text-underline-offset: 5px;
+}
 /* ── CONTAINER ── */
-.container {
-  max-width: 1100px;
+.wrapper {
+  max-width: 860px;
   margin: 0 auto;
-  padding: 0 24px 64px;
+}
+.container {
+  padding: 0 24px;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
 }
 /* ── SECTION LABEL ── */
 .section-label {
@@ -213,34 +237,40 @@ a:hover {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.tag-match   { 
+.tag-match { 
   color: var(--allen-green); 
   border-color: var(--allen-green); 
-  background: var(--allen-bg); 
+  background: var(--allen-bg);
+  margin-top: 0.7%;
+  margin-left: 0.2%;
 }
 .tag-new     { 
   color: var(--warn);        
   border-color: var(--gold);        
   background: var(--warn-bg);  
 }
-.tag-conflict{ 
+.tag-conflict { 
   color: var(--gap-red);     
   border-color: var(--gap-red);     
   background: var(--gap-bg);  
 }
-.tag-appeal  { 
+.tag-appeal { 
   color: var(--steel);       
   border-color: var(--steel);                                   
 }
 .tag-removed { 
   color: var(--gap-red);     
   border-color: var(--gap-red);     
-  background: var(--gap-bg);  
+  background: var(--gap-bg); 
+  margin-top: -1%;
+  margin-left: 0.2%;
 }
 .tag-foreman { 
   color: var(--purple);      
   border-color: var(--purple);      
   background: var(--purple-bg);
+  margin-top: 0.7%;
+  margin-left: 0.2%;
 }
 /* ── TWO-COLUMN GRID (replaces .grid) ── */
 .two-col {
@@ -300,8 +330,8 @@ a:hover {
 .roster tr:last-child td { 
   border-bottom: none; 
 }
-.roster tr:nth-child(even) td { 
-  background: #fafaf9; 
+.roster tr:nth-child(even) td {
+  background: #fafaf9;
 }
 .roster .jury-num {
   font-family: 'IBM Plex Mono', monospace;
@@ -310,11 +340,9 @@ a:hover {
   white-space: nowrap;
   font-size: 11px;
 }
-.roster .highlight-row td { 
-  background: var(--warn-bg); 
-}
-.roster .highlight-row:nth-child(even) td { 
-  background: #fdf2df; 
+.roster .highlight-row td,
+.roster .highlight-row:nth-child(even) td {
+  background: var(--warn-bg);
 }
 /* ── TIMELINE ── */
 .timeline-entry {
@@ -752,9 +780,10 @@ details.block-expand .block-body {
 </head>
 <body>
 
-<header class="masthead">
+<div class="wrapper">
+  <header class="masthead">
   <div class="masthead-rule">Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1</div>
-  <h1>The Jury<em>: Voir Dire, Deliberations &amp; Appeal</em></h1>
+  <h1>Voir Dire, <em>Deliberations &amp;</em> Appeal</h1>
   <div class="masthead-sub">
     <a href="index" target="_blank" rel="noopener" class="masthead-link">Home</a>
     <a href="https://drive.google.com/file/d/1H2l4BDOSz5JOhdWQpLOegfqokrfCUXpp/view?usp=sharing" target="_blank" rel="noopener" class="masthead-link">Juror #08 Interview on Jan. 10, 2025</a>
@@ -837,10 +866,10 @@ details.block-expand .block-body {
         <div class="jc-num" style="color:var(--steel)">04</div>
         <div class="jc-badge"><span style="background:#e8e4de;color:#9a9490;border:1px solid #cac4bc"></span></div>
       </div>
-      <div class="jc" style="background:#fdf5e6;border:1px solid #d4b86a">
+      <div class="jc" style="background:var(--warn-bg);border:1px solid #9baabb">
         <div class="jc-icon" style="color:var(--warn)">♀</div>
         <div class="jc-num" style="color:var(--warn)">05</div>
-        <div class="jc-badge"><span style="background:var(--warn-bg);color:var(--warn);border:1px solid #d4b86a">L.L.</span></div>
+        <div class="jc-badge"><span style="background:var(--warn-bg);color:var(--warn);border:1px solid #9baabb">L.L.</span></div>
         <div class="jc-ref">D1R1 #42</div>
       </div>
       <div class="jc" style="background:#f5f0e8;border:1px solid #c8bfb0">
@@ -867,84 +896,84 @@ details.block-expand .block-body {
     <tbody>
       <tr>
         <td class="jury-num">D1-R1 #01</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S08</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S08</a></td>
         <td>F</td>
         <td>Son is Fort Wayne police officer; watches kids; no effect on impartiality stated</td>
         <td>Consistency of the story; skeptical of circumstantial alone</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R1 #19</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S03</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S03</a></td>
         <td>M</td>
         <td>No hardship; no media exposure; evidence-focused</td>
         <td>Phones, location, testimony, witness evidence</td>
       </tr>
       <tr class="highlight-row">
         <td class="jury-num">D1-R1 #21</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S12</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S12</a></td>
         <td>M</td>
         <td>Public school system; 3 prior criminal juries (all drug-related; 2 guilty, 1 not guilty); acquitted one because prosecution was "stretching it" <span class="tag tag-foreman">Likely Foreman</span></td>
         <td>Not extensively detailed; participated in group discussions</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R1 #39</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
         <td>F</td>
         <td>Nurse; aunt murdered in CA (before she was born); no opinion formed from media</td>
         <td>Consistency: "if you're telling the truth, it's easier to tell the truth consistently"</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R1 #42</td>
-        <td><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S10</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank" rel="noopener">S10</a></td>
         <td>F</td>
         <td>Fewest identifying markers of any seated juror; minimal biographical disclosure; invoked "fingerprints" as expected evidence type unprompted <span class="tag tag-match">Lucy Lou Candidate</span></td>
         <td>Location at time of crime; <em>fingerprints</em>; behavior/pacing/nervousness; won't give extra credibility to police or clergy</td>
       </tr>
       <tr class="highlight-row">
         <td class="jury-num">D1-R2 #08</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
         <td>F</td>
         <td>No prior jury service; no law enforcement connections; one of 3–4 undecided jurors; described deliberations as worst experience; post-trial Reddit reading <span class="tag tag-match">Mia McHaffey</span></td>
         <td>DNA, motive, weapon; acknowledged DNA won't be in every case; open to convicting without a weapon</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R2 #36</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S04</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S04</a></td>
         <td>M</td>
         <td>Prior jury service (criminal assault, ~40 years ago, found it difficult); no media opinion; oldest juror on panel</td>
         <td>Body language</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R2 #45</td>
-        <td><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S11</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank" rel="noopener">S11</a></td>
         <td>M</td>
         <td>Cousin is police officer; articulate about not requiring any single evidence type</td>
         <td>Variety of evidence types; open to totality; "can't say have to have any one piece"</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R3 #54</td>
-        <td><a href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank" rel="noopener">S02</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank" rel="noopener">S02</a></td>
         <td>F</td>
         <td>Has children and works; moderate media exposure; pragmatic about sequestration hardship</td>
         <td>Not extensively detailed</td>
       </tr>
       <tr>
         <td class="jury-num">D1-R4 #16</td>
-        <td><a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
         <td>M</td>
         <td>Robbed at work (2017); confirmed would not hold frustration against officers in this case</td>
         <td>Body posture, eye contact, voice: "all those things"</td>
       </tr>
       <tr>
         <td class="jury-num">D2-R1 #01</td>
-        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
         <td>F</td>
         <td>Family in law enforcement; prior murder case jury; both parties agreed without using strikes; most articulate and perceptive juror in Day 2 pool</td>
         <td>Body mechanics, vocabulary, facial expressions; "probably guilty" is NOT enough to convict</td>
       </tr>
       <tr>
         <td class="jury-num">D2-R1 #30</td>
-        <td><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
+        <td><a class="seat-link" href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S01</a></td>
         <td>M</td>
         <td>Read media; no opinion formed; originally selected as alternate; <strong>promoted to regular jury when Juror 51 was struck for cause on Day 2</strong></td>
         <td>Take all evidence, combine into "overall hypothesis"; consistency-based</td>
@@ -964,25 +993,25 @@ details.block-expand .block-body {
     </thead>
     <tbody>
       <tr>
-        <td class="jury-num">D2-R1 #11 <a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
+        <td class="jury-num">D2-R1 #11 <a class="seat-link" href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S09</a></td>
         <td>Alt 01</td>
         <td>M</td>
         <td>Caregiver; no other caregivers available; formed opinion from media but says can set aside</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-R1 #02 <a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S12</a><br><small style="color:var(--muted);font-weight:400"></small></td>
+        <td class="jury-num">D2-R1 #02 <a class="seat-link" href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank" rel="noopener">S12</a><br><small style="color:var(--muted);font-weight:400"></small></td>
         <td>Alt 02</td>
         <td>F</td>
         <td>Works for Indiana Dept. of Education; family in law enforcement; formed media opinion; practical about sequestration work concerns</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-R2 #10 <a href="https://drive.google.com/file/d/1Xs932cgff-cblVMFI3B2DMdw9fx1-vpE/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
+        <td class="jury-num">D2-R2 #10 <a class="seat-link" href="https://drive.google.com/file/d/1Xs932cgff-cblVMFI3B2DMdw9fx1-vpE/view?usp=drive_link" target="_blank" rel="noopener">S06</a></td>
         <td>Alt 03</td>
         <td>M</td>
         <td>Self-described "follower": "I don't really speak out much"; would NOT call out improper deliberation behavior; alternates were present in deliberation room but barred from speaking</td>
       </tr>
       <tr>
-        <td class="jury-num">D2-R3 #09 <a href="https://drive.google.com/file/d/1sOQHMNCt6X1gQEX8kJYrKMCMBYjKwO4_/view?usp=drive_link" target="_blank" rel="noopener">S07</a></td>
+        <td class="jury-num">D2-R3 #09 <a class="seat-link" href="https://drive.google.com/file/d/1sOQHMNCt6X1gQEX8kJYrKMCMBYjKwO4_/view?usp=drive_link" target="_blank" rel="noopener">S07</a></td>
         <td>Alt 04</td>
         <td>F</td>
         <td>Guardian of high school girl; last juror selected for the entire trial; nearly struck (McLeland misheard her say daughter "can't be left alone" — court corrected: "she said she could make arrangements"); evidence-first standard: "You can't just jump on somebody and say, 'You're guilty'"</td>
@@ -1410,6 +1439,7 @@ details.block-expand .block-body {
   <p>The juror identified as "Juror #5," who appeared as Tim's juror on The Unsolved (May 28, 2025) and as Lucy Lou 29 on the Ickkmeister interview (Apr. 21, 2026), adds a competing data point across two separate disclosures: she found Melissa Oberg (forensic firearms examiner) to be a singularly impactful witness, described the cartridge comparison as "just like a fingerprint," immediately recognized Allen's voice from the interrogation video as Bridge Guy's, found Sarah Carbaugh credible, and placed Allen's shifting timeline as a central deliberation factor. Cross-referenced against Mia's account, these two named jurors had fundamentally different evidentiary anchors: Mia weighted the van confession and disregarded ballistics; Juror #5 weighted Oberg, voice recognition, and timeline inconsistencies. Her handwritten notes shown in The Unsolved video contain the notation "only publish 303" (the juror's own record that Exhibit 304 was not published to the jury) and attribute the 4/4/23 confession phrases to Monica Wala's in-court testimony; a separate provenance analysis disputes this attribution, and the conflict is unresolved. Her Ickkmeister interview contains confirmed post-trial contamination across at least three specific factual claims.</p>
 </div>
 
+</div>
 </div>
 <script>
 document.querySelectorAll('.tab-btn').forEach(btn => {
