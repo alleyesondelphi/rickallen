@@ -5,12 +5,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Juror #02 FB Thread</title>
   <meta name="description" content="Mia McHaffey's Facebook comment thread, questions posed and received, and an analysis of her stated reasoning as Juror #02 in the Richard Allen trial.">
-  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/mia-mchaffey-analysis">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/mia-mchaffey">
   <!-- OG -->
   <meta property="og:title" content="Juror #02 FB Thread">
   <meta property="og:description" content="Mia McHaffey's Facebook comment thread, questions posed and received, and an analysis of her stated reasoning as Juror #02 in the Richard Allen trial.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/mia-mchaffey-analysis">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/mia-mchaffey">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/mia-mchaffey.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
@@ -31,140 +31,222 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Styles -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:       #18191a;
-    --surface:  #242526;
-    --border:   #3a3b3c;
-    --ink:      #e4e6eb;
-    --muted:    #9a9ea6;
-    --accent:   #5badde;
-    --accent-h: #7fcaef;
-    --tag-bg:   #1c2a3d;
-    --tag-ink:  #5badde;
-    --card-top: #1c2a3d;
-    --warn-bg:  #2a2200;
-    --warn-bdr: #e1b95b;
-    --warn-ink: #e2bf6b;
-    --tab-act:  #5badde;
-    --tab-ink:  #9a9ea6;
+    --ink:      #0e0e0f;
+    --paper:    #f2ede6;
+    --aged:     #e0d8cc;
+    --red:      #9b1c1c;
+    --gold:     #b8860b;
+    --steel:    #3a4a5c;
+    --muted:    #6b6560;
+    --gap-red:  #c0392b;
+    --gap-bg:   #fdf0ee;
+    /* aliases for legacy selectors */
+    --bg:       var(--paper);
+    --surface:  #fff;
+    --border:   var(--aged);
+    --accent:   var(--steel);
+    --tag-bg:   rgba(224,216,204,0.35);
+    --tag-ink:  var(--steel);
+    --card-top: rgba(224,216,204,0.25);
+    --warn-bg:  var(--gap-bg);
+    --warn-bdr: rgba(192,57,43,0.4);
+    --warn-ink: var(--gap-red);
+    --tab-act:  var(--red);
+    --tab-ink:  var(--muted);
   }
-  * { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    background: var(--bg);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(13px, 2vw, 15px);
+    line-height: 1.65;
+    background: var(--paper);
     color: var(--ink);
+    min-width: 300px;
+  }
+  a { 
+    color: var(--steel); 
+  }
+  a:hover { 
+    color: var(--red); 
   }
   .wrapper {
-    width: 80%;
-    margin: auto;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
   }
-  @media (max-width: 720px) {
+  @media (max-width: 600px) {
     .wrapper { 
-      width: 100%;
-      padding: 2%;
+      padding: 0 16px 48px; 
     }
   }
-  /* ── Header ── */
+  /* ── MASTHEAD ── */
   .page-header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 1% 2%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-radius: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(28px,5vw,44px) clamp(20px,4vw,48px) 0;
+    position: relative;
+    overflow: hidden;
+    margin: 0 -24px 0;
+  }
+  @media (max-width: 600px) { 
+    .page-header { 
+      margin: 0 -16px 0; 
+    } 
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .masthead-rule {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(8px,1.5vw,10px);
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 14px;
   }
   .page-header h1 {
-    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px,4vw,46px);
     font-weight: 700;
-    color: var(--ink);
-  }
-  .page-header .subtitle {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .back-link {
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: underline;
-    display: inline-block;
+    line-height: 1.1;
+    color: var(--paper);
     margin-bottom: 8px;
   }
-  .back-link:hover { 
-    text-decoration: none; 
-    color: #eee;
+  .page-header h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #999;
   }
-  /* ── Tabs ── */
+  .page-header .subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9px,1.6vw,11px);
+    color: #888;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+  }
+  .back-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(8.5px,1.5vw,10px);
+    color: #bbb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255,255,255,0.25);
+    display: inline-block;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+  .back-link:hover { 
+    color: #f17070; 
+  }
+  .light-link {
+    font-family: 'IBM Plex Mono', monospace;
+    color: rgb(75, 111, 157);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    display: inline-block;
+    letter-spacing: 0.01em;
+    font-size: clamp(10.5px,1.7vw,11.5px);
+    line-height: 1.75;
+    padding: 0 0.1%;
+  }
+  .light-link:hover { 
+    color: #bbb; 
+  }
+  /* ── TABS ── */
   .tabs {
     display: flex;
     overflow-x: auto;
     gap: 0;
-    margin-top: 10px;
+    margin-top: 18px;
     scrollbar-width: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
   .tabs::-webkit-scrollbar { 
     display: none; 
   }
   .tab-btn {
     flex-shrink: 0;
-    padding: 8px 14px;
+    padding: 10px 16px;
     border: none;
     background: transparent;
-    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9px,1.6vw,11px);
     font-weight: 600;
-    color: var(--tab-ink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     white-space: nowrap;
     transition: color .15s, border-color .15s;
   }
   .tab-btn.active {
-    color: var(--tab-act);
-    border-bottom-color: var(--tab-act);
+    color: var(--paper);
+    border-bottom-color: var(--red);
   }
-  .tab-btn:hover:not(.active) {
-    color: var(--ink);
+  .tab-btn:hover:not(.active) { 
+    color: #ccc; 
   }
   /* ── Content ── */
   .tab-panel { 
     display: none; 
-    margin: 1% auto; 
+    margin-top: 24px; 
   }
   .tab-panel.active { 
     display: block; 
   }
+  #interviews {
+   
+  }
   /* ── Section label ── */
   .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .08em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(8.5px,1.8vw,10px);
+    font-weight: 600;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--muted);
-    margin: 1% 2%;
+    border-bottom: 1px solid var(--aged);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
   }
   .section-label:first-child { 
     margin-top: 0; 
   }
   .count-badge {
     display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    background: var(--tag-bg);
-    color: var(--tag-ink);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    background: rgba(224,216,204,0.5);
+    color: var(--steel);
     border-radius: 99px;
     padding: 1px 8px;
     margin-left: 6px;
     vertical-align: middle;
     letter-spacing: 0;
     text-transform: none;
+  }
+  /* badges inside tab buttons sit on the dark masthead */
+  .tab-btn .count-badge {
+    background: rgba(255,255,255,0.12);
+    color: #aaa;
+  }
+  .tab-btn.active .count-badge {
+    background: rgba(155,28,28,0.25);
+    color: #f0a0a0;
   }
   /* ── Question lists ── */
   .q-list {
@@ -174,108 +256,115 @@
     gap: 6px;
   }
   .q-list li {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1% 2%;
+    background: #fff;
+    border: 1px solid var(--aged);
+    border-left: 4px solid var(--steel);
+    padding: 12px 16px;
     display: flex;
     gap: 10px;
     align-items: flex-start;
   }
   .q-num {
     flex-shrink: 0;
-    font-size: 11px;
-    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
     color: var(--muted);
     min-width: 24px;
-    padding-top: 1px;
+    padding-top: 2px;
   }
   .q-text { 
     flex: 1; 
   }
   .asker {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 3px;
-    
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 4px;
   }
   /* ── Interview claim blocks ── */
   .claim-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--aged);
     margin-bottom: 10px;
     overflow: hidden;
     padding: 0;
   }
   .claim-block .claim-tag {
-    background: var(--card-top);
-    padding: 5px 12px;
-    font-size: 11px;
-    font-weight: 700;
+    background: rgba(224,216,204,0.25);
+    padding: 5px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: .06em;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid var(--aged);
   }
   .claim-block p {
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 12px 14px;
+    font-size: clamp(13px,1.9vw,14.5px);
   }
   /* ── Assertion cards ── */
   .assertion-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--aged);
     margin-bottom: 10px;
     overflow: hidden;
   }
   .assertion-card .card-topic {
-    background: var(--card-top);
-    padding: 1% 2%;
-    font-size: 12px;
-    font-weight: 700;
+    background: rgba(224,216,204,0.25);
+    padding: 6px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: .06em;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid var(--aged);
   }
   .assertion-card blockquote {
     margin: 0;
-    padding: 1% 2%;
-    font-size: 14px;
+    padding: 12px 16px;
+    font-size: clamp(13px,1.9vw,14.5px);
     line-height: 1.65;
     color: var(--ink);
-    border-left: 3px solid var(--accent);
-    background: var(--surface);
+    border-left: 4px solid var(--steel);
+    background: #fff;
   }
   /* ── Inconsistency cards ── */
   .conflict-card {
-    background: var(--surface);
-    border: 1px solid var(--warn-bdr);
-    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--aged);
+    border-left: 3px solid var(--gold);
     margin-bottom: 12px;
     overflow: hidden;
   }
   .conflict-card .card-head {
-    background: var(--warn-bg);
-    padding: 1% 2%;
-    font-size: 13px;
+    background: rgba(224,216,204,0.2);
+    padding: 8px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
     font-weight: 700;
-    color: var(--warn-ink);
-    border-bottom: 1px solid var(--warn-bdr);
+    color: var(--muted);
+    border-bottom: 1px solid var(--aged);
     display: flex;
     gap: 8px;
     align-items: baseline;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .conflict-num {
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 700;
-    background: var(--warn-bdr);
-    color: var(--surface);
+    background: rgba(184,134,11,0.12);
+    color: var(--gold);
     border-radius: 99px;
     padding: 1px 7px;
+    border: 1px solid rgba(184,134,11,0.3);
     flex-shrink: 0;
   }
   .conflict-card .card-body {
@@ -285,71 +374,84 @@
     gap: 8px;
   }
   .conflict-item {
-    border-left: 3px solid var(--border);
+    border-left: 3px solid var(--aged);
     padding: 6px 10px;
-    font-size: 14px;
+    font-size: clamp(12.5px,1.8vw,14px);
     color: var(--ink);
-    background: var(--bg);
-    border-radius: 0 4px 4px 0;
+    background: rgba(224,216,204,0.15);
   }
   .conflict-item .conflict-label {
-    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: .07em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 3px;
   }
   .conflict-item.side-a { 
-    border-left-color: #a74136; 
+    border-left-color: var(--red); 
   }
   .conflict-item.side-b { 
-    border-left-color: #34649c; 
+    border-left-color: var(--steel); 
+  }
+  .conflict-item.side-c { 
+    border-left-color: #e5e4e4; 
   }
   .conflict-note {
-    font-size: 13px;
+    font-size: clamp(12px,1.7vw,13.5px);
     color: var(--muted);
     font-style: italic;
-    padding: 0 2px;
+    line-height: 1.45;
+    margin: 1% 0;
+    padding: 1% 2%;
+    background-color: rgb(233, 227, 227, 0.3);
+    border: 1px solid rgb(225, 223, 223);
   }
   .embed-img {
     display: block;
     max-width: 100%;
     width: 320px;
     height: auto;
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--aged);
     margin: 14px 0;
     cursor: zoom-in;
   }
   .fig-placeholder {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     width: 100%;
-    padding: 8px 12px;
-    background: var(--card-bg, #1e1e1e);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    padding: 1% 2%;
+    background: rgba(224,216,204,0.2);
+    border: 1px solid var(--aged);
     margin: 12px 0;
     cursor: pointer;
-    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
     color: var(--muted);
     user-select: none;
   }
   .fig-placeholder:hover { 
-    border-color: #555; 
-    color: var(--text); 
+    border-color: var(--steel); 
+    color: var(--steel); 
   }
   .fig-placeholder .fig-icon { 
-    font-size: 15px; 
+    font-size: 13px; 
     flex-shrink: 0; 
   }
   .fig-placeholder .fig-label { 
     flex: 1; 
   }
+  .fig-hint {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .fig-icon {
+    margin-top: 0.5%;
+  }
   .fig-placeholder .fig-hint { 
-    font-size: 11px; 
+    font-size: 10px; 
     opacity: .6; 
   }
   #lb {
@@ -361,13 +463,12 @@
     align-items: center;
     justify-content: center;
   }
-  #lb.open {
-    display: flex;
+  #lb.open { 
+    display: flex; 
   }
   #lb img {
     max-width: 92vw;
     max-height: 92vh;
-    border-radius: 10px;
     object-fit: contain;
     cursor: zoom-out;
   }
@@ -375,7 +476,6 @@
     width: 90vw;
     height: 90vh;
     border: none;
-    border-radius: 10px;
     background: #fff;
   }
   #lb-x {
@@ -386,18 +486,25 @@
     font-size: 28px;
     line-height: 1;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
     opacity: .8;
-    }
+  }
 </style>
 </head>
 <body>
 
 <div class="wrapper">
   <div class="page-header">
-  <a class="back-link" href="juror-thread-threaded" target="_blank">← Juror Thread</a>
-  <h1>Mia McHaffey: Thread Analysis</h1>
+  <div class="masthead-rule">Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1</div>
+  <h1>Mia McHaffey <em>Thread Analysis</em></h1>
   <p class="subtitle">Questions, assertions, and inconsistencies from the comment thread and juror interviews</p>
+  <div style="display:flex;gap:clamp(10px,2.5vw,22px);flex-wrap:wrap;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1.8vw,11px);">
+    <a class="back-link" style="margin:0" href="index">Home</a>
+    <a class="back-link" style="margin:0" href="the-jury">The Jury</a>
+    <a class="back-link" style="margin:0" href="juror-thread">Juror #02 Thread Analysis</a>
+    <a class="back-link" style="margin:0" href="lucy-lou">Juror #05 Interview</a>
+    <a class="back-link" style="margin:0" href="juror-thread-threaded">Cloned FB Thread</a>
+  </div>
   <div class="tabs" role="tablist">
     <button class="tab-btn active" role="tab" onclick="showTab('by-mia')">Questions by Mia <span class="count-badge">10</span></button>
     <button class="tab-btn" role="tab" onclick="showTab('to-mia')">Questions to Mia <span class="count-badge">52</span></button>
@@ -412,105 +519,105 @@
   <p class="section-label">Questions posed by Mia McHaffey <span class="count-badge">10</span></p>
   <ol class="q-list">
     <li>
-      <span class="q-num">1</span>
+      <span class="q-num">01</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
             @Tony Hunt this is an insane take lol what evidence at all supports this. How would you explain the video of the girls on the bridge?
-              <p class="conflict-note" style="margin-top:1%;">Mia convicted a man on innuendo dumb shit even tho LE found zero physical or digitial evidence connecting him to the crime or the victims.</p>
-                <div class="fig-placeholder" data-src="mia-thread-analysis/video-tldr.png">
+              <p class="conflict-note">Mia convicted a man on innuendo dumb shit even tho LE found zero physical or digitial evidence connecting him to the crime or the victims.</p>
+                <div class="fig-placeholder" data-src="mia-thread/video-tldr.png">
                   <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>         
-                    <span class="fig-label">Video of girls on the bridge TLDR</span>  
-                    <span class="fig-hint">click to view</span>
+                    <span class="fig-label">BG video TL;DR</span>  
+                    <span class="fig-hint">view</span>
               </div>
         </span>
     </li>
     <li>
-      <span class="q-num">2</span>
+      <span class="q-num">02</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
             @Tony Hunt who photoshopped it? The police? Also, the video was captured almost 10 years ago.
-              <p class="conflict-note" style="margin-top:1%;">Not that you give a shit about any of the real life evidence but I found the temporary files for the 2:05 and 2:07 Snapchat pics. Including it since you think everyone is just doing TikTok research which is quite the galaxy brain take, girlie.</p>
-                <div class="fig-placeholder" data-src="mia-thread-analysis/1405-and-1407-snapchat-pics-found-in-zmeta.pdf">
+              <p class="conflict-note">Not that you give a shit about any of the real life evidence but I found the temporary files for the 2:05 and 2:07 Snapchat pics. Including it since you think everyone is just doing TikTok research which is quite the galaxy brain take, girlie.</p>
+                <div class="fig-placeholder" data-src="mia-thread/1405-and-1407-snapchat-pics-found-in-zmeta.pdf">
                   <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>         
                     <span class="fig-label">zmeta from Libby's knowledgeC.db</span>  
-                    <span class="fig-hint">click to view</span>
+                    <span class="fig-hint">view</span>
               </div>
         </span>
     </li>
     <li>
-      <span class="q-num">3</span>
+      <span class="q-num">03</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div>
             @Brandy Ellis what's the relevance? The only thing your "one question" insinuates is that you overlook differences and details that completely change the circumstances to fit your narrative.
-              <p class="conflict-note" style="margin-top:1%;">Do you always project bonkers shit you're making up out of thin aire when people are simply trying to meet you where you're at by utilizing a relatable situation that also was not black and white ?? </p>
+              <p class="conflict-note">Do you always project bonkers shit you're making up out of thin aire when people are simply trying to meet you where you're at by utilizing a relatable situation that also was not black and white ?? </p>
       </span>
     </li>
     <li>
-      <span class="q-num">4</span>
+      <span class="q-num">04</span>
         <span class="q-text">
             <div class="asker">Mia McHaffey</div> 
               @Brandy Ellis what is the relevance? Your "one question" tells me more about your inability to decipher differences in circumstance (possible voluntary inability) to fit your narrative. Even based off the fact that I was in the courtroom every single day for this trial, and was not for Lindsey Clancy. My opinion on her guilt is a moot point.
-                <p class="conflict-note" style="margin-top:1%;">Your "answer" tells me more about your inability to recognize people simply trying to meet you where you are by utilizing relatable circumstances (possible voluntary inability) to fit your narrative. Even based off the fact that you were in the courtroom every single day for this trial, you haven't provided a single substantive answer for shit about fck.</p>
+                <p class="conflict-note">Your "answer" tells me more about your inability to recognize people simply trying to meet you where you are by utilizing relatable circumstances (possible voluntary inability) to fit your narrative. Even based off the fact that you were in the courtroom every single day for this trial, you haven't provided a single substantive answer for shit about fck.</p>
         </span>
     </li>
     <li>
-      <span class="q-num">5</span>
+      <span class="q-num">05</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
           @Brandy Ellis as expected, you're manipulating things to fit your narrative. If you can show me proof that Richard Allen or anyone else at that matter, was aware of the van before he made that specific confession to Dr. Wala, I'll acknowledge that. I can prove everything I am saying with true, factual information from the record. Please elaborate how you arrive to me adimitting there are no facts? How did you come to that conclusion? That interrogation wasn't close to mental torture lol
-            <p class="conflict-note" style="margin-top:1%;">Literally no one has ever asserted that the interrogations were mental torture, or any form of torture. Where is Mia even getting this shit ??</p>
-              <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.png">
+            <p class="conflict-note">Literally no one has ever asserted that the interrogations were mental torture, or any form of torture. Where is Mia even getting this shit ??</p>
+              <div class="fig-placeholder" data-src="mia-thread/only-the-killer-would-know.png">
                 <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>         
-                <span class="fig-label">Screenshot: only the killer would know</span>  
-                <span class="fig-hint">click to view</span>
+                <span class="fig-label">Only the killer would know</span>  
+                <span class="fig-hint">view</span>
               </div>
         </span> 
     </li>
     <li>
-      <span class="q-num">6</span>
+      <span class="q-num">06</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
             @Tony Hunt because she was just in her car? That is not unlikely at all. Also, just because you're saying the evidence I'm mentioning isn't real, doesn't mean I'm not providing anything to you. Couldn't say the same about you though. Still waiting...
-              <p class="conflict-note" style="margin-top:1%;">Mia is literally not providing anything tho. Is that the only not unlikely explanation she can think of? Is there a reason she doesn't think it's worth even considering other explanations for a rooted hair to end up wrapped around a victim's finger considering the victim ended up horrifically murdered within an hour of that car ride? We're still waiting Mia...</p>
-                <div class="fig-placeholder" data-src="mia-thread-analysis/kelsis-hair.png">
+              <p class="conflict-note">Mia is literally not providing anything tho. Is that the only not unlikely explanation she can think of? Is there a reason she doesn't think it's worth even considering other explanations for a rooted hair to end up wrapped around a victim's finger considering the victim ended up horrifically murdered within an hour of that car ride? We're still waiting Mia...</p>
+                <div class="fig-placeholder" data-src="mia-thread/kelsis-hair.png">
                   <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-                  <span class="fig-label">Rooted hair still magically wrapped around the victim’s pinky after she crossed a creek, climbed a steep creek bank, was washed clean and re-clothed? Mmk.</span>
-                  <span class="fig-hint">click to view</span>
+                  <span class="fig-label">Hair around victim’s pinky</span>
+                  <span class="fig-hint">view</span>
                 </div>
        </span>
     </li>
     <li>
-      <span class="q-num">7</span>
+      <span class="q-num">07</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
             @Tammy Allen McCray was the motion granted? I have not seen it. But the thing is, anything can be said in a motion, but until there is something on the record, or a video or evidence that I can see, none of that proves anything for me. When it's something this serious, and so many people spew untruths, anything that will change my stance has to be substantive.
-              <p class="conflict-note" style="margin-top:1%;">Does Mia not understand the <a class="back-link" href="https://drive.google.com/file/d/1FKPuIEjCjg4pRWeNngrdmVR4g35J3j1Z/view?usp=drive_link" target="_blank">Motion to Correct Error</a> *is* part of the Record? Exhibits (including video) can be found <a class="back-link" href="https://drive.google.com/drive/folders/1833N-7ywIX3fAfU24CYifuDxallXKcqH?usp=drive_link" target="_blank">here</a>, girlie.</p>
-                <div class="fig-placeholder" data-src="mia-thread-analysis/2025-02-14-order.png">
+              <p class="conflict-note">Does Mia not understand the <a class="light-link" href="https://drive.google.com/file/d/1FKPuIEjCjg4pRWeNngrdmVR4g35J3j1Z/view?usp=drive_link" target="_blank">Motion to Correct Error</a> *is* part of the Record? Exhibits (including video) can be found <a class="light-link" href="https://drive.google.com/drive/folders/1833N-7ywIX3fAfU24CYifuDxallXKcqH?usp=drive_link" target="_blank">here</a>, girlie.</p>
+                <div class="fig-placeholder" data-src="mia-thread/2025-02-14-order.png">
                   <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-                  <span class="fig-label">Judge Gull denies the MTCE on Feb. 14, 2025 *without* a hearing to hear whether the State's discovery had merit or not.</span>
-                  <span class="fig-hint">click to view</span>
+                  <span class="fig-label">Denied without a hearing</span>
+                  <span class="fig-hint">view</span>
                 </div>
         </span>
     </li>
     <li>
-      <span class="q-num">8</span>
+      <span class="q-num">08</span>
         <span class="q-text">
           <div class="asker">
             Mia McHaffey</div> @Christine Salzer Christine where did you go? I'm still waiting on some proof of these defamatory claims 🤨🤨
-              <p class="conflict-note" style="margin-top:1%;">She owned it and apologized getting it Rong immediately, which is more than anyone can say for Mia...or Murder Sheet who wrote a whole ass CringeFic about the Delphi case before the transcripts or exhibits were released. Don't hold your breath for them to issue any corrections to the bonkers shit they published just bc the transcripts and exhibits undermined it.</p>
-                <div class="fig-placeholder" data-src="mia-thread-analysis/your-turn-mia.png">
+              <p class="conflict-note">She owned it and apologized getting it Rong immediately, which is more than anyone can say for Mia...or Murder Sheet who wrote a whole ass CringeFic about the Delphi case before the transcripts or exhibits were released. Don't hold your breath for them to issue any corrections to the bonkers shit they published just bc the transcripts and exhibits undermined it.</p>
+                <div class="fig-placeholder" data-src="mia-thread/your-turn-mia.png">
                   <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-                  <span class="fig-label">Even the volunteer PI having more integrity than Mia...</span>
-                  <span class="fig-hint">click to view</span>
+                  <span class="fig-label">Even CS has more integrity...</span>
+                  <span class="fig-hint">view</span>
                 </div>
         </span>
     </li>
     <li>
-      <span class="q-num">9</span>
+      <span class="q-num">09</span>
         <span class="q-text">
           <div class="asker">Mia McHaffey</div> 
             @Tony Hunt when did I ever say I'm running the show?? Also, it's so ironic how idiotic you sound and you don't even know it lol you'd think as someone who believes RA is innocent you would want people on the jury whom are are able to sympathize with mental health issues.
-              <p class="conflict-note" style="margin-top:1%;">This is an insane thing for Mia say considering she LOL'd at people calling 13+ months in solitary torture. I pray to god my daughters are never counting on a ditzy weirdo like this juror.</p>
+              <p class="conflict-note">This is an insane thing for Mia say considering she LOL'd at people calling 13+ months in solitary torture. I pray to god my daughters are never counting on a ditzy weirdo like this juror.</p>
         </span>
     </li>
     <li>
@@ -518,7 +625,7 @@
         <span class="q-text">
           <div class="asker">Mia McHaffey</div>
             @Adam Hanabarger and why is that?
-            <p class="conflict-note" style="margin-top:1%;">Still trying to figure out why Adam's comment didn't populate the cloned thread. Will add it when I find it.</p>
+            <p class="conflict-note">Still trying to figure out why Adam's comment didn't populate the cloned thread. Will add it when I find it.</p>
         </span>
     </li>
   </ol>
@@ -912,58 +1019,60 @@
     <div class="card-topic">What evidence she used: her full account</div>
       <blockquote>
         "Richard Allen told us he was there that day and what time. He mentioned seeing a group of girls. That group of girls also saw Richard Allen. He was there, they saw each other, that is fact. Then, he said he was on the bridge looking at the fish, but didn't see the girls. There is no way that if he was on the bridge at the time he was there he didn't see the girls. He also said he was wearing a blue jacket, jeans, boots or tennis shoes, and had a hat. In one of his confessions, he mentioned a white van driving down and frightening him during the crime. After investigation, a white van was actually there near the scene at the time of the crime. No one would know that but the killer. No other man with similar clothing or anything was seen by anyone else there that day. The bullet found in his keepsake box had the same exact bullet brand and type. Even though all of those facts wouldn't stand on their own, the presence of all of them makes it unreasonable to believe Richard Allen isn't guilty of the crime."
+          <p class="conflict-note">In case Mia fell on her head, here is a <a class="light-link" href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank">comprehensive overview</a> of the facts of this case, according to the Record established by the State.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">
-          In case Mia fell on her head, here is a <a class="back-link" href="https://drive.google.com/file/d/1PJPh4sVG47rwCd6Yq6JKF8FX6PS7uNMT/view?usp=drive_link" target="_blank">comprehensive overview</a> of the facts of this case, according to the Record established by the State.
-        </p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On the interrogation</div>
       <blockquote>
         "That interrogation wasn't close to mental torture lol."
+          <p class="conflict-note">Literally no one has ever suggested that it was, so again, where is Mia getting this shit ????</p>
       </blockquote>
-        <p class="conflict-note" class="conflict-note" style="margin-left:2%;">Literally no one has ever suggested that it was, so again, where is Mia getting this shit ????</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On van confession proof</div>
       <blockquote>
         "If you can show me proof that Richard Allen or anyone else was aware of the van before he made that specific confession to Dr. Wala, I'll acknowledge that. I can prove everything I am saying with true, factual information from the record."
-          <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.png">
+          <div class="fig-placeholder" data-src="mia-thread/only-the-killer-would-know.png">
             <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Screenshot: only the killer would know</span>
-            <span class="fig-hint">click to view</span>
+            <span class="fig-label">Only the killer would know</span>
+            <span class="fig-hint">view</span>
           </div>
       </blockquote>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On Odinist theory &amp; Blair sketch</div>
-    <blockquote>"My take is that the sketches and Odinist theory specifically wouldn't have changed the outcome. I think they were rightfully not included in trial. BUT, I welcome another trial if it's deemed most constitutional."</blockquote>
+    <blockquote>
+      "My take is that the sketches and Odinist theory specifically wouldn't have changed the outcome. I think they were rightfully not included in trial. BUT, I welcome another trial if it's deemed most constitutional."
+    </blockquote>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On the drug angle</div>
-    <blockquote>"I haven't heard about the drug angle."</blockquote>
+    <blockquote>
+      "I haven't heard about the drug angle."
+    </blockquote>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On LE leading the jury</div>
       <blockquote>
         "It was not my job to police their investigation, rather make a decision based off of the facts provided to me. I don't think we were led to believe he was the only one. Just that he was the only one there that all of the puzzle pieces fit."
+          <p class="conflict-note">You were provided innuendo dumb shit that the state couldn't even substantiate, not facts. LOL.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">You were provided innuendo dumb shit that the state couldn't even substantiate, not facts. LOL.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On Blair's sketch causing doubt</div>
       <blockquote>
         "I don't think someone's interpretation of how someone looked in a split second in a seemingly unimportant situation at the time is enough 'evidence' to cause reasonable doubt. Anything surrounding a sketch is too subjective to hold much weight for me."
-          <div class="fig-placeholder" data-src="mia-thread-analysis/admit-the-sketches-are-not-richard-allen.png">
+          <div class="fig-placeholder" data-src="mia-thread/admit-the-sketches-are-not-richard-allen.png">
             <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Sketch comparison: described suspect vs. Richard Allen</span>
-            <span class="fig-hint">click to view</span>
+            <span class="fig-label">Described suspect vs. Richard Allen</span>
+            <span class="fig-hint">view</span>
           </div>
       </blockquote>
   </div>
@@ -972,54 +1081,54 @@
     <div class="card-topic">On the "just blue jeans" argument</div>
       <blockquote>
         "Assuming he was convicted for his jeans is crazy... The guilt comes from him clearly lying about seeing the girls, and he was wearing the same clothing as BG, as reported by him."
+          <p class="conflict-note">Neither <a class="light-link" href="https://drive.google.com/file/d/14uBdmzIU0On59ju9tnFGonrvHNOXSYr6/view?usp=drive_link" target="_blank">Dulin's 2017 report</a> nor Allen's <a class="light-link" href="https://drive.google.com/file/d/1zYA-vgqAzriXT13WYa8XRKyAMexoDbGp/view?usp=drive_link" target="_blank">Oct. 13</a> or <a class="light-link" href="https://drive.google.com/file/d/1kliWzvUbR4iwLAWpeOlU4pIlBrpfKzVY/view?usp=drive_link" target="_blank">Oct. 26</a> interrogation transcripts document him describing his clothing as matching BG's, or establish that investigators concluded he lied about seeing the girls.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">Neither <a class="back-link" href="https://drive.google.com/file/d/14uBdmzIU0On59ju9tnFGonrvHNOXSYr6/view?usp=drive_link" target="_blank">Dulin's 2017 report</a> nor Allen's <a class="back-link" href="https://drive.google.com/file/d/1zYA-vgqAzriXT13WYa8XRKyAMexoDbGp/view?usp=drive_link" target="_blank">Oct. 13</a> or <a class="back-link" href="https://drive.google.com/file/d/1kliWzvUbR4iwLAWpeOlU4pIlBrpfKzVY/view?usp=drive_link" target="_blank">Oct. 26</a> interrogation transcripts document him describing his clothing as matching BG's, or establish that investigators concluded he lied about seeing the girls.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On RA's phone / geofence data</div>
       <blockquote>
         "I wasn't aware that his phone date confirmed that he wasn't at the scene. If you could point me to where this information is, I'd be more than happy to look at it."
+          <p class="conflict-note">
+          The geofence data was among the evidence excluded from trial. According to the record, Allen's cell phone placed him off the trails before the girls were dropped off. Holeman's <a class="light-link" href="https://drive.google.com/file/d/1a6edaOgzQ-Txn2TnSXB0WbPM157Pc9Ei/view?usp=drive_link" target="_blank">deposition</a> remains part of the public record.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">
-          The geofence data was among the evidence excluded from trial. According to the record, Allen's cell phone placed him off the trails before the girls were dropped off. Holeman's <a class="back-link" href="https://drive.google.com/file/d/1a6edaOgzQ-Txn2TnSXB0WbPM157Pc9Ei/view?usp=drive_link" target="_blank">deposition</a> remains part of the public record.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On the missing phone</div>
       <blockquote>
         "His phone probably was left at home. He said he was there so I don't get how this matters or proves anything other than that his phone was not with him."
+          <p class="conflict-note">No evidence in the record supports the claim that Allen left his phone at home that day. That inference was not established at trial.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">No evidence in the record supports the claim that Allen left his phone at home that day. That inference was not established at trial.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On the motion to correct error</div>
       <blockquote>
         "I have not seen it. But the thing is, anything can be said in a motion, but until there is something on the record, or a video or evidence that I can see, none of that proves anything for me. When it's something this serious, and so many people spew untruths, anything that will change my stance has to be substantive."
+          <p class="conflict-note">The state's own <a class="light-link" href="https://drive.google.com/file/d/1r27piQvWXf0gIDsNdWu6oUQ_NI9C_2ER/view?usp=drive_link" target="_blank">discovery evidence</a> includes the neighbor's account of the video timestamp being exactly 12 hours off — which was not surfaced at trial. Dismissing that account would require explaining why the neighbors' disclosure was less credible than other claims accepted without documentation.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">The state's own <a class="back-link" href="https://drive.google.com/file/d/1r27piQvWXf0gIDsNdWu6oUQ_NI9C_2ER/view?usp=drive_link" target="_blank">discovery evidence</a> includes the neighbor's account of the video timestamp being exactly 12 hours off — which was not surfaced at trial. Dismissing that account would require explaining why the neighbors' disclosure was less credible than other claims accepted without documentation.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On DNA claims</div>
     <blockquote>
       "These claims just aren't factually true." <em>(no elaboration provided)</em>
+        <p class="conflict-note">That which can be asserted without evidence can also be dismissed without evidence.</p>
     </blockquote>
-      <p class="conflict-note" style="margin-left:2%;">That which can be asserted without evidence can also be dismissed without evidence.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">On the sequester</div>
       <blockquote>
         "I didn't have my phone, watch TV, or see my family for 3.5 weeks."
-          <div class="fig-placeholder" data-src="mia-thread-analysis/2023-07-19-order.pdf">
-            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">2023 sequester order</span>
-            <span class="fig-hint">click to view</span>
-          </div>
+          <p class="conflict-note">Gull finds Rick Allen is being treated extra special, ackshully.</p>
+            <div class="fig-placeholder" data-src="mia-thread/2023-07-19-order.pdf">
+              <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+                <span class="fig-label">Jul. 19, 2023 Order</span>
+                <span class="fig-hint">view</span>
+            </div>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">Gull finds Rick Allen is being treated extra special, ackshully.</p>
   </div>
 
   <div class="assertion-card">
@@ -1033,60 +1142,62 @@
     <div class="card-topic">Core guilt reasoning (fuller statement)</div>
       <blockquote>
         "The presence isn't guilt. The guilt comes from him clearly lying about seeing the girls, and he was wearing the same clothing as BG, as reported by him. I'll acknowledge that it's a common thing for men to wear, but there is zero information pointing to the fact that there was anyone else wearing those clothes other than him. Only the killer would know about the van. Or at the very least, someone that was at the crime scene. It's him being there along with all of the other 'coincidences'. As much as presence doesn't confirm guilt, a various amount of circumstances pointing to his guilt doesn't confirm reasonable doubt. Inferences can be made without meaning there is doubt."
+          <p class="conflict-note">None of the specific factual claims in this statement (i.e., Allen lying about seeing the girls, his clothing matching BG's, the van) were established in the record at trial. See the linked evidence and transcripts above.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">None of the specific factual claims in this statement (i.e., Allen lying about seeing the girls, his clothing matching BG's, the van) were established in the record at trial. See the linked evidence and transcripts above.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">Timeline impossibility</div>
       <blockquote>
         "In fact, he said he didn't see the girls. Which would have been chronologically impossible if we believe the other claims that he made."
+          <p class="conflict-note">The <a class="light-link" href="https://alleyesondelphi.github.io/rickallen/timeline" target="_blank">timeline</a> and interrogation transcripts are publicly available. Several facts bearing on this chronology were excluded from trial.</p>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">The <a class="back-link" href="https://alleyesondelphi.github.io/rickallen/timeline" target="_blank">timeline</a> and interrogation transcripts are publicly available. Several facts bearing on this chronology were excluded from trial.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">Allen's missing phone</div>
       <blockquote>
         "They had every phone they've ever owned since the 90s, but not that one." <em>(agreeing with commenter's point about Allen's phone inventory)</em>
-          <div class="fig-placeholder" data-src="mia-thread-analysis/cleared.png">
-            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">2017 phone info sent to ISP &mdash; Lead *Cleared*</span>
-            <span class="fig-hint">click to view</span>
-          </div>
+          <p class="conflict-note">Allen turned over his phone voluntarily in 2017 and was cleared at that time. The phone data is what led investigators to clear him initially. Trading in a phone years after cooperating with an investigation is unremarkable on its own.</p>
+            <div class="fig-placeholder" data-src="mia-thread/cleared.png">
+              <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+                <span class="fig-label">2017 phone info sent to ISP, lead *Cleared*</span>
+                <span class="fig-hint">view</span>
+            </div>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">Allen turned over his phone voluntarily in 2017 and was cleared at that time. The phone data is what led investigators to clear him initially. Trading in a phone years after cooperating with an investigation is unremarkable on its own.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">Phone never recovered</div>
-    <blockquote>"His phone was never found."</blockquote>
+    <blockquote>
+      "His phone was never found."
+    </blockquote>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">BG jacket color discrepancy</div>
       <blockquote>
         "Looks like different color jackets to me." <em>(@Jessica Brehon, on whether BG's jacket in the video matched the black Carhartt Allen said he wore in his first interrogation)</em>
-          <div class="fig-placeholder" data-src="mia-thread-analysis/rawn.png">
-            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Rawn lookin exactly like Bridge Guy</span>
-            <span class="fig-hint">click to view</span>
-          </div>
+          <p class="conflict-note">See comparison above. Per Allen's own statements, he did not own the Carhartt or blue coat until years after the murders. He said he would have been wearing his black jacket or a sweatshirt. Transcript linked above.</p>
+            <div class="fig-placeholder" data-src="mia-thread/rawn.png">
+              <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+                <span class="fig-label">Rawn lookin exactly like Bridge Guy</span>
+                <span class="fig-hint">view</span>
+            </div>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">See comparison above. Per Allen's own statements, he did not own the Carhartt or blue coat until years after the murders. He said he would have been wearing his black jacket or a sweatshirt. Transcript linked above.</p>
   </div>
 
   <div class="assertion-card">
     <div class="card-topic">Closing statement to the thread</div>
       <blockquote>
         "I really appreciate the people with opposing views and opinions who were respectful and sympathetic. Whether you believe that Richard Allen is guilty or not, it can also be possible that both sides of this are made up of people who are just trying to do what they think is right...I know I will truly never be the same. Please take these things into consideration before making posts and comments. And most importantly, RIP Abby and Libby."
-          <div class="fig-placeholder" data-src="mia-thread-analysis/tough-on-crime-stacy.pdf">
-            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Tough on Crime Stacy</span>
-            <span class="fig-hint">click to view</span>
-          </div>
+          <p class="conflict-note">The verdict is a matter of record. The evidentiary record, including what was excluded and what was presented, is also part of the public record, and scrutiny of both is legitimate.</p>
+            <div class="fig-placeholder" data-src="mia-thread/tough-on-crime-stacy.pdf">
+              <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+                <span class="fig-label">Tough on Crime Stacy</span>
+                <span class="fig-hint">view</span>
+            </div>
       </blockquote>
-        <p class="conflict-note" style="margin-left:2%;">The verdict is a matter of record. The evidentiary record, including what was excluded and what was presented, is also part of the public record, and scrutiny of both is legitimate.</p>
   </div>
 </div>
 
@@ -1095,7 +1206,7 @@
   <p class="section-label">Conflicting statements and reasoning <span class="count-badge">9</span></p>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">1</span> Confessions not used, but confession content is cited as key evidence</div>
+    <div class="card-head"><span class="conflict-num">01</span> Confessions not used, but confession content is cited as key evidence</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Said this</div>
@@ -1105,17 +1216,19 @@
         <div class="conflict-label">Also said this</div>
         "In one of his confessions, he mentioned a white van driving down and frightening him during the crime... <strong>No one would know that but the killer.</strong>"
       </div>
-      <p class="conflict-note">The van detail is drawn directly from the confession Dr. Wala purports to have documented from Rick. Mia uses it as her single most compelling "only the killer would know" piece of evidence while simultaneously saying confessions played no role in her decision.</p>
-      <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.png">
-        <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-        <span class="fig-label">Screenshot: only the killer would know</span>
-        <span class="fig-hint">click to view</span>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">The van detail is drawn directly from the confession Dr. Wala purports to have documented from Rick. Mia uses it as her single most compelling "only the killer would know" piece of evidence while simultaneously saying confessions played no role in her decision.</p>
+          <div class="fig-placeholder" data-src="mia-thread/only-the-killer-would-know.png">
+            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+              <span class="fig-label">Only the killer would know</span>
+              <span class="fig-hint">view</span>
+          </div>
       </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">2</span> Ballistics not used, but the bullet is cited as corroborating evidence</div>
+    <div class="card-head"><span class="conflict-num">02</span> Ballistics not used, but the bullet is cited as corroborating evidence</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Said this</div>
@@ -1125,12 +1238,14 @@
         <div class="conflict-label">Also said this</div>
         "The bullet found in his keepsake box had the same exact bullet brand and type."
       </div>
-      <p class="conflict-note">She explicitly invokes the bullet match in her evidentiary summary, the same category she told the thread she disregarded.</p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">She explicitly invokes the bullet match in her evidentiary summary, the same category she told the thread she disregarded.</p>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">3</span> RA "lied" about seeing the girls, but may have seen a different group</div>
+    <div class="card-head"><span class="conflict-num">03</span> RA "lied" about seeing the girls, but may have seen a different group</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Her claim</div>
@@ -1140,12 +1255,14 @@
         <div class="conflict-label">Complicating fact</div>
         RA said he saw a group of girls. There were numerous groups of girls (and men, and boys) at the the trail that day, both earlier and later in the day. Her inference that he "lied" assumes the group he saw was the victims and/or the group of 4 girls who left while Betsy Blair was still at the libray.
       </div>
-      <p class="conflict-note">She treats the the timeline and identification as settled when neither have ever been confirmed.</p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">She treats the the timeline and identification as settled when neither have ever been confirmed.</p>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">4</span> RA's missing phone: suspicious absence vs. innocent explanation</div>
+    <div class="card-head"><span class="conflict-num">04</span> RA's missing phone: suspicious absence vs. innocent explanation</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Framing 1 (implying guilt)</div>
@@ -1155,12 +1272,14 @@
         <div class="conflict-label">Framing 2 (trivializing absence)</div>
         "His phone probably was left at home. He said he was there so I don't get how this matters or proves anything other than that his phone was not with him."
       </div>
-      <p class="conflict-note">Both framings are deployed in the same thread within hours. The framing shifts depending on which argument she is countering. In reality, Rick gave his phone to Dulin on Feb. 18, 2017 to look at it inside and out, his phone info was sent to ISP, and Rick was cleared the next day.</p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">Both framings are deployed in the same thread within hours. The framing shifts depending on which argument she is countering. In reality, Rick gave his phone to Dulin on Feb. 18, 2017 to look at it inside and out, his phone info was sent to ISP, and Rick was cleared the next day.</p>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">5</span> Van confession: only the killer would know, but she can't use the confession</div>
+    <div class="card-head"><span class="conflict-num">05</span> Van confession: only the killer would know, but she can't use the confession</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Claims the van proves guilt</div>
@@ -1174,17 +1293,19 @@
         <div class="conflict-label">But also said</div>
         "I did not take into account any of the confessions."
       </div>
-      <p class="conflict-note">She simultaneously excludes confessions from her deliberative framework, uses confession content as definitive proof, and challenges others to disprove that confession content, all within the same exchange.</p>
-        <div class="fig-placeholder" data-src="mia-thread-analysis/only-the-killer-would-know.png">
-          <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Screenshot: only the killer would know</span>
-            <span class="fig-hint">click to view</span>
-        </div>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">She simultaneously excludes confessions from her deliberative framework, uses confession content as definitive proof, and challenges others to disprove that confession content, all within the same exchange.</p>
+          <div class="fig-placeholder" data-src="mia-thread/only-the-killer-would-know.png">
+            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+              <span class="fig-label">Only the killer would know</span>
+              <span class="fig-hint">view</span>
+          </div>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">6</span> Sketch too subjective, but RA's self-reported clothing description is reliable</div>
+    <div class="card-head"><span class="conflict-num">06</span> Sketch too subjective, but RA's self-reported clothing description is reliable</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">On eyewitness sketches</div>
@@ -1194,42 +1315,48 @@
         <div class="conflict-label">On RA's own recollection</div>
         She treats RA's self-reported description of his clothing that day as reliable corroboration that he matched BG's appearance.
       </div>
-      <p class="conflict-note">A skepticism filter is applied to third-party sketch descriptions but not to RA's self-reported recollection. Both are subject memory under imperfect conditions. Rick never described himself as wearing the same clothes as the man in Libby's video.</p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">A skepticism filter is applied to third-party sketch descriptions but not to RA's self-reported recollection. Both are subject memory under imperfect conditions. Rick never described himself as wearing the same clothes as the man in Libby's video.</p>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">8</span> "Can prove everything from the record" vs. never heard about the drug angle</div>
+    <div class="card-head"><span class="conflict-num">07</span> Claims of factual certainty vs. refusal to engage specifics</div>
     <div class="card-body">
-      <div class="conflict-item side-b">
-        <div class="conflict-label">Asserts command of the full record</div>
-        "I can prove everything I am saying with true, factual information from the record."
-      </div>
       <div class="conflict-item side-a">
-        <div class="conflict-label">Admits ignorance of a major trial theory</div>
-        @Misty Porter: "What about the drug angle? Would you like to hear more about that in a new trial?" &mdash; Mia: "I haven't heard about the drug angle."
-      </div>
-      <p class="conflict-note">The drug angle &mdash; third-party suspect theories tied to drug trafficking networks connected to the victims' route &mdash; was raised during the case and circulated publicly before the trial. If she was close enough to the full evidentiary record to claim the ability to prove every statement she made, professed ignorance of this alternative theory is difficult to reconcile with that level of command.</p>
-    </div>
-  </div>
-
-  <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">7</span> Claims of factual certainty vs. refusal to engage specifics</div>
-    <div class="card-body">
-      <div class="conflict-item side-b">
         <div class="conflict-label">Asserts documentary proof</div>
         "I can prove everything I am saying with true, factual information from the record."
       </div>
-      <div class="conflict-item side-a">
+      <div class="conflict-item side-b">
         <div class="conflict-label">Deflects when pressed</div>
         "You're conveniently picking specific comments out of a full picture. But go off lol." / "I'm just gonna send this one back and ask that you do more research. Because the majority of your claims in this comment are false." / "These claims just aren't factually true." <em>(no specifics given in any instance)</em>
       </div>
-      <p class="conflict-note">She repeatedly asserts the ability to rebut specific claims with evidence but declines to produce citations when challenged on individual points.</p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">She repeatedly asserts the ability to rebut specific claims with evidence but declines to produce citations when challenged on individual points.</p>
+      </div>
     </div>
   </div>
 
   <div class="conflict-card">
-    <div class="card-head"><span class="conflict-num">9</span> Thread: "not close to mental torture" &mdash; Interview: interrogation was "overdone" and she sympathized with Allen</div>
+    <div class="card-head"><span class="conflict-num">08</span> "Can prove everything from the record" vs. never heard about the drug angle</div>
+    <div class="card-body">
+      <div class="conflict-item side-a">
+        <div class="conflict-label">Asserts command of the full record</div>
+        "I can prove everything I am saying with true, factual information from the record."
+      </div>
+      <div class="conflict-item side-b">
+        <div class="conflict-label">Admits ignorance of a major trial theory</div>
+        @Misty Porter: "What about the drug angle? Would you like to hear more about that in a new trial?" &mdash; Mia: "I haven't heard about the drug angle."
+      </div>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">The drug angle &mdash; third-party suspect theories tied to drug trafficking networks connected to the victims' route &mdash; was raised during the case and circulated publicly before the trial. If she was close enough to the full evidentiary record to claim the ability to prove every statement she made, professed ignorance of this alternative theory is difficult to reconcile with that level of command.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="conflict-card">
+    <div class="card-head"><span class="conflict-num">09</span> Thread: "not close to mental torture" &mdash; Interview: interrogation was "overdone" and she sympathized with Allen</div>
     <div class="card-body">
       <div class="conflict-item side-a">
         <div class="conflict-label">Public dismissal (thread)</div>
@@ -1238,21 +1365,22 @@
       <div class="conflict-item side-b">
         <div class="conflict-label">Reflective account (Murder Sheet podcast)</div>
         "Especially Holeman, he just kept going on and going on and going on...I just felt like it was overdone." She put herself in Allen's position: "If I was being asked those questions and I didn't know how that got there, how am I going to explain how it did if I don't know?" She found his calm demeanor consistent with someone who genuinely didn't know. The Saturday rewatch moved the vote from 9–3 guilty to 8–4.
-          <div class="fig-placeholder" data-src="mia-thread-analysis/tortured.png">
-          <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <span class="fig-label">Shove your faux sympathy up your ass Mia.</span>
-            <span class="fig-hint">click to view</span>
-        </div>
       </div>
-      <p class="conflict-note">In the thread she dismisses torture concerns with a "lol." In her podcast interview, she describes the same interrogation as excessive and acknowledges it was temporarily persuasive enough to shift jury votes. The public-facing dismissal and the private reflective account describe the same interrogation footage in fundamentally different terms.
-      </p>
+      <div class="conflict-item side-c">
+        <p class="conflict-note">In the thread she dismisses torture concerns with a "lol." In her podcast interview, she describes the same interrogation as excessive and acknowledges it was temporarily persuasive enough to shift jury votes. The public-facing dismissal and the private reflective account describe the same interrogation footage in fundamentally different terms.</p>
+          <div class="fig-placeholder" data-src="mia-thread/tortured.png">
+            <span class="fig-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+              <span class="fig-label">Shove your faux sympathy up your ass Mia.</span>
+              <span class="fig-hint">view</span>
+          </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ── TAB 5: Juror Interviews ── -->
 <div id="interviews" class="tab-panel">
-  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;padding:10px 12px;background:var(--card-top);border-radius:6px;border-left:3px solid var(--accent);">
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;padding:10px 12px;background:#fff;border-radius:6px;border-left:3px solid var(--steel);">
     Mia McHaffey was Juror #02 at trial. She is the anonymous juror interviewed by <em>The Delphi Murders: First Person</em> podcast (Murder Sheet); she was referred to as Juror #08 there, which was her voir dire number. The Juror #05 interview below is a separate juror on the same panel.
   </p>
 
@@ -1542,6 +1670,8 @@ function showTab(id) {
     else if(e.target===lb||e.target.id==='lb-x'){close();}
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  var pdfSvg='<svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 10 12"><path d="M1 0h5.5L10 3.5V11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1z" fill="currentColor" opacity=".85"/><path d="M6 0v3h4" fill="none" stroke="#f2ede6" stroke-width=".7"/><text x="5" y="9" font-family="monospace" font-size="3.5" font-weight="700" fill="#f2ede6" text-anchor="middle">PDF</text></svg>';
+  document.querySelectorAll('.fig-placeholder[data-src$=".pdf"] .fig-icon').forEach(function(el){el.innerHTML=pdfSvg;});
 })();
 </script>
 </body>
