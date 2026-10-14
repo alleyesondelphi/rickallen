@@ -205,15 +205,15 @@
       object-fit: contain;
       object-position: center 52%;
     }
-    .masthead::after { 
+    .masthead::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(0,0,0,0.90) 90%,
-        rgba(0,0,0,0.95) 95%,
-        rgba(0,0,0,1) 100%
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
       );
     }
     .masthead-text {
@@ -347,7 +347,9 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .filing:last-child { border-bottom: none; }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
     .filing-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -494,7 +496,9 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 100%; left: 0; right: 0;
+        top: 100%; 
+        left: 0; 
+        right: 0;
         flex-direction: column;
         background: var(--surface-page);
         border-bottom: 1px solid var(--border-light);
@@ -567,7 +571,9 @@
       padding: 20px 20px;
       border-bottom: 1px solid var(--border-light);
     }
-    .doc-item:last-child { border-bottom: none; }
+    .doc-item:last-child { 
+      border-bottom: none; 
+    }
     .doc-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.78rem;
@@ -627,8 +633,13 @@
       padding: 1% 2%;
     }
     @media (max-width: 600px) {
-      .pdf-embed { min-height: 520px; aspect-ratio: 8.5 / 11; }
-      .doc-item { padding: 16px 16px; }
+      .pdf-embed { 
+        min-height: 520px; 
+        aspect-ratio: 8.5 / 11; 
+      }
+      .doc-item { 
+        padding: 16px 16px; 
+      }
     }
 </style>
 </head>
@@ -646,9 +657,9 @@
 
   <div class="masthead">
     <img class="masthead-img" src="assets/img/hero-img.png" alt="Franks Memo Fallout">
-    <div class="masthead-text" data-aos="fade-up">
+    <div class="masthead-text">
       <p class="masthead-kicker">IN v. Richard Allen</p>
-      <h1 class="masthead-title">Franks Memo Fallout</h1>
+      <h1 class="masthead-title">The Franks Memo</h1>
     </div>
   </div>
 

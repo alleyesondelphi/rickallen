@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Prison Timeline | IN v. RA</title>
-  <meta name="description" content="Comprehensive summary of Richard Allen’s confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <title>Prison Timeline | AEOD</title>
+  <meta name="description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/prison-timeline">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Prison Timeline">
-  <meta property="og:description" content="Comprehensive summary of Richard Allen’s confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <meta property="og:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/prison-timeline">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Prison Timeline">
-  <meta name="twitter:description" content="Comprehensive summary of Richard Allen’s confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <meta name="twitter:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
@@ -31,145 +30,522 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Document items ── */
+    .doc-item {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .doc-item:last-child { 
+      border-bottom: none; 
+    }
+    .doc-note {
+      margin-bottom: 14px;
+      padding: 12px 18px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    .pdf-embed {
+      width: 100%;
+      aspect-ratio: 11 / 8.5;
+      border: none;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .doc-item { 
+        padding: 16px 20px; 
+      }
+      .doc-note { 
+        padding: 10px 14px; 
+        font-size: 12px; 
+      }
+      .pdf-embed { 
+        aspect-ratio: 8.5 / 11; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="prison-timeline" class="active">Prison Timeline</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Prison Timeline">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Prison Timeline</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
-    </a>
+  <div class="content-section">
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
-    </div>
-
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Section -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Prison Timeline</h1>
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Known Haldol Injections</h2></summary>
+      <div class="doc-item">
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1NjrVxZM5RJeQQIVaITH4P3kPgaLJIza0/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
       </div>
-    </div><!-- End Page Title -->
+    </details>
 
-    <!-- prison-timeline wrapper -->
-    <div id="wrapper">
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Prison Timeline</h2></summary>
+      <div class="doc-item">
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1MNwgzyB8Szcm_lcYBtTrECxV_qxC4z2u/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
 
-      <!-- Prison Timeline Section -->
-      <section id="page-section" class="page-section section">
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>All the obvi Vry Srsly "confessions"</h2></summary>
+      <div class="doc-item">
+        <div class="doc-note">All known confessions and Haldol / psychosis related reports.</div>
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1vfb0Q1TvSpNsL_z-TtwKqtbOkw4cdpmv/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
 
-        <!-- known Haldol injections pdf -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Known Haldol Injections</h2>
-            <div class="pdf">
-              <iframe src="https://drive.google.com/file/d/1NjrVxZM5RJeQQIVaITH4P3kPgaLJIza0/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-            </div>
-        </div> <!-- end of known Haldol injections pdf -->
+  </div>
 
-        <!-- prison timeline pdf -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Prison Timeline</h2>
-            <div class="pdf">
-              <iframe src="https://drive.google.com/file/d/1MNwgzyB8Szcm_lcYBtTrECxV_qxC4z2u/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-            </div>
-        </div> <!-- end of prison timeline pdf -->
-        
-        <!-- "confessions" pdf -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>All the obviously very srs "confessions"</h2>
-          <p>
-            All known confessions and Haldol / psychosis related reports.
-          </p>
-            <div class="pdf">
-              <iframe src="https://drive.google.com/file/d/1vfb0Q1TvSpNsL_z-TtwKqtbOkw4cdpmv/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-            </div>
-        </div> <!-- end of "confessions" pdf -->
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </footer>
 
-        <!-- may 2023 timeline pdf -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>May 2023 until Gull's July 19, 2023 Order</h2>
-            <div class="pdf">
-              <iframe src="https://drive.google.com/file/d/1b_HW7gQaIahOD3rQOYft0t7HDVdJpz4v/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-            </div>
-        </div> <!-- end of may 2023 timeline pdf -->
-
-      </section><!-- End of Prison Timeline Section -->
-
-    </div> <!-- end of prison-timeline wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 
 </body>
-
 </html>

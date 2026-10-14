@@ -205,15 +205,15 @@
       object-fit: contain;
       object-position: center 52%;
     }
-    .masthead::after { 
+    .masthead::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(0,0,0,0.90) 90%,
-        rgba(0,0,0,0.95) 95%,
-        rgba(0,0,0,1) 100%
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
       );
     }
     .masthead-text {
@@ -347,7 +347,9 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .filing:last-child { border-bottom: none; }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
     .filing-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -494,7 +496,9 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 100%; left: 0; right: 0;
+        top: 100%; 
+        left: 0; 
+        right: 0;
         flex-direction: column;
         background: var(--surface-page);
         border-bottom: 1px solid var(--border-light);

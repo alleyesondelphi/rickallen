@@ -204,15 +204,15 @@
       object-fit: contain;
       object-position: center 52%;
     }
-    .masthead::after { 
+    .masthead::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(0,0,0,0.90) 90%,
-        rgba(0,0,0,0.95) 95%,
-        rgba(0,0,0,1) 100%
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
       );
     }
     .masthead-text {
@@ -346,7 +346,9 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .filing:last-child { border-bottom: none; }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
     .filing-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -560,7 +562,6 @@
         object-position: center 50%; 
       }
     }
-  
     /* ── Magic Bullet doc/embed layout ── */
     .doc-item {
       border-bottom: 1px solid var(--border-light);
@@ -613,8 +614,13 @@
       margin-bottom: 24px;
     }
     @media (max-width: 600px) {
-      .pdf-embed { min-height: 520px; aspect-ratio: 8.5 / 11; }
-      .doc-item { padding: 16px 0; }
+      .pdf-embed { 
+        min-height: 520px; 
+        aspect-ratio: 8.5 / 11; 
+      }
+      .doc-item { 
+        padding: 16px 0; 
+      }
     }
     .embed-group-label {
       font-size: 0.75rem;
