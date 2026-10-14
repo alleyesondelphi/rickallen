@@ -94,7 +94,9 @@
   .page-header {
     background: var(--ink);
     color: var(--paper);
-    padding: clamp(28px,5vw,44px) clamp(20px,4vw,48px) 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: clamp(28px,5vw,44px) calc(50vw - 50% + 24px) 0;
     position: relative;
     overflow: hidden;
   }
@@ -104,16 +106,41 @@
     top: 0; 
     left: 0; 
     right: 0;
-    height: 4px;
-    background: var(--red);
+    height: 2px;
+    background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
   }
   .masthead-rule {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(8px,1.5vw,10px);
-    letter-spacing: 0.2em;
+    font-size: clamp(7.5px, 1.5vw, 9.5px);
+    letter-spacing: 0.1em;
     color: #888;
-    text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-top: -2%;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.1;
+    }
+  .masthead h1 span {
+    font-weight: 400;
+    color: #999;
+  }
+  .masthead-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: #888;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 15px;
+  } 
+  .masthead-meta a { 
+    color: #aaa; 
+  }
+  .masthead-meta a:hover { 
+    color: #c35f5f; 
+    text-decoration: underline;
   }
   .page-header h1 {
     font-family: 'Playfair Display', serif;
@@ -123,8 +150,8 @@
     color: var(--paper);
     margin-bottom: 8px;
   }
-  .page-header h1 em {
-    font-style: italic;
+  .page-header h1 span {
+    font-style: none;
     font-weight: 400;
     color: #999;
   }
@@ -169,7 +196,7 @@
     display: flex;
     overflow-x: auto;
     gap: 0;
-    margin-top: 18px;
+    margin-top: 1%;
     scrollbar-width: none;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
@@ -182,7 +209,7 @@
     border: none;
     background: transparent;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(9px,1.6vw,11px);
+    font-size: clamp(9px,1.6vw,9px);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -202,7 +229,7 @@
   /* ── Content ── */
   .tab-panel { 
     display: none; 
-    margin-top: 24px; 
+    margin-top: 2%;; 
   }
   .tab-panel.active { 
     display: block; 
@@ -211,13 +238,12 @@
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: clamp(8.5px,1.8vw,10px);
-    font-weight: 600;
-    letter-spacing: 0.25em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
     border-bottom: 1px solid var(--aged);
-    padding-bottom: 8px;
-    margin-bottom: 14px;
+    padding: 1% 2%;
   }
   .section-label:first-child { 
     margin-top: 0; 
@@ -492,15 +518,18 @@
 
 <div class="wrapper">
   <div class="page-header">
-  <div class="masthead-rule">Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1</div>
-  <h1>Mia McHaffey <em>Thread Analysis</em></h1>
-  <p class="subtitle">Questions, assertions, and inconsistencies from the comment thread and juror interviews</p>
+    <div class="masthead-rule">Case No. 08C01-2210-MR-1</div>
+      <h1>Juror #02 <span>Thread Analysis</span></h1>
+        <div class="masthead-meta">
+          <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+          <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+  </div>
   <div style="display:flex;gap:clamp(10px,2.5vw,22px);flex-wrap:wrap;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1.8vw,11px);">
     <a class="back-link" style="margin:0" href="index">Home</a>
     <a class="back-link" style="margin:0" href="the-jury">The Jury</a>
     <a class="back-link" style="margin:0" href="juror-thread">Juror #02 Thread Analysis</a>
     <a class="back-link" style="margin:0" href="lucy-lou">Juror #05 Interview</a>
-    <a class="back-link" style="margin:0" href="juror-thread-threaded">Cloned FB Thread</a>
+    <a class="back-link" style="margin:0" href="juror-thread-threaded">Cloned Facebook Thread</a>
   </div>
   <div class="tabs" role="tablist">
     <button class="tab-btn active" role="tab" onclick="showTab('by-mia')">Questions by Mia <span class="count-badge">10</span></button>
