@@ -489,7 +489,6 @@
       <li><a href="expenses" class="active">Expenses</a></li>
       <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link">Google Drive</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   </nav>
 
   <div class="masthead">
@@ -601,9 +600,6 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
   </script>
 
 </body>

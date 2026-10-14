@@ -642,7 +642,6 @@
       <li><a href="magic-bullet" class="active">The Magic Bullet</a></li>
       <li><a href="https://drive.google.com/drive/folders/1OUv_px7WiGS2Hzgj-z8E0cqla0Rp8fCE?usp=drive_link" target="_blank">Google Drive</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   </nav>
 
   <div class="masthead">
@@ -804,9 +803,6 @@
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
     });
   </script>
 </body>

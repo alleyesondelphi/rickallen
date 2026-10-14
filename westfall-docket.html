@@ -573,7 +573,6 @@
       <li><a href="westfall-docket" class="active">Westfall Docket</a></li>
       <li><a href="https://drive.google.com/drive/folders/1t3YAKKSJiassaoaDtuHi8qjV9s-cldY8?usp=drive_link" target="_blank">Google Drive</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   </nav>
 
   <div class="masthead">
@@ -1050,9 +1049,6 @@
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
     });
   </script>
 </body>

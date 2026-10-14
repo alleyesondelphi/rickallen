@@ -619,7 +619,6 @@
       <li><a href="https://drive.google.com/drive/folders/1dgynfEQ58mRW69JjUMH1Wjko6ZK7sqSV?usp=drive_link" target="_blank">State Exhibits</a></li>
       <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   </nav>
 
   <div class="masthead">
@@ -702,9 +701,6 @@
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
     });
   </script>
 </body>
