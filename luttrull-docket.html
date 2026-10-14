@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Luttull Docket | IN v. RA</title>
+  <title>James Luttrull Docket | AEOD</title>
   <meta name="description" content="Luttrull approved materially false affidavits, froze $1M+ without probable cause, and outsourced forfeitures to lawyers on commission&mdash;then claimed immunity.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/luttrull-docket">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="James Luttrull Docket">
   <meta property="og:description" content="Luttrull approved materially false affidavits, froze $1M+ without probable cause, and outsourced forfeitures to lawyers on commission&mdash;then claimed immunity.">
   <meta property="og:type" content="website">
@@ -15,8 +14,8 @@
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/luttrull-docket.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
+  <!-- Twitter -->
   <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="James Luttrull Docket">
   <meta name="twitter:description" content="Luttrull approved materially false affidavits, froze $1M+ without probable cause, and outsourced forfeitures to lawyers on commission&mdash;then claimed immunity.">
@@ -31,619 +30,1030 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after { 
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,0.95) 95%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="luttrull-docket" class="active">Luttrull Docket</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1UTaVbtNX2ciik0fd9WXlvB7exE5qbWWi?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="James Luttrull Docket">
+    <div class="masthead-text" data-aos="fade-up">
+      <p class="masthead-kicker">Related Docket</p>
+      <h1 class="masthead-title">Economan v. Garrison</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
+  <section class="content-section">
+
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar">
+        <h2>Dale Economan, et al. v. Garrison Law Firm, LLC, et al.</h2>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-item"><strong>District Case:</strong> 1:20-cv-00032 (N.D. Indiana, Hammond)</div>
+        <div class="case-meta-item"><strong>Appeals:</strong> 7th Cir. 24-3246 / 24-3165 / 25-1020</div>
+        <div class="case-meta-item"><strong>District Judge:</strong> Gretchen S. Lund</div>
+        <div class="case-meta-item"><strong>Nature of Suit:</strong> 42 U.S.C. &sect; 1983 Civil Rights Act (2440)</div>
+        <div class="case-meta-item"><strong>Plaintiff:</strong> Dale W. Economan; Economan and Associates Family Medicine</div>
+        <div class="case-meta-item"><strong>Defendants:</strong> Garrison Law Firm LLC; James Luttrull; Jessica Krug; Tonda Cockrell; Gary L. Whisenand; United States</div>
+        <div class="case-meta-item"><strong>Filed:</strong> January 21, 2020</div>
+        <div class="case-meta-item"><strong>Outcome:</strong> 7th Circuit (Jan. 12, 2026) granted qualified/absolute immunity to Luttrull, Krug, Whisenand; Cockrell found liable; Garrison Law Firm remanded</div>
+      </div>
+    </div>
+    <details class="month-details">
+      <summary class="month-summary"><h2>January 2020</h2></summary>
+      <div class="filing">
+        <div class="filing-date">01-21-2020</div>
+        <div class="filing-content">Economan files a <a class="filing-link" href="https://drive.google.com/file/d/1_DLWNLzgYxjo2ZHgnlAdNXDxMOK1vn7H/view?usp=drivesdk" target="_blank">Complaint</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-21-2020</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1uGwa3dGhITx6U3TJuzS19R3uf23mCo3G/view?usp=drivesdk" target="_blank">Civil Cover Sheet</a> filed.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>September 2024</h2></summary>
+      <div class="filing">
+        <div class="filing-date">09-30-2024</div>
+        <div class="filing-content">Judge Lund enters a scathing <a class="filing-link" href="https://drive.google.com/file/d/1qY9orNXjJd4HECtC_CWB0eiVOQNbGYmx/view?usp=drivesdk" target="_blank">Order</a>.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>October 2024</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-04-2024</div>
+        <div class="filing-content"><span class="filing-bold">Notice of Hearing</span>.
+        <div class="filing-note">ZOOM Video Status Conference is SET for 11/5/2024 at 11:30 AM (CDT) in US District Court &mdash; Hammond before Judge Gretchen S Lund.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <span class="filing-bold">Motion for Reconsideration, Motion for Release of Funds, and Motion to Reassign Case</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <span class="filing-bold">Brief in Support of the Motion for Reconsideration</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Tonda Cockrell, United States, and Gary Whisenand file a <span class="filing-bold">Motion for Reconsideration</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Tonda Cockrell, United States, and Gary Whisenand file a <span class="filing-bold">Brief in Support of the Motion for Reconsideration</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <span class="filing-bold">Motion for Reconsideration</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <span class="filing-bold">Memorandum in Support of the Motion for Reconsideration</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-29-2024</div>
+        <div class="filing-content">United States files a <span class="filing-bold">Notice of Substitution in Place of Defendants Gary L. Whisenand and Tonda Cockrell</span>.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>November 2024</h2></summary>
+      <div class="filing">
+        <div class="filing-date">11-05-2024</div>
+        <div class="filing-content"><span class="filing-bold">Zoom Status Conference</span> held before Judge Gretchen S Lund.
+        <div class="filing-note">Plaintiff's Motion for Partial Summary Judgment against Dft Cockrell on malicious prosecution claim was granted. The Federal Dfts moved for the Court to reconsider (DE 229). The Court DENIES that motion. The Court will GRANT the aspect of the motions regarding reconsideration of the qualified immunity findings. The Court SETS the matter for Jury Trial (5 days) for 2/3/2025 at 09:00 AM and the Final Pretrial Conference set for 1/9/2025 at 01:30 PM before Judge Gretchen S Lund. The Court REFERS this matter to District Judge Philip P Simon for a settlement conference.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-06-2024</div>
+        <div class="filing-content"><span class="filing-bold">Scheduling, Pretrial Conference and Trial Order</span> signed by Judge Lund.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-07-2024</div>
+        <div class="filing-content">Judge Simon enters an <a class="filing-link" href="https://drive.google.com/file/d/1U_CFQSxW66yetZiGNhr9X_DzcGbCeHKB/view?usp=drivesdk" target="_blank">Order</a>.
+        <div class="filing-note">This case has been referred to Judge Philip P. Simon for a settlement conference on November 19, 2024, at 9:00 a.m. (CST).</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-08-2024</div>
+        <div class="filing-content">Economan files <a class="filing-link" href="https://drive.google.com/file/d/1nMSpLBIovKJEvzFTXCjCZs5XQ08PinWt/view?usp=drivesdk" target="_blank">Plaintiffs' Objection and Response to Defendants' Collective Motions to Reconsider and Request for Clarification of the Court's November 6, 2024 Docket Entry</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-12-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1E-5U85qklqPluqqWH0WTIMYqLaZCc118/view?usp=drivesdk" target="_blank">Defendant The Garrison Law Firm's Motion For Leave to Visually Attend Judicial Settlement Conference</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-13-2024</div>
+        <div class="filing-content">Judge Simon enters an <span class="filing-bold">Order</span> granting Garrison Law Firm's motion to appear virtually.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-14-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1FjDAapk-YJNAAZkRsyBtqhlNFta8TJhP/view?usp=drivesdk" target="_blank">Federal Defendants' Motion for Leave to Appear Virtually at the Judicial Settlement Conference</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-14-2024</div>
+        <div class="filing-content">Judge Lund enters an <a class="filing-link" href="https://drive.google.com/file/d/17SAkiOi2zZ8nBWL5RY4DvWVSpMuzeEQw/view?usp=drivesdk" target="_blank">Opinion and Order</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-15-2024</div>
+        <div class="filing-content">Judge Simon enters an <span class="filing-bold">Order</span>.
+        <div class="filing-note">The Motion for Leave to Appear Virtually is GRANTED IN PART and DENIED IN PART. GRANTED as to Defendant Gary L. Whisenand and Patrick C. Patterson may be available by telephone. DENIED as to Defendant Tonda Cockrell. Settlement conference RECONFIRMED for 11/19/2024, at 9:00 a.m. (CST) in Hammond, Indiana.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-19-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1BzZxcafAFMuvXllxof1WSrUxpaCbCOrX/view?usp=drivesdk" target="_blank">Defendant's Memorandum Addressing Failure to Intervene Claim</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-19-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/13UW1lvicJC6BOY5jpL_rWEE7OsFrIdNI/view?usp=drivesdk" target="_blank">Defendant The Garrison Law Firm's Supplemental Brief in Support of Motion for Reconsideration of Denial of Summary Judgement</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-19-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/17MsF7pB8yFW6ISN-JPNF8igE16j7_M0h/view?usp=drivesdk" target="_blank">Plaintiffs' Objection to Notice of Substitution of United States of America in the Place of Defendants Gary L. Whisenand and Tonda Cockrell</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-19-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1trN3NS_miTTu3V8Sbig2WG1Pl8t8CvQZ/view?usp=drivesdk" target="_blank">Federal Defendants' Statement Regarding Failure to Intervene</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-19-2024</div>
+        <div class="filing-content"><span class="filing-bold">Settlement Conference</span> held before Judge Philip P Simon.
+        <div class="filing-note">Parties negotiate in good faith but settlement is not attained.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-26-2024</div>
+        <div class="filing-content">Carly A. Brandenburg files a <span class="filing-bold">Notice of Appearance</span> on behalf of Jessica Krug and James Luttrull.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-26-2024</div>
+        <div class="filing-content">James Luttrull and Jessica Krug file a <a class="filing-link" href="https://drive.google.com/file/d/1abMT8370Er6Fi7cufW8oHRGcoz5I_2fb/view?usp=drivesdk" target="_blank">Notice of Appeal</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-27-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <span class="filing-bold">Joint Motion to Stay</span>.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>December 2024</h2></summary>
+      <div class="filing">
+        <div class="filing-date">12-03-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <a class="filing-link" href="https://drive.google.com/file/d/15oHSCWeLuvIBeRIyJl9S6Bcm7t5VRmQJ/view?usp=drivesdk" target="_blank">Plaintiffs' Response to Defendants' Briefs in Opposition to Plaintiffs' Failure to Intervene Claim</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-03-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file a <span class="filing-bold">Response to the Plaintiffs' Objection to the Notice of Substitution</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-03-2024</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span>.
+        <div class="filing-note">Defendants' filed a Joint Motion to Stay Proceedings (DE 253) and indicated that the Plaintiff opposes the motion. The Plaintiff is ORDERED to file a response to the motion to stay by 12/11/2024. Any reply is due by 12/18/2024.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-04-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <span class="filing-bold">Motion for Extension of Time to File Pretrial Documents</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <span class="filing-bold">Objection to the Motion for Extension of Time to File Pretrial Documents</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <span class="filing-bold">Reply to the Motion for Extension of Time to File Pretrial Documents</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file a <a class="filing-link" href="https://drive.google.com/file/d/1IcQyOiHRSQhW5-twIcj1nnVX3sfC9Fee/view?usp=drive_link" target="_blank">Plaintiffs' Trial Brief</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <span class="filing-bold">First Proposed Voir Dire</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Erick Schmadeke, for the Indiana Attorney General, files <a class="filing-link" href="https://drive.google.com/file/d/13oqtHrW0jM8hhWKHzOMPPLpnYLFzIQPd/view?usp=drive_link" target="_blank">Plaintiffs' Motions in Limine</a>. (Attachments: #1 Exhibit Expert Disclosure Dr. King)</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <a class="filing-link" href="https://drive.google.com/file/d/1F0ELQjnBAU033wX7jYCPBfVC1KGQdkcn/view?usp=drive_link" target="_blank">Motion to Exclude Opinion Testimony of Timothy King, M.D.</a></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <span class="filing-bold">Proposed Jury Instructions</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <span class="filing-bold">Proposed Voir Dire</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Dale W. Economan, Economan and Associates Family Medicine file <span class="filing-bold">Proposed Verdict Form</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file <a class="filing-link" href="https://drive.google.com/file/d/1-tywpFr_SPUDksOeCWLvJYMatfcIG8ue/view?usp=drive_link" target="_blank">Federal Defendant's Motions in Limine</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file <a class="filing-link" href="https://drive.google.com/file/d/16b3uUvOlz1w__Dom3YPZvqC0Yv8LlBF8/view?usp=drive_link" target="_blank">Federal Defendants' Motion to Bar Undisclosed Expert Witness Testimony</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file <span class="filing-bold">Proposed Voir Dire</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file <span class="filing-bold">Proposed Jury Instructions</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files <span class="filing-bold">Proposed Jury Instructions</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <a class="filing-link" href="https://drive.google.com/file/d/1WJk-NZZtaJHf7mNnjaBC6BCje86jSvcG/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm's Motions in Limine</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <a class="filing-link" href="https://drive.google.com/file/d/178FXgGBPXtlwxryfgh4MzU3HnaNW2hb7/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm's Brief in Support of its Motion in Limine</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files <span class="filing-bold">Proposed Voir Dire</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files <span class="filing-bold">Proposed Verdict Form</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file <span class="filing-bold">Proposed Voir Dire</span>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-05-2024</div>
+        <div class="filing-content">Jessica Krug and James Luttrull file a <a class="filing-link" href="https://drive.google.com/file/d/1uc7txesuGK_bBNi6BEZetoSbf-4WemLj/view?usp=drive_link" target="_blank">Motion in Limine</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-06-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file <a class="filing-link" href="https://drive.google.com/file/d/1HVtwsOQ5tMvCZ6dIhS0g9yfc3nWoXxoB/view?usp=drive_link" target="_blank">All Parties' Motion for Emergency Clarification</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-09-2024</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span>.
+        <div class="filing-note">Over Plaintiff's objection, the Court GRANTS the Motion for Extension of Time of Pretrial Deadlines. All pretrial deadlines are STAYED until the Motion to Stay has been ruled on. Plaintiff have until 12/11/2024 to respond to the Motion to Stay.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-10-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <a class="filing-link" href="https://drive.google.com/file/d/1VuOiXhvT0wYd3i9Z4EOcm37rXa514vgY/view?usp=drive_link" target="_blank">Notice of Appeal</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-10-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <a class="filing-link" href="https://drive.google.com/file/d/1-v5nWoLZ1J3hHibi4LWobHIP-lnGdJaD/view?usp=drive_link" target="_blank">Docketing Statement</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-10-2024</div>
+        <div class="filing-content">Garrison Law Firm, LLC files a <a class="filing-link" href="https://drive.google.com/file/d/1NQakc2Oie5lYWIKeAWV3dDPgcLirWVyA/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm's Reply in Support of Supplemental Briefing on Failure to Intervene</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-10-2024</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file a <a class="filing-link" href="https://drive.google.com/file/d/1-aUQPyju3nUO0JatssAQYWP29tYJ6TM2/view?usp=drive_link" target="_blank">Reply in Support of Federal Defendants' Statement Regarding Failure to Intervene</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-11-2024</div>
+        <div class="filing-content">Benjamin Jones files an <span class="filing-bold">Appearance</span> for Appellants Jessica Krug and James Luttrull in 24-3165.
+        <div class="filing-note">U.S. civil case docketed. Fee paid. Docketing statement filed. Transcript information sheet due by 12/26/2024. Appellant's brief due on or before 01/21/2025 for Garrison Law Firm, LLC. [24-3246]</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-11-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1gNs5FUiB2tJmxezvF_Oh6SsJu6LgrULJ/view?usp=drivesdk" target="_blank">Plaintiffs' Motion to Reconsider, Response and Objection to Defendants' Motion to Stay Proceedings, and Request to Certify Krug and Luttrull's Appeal as Frivolous</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-11-2024</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span>.
+        <div class="filing-note">The court orders these appeals are CONSOLIDATED for purposes of briefing and disposition. Appellants shall file briefs and required short appendices on or before January 21, 2024. Appellees shall file a consolidated brief on or before February 20, 2025. Appellants shall file reply briefs, if any, on or before March 13, 2025. [24-3165, 24-3246]</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-12-2024</div>
+        <div class="filing-content"><span class="filing-bold">Transcript Information Sheet</span> filed by Appellant Garrison Law Firm, LLC. [24-3246]</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-12-2024</div>
+        <div class="filing-content"><span class="filing-bold">FRAP 10 CERTIFICATE</span> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-18-2024</div>
+        <div class="filing-content">Evan Comer files an <span class="filing-bold">Appearance</span> for Appellants Jessica Krug and James Luttrull in 24-3165.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-18-2024</div>
+        <div class="filing-content">Tonda Cockrell, Gary Whisenand, Jessica Krug, James Luttrull, and Garrison Law Firm file a <a class="filing-link" href="https://drive.google.com/file/d/17rybJj3I_5jqfKw9BjkWzWaVQFmbBeiB/view?usp=drive_link" target="_blank">Defendants' Joint Reply in Support of Their Motion to Stay Proceedings</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2024</div>
+        <div class="filing-content">Jacob W. Zigenfus files a <span class="filing-bold">Disclosure Statement and Appearance</span> for Appellant Garrison Law Firm, LLC in 24-3246.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2024</div>
+        <div class="filing-content">Michael E. Brown files a <span class="filing-bold">Disclosure Statement and Appearance</span> for Appellant Garrison Law Firm, LLC in 24-3246.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-19-2024</div>
+        <div class="filing-content">Crystal G. Rowe files a <span class="filing-bold">Disclosure Statement and Appearance</span> for Appellant Garrison Law Firm, LLC in 24-3246.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>January 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">01-02-2025</div>
+        <div class="filing-content">Judge Lund enters an <a class="filing-link" href="https://drive.google.com/file/d/1OQtcaEVbHkFckRhtLZf1f8-8PasZh8d8/view?usp=drivesdk" target="_blank">Order</a>.
+        <div class="filing-note">Defendants' Motion to Stay, [DE 253], is GRANTED. In both the September 30, 2024 Opinion and Order and the November 5, 2024 hearing, the Court denied Defendants Luttrull's and Krug's assertions of absolute and qualified immunity against Plaintiff's claims of malicious prosecution, fourth amendment violations, and fifth amendment violations. Defendants Luttrull's and Krug's appeal is not frivolous. Plaintiffs' Motion to Reconsider, [DE 287], is DENIED. All Parties' Motion for Clarification, [DE 279], is also DENIED.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-02-2025</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> vacating trial settings.
+        <div class="filing-note">Based on the Order staying the case, the Court VACATES the Final Pretrial Conference set for 1/9/2025, and VACATES the Jury Trial set for 2/3/2025.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-06-2025</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file a <a class="filing-link" href="https://drive.google.com/file/d/1QmQJJcn_gm-3v_Qo-_VtgEBNig5CS7xS/view?usp=drivesdk" target="_blank">Notice of Appeal</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-06-2025</div>
+        <div class="filing-content">Judge Lund issues a <span class="filing-bold">Notice</span>.
+        <div class="filing-note">Circuit Rule 46(a) requires the lead attorney and any attorney who intends to present oral argument be admitted to practice in this court. Attorney Benjamin M. L. Jones for Appellants James Luttrull and Jessica Krug has not been admitted to practice in this court as of this date. [24-3165]</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2025</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> consolidating appeals.
+        <div class="filing-note">The court, on its own motion, orders these appeals are CONSOLIDATED for purposes of briefing and disposition. Appellants shall file briefs and required short appendices on or before February 18, 2025. Appellees shall file a consolidated brief on or before March 20, 2025. Appellants shall file reply briefs, if any, on or before April 10, 2025. [24-3165, 24-3246, 25-1020]</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2025</div>
+        <div class="filing-content">Tonda Cockrell and Gary Whisenand file a <a class="filing-link" href="https://drive.google.com/file/d/1tCBHZaZP4WV2lZyOhmUZ3O5Yk-N1Sx8F/view?usp=drive_link" target="_blank">Notice of Case Opening</a>.
+        <div class="filing-note">USCA Case Number 25-1020 for Notice of Appeal filed by Tonda Cockrell, Gary L. Whisenand.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+        <div class="filing-content">Sarah W. Carroll and Weili J. Shaw file their <span class="filing-bold">Appearance</span> for Appellants Tonda Cockrell and Gary L. Whisenand in 25-1020. [25-1020, 24-3165, 24-3246]</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-13-2025</div>
+        <div class="filing-content">Isaac Jordan files a <span class="filing-bold">Motion To Withdraw Appearance</span> by Plaintiffs Dale W. Economan, Economan and Associates Family Medicine.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-14-2025</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> granting Motion to Withdraw as Attorney. Attorney Isaac A Jordan terminated.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-17-2025</div>
+        <div class="filing-content">David E. Hollar files a <a class="filing-link" href="https://drive.google.com/file/d/1RapOIGz2EbMvjARqr-gdh7QmiBIQ9B4W/view?usp=drivesdk" target="_blank">Request for Transcript</a>.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-21-2025</div>
+        <div class="filing-content"><span class="filing-bold">FRAP 10 CERTIFICATE</span> filed.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>February 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">02-04-2025</div>
+        <div class="filing-content">AUSA Cook files a <span class="filing-bold">Motion To Withdraw Appearance</span> (AUSA Jennifer B. Cook) by Defendants Tonda Cockrell, Gary L. Whisenand, United States.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-04-2025</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> granting Motion to Withdraw Appearance of AUSA Jennifer B. Cook.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>September 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">09-02-2025</div>
+        <div class="filing-content">AUSA Madison Lo Dolce files a <span class="filing-bold">Motion to Withdraw as Attorney</span> (AUSA Madison M. Lo Dolce) by Defendants Tonda Cockrell, United States, Gary L. Whisenand.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>October 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-14-2025</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> granting Motion to Withdraw as Attorney. Attorney Madison Lo Dolce &mdash; AUSA terminated.</div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>January 2026</h2></summary>
+      <div class="filing">
+        <div class="filing-date">01-12-2026</div>
+        <div class="filing-content">Judge Lund issues an <a class="filing-link" href="https://drive.google.com/file/d/1oxp_DzwWVNQcqqbEmLyKMgsZXqmQMNjF/view?usp=drive_link" target="_blank">Order</a> &mdash; 7th Circuit Decision.
+        <div class="filing-note">We conclude that all defendants are entitled to qualified immunity on the Fifth Amendment due process claims against them. DEA Investigator Gary Whisenand is entitled to qualified immunity, and prosecutors James Luttrull and Jessica Krug to absolute immunity, on the Fourth Amendment claims against them. We dismiss Garrison Law Firm's Fourth Amendment appeal for lack of jurisdiction.</div></div>
+      </div>
+    </details>
+    <details class="month-details">
+      <summary class="month-summary"><h2>March 2026</h2></summary>
+      <div class="filing">
+        <div class="filing-date">03-06-2026</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1S6Y5DZJLoOxwQ2YdMjilAgqYC5Sal1XR/view?usp=drive_link" target="_blank">Notice of Issuance of Mandate</a> filed.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-10-2026</div>
+        <div class="filing-content"><span class="filing-bold">Notice of Hearing</span>.
+        <div class="filing-note">The Court SETS a Zoom Video Status Conference for 4/28/2026 at 01:30 PM (CDT) before Judge Gretchen S Lund.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-11-2026</div>
+        <div class="filing-content"><span class="filing-bold">Notice of Appearance</span> by R. Jeffrey Lowe on behalf of The Garrison Law Firm, LLC.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-11-2026</div>
+        <div class="filing-content"><span class="filing-bold">Notice of Appearance</span> by Jacob Zigenfus on behalf of The Garrison Law Firm, LLC.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-11-2026</div>
+        <div class="filing-content">Judge Lund issues an <a class="filing-link" href="https://drive.google.com/file/d/1mIXELe09zVc9KkV4LvBToEf5nM7O0YQn/view?usp=drive_link" target="_blank">Order</a>.
+        <div class="filing-note">The Seventh Circuit found that all Defendants were entitled to qualified immunity for any alleged violations of the Fifth Amendment. The Seventh Circuit found that Defendants Krug and Luttrull were entitled to absolute immunity for any and all claims asserted against them, including alleged violations of the Fourth Amendment. The Seventh Circuit found that Defendant Whisenand was entitled to qualified immunity for alleged violations of the Fourth Amendment. Because Defendants Krug, Luttrull and Whisenand are immune from suit for the Fourth Amendment claim, they are terminated from the case. The Clerk is DIRECTED to enter judgment for Defendants Krug, Luttrull and Whisenand, and against Plaintiff. The Fourth Amendment claim proceeds only against Defendants Garrison Law Firm and the USA.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-12-2026</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/189V_98v9pSe94URf0Fe20NICSIxrTfJC/view?usp=drive_link" target="_blank">Clerk's Entry of Judgment</a> filed.
+        <div class="filing-note">Judgment ENTERED in favor of the defendants Gary L Whisenand, Jessica Krug and James Luttrull and against plaintiffs Dale W Economan and Economan and Associates Family Medicine.</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-12-2026</div>
+        <div class="filing-content">Judge Lund issues an <span class="filing-bold">Order</span> on Motions in Limine.
+        <div class="filing-note">Defendants Krug, Luttrull's Motion in Limine (DE 272) is DENIED AS MOOT. Motions in Limine by defendants Cockrell, Whisenand and United States are DENIED as MOOT with leave to refile; Motion in Limine by plaintiffs DENIED as MOOT with leave to refile; Motion in Limine by Defendant Garrison Law Firm DENIED as MOOT with leave to refile.</div></div>
+      </div>
+    </details>
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1UTaVbtNX2ciik0fd9WXlvB7exE5qbWWi?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+      <div class="drive-card-body">
+        <h3 class="drive-card-title">Google Drive</h3>
+        <p class="drive-card-desc">Folder archive of filings, orders, briefs, etc.</p>
+      </div>
+      <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X/Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
+  </footer>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Seciton -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">James Luttrull Docket</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- luttrull-docket wrapper -->
-    <div id="wrapper">
-
-      <!-- James Luttrull Docket Section -->
-      <section id="page-section" class="page-section section">
-
-        <!-- TLDR -->
-        <div class="container section-title">
-        <h2>24-3246 | U.S. Court of Appeals, Seventh Circuit</h2>
-          <p>
-            Dale Economan, et al v. Garrison Law Firm, LLC.<br>
-            Filed Dec. 11, 2024 | Nature of Suit 2440 Civil Rights &mdash; Other<br>
-            Original Case 1:20-cv-00032 | Cause 42:1983 Civil Rights Act
-          </p>
-        </div><!-- End of TLDR -->
-
-        <!-- January 2020 -->
-        <div class="container section-title">
-        <h2>January 2020</h2>
-          <p>
-            Economan files a <strong><a class="link" href="https://drive.google.com/file/d/1_DLWNLzgYxjo2ZHgnlAdNXDxMOK1vn7H/view?usp=drivesdk" target="_blank">Complaint</a></strong> on January 21, 2020.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1uGwa3dGhITx6U3TJuzS19R3uf23mCo3G/view?usp=drivesdk" target="_blank">Civil Cover Sheet</a></strong> filed on January 21, 2020. 
-          </p>
-        </div><!-- End of January 2020 -->
-
-        <!-- September 2024 -->
-        <div class="container section-title">
-        <h2>September 2024</h2>
-          <p>
-            Judge Lund enters a scathing <strong><a class="link" href="https://drive.google.com/file/d/1qY9orNXjJd4HECtC_CWB0eiVOQNbGYmx/view?usp=drivesdk" target="_blank">Order</a></strong> on September 30, 2024.
-          </p>
-        </div><!-- End of September 2024 -->
-
-        <!-- October 2024 -->
-        <div class="container section-title">
-        <h2>October 2024</h2>
-          <p>
-            <strong>Notice of Hearing</strong> on October 4, 2024.
-            <ul class="docket-entry">
-              <li>ZOOM Video Status Conference is SET for 11/5/2024 at 11:30 AM (CDT) in US District Court - Hammond before Judge Gretchen S Lund. Zoom link and connection information emailed to counsel. (jss) (Entered: 10/04/2024).</li>
-            </ul>
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong>Motion for Reconsideration, Motion for Release of Funds, and Motion to Reassign Case</strong> on October 28, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong>Brief in Support of the Motion for Reconsideration</strong> on October 28, 2024.
-          </p>
-          <p>
-            Tonda Cockrell, United States, and Gary Whisenand file a <strong>Motion for Reconsideration</strong> on October 28, 2024.
-          </p>
-          <p>
-            Tonda Cockrell, United States, and Gary Whisenand file a <strong>Brief in Support of the Motion for Reconsideration</strong> on October 28, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong>Motion for Reconsideration</strong> on October 28, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong>Memorandum in Support of the Motion for Reconsideration</strong> on October 28, 2024.
-          </p>
-          <p>
-            United States files a <strong>Notice of Substitution in Place of Defendants Gary L. Whisenand and Tonda Cockrell</strong> on October 29, 2024.
-          </p>
-        </div><!-- End of October 2024 -->
-
-        <!-- November 2024 -->
-        <div class="container section-title">
-        <h2>November 2024</h2>
-          <p>
-            <strong>Zoom Status Conference</strong> held on November 5, 2024 before Judge Gretchen S Lund.
-            <ul class="docket-entry">
-              <li>Plaintiff's Motion for Partial Summary Judgment against Dft Cockrell on malicious prosecution claim was granted. The Federal Dfts moved for the Court to reconsider (DE 229). The Court DENIES that motion. Dft's respective Motions to Reconsider that the qualified immunity findings be reconsidered. The Court will GRANT that aspect of the motions. The Court SETS the matter for Jury Trial (5 days) for 2/3/2025 at 09:00 AM and the Final Pretrial Conference set for 1/9/2025 at 01:30 PM before Judge Gretchen S Lund. The Court REFERS this matter to District Judge Philip P Simon for a settlement conference. (Entered: 11/06/2024).</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Scheduling, Pretrial Conference and Trial Order</strong> signed by Judge Lund on November 6, 2024.
-          </p>
-          <p>
-            Judge Simon enters an <strong><a class="link" href="https://drive.google.com/file/d/1U_CFQSxW66yetZiGNhr9X_DzcGbCeHKB/view?usp=drivesdk" target="_blank">Order</a></strong> on November 7, 2024.
-            <ul class="docket-entry">
-              <li>This case has been referred to Judge Philip P. Simon for a settlement conference on November 19, 2024, at 9:00 a.m. (CST). To understand Judge Simon's procedure and requirements, and to assist in promoting settlement, each party should review the "Settlement Conference" page on Judge Simon's website at: www .innd .uscourts .gov /sites /innd /files /PPSSettlementConferencelnstructions .pdf in advance of the settlement conference. This includes instructions regarding the pre-conference demand and offer, submission of settlement memoranda, attendance requirements, and the conference format. SO ORDERED. ENTERED: November 7, 2024.</li>
-            </ul>
-          </p>
-          <p>
-            Economan files <strong><a class="link" href="https://drive.google.com/file/d/1nMSpLBIovKJEvzFTXCjCZs5XQ08PinWt/view?usp=drivesdk" target="_blank">Plaintiffs' Objection and Response to Defendants' Collective Motions to Reconsider and Request for Clarification of the Court's November 6, 2024 Docket Entry</a></strong> on November 8, 2024.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1E-5U85qklqPluqqWH0WTIMYqLaZCc118/view?usp=drivesdk" target="_blank">Defendant The Garrison Law Firm's Motion For Leave to Visually Attend Judicial Settlement Conference</a></strong> filed on November 12, 2024.
-          </p>
-          <p>
-            Judge Simon enters an <strong>Order</strong> granting Garrison Law Firm's motion to appear virtually on November 13, 2024.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1FjDAapk-YJNAAZkRsyBtqhlNFta8TJhP/view?usp=drivesdk" target="_blank">Federal Defendants' Motion for Leave to Appear Virtually at the Judicial Settlement Conference</a></strong> filed on November 14, 2024.
-          </p>
-          <p>
-            Judge Lund enters an <strong><a class="link" href="https://drive.google.com/file/d/17SAkiOi2zZ8nBWL5RY4DvWVSpMuzeEQw/view?usp=drivesdk" target="_blank">Opinion and Order</a></strong> entered on November 14, 2024.
-          </p>
-          <p>
-            Judge Simon enters an <strong>Order</strong> on November 15, 2024.
-            <ul class="docket-entry">
-              <li>The Motion for Leave to Appear Virtually is GRANTED IN PART and DENIED IN PART. The motion is GRANTED as to the request that Defendant Gary L. Whisenand and Patrick C. Patterson may be available by telephone or otherwise available to participate virtually during the entire settlement conference. However, the motion is DENIED as to Defendant Tonda Cockrell. The settlement conference is RECONFIRMED for 11/19/2024, at 9:00 a.m. (CST) in Hammond, Indiana. (Entered: 11/15/2024).</li>
-            </ul>
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1BzZxcafAFMuvXllxof1WSrUxpaCbCOrX/view?usp=drivesdk" target="_blank">Defendant's Memorandum Addressing Failure to Intervene Claim</a></strong> filed on November 19, 2024.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/13UW1lvicJC6BOY5jpL_rWEE7OsFrIdNI/view?usp=drivesdk" target="_blank">Defendant The Garrison Law Firm's Supplemental Brief in Support of Motion for Reconsideration of Denial of Summary Judgement</a></strong> filed on November 19, 2024.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/17MsF7pB8yFW6ISN-JPNF8igE16j7_M0h/view?usp=drivesdk" target="_blank">Plaintiffs' Objection to Notice of Substitution of United States of America in the Place of Defendants Gary L. Whisenand and Tonda Cockrell for the Second and Third Claims for Relief in Plaintiffs' Complaint</a></strong> filed on November 19, 2024.
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1trN3NS_miTTu3V8Sbig2WG1Pl8t8CvQZ/view?usp=drivesdk" target="_blank">Federal Defendants' Statement Regarding Failure to Intervene</a></strong> filed on November 19, 2024.
-          </p>
-          <p>
-            <strong>Settlement Conference</strong> held on November 19, 2024 before Judge Philip P Simon.
-            <ul class="docket-entry">
-              <li>Parties negotiate in good faith but settlement is not attained. (Entered: 11/21/2024).</li>
-            </ul>
-          </p>
-          <p>
-            Carly A. Brandenburg files a <strong>Notice of Appearance</strong> on behalf of Jessica Krug and James Luttrull on November 26, 2024.
-          </p>
-          <p>
-            James Luttrull and Jessica Krug file a <strong><a class="link" href="https://drive.google.com/file/d/1abMT8370Er6Fi7cufW8oHRGcoz5I_2fb/view?usp=drivesdk" target="_blank">Notice of Appeal</a></strong> on November 26, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong>Joint Motion to Stay</strong> on November 27, 2024.
-          </p>
-        </div><!-- End of November 2024 -->
-
-        <!-- December 2024 -->
-        <div class="container section-title">
-        <h2>December 2024</h2>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong><a class="link" href="https://drive.google.com/file/d/15oHSCWeLuvIBeRIyJl9S6Bcm7t5VRmQJ/view?usp=drivesdk" target="_blank">Plaintiffs' Response to Defendants' Briefs in Opposition to Plaintiffs' Failure to Intervene Claim</a></strong> on December 3, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file a <strong>Response to the Plaintiffs' Objection to the Notice of Substitution</strong> on December 3, 2024.
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on December 3, 2024.
-            <ul class="docket-entry">
-              <li>Defendants' filed a 253 Joint Motion to Stay Proceedings and indicated that the Plaintiff opposes the motion. As a reminder, the Plaintiff is ORDERED to file a response to the motion to stay by 12/11/2024. Any reply is due by 12/18/2024. Text entry by Judge Gretchen S Lund on 12/3/2024. (jss) (Entered: 12/03/2024).</li>
-            </ul>
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong>Motion for Extension of Time to File Pretrial Documents</strong> on December 4, 2024.
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong>Objection to the Motion for Extension of Time to File Pretrial Documents</strong> on December 5, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong>Reply to the Motion for Extension of Time to File Pretrial Documents</strong> on December 5, 2024.
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file a <strong><a class="link" href="https://drive.google.com/file/d/1IcQyOiHRSQhW5-twIcj1nnVX3sfC9Fee/view?usp=drive_link" target="_blank">Plaintiffs' Trial Brief</a></strong> on December 5, 2024.
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong>First Proposed Voir Dire</strong> on December 5, 2024.
-          </p>
-          <p>
-            Erick Schmadeke, for the Indiana Attorney General, files <strong><a class="link" href="https://drive.google.com/file/d/13oqtHrW0jM8hhWKHzOMPPLpnYLFzIQPd/view?usp=drive_link" target="_blank">Plaintiffs’ Motions in Limine</a></strong> on December 5, 2024.
-            <ul class="docket-entry">
-              <li>
-                (Attachments: # 1 Exhibit Expert Disclosure Dr. King)(Schmadeke, Eric) (Entered: 12/05/2024).
-              </li>
-            </ul>
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong><a class="link" href="https://drive.google.com/file/d/1F0ELQjnBAU033wX7jYCPBfVC1KGQdkcn/view?usp=drive_link" target="_blank">Motion to Exclude Opinion Testimony of Timothy King, M.D.</a></strong> on December 5, 2024.
-            <ul class="docket-entry">
-              <li>
-                (Attachments: # 1 Exhibit Expert Disclosure Dr. King)(Schmadeke, Eric) (Entered: 12/05/2024).
-              </li>
-            </ul>
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong>Proposed Jury Instructions</strong> on December 5, 2024.
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong>Proposed Voir Dire</strong> on December 5, 2024.
-          </p>
-          <p>
-            Dale W. Economan, Economan and Associates Family Medicine file <strong>Proposed Verdict Form</strong> on December 5, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file <strong><a class="link" href="https://drive.google.com/file/d/1-tywpFr_SPUDksOeCWLvJYMatfcIG8ue/view?usp=drive_link" target="_blank">Federal Defendant’s Motions in Limine</a></strong> on December 5, 2024.
-          </p>
-                    <p>
-            Tonda Cockrell and Gary Whisenand file <strong><a class="link" href="https://drive.google.com/file/d/16b3uUvOlz1w__Dom3YPZvqC0Yv8LlBF8/view?usp=drive_link" target="_blank">Federal Defendants' Motion to Bar Undisclosed Expert Witness Testimony</a></strong> on December 5, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file <strong>Proposed Voir Dire</strong> on December 5, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file <strong>Proposed Jury Instructions</strong> on December 5, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files <strong>Proposed Jury Instructions</strong> on December 5, 2024.
-          </p>        
-          <p>
-            Garrison Law Firm, LLC files a <strong><a class="link" href="https://drive.google.com/file/d/1WJk-NZZtaJHf7mNnjaBC6BCje86jSvcG/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm’s Motions in Limine</a></strong> on December 5, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong><a class="link" href="https://drive.google.com/file/d/178FXgGBPXtlwxryfgh4MzU3HnaNW2hb7/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm’s Brief in Support of its Motion in Limine</a></strong> on December 5, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files <strong>Proposed Voir Dire</strong> on December 5, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files <strong>Proposed Verdict Form</strong> on December 5, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file <strong>Proposed Voir Dire</strong> on December 5, 2024.
-          </p>
-          <p>
-            Jessica Krug and James Luttrull file a <strong><a class="link" href="https://drive.google.com/file/d/1uc7txesuGK_bBNi6BEZetoSbf-4WemLj/view?usp=drive_link" target="_blank">Motion in Limine</a></strong> on December 5, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file <strong><a class="link" href="https://drive.google.com/file/d/1HVtwsOQ5tMvCZ6dIhS0g9yfc3nWoXxoB/view?usp=drive_link" target="_blank">All Parties' Motion for Emergency Clarification</a></strong> on December 6, 2024.
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on December 9, 2024.
-            <ul class="docket-entry">
-              <li>
-                Over Plaintiff's objection, the Court GRANTS the 259 Motion for Extension of Time of Pretrial Deadlines. All pretrial deadlines are STAYED until the 253 Motion to Stay has been ruled on. Plaintiff have until 12/11/2024 to respond to the 253 Motion to Stay. Text entry by Judge Gretchen S Lund on 12/9/2024. (jss) (Entered: 12/09/2024).
-              </li>
-            </ul>
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong><a class="link" href="https://drive.google.com/file/d/1VuOiXhvT0wYd3i9Z4EOcm37rXa514vgY/view?usp=drive_link" target="_blank">Notice of Appeal</a></strong> on December 10, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong><a class="link" href="https://drive.google.com/file/d/1-v5nWoLZ1J3hHibi4LWobHIP-lnGdJaD/view?usp=drive_link" target="_blank">Docketing Statement</a></strong> on December 10, 2024.
-          </p>
-          <p>
-            Garrison Law Firm, LLC files a <strong><a class="link" href="https://drive.google.com/file/d/1NQakc2Oie5lYWIKeAWV3dDPgcLirWVyA/view?usp=drive_link" target="_blank">Defendant Garrison Law Firm's Reply in Support of Supplemental Briefing on Failure to Intervene</a></strong> on December 10, 2024.
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file a <strong><a class="link" href="https://drive.google.com/file/d/1-aUQPyju3nUO0JatssAQYWP29tYJ6TM2/view?usp=drive_link" target="_blank">Reply in Support of Federal Defendants' Statement Regarding Failure to Intervene</a></strong> on December 10, 2024.
-          </p>
-          <p>
-            Benjamin Jones files an <strong>Appearance</strong> on December 11, 2024.
-            <ul class="docket-entry">
-              <li>
-                Appearance form filed by Attorney Benjamin Jones for Appellants Jessica Krug and James Luttrull in 24-3165.<br>
-                [2] [7423139] (L-Yes; E-Yes; R-No) [24-3165, 24-3246] [2] [7423139] [24-3165, 24-3246].<br>
-                --[Edited 12/11/2024 by HTP to reflect addition of counsel.] (Jones, Benjamin) [Entered: 12/11/2024 01:33 PM].<br>
-                U.S. civil case docketed. Fee paid. Docketing statement filed. Transcript information sheet due by 12/26/2024. Appellant's brief due on or before 01/21/2025 for Garrison Law Firm, LLC.<br>
-                [1] [7423121] [24-3246] (JMB) [Entered: 12/11/2024 12:24 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1gNs5FUiB2tJmxezvF_Oh6SsJu6LgrULJ/view?usp=drivesdk" target="_blank">Plaintiffs' Motion to Reconsider, Response and Objection to Defendants' Motion to Stay Proceedings, and Request to Certify Krug and Luttrull's Appeal as Frivolous</a></strong> filed on December 11, 2024.
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on December 11, 2024.
-            <ul class="docket-entry">
-              <li>
-                The court, on its own motion, orders these appeals are CONSOLIDATED for purposes of briefing and disposition. The briefing schedule is as follows: The appellants shall file briefs and required short appendices on or before January 21, 2024. The appellees shall file a consolidated brief on or before February 20, 2025. The appellants shall file reply briefs, if any, on or before March 13, 2025. A review of the short records reveals that these appeals involve more than one appellant represented by different counsel. Counsel for appellants are encouraged to avoid unnecessary duplication by filing a joint brief or a joint appendix or by adopting parts of a co-appellant's brief. Duplicative briefing will be stricken and may result in disciplinary sanctions against counsel. See <em>United States v. Torres</em>, 170 F.3d 749 (7th Cir. 1999); <em>United States v. Ashman</em>, 964 F.2d 596 (7th Cir. 1992). Appellants, however, may not adopt the "Jurisdictional Statement" of another. Each appellant's brief must include a complete "Jurisdictional Statement."<br>
-                JXK [3] [7423171] [24-3165, 24-3246] (CG) [Entered: 12/11/2024 02:51 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong>Transcript Information Sheet</strong> filed on December 12, 2024.
-            <ul class="docket-entry">
-              <li>
-                Filed Seventh Circuit Transcript Information Sheet by Appellant Garrison Law Firm, LLC. [4] [7423432] [24-3246] (JMB) [Entered: 12/12/2024 03:13 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong>FRAP 10 CERTIFICATE</strong> filed on December 12, 2024.
-            <ul class="docket-entry">
-              <li>FRAP 10 CERTIFICATE. (as) (Entered: 12/12/2024).</li>
-            </ul>
-          </p>
-          <p>
-            Evan Comer files an <strong>Appearance</strong> on December 18, 2024.
-            <ul class="docket-entry">
-              <li>
-                Appearance form filed by Attorney Evan Comer for Appellants Jessica Krug and James Luttrull in 24-3165.<br>
-                [5] [7424580] (L-Yes; E-Yes; R-No) [24-3165, 24-3246].<br>
-                --[Edited 12/19/2024 by PS - to reflect the addition of counsel.] (Comer, Evan) [Entered: 12/18/2024 03:42 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            Tonda Cockrell, Gary Whisenand, Jessica Krug, James Luttrull, and Garrisoon Law Firm file a <strong><a class="link" href="https://drive.google.com/file/d/17rybJj3I_5jqfKw9BjkWzWaVQFmbBeiB/view?usp=drive_link" target="_blank">Defendants' Joint Reply in Support of Their Motion to Stay Proceedings</a></strong> on December 18, 2024.
-          </p>
-          <p>
-            Jacob W. Zigenfus files a <strong>Disclosure Statement</strong> and <strong>Appearance</strong> on December 19, 2024.
-            <ul class="docket-entry">
-              <li>
-                Circuit Rule 26.1 Disclosure Statement and Appearance filed by Attorney Jacob W. Zigenfus for Appellant Garrison Law Firm, LLC in 24-3246.<br>
-                [8] [7424802] (L-No; E-Yes; R-No) [24-3246, 24-3165] [Edited 12/19/2024 by CG to reflect the addition of counsel.] (Zigenfus, Jacob) [Entered: 12/19/2024 02:00 PM].<br>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Michael E. Brown files a <strong>Disclosure Statement</strong> and <strong>Appearance</strong> on December 19, 2024.
-            <ul class="docket-entry">
-              <li>
-                Circuit Rule 26.1 Disclosure Statement and Appearance filed by Attorney Michael E. Brown for Appellant Garrison Law Firm, LLC in 24-3246.<br>
-                [7] [7424800] (L-No; E-No; R-No) [24-3246, 24-3165] (Brown, Michael) [Entered: 12/19/2024 01:57 PM].<br>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Crystal G. Rowe files a <strong>Disclosure Statement</strong> and <strong>Appearance</strong> on December 19, 2024.
-            <ul class="docket-entry">
-              <li>
-                Circuit Rule 26.1 Disclosure Statement and Appearance filed by Attorney Crystal G. Rowe for Appellant Garrison Law Firm, LLC in 24-3246.<br>
-                [6] [7424798] (L-Yes; E-Yes; R-No) [24-3246, 24-3165] [Edited 12/19/2024 by CG to reflect the addition of counsel.] (Rowe, Crystal) [Entered: 12/19/2024 01:53 PM].
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of December 2024 -->
-
-        <!-- January 2025 -->
-        <div class="container section-title">
-        <h2>January 2025</h2>
-          <p>
-            Judge Lund enters an <strong><a class="link" href="https://drive.google.com/file/d/1OQtcaEVbHkFckRhtLZf1f8-8PasZh8d8/view?usp=drivesdk" target="_blank">Order</a></strong> on January 2, 2025.
-            <ul class="docket-entry">
-              <li>On November 27, 2024, all Defendants, including Tonda Cockrell, Gary L. Whisenand, The Garrison Law Firm L.L.C., James Luttrull, Jessica Krug, and the United States requested this Court stay all proceedings pending the outcome of the interlocutory appeal filed by Defendants James Luttrull and Jessica Krug on November 26, 2024. [DE 251; DE 253]. Plaintiffs responded to Defendants' Motion to Stay on December 11, 2024, at [DE 287], with Defendants replying on December 18, 2024, at [DE 289]. Having reviewed the parties' respective arguments, the Motion to Stay, [DE 253], is GRANTED. Defendants' Motion to Stay is Granted On November 26, 2024, Defendants James Luttrull and Jessica Krug filed an interlocutory appeal requesting review of this Court's denial of qualified immunity in the September 30, 2024 Opinion and Order resolving the Motions for Summary Judgment, and the November 5, 2024 hearing resolving the Motions for Reconsideration. [DE 225, 234, 239, 242]. In both, the Court denied Defendants Luttrull's and Krug's assertions of absolute and qualified immunity against Plaintiff's claims of malicious prosecution (wrongful use of civil proceeding), fourth amendment violations, and fifth amendment violations. [DE 254]. "Qualified immunity is an entitlement not to stand trial or face the other burdens of litigation. The privilege is an immunity from suit rather than a mere defense to liability; and, like an absolute immunity, it is effectively lost if a case is erroneously permitted to go to trial." <em>Allman v. Smith</em>, 764 F.3d 682, 684 (7th Cir. 2014) (citing <em>Siegert v. Gilley</em>, 500 U.S. 226, 232-33 (1991)); see <em>Mitchell v. Forsyth</em>, 472 U.S. 511, 525-27 (1985)). And so "when a public official takes an interlocutory appeal to assert a colorable claim to absolute or qualified immunity from damages, the district court must stay proceedings." <em>Allman v. Smith</em>, 764 F. 3d 682, 684 (7th Cir. 2014) (quoting <em>Goshtasby v. Board of Trustees of University of Illinois</em>, 123 F.3d 427, 428 (7th Cir. 1997)). Once a trial has taken place, the official has incurred the very costs the doctrine is designed to avoid, and thus any review that can occur at the end of the case is limited at best. <em>Estate of Davis v. Ortiz</em>, 987 F.3d 635, 639 (7th Cir. 2021) (citing <em>Mitchell v. Forsyth</em>, 472 U.S. 511, 525-27 (1985)). The privileges of absolute and qualified immunity are lost if a case is erroneously permitted to proceed to trial. See <em>Allman</em>, 764 F.3d 682, 684. For this reason, Defendants Luttrull's and Krug's appeal is not frivolous. And, for the same reason, Defendants' Motion to Stay, [DE 253], is GRANTED. Plaintiffs' Motion to Reconsider, [DE 287], is DENIED. All Parties' Motion for Clarification, [DE 279], is also DENIED. SO ORDERED.</li>
-            </ul>
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on January 2, 2025.
-            <ul class="docket-entry">
-              <li>Based on the 290 Order staying the case, the Court VACATES the Final Pretrial Conference set for 1/9/2025, and VACATES the Jury Trial set for 2/3/2025. Text entry by Judge Gretchen S Lund on 1/2/2025. (jss) (Entered: 01/02/2025).</li>
-            </ul>
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file a <strong><a class="link" href="https://drive.google.com/file/d/1QmQJJcn_gm-3v_Qo-_VtgEBNig5CS7xS/view?usp=drivesdk" target="_blank">Notice of Appeal</a></strong> on January 6, 2025.
-          </p>
-          <p>
-            Judge Lund issues a <strong>Notice</strong> on January 6, 2025.
-            <ul class="docket-entry">
-              <li>
-                Circuit Rule 46(a) requires the lead attorney and any attorney who intends to present oral argument be admitted to practice in this court. The lead attorney for each party represented by counsel must apply for admission to practice in this court by the later of: (a) 30 days from the docketing of the matter in this court; or (b) 15 days from being retained or appointed as counsel. An attorney who intends to present oral argument must apply for admission to practice in this court before the filing of the appellees brief. Our records indicate Attorney Benjamin M. L. Jones for Appellants James Luttrull and Jessica Krug has not been admitted to practice in this court as of this date. The "Application for Admission to Practice in the Seventh Circuit" form can be found at: https://www.ca7.uscourts.gov/forms/applctn.pdf. The filing of the completed application must be accomplished via the CM/ECF filing system.<br>
-                [9] [7427056] [24-3165] (LJ) [Entered: 01/06/2025 09:45 AM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on January 7, 2025.
-            <ul class="docket-entry">
-              <li>
-                The court, on its own motion, orders these appeals are CONSOLIDATED for purposes of briefing and disposition. The briefing schedule is as follows: Appellants shall file briefs and required short appendices on or before February 18, 2025. Appellees shall file a consolidated brief on or before March 20, 2025. Appellants shall file reply briefs, if any, on or before April 10, 2025. A review of the short records reveals that these appeals involve more than one appellant represented by different counsel. Counsel for appellants are encouraged to avoid unnecessary duplication by filing a joint brief or a joint appendix or by adopting parts of a co-appellant's brief. Duplicative briefing will be stricken and may result in disciplinary sanctions against counsel. See <em>United States v. Torres</em>, 170 F.3d 749 (7th Cir. 1999); <em>United States v. Ashman</em>, 964 F.2d 596 (7th Cir. 1992). Appellants, however, may not adopt the "Jurisdictional Statement" of another. Each appellant's brief must include a complete "Jurisdictional Statement."<br>
-                [7427511] JXK [10] [7427511] [24-3165, 24-3246, 25-1020] (CG) [Entered: 01/07/2025 12:47 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            Tonda Cockrell and Gary Whisenand file a <strong><a class="link" href="https://drive.google.com/file/d/1tCBHZaZP4WV2lZyOhmUZ3O5Yk-N1Sx8F/view?usp=drive_link" target="_blank">Notice of Case Opening</a></strong> on January 7, 2025.
-            <ul class="docket-entry">
-              <li>
-                USCA Case Number 25-1020 for 292 Notice of Appeal filed by Tonda Cockrell, Gary L. Whisenand. (Attachments: # 1 Notice of Docketing)(sej) (Entered: 01/07/2025)
-              </li>
-            </ul>
-          </p>
-          <p>
-            Sarah W. Carroll and Weili J. Shaw file their <strong>Appearance</strong> on January 10, 2025.
-            <ul class="docket-entry">
-              <li>
-                Appearance form filed by Attorney Weili J. Shaw, Sarah W. Carroll for Appellants Tonda Cockrell and Gary L. Whisenand in 25-1020.<br>
-                [11] [7428332] (L-Yes; E-Yes; R-No) [25-1020, 24-3165, 24-3246] [11] [7428332] [25-1020, 24-3165, 24-3246]<br>
-                --[Edited 01/13/2025 by HTP to reflect addition of counsel.] (Shaw, Weili) [Entered: 01/10/2025 05:55 PM].
-              </li>
-            </ul>
-          </p>
-          <p>
-            Isaac Jordan files a <strong>Motion To Withdraw Appearance</strong> on January 13, 2025.
-            <ul class="docket-entry">
-              <li> 
-                	MOTION to Withdraw as Attorney by Plaintiffs Dale W. Economan, Economan and Associates Family Medicine. (Jordan, Isaac) (Entered: 01/13/2025).
-              </li>
-            </ul>
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on January 14, 2025.
-            <ul class="docket-entry">
-              <li>ORDER granting 296 Motion to Withdraw as Attorney. Attorney Isaac A Jordan terminated. Text entry by Judge Gretchen S Lund on 1/14/2025. (jss) (Entered: 01/14/2025).</li>
-            </ul>
-          </p>
-          <p>
-            David E. Hollar files a <strong><a class="link" href="https://drive.google.com/file/d/1RapOIGz2EbMvjARqr-gdh7QmiBIQ9B4W/view?usp=drivesdk" target="_blank">Request for Transcript</a></strong> filed on January 17, 2025.
-          </p>
-          <p>
-            <strong>FRAP CERTIFICATE</strong> filed on January 21, 2025.
-            <ul class="docket-entry">
-              <li>FRAP 10 CERTIFICATE. (as) (Entered: 01/21/2025).</li>
-            </ul>
-          </p>
-        </div><!-- End of January 2025 -->
-
-        <!-- February 2025 -->
-        <div class="container section-title">
-        <h2>February 2025</h2>
-          <p>
-            AUSA Cook files a <strong>Motion To Withdraw Appearance</strong> on February 4, 2025.
-            <ul class="docket-entry">
-              <li> 
-                	MOTION To Withdraw Appearance of AUSA Jennifer B. Cook by Defendants Tonda Cockrell, Gary L. Whisenand, United States. (Ault - AUSA, Wayne) (Entered: 02/04/2025).
-              </li>
-            </ul>
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on February 4, 2025.
-            <ul class="docket-entry">
-              <li> 
-                	The Court GRANTS the 299 Motion to Withdraw Appearance of AUSA Jennifer B. Cook. Text entry by Judge Gretchen S Lund on 2/4/2025. (jss) (Entered: 02/04/2025).
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of February 2025  -->
-
-        <!-- September 2025 -->
-        <div class="container section-title">
-        <h2>September 2025</h2>
-          <p>
-            AUSA Madison Lo Dolce files a <strong>Motion to Withdraw</strong> on September 2, 2025.
-            <ul class="docket-entry">
-              <li> 
-                	MOTION to Withdraw as Attorney Assistant United States Attorney, Madison M. Lo Dolce by Defendants Tonda Cockrell, United States, Gary L. Whisenand. (Ault - AUSA, Wayne) (Entered: 09/02/2025).
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of September 2025  -->
-
-        <!-- October 2025 -->
-        <div class="container section-title">
-        <h2>October 2025</h2>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on October 14, 2025.
-            <ul class="docket-entry">
-              <li> 
-                ORDER granting 301 Motion to Withdraw as Attorney. Attorney Madison Lo Dolce - AUSA terminated. Text entry by Judge Gretchen S Lund on 10/14/2025. (jss) (Entered: 10/14/2025).
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of October 2025  -->
-
-        <!-- January 2026 -->
-        <div class="container section-title">
-        <h2>January 2026</h2>
-          <p>
-            Judge Lund issues an <strong><a class="link" href="https://drive.google.com/file/d/1oxp_DzwWVNQcqqbEmLyKMgsZXqmQMNjF/view?usp=drive_link" target="_blank">Order</a></strong> on January 12, 2026.
-            <ul class="docket-entry">
-              <li>
-                This appeal concerns the criminal "pill-mill" investigation and prosecution of Dale Economan and his medical practice, Economan and Associates Family Medicine. In 2014, federal and Indiana state law enforcement initiated a joint investigation of Economan and EAFM for overprescribing controlled substances. Following a state prosecution, Economan pleaded guilty to a lesser offense and agreed to relinquish his medical license. Economan and EAFM then went on the offensive, invoked 42 U.S.C. &sect; 1983, and sued Drug Enforcement Administration agents, Indiana state prosecutors, and a law firm involved in the criminal case alleging violations of his Fourth and Fifth Amendment rights.<br>
-                The district court denied defense motions for summary judgment requesting qualified and absolute immunity, and this appeal followed. This case, which has persisted for nearly six years and come before three district court judges, arrives on appeal as a tangled mess, laden with confused claims and the misapplication of legal doctrines. We have done our best to sort it out and provide guidance to move the litigation forward and to finality.<br>
-                We conclude that all defendants are entitled to qualified immunity on the Fifth Amendment due process claims against them. DEA Investigator Gary Whisenand is entitled to qualified immunity, and prosecutors James Luttrull and Jessica Krug to absolute immunity, on the Fourth Amendment claims against them. We dismiss Garrison Law Firm's Fourth Amendment appeal for lack of jurisdiction.   
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of January 2026  -->
-
-        <!-- March 2026 -->
-        <div class="container section-title">
-        <h2>March 2026</h2>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/1S6Y5DZJLoOxwQ2YdMjilAgqYC5Sal1XR/view?usp=drive_link" target="_blank">Notice of Issuance of Mandate</a></strong> filed on March 6, 2026.
-          </p>
-          <p>
-            <strong>Notice of Hearing</strong> on March 10, 2026.
-            <ul class="docket-entry">
-              <li>The Court SETS a Zoom Video Status Conference for 4/28/2026 at 01:30 PM (CDT) before Judge Gretchen S Lund. (jss) (Entered: 03/10/2026).</li>
-            </ul>
-          </p>
-          <p>
-            <strong>Notice of Appearance</strong> by R Jeffrey Lowe on behalf of The Garrison Law Firm, LLC on March 11, 2026.
-          </p>
-          <p>
-            <strong>Notice of Appearance</strong> by Jacob Zigenfus on behalf of The Garrison Law Firm, LLC on March 11, 2026.
-          </p>
-          <p>
-            Judge Lund issues an <strong><a class="link" href="https://drive.google.com/file/d/1mIXELe09zVc9KkV4LvBToEf5nM7O0YQn/view?usp=drive_link" target="_blank">Order</a></strong> on March 11, 2026.
-            <ul class="docket-entry">
-              <li>
-                On January 12, 2026, the Seventh Circuit entered their decision in 24-3165, which resolved Defendants' pending appeals. On March 10, 2026, this Court received its Mandate from the Seventh Circuit regarding that decision. [DE 303].<br>
-                The Seventh Circuit found that all Defendants were entitled to qualified immunity for any alleged violations of the Fifth Amendment. [DE 303-1, Page 9]. This left only the Fourth Amendment claim, which the Seventh Circuit found was based solely on the civil forfeiture proceeding [1] [Id. at 5]. The Seventh Circuit found that Defendants Krug and Luttrull were entitled to absolute immunity for any and all claims asserted against them, which included alleged violations of the Fourth Amendment. [Id. at 18]. Similarly, the Seventh Circuit found that Defendant Whisenand was entitled to qualified immunity for alleged violations of the Fourth Amendment. [Id. at 9, 15].<br>
-                This left Defendants Garrison Law Firm, Cockrell, and the USA. The Seventh Circuit declined to decide Defendant Garrison Law Firm's appeal, because it remains disputed whether Defendant Garrison Law Firm was aware of the false information included in Defendant Cockrell's affidavit, which their qualified immunity argument turned on. [Id. at 16-17].<br>
-                Furthermore, Defendant Cockrell did not appeal the finding of liability against her for violating the Fourth Amendment, so that finding of liability still stands. [Id. at 6]. Finally, the U.S.A. did not appeal.<br>
-                All parties were entitled to qualified immunity on the Fifth Amendment claim, and therefore, only the Fourth Amendment claim based on the civil forfeiture proceeding remains. Because Defendants Krug, Luttrull and Whisenand are immune from suit for the Fourth Amendment claim, they are terminated from the case. The Clerk is DIRECTED to enter judgment for Defendants Krug, Luttrull and Whisenand, and against Plaintiff.<br> The Fourth Amendment claim proceeds only against Defendants Garrison Law Firm and the USA. Pursuant to the Court's Summary Judgment Order at [DE 225], the Court already found Defendant Cockrell liable for violations of the Fourth Amendment, which she did not appeal. All parties not terminated are ORDERED to appear via Zoom for the status conference on April 28, 2026 at 1:30PM CT. SO ORDERED.
-              </li>
-            </ul>
-          </p>
-          <p>
-            <strong><a class="link" href="https://drive.google.com/file/d/189V_98v9pSe94URf0Fe20NICSIxrTfJC/view?usp=drive_link" target="_blank">Clerk's Entry of Judgment</a></strong> filed on March 12, 2026.
-            <ul class="docket-entry">
-              <li>
-                Judgment ENTERED in favor of the defendants Gary L Whisenand, Jessica Krug and James Luttrull and against plaintiffs Dale W Economan and Economan and Associates Family Medicine.
-              </li>
-            </ul>
-          </p>
-          <p>
-            Judge Lund issues an <strong>Order</strong> on March 12, 2026.
-            <ul class="docket-entry">
-              <li>
-                Due to the current posture of this case, Defendants Krug, Luttrull's Motion in Limine (DE 272 ) is DENIED AS MOOT. The 262 , 265 Motions in Limine by defendants Cockrell, Whisenand and United States are DENIED as MOOT with leave to refile; 268 Motion in Limine by plaintiffs DENIED as MOOT with leave to refile, and 276 Motion in Limine by Defendant Garrison Law firm DENIED as MOOT with leave to refile. Text entry by Judge Gretchen S Lund on 3/12/2026. (jss) (Entered: 03/12/2026).
-              </li>
-            </ul>
-          </p>
-        </div><!-- End of March 2026  -->
-
-      </section><!-- End of James Luttrull Docket Section -->
-
-    </div> <!-- end of luttrull-docket wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
