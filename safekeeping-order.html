@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
   <title>Safekeeping Saga | IN v. RA</title>
   <meta name="description" content="Detailed timeline of the arrest and Safekeeping Order saga from Carroll County Jail to Westville.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/safekeeping-order">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="Arrest & Safekeeping Saga">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arrest &amp; Safekeeping Saga">
   <meta property="og:description" content="Detailed timeline of the arrest and Safekeeping Order saga from Carroll County Jail to Westville.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/safekeeping-order">
@@ -16,9 +15,9 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Arrest & Safekeeping Saga">
+  <meta name="twitter:title" content="Arrest &amp; Safekeeping Saga">
   <meta name="twitter:description" content="Detailed timeline of the arrest and Safekeeping Order saga from Carroll County Jail to Westville.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/safekeeping-order.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
@@ -31,355 +30,826 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after { 
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,0.95) 95%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { border-bottom: none; }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .masthead-title {
+        font-size: clamp(1.6rem, 8vw, 2.4rem);
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  
+    /* ── Timeline layout ── */
+    .timeline-entry {
+      padding: 20px 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .timeline-entry:last-child { 
+        border-bottom: none; 
+    }
+    .timeline-entry-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+      padding: 1% 1%;
+    }
+    .timeline-entry p {
+      font-size: 0.8rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      color: var(--text-body);
+      padding: 1% 1%;
+    }
+    .timeline-entry p:last-child { 
+        margin-bottom: 0; 
+    }
+    .timeline-entry a { 
+        color: var(--accent); 
+        text-decoration: underline; 
+        text-underline-offset: 2px; 
+    }
+    .timeline-entry a:hover { 
+        color: var(--accent-hover, var(--accent)); 
+    }
+    /* ── PDF / video embeds ── */
+    .pdf-embed {
+      width: 100%;
+      aspect-ratio: 11 / 8.5;
+      margin: 14px 0;
+      min-height: 420px;
+    }
+    .pdf-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
+      background: var(--surface-elevated);
+    }
+    .vid-embed {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 14px 0;
+      min-height: 220px;
+    }
+    .vid-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      .pdf-embed { 
+        min-height: 520px; 
+        aspect-ratio: 8.5 / 11; 
+      }
+      .timeline-entry { 
+        padding: 16px 16px; 
+      }
+    }
+</style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="safekeeping-order" class="active">Safekeeping Saga</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Arrest &amp; Safekeeping Saga">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Arrest &amp; Safekeeping Saga</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
-    </a>
+  <section class="content-section">
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>The Arrest</h2></summary>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Oct. 26, 2022</div>
+        <p><em>
+            When Richard and Kathy Allen arrived at the State Police Post in Lafayette to pick up their vehicle, Jerry Holeman told them he had just a few questions about <strong><a href="magic-bullet">results</a></strong> they received pertaining to items <strong><a href="https://drive.google.com/file/d/1u1JwnR7-0sbd4nTjR90TJWBWT_puiOKG/view?usp=drive_link" target="_blank">seized</a></strong> in the <strong><a href="https://drive.google.com/file/d/1TYIZsbKljrpOYYk96taifRy-meF-SFkU/view?usp=drive_link" target="_blank">search</a></strong> of their home.
+        </em></p>
+        <p><em>
+            Holeman hissy fit arrested Rick for withstanding Holeman's attempts to berate, threaten, and leverage him into conceding to lies about witnesses, experts, and evidence. Holeman then drove Rick to Delphi and booked him into the Carroll County Jail under an alias.
+        </em></p>
+        <p><em>
+            <strong>Note:</strong> The cuts in the video were the portions of the interrogation that were excluded as a result of the Court's decision to exclude the 3rd party suspects. At the time of the interrogation, law enforcement believed Richard Allen was their nexus to the Klines. By the time law enforcement realized there was no connection between Rick and the Klines, they'd already shipped him off to Westville, tortured him, and won an election.
+        </em></p>
+        <p><em>
+            Tony Liggett, then just a detective, prepared a <strong><a href="https://drive.google.com/file/d/1h3lamwJ0VGsVuFJjI0w8uRo3KqZe8s3k/view?usp=drive_link" target="_blank">Probable Cause Affidavit</a></strong> that put false words in the victim's mouth about a gun due to the fact that there was no actually probable cause to arrest Richard Allen otherwise.
+        </em></p>
+        <div class="vid-embed">
+            <iframe src="https://drive.google.com/file/d/1At8wuKL_CHGSYcsjXppLXObJaqDpLdMe/preview" width="100%" height="100%" allow="autoplay"></iframe>
+        </div>
+        <p><em>
+            A video recovered from Liberty's phone on Feb. 15, 2017 shows Abigail walking southeast on the Monon High Bridge while an unknown male wearing a blue windbreaker, jeans, boots, and a baseball cap walking behind her. As Abigail approaches Liberty at the end of the bridge, Liberty is heard saying, "This is the path that we go down. There's no path going there so we have to go down here." 12 seconds later, an unknown male is heard faintly in the background saying, "Guys, down the hill." The video ends four seconds later.
+        </em></p>
+        <p><em>
+            Liggett, however, told the judge, "one of the victims mentions, "gun."
+        </em></p>
+        <p><em>
+            Kathy Allen hires Brett Gibson of Gibson Law Office in Lafayette, Indiana and pays him a <strong><a href="https://drive.google.com/file/d/1ozIplsw83TcveZ-TLh7XwMivs2iTskJ8/view?usp=drive_link" target="_blank">$5,000 retainer</a></strong> the next day.
+        </em></p>
     </div>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Oct. 27, 2022</div>
+        <p><em>
+            <strong>Request to Prohibit Public Access:</strong> McLeland files the Probable Cause Affidavit, <strong><a href="https://drive.google.com/file/d/1QatfdnDfmN_iUFNomyKZho5DbaBWgIx2/view?usp=drive_link" target="_blank">Charging Information</a></strong>, and a Verified Request To Prohibit Public Access To A Court Record.
+        </em></p>
+            <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1Gmr0eGJRCXi0y8l3Ky0tmzS5kWzKv3cH/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+        <p><em>
+            <strong>Gibson emails the Carroll County Sheriff's Office:</strong> "Please be advised that I have been retained to represent Richard M. Allen in certain matters relating to an investigation being conducted by your office. It is my understanding that my client is being detained by Carroll County Sheriff. He will not be giving any statements regarding this matter. If he is currently being questioned, the interview should be terminated."
+        </em></p>
+             <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1UqYajn6odUqOxCt90_q9SwVmQY72XmLi/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+        <p><em>
+            <strong>Gibson calls the Carroll County Sheriff's Office:</strong> Sheriff Leazenby <strong><a href="https://drive.google.com/file/d/1C1brr87cnjJV_gXT9V-U9oNKqsIakOLJ/view?usp=drive_link" target="_blank">later confirmed</a></strong> receipt of Gibson's letter, however, at the time, someone at the Carroll County jail told Gibson that Richard Allen was not an inmate.
+        </em></p>
+        <p><em>
+            <strong>Gibson emails Prosecutor McLeland:</strong> After receiving his email, McLeland called Gibson on his cell phone to say Allen was listed at the jail under a different name/alias but he could arrange for Gibson to meet with Allen.
+        </em></p>
+        <p><em>
+            <strong>Gibson goes to the Carroll County Jail:</strong> Someone from the Sheriff's Office took Gibson to a meeting room. It appeared to Gibson the regular jail staff did not know Allen was there. Still on the evening of Oct. 27th, Gibson met with Allen and advised him not to discuss his case over the telephone, because calls would certainly be recorded.
+        </em></p>
+        <p><em>
+            <strong>Gibson calls Kathy Allen:</strong> Around 10 pm, Gibson called Kathy to say he would not be able to get Richard Allen out of jail, because he was going to be charged with two counts of murder the next day.
+        </em></p>
+            <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/16JS_Zb3frh-p0P4NgmWMR9JL00FUI2dh/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+        <p><em>
+            It remains unclear why exactly Brett Gibson called Kathy to inform her that Rick would be charged the next day but then not show up for Allen's Initial Hearing.
+         </em></p>
+    </div>
+    </details>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Initial Hearing</h2></summary>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Oct. 28, 2022</div>
+      <p><em>
+        <strong>Order on Initial Hearing:</strong> Clad in protective gear, Allen advised the Court he intended to hire private counsel. Allen was advised that he must retain counsel within twenty days as there are deadlines associated with the omnibus hearing, which may be waived if not timely pled. Pleas of not guilty were entered.
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1z1rRVKn4VgX8FAtiVi5LyPi3y2BAOXI_/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      <p><em>
+        <strong>Order Sealing Court Records Pending Public Hearing:</strong> The request and all court records were ordered sealed and deemed confidential under Indiana Rules of Court, Rules on Access to Court Records, Rule 6, pending public hearing.
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1f8RivCdHEN8LCAGz-KAUu4I0pgoRlql3/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      <p><em>
+        <strong>Order finding probable cause:</strong> Bond was set for $20 bazillion Carroll County Bucks.
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1tuARXB3v8KIwsm2OvMWHjAr-cNh1H2jz/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      <p><em>
+        <strong>Pre-Omnibus Order:</strong> Richard Allen's jury trial was set for March 20, 2023.
+      </em></p>
+      <p><em>
+        The Record of Initial Hearing Held Oct. 28, 2022 can be found <strong><a href="https://drive.google.com/file/d/1bwtdEq8WMFvmb8pgd-zc-OXVi_G_s5tJ/view?usp=drive_link" target="_blank">here</a></strong>.
+      </em></p>
+      <p><em>
+        <strong>Allen is transferred to White County Jail:</strong> After the hearing was commenced, Allen was transferred to and held by White County Jail while ISP made arrangements to rendition him to Westville Correctional Facility.
+      </em></p>
+      <p><em>
+        At this time, law enforcement was still refusing to confirm the identity of the man they arrested <strong><a href="https://drive.google.com/file/d/1lmlpYR5D7Bz5GEIWbno4BiauT2cUohDw/view?usp=drive_link" target="_blank">in violation of Indiana Public Access laws</a></strong>.
+      </em></p>
+      <p><em>
+        <strong>Fox59 Report:</strong> "Man booked into <em>Carroll County</em> Jail in connection with Delphi Murders not cooperating with law enforcement" &mdash; this is the earliest known mention about a Safekeeping Order.
+      </em></p>
+    </div>
+    </details>
 
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i> Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Press Conference</h2></summary>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Oct. 31, 2022</div>
+      <p><em>
+        <strong>Law enforcement presser:</strong> Officials with Indiana State Police and Carroll County announced the arrest of Richard M. Allen, who now faces two counts of murder.
+      </em></p>
+      <p><em>
+        <strong>Press release:</strong> "On Wednesday, Oct. 26, 2022, detectives with the Delphi Double Homicide Task Force took Richard Allen, 50, from Delphi Indiana into custody at the Indiana State Police Lafayette Post for the murders of Abigail Williams and Liberty German. Allen was transported to Carroll County Jail, where he was being held. On Friday, Oct. 28, 2022, Allen was formally charged with two counts of murder and transported to the White County Jail, where he is currently being held without bond."
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/146AZXCfOKmh9Dj-LYJgcDm-eAzGBgxuE/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
 
-  </header><!-- End of Header Secion -->
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Safekeeping Order</h2></summary>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Nov. 3, 2022</div>
+      <p><em>
+        <strong>Gibson withdraws:</strong> "At this point, I do not believe I will be hired to represent Richard Allen going forward. I want to send him a letter of disengagement so there is no confusion. Can you confirm with me where he is, so that I can send him a disengagement letter?"
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1OxHA6U3dIm060M-LKsvla9PqRmdzlvgG/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      <p><em>
+        <strong>Order for Safekeeping:</strong> Judge Diener issued a bizarre Safekeeping Order characterizing basic public record requests and a very brief (and also completely neutral) news segment about his role in the case as "bloodlust." As there were exactly zero threats on Allen's life, it remains unclear what legal basis the Safekeeping Order was granted on.
+      </em></p>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1ZSR1vDnnWPOx8ll3otDfPBRAus0mEiDJ/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      <p><em>
+        <strong><a href="https://drive.google.com/file/d/1FKPuIEjCjg4pRWeNngrdmVR4g35J3j1Z/view?usp=drive_link" target="_blank">Critical stage of proceedings:</a></strong> During this critical stage of proceedings, Diener decided not to hold a hearing on the Sheriff-Judge's request for Safekeeping. This decision violated Allen's right to refuse safekeeping.
+      </em></p>
+      <p><em>
+        <strong><a href="https://drive.google.com/file/d/1TzYsvD8wMiJ5OQslzRuCRsbSOsdmbo-s/preview" target="_blank">Diener recuses himself:</a></strong> Judge Diener recused himself from the case and requested the appointment of a Special Judge. The Supreme Court of Indiana <strong><a href="https://drive.google.com/file/d/191Pvp6X1hn109xDVWtKmSC3wy6zriQaT/view?usp=drive_link" target="_blank">appointed</a></strong> Frances C. Gull of Allen County by the end of the day.
+      </em></p>
+      <p><em>
+        <strong>Allen is placed in solitary confinement under 24/7 surveillance:</strong> For the next 13 months, Allen will be held in the same cell under almost unprecedented conditions. A detailed timeline of his pretrial detention can be found <strong><a href="prison-timeline">here</a></strong>.
+      </em></p>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">After Nov. 3, 2022</div>
+      <p><em>
+        <strong>A stop is placed on Allen's letter:</strong> At some point after Allen wrote a letter to the Court asking for court-appointed counsel, a stop was placed on his letter, but it remains unclear who requested the mail-stop.
+      </em></p>
+      <p><em>
+        <strong>Holeman decides to take one more go at Allen:</strong> Holeman, Liggett, Mullin, and Davies plan a visit to Westville in the coming days to see if being renditioned to a maximum-security prison, and held in solitary confinement, will have made him more susceptible to being leveraged into snitching on the Klines. During <strong><a href="https://drive.google.com/file/d/1uctM9KMLM7x2gUUCIY3jIkKlN3uv5FP9/view?usp=drive_link" target="_blank">his deposition</a></strong>, Holeman said the reason for timing their visit during this time was specifically due to Allen's lack of representation.
+      </em></p>
+      <p><em>
+        <strong>Allen refuses to talk:</strong> After failing to trigger the desired response from Allen, his letter requesting the Court to appoint counsel was suddenly re-mailed to the Court.
+      </em></p>
+    </div>
+    </details>
 
-  <main class="main">
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Counsel Finally Appointed</h2></summary>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Nov. 9, 2022</div>
+      <p><em>
+        <strong>Allen's letter magically arrives:</strong> Carroll County Court finally received and filed the letter Allen wrote almost two weeks earlier.
+      </em></p>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Nov. 14, 2022</div>
+      <p><em>
+        <strong><a href="https://drive.google.com/file/d/1TzYsvD8wMiJ5OQslzRuCRsbSOsdmbo-s/preview" target="_blank">Order Appointing Counsel:</a></strong> Public defenders Andrew Baldwin and Bradley Rozzi were appointed to represent Allen.
+      </em></p>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-entry-date">Nov. 22, 2022</div>
+      <p><em>
+        <strong><a href="https://drive.google.com/file/d/1D9AeevbaFc8vnbwvPvxcfZ4oPLBNjjsQ/preview" target="_blank">Order on Status Hearing:</a></strong> Eight days after Gull finally appointed counsel to represent Richard Allen, he had his first truly private conversation with them.
+      </em></p>
+      <p><em>
+        Record of Proceedings Held on Nov. 22, 2022 can be found <strong><a href="https://drive.google.com/file/d/1sQIYIqPALPLysnqODxrG2EN-Kofg2niE/view?usp=drive_link" target="_blank">here</a></strong>.
+      </em></p>
+    </div>
+    </details>
 
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Arrest & Safekeeping Saga</h1>
-      </div>
-    </div><!-- End Page Title -->
 
-        <!-- arrest & safekeeping saga wrapper -->
-        <div id="wrapper">
+  </section>
 
-        <!-- arrest & safekeeping saga section -->
-        <section id="timeline" class="timeline section">
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X/Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
+    </div>
+  </footer>
 
-            <!-- section title -->
-            <div class="container section-title">
-              <h2>Arrest &amp; Safekeeping Saga</h2>
-            </div>
-
-            <!-- timeline container -->
-            <div class="container">
-
-              <h3 class="timeline-title">The Arrest</h3>
-                
-                <!-- October 26, 2022 -->
-                <div class="timeline-item"> 
-                <h4>October 26, 2022</h4>
-                    <p><em>
-                        <strong><a class="link" href="https://drive.google.com/file/d/1QvEb4k3obmgVMqt0NJT-4lG0ZTyQMVhl/view?usp=drive_link" target="_blank">State Exhibit 291: </a></strong> When Richard and Kathy Allen arrived at the State Police Post in Lafayette to pick up their vehicle, Jerry Holeman told them he had just a few questions about <strong><a class="link" href="magic-bullet" target="_blank">results</a></strong> they received pertaining to items <strong><a class="link" href="https://drive.google.com/file/d/1u1JwnR7-0sbd4nTjR90TJWBWT_puiOKG/view?usp=drive_link" target="_blank">seized</a></strong> in the <strong><a class="link" href="https://drive.google.com/file/d/1TYIZsbKljrpOYYk96taifRy-meF-SFkU/view?usp=drive_link" target="_blank">search</a></strong> of their home.
-                    </em></p>
-                    <p><em>
-                        Transcript for State Exhibit 291 can be found <strong><a class="link" href="https://drive.google.com/file/d/1WGgYXfObrtg2GHREodqksnWS1NhAsDcJ/view?usp=drive_link" target="_blank">here</a></strong>.
-                    </em></p>
-                    <!-- transcript link -->
-
-                    <p><em>
-                        Two and a half hours in, Holeman hissy fit arrested Richard Allen for withstanding Holeman's attempts to berate, threaten, and leverage him into conceding to lies about witnesses, experts, and evidence.
-                    </em></p>
-                    <p><em>
-                        Holeman then drove Richard Allen to Delphi, Indiana and booked him into the Carroll County Jail under an alias.
-                    </em></p>
-                    <p><em>
-                        <strong>Please note: </strong> The cuts in the "accidental interrogation" video were the portions of the interrogation that were excluded as a result of the Court's decision to exclude the 3rd party suspects that, at the time of the interrogation, law enforcement believed Richard Allen was not only connected to&mdash;but assisted in killing Abby and Libby.
-                    </em></p>
-                    <p><em>
-                        By the time law enforcement realized there was no connection between Allen and the Klines, too many lines will have been crossed by the State for law enforcement to fess up to the mistake&mdash;especially <em>after</em> the big announcement that an arrest was finally made in the almost six-years unsolved Delphi murders investigation won Liggett the election.
-                    </em></p>
-                    <p><em>
-                        The portion of the interrogation showing Holeman mirandizing Richard Allen, however, was not cut from the video&mdash;Holeman just simply failed to mirandize him.
-                    </em></p>
-                    <p><em>
-                        <strong>State Exhibit 200: </strong> Following the hissy fit arrest, Tony Liggett, then just a detective, prepared a <strong><a class="link" href="https://drive.google.com/file/d/1h3lamwJ0VGsVuFJjI0w8uRo3KqZe8s3k/view?usp=drive_link" target="_blank">Probable Cause Affidavit</a></strong> that put false words in the victim's mouth about a gun&mdash;likely due to the fact that there was no probable cause to arrest Richard Allen with without the entirely manufactured use of a gun in this crime.
-                    </em></p>
-                    <!-- Bridge Guy video -->
-                    <div class="gif">
-                        <iframe src="assets/vid/Bridge-Guy-video.mp4" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                    <p><em>
-                        A video recovered from Liberty's phone on February 15, 2017 shows Abigail walking southeast on the Monon High Bridge while an unknown male wearing a blue windbreaker, jeans, boots, and a baseball cap walking behind her. As Abigail approaches Liberty at the end of the bridge, Liberty is heard saying, “This is the path that we go down. There's no path going there so we have to go down here.” 12 seconds later, an unknown male is heard faintly in the background saying, “Guys, down the hill.” The video ends four seconds later.
-                    </em></p>
-                    <p><em>
-                        On page 2 of Liggett's affidavit, he told the judge, "The video recovered from Victim 2's phone shows Victim 1 walking southeast on the Monon High Bridge while a male subject wearing a dark jacket and jeans walks behind her. As the male subject approaches Victim 1 and Victim 2, one of the victims mentions, "gun.” Near the end of the video a male is seen and heard telling the girls, "Guys, Down the hill.” The girls then begin to proceed down the hill and the video ends."
-                    </em></p>
-                    <p><em>
-                        <strong>Richard Allen hires counsel: </strong> Kathy Allen hires Brett Gibson of Gibson Law Office in Lafayette, Indiana and pays him a <strong><a class="link" href="https://drive.google.com/file/d/1ozIplsw83TcveZ-TLh7XwMivs2iTskJ8/view?usp=drive_link" target="_blank">$5,000 retainer</a></strong> the next day.
-                    </em></p>
-                </div><!-- end of October 26, 2022 -->
-
-                <!-- October 27, 2022 -->
-                <div class="timeline-item">
-                  <h4>October 27, 2022</h4>
-                    <p><em>
-                        <strong>Request to Prohibit Public Access: </strong> McLeland files the Probable Cause Affidavit, <strong><a class="link" href="https://drive.google.com/file/d/1QatfdnDfmN_iUFNomyKZho5DbaBWgIx2/view?usp=drive_link" target="_blank">Charging Information</a></strong>, and a Verified Request To Prohibit Public Access To A Court Record.
-                    </em></p>
-                    <!-- Request to Prohibit Public Access -->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/1Gmr0eGJRCXi0y8l3Ky0tmzS5kWzKv3cH/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                    <p><em>
-                        <strong>Gibson emails the Carroll County Sheriff's Office: </strong> "Please be advised that I have been retained to represent Richard M. Allen in certain matters relating to an investigation being conducted by your office. It is my understanding that my client is being detained by Carroll County Sheriff. He will not be giving any statements regarding this matter. If he is currently being questioned, the interview should be terminated."
-                    </em></p>
-                    <!-- Gibson letter -->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/1UqYajn6odUqOxCt90_q9SwVmQY72XmLi/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                    <br>
-                    <p><em>
-                        <strong>Gibson calls the Carroll County Sheriff's Office: </strong> Sheriff Leazenby <strong><a class="link" href="https://drive.google.com/file/d/1C1brr87cnjJV_gXT9V-U9oNKqsIakOLJ/view?usp=drive_link" target="_blank">later confirmed</a></strong> receipt of Gibson's letter, however, at the time, someone at the Carroll County jail told Gibson that Richard Allen was not an inmate.
-                    </em></p>
-                    <p><em>
-                        <strong>Gibson emails Prosecutor McLeland: </strong> After receiving his email, McLeland called Gibson on his cell phone to say Allen was listed at the jail under a different name/alias but he could arrange for Gibson to meet with Allen.
-                    </em></p>
-                    <p><em>
-                        <strong>Gibson goes to the Carroll County Jail:</strong> Someone from the Sheriff's Office took Gibson to a meeting room. It appeared to Gibson the regular jail staff did not know Allen was there. Still on the evening of October 27th, Gibson met with Allen and advised him not to discuss his case over the telephone, because calls would certainly be recorded.
-                    </em></p>
-                    <p><em>
-                        <strong>Gibson calls Kathy Allen: </strong> Around 10 pm, Gibson called Kathy to say he would not be able to get Richard Allen out of jail, because he was going to be charged with two counts of murder the next day.
-                    </em></p>
-                    <!-- emails between Rozzi and Gibson -->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/16JS_Zb3frh-p0P4NgmWMR9JL00FUI2dh/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                    <p><em>
-                        It remains unclear why exactly Brett Gibson called Kathy to inform her that Rick would be charged the next day but then not show up for Allen's Initial Hearing.
-                    </em></p>
-                </div><!-- end of October 27, 2022 -->
-            
-              <h3 class="timeline-title">Initial Hearing</h3>
-              
-                <!-- October 28, 2022 -->
-                <div class="timeline-item">
-                    <h4>October 28, 2022</h4>
-                        <p><em>
-                            <strong>Order on Initial Hearing: </strong> Clad in protective gear, Allen advised the Court he intended to hire private counsel. Allen was advised that he must retain counsel within twenty days as there are deadlines associated with the omnibus hearing, which may be waived if not timely pled. Pleas of not guilty were entered.
-                        </em></p>
-                         <!-- Order on Initial Hearing-->
-                        <div class="pdf-landscape">
-                            <iframe src="https://drive.google.com/file/d/1z1rRVKn4VgX8FAtiVi5LyPi3y2BAOXI_/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                        </div>
-                        <p><em>
-                            <strong>Order Sealing Court Records Pending Public Hearing: </strong> The request and all court records were ordered sealed and deemed confidential under Indiana Rules of Court, Rules on Access to Court Records, Rule 6, pending public hearing.
-                        </em></p>
-                        <!-- Order on Order Sealing Court Records Pending Public Hearing -->
-                        <div class="pdf-landscape">
-                            <iframe src="https://drive.google.com/file/d/1f8RivCdHEN8LCAGz-KAUu4I0pgoRlql3/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                        </div>
-                        <p><em>
-                            <strong>Order finding probable cause: </strong> Bond was set for $20 bazillion Carroll County Bucks.
-                        </em></p>
-                        <!-- Order finding probable cause and setting bond -->
-                        <div class="pdf-landscape">
-                            <iframe src="https://drive.google.com/file/d/1tuARXB3v8KIwsm2OvMWHjAr-cNh1H2jz/preview" type="application/pdf" width="100%" height="100%"></iframe>
-                        </div>
-                        <p><em>
-                            <strong>Pre-Omnibus Order: </strong> Richard Allen's jury trial was set for March 20, 2023.
-                        </em></p>
-                        <p><em>
-                            The Record of Initial Hearing Held October 28, 2022 can be found <strong><a class="link" href="https://drive.google.com/file/d/1bwtdEq8WMFvmb8pgd-zc-OXVi_G_s5tJ/view?usp=drive_link" target="_blank">here</a></strong>.
-                        </em></p>
-                        <p><em>
-                            <strong>Allen is transferred to White County Jail: </strong> After the hearing was commenced, Allen was transferred to and held by White County Jail while ISP made arrangements to rendition him to Westville Correctional Facility.
-                        </em></p>
-                        <p><em>
-                            At this time, law enforcement was still refusing to confirm the identity of the man they arrested <strong><a class="link" href="https://drive.google.com/file/d/1lmlpYR5D7Bz5GEIWbno4BiauT2cUohDw/view?usp=drive_link" target="_blank">in violation of Indiana Public Access laws</a></strong>.
-                        </em></p>
-                        <!-- first report about the safekeeping order -->
-                        <p><em>
-                            <strong>Fox59 Report: </strong> "Man booked into <em>Carroll County</em> Jail in connection with Delphi Murders not cooperating with law enforcement"
-                        </em></p>
-                        <div class="vid">
-                            <iframe src="https://drive.google.com/file/d/1At8wuKL_CHGSYcsjXppLXObJaqDpLdMe/preview" width="100%" height="100%" allow="autoplay"></iframe>
-                        </div>
-                        <p><em>
-                            This is the earliest known mention about a Safekeeping Order.
-                        </em></p>
-                </div><!-- end of October 28, 2022 -->
-
-              <h3 class="timeline-title">Press Conference</h3>
-
-                <!-- October 31, 2022 -->
-                <div class="timeline-item">
-                    <h4>October 31, 2022</h4> 
-                        <p><em>
-                            <strong>Law enforcement presser: </strong> Officials with Indiana State Police and Carroll County announced the arrest of Richard M. Allen, who now faces two counts of murder.
-                        </em></p>
-                        <!-- Press release -->
-                        <p><em>
-                            <strong>Press release: </strong> "On Wednesday, October 26, 2022, detectives with the Delphi Double Homicide Task Force took Richard Allen, 50, from Delphi Indiana into custody at the Indiana State Police Lafayette Post for the murders of Abigail Williams and Liberty German. Allen was transported to Carroll County Jail, where he was being held. On Friday, October 28, 2022, Allen was formally charged with two counts of murder and transported to the White County Jail, where he is currently being held without bond."
-                        </em></p>
-                        <div class="pdf-landscape">
-                            <iframe src="https://drive.google.com/file/d/146AZXCfOKmh9Dj-LYJgcDm-eAzGBgxuE/preview" type="application/pdf" width="100%" height="100%"></iframe>
-                        </div>
-                </div><!-- end of October 31, 2023 -->
-
-              <h3 class="timeline-title">Safekeeping Order</h3>
-
-                <!-- November 3, 2022  -->
-                <div class="timeline-item">
-                    <h4>November 3, 2022</h4>
-                        <p><em>
-                            <strong>Gibson withdraws: </strong> "At this point, I do not believe I will be hired to represent Richard Allen going forward. I want to send him a letter of disengagement so there is no confusion. Can you confirm with me where he is, so that I can send him a disengagement letter?"
-                        </em></p>
-                    <div class="pdf-landscape">
-                        <!-- Gibson withdrawal letter -->
-                        <iframe src="https://drive.google.com/file/d/1OxHA6U3dIm060M-LKsvla9PqRmdzlvgG/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                        <p><em>
-                            <strong>Order for Safekeeping: </strong> Judge Diener issued a bizarre Safekeeping Order characterizing basic public record requests and a very brief (and also completely neutral) news segment about his role in the case as "bloodlust". As there were exactly zero threats on Allen's life, it remains unclear what legal basis the Safekeeping Order was granted on.
-                        </em></p>
-                    <div class="pdf-landscape">
-                        <!-- Safekeeping Order-->
-                        <iframe src="https://drive.google.com/file/d/1ZSR1vDnnWPOx8ll3otDfPBRAus0mEiDJ/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                        <p><em>
-                            <strong><a class="link" href="https://drive.google.com/file/d/1FKPuIEjCjg4pRWeNngrdmVR4g35J3j1Z/view?usp=drive_link" target="_blank">Critical stage of proceedings: </a></strong> During this critical stage of proceedings, Diener decided not to hold a hearing on the Sheriff-Judge's request for Safekeeping. This decision violated Allen's right to refuse safekeeping.
-                        </em></p>
-                        <p><em>
-                            <strong><a class="link" href="https://drive.google.com/file/d/1TzYsvD8wMiJ5OQslzRuCRsbSOsdmbo-s/preview" target="_blank">Diener recuses himself: </a></strong> Judge Diener recused himself from the case and requested the appointment of a Special Judge. The Supreme Court of Indiana <strong><a class="link" href="https://drive.google.com/file/d/191Pvp6X1hn109xDVWtKmSC3wy6zriQaT/view?usp=drive_link" target="_blank">appointed</a></strong> Frances C. Gull of Allen County by the end of the day.
-                        </em></p>
-                        <p><em>
-                            <strong>Allen is placed in solitary confinement under 24/7 surveillance: </strong> For the next 13 months, Allen will be held in the same cell under almost unprecedented conditions.
-                        </em></p>
-                        <p><em>
-                            A detailed timeline of his horrific pretrial detention can be found <strong><a class="link" href="prison-timeline" target="_blank">here</a></strong>.
-                        </em></p>
-                </div><!-- end of November 3, 2022 -->
-
-                <!-- After November 3, 2022  -->
-                <div class="timeline-item">
-                    <h4>After November 3, 2022</h4>
-                        <p><em>
-                            <strong>A mail-stop is placed on Allen's letter:</strong> At some point after Allen wrote a letter to the Court asking for court-appointed counsel, a mail-stop was placed on his letter, but it remains unclear who requested the mail-stop.
-                        </em></p>
-                        <p><em>
-                            <strong>Holeman decides to take one more go at Allen: </strong> Holeman, Liggett, Mullin, and Davies plan a visit to Westville in the coming days to see if being renditioned to a maximum-security prison, and held in solitary confinment, will have made him more susceptible to being leveraged into snitching on the Klines. During <strong><a class="link" href="https://drive.google.com/file/d/1uctM9KMLM7x2gUUCIY3jIkKlN3uv5FP9/view?usp=drive_link" target="_blank">his deposition</a></strong>, Holeman said the reason for timing their visit during this time was specifically due to Allen's lack of representation.
-                        </em></p>
-                        <p><em>
-                            <strong>Allen refuses to talk: </strong> After failing to trigger the desired response from Allen, his letter requesting the Court to appoint counsel was suddenly re-mailed to the Court.
-                        </em></p>
-                </div><!-- After November 3, 2022 -->
-
-              <h3 class="timeline-title">Counsel Finally Appointed</h3>
-
-                <!-- November 9, 2022  -->
-                <div class="timeline-item">
-                <h4>November 9, 2022</h4>
-                    <p><em>
-                        <strong>Allen's letter magically arrives: </strong> Carroll County Court finally received and filed the letter Allen wrote almost two weeks earlier.
-                    </em></p>
-                </div><!-- end of November 9, 2022 -->
-
-                <!-- November 14, 2022  -->
-                <div class="timeline-item">
-                    <h4>November 14, 2022</h4>
-                        <p><em>
-                            <strong><a class="link" href="https://drive.google.com/file/d/1TzYsvD8wMiJ5OQslzRuCRsbSOsdmbo-s/preview" target="_blank">Order Appointing Counsel: </a></strong> Carroll County Court finally received and filed the letter Allen wrote almost two weeks earlier.
-                        </em></p>
-                </div><!-- end of November 14, 2022 -->
-
-                <!-- November 22, 2022  -->
-                <div class="timeline-item">
-                    <h4>November 22, 2022</h4>
-                        <p><em>
-                            <strong><a class="link" href="https://drive.google.com/file/d/1D9AeevbaFc8vnbwvPvxcfZ4oPLBNjjsQ/preview" target="_blank">Order on Status Hearing: </a></strong> Eight days after Gull finally appointed counsel to represent Richard Allen, he had his first truly private conversation with them.
-                        </em></p>
-                        <p><em>
-                            Record of Proceedings Held on November 22, 2022 can be found <strong><a class="link" href="https://drive.google.com/file/d/1sQIYIqPALPLysnqODxrG2EN-Kofg2niE/view?usp=drive_link" target="_blank">here</a></strong>.
-                        </em></p>
-                </div><!-- end of November 22, 2022 -->
-
-                <!-- Blurb -->
-                <div class="timeline-item">
-                    <h4>Under construction</h4>
-                        <p><em>
-                            Bear with me, this page is still under construction.
-                        </em></p>
-                </div><!-- end of Blurb -->
-
-            </div><!-- end of timeline container -->
-
-        </section><!-- end of timeline -->
-
-    </div><!-- end of arrest & safekeeping saga wrapper -->
-
-  </main><!-- End of Main Section-->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
