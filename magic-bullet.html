@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Magic Bullet | IN v. RA</title>
-  <meta name="description" content="Four firearms examinations conducted during the investigation with all reports and exhibits.">
+  <title>The Magic Bullet | AEOD</title>
+  <meta name="description" content="Four firearms examinations conducted during the Delphi murders investigation, with all reports and exhibits.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/magic-bullet">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="The Magic Bullet">
-  <meta property="og:description" content="Four firearms examinations conducted during the investigation with all reports and exhibits.">
+  <meta property="og:description" content="Four firearms examinations conducted during the Delphi murders investigation, with all reports and exhibits.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/magic-bullet">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/magic-bullet.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-  <!-- Twitter Card -->
+  <meta property="og:site_name" content="All Eyes on Delphi">
+  <!-- Twitter-->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Magic Bullet">
-  <meta name="twitter:description" content="Four firearms examinations conducted during the investigation with all reports and exhibits.">
+  <meta name="twitter:description" content="Four firearms examinations conducted during the Delphi murders investigation, with all reports and exhibits.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/magic-bullet.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
@@ -28,325 +27,781 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
   <link rel="manifest" href="assets/icons/site.webmanifest">
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after { 
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,0.95) 95%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 3% 4%;;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { border-bottom: none; }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  
+    /* ── Magic Bullet doc/embed layout ── */
+    .doc-item {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .doc-item:last-child { 
+      border-bottom: none; 
+    }
+    .doc-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-label);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+      padding: 1% 4%;
+    }
+    .doc-label {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      margin-bottom: 14px;
+      font-style: italic;
+      line-height: 1.55;
+      padding: 0 4%;
+    }
+    .pdf-embed {
+      width: 100%;
+      aspect-ratio: 11 / 8.5;
+      margin-top: 4px;
+      min-height: 420px;
+    }
+    .pdf-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
+      background: var(--surface-elevated);
+    }
+    .vid-embed {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 4px;
+      min-height: 220px;
+    }
+    .vid-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
+    }
+    .embed-group {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      .pdf-embed { min-height: 520px; aspect-ratio: 8.5 / 11; }
+      .doc-item { padding: 16px 0; }
+    }
+    .embed-group-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      padding: 2% 4%;
+    }
+</style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="magic-bullet" class="active">The Magic Bullet</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1OUv_px7WiGS2Hzgj-z8E0cqla0Rp8fCE?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="The Magic Bullet">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">The Magic Bullet</h1>
+    </div>
+  </div>
+
+  <section class="content-section">
+
+    <div class="case-block">
+      <div class="case-title-bar"><h2>About</h2></div>
+      <div class="case-meta">
+        <div class="case-meta-item">Four known examinations of firearms were conducted throughout the Delphi murders investigation &mdash; two in 2017 and two in 2022. Unspent rounds were cycled through suspect guns and compared against an unfired .40 S&amp;W cartridge with extraction markings found in the ground at the crime scene. The State&rsquo;s reports for Brad Weber and Rawn Logan&rsquo;s guns have not been located.</div>
+      </div>
     </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>The Magic Bullet &mdash; Item 016</h2></summary>
+    <div class="doc-item">
+      <div class="doc-date">02-14-2017</div>
+      <div class="doc-label"><strong>Item 016:</strong> Unfired cartridge found in the dirt at the crime scene. The State has yet to explain whether it matches any of the other casings that were collected but never tested.</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1tbCUx1jNfNUsVEcXEWYx-duz-pvHbZUy/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Submission 1 &mdash; Request 0003</h2></summary>
+    <div class="doc-item">
+      <div class="doc-date">02-17-2017</div>
+      <div class="doc-label"><strong>Firearm 024:</strong> Glock Model 22, 40 S&amp;W caliber pistol belonging to Jim Maxwell (serial number NR668 US), and a magazine containing 15 Federal 40 S&amp;W caliber cartridges.</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1AyIA7Njqc6Elp3qKBC9JFLZQV5JAjfq5/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Submission 2 &mdash; Request 0004</h2></summary>
+    <div class="doc-item">
+      <div class="doc-date">02-20-2017</div>
+      <div class="doc-label"><strong>Firearm 090:</strong> Smith &amp; Wesson, Model M&amp;P, 40 S&amp;W caliber semiautomatic pistol belonging to Logan Maxwell (serial number DWS1872) and a magazine.<br><strong>Item 106:</strong> Sealed brown paper bag containing 5 sealed manila envelopes (each containing a cycled cartridge from Items 106A&ndash;106E).</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1ENF7qaC1O1X7CrEwdH3kBuwDjrTPO_sy/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-date">02-27-2017</div>
+      <div class="doc-label">Breakroom ballistics test.</div>
+      <div class="vid-embed"><iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/HYYY5KcdI5k?si=gvknJv9iR7CPSVT5" title="Breakroom ballistics test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-date">03-01-2017</div>
+      <div class="doc-label"><strong>Firearm 101:</strong> Sig Sauer, Model P239 magazine, 40 S&amp;W caliber semiautomatic pistol belonging to Logan Maxwell (serial number SA4-50895).</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1T2kOsCGoDnoYugrf5EhJF9y9h_Of5A1j/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-date">03-03-2017</div>
+      <div class="doc-label">Certificate of Analysis for Firearms 090 and 101.</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1_JS91iOR8LV_jlx9LW2cv9atgApzNAoS/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Submission 3 &mdash; Request 0006</h2></summary>
+    <div class="doc-item">
+      <div class="doc-date">08-23-2022</div>
+      <div class="doc-label"><strong>Firearms 273, 280, 281, and 282:</strong> Sealed plastic bags of water containing unidentified firearms.<br><strong>Firearm 276:</strong> Envelope containing suspected pieces of a firearm.</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1p_EFutEznaakuuY0NhZHZ4o0ZtfX5ZJL/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Submission 4 &mdash; Request 0008</h2></summary>
+    <div class="doc-item">
+      <div class="doc-date">10-13-2022</div>
+      <div class="doc-label"><strong>Firearm 314:</strong> Sig Sauer, Model P226, 40 S&amp;W caliber pistol belonging to Richard Allen (serial number U 625 6270), one magazine containing eight cartridges, and another magazine containing nine cartridges (all Blazer 40 S&amp;W cartridges).</div>
+      <div class="embed-group"><div class="embed-group-label">Search Warrant Photos</div>
+        <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/174pl63oxSC4OCvrlZOovYvaBh5Stxz0J/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      </div>
+      <div class="embed-group"><div class="embed-group-label">Submission 4</div>
+        <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1wSyQ3Zeso0Jf0bAJdnCuk6Xa8rs1n5Yx/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      </div>
+      <div class="embed-group"><div class="embed-group-label">Test Fires</div>
+        <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1wWX89pIzcQmuIdX1kl_WNnu8zJ2dD5j4/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      </div>
+      <div class="embed-group"><div class="embed-group-label">Microscope Photos</div>
+        <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1S_V0ymgkoFax0iTbnom6nGN8RShgc-Xm/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+      </div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-date">10-19-2022</div>
+      <div class="doc-label">Certificate of Analysis.</div>
+      <div class="pdf-embed"><iframe src="https://drive.google.com/file/d/1x4iUnLPWVcE84BLPucWYP7h0pY852Dgd/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Pre-Trial Shenanigans</h2></summary>
+    <div class="filing">
+      <div class="filing-date">09-20-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/18Yj2c9NKrNS16Bcman-WQVgPW9QnNZQt/view?usp=drive_link" target="_blank">Deposition of Dr. William Tobin</a></div>
+    </div>
+    <div class="filing">
+      <div class="filing-date">09-27-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1eSyfPiR2_aqnOEHxAgQmsWYVbUbJT_ez/view?usp=drive_link" target="_blank">State&rsquo;s Motion in Limine Regarding Defense Witness</a></div>
+    </div>
+    <div class="filing">
+      <div class="filing-date">10-03-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1yBPmjbiMlCHwFsmcLZcGq0iVuabrSS0_/view?usp=drive_link" target="_blank">Deposition of Dr. Eric Warren</a></div>
+    </div>
+    <div class="filing">
+      <div class="filing-date">10-07-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1me1X2xkFx5NWCc8GggzjjrgasnAWQrVS/view?usp=drive_link" target="_blank">Defendant&rsquo;s Response to State&rsquo;s Motion in Limine Regarding Defense Witness Hearing</a></div>
+    </div>
+    <div class="filing">
+      <div class="filing-date">10-22-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1HslXNBblCbDCCXVA1kgRTyEgjObhg18E/view?usp=drive_link" target="_blank">Judge Gull issues Order on State&rsquo;s Motion in Limine Regarding Defense Witness Hearing</a></div>
+    </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Firearm Examiner Trial Testimony</h2></summary>
+    <div class="filing">
+      <div class="filing-date">10-25-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1gFawENyp6kL_Jkar-73dw9xJ3LZYDLeW/view?usp=drive_link" target="_blank">Testimony of Melissa Oberg</a>
+        <div class="filing-note">Trial Day 7 transcript.</div></div>
+    </div>
+    <div class="filing">
+      <div class="filing-date">11-05-2024</div>
+      <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1yMhAUtL_QpoGr8Z7n-Zf9lpi-qBpFd2m/view?usp=drive_link" target="_blank">Testimony of Dr. Eric Warren</a>
+        <div class="filing-note">Trial Day 16 transcript.</div></div>
+    </div>
+    </details>
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1OUv_px7WiGS2Hzgj-z8E0cqla0Rp8fCE?usp=drive_link" target="_blank">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+      <div class="drive-card-body">
+        <h3 class="drive-card-title">Google Drive</h3>
+        <p class="drive-card-desc">Filings, exhibits, and other Tobin-related documents.</p>
+      </div>
+      <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X/Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
+  </footer>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i> Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">The Magic Bullet</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- magic bullet wrapper -->
-    <div id="wrapper">
-
-      <!-- Magic Bullet Section -->
-      <section id="timeline" class="timeline section">
-
-        <!-- TDLR -->
-        <div class="container section-title">
-          <h2>Examinations</h2>
-            <p>
-              Four known 'examinations' of firearms were conducted throughout the duration of the Delphi Murders Investigation&mdash;two in 2017 and two in 2022. Unspent rounds were cycled through suspect guns and compared against an unfired .40 S&W cartridge with extraction markings found in the ground at the crime scene. No clue where the State's reports for Brad Weber and Rawn Logan's guns are.
-            </p>
-        </div><!-- end of TDLR -->
-
-        <!-- container -->
-        <div class="container">
-            
-              <!-- submission 1 -->
-              <h3 class="timeline-title">The Magic Bullet</h3>
-              
-                <!-- February 14, 2017 -->
-                <div class="timeline-item pb-0">
-                  <h4>February 14, 2017</h4>
-                    <p><em>
-                      <strong>Item 016: </strong> Unfired cartridge found in the dirt at the crime scene (still no explanation from the State on whether it matches any of the other casings that were collected, yet never tested)
-                    </em></p>
-                    <!-- Item 016-->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/1tbCUx1jNfNUsVEcXEWYx-duz-pvHbZUy/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                </div><!-- end of February 17, 2017 -->
-
-              <!-- end of Item 016 -->
-
-              <!-- submission 1 -->
-              <h3 class="timeline-title">Submission 1 &mdash; Request 0003</h3>
-              
-                <!-- February 17, 2017 -->
-                <div class="timeline-item pb-0">
-                  <h4>February 17, 2017</h4>
-                    <p><em>
-                      <strong>Firearm 024: </strong> Glock Model 22, 40 S&W caliber pistol belonging to Jim Maxwell (serial number NR668 US), and a magazine containing 15 Federal 40 S&W caliber cartridges.
-                    </em></p>
-                    <!-- Submission 1-->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/1AyIA7Njqc6Elp3qKBC9JFLZQV5JAjfq5/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                </div><!-- end of February 17, 2017 -->
-
-              <!-- end of submission 1 -->
-
-              <!-- submission 2 -->
-              <h3 class="timeline-title">Submission 2 &mdash; Request 0004</h3>
-                
-                <!-- February 20, 2017 -->
-                <div class="timeline-item pb-0">
-                  <h4>February 20, 2017</h4>
-
-                    <!-- Firearm 090 -->
-                    <p><em>
-                      <strong>Firearm 090: </strong> Smith & Wesson, Model M&P, 40 S&W caliber semiautomatic pistol belonging to Logan Maxwell (serial number DWS1872) and a magazine.<br>
-                      <strong>Item 106: </strong> Sealed brown paper bag containing 5 sealed manila envelopes (each containing a cycled cartridge from Items 106A, 106B, 106C, 106D, and 106E).
-                    </em></p>
-                      <!-- Submission 2 -->
-                      <div class="pdf-landscape">
-                        <iframe src="https://drive.google.com/file/d/1ENF7qaC1O1X7CrEwdH3kBuwDjrTPO_sy/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                      </div>
-                </div><!-- end of February 20. 2017 -->
-                
-                <!-- February 27, 2017 -->
-                <div class="timeline-item pb-0">
-                  <h4>February 27, 2017</h4>
-
-                    <!-- Breakroom ballistics test -->
-                    <div class="vid">
-                      <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/HYYY5KcdI5k?si=gvknJv9iR7CPSVT5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                    </div>
-
-                </div><!-- end of February 27. 2017 -->
-
-                  <!-- March 1, 2017 -->
-                <div class="timeline-item pb-0">
-                  <h4>March 1, 2017</h4>
-                    <p><em>
-                      <strong>Firearm 101: </strong> Sig Sauer, Model P239 magazine, 40 S&W caliber semiautomatic pistol belonging to Logan Maxwell (serial number SA4-50895).
-                    </em></p>
-                    <!-- Firearm 101-->
-                    <div class="pdf-landscape">
-                      <iframe src="https://drive.google.com/file/d/1T2kOsCGoDnoYugrf5EhJF9y9h_Of5A1j/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                    </div>
-                </div><!-- end of March 1, 2017 -->
-
-                  <!-- March 3, 2017 -->
-                  <div class="timeline-item pb-0">
-                    <h4>March 3, 2017</h4>
-                      <!-- Certificate of Analysis for Firearms 090 and 101 on Mar 3, 2017 -->
-                      <div class="pdf-landscape">
-                        <iframe src="https://drive.google.com/file/d/1_JS91iOR8LV_jlx9LW2cv9atgApzNAoS/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                      </div>
-                  </div><!-- end of Certificate of Analysis for Firearms 090 and 101 on Mar 3, 2017 -->
-
-              <!-- end of submission 2 -->
-
-              <!-- submission 3 -->
-              <h3 class="timeline-title">Submission 3 &mdash; Request 0006</h3>
-
-                <!-- Unknown date  -->
-                <div class="timeline-item pb-0">
-                  <h4>August 23, 2022</h4>
-                    <p><em>
-                      <strong>Firearms 273, 280, 281, and 282: </strong> Sealed plastic bags of water containing unidentified firearms.<br>
-                      <strong>Firearm 276: </strong> Envelope containing suspected pieces of a firearm.
-                    </em></p>
-                  <!-- Unknown Dates examinations -->
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/1p_EFutEznaakuuY0NhZHZ4o0ZtfX5ZJL/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-                </div><!-- end of Unknown date -->
-              <!-- end of submission 3 -->
-
-            <!-- submission 4 -->
-            <h3 class="timeline-title">Submission 4 &mdash; Request 0008/0025</h3>
-
-              <!-- October 13, 2022 -->
-              <div class="timeline-item">
-                <h4>October 13, 2022</h4>
-                  <p><em>
-                    <strong>Firearm 314: </strong> Sig Sauer, Model P226, 40 S&W caliber pistol belonging to Richard Allen (serial number U 625 6270), one magazine containing eight cartridges, and another magazine containing nine cartridges (all Blazer 40 S&W cartridges).
-                  </em></p>
-                <div class="embed-group">
-                  <h4>Search Warrant Photos</h4>
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/174pl63oxSC4OCvrlZOovYvaBh5Stxz0J/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-                </div>
-                <div class="embed-group">
-                  <h4>Submission 4</h4>
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/1wSyQ3Zeso0Jf0bAJdnCuk6Xa8rs1n5Yx/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-                </div>
-                <div class="embed-group">
-                  <h4>Test Fires</h4>
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/1wWX89pIzcQmuIdX1kl_WNnu8zJ2dD5j4/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-                </div>
-                <div class="embed-group">
-                  <h4>Microscope Photos</h4>
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/1S_V0ymgkoFax0iTbnom6nGN8RShgc-Xm/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-                </div>
-              </div><!-- end of October 13, 2022 -->
-
-              <!-- October 19, 2022 -->
-              <div class="timeline-item">
-                <h4>October 19, 2022</h4>
-                <!-- Certificates of Analysis -->
-                  <div class="pdf-landscape">
-                    <iframe src="https://drive.google.com/file/d/1x4iUnLPWVcE84BLPucWYP7h0pY852Dgd/preview" type="application/pdf" width="100%" height="100%" allow="autoplay"></iframe>
-                  </div>
-              </div><!-- end of October 19, 2022 -->
-
-            <!-- Pre-Trial Shenanigans -->
-            <h3 class="timeline-title">Pre-Trial Shenanigans</h3>
-
-              <div class="timeline-item pb-0">
-                <h4>September 20, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/18Yj2c9NKrNS16Bcman-WQVgPW9QnNZQt/view?usp=drive_link" target="_blank">Deposition of Dr. William Tobin</a></strong></li>
-                  </ul>
-                <h4>September 27, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1eSyfPiR2_aqnOEHxAgQmsWYVbUbJT_ez/view?usp=drive_link" target="_blank">State's Motion in Limine Regarding Defense Witness</a></strong></li>
-                  </ul>
-                <h4>October 3, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1yBPmjbiMlCHwFsmcLZcGq0iVuabrSS0_/view?usp=drive_link" target="_blank">Deposition of Dr. Eric Warren</a></strong></li>
-                  </ul>
-                <h4>October 7, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1me1X2xkFx5NWCc8GggzjjrgasnAWQrVS/view?usp=drive_link" target="_blank">Defendant's Response to State's Motion in Limine Regarding Defense Witness Hearing</a></strong></li>
-                  </ul>
-                <h4>October 22, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1HslXNBblCbDCCXVA1kgRTyEgjObhg18E/view?usp=drive_link" target="_blank">Judge Gull issues an Order on the State's Motion in Limine Regarding Defense Witness Hearing</a></strong></li>
-                  </ul>
-              </div>
-            <!-- end of Pre-Trial Shenanigans -->
-
-            <!-- Firearm Examiner Trial Testimony -->
-              <h3 class="timeline-title">Firearm Examiner Trial Testimony</h3>
-
-              <!-- Testimony items -->
-              <div class="timeline-item pb-0">
-                <h4>October 25, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1HslXNBblCbDCCXVA1kgRTyEgjObhg18E/view?usp=drive_link" target="_blank">Testimony of Melissa Oberg</a></strong></li>
-                  </ul>
-                <h4>November 5, 2024</h4>
-                  <ul>
-                    <li><strong><a class="link" href="https://drive.google.com/file/d/1HslXNBblCbDCCXVA1kgRTyEgjObhg18E/view?usp=drive_link" target="_blank">Testimony of Dr. Eric Warren</a></strong></li>
-                  </ul>
-              </div><!-- end of Testimony items -->
-
-            <!-- end of Firearm Examiners Trial Testimony -->
-
-            <!-- Blurb -->
-              <h3 class="timeline-title">Google Folder</h3>
-
-              <div class="timeline-item">
-                  <p>This page is still a bit under construction but the direct link to the Google folder of filings, exhibits, orders, and other interesting Tobin-related things can be found <strong><a class="link" href="https://drive.google.com/drive/folders/1OUv_px7WiGS2Hzgj-z8E0cqla0Rp8fCE?usp=drive_link" target="_blank">here</a></strong> if you'd like to download them.</p>
-              </div><!-- end of October 13, 2022 -->
-
-            <!-- end of Blurb-->
-
-        </div><!-- end of container -->
-
-      </section><!-- end of Magic Bullet Section -->
-
-    </div><!-- end of magic-bullet wrapper-->
-
-  </main>
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
