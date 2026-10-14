@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Interview Hub | IN v. RA</title>
-  <meta name="description" content="Transcripts from pre-and-post trial podcasts andinterviews, and where to find them.">
+  <title>Interview Hub | AEOD</title>
+  <meta name="description" content="Transcripts from pre and post trial podcasts and interviews, and where to find them.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/interview-hub">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Interview Hub">
-  <meta property="og:description" content="Transcripts from pre-and-post trial podcasts andinterviews, and where to find them.">
+  <meta property="og:description" content="Transcripts from pre and post trial podcasts and interviews, and where to find them.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/interview-hub">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/interview-hub.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-  <!-- Twitter Card -->
+  <!-- Twitter -->
+  <meta property="og:site_name" content="All Eyes on Delphi">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Interview Hub">
-  <meta name="twitter:description" content="Transcripts from pre-and-post trial podcasts andinterviews, and where to find them.">
+  <meta name="twitter:description" content="Transcripts from pre and post trial podcasts and interviews, and where to find them.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/interview-hub.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
@@ -31,441 +30,1010 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Styles -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after { 
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,0.95) 95%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { border-bottom: none; }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="interview-hub" class="active">Interview Hub</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1wTPvuhHfuOutMtdFcDmTICPjC2AP2sCa?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Interview Hub">
+    <div class="masthead-text" data-aos="fade-up">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Interview Hub</h1>
+    </div>
+  </div>
+
+  <section class="content-section">
+
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar"><h2>About</h2></div>
+      <div class="case-meta">
+        <div class="case-meta-item">Post-trial interviews, podcast episodes, and press coverage organized by month. Some transcripts are still in progress or in need of proofing. Pretrial list in progress.</div>
+      </div>
     </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
+    <details class="month-details">
+      <summary class="month-summary"><h2>December 2024</h2></summary>
+      <div class="filing">
+        <div class="filing-date">12-21-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-lieutenant-jerry/id1538289354?i=1000681251117" target="_blank">The Delphi Murders: First Person: Lt. Jerry Holeman (Part One)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1Jls8Xby6LL-w8NjlUdd9B5dalq_n64sGdZ2sFxhimJI/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-21-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-lieutenant-jerry/id1538289354?i=1000681251163" target="_blank">The Delphi Murders: First Person: Lt. Jerry Holeman (Part Two)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1wdjwh0LdNc4OQxlICcsXsR2aCktfIavsGYFyHCwyTGg/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-28-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/WQC0nTpZOcA?si=oCInI9PfXXFEQGo0" target="_blank">Gag Order Lifted! An Interview with Delphi's Lead Investigator Jerry Holeman</a> via Hidden True Crime.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1F-lhYbwaq7qRoSPvXfan09xyrf-LtpkwB3bMkqZ8fog/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>January 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">01-02-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1k_Tvv2aPPZnTEX6q4aEBwyvz-e7FpnnX/view?usp=drivesdk" target="_blank">Holeman: 'We were never going to give up'</a> via Carroll County Comet.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-03-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1bIPjtpHZjEHWL-mFAHFgpDX3m1dlx3l6/view?usp=drivesdk" target="_blank">Patience, persistence, and faith</a> via Carroll County Comet.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-major-pat-cicero-part-one/id1538289354?i=1000682999183" target="_blank">The Delphi Murders: First Person: Major Pat Cicero (Part One)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://drive.google.com/file/d/1Wa7UMgP5k-DDQvk3JXB2DdyqOiM2izVH/view?usp=drivesdk" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-major-pat-cicero-part-two/id1538289354?i=1000683002328" target="_blank">The Delphi Murders: First Person: Major Pat Cicero (Part Two)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://drive.google.com/file/d/15YPuiD4h9sjSQctBdbkLO8vSIqQLqwbN/view?usp=drivesdk" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-07-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/6AYPofjXTCk?si=Wm9sQYqZOZheIZK1" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Jennifer Auger</a> via The Defense Diaries Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1f5JjuhweYoFXQtJ9QuUIzfGjFQvWSAnTX3keUiv0WQc/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-08-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/Qah2WVILPxk?si=NYwI7sZvKUba0nP7" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Andrew Baldwin</a> via The Defense Diaries Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1jukA15Jrmd0IDD0qoma5YUXdp3WuK7cIpOw4arghquI/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-09-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/cuLK3jYtz6g?si=enSA7SUOD40R8dR7" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Brad Rozzi</a> via The Defense Diaries Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1YoXrHOYclOLMH7uqXem5RzQ49V4u4o_0r186fuKL6eA/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-09-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/YwqXdxOgNTI?si=bRnlcKYomxxnBEbk" target="_blank">One-on-One with Richard Allen's Defense Attorneys</a> via Russ McQuaid with Fox 59 News.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1RiX_dk-GVaCnSqYsbRLZSQuwZbWz0QR-PeQbZ748FtA/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/EhdvHQB_q8g?si=AHDe3K-R9xBVkuXK" target="_blank">Lawyer Lee Interviews The Delphi Defense Attorneys</a> via Lawyer Lee.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1jY41nzVM161Fnk3zpDltBRUknoChlkG-eKZSvTRdBrw/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-a-juror-part-one/id1538289354?i=1000683491584" target="_blank">The Delphi Murders: First Person: A Juror (Part One)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/11kn9PDRdAOuljNSNVXM4yY2FSIN7pR7d16WU_Aff_2s/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-a-juror-part-two/id1538289354?i=1000683495656" target="_blank">The Delphi Murders: First Person: A Juror (Part Two)</a> via the Murder Sheet Podcast.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/zJFITZYCSWc?si=7knxaIlOw5CWCbMg" target="_blank">News 8's Kyla Russell's full one-on-one interview with Delphi murderer's defense team</a> via WISH-TV.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1yEgUm0Qd6iLh3YdfTuS2CkEu-1bzKGauuiGyMOVFmoQ/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-10-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/QzJBJ_4EgEc?si=VOAsHfuqh6WRzHhe" target="_blank">Delphi defense team talks openly to 13 News &mdash; Extended Interview</a> via WTHR News 13.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1UlUieS5ARy46ZspQ9_ldRd_w9f7Y9jOTPGgm3icPw5g/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-11-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/ZuM8rnhrVuI?si=iMEMh_fMeIlF6Gym" target="_blank">My Interview with ISP Lieutenant Jerry Holeman!</a> via Gray Hughes Investigates.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1y8gUCYyZ7SfJyZtsgRc9O-qJg2tw14yngXfI1ET3KXA/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-12-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/ZuM8rnhrVuI?si=iMEMh_fMeIlF6Gym" target="_blank">Delphi &mdash; Special Guest! (Becky Patty)</a> via Gray Hughes Investigates.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1crv8UuRgvMTXBoCFTSzm6W_fgCFWflELZaObEgBfUzE/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-13-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1nCQEmhoDEkWzQe6DpzBMLhA8vwZz9oko/view?usp=drivesdk" target="_blank">'Cleared'</a> via Carroll County Comet.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-15-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1gCE0r5vvRX7Ge-sWNJi6_HqEbQSekwFO/view?usp=drivesdk" target="_blank">Seven years later</a> via Carroll County Comet.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-20-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/CkCIAtSKo_U?si=p8od8t4R7wYrOTZ7" target="_blank">Prosecutor shares insights of Delphi murders trial amid public scrutiny</a> via WRTV Indianapolis.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1iIul_j0LwfscEf_IDzY0DJEym7EEYjx0pQZoQt629nw/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-20-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684741182" target="_blank">The Delphi Murders: First Person: Sheriff Tony Liggett</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1h26V4kftEBwYddxKRg0aAEDzEZRQynwH1gwfTqgxiZU/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-21-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684825802" target="_blank">The Delphi Murders: First Person: Prosecutor Nicholas McLeland (Part One)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1-2_RrCOxgNBZcJ8nVmTiQ6ncbmt25rx1JDEj_SEYdbs/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-21-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684827586" target="_blank">The Delphi Murders: First Person: Prosecutor Nicholas McLeland (Part Two)</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1-Sg1AHP09P4yWJSehF-S6hE7UYSSz4eaMP5T6fIsucs/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-22-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684991500" target="_blank">The Delphi Murders: First Person: Chief Deputy Prosecutor Stacey Diener (Part One)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/18CYi7F-adYyLagxkCHLsnv9UNrVY3bpkE9HtETMBdlE/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-22-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684994520" target="_blank">The Delphi Murders: First Person: Chief Deputy Prosecutor Stacey Diener (Part Two)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1-KL_dylSgkSsKOnp1BKZlx3P1Q6M11LXbAJzVyjbVq4/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-23-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000685137739" target="_blank">The Delphi Murders: First Person: James Luttrull (Part One)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1OgGVjomM30zGKaf7Je17cGyxgHFeGkqOC77QD4QxsOM/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-23-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000685142175" target="_blank">The Delphi Murders: First Person: James Luttrull (Part Two)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1TmcULfs2-nYAI7EfRRKcvIYvJYWMNP2Ptc9e_R3q3s8/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-23-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000686171788" target="_blank">The Delphi Murders: First Person: Doug Carter (Part One)</a></span> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1z9Wm_mDUXtonxwrFZTNPh49l6w6FD6GHK5EoXmCXGeA/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-23-2025</div>
+          <div class="filing-content">
+            <span class="filing-bold"><a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000686181442" target="_blank">The Delphi Murders: First Person: Doug Carter (Part Two)</a></span> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1zzW2IwFmTMwHSzS4Aoft3MIAX6iauFyUHY7gQ4yGhAA/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-25-2025</div>
+          <div class="filing-content">
+            <span class="filing-bold"><a class="filing-link" href="https://drive.google.com/file/d/1gCE0r5vvRX7Ge-sWNJi6_HqEbQSekwFO/view?usp=drive_link" target="_blank">Seven years later</a></span> via the Carroll County Comet.
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>February 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">02-04-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000688842747" target="_blank">The Delphi Murders: First Person: Detective Dave Vido</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1VmJ8HomCCMMen3uuXlcc8N2_o5yeGBMYg6rjBEevTv4/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-11-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000691063169" target="_blank">The Delphi Murders: First Person: First Sergeant Steve Buckley</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1UYSx90fLIrLl0_z49yfeZI1M4Hix1PXalzPHYUALeRc/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-12-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000691363960" target="_blank">The Delphi Murders: First Person: Chief Deputy Tobe Leazenby</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/17q8YPyF7-HH5sKAwozSp8tWW6qwGoO0g6khE03AkNvw/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-12-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://docs.google.com/document/d/1LMjQgc32uVIEINFXXtSkLwC3XLHY6YJSKADTT0r7K5c/" target="_blank">Libby German's grandparents open up about the Delphi trial</a> via Rafael Sanchez with Fox 59 News.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1LMjQgc32uVIEINFXXtSkLwC3XLHY6YJSKADTT0r7K5c/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>March 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">03-17-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://docs.google.com/document/d/1STul8hmuTfIR8VpZPxNVlE2oibbsgdNH5jtQyYai_H4/" target="_blank">Hammer &amp; Nigel &mdash; St. Paddy's Day, Property Tax Protest, Monday Gunday, &amp; More!</a> via WIBC Radio.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1STul8hmuTfIR8VpZPxNVlE2oibbsgdNH5jtQyYai_H4/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-17-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/BXciqys5Dac?si=mw1Q24SKdXY91JP2" target="_blank">Richard Allen's Digital Forensics Expert Stacy Eldridge and Attorney Andrea Burkhart</a> via The Defense Diaries Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1qQjKO77GeYP6z29uTmbHvUnnvyZ1r5bZuoRWlD0Bbj0/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>May 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">05-25-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/tiQgk6QypIY?si=fUkM9BKwrP6fYCHG" target="_blank">Delphi EXCLUSIVE: Juror answers questions: Part One</a> via Trust Me Tim with The Unsolved.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1ujf17JJmtHMApTwZ2Hd6ZUyrmNgMRCm8gpiPH4E2naU/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>August 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">08-06-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/tiQgk6QypIY?si=fUkM9BKwrP6fYCHG" target="_blank">FULL INTERVIEW: Richard Allen's attorney speaks on new ABC NEWS, Hulu documentary about Delphi murders</a> via 21 Alive News.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1R2FrvDb8kIMj3JRgnlxlPSB2_EvzSdrym7VrZZ8QwRc/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-11-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/Z8NkcdAwfic?feature=shared" target="_blank">Delphi Killer's Wife Breaks Silence on Gruesome Murders</a> via Law &amp; Crime.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/12Se5G_PIvFDAvflxKQRouAMwpITdZaRvdU3ZmG39vH0/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-12-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://wibc.com/704244/new-delphi-docuseries-delves-into-tragic-murders-of-teens/" target="_blank">New Delphi Docuseries Delves Into Tragic Murders of Teens</a> via Kendall &amp; Casey Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/14TQupzMhp5yZRGUr43u8izwS-TcVWoWgh82hFuxRWD8/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-26-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/a-conversation-with-prosecutor-nicholas-mcleland/id1538289354?i=1000723569345" target="_blank">A Conversation with Prosecutor Nicholas McLeland and Chief Public Defender Tim Sledd (Part One)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1EV_qeUQI8dQmpXDIYGBLNCMTJySKTN1TcZnsWQrMiAI/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-26-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/a-conversation-with-prosecutor-nicholas-mcleland/id1538289354?i=1000723574334" target="_blank">A Conversation with Prosecutor Nicholas McLeland and Chief Public Defender Tim Sledd (Part Two)</a> via the Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1Grh_q_q0Q93Q5hh5aPZe-dNSF0woj572UMTtiYs-ALE/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>September 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">09-08-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/vpw2LLXE_vk?si=jxPefLM6gn4zIfwq" target="_blank">The Delphi Murders Case | Andy Baldwin | Circle City Conversations w/ Alex Limontes Pt. 1</a> via Circle City Conversations.
+            <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1L0oG0cFtgwdZpA1hsIfhn-qSOp-XDbFeqH32QdHXRyQ/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-22-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/BmOLkfEDRyM?si=m3RBSD1eZ9L_JEuL" target="_blank">The Delphi Murders Case Pt. 2 | Andy Baldwin | Circle City Conversations w/ Alex Limontes</a> via Circle City Conversations.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/18fQmW5w8BTg0MG255b9rrf3mNBCBwl8HO1ZLXk413Is/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">09-29-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/1U_VxEdISA0?si=yshB768ljk8iwGP_" target="_blank">Delphi Murders | Victim to Verdict with Ted Rowlands</a> via Court TV.
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>October 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-06-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://youtu.be/3iSXHZwgfHs?si=3P_Lx8XubiABRB8u" target="_blank">The Delphi Murders Case Pt. 3 | Andy Baldwin | Circle City Conversations w/ Alex Limontes</a> via Circle City Conversations.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/1wpRGrOQnQSC6tzQDYY8LslI4l-8cmRPDiUh06QRGlGk/" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>December 2025</h2></summary>
+      <div class="filing">
+        <div class="filing-date">12-25-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000691363960" target="_blank">First Person: Chief Deputy Tobe Leazenby</a> via the Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://docs.google.com/document/d/17q8YPyF7-HH5sKAwozSp8tWW6qwGoO0g6khE03AkNvw/edit?usp=drive_link" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">12-31-2025</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/180x0yaR5Nrg-JqXcxPtlpKlMlPqNlcBB/view?usp=drive_link" target="_blank">Defense attorney alleges misconduct by prosecutor</a> via the Carroll County Comet.
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>April 2026</h2></summary>
+      <div class="filing">
+        <div class="filing-date">04-25-2026</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://www.youtube.com/live/h_0HnIL0oag?si=zzQaWSlTbcqgMZf6" target="_blank">Interview with Juror #05</a> via True Crime Talk With Frankmeister.
+            <div class="filing-note"><a class="filing-link" href="https://drive.google.com/file/d/1g7Rf97VlhlMOAQPCkqA_UR3sODrtsRJ8/view?usp=drive_link" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>September 2026</h2></summary>
+      <div class="filing">
+        <div class="filing-date">09-17-2026</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1agPL6ogYRjKg5N-TpNyDWYcY6EM8Y7Qy/view?usp=drive_link" target="_blank">Allen appeal goes before Court of Appeals.pdf</a> via the Carroll County Comet.
+          </div>
+      </div>
+    </details>
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>October 2026</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-07-2026</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000793408898" target="_blank">Interview with Two Jurors (Part One)</a> via The Murder Sheet Podcast.
+            <div class="filing-note"><a class="filing-link" href="https://drive.google.com/file/d/1zKMaZj8jhT4kjQMRE0roAIQ4xRHAJz46/view?usp=drive_link" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-07-2026</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-an-interview-with/id1538289354?i=1000793625629" target="_blank">Interview with Two Jurors (Part Two)</a> via The Murder Sheet Podcast.
+              <div class="filing-note"><a class="filing-link" href="https://drive.google.com/file/d/1JNoHR_5aRcN4RzLHP97t9UckVYcybbqd/view?usp=drive_link" target="_blank">Transcript &rarr;</a></div>
+          </div>
+      </div>
+    </details>
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1wTPvuhHfuOutMtdFcDmTICPjC2AP2sCa?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+      <div class="drive-card-body">
+        <h3 class="drive-card-title">Google Drive</h3>
+        <p class="drive-card-desc">Transcripts from pre and post trial podcasts and interviews.</p>
+      </div>
+      <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X/Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
+  </footer>
 
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Section -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Interview Hub</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- interview-hub wrapper -->
-    <div id="wrapper">
-
-      <!-- Interview Hub Section -->
-      <section id="page-section" class="page-section section">
-
-        <!-- caveat -->
-        <div class="container section-title">
-          <p>Some of the transcripts are still in progress/in need of proofing.</p>
-        </div><!-- end of caveat -->
-
-        <!-- December 2024 -->
-        <div class="container section-title">
-          <h2>December 2024</h2>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-lieutenant-jerry/id1538289354?i=1000681251117" target="_blank">The Delphi Murders: First Person: Lieutenant Jerry Holeman: Part One</a> on December 21, 2024<br>| <a class="link transcript" href="https://docs.google.com/document/d/1Jls8Xby6LL-w8NjlUdd9B5dalq_n64sGdZ2sFxhimJI/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-lieutenant-jerry/id1538289354?i=1000681251163" target="_blank">The Delphi Murders: First Person: Lieutenant Jerry Holeman: Part Two</a> on December 21, 2024<br>| <a class="link transcript" href="https://docs.google.com/document/d/1wdjwh0LdNc4OQxlICcsXsR2aCktfIavsGYFyHCwyTGg/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Hidden True Crime</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/WQC0nTpZOcA?si=oCInI9PfXXFEQGo0" target="_blank">Gag Order Lifted! An Interview with Delphi's Lead Investigator Jerry Holeman</a> on December 28, 2024<br>| <a class="link transcript" href="https://docs.google.com/document/d/1F-lhYbwaq7qRoSPvXfan09xyrf-LtpkwB3bMkqZ8fog/" target="_blank">Transcript</a>
-            </div>
-          </div>
-        </div><!-- end of December 2024 -->
-
-        <!-- January 2025 -->
-        <div class="container section-title">
-          <h2>January 2025</h2>
-          <div class="playlist-entry">
-            <span class="creator">Carroll County Comet</span>
-            <div class="details">
-              <a class="link" href="https://drive.google.com/file/d/1k_Tvv2aPPZnTEX6q4aEBwyvz-e7FpnnX/view?usp=drivesdk" target="_blank">Carroll County Comet Holeman: 'We were never going to give up'</a> on January 2, 2025
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Carroll County Comet</span>
-            <div class="details">
-              <a class="link" href="https://drive.google.com/file/d/1bIPjtpHZjEHWL-mFAHFgpDX3m1dlx3l6/view?usp=drivesdk" target="_blank">Patience, persistence, and faith</a> on January 3, 2025
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-major-pat-cicero-part-one/id1538289354?i=1000682999183" target="_blank">The Delphi Murders: First Person: Major Pat Cicero: Part One</a> on January 7, 2025<br>| <a class="link transcript" href="https://drive.google.com/file/d/1Wa7UMgP5k-DDQvk3JXB2DdyqOiM2izVH/view?usp=drivesdk" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-major-pat-cicero-part-two/id1538289354?i=1000683002328" target="_blank">The Delphi Murders: First Person: Major Pat Cicero: Part Two</a> on January 7, 2025<br>| <a class="link transcript" href="https://drive.google.com/file/d/15YPuiD4h9sjSQctBdbkLO8vSIqQLqwbN/view?usp=drivesdk" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Defense Diaries</span>
-            <div class="details">
-              <a class="link" href="https://www.youtube.com/live/6AYPofjXTCk?si=Wm9sQYqZOZheIZK1" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Jennifer Auger</a> on January 7, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1f5JjuhweYoFXQtJ9QuUIzfGjFQvWSAnTX3keUiv0WQc/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Defense Diaries</span>
-            <div class="details">
-              <a class="link" href="https://www.youtube.com/live/Qah2WVILPxk?si=NYwI7sZvKUba0nP7" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Andrew Baldwin</a> on January 8, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1jukA15Jrmd0IDD0qoma5YUXdp3WuK7cIpOw4arghquI/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Defense Diaries</span>
-            <div class="details">
-              <a class="link" href="https://www.youtube.com/live/cuLK3jYtz6g?si=enSA7SUOD40R8dR7" target="_blank">Delphi Unhinged: The Aftermath: The Defense Team Speaks &mdash; Brad Rozzi</a> on January 9, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1YoXrHOYclOLMH7uqXem5RzQ49V4u4o_0r186fuKL6eA/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Fox 59</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/YwqXdxOgNTI?si=bRnlcKYomxxnBEbk" target="_blank">One-on-One with Richard Allen's Defense Attorneys</a> on January 9, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1RiX_dk-GVaCnSqYsbRLZSQuwZbWz0QR-PeQbZ748FtA/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Lawyer Lee</span>
-            <div class="details">
-              <a class="link" href="https://www.youtube.com/live/EhdvHQB_q8g?si=AHDe3K-R9xBVkuXK" target="_blank">Lawyer Lee Interviews The Delphi Defense Attorneys</a> on January 10, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1jY41nzVM161Fnk3zpDltBRUknoChlkG-eKZSvTRdBrw/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-a-juror-part-one/id1538289354?i=1000683491584" target="_blank">The Delphi Murders: First Person: A Juror: Part One</a> on January 10, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/11kn9PDRdAOuljNSNVXM4yY2FSIN7pR7d16WU_Aff_2s/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/the-delphi-murders-first-person-a-juror-part-two/id1538289354?i=1000683495656" target="_blank">The Delphi Murders: First Person: A Juror: Part Two</a> on January 10, 2025<br>| <a class="link transcript" href="" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">WISH-TV</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/zJFITZYCSWc?si=7knxaIlOw5CWCbMg" target="_blank">News 8's Kyla Russell's full one-on-one interview with Delphi murderer's defense team</a> on January 10, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1yEgUm0Qd6iLh3YdfTuS2CkEu-1bzKGauuiGyMOVFmoQ/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">WTHR</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/QzJBJ_4EgEc?si=VOAsHfuqh6WRzHhe" target="_blank">Delphi defense team talks openly to 13 News about double murder trial | EXTENDED INTERVIEW</a> on January 10, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1UlUieS5ARy46ZspQ9_ldRd_w9f7Y9jOTPGgm3icPw5g/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Gray Hughes</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/ZuM8rnhrVuI?si=iMEMh_fMeIlF6Gym" target="_blank">My Interview with ISP Lieutenant Jerry Holeman!</a> on January 11, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1y8gUCYyZ7SfJyZtsgRc9O-qJg2tw14yngXfI1ET3KXA/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Gray Hughes</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/ZuM8rnhrVuI?si=iMEMh_fMeIlF6Gym" target="_blank">Delphi &mdash; Special Guest! (Becky Patty)</a> on January 12, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1crv8UuRgvMTXBoCFTSzm6W_fgCFWflELZaObEgBfUzE/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Carroll County Comet</span>
-            <div class="details">
-              <a class="link" href="https://drive.google.com/file/d/1nCQEmhoDEkWzQe6DpzBMLhA8vwZz9oko/view?usp=drivesdk" target="_blank">'Cleared'</a> on January 13, 2025
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Carroll County Comet</span>
-            <div class="details">
-              <a class="link" href="https://drive.google.com/file/d/1gCE0r5vvRX7Ge-sWNJi6_HqEbQSekwFO/view?usp=drivesdk" target="_blank">Seven years later</a> on January 15, 2025
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">WRTV Indianapolis</span>
-            <div class="details">
-              <a class="link" href="https://youtu.be/CkCIAtSKo_U?si=p8od8t4R7wYrOTZ7" target="_blank">Prosecutor shares insights of Delphi murders trial amid public scrutiny</a> on January 20, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1iIul_j0LwfscEf_IDzY0DJEym7EEYjx0pQZoQt629nw/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684741182" target="_blank">The Delphi Murders: First Person: Sheriff Tony Liggett</a> on January 20, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1h26V4kftEBwYddxKRg0aAEDzEZRQynwH1gwfTqgxiZU/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684825802" target="_blank">The Delphi Murders: First Person: Prosecutor Nicholas McLeland: Part One</a> on January 21, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1-2_RrCOxgNBZcJ8nVmTiQ6ncbmt25rx1JDEj_SEYdbs/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684827586" target="_blank">The Delphi Murders: First Person: Prosecutor Nicholas McLeland: Part Two</a> on January 21, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1-Sg1AHP09P4yWJSehF-S6hE7UYSSz4eaMP5T6fIsucs/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684991500" target="_blank">The Delphi Murders: First Person: Chief Deputy Prosecutor Stacey Diener Part One</a> on January 22, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/18CYi7F-adYyLagxkCHLsnv9UNrVY3bpkE9HtETMBdlE/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000684994520" target="_blank">The Delphi Murders: First Person: Chief Deputy Prosecutor Stacey Diener Part Two</a> on January 22, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1-KL_dylSgkSsKOnp1BKZlx3P1Q6M11LXbAJzVyjbVq4/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000685137739" target="_blank">The Delphi Murders: First Person: James Luttrull: Part One</a> on January 23, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1OgGVjomM30zGKaf7Je17cGyxgHFeGkqOC77QD4QxsOM/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000685142175" target="_blank">The Delphi Murders: First Person: James Luttrull: Part Two</a> on January 23, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1TmcULfs2-nYAI7EfRRKcvIYvJYWMNP2Ptc9e_R3q3s8/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000686171788" target="_blank">The Delphi Murders: First Person: Doug Carter Part One</a> on January 23, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1z9Wm_mDUXtonxwrFZTNPh49l6w6FD6GHK5EoXmCXGeA/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000686181442" target="_blank">The Delphi Murders: First Person: Doug Carter Part Two</a> on January 23, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1zzW2IwFmTMwHSzS4Aoft3MIAX6iauFyUHY7gQ4yGhAA/" target="_blank">Transcript</a>
-            </div>
-          </div>
-        </div><!-- end of January 2025 -->
-
-        <!-- February 2025 -->
-        <div class="container section-title">
-          <h2>February 2025</h2>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000688842747" target="_blank">The Delphi Murders: First Person: Detective Dave Vido</a> on February 4, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1VmJ8HomCCMMen3uuXlcc8N2_o5yeGBMYg6rjBEevTv4/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000691063169" target="_blank">The Delphi Murders: First Person: First Sergeant Steve Buckley</a> on February 11, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1UYSx90fLIrLl0_z49yfeZI1M4Hix1PXalzPHYUALeRc/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Murder Sheet</span>
-            <div class="details">
-              <a class="link" href="https://podcasts.apple.com/us/podcast/murder-sheet/id1538289354?i=1000691363960" target="_blank">The Delphi Murders: First Person: Chief Deputy Tobe Leazenby</a> on February 12, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/17q8YPyF7-HH5sKAwozSp8tWW6qwGoO0g6khE03AkNvw/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">Fox59</span>
-            <div class="details">
-             <br>| <a class="link" href="https://docs.google.com/document/d/1LMjQgc32uVIEINFXXtSkLwC3XLHY6YJSKADTT0r7K5c/" target="_blank">Libby German's grandparents open up about the Delphi trial</a> on February 12, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1LMjQgc32uVIEINFXXtSkLwC3XLHY6YJSKADTT0r7K5c/" target="_blank">Transcript</a>
-            </div>
-          </div>
-        </div><!-- end of February 2025 -->
-
-        <!-- March 2025 -->
-        <div class="container section-title">
-          <h2>March 2025</h2>
-          <div class="playlist-entry">
-            <span class="creator">WIBC</span>
-            <div class="details">
-             <br>| <a class="link" href="https://docs.google.com/document/d/1STul8hmuTfIR8VpZPxNVlE2oibbsgdNH5jtQyYai_H4/" target="_blank">Hammer & Nigel - St. Paddy's Day, Property Tax Protest, Monday Gunday, &amp; More!</a> on March 17, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1STul8hmuTfIR8VpZPxNVlE2oibbsgdNH5jtQyYai_H4/" target="_blank">Transcript</a>
-            </div>
-          </div>
-          <div class="playlist-entry">
-            <span class="creator">WIBC</span>
-            <div class="details">
-              <a class="link" href="https://www.youtube.com/live/BXciqys5Dac?si=mw1Q24SKdXY91JP2" target="_blank">Richard Allen's Digital Forensic's Expert Stacy Eldridge and Attorney Andrea Burkhart &mdash; Join us!</a> on March 17, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1qQjKO77GeYP6z29uTmbHvUnnvyZ1r5bZuoRWlD0Bbj0/" target="_blank">Transcript</a>
-            </div>
-          </div>
-        </div><!-- end of March 2025-->
-
-        <!-- May 2025 -->
-        <div class="container section-title">
-          <h2>May 2025</h2>
-            <div class="playlist-entry">
-              <span class="creator">Trust Me Tim</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/tiQgk6QypIY?si=fUkM9BKwrP6fYCHG" target="_blank">Delphi EXCLUSIVE: Juror answers questions: PART ONE</a> on May 28, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1ujf17JJmtHMApTwZ2Hd6ZUyrmNgMRCm8gpiPH4E2naU/" target="_blank">Transcript</a>
-              </div>
-            </div>
-        </div><!-- end of May 2025-->
-
-        <!-- August 2025 -->
-        <div class="container section-title">
-          <h2>August 2025</h2>
-            <div class="playlist-entry">
-              <span class="creator">21 Alive News</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/tiQgk6QypIY?si=fUkM9BKwrP6fYCHG" target="_blank">FULL INTERVIEW: Richard Allen's attorney speaks on new ABC NEWS, Hulu documentary about Delphi murders</a> on August 6, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1R2FrvDb8kIMj3JRgnlxlPSB2_EvzSdrym7VrZZ8QwRc/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Law &amp; Crime</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/Z8NkcdAwfic?feature=shared" target="_blank">Delphi Killer's Wife Breaks Silence on Gruesome Murders</a> on August 11, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/12Se5G_PIvFDAvflxKQRouAMwpITdZaRvdU3ZmG39vH0/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Kendall &amp; Casey Podcast</span>
-              <div class="details">
-                <a class="link" href="https://wibc.com/704244/new-delphi-docuseries-delves-into-tragic-murders-of-teens/" target="_blank">New Delphi Docuseries Delves Into Tragic Murders of Teens</a> on August 12, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/14TQupzMhp5yZRGUr43u8izwS-TcVWoWgh82hFuxRWD8/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Murder Sheet</span>
-              <div class="details">
-                <a class="link" href="https://podcasts.apple.com/us/podcast/a-conversation-with-prosecutor-nicholas-mcleland/id1538289354?i=1000723569345" target="_blank">A Conversation with Prosecutor Nicholas McLeland and Chief Public Defender Tim Sledd: Part One</a> on August 26, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1EV_qeUQI8dQmpXDIYGBLNCMTJySKTN1TcZnsWQrMiAI/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Murder Sheet</span>
-              <div class="details">
-                <a class="link" href="https://podcasts.apple.com/us/podcast/a-conversation-with-prosecutor-nicholas-mcleland/id1538289354?i=1000723574334" target="_blank">A Conversation with Prosecutor Nicholas McLeland and Chief Public Defender Tim Sledd: Part Two</a> on August 26, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1Grh_q_q0Q93Q5hh5aPZe-dNSF0woj572UMTtiYs-ALE/" target="_blank">Transcript</a>
-              </div>
-            </div>
-        </div><!-- end of August 2025-->
-
-        <!-- September 2025 -->
-        <div class="container section-title">
-          <h2>September 2025</h2>
-            <div class="playlist-entry">
-              <span class="creator">Circle City Conversations</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/vpw2LLXE_vk?si=jxPefLM6gn4zIfwq" target="_blank">The Delphi Murders Case | Andy Baldwin | Circle City Conversations w/ Alex Limontes (Part 1)</a> on September 8, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1L0oG0cFtgwdZpA1hsIfhn-qSOp-XDbFeqH32QdHXRyQ/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Circle City Conversations</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/BmOLkfEDRyM?si=m3RBSD1eZ9L_JEuL" target="_blank">The Delphi Murders Case Pt. 2 | Andy Baldwin | Circle City Conversations w/ Alex Limontes</a> on September 22, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/18fQmW5w8BTg0MG255b9rrf3mNBCBwl8HO1ZLXk413Is/" target="_blank">Transcript</a>
-              </div>
-            </div>
-            <div class="playlist-entry">
-              <span class="creator">Court TV</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/1U_VxEdISA0?si=yshB768ljk8iwGP_" target="_blank">Delphi Murders | Victim to Verdict with Ted Rowlands</a> on September 29, 2025
-              </div>
-            </div>
-        </div><!-- end of September 2025-->
-
-        <!-- October 2025 -->
-        <div class="container section-title">
-          <h2>October 2025</h2>
-            <div class="playlist-entry">
-              <span class="creator">Circle City Conversations</span>
-              <div class="details">
-                <a class="link" href="https://youtu.be/3iSXHZwgfHs?si=3P_Lx8XubiABRB8u" target="_blank">The Delphi Murders Case Pt. 3 | Andy Baldwin | Circle City Conversations w/ Alex Limontes</a> on October 6, 2025<br>| <a class="link transcript" href="https://docs.google.com/document/d/1wpRGrOQnQSC6tzQDYY8LslI4l-8cmRPDiUh06QRGlGk/" target="_blank">Transcript</a>
-              </div>
-            </div>
-        </div><!-- end of October 2025-->
-
-        <!-- April 2026 -->
-        <div class="container section-title">
-          <h2>April 2026</h2>
-            <div class="playlist-entry">
-              <span class="creator">Frankmolester</span>
-              <div class="details">
-                <a class="link" href="https://www.youtube.com/live/h_0HnIL0oag?si=zzQaWSlTbcqgMZf6" target="_blank">True Crime Tak With Frankmeister</a> on October 6, 2025<br>| <a class="link transcript" href="https://drive.google.com/file/d/1g7Rf97VlhlMOAQPCkqA_UR3sODrtsRJ8/view?usp=drive_link" target="_blank">Transcript</a>
-              </div>
-            </div>
-        </div><!-- end of  April 2026 -->
-
-      </section><!-- End of Interview Hub Section -->
-
-    </div> <!-- end of interview-hub wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>

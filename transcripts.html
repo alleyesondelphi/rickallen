@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
   <title>Court Transcripts | IN v. RA</title>
   <meta name="description" content="Court transcripts broken down by hearing, trial day, and individual witness testimony.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/transcripts">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Court Transcripts">
   <meta property="og:description" content="Court transcripts broken down by hearing, trial day, and individual witness testimony.">
   <meta property="og:type" content="website">
@@ -16,7 +15,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Court Transcripts">
   <meta name="twitter:description" content="Court transcripts broken down by hearing, trial day, and individual witness testimony.">
@@ -31,707 +30,1070 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Styles -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #2D5FBF;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0D1B3E;
+      --carmine:             #4A5A80;
+      --ink:                 #0D1B3E;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0D1B3E;
+      --text-body:           #2D3A5C;
+      --text-label:          #4A5A80;
+      --text-muted:          rgba(45, 58, 92, 0.45);
+      --accent:              #2D5FBF;
+      --accent-border:       rgba(79, 142, 247, 0.35);
+      --border-light:        rgba(46, 54, 80, 0.18);
+      --border-mid:          rgba(46, 54, 80, 0.10);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #0E0E10;
+        --surface-card:        #1A1A1E;
+        --surface-elevated:    #242428;
+        --text-heading:        #EAEAEC;
+        --text-body:           #9898A4;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(152, 152, 164, 0.95);
+        --accent:              #4F8EF7;
+        --accent-border:       rgba(79, 142, 247, 0.30);
+        --border-light:        rgba(255, 255, 255, 0.07);
+        --border-mid:          rgba(255, 255, 255, 0.04);
+        --carmine:             #9292BE;
+        --ink:                 #EAEAEC;
+        --peach:               #4F8EF7;
+        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #0E0E10;
+      --surface-card:        #1A1A1E;
+      --surface-elevated:    #242428;
+      --text-heading:        #EAEAEC;
+      --text-body:           #9898A4;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(152, 152, 164, 0.65);
+      --accent:              #4F8EF7;
+      --accent-border:       rgba(79, 142, 247, 0.30);
+      --border-light:        rgba(255, 255, 255, 0.07);
+      --border-mid:          rgba(255, 255, 255, 0.04);
+      --carmine:             #9292BE;
+      --ink:                 #EAEAEC;
+      --peach:               #4F8EF7;
+      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--peach);
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Filings list ── */
+    .filing {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .filing:last-child { border-bottom: none; }
+    .filing-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-label);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 75px;
+      letter-spacing: 0.05em;
+    }
+    .filing-content { 
+      flex: 1; 
+    }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
+    .filing-bold {
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .filing-note {
+      margin-top: 8px;
+      padding: 14px 20px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .filing { 
+        padding: 14px 20px; 
+        font-size: 13px; 
+        gap: 16px; 
+      }
+      .filing-date { 
+        font-size: 11px; 
+        min-width: 65px; 
+      }
+      .filing-note { 
+        padding: 12px 16px; 
+        font-size: 12px; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="transcripts" class="active">Transcripts</a></li>
+      <li><a href="https://drive.google.com/drive/folders/13D-XcNKbz2zaEBtEWy2DhbmuUGcoV3jc?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </nav>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Court Transcripts">
+    <div class="masthead-text" data-aos="fade-up">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Court Transcripts</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
+  <section class="content-section">
+
+    <div class="case-block" data-aos="fade-up">
+
+    <!-- Pretrial Hearings -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Pretrial Hearings</h2></summary>
+           <div class="filing">
+        <div class="filing-date">10-28-2022</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1bwtdEq8WMFvmb8pgd-zc-OXVi_G_s5tJ/view?usp=drive_link" target="_blank">Initial Hearing</a> on Oct. 28, 2022.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-22-2022</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1sQIYIqPALPLysnqODxrG2EN-Kofg2niE/view?usp=drive_link" target="_blank">Open Status Hearing</a> on Nov. 22, 2022.
+            <div class="filing-note"><a class="filing-link" href="https://drive.google.com/drive/folders/1fV3WsnSEB7GMEVGuG-6bWtRWkL4eYBiF?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-13-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1TnV4d24OG_xD-yYI73sNK4PeesgXDePm/view?usp=drive_link" target="_blank">Open Status Hearing</a> on Jan. 13, 2023.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-13-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ZUIFKTETuiMNNKkKeXro6BN07vqRPAbg/view?usp=drive_link" target="_blank">Ex Parte Hearing</a> on Jan. 13, 2023.
+        <div class="filing-note">
+          <a class="filing-link" href="https://drive.google.com/file/d/1FkdCvmNxL_AzOWmuD61V3aPImS1Svwi3/view?usp=drive_link" target="_blank">Testimony of Matthew Hoffman</a><br>
+          <a class="filing-link" href="https://drive.google.com/file/d/1o7b0n0P1Fy6WfMCld9hQb-e9_RqdiUXM/view?usp=drive_link" target="_blank">Testimony of Sarah Easter</a>
+        </div>
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">02-17-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ASj8KYZK-vz5RATkuVCNap2PMPkO7PaJ/view?usp=drive_link" target="_blank">Remote Status Hearing</a> on Feb. 17, 2023.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ITblF4Nx-H2t-Gwjp901teii5U3d4Uwf/view?usp=drive_link" target="_blank">Safekeeping Hearing</a> on Jun. 15, 2023.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1G0K7VLbXWhqN0mhxqforDLp8b0T_q8-k/view?usp=drive_link" target="_blank">Testimony of Tobe Leazenby</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1fpR1QHyLoa98ys_SqexNebIyhueqS_Rm/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/16bfrNcp_89o6WQEQClVvHovyQLILGNVU/view?usp=drive_link" target="_blank">Testimony of Gary Lewis</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1BmQtyNnDk7Xu5wfeorYDS7PRzqWVVos7/view?usp=drive_link" target="_blank">Testimony of Edward Schroder</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1aKChloAR0jvGR4TH2A2iFPE3TDzMWDa5/view?usp=drive_link" target="_blank">Testimony of Tony Liggett</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1TBcgdxw3UdfxFb4-9DgwObDRwVTR_Chz/view?usp=drive_link" target="_blank">Testimony of John Galipeau</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/15rbr_kr__qPqT2a97iVaYs2rW3r9Anbq?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">06-15-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1YpLpaKX8ALM28EXlOF7xIT7QcPltN2ll/view?usp=drive_link" target="_blank">Ex Parte Hearing</a> on Jun. 15, 2023.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-19-2023</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1B-G-OK7M4QfF-J__NuJzMkTpHXwfR-BW/view?usp=drive_link" target="_blank">In-Chambers Ambush Hearing</a> on Oct. 19, 2023.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-19-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/17yLHaWnrNXGzicQFc4EXDYLWUs7B1mNF/view?usp=drive_link" target="_blank">On-camera Ambush Hearing</a> on Oct. 19, 2023.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-31-2023</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ojPDNj0v2IrUmeh6v1a2gRIEj593YOS9/view?usp=drive_link" target="_blank">Status Hearing</a> on Oct. 31, 2024.
+      </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">01-18-2024</div>
+          <div class="filing-content">Transcript of <a class="filing-link" href="https://drive.google.com/file/d/1rAXq-vKf0X4Ry6m0e4LIO4B48gHxzIbS/view?usp=drive_link" target="_blank">Oral Arguments </a>before the Indiana Supreme Court on Jan.  18, 2024.
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-18-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1G3uRoRtXh3IqEXflNyGSLUnShdmuyjWM/view?usp=drive_link" target="_blank">Contempt Hearing</a> on Mar. 18, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1MpuJrdqpNs_2sTnRbGP1zTOJn7GVQ5Nr/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin (Direct)</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1_z63KRKGKo48HzTyiqoR6hu-hdW-NZgC/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman (Direct)</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1jY3iETkAaQEYImCk0w5XBEKKkBV9XYph/view?usp=drive_link" target="_blank">Testimony of Ben Rector</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1PgsoF7jGEMbYWp5p9Y-stahnXDDmkoe-/view?usp=drive_link" target="_blank">Testimony of John Boren</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Rkn-EzAHQQ00nDgqKNYeK0a-7T-XjOEG/view?usp=drive_link" target="_blank">Testimony of Kay Beehler</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1SV0WFT1MViEsXtxxfH7NMlCcs5iPDFbY/view?usp=drive_link" target="_blank">Testimony of Andrew Maternowski</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/14QBB7KTrHfNwEl7zJ4QLVd1GPSVjxFGw/view?usp=drive_link" target="_blank">Testimony of Julie Melvin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1bMy1LGPUB53xKTmKmN9dOhusOsPjo6Rs/view?usp=drive_link" target="_blank">Testimony of Steven Wood</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Qru_rm8it8jHQ_tkVHYBTcYqOMW8J740/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin (Cross)</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Qru_rm8it8jHQ_tkVHYBTcYqOMW8J740/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman (Cross)</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1rNFmZqFwenUlu-mQ8sQnUOAFbVusGclK/view?usp=drive_link" target="_blank">Testimony of Bradley Rozzi</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1_gE6quTxkBQTsMfr1oMgbWiQBF0uv_HJ?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">03-18-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1HpP4Ij0tbfb2rethOSnSzMgdf6YzfHpK/view?usp=drive_link" target="_blank">Motion to Dismiss Hearing</a> on Mar. 18, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/17F_HD86jW0YSJEyGogMNPnGPUsCZuXWL/view?usp=drive_link" target="_blank">Testimony of Todd Click</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1klk2EG-GEiXBPwp-FtuB4TUeMKoLlScQ/view?usp=drive_link" target="_blank">Testimony of Amber Holder</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1wDwtWnc1EPWjJduGJJj3M3Oqo7Tij7ae/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1fgBvVF8hvw71H47MbvVNRPZlWM4b2Dth?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">05-07-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1Z9twDX8jtK5IqYNBvABFs1rGs2Qk8B3h/view?usp=drive_link" target="_blank">Motions Hearing</a> on May 7, 2024.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-30-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1wxORdNArLmoLqewsp_-0ZJc69StVfwW1/view?usp=drive_link" target="_blank">Motions Hearing Day 1</a> on Jul. 30, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1wsX-SAZc-FpyywZD594wiWwFrvVH6jz6/view?usp=drive_link" target="_blank">Testimony of Tony Liggett</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1yclh-fIqKj9SBqyUOxizw2y3ga8J6M35/view?usp=drive_link" target="_blank">Testimony of Roland Purdy</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1rpITTJpxDVSaOpcNbjc9UOW5nVAMAdSD/view?usp=drive_link" target="_blank">Testimony of Kevin Murphy</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1O-ILWMaLg-R_LDexsXiIPNSS5LCPMSCm/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1VlEnLXjp51jk4fg5cxSp_jq3IcchdbCZ?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">07-31-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1dItGEaivR5PzYhrG61CnYDvZ7lVfoWRh/view?usp=drive_link" target="_blank">Motions Hearing Day 2</a> on Jul. 31, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1Izef2W5iirzyDDxpu_HLAemHl_Be6LzO/view?usp=drive_link" target="_blank">Testimony of John Galipeau</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1ZT2bYJR9giADHH2OAK_vGEVl6ENgbuHg/view?usp=drive_link" target="_blank">Testimony of Kenneva Mapps</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1tBGgPYTL3NutOJ7pFCEgL1L6tMszkgCe/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1JZtVP7HMNGw6BOXplAot6MehIopt_TSF/view?usp=drive_link" target="_blank">Testimony of Dr. Monica Wala</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1grGRAhq-6LYKa-7YcyXTPUohJClVQPOg/view?usp=drive_link" target="_blank">Testimony of Brian Harshman</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1d1_1Qcdn466kLR5IFvfb7xQpl6Idq-Hh?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-01-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1R-fQdAMkU4VjrIYhUpVLXf-W4C_vlx1A/view?usp=drive_link" target="_blank">Motions Hearing Day 3</a>
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/12k-ZsTM3Ijjqmy98yXLHNzj5u81FlD5X/view?usp=drive_link" target="_blank">Testimony of Dr. Dawn Perlmutter</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1U-3HHQRWxkKedy6xu7jYILKc42YohfoD/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1DxxJhpYUtmxOZhBdQydnt4X06XBvgNsf/view?usp=drive_link" target="_blank">Testimony of Amber Holder</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1DxA695ZjoQ3n_7cESXPVIIOiOm3RXGnC/view?usp=drive_link" target="_blank">Testimony of Kevin Murphy</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1yQkAkPeRtu8q7wqwSoEEcH835v-noDcr/view?usp=drive_link" target="_blank">Testimony of Todd Click</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1f3Qa5cbHtt1zPv6misUYXTpmcLDEvezF/view?usp=drive_link" target="_blank">Testimony of David Vido</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Ggr_fV-paVJy3Ar5cX1ivXLY4MmH6bmT/view?usp=drive_link" target="_blank">Testimony of Christopher</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1o-j20nkuzkHS888SiYZJKlULldOq9sBF/view?usp=drive_link" target="_blank">Testimony of Roland Purdy</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1prdbQ_Z9gLCeT46XzO8IjvETrIjDtsaa/view?usp=drive_link" target="_blank">Testimony of Patrick Cicero</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1iyC3UxxeeA0f4wz135pk_31euUQmZOxf?usp=drive_link" target="_blank">Exhibits &rarr;</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">08-23-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1h2Ovptks0vJc5s8Zl0qRLrtFxXN5iFGm/view?usp=drive_link" target="_blank">Open Status Hearing</a> on Aug. 23, 2024.
+      </div>
+      </div>
+    </details><!-- end of Pretrial Hearings -->
+
+    <!-- Jury Selection -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Jury Selection</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-14-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1cH8I1fmA6zCeksfJsHtEeAVSDmUIkNNX/view?usp=drive_link" target="_blank">Full Jury Selection Day 1</a> on Oct. 14, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 1</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 2</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 3</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 4</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/14TPIZG0LmKh2q1SOVJ8go7KmTkSwTdtw/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 5</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-15-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/11TlxxxAZH6YGTYDdezzJD5Y75JPd7pjH/view?usp=drive_link" target="_blank">Full Jury Selection Day 2</a> on Oct. 15, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 1</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Xs932cgff-cblVMFI3B2DMdw9fx1-vpE/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 2</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1sOQHMNCt6X1gQEX8kJYrKMCMBYjKwO4_/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 3</a></br>
+            </div>
+          </div>
+      </div>
+    </details><!-- end of Jury Selection -->
+
+    <!-- end of Motions Hearing -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Motions Hearing</h2></summary>
+      <div class="filing">
+        <div class="filing-date">10-17-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1orlRFMETjpQ3QEi3iCYietSx_zgjwzFo/view?usp=drive_link" target="_blank">Motions Hearing</a> on Oct. 17, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1HYdiNoi080SSPfomPXEGuttTfKsIP36k/view?usp=drive_link" target="_blank">Testimoney of Thomas Plantz</a></br>
+              <a class="filing-link" href="https://drive.google.com/drive/folders/1_KjIvPL5xXBtLKcw9qI7qOsgUWxL1jbm?usp=drive_link" target="_blank">Exhibits &rarr;</a></div></div>
+      </div>
+    </details><!-- end of Motions Hearing -->
+
+    <!-- Opening Arguments -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Opening Arguments</h2></summary>
+        <div class="filing">
+          <div class="filing-date">10-18-2024</div>
+            <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1uusExMq4eKMIvTXcBUJYmuZN2Xu6FKEg/view?usp=drive_link" target="_blank">Full Opening Arguments</a> on Oct. 18, 2024.
+             <div class="filing-note">
+                <a class="filing-link" href="https://drive.google.com/file/d/1eSRQoIQv_DgX-qxoKe60zy8chteHyu6C/view?usp=drive_link" target="_blank">Prosecution Opening Arguments</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1uusExMq4eKMIvTXcBUJYmuZN2Xu6FKEg/view?usp=drive_link" target="_blank">Defense Opening Arguments</a></br>
+            </div>
+          </div>
+      </div>
+    </details><!-- end of Opening Arguments -->
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>Trial</h2></summary>
       
+      <div class="filing">
+        <div class="filing-date">10-18-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1tdYFBO5u2QHOoIg68ULYK8uiZ7ah9qr1/view?usp=drive_link" target="_blank">Full Trial Day 1</a> on Oct. 18, 2024.
+          <div class="filing-note">
+            <a class="filing-link" href="https://drive.google.com/file/d/1zEtHk7hUH0-ZLgCpTZrYm7fmFL9bijU1/view?usp=drive_link" target="_blank">Testimony of Becky Patty</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/1PFVS8hK752yvx2ck0Rf66niSnLnMgcgO/view?usp=drive_link" target="_blank">Testimony of Kelsi Siebert</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/1CgxGTAKrurpdh-pSy5ZB87kC3oMo9Mcy/view?usp=drive_link" target="_blank">Testimony of Derrick German</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/1pg271Iz6oUw3P8bbL5Q-45-AqxqNtG9i/view?usp=drive_link" target="_blank">Testimony of Anna Williams</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/14lzQIv6E5ymfJpIQI_70jYXm3WmTtz-R/view?usp=drive_link" target="_blank">Testimony of Mitchell Cantron</a></br>
+          </div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-19-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1jtyIbBRhZl-lrZDvPEflG5_-lktPUxV_/view?usp=drive_link" target="_blank">Full Trial Day 2</a> on Oct. 19, 2024.
+          <div class="filing-note">
+            <a class="filing-link" href="https://drive.google.com/file/d/17Dkij3EscU0WOMCY-HIOLRjG7Z7W_J6d/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/19e0FrokhowoubXmpI6uQsou5_RhlGv3a/view?usp=drive_link" target="_blank">Testimony of Jacob Johns</a></br>
+            <a class="filing-link" href="https://drive.google.com/file/d/13tfbaCRm75ftr8qRpbVY9Bqls0_adHOY/view?usp=drive_link" target="_blank">Testimony of Patrick Brown</a></br>
+          </div>
+        </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-21-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/15M4WBVtcWwSRM7j9GiKJnOqGa7HkUnz2/view?usp=drive_link" target="_blank">Full Full Trial Day 3</a> on Oct. 21, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1toS9dkVkCNhcr6hM7_3JL6Ij3MpdZF5A/view?usp=drive_link" target="_blank">Testimony of Darren Giancola</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1AiIF8jBFxcQbTgIn_9CoOH7yKbvlv8cESjaloekc9G5W/view?usp=drive_link" target="_blank">Testimony of Jason Page</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/12CG_B5cGWoRtI9MRx69jRCLAnxpyKWUq/view?usp=drive_link" target="_blank">Testimony of Duane Datzman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1cg4jjE9kAw0pNVo5bpaLNCaRZQy0BoQp/view?usp=drive_link" target="_blank">Testimony of Brian Olehy</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1A5QNZgf4lYSITuic7yESJeIAgktgX-Uq/view?usp=drive_link" target="_blank">Testimony of Brian Bunner</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-22-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1gl18P0VxwrBThZtTMwgLDAkJUdpEZzF2/view?usp=drive_link" target="_blank">Full Trial Day 4</a> on Oct. 22, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1wqLf7aQACCsuoTvp5v80w1jSf2tg6MVV/view?usp=drive_link" target="_blank">Testimony of Jeremy Chapman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1j4dqbVXv0tJ_r-5z-xLSZU-OeWP9qirE/view?usp=drive_link" target="_blank">Testimony of Railly Voorhies</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1GNHCsJ-EdB2AtSzQlYYMBwbR_zoY5wXT/view?usp=drive_link" target="_blank">Testimony of Breann Wilber</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1C3NH_9CoOH7yKbvlv8cESjaloekc9G5W/view?usp=drive_link" target="_blank">Testimony of Betsy Blair</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/17vutQ6_lQID22PeGrsZjuPk1fYzc0wSC/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-23-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1D44YmASBt8SUYP2QUX3QrmSdBfXHproj/view?usp=drive_link" target="_blank">Full Trial Day 5</a> on Oct. 23, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1dCaSc51LJgFgs-QlZVJ_XCOHfoGBYhEk/view?usp=drive_link" target="_blank">Testimony of Sarah Carbaugh</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1V2CA3Xzh-3MADlktlgBQrE6q5ezGQpGl/view?usp=drive_link" target="_blank">Testimony of Dr. Roland Kohr</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1LRL0Sjh64R3uMQIOm-dVcrB8dAkSuCRS/view?usp=drive_link" target="_blank">Testimony of Christopher Cecil</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-24-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1WJgwT-XBXfQDeXisM4zLpWPqAI5a2UNr/view?usp=drive_link" target="_blank">Full Trial Day 6</a> on Oct. 24, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/10KqR8BxhOhkR1vKUmfE7drH1_qCAZt6G/view?usp=drive_link" target="_blank">Testimony of Kathy Shank</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/13GoaAzRhioqrAXQB1TiepQ1rj6vpBw8T/view?usp=drive_link" target="_blank">Testimony of Dan Dulin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1hVGhVJw1Y8biKDHyaMCHmdAlaPhaVHB8/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/16ETtqrieCB4lCTDq_qyKWJPvlDhC4Y87/view?usp=drive_link" target="_blank">Testimony of Tony Liggett</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1w0cA5vR7wJYPpUoOBzJmwkrcmub7xeHc/view?usp=drive_link" target="_blank">Testimony of David Vido</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1T6qviQQMvhYS_RiuWipJhKcaKCORiBHT/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-25-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/12qkfzYsO06mHnjwF0MPrh0ZlheePhjOZ/view?usp=drive_link" target="_blank">Full Trial Day 7</a> on Oct. 25, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1gFawENyp6kL_Jkar-73dw9xJ3LZYDLeW/view?usp=drive_link" target="_blank">Testimony of Melissa Oberg</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-26-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1hUnAm6UX25dM2Z27cdWI49GdXnfknJUY/view?usp=drive_link" target="_blank">Full Trial Day 8</a> on Oct. 26, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1hD4sE1wMkACIYFA162V7RCbbpGL-DwUm/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-28-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/12XZOyCKmDZU4V8d8CySYtqyeMZWtcwSg/view?usp=drive_link" target="_blank">Full Trial Day 9</a> on Oct. 28, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1nngdM7AeS2k8JHSJYR0xh9pOrmNklU2a/view?usp=drive_link" target="_blank">Testimony of Stacy Bozinovski</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1vaCx_zEzQZWjYl9rjg9NpePpYaiUHfey/view?usp=drive_link" target="_blank">Testimony of Patrick Cicero</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-29-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1hhBF_n_BTOqEIFURV1JTR1joi4n42NTV/view?usp=drive_link" target="_blank">Full Trial Day 10</a> on Oct. 29. 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1-4Mkq3hzV8y4SOpC0W33IBWQ1oFoRus9/view?usp=drive_link" target="_blank">Testimony of John Galipeau</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/13OPe3Jaw8aonAqxsN6T3c7v9MQ_gbFUB/view?usp=drive_link" target="_blank">Testimony of Ethan Drang</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1_ewaeyzzXVhaNsq1HiLlSgLfB-J8jQyN/view?usp=drive_link" target="_blank">Testimony of Michael Clemons</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1-7Vyz252xpCt_k3_0ye7achtRiyHv7uF/view?usp=drive_link" target="_blank">Testimony of Michael Roberts</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/12hNO3pITTYsnmoh7-QoqA6AfAjeI0zdw/view?usp=drive_link" target="_blank">Testimony of James Early</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1kv6gKlBiEo0sGHqjLBFFbI5esa2ZVjjm/view?usp=drive_link" target="_blank">Testimony of John Miller</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1pfoP8zWNX7ilj5cxEN4V9-qPIAGfSmOj/view?usp=drive_link" target="_blank">Testimony of Brandon Fisher</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1klyt6tVK6HhrdncEepG3mgd5F6oysjvw/view?usp=drive_link" target="_blank">Testimony of Raymond Smith</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1kVtOKOguSanX0Yz9zz5rN73VnQOBZmN3/view?usp=drive_link" target="_blank">Testimony of Jason Bedwell</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-30-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1pKm-P0OxboI2qV974CU9lp3niNAk4YTg/view?usp=drive_link" target="_blank">Full Trial Day 11</a> on Oct. 30. 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1emYZAnVwtq8ja1ft9HrxwCE1qp4v5bH4/view?usp=drive_link" target="_blank">Testimony of Dr. Monica Wala</a>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">10-31-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/142lFS-_VeAH8HAWvkQeHciaGUl6ZmOnh/view?usp=drive_link" target="_blank">Full Trial Day 12</a> on Oct. 31, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1aYtM-VCDW3VFDYwa0DxgQr1PWI4jKh14/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1X2xBRmQUnuiEVlRczGXBI1X4csb9m_eu/view?usp=drive_link" target="_blank">Testimony of Brad Weber</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1sh6brKfEwLpv6OZKPn_laR1T5WV8jEhl/view?usp=drive_link" target="_blank">Testimony of Brian Harshman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1hgOlwLibdaSCrJG5oBrKmmOUfVOK4V7r/view?usp=drive_link" target="_blank">Testimony of Cheyenne Mill</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1ML-eigfiQx3U8VZeQB2xrtV2llmBI1sI/view?usp=drive_link" target="_blank">Testimony of Teresa Liebert</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-01-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1jLD-m01pFZb2IbIsrGM7R1JuckIfK6O4/view?usp=drive_link" target="_blank">Full Trial Day 13</a> on Nov. 1, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1mKvLbjZRS2TJi2hPr3NbJa_KoHbLvKpU/view?usp=drive_link" target="_blank">Testimony of Christopher Gootee</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/19vcqWqdBORcOKXiExv4JPXhavLXqqjns/view?usp=drive_link" target="_blank">Testimony of Dr. Deanna Dwenger</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1GSMtmeFiLlsNxTcC0CikTB_shNlykrv-/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/15pdvua91p3SG_mQm5GAaGTYoNVoFP273/view?usp=drive_link" target="_blank">Testimony of Brad Heath</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/11mnooHg_SFHBgRywLFbm4-u_J4F_u1fn/view?usp=drive_link" target="_blank">Testimony of David McCain</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1ZvSEFydo37UHohcpLUJ6a9t5RWFZKXMm/view?usp=drive_link" target="_blank">Testimony of Darrell Sterrett</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Q9DusTE6IBeFJM7L9p3ZpB6qEt_McEPl/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1PFjMn6figLfIh91GyW2FZ_Bn6bUqYHG3/view?usp=drive_link" target="_blank">Testimony of Tobe Leazenby</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-02-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/104iKyAq2HXB8_TFavqTt6nPPcZt2kUwY/view?usp=drive_link" target="_blank">Full Trial Day 14</a> on Nov. 2, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1JP3rNJSIewHpI3lM-Byq6xtIaO72N_J0/view?usp=drive_link" target="_blank">Testimony of Max Baker (Direct)</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1l_yzERIqHk0CL48vENt2pP3RMUgJafWX/view?usp=drive_link" target="_blank">Testimony of Doug Carter</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1Me657y3MpUewuCrbFXNG-W4pCpmaNCNd/view?usp=drive_link" target="_blank">Testimony of Max Baker (Cross)</a></br>
+            </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-04-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1rt6Nv5x1jRNnGMZ6q8nEw-7MkQ19LgkV/view?usp=drive_link" target="_blank">Full Trial Day 15</a> on Nov. 4, 2024.
+              <div class="filing-note">
+                <a class="filing-link" href="https://drive.google.com/file/d/1FJVpQdCfDZA8lwzpgM2znVIZryp3lACN/view?usp=drive_link" target="_blank">Testimony of Dr. Polly Westcott</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1Fx0fePVAtXT5Dx6qgL3F78L1gqmsE9ov/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1UMoWqB1K_uLt4lN9LXMqTWXjRQyBhj2E/view?usp=drive_link" target="_blank">Testimony of Jamie Jones</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1EAigg34Tc2VSN7XFHOQgOM3zruRNdapt/view?usp=drive_link" target="_blank">Testimony of Brittany Zapanta</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1nfAsL6rBwek5jnnbWZmDAhVee80uhfO7/view?usp=drive_link" target="_blank">Testimony of Shelby Hicks</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1C4YIztxL4BuuB1rOIoj2_U9YwnLcJHAw/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1ZrMwBiaH12iJJdnskWfL7BWiubnbcWO3/view?usp=drive_link" target="_blank">Testimony of Brad Weber</a></br>
+              </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-05-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1xlSz5GGOcWBwH11n2wY9tmJArrnfUXbT/view?usp=drive_link" target="_blank">Full Trial Day 16</a> on Nov. 5, 2024.
+              <div class="filing-note">
+                <a class="filing-link" href="https://drive.google.com/file/d/14UVCwkR2BQEsLdUS6A4fb2RDx7QrigVm/view?usp=drive_link" target="_blank">Testimony of Betsy Blair</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1JBrXxS5J2iweFyy2D9IhOLU8kcUceCIO/view?usp=drive_link" target="_blank">Testimony of Dr. Stuart Grassian</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1yMhAUtL_QpoGr8Z7n-Zf9lpi-qBpFd2m/view?usp=drive_link" target="_blank">Testimony of Dr. Eric Warren</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1SqtPRTOCpsTd-IL6DDYR-QVBV8rpU-Nu/view?usp=drive_link" target="_blank">Testimony of Stacy Eldridge</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1m4Dy6ThNGBVOFv2RsyzVP-quHTTz5yAz/view?usp=drive_link" target="_blank">Testimony of Christopher Cecil</a></br>
+                <a class="filing-link" href="https://drive.google.com/file/d/1-OduqklEJDjE3ArNab4RLvqVwIaCc5iS/view?usp=drive_link" target="_blank">Testimony of Brian Bunner</a></br>
+              </div>
+          </div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-06-2024</div>
+        <div class="filing-content">
+          <a class="filing-link" href="https://drive.google.com/file/d/1fdNCPiJVq6OzwqqC9yFNKSLUAjTOWj_/view?usp=drive_link" target="_blank">Full Rebuttal Testimony</a> on Nov. 6, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1FgguxCnIPjB4EB1qSBuWUsykhF0F3XT5/view?usp=drive_link" target="_blank">Rebuttal Testimony of Breann Wilber</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1yVnz-DoohOsAvOQRNMN2GHbf3AsW1AMT/view?usp=drive_link" target="_blank">Rebuttal Testimony of Brian Harshman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1PCsySb-51y85qftGFKnprApeO9a7xaRl/view?usp=drive_link" target="_blank">Rebuttal Testimony of Dr. John Martin</a></br>
+            </div>
+          </div>
+      </div>
+    </details><!-- end of Trial -->
+
+    <!-- CLosing Arguments -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Closing Arguments</h2></summary>
+      <div class="filing">
+        <div class="filing-date">11-06-2024</div>
+          <div class="filing-content">
+            <a class="filing-link" href="https://drive.google.com/file/d/1JPqhAgsddYAYAheCxF_4GC7hrwCtlI3H/view?usp=drive_link" target="_blank">Full Closing Arguments</a> on Nov. 6, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1JO2PEDRljOIJy2eAnACO1eCrs6Qw5BP4/view?usp=drive_link" target="_blank">Prosecution Closing Arguments</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1L2oDvYZ3GMHArJtNEHle0ukR8Kr5GPVK/view?usp=drive_link" target="_blank">Defense Closing Arguments</a></br>
+          </div>
+        </div>
+      </div>
+    </details><!-- end of Closing Arguments -->
+
+    <!-- Jury Deliberations -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Jury Deliberations</h2></summary>
+      <div class="filing">
+        <div class="filing-date">11-07-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/12Ll23xF5s58TnNMNUgQ90Ql75ccSiizx/view?usp=drive_link" target="_blank">Jury Deliberations Day 1</a> on Nov. 7, 2024.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-08-2024</div>
+        <div class="filing-content"><span class="filing-bold">Jury Deliberations Day 2</span>
+        <div class="filing-note">No transcript for Nov. 8, 2024</div></div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-09-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1QNseqjVSRC0OmU9ahb79JpFyBq4MS-py/view?usp=drive_link" target="_blank">Jury Deliberations Day 3</a> on Nov. 9, 2024.</div>
+      </div>
+      <div class="filing">
+        <div class="filing-date">11-11-2024</div>
+        <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ZfmBGaCpjNIPI_Mmc7hycJhgHYOo8kK_/view?usp=drive_link" target="_blank">Jury Deliberations Day 4</a> on Nov. 11, 2024.</div>
+      </div>
+    </details><!-- end of Jury Deliberations -->
+
+    <!-- Sentencing Hearing -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Sentencing Hearing</h2></summary>
+      <div class="filing">
+        <div class="filing-date">12-20-2024</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1ZkpxQ_ocHPocXA_RuFbXfcYS4deqYjsX/view?usp=drive_link" target="_blank">Full Sentencing Hearing</a> on Dec. 20, 2024.
+            <div class="filing-note">
+              <a class="filing-link" href="https://drive.google.com/file/d/1uLVYERNa1kWdczo89SM3UELzLF-GlN78/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1T8cD7VLfLiMZmOocY4cYi06X04QEgb6m/view?usp=drive_link" target="_blank">Testimony of Carrie Timmons</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1wOQzNsVJoOQ82PTWVLN7VD2KeuOlEtZR/view?usp=drive_link" target="_blank">Testimony of Josh Lank</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/18kDobjVNdU7JInRSOLXE7k5ecSArS_fb/view?usp=drive_link" target="_blank">Testimony of Diana Erskin</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1GlHVE6zrJvUpJ5uio1IGKIQDurMU7rKd/view?usp=drive_link" target="_blank">Testimony of Becky Patty</a></br>
+              <a class="filing-link" href="https://drive.google.com/file/d/1ydJLEesJHTJjOHeUjN3n6ZBOCufAXtov/view?usp=drive_link" target="_blank">Testimony of Mike Patty</a></br>
+            </div>
+          </div>
+      </div>
+    </details><!-- end of Sentencing Hearing -->
+
+    <!-- Court of Appeals Oral Arguments -->
+    <details class="month-details">
+      <summary class="month-summary"><h2>Court of Appeals Oral Arguments</h2></summary>
+      <div class="filing">
+        <div class="filing-date">09-21-2026</div>
+          <div class="filing-content"><a class="filing-link" href="https://drive.google.com/file/d/1q6TtmVsD5P0N8fQfUbNWAHZHe1NwtISg/view?usp=drive_link" target="_blank">Full Oral Arguments</a> before the Court of Appeals on Sept. 21, 2026.
+      </div>
+    </details><!-- end of Court of Appeals Oral Arguments -->
+
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1wFVkYrUeFcB-ot_TkSdE7WK9SikRCOOK?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+        <div class="drive-card-body">
+          <h3 class="drive-card-title">Clerk's Record</h3>
+          <p class="drive-card-desc">Folder archive of the Clerk's Record, Transcript Volumes 1–22.</p>
+        </div>
+        <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
     </a>
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
+  </section>
+
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X/Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.reddit.com/r/DelphiDocs/" target="_blank" aria-label="Reddit"><i class="bi bi-reddit"></i></a>
     </div>
-
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Section -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Court Transcripts</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- transcripts wrapper -->
-    <div id="wrapper">
-
-      <!-- Transcripts Section -->
-      <section id="page-section" class="page-section section">
-
-        <!-- Caveat -->
-        <div class="container section-title" data-aos="fade-up">
-          <p>
-            Direct link to folder of transcript volumes can be found <strong><a class="link" href="https://drive.google.com/drive/folders/13D-XcNKbz2zaEBtEWy2DhbmuUGcoV3jc?usp=drive_link" target="_blank">here</a></strong>, zip file of transcript volumes can be found <strong><a class="link" href="https://drive.google.com/file/d/1E-U0EhmU14a_FL5Cxt-HpLCUHND3CW0t/view?usp=drive_link" target="_blank">here</a></strong>, and direct link for exhibits can be found <strong><a class="link" href="trial-exhibits" target="_blank">here</a></strong>.
-          </p>
-        </div><!-- end of Caveat -->
-
-        <!-- Initial Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1bwtdEq8WMFvmb8pgd-zc-OXVi_G_s5tJ/view?usp=drive_link" target="_blank">Initial Hearing</a></h2>
-          <p>
-            Record of Proceedings for Initial Hearing Held October 28, 2022
-          </p>
-        </div><!-- end of Initial Hearing link -->
-
-        <!-- Status Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1sQIYIqPALPLysnqODxrG2EN-Kofg2niE/view?usp=drive_link" target="_blank">Open Status Hearing</a></h2>
-          <p>
-            Record of Proceedings for Held on November 22, 2022
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1fV3WsnSEB7GMEVGuG-6bWtRWkL4eYBiF?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Status Hearing link -->
-
-        <!-- Open Status Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1TnV4d24OG_xD-yYI73sNK4PeesgXDePm/view?usp=drive_link" target="_blank">Open Status Hearing</a></h2>
-          <p>
-            Record of Proceedings for Hearing Held on January 13, 2023
-          </p>
-        </div><!-- end of Open Status Hearing link -->
-
-        <!-- Closed Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ZUIFKTETuiMNNKkKeXro6BN07vqRPAbg/view?usp=drive_link" target="_blank">Closed Hearing</a></h2>
-          <p>
-            Record of Proceedings for Ex Parte Hearing Held on January 13, 2023
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1FkdCvmNxL_AzOWmuD61V3aPImS1Svwi3/view?usp=drive_link" target="_blank">Testimony of Matthew Hoffman</a></li>
-              <li><a href="https://drive.google.com/file/d/1o7b0n0P1Fy6WfMCld9hQb-e9_RqdiUXM/view?usp=drive_link" target="_blank">Testimony of Sarah Easter</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Closed Hearing link -->
-
-        <!-- Open Status Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ASj8KYZK-vz5RATkuVCNap2PMPkO7PaJ/view?usp=drive_link" target="_blank">Open Status Hearing &mdash; Remote</a></h2>
-          <p>
-            Record of Proceedings for Hearing Held on February 17, 2023
-          </p>
-        </div><!-- end of Open Status Hearing link -->
-
-        <!-- Safekeeping Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ITblF4Nx-H2t-Gwjp901teii5U3d4Uwf/view?usp=drive_link" target="_blank">Safekeeping Hearing</a></h2>
-          <p>
-            Record of Proceedings for Hearing Held On Safekeeping Order Held June 15, 2023
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1G0K7VLbXWhqN0mhxqforDLp8b0T_q8-k/view?usp=drive_link" target="_blank">Testimony of Chief Deputy Tobe Leazenby</a></li>
-              <li><a href="https://drive.google.com/file/d/1fpR1QHyLoa98ys_SqexNebIyhueqS_Rm/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></li>
-              <li><a href="https://drive.google.com/file/d/16bfrNcp_89o6WQEQClVvHovyQLILGNVU/view?usp=drive_link" target="_blank">Testimony of Captain Gary Lewis</a></li>
-              <li><a href="https://drive.google.com/file/d/1BmQtyNnDk7Xu5wfeorYDS7PRzqWVVos7/view?usp=drive_link" target="_blank">Testimony of Sheriff Edward Schroder</a></li>
-              <li><a href="https://drive.google.com/file/d/1aKChloAR0jvGR4TH2A2iFPE3TDzMWDa5/view?usp=drive_link" target="_blank">Testimony of Sheriff Tony Liggett</a></li>
-              <li><a href="https://drive.google.com/file/d/1TBcgdxw3UdfxFb4-9DgwObDRwVTR_Chz/view?usp=drive_link" target="_blank">Testimony of Warden John Galipeau</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/15rbr_kr__qPqT2a97iVaYs2rW3r9Anbq?usp=drive_link" target="_blank">Exhibits</a></strong> 
-          </p> 
-        </div><!-- end of Safekeeping link -->
-
-        <!-- Ex Parte Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1YpLpaKX8ALM28EXlOF7xIT7QcPltN2ll/view?usp=drive_link" target="_blank">Ex Parte Hearing</a></h2>
-          <p>
-            Record of Proceedings for Ex Parte Hearing Held June 15, 2023
-          </p>
-        </div><!-- end of Ex Parte Hearing Hearing link -->
-
-        <!-- In-Chambers Ambush Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1B-G-OK7M4QfF-J__NuJzMkTpHXwfR-BW/view?usp=drive_link" target="_blank">In-Chambers Ambush Hearing</a></h2>
-          <p>
-            Record of Proceedings for In Camera Proceedings Held on October 19, 2023
-          </p>
-        </div><!-- end of In-Chambers Ambush Hearing link -->
-
-        <!-- Open Session Ambush Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/17yLHaWnrNXGzicQFc4EXDYLWUs7B1mNF/view?usp=drive_link" target="_blank">Open Session Ambush Hearing</a></h2>
-          <p>
-            Record of Proceedings for Status Hearing Held on October 19, 2023
-          </p>
-        </div><!-- end of Open Session Ambush Hearing link -->
-
-        <!-- Status Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ojPDNj0v2IrUmeh6v1a2gRIEj593YOS9/view?usp=drive_link" target="_blank">Status Hearing</a></h2>
-          <p>
-            Record of Proceedings for Hearing Held on October 31, 2023
-          </p>
-        </div><!-- end of Status Hearing link -->
-
-        <!-- SCOIN Oral Arguments link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1rAXq-vKf0X4Ry6m0e4LIO4B48gHxzIbS/view?usp=drive_link" target="_blank">SCOIN Oral Arguments</a></h2>
-          <p>
-            Record of Proceedings for SCOIN Oral Arguments on January 18, 2024
-          </p>
-        </div><!-- end of SCOIN Oral Arguments link -->
-
-        <!-- Contempt Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1G3uRoRtXh3IqEXflNyGSLUnShdmuyjWM/view?usp=drive_link" target="_blank">Contempt Hearing</a></h2>
-          <p>
-            Record of Proceedings for Hearing on Motion for Contempt Held on March 18, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1MpuJrdqpNs_2sTnRbGP1zTOJn7GVQ5Nr/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin (1)</a></li>
-              <li><a href="https://drive.google.com/file/d/1_z63KRKGKo48HzTyiqoR6hu-hdW-NZgC/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman (1)</a></li>
-              <li><a href="https://drive.google.com/file/d/1jY3iETkAaQEYImCk0w5XBEKKkBV9XYph/view?usp=drive_link" target="_blank">Testimony of Ben Rector</a></li>
-              <li><a href="https://drive.google.com/file/d/1PgsoF7jGEMbYWp5p9Y-stahnXDDmkoe-/view?usp=drive_link" target="_blank">Testimony of John Boren</a></li>
-              <li><a href="https://drive.google.com/file/d/1Rkn-EzAHQQ00nDgqKNYeK0a-7T-XjOEG/view?usp=drive_link" target="_blank">Testimony of Kay Beehler</a></li>
-              <li><a href="https://drive.google.com/file/d/1SV0WFT1MViEsXtxxfH7NMlCcs5iPDFbY/view?usp=drive_link" target="_blank">Testimony of Andrew Maternowski</a></li>
-              <li><a href="https://drive.google.com/file/d/14QBB7KTrHfNwEl7zJ4QLVd1GPSVjxFGw/view?usp=drive_link" target="_blank">Testimony of Julie Melvin</a></li>
-              <li><a href="https://drive.google.com/file/d/1bMy1LGPUB53xKTmKmN9dOhusOsPjo6Rs/view?usp=drive_link" target="_blank">Testimony of Steven Wood</a></li>
-              <li><a href="https://drive.google.com/file/d/1Qru_rm8it8jHQ_tkVHYBTcYqOMW8J740/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin (2)</a></li>
-              <li><a href="https://drive.google.com/file/d/1Qru_rm8it8jHQ_tkVHYBTcYqOMW8J740/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman (2)</a></li>
-              <li><a href="https://drive.google.com/file/d/1rNFmZqFwenUlu-mQ8sQnUOAFbVusGclK/view?usp=drive_link" target="_blank">Testimony of Bradley Rozzi</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1_gE6quTxkBQTsMfr1oMgbWiQBF0uv_HJ?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Contempt Hearing link -->
-
-        <!-- Motion to Dismiss Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1HpP4Ij0tbfb2rethOSnSzMgdf6YzfHpK/view?usp=drive_link" target="_blank">Motion to Dismiss Hearing</a></h2>
-          <p>
-            Record of Proceedings for Hearing on Motion to Dismiss Held March 18, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/17F_HD86jW0YSJEyGogMNPnGPUsCZuXWL/view?usp=drive_link" target="_blank">Testimony of Todd Click</a></li>
-              <li><a href="https://drive.google.com/file/d/1klk2EG-GEiXBPwp-FtuB4TUeMKoLlScQ/view?usp=drive_link" target="_blank">Testimony of Amber Holder</a></li>
-              <li><a href="https://drive.google.com/file/d/1wDwtWnc1EPWjJduGJJj3M3Oqo7Tij7ae/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1fgBvVF8hvw71H47MbvVNRPZlWM4b2Dth?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Motion to Dismiss Hearing link -->
-
-        <!-- Motions Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1Z9twDX8jtK5IqYNBvABFs1rGs2Qk8B3h/view?usp=drive_link" target="_blank">Motions Hearing</a></h2>
-          <p>
-            Record of Proceedings for Motions Hearing Held on May 7, 2024
-          </p>
-        </div><!-- end of Motions Hearing link -->
-
-        <!-- Motions Hearing Day 1 -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1wxORdNArLmoLqewsp_-0ZJc69StVfwW1/view?usp=drive_link" target="_blank">Motions Hearing Day 1</a></h2>
-          <p>
-            Record of Proceedings for Motions Hearing Held on July 30, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1wsX-SAZc-FpyywZD594wiWwFrvVH6jz6/view?usp=drive_link" target="_blank">Testimony of Tony Liggett</a></li>
-              <li><a href="https://drive.google.com/file/d/1yclh-fIqKj9SBqyUOxizw2y3ga8J6M35/view?usp=drive_link" target="_blank">Testimony of Roland Purdy</a></li>
-              <li><a href="https://drive.google.com/file/d/1rpITTJpxDVSaOpcNbjc9UOW5nVAMAdSD/view?usp=drive_link" target="_blank">Testimony of Kevin Murphy</a></li>
-              <li><a href="https://drive.google.com/file/d/1O-ILWMaLg-R_LDexsXiIPNSS5LCPMSCm/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1VlEnLXjp51jk4fg5cxSp_jq3IcchdbCZ?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Motions Hearing Day 1 -->
-
-        <!-- Motions Hearing Day 2 -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1dItGEaivR5PzYhrG61CnYDvZ7lVfoWRh/view?usp=drive_link" target="_blank">Motions Hearing Day 2</a></h2>
-          <p>
-            Record of Proceedings for Motions Hearing Held on July 31, 2024
-            <ul> 
-              <li><a href="https://drive.google.com/file/d/1Izef2W5iirzyDDxpu_HLAemHl_Be6LzO/view?usp=drive_link" target="_blank">Testimony of John Galipeau</a></li>
-              <li><a href="https://drive.google.com/file/d/1ZT2bYJR9giADHH2OAK_vGEVl6ENgbuHg/view?usp=drive_link" target="_blank">Testimony of Kenneva Mapps</a></li>
-              <li><a href="https://drive.google.com/file/d/1tBGgPYTL3NutOJ7pFCEgL1L6tMszkgCe/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-              <li><a href="https://drive.google.com/file/d/1JZtVP7HMNGw6BOXplAot6MehIopt_TSF/view?usp=drive_link" target="_blank">Testimony of Lunatic Dr. Monica Wala</a></li>
-              <li><a href="https://drive.google.com/file/d/1grGRAhq-6LYKa-7YcyXTPUohJClVQPOg/view?usp=drive_link" target="_blank">Testimony of Brian Harshman</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1d1_1Qcdn466kLR5IFvfb7xQpl6Idq-Hh?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Motions Hearing Day 2 -->
-
-        <!-- Motions Hearing Day 3 -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1R-fQdAMkU4VjrIYhUpVLXf-W4C_vlx1A/view?usp=drive_link" target="_blank">Motions Hearing Day 3</a></h2>
-          <p>
-            Record of Proceedings for Motions Hearing Held on August 1, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/12k-ZsTM3Ijjqmy98yXLHNzj5u81FlD5X/view?usp=drive_link" target="_blank">Testimony of Dr. Dawn Perlmutter</a></li>
-              <li><a href="https://drive.google.com/file/d/1U-3HHQRWxkKedy6xu7jYILKc42YohfoD/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-              <li><a href="https://drive.google.com/file/d/1DxxJhpYUtmxOZhBdQydnt4X06XBvgNsf/view?usp=drive_link" target="_blank">Testimony of Amber Holder</a></li>
-              <li><a href="https://drive.google.com/file/d/1DxA695ZjoQ3n_7cESXPVIIOiOm3RXGnC/view?usp=drive_link" target="_blank">Testimony of Kevin Murphy</a></li>
-              <li><a href="https://drive.google.com/file/d/1yQkAkPeRtu8q7wqwSoEEcH835v-noDcr/view?usp=drive_link" target="_blank">Testimony of Todd Click</a></li>
-              <li><a href="https://drive.google.com/file/d/1f3Qa5cbHtt1zPv6misUYXTpmcLDEvezF/view?usp=drive_link" target="_blank">Testimony of David Vido</a></li>
-              <li><a href="https://drive.google.com/file/d/1Ggr_fV-paVJy3Ar5cX1ivXLY4MmH6bmT/view?usp=drive_link" target="_blank">Testimony of Christopher</a></li>
-              <li><a href="https://drive.google.com/file/d/1o-j20nkuzkHS888SiYZJKlULldOq9sBF/view?usp=drive_link" target="_blank">Testimony of Roland Purdy</a></li>
-              <li><a href="https://drive.google.com/file/d/1prdbQ_Z9gLCeT46XzO8IjvETrIjDtsaa/view?usp=drive_link" target="_blank">Testimony of Patrick Cicero</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1iyC3UxxeeA0f4wz135pk_31euUQmZOxf?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Motions Hearing Day 3 -->
-
-        <!-- Open Status Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1h2Ovptks0vJc5s8Zl0qRLrtFxXN5iFGm/view?usp=drive_link" target="_blank">Open Status Hearing</a></h2>
-          <p>
-            Record of Proceedings for Open Status Hearing Held on August 23, 2024
-          </p>
-        </div><!-- end of Open Status Hearing link -->
-
-        <!-- Jury Selection Day 1 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1cH8I1fmA6zCeksfJsHtEeAVSDmUIkNNX/view?usp=drive_link" target="_blank">Jury Selection Day 1</a></h2>
-          <p>
-            Record of Proceedings for Jury Selection Day 1 Held on October 14, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1m-AAYf_7OZrK-4X-07E6DO5rfU_FFF4e/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 1</a></li>
-              <li><a href="https://drive.google.com/file/d/1x67cWpOcV3RCJJOQxfMrQ4nRt5quauGN/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 2</a></li>
-              <li><a href="https://drive.google.com/file/d/1qL9PRq0h0qIOm30wXSY0lULHMKYNZb3N/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 3</a></li>
-              <li><a href="https://drive.google.com/file/d/1ESZrUmETy4rsFr6hi8vo2X4hgW4gqYOW/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 4</a></li>
-              <li><a href="https://drive.google.com/file/d/14TPIZG0LmKh2q1SOVJ8go7KmTkSwTdtw/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 5</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Jury Selection Day 1 link -->
-
-        <!-- Jury Selection Day 2 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/11TlxxxAZH6YGTYDdezzJD5Y75JPd7pjH/view?usp=drive_link" target="_blank">Jury Selection Day 2</a></h2>
-          <p>
-            Record of Proceedings for Jury Selection Day 2 Held on October 15, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1HRIzzTFbxoEgbcfSZg25oGLtk0YnqESk/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 1</a></li>
-              <li><a href="https://drive.google.com/file/d/1Xs932cgff-cblVMFI3B2DMdw9fx1-vpE/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 2</a></li>
-              <li><a href="https://drive.google.com/file/d/1sOQHMNCt6X1gQEX8kJYrKMCMBYjKwO4_/view?usp=drive_link" target="_blank">Jury Voir Dire &mdash; Round 3</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Jury Selection Day 2 link -->
-
-        <!-- Motions Hearing -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1orlRFMETjpQ3QEi3iCYietSx_zgjwzFo/view?usp=drive_link" target="_blank">Motions Hearing</a></h2>
-          <p>
-            Record of Proceedings for Motions Hearing Held October 17, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1HYdiNoi080SSPfomPXEGuttTfKsIP36k/view?usp=drive_link" target="_blank">Testimony of Thomas Plantz</a></li>
-            </ul>
-            | <strong><a class="link" style="text-decoration: none" href="https://drive.google.com/drive/folders/1_KjIvPL5xXBtLKcw9qI7qOsgUWxL1jbm?usp=drive_link" target="_blank">Exhibits</a></strong>
-          </p>
-        </div><!-- end of Motions Hearing -->
-
-        <!-- Opening Arguments link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1uusExMq4eKMIvTXcBUJYmuZN2Xu6FKEg/view?usp=drive_link" target="_blank">Trial Begins &mdash; Opening Arguments</a></h2>
-          <p>
-            Opening Arguments on October 18, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1eSRQoIQv_DgX-qxoKe60zy8chteHyu6C/view?usp=drive_link" target="_blank">Prosecution Opening Arguments</a></li>
-              <li><a href="https://drive.google.com/file/d/1uusExMq4eKMIvTXcBUJYmuZN2Xu6FKEg/view?usp=drive_link" target="_blank">Defense Opening Arguments</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 1 link -->
-
-        <!-- Trial Day 1 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1tdYFBO5u2QHOoIg68ULYK8uiZ7ah9qr1/view?usp=drive_link" target="_blank">Trial Day 1</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 1 Held on October 18, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1zEtHk7hUH0-ZLgCpTZrYm7fmFL9bijU1/view?usp=drive_link" target="_blank">Testimony of Becky Patty</a></li>
-              <li><a href="https://drive.google.com/file/d/1PFVS8hK752yvx2ck0Rf66niSnLnMgcgO/view?usp=drive_link" target="_blank">Testimony of Kelsi Siebert</a></li>
-              <li><a href="https://drive.google.com/file/d/1CgxGTAKrurpdh-pSy5ZB87kC3oMo9Mcy/view?usp=drive_link" target="_blank">Testimony of Derrick German</a></li>
-              <li><a href="https://drive.google.com/file/d/1pg271Iz6oUw3P8bbL5Q-45-AqxqNtG9i/view?usp=drive_link" target="_blank">Testimony of Anna Williams</a></li>
-              <li><a href="https://drive.google.com/file/d/14lzQIv6E5ymfJpIQI_70jYXm3WmTtz-R/view?usp=drive_link" target="_blank">Testimony of Mitchell Cantron</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 1 link -->
-
-        <!-- Trial Day 2 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1jtyIbBRhZl-lrZDvPEflG5_-lktPUxV_/view?usp=drive_link" target="_blank">Trial Day 2</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 2 Held on October 19, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/17Dkij3EscU0WOMCY-HIOLRjG7Z7W_J6d/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-              <li><a href="https://drive.google.com/file/d/19e0FrokhowoubXmpI6uQsou5_RhlGv3a/view?usp=drive_link" target="_blank">Testimony of Jacob Johns</a></li>
-              <li><a href="https://drive.google.com/file/d/13tfbaCRm75ftr8qRpbVY9Bqls0_adHOY/view?usp=drive_link" target="_blank">Testimony of Patrick Brown</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 2 link -->
-
-        <!-- Trial Day 3 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/15M4WBVtcWwSRM7j9GiKJnOqGa7HkUnz2/view?usp=drive_link" target="_blank">Trial Day 3</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 3 Held on October 21, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1toS9dkVkCNhcr6hM7_3JL6Ij3MpdZF5A/view?usp=drive_link" target="_blank">Testimony of Darren Giancola</a></li>
-              <li><a href="https://drive.google.com/file/d/1AiIF8jBFxcQbTgIn_xkETjyC_Yovo3bF/view?usp=drive_link" target="_blank">Testimony of Jason Page</a></li>
-              <li><a href="https://drive.google.com/file/d/12CG_B5cGWoRtI9MRx69jRCLAnxpyKWUq/view?usp=drive_link" target="_blank">Testimony of Duane Datzman</a></li>
-              <li><a href="https://drive.google.com/file/d/1cg4jjE9kAw0pNVo5bpaLNCaRZQy0BoQp/view?usp=drive_link" target="_blank">Testimony of Brian Olehy</a></li>
-              <li><a href="https://drive.google.com/file/d/1A5QNZgf4lYSITuic7yESJeIAgktgX-Uq/view?usp=drive_link" target="_blank">Testimony of Brian Bunner</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 3 link -->
-
-        <!-- Trial Day 4 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1gl18P0VxwrBThZtTMwgLDAkJUdpEZzF2/view?usp=drive_link" target="_blank">Trial Day 4</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 4 Held on October 22, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1wqLf7aQACCsuoTvp5v80w1jSf2tg6MVV/view?usp=drive_link" target="_blank">Testimony of Jeremy Chapman</a></li>
-              <li><a href="https://drive.google.com/file/d/1j4dqbVXv0tJ_r-5z-xLSZU-OeWP9qirE/view?usp=drive_link" target="_blank">Testimony of Railly Voorhies</a></li>
-              <li><a href="https://drive.google.com/file/d/1GNHCsJ-EdB2AtSzQlYYMBwbR_zoY5wXT/view?usp=drive_link" target="_blank">Testimony of Breann Wilber</a></li>
-              <li><a href="https://drive.google.com/file/d/1C3NH_9CoOH7yKbvlv8cESjaloekc9G5W/view?usp=drive_link" target="_blank">Testimony of Betsy Blair</a></li>
-              <li><a href="https://drive.google.com/file/d/17vutQ6_lQID22PeGrsZjuPk1fYzc0wSC/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 4 link -->
-
-        <!-- Trial Day 5 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1D44YmASBt8SUYP2QUX3QrmSdBfXHproj/view?usp=drive_link" target="_blank">Trial Day 5</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 5 Held on October 23, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1dCaSc51LJgFgs-QlZVJ_XCOHfoGBYhEk/view?usp=drive_link" target="_blank">Testimony of Sarah Carbaugh</a></li>
-              <li><a href="https://drive.google.com/file/d/1V2CA3Xzh-3MADlktlgBQrE6q5ezGQpGl/view?usp=drive_link" target="_blank">Testimony of Dr. Roland Kohr</a></li>
-              <li><a href="https://drive.google.com/file/d/1LRL0Sjh64R3uMQIOm-dVcrB8dAkSuCRS/view?usp=drive_link" target="_blank">Testimony of Christopher Cecil</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 5 link -->
-
-        <!-- Trial Day 6 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1WJgwT-XBXfQDeXisM4zLpWPqAI5a2UNr/view?usp=drive_link" target="_blank">Trial Day 6</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 6 Held on October 24, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/10KqR8BxhOhkR1vKUmfE7drH1_qCAZt6G/view?usp=drive_link" target="_blank">Testimony of Kathy Shank</a></li>
-              <li><a href="https://drive.google.com/file/d/13GoaAzRhioqrAXQB1TiepQ1rj6vpBw8T/view?usp=drive_link" target="_blank">Testimony of Dan Dulin</a></li>
-              <li><a href="https://drive.google.com/file/d/1hVGhVJw1Y8biKDHyaMCHmdAlaPhaVHB8/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-              <li><a href="https://drive.google.com/file/d/16ETtqrieCB4lCTDq_qyKWJPvlDhC4Y87/view?usp=drive_link" target="_blank">Testimony of Tony Liggett</a></li>
-              <li><a href="https://drive.google.com/file/d/1w0cA5vR7wJYPpUoOBzJmwkrcmub7xeHc/view?usp=drive_link" target="_blank">Testimony of David Vido</a></li>
-              <li><a href="https://drive.google.com/file/d/1T6qviQQMvhYS_RiuWipJhKcaKCORiBHT/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 6 link -->
-
-        <!-- Trial Day 7 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/12qkfzYsO06mHnjwF0MPrh0ZlheePhjOZ/view?usp=drive_link" target="_blank">Trial Day 7</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 7 Held on October 25, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1gFawENyp6kL_Jkar-73dw9xJ3LZYDLeW/view?usp=drive_link" target="_blank">Testimony of Melissa Oberg</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 7 link -->
-
-        <!-- Trial Day 8 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1hUnAm6UX25dM2Z27cdWI49GdXnfknJUY/view?usp=drive_link" target="_blank">Trial Day 8</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 8 Held on October 26, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1hD4sE1wMkACIYFA162V7RCbbpGL-DwUm/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 8 link -->
-
-        <!-- Trial Day 9 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/12XZOyCKmDZU4V8d8CySYtqyeMZWtcwSg/view?usp=drive_link" target="_blank">Trial Day 9</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 9 Held on October 28, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1nngdM7AeS2k8JHSJYR0xh9pOrmNklU2a/view?usp=drive_link" target="_blank">Testimony of Stacy Bozinovski</a></li>
-              <li><a href="https://drive.google.com/file/d/1vaCx_zEzQZWjYl9rjg9NpePpYaiUHfey/view?usp=drive_link" target="_blank">Testimony of Patrick Cicero</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 9 link -->
-
-        <!-- Trial Day 10 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1hhBF_n_BTOqEIFURV1JTR1joi4n42NTV/view?usp=drive_link" target="_blank">Trial Day 10</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 10 Held on October 29, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1-4Mkq3hzV8y4SOpC0W33IBWQ1oFoRus9/view?usp=drive_link" target="_blank">Testimony of John Galipeau</a></li>
-              <li><a href="https://drive.google.com/file/d/13OPe3Jaw8aonAqxsN6T3c7v9MQ_gbFUB/view?usp=drive_link" target="_blank">Testimony of Ethan Drang</a></li>
-              <li><a href="https://drive.google.com/file/d/1_ewaeyzzXVhaNsq1HiLlSgLfB-J8jQyN/view?usp=drive_link" target="_blank">Testimony of Michael Clemons</a></li>
-              <li><a href="https://drive.google.com/file/d/1-7Vyz252xpCt_k3_0ye7achtRiyHv7uF/view?usp=drive_link" target="_blank">Testimony of Michael Roberts</a></li>
-              <li><a href="https://drive.google.com/file/d/12hNO3pITTYsnmoh7-QoqA6AfAjeI0zdw/view?usp=drive_link" target="_blank">Testimony of James Early</a></li>
-              <li><a href="https://drive.google.com/file/d/1kv6gKlBiEo0sGHqjLBFFbI5esa2ZVjjm/view?usp=drive_link" target="_blank">Testimony of John Miller</a></li>
-              <li><a href="https://drive.google.com/file/d/1pfoP8zWNX7ilj5cxEN4V9-qPIAGfSmOj/view?usp=drive_link" target="_blank">Testimony of Brandon Fisher</a></li>
-              <li><a href="https://drive.google.com/file/d/1klyt6tVK6HhrdncEepG3mgd5F6oysjvw/view?usp=drive_link" target="_blank">Testimony of Raymond Smith</a></li>
-              <li><a href="https://drive.google.com/file/d/1kVtOKOguSanX0Yz9zz5rN73VnQOBZmN3/view?usp=drive_link" target="_blank">Testimony of Jason Bedwell</a></li> 
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 10 link -->
-
-        <!-- Trial Day 11 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1pKm-P0OxboI2qV974CU9lp3niNAk4YTg/view?usp=drive_link" target="_blank">Trial Day 11</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 11 Held on October 30, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1emYZAnVwtq8ja1ft9HrxwCE1qp4v5bH4/view?usp=drive_link" target="_blank">Testimony of Lunatic Dr. Monica Wala</a></li> 
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 11 link -->
-
-        <!-- Trial Day 12 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/142lFS-_VeAH8HAWvkQeHciaGUl6ZmOnh/view?usp=drive_link" target="_blank">Trial Day 12</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 12 Held on October 31, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1aYtM-VCDW3VFDYwa0DxgQr1PWI4jKh14/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-              <li><a href="https://drive.google.com/file/d/1X2xBRmQUnuiEVlRczGXBI1X4csb9m_eu/view?usp=drive_link" target="_blank">Testimony of Brad Weber</a></li>
-              <li><a href="https://drive.google.com/file/d/1sh6brKfEwLpv6OZKPn_laR1T5WV8jEhl/view?usp=drive_link" target="_blank">Testimony of Brian Harshman</a></li>
-              <li><a href="https://drive.google.com/file/d/1hgOlwLibdaSCrJG5oBrKmmOUfVOK4V7r/view?usp=drive_link" target="_blank">Testimony of Cheyenne Mill</a></li>
-              <li><a href="https://drive.google.com/file/d/1ML-eigfiQx3U8VZeQB2xrtV2llmBI1sI/view?usp=drive_link" target="_blank">Testimony of Teresa Liebert</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 12 link -->
-
-        <!-- Trial Day 13 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1jLD-m01pFZb2IbIsrGM7R1JuckIfK6O4/view?usp=drive_link" target="_blank">Trial Day 13</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 13 Held on November 1, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1mKvLbjZRS2TJi2hPr3NbJa_KoHbLvKpU/view?usp=drive_link" target="_blank">Testimony of Christopher Gootee</a></li>
-              <li><a href="https://drive.google.com/file/d/19vcqWqdBORcOKXiExv4JPXhavLXqqjns/view?usp=drive_link" target="_blank">Testimony of Dr. Deanna Dwenger</a></li>
-              <li><a href="https://drive.google.com/file/d/1GSMtmeFiLlsNxTcC0CikTB_shNlykrv-/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></li>
-              <li><a href="https://drive.google.com/file/d/15pdvua91p3SG_mQm5GAaGTYoNVoFP273/view?usp=drive_link" target="_blank">Testimony of Brad Heath</a></li>
-              <li><a href="https://drive.google.com/file/d/11mnooHg_SFHBgRywLFbm4-u_J4F_u1fn/view?usp=drive_link" target="_blank">Testimony of David McCain</a></li>
-              <li><a href="https://drive.google.com/file/d/1ZvSEFydo37UHohcpLUJ6a9t5RWFZKXMm/view?usp=drive_link" target="_blank">Testimony of Darrell Sterrett</a></li>
-              <li><a href="https://drive.google.com/file/d/1Q9DusTE6IBeFJM7L9p3ZpB6qEt_McEPl/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-              <li><a href="https://drive.google.com/file/d/1PFjMn6figLfIh91GyW2FZ_Cn6bUqYHG3/view?usp=drive_link" target="_blank">Testimony of Tobe Leazenby</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 13 link -->
-
-        <!-- Trial Day 14 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/104iKyAq2HXB8_TFavqTt6nPPcZt2kUwY/view?usp=drive_link" target="_blank">Trial Day 14</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 14 Held on November 2, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1JP3rNJSIewHpI3lM-Byq6xtIaO72N_J0/view?usp=drive_link" target="_blank">Testimony of Max Baker (1)</a></li>
-              <li><a href="https://drive.google.com/file/d/1l_yzERIqHk0CL48vENt2pP3RMUgJafWX/view?usp=drive_link" target="_blank">Testimony of Doug Carter</a></li>
-              <li><a href="https://drive.google.com/file/d/1Me657y3MpUewuCrbFXNG-W4pCpmaNCNd/view?usp=drive_link" target="_blank">Testimony of Max Baker (2)</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 14 link -->
-
-        <!-- Trial Day 15 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1rt6Nv5x1jRNnGMZ6q8nEw-7MkQ19LgkV/view?usp=drive_link" target="_blank">Trial Day 15</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 15 Held on November 4, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1FJVpQdCfDZA8lwzpgM2znVIZryp3lACN/view?usp=drive_link" target="_blank">Testimony of Dr. Polly Westcott</a></li>
-              <li><a href="https://drive.google.com/file/d/1Fx0fePVAtXT5Dx6qgL3F78L1gqmsE9ov/view?usp=drive_link" target="_blank">Testimony of Max Baker</a></li>
-              <li><a href="https://drive.google.com/file/d/1UMoWqB1K_uLt4lN9LXMqTWXjRQyBhj2E/view?usp=drive_link" target="_blank">Testimony of Jamie Jones</a></li>
-              <li><a href="https://drive.google.com/file/d/1EAigg34Tc2VSN7XFHOQgOM3zruRNdapt/view?usp=drive_link" target="_blank">Testimony of Brittany Zapanta</a></li>
-              <li><a href="https://drive.google.com/file/d/1nfAsL6rBwek5jnnbWZmDAhVee80uhfO7/view?usp=drive_link" target="_blank">Testimony of Shelby Hicks</a></li>
-              <li><a href="https://drive.google.com/file/d/1C4YIztxL4BuuB1rOIoj2_U9YwnLcJHAw/view?usp=drive_link" target="_blank">Testimony of Stephen Mullin</a></li>
-              <li><a href="https://drive.google.com/file/d/1ZrMwBiaH12iJJdnskWfL7BWiubnbcWO3/view?usp=drive_link" target="_blank">Testimony of Brad Weber</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 15 link -->
-
-        <!-- Trial Day 16 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1xlSz5GGOcWBwH11n2wY9tmJArrnfUXbT/view?usp=drive_link" target="_blank">Trial Day 16</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 16 Held on November 5, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/14UVCwkR2BQEsLdUS6A4fb2RDx7QrigVm/view?usp=drive_link" target="_blank">Testimony of Betsy Blair</a></li>
-              <li><a href="https://drive.google.com/file/d/1JBrXxS5J2iweFyy2D9IhOLU8kcUceCIO/view?usp=drive_link" target="_blank">Testimony of Dr. Stuart Grassian</a></li>
-              <li><a href="https://drive.google.com/file/d/1yMhAUtL_QpoGr8Z7n-Zf9lpi-qBpFd2m/view?usp=drive_link" target="_blank">Testimony of Dr. Eric Warren</a></li>
-              <li><a href="https://drive.google.com/file/d/1SqtPRTOCpsTd-IL6DDYR-QVBV8rpU-Nu/view?usp=drive_link" target="_blank">Testimony of Stacy Eldridge</a></li>
-              <li><a href="https://drive.google.com/file/d/1m4Dy6ThNGBVOFv2RsyzVP-quHTTz5yAz/view?usp=drive_link" target="_blank">Testimony of Christopher Cecil</a></li>
-              <li><a href="https://drive.google.com/file/d/1-OduqklEJDjE3ArNab4RLvqVwIaCc5iS/view?usp=drive_link" target="_blank">Testimony of Brian Bunner</a></li>  
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 16 link -->
-
-        <!-- Trial Day 17 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1fdNCPiZJVq6OzwqqC9yFNKSLUAjTOWj_/view?usp=drive_link" target="_blank">Trial Day 17</a></h2>
-          <p>
-            Record of Proceedings for Trial Day 17 Held on November 6, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1FgguxCnIPjB4EB1qSBuWUsykhF0F3XT5/view?usp=drive_link" target="_blank">Rebuttal Testimony of Breann Wilber</a></li>
-              <li><a href="https://drive.google.com/file/d/1yVnz-DoohOsAvOQRNMN2GHbf3AsW1AMT/view?usp=drive_link" target="_blank">Rebuttal Testimony of Brian Harshman</a></li>
-              <li><a href="https://drive.google.com/file/d/1PCsySb-51y85qftGFKnprApeO9a7xaRl/view?usp=drive_link" target="_blank">Rebuttal Testimony of Dr. John Martin</a></li> 
-            </ul>
-          </p>
-        </div><!-- end of Trial Day 17 link -->
-
-        <!-- Closing Arguments link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1JPqhAgsddYAYAheCxF_4GC7hrwCtlI3H/view?usp=drive_link" target="_blank">Trial Ends &mdash; Closing Arguments</a></h2>
-          <p>
-            Closing Arguments on November 6, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1JO2PEDRljOIJy2eAnACO1eCrs6Qw5BP4/view?usp=drive_link" target="_blank">Prosecution Closing Arguments</a></li>
-              <li><a href="https://drive.google.com/file/d/1L2oDvYZ3GMHArJtNEHle0ukR8Kr5GPVK/view?usp=drive_link" target="_blank">Defense Closing Arguments</a></li> 
-            </ul>
-          </p>
-        </div><!-- end of Closing Arguments link -->
-
-        <!-- Jury Deliberations Day 1 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/12Ll23xF5s58TnNMNUgQ90Ql75ccSiizx/view?usp=drive_link" target="_blank">Jury Deliberations Day 1</a></h2>
-          <p>
-            Jury Deliberations Day 1 on November 7, 2024
-        </div><!-- end of Jury Deliberations Day 1 link -->
-
-        <!-- Jury Deliberations Day 2 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Jury Deliberations Day 2</h2>
-          <p>
-            Jury Deliberations Day 2 on November 8, 2024
-          </p>
-        </div><!-- end of Jury Deliberations Day 2 link -->
-
-        <!-- Jury Deliberations Day 3 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1QNseqjVSRC0OmU9ahb79JpFyBq4MS-py/view?usp=drive_link" target="_blank">Jury Deliberations Day 3</a></h2>
-          <p>
-            Jury Deliberations Day 3 on November 9, 2024
-          </p>
-        </div><!-- end of Jury Deliberations Day 3 link -->
-
-        <!-- Jury Deliberations Day 4 link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ZfmBGaCpjNIPI_Mmc7hycJhgHYOo8kK_/view?usp=drive_link" target="_blank">Jury Deliberations Day 4</a></h2>
-          <p>
-            Jury Deliberations Day 4 on November 11, 2024
-          </p>
-        </div><!-- end of Jury Deliberations Day 4 link -->
-
-        <!-- Sentencing Hearing link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ZkpxQ_ocHPocXA_RuFbXfcYS4deqYjsX/view?usp=drive_link" target="_blank">Sentencing Hearing</a></h2>
-          <p>
-            Sentencing Hearing Held on December 20, 2024
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1uLVYERNa1kWdczo89SM3UELzLF-GlN78/view?usp=drive_link" target="_blank">Testimony of Jerry Holeman</a></li>
-              <li><a href="https://drive.google.com/file/d/1T8cD7VLfLiMZmOocY4cYi06X04QEgb6m/view?usp=drive_link" target="_blank">Testimony of Carrie Timmons</a></li>
-              <li><a href="https://drive.google.com/file/d/1wOQzNsVJoOQ82PTWVLN7VD2KeuOlEtZR/view?usp=drive_link" target="_blank">Testimony of Josh Lank</a></li>
-              <li><a href="https://drive.google.com/file/d/18kDobjVNdU7JInRSOLXE7k5ecSArS_fb/view?usp=drive_link" target="_blank">Testimony of Diana Erskin</a></li>
-              <li><a href="https://drive.google.com/file/d/1GlHVE6zrJvUpJ5uio1IGKIQDurMU7rKd/view?usp=drive_link" target="_blank">Testimony of Becky Patty</a></li>
-              <li><a href="https://drive.google.com/file/d/1ydJLEesJHTJjOHeUjN3n6ZBOCufAXtov/view?usp=drive_link" target="_blank">Testimony of Mike Patty</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Sentencing Hearing link -->
-
-        <!-- Clerk's Record link -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2><a href="https://drive.google.com/file/d/1ZkpxQ_ocHPocXA_RuFbXfcYS4deqYjsX/view?usp=drive_link" target="_blank">Clerk's Record</a></h2>
-          <p>
-            Direct link to the Clerk's Record folder can be found <strong><a class="link" href="https://drive.google.com/drive/folders/1wFVkYrUeFcB-ot_TkSdE7WK9SikRCOOK?usp=drive_link" target="_blank">here</a></strong>.
-            <ul>
-              <li><a href="https://drive.google.com/file/d/1eQ_F9mSJ6mYQV6LHO5eB4g5CceMD8HIA/view?usp=drive_link" target="_blank">Volume 1</a></li>
-              <li><a href="https://drive.google.com/file/d/1qvP0XwTVV16bGSMSFBE-IonleEJJUc8u/view?usp=drive_link" target="_blank">Volume 2</a></li>
-              <li><a href="https://drive.google.com/file/d/1vnCmI3FQligKNr7qpYzrG8_LZ_dzYBu2/view?usp=drive_link" target="_blank">Volume 3</a></li>
-              <li><a href="https://drive.google.com/file/d/132zWuS92AWWM2R-o-nR4Zu34G6VJeBF1/view?usp=drive_link" target="_blank">Volume 4</a></li>
-              <li><a href="https://drive.google.com/file/d/1JNDVTOLhYLsc0iusZLYlIIB6SWpdG3r2/view?usp=drive_link" target="_blank">Volume 5</a></li>
-              <li><a href="https://drive.google.com/file/d/10utVPc9YzcPiSvmKv_s_zRm363pknYxN/view?usp=drive_link" target="_blank">Volume 6</a></li>
-              <li><a href="https://drive.google.com/file/d/13vA94dMvu3Nvd98CMjEYkO7axd0M7sBt/view?usp=drive_link" target="_blank">Volume 7</a></li>
-              <li><a href="https://drive.google.com/file/d/1Dma-6Jj9s1KQHjDoAfTVwy0lb_mxY0Y0/view?usp=drive_link" target="_blank">Volume 8</a></li>
-              <li><a href="https://drive.google.com/file/d/12YMlNlY-bePKvRE05fApt-kKY2L14xkj/view?usp=drive_link" target="_blank">Volume 9</a></li>
-              <li><a href="https://drive.google.com/file/d/1gLhybConXms1KWCBzWTLqBQPqMXF2yV7/view?usp=drive_link" target="_blank">Volume 10</a></li>
-              <li><a href="https://drive.google.com/file/d/1YQyyHAUVnSHEhmCJYJRhssYwP-JAmHO9/view?usp=drive_link" target="_blank">Volume 11</a></li>
-              <li><a href="https://drive.google.com/file/d/1tXyGBb8G-imx5sA1alxXIZY3YFlIyN7e/view?usp=drive_link" target="_blank">Volume 12</a></li>
-              <li><a href="https://drive.google.com/file/d/1-cYJgadiZIGvidpL1rlXD4_AjwKR0UXp/view?usp=drive_link" target="_blank">Volume 13</a></li>
-              <li><a href="https://drive.google.com/file/d/1nEW0I5zKJWOWzdnFV5Rcd_krdxSS3-_F/view?usp=drive_link" target="_blank">Volume 14</a></li>
-              <li><a href="https://drive.google.com/file/d/1fT_5M59BA0Bve4PTXcbSXiX7mMan_562/view?usp=drive_link" target="_blank">Volume 15</a></li>
-              <li><a href="https://drive.google.com/file/d/1jSoBwQnVTtTEvL5ahWsvbLh0dN5yswhT/view?usp=drive_link" target="_blank">Volume 16</a></li>
-              <li><a href="https://drive.google.com/file/d/1kNwvaFikASkbdb5o3LZuMKzUAdl6Tt4q/view?usp=drive_link" target="_blank">Volume 17</a></li>
-              <li><a href="https://drive.google.com/file/d/1IIKvK3KrU4Aqum5ui1f_-VqCapvvMngR/view?usp=drive_link" target="_blank">Volume 18</a></li>
-              <li><a href="https://drive.google.com/file/d/1DQHBFBAN4j0TZpIEP498tLX3D3puhzvi/view?usp=drive_link" target="_blank">Volume 19</a></li>
-              <li><a href="https://drive.google.com/file/d/1EM3FSJrAYw2Jmh7tVPhUKB-3Qcj5Rwe_/view?usp=drive_link" target="_blank">Volume 20</a></li>
-              <li><a href="https://drive.google.com/file/d/1ok0khRMg487lB3JzDOfCOjGri1UAnMfn/view?usp=drive_link" target="_blank">Volume 21</a></li>
-              <li><a href="https://drive.google.com/file/d/1aadRFHzvt-7LZB2Mi1f0Sy1JFm1P5TtP/view?usp=drive_link" target="_blank">Volume 22</a></li>
-            </ul>
-          </p>
-        </div><!-- end of Clerk's Record link -->
-
-      </section><!-- End of Transcripts Section -->
-
-    </div> <!-- end of transcripts wrapper -->
-
-  </main> <!-- End of Transcripts Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
-
 </html>
