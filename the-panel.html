@@ -5,17 +5,17 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- Required Info -->
   <title>The Panel | Vaidik · Brown · Altice</title>
-  <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-panel">
   <!-- Open Graph -->
   <meta property="og:title" content="The Panel | Vaidik · Brown · Altice">
-  <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for Judges Vaidik, Brown, and Altice — the three Indiana Court of Appeals judges assigned to IN COA 25A-CR-591.">
+  <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-panel">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/the-panel.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="RA v. IN | All Eyes on Delphi">
+  <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Panel | Vaidik · Brown · Altice">
@@ -36,7 +36,7 @@
     --paper:        #f2ede6;
     --aged:         #e0d8cc;
     --red:          #9b1c1c;
-    --gold:         #b8860b;
+    --gold:         #b28a26;
     --steel:        #3a4a5c;
     --muted:        #6b6560;
     --gap-red:      #c0392b;
@@ -80,16 +80,15 @@
     top: 0; 
     left: 0; 
     right: 0;
-    height: 4px;
-    background: var(--red);
+    height: 3px;
+    background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
   }
   .masthead-rule {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(8px, 1.5vw, 10px);
-    letter-spacing: 0.2em;
+    font-size: clamp(9px, 1.5vw, 9px);
+    letter-spacing: 0.1em;
     color: #666;
-    text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 1%;
   }
   .masthead h1 {
     font-family: 'Playfair Display', serif;
@@ -98,10 +97,26 @@
     line-height: 1.1;
     margin-bottom: 10px;
   }
-  .masthead h1 em {
-    font-style: italic;
+  .masthead h1 span {
+    font-style: normal;
     font-weight: 400;
     color: #aaa;
+  }
+  .masthead-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: #888;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 15px;
+  } 
+  .masthead-meta a { 
+    color: #aaa; 
+  }
+  .masthead-meta a:hover { 
+    color: #c35f5f; 
+    text-decoration: underline;
   }
   .masthead-sub {
     font-family: 'IBM Plex Mono', monospace;
@@ -139,14 +154,15 @@
   /* SECTION LABEL */
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(8.5px, 1.8vw, 10px);
-    letter-spacing: 0.25em;
+    font-size: clamp(9px, 1.8vw, 9px);
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
     border-bottom: 1px solid var(--aged);
-    padding-bottom: 8px;
     margin: clamp(28px, 6vw, 48px) 0 clamp(12px, 3vw, 20px);
     scroll-margin-top: 60px;
+    font-weight: 700;
+    padding 3% 2%;
   }
   /* ─── JUDGE PROFILE CARDS ─── */
   .judge-profile {
@@ -792,9 +808,36 @@
     display: block;
   }
   .mobile-jump a:hover, .mobile-jump a:active { 
-    color: var(--paper); 
-    background: #111; 
+    color: var(--paper);
+    background: #111;
     }
+  .appeal-nav-home {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .appeal-nav-home:hover { 
+    color: #ccc; 
+  }
+  .appeal-nav-panel {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 3px 10px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .appeal-nav-panel:hover { 
+    background: var(--gold); 
+    color: var(--ink); 
+  }
 </style>
 </head>
 <body>
@@ -811,18 +854,17 @@
 </nav>
 
 <div class="masthead">
-  <div class="masthead-rule">Indiana Court of Appeals · Case No. 25A-CR-00591</div>
-  <h1>The Panel</h1>
-  <div class="masthead-sub">
-    <span>JUDGE PROFILES</span>
-    <span>CRIMINAL OPINION RECORDS</span>
-    <span style="color:var(--gold);border:1px solid var(--gold);padding:2px 8px;">ORAL ARGUMENT · SEPT. 21, 2026</span>
-  </div>
+  <div class="masthead-rule">Case No. 25A-CR-00591</div>
+    <h1>The <span>Three-Judge </span>Panel</h1>
+      <div class="masthead-meta">
+        <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+        <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+      </div>
 </div>
 
 <div class="site-nav" style="background: var(--ink); border-top: 1px solid #222; padding: 10px 48px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; justify-content: center;">
-  <a href="https://alleyesondelphi.github.io/rickallen/" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; text-decoration: none;">← All Eyes on Delphi</a>
-  <a href="https://alleyesondelphi.github.io/rickallen/the-appeal" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 3px 10px;">The Appeal · Issue-by-Issue →</a>
+  <a href="https://alleyesondelphi.github.io/rickallen/" class="appeal-nav-home">← All Eyes on Delphi</a>
+  <a href="https://alleyesondelphi.github.io/rickallen/the-appeal" class="appeal-nav-panel">The Appeal · Issue-by-Issue →</a>
 </div>
 
 <div class="container">

@@ -68,7 +68,9 @@ a:hover {
 .masthead {
   background: var(--ink);
   color: var(--paper);
-  padding: clamp(28px,5vw,44px) clamp(20px,4vw,48px) clamp(24px,4vw,36px);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: clamp(16px,3vw,28px) calc(50vw - 50% + 24px) 0;
   position: relative;
   overflow: hidden;
 }
@@ -76,16 +78,16 @@ a:hover {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--red);
-}
+    height: 2px;
+    background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
+  }
 .masthead-rule {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(8px,1.5vw,10px);
-  letter-spacing: 0.2em;
+  font-size: clamp(7.5px, 1.5vw, 9.5px);
+  letter-spacing: 0.1em;
   color: #888;
-  text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 .masthead h1 {
   font-family: 'Playfair Display', serif;
@@ -94,20 +96,46 @@ a:hover {
   line-height: 1.1;
   margin-bottom: 10px;
 }
-.masthead h1 em {
-  font-style: italic;
+.masthead h1 span {
+  font-style: normal;
   font-weight: 400;
   color: #999;
 }
+.masthead-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #888;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 15px;
+} 
+.masthead-meta a { 
+  color: #aaa; 
+}
+.masthead-meta a:hover { 
+  color: #c35f5f; 
+  text-decoration: underline;
+}
 .masthead-sub {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(9px,1.8vw,11px);
+  font-size: clamp(10px,1.8vw,10px);
   color: #888;
-  letter-spacing: 0.12em;
-  margin-top: 14px;
+  letter-spacing: 0.1em;
+  margin-top: 3%;
+  padding-bottom: 12px;
   display: flex;
+  flex-wrap: nowrap;
   gap: clamp(10px,2.5vw,22px);
-  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.masthead-sub::-webkit-scrollbar { 
+  display: none; 
+}
+.masthead-sub a { 
+  white-space: nowrap; 
 }
 .masthead-link {
   color: #bbb;
@@ -135,7 +163,8 @@ a:hover {
   text-transform: uppercase;
   color: var(--muted);
   border-bottom: 1px solid var(--aged);
-  padding: 32px 0 8px;
+  padding: 2% 0;
+  font-weight: 700;
   margin-bottom: 0;
 }
 /* INDEX */
@@ -229,11 +258,25 @@ a:hover {
   vertical-align: middle;
   line-height: 1.4;
 }
-.tag-juror  { background: var(--gap-bg); color: var(--gap-red); border: 1px solid rgba(192,57,43,0.35); }
-.tag-key    { background: #f0f5e8; color: #3a5c2a; border: 1px solid rgba(58,92,42,0.35); }
-.tag-post   { background: #f5f0e8; color: #6b4f12; border: 1px solid rgba(107,79,18,0.35); }
-.tag-error  { background: #fdf0ee; color: var(--gap-red); border: 1px solid rgba(192,57,43,0.35); }
-
+.tag-juror { 
+  background: var(--gap-bg); 
+  color: var(--gap-red); 
+  border: 1px solid rgba(192,57,43,0.35); 
+}
+.tag-key { 
+  background: #f0f5e8; 
+  color: #3a5c2a; 
+  border: 1px solid rgba(58,92,42,0.35); }
+.tag-post { 
+  background: #f5f0e8; 
+  color: #6b4f12; 
+  border: 1px solid rgba(107,79,18,0.35); 
+}
+.tag-error { 
+  background: #fdf0ee; 
+  color: var(--gap-red); 
+  border: 1px solid rgba(192,57,43,0.35); 
+}
 .claim-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: clamp(8.5px,1.5vw,9.5px);
@@ -378,7 +421,6 @@ a:hover {
     padding-left: 10px;
   }
 }
-
 /* INTRO NOTE */
 .intro-note {
   background: #faf9f7;
@@ -406,14 +448,18 @@ p:last-child {
 <body>
 <div class="wrapper">
   <div class="masthead">
-  <div class="masthead-rule">Indiana v. Richard Allen &nbsp;|&nbsp; 08C01-2210-MR-1</div>
-  <h1>Juror #05 Interview <em>Claim vs. Record</em></h1>
-  <div class="masthead-sub">
-    <a class="masthead-link" href="index">Home</a>
-    <a class="masthead-link" href="the-jury">The Jury</a>
-    <a class="masthead-link" href="juror-thread">Juror #02 FB Thread</a>
-    <a class="masthead-link" href="mia-mchaffey">Juror #02 Analysis</a>
-  </div>
+    <div class="masthead-rule">Case No. 08C01-2210-MR-1</div>
+      <h1>Juror #05 Claims <span>vs.</span> Record</h1>
+        <div class="masthead-meta">
+          <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+          <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+        </div>
+        <div class="masthead-sub">
+          <a class="masthead-link" href="index">Home</a>
+          <a class="masthead-link" href="the-jury">The Jury</a>
+          <a class="masthead-link" href="juror-thread">Juror #02 Facebook Thread</a>
+          <a class="masthead-link" href="mia-mchaffey">Juror #02 Analysis</a>
+        </div>
 </div>
 
 <div class="container">

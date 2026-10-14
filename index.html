@@ -72,10 +72,9 @@
     .masthead-rule {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: #888;
-      margin-bottom: 10px;
+      margin-top: -1%;
     }
     .masthead h1 {
       font-family: 'Playfair Display', Georgia, serif;
@@ -85,7 +84,7 @@
       color: var(--paper);
       margin-bottom: 10px;
     }
-    .masthead h1 em {
+    .masthead h1 span {
       font-weight: 700;
       color: rgba(242,237,230,0.6);
     }
@@ -100,17 +99,19 @@
     .masthead-meta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: #888;
       display: flex;
       flex-wrap: wrap;
-      gap: 0 20px;
-    }
+      gap: 0 15px;
+      margin-top: 1%;
+    } 
     .masthead-meta a { 
       color: #aaa; 
     }
     .masthead-meta a:hover { 
-      color: var(--paper); 
+      color: #c35f5f; 
+      text-decoration: underline;
     }
     /* ── NAV ── */
     .site-nav {
@@ -467,12 +468,11 @@
 <header class="masthead">
   <div class="masthead-inner">
     <div class="masthead-rule">08C01-2210-MR-1 &nbsp;|&nbsp; 25A-CR-591</div>
-    <h1>The Case Against Rick</h1>
-    <div class="masthead-subtitle">Court documents, transcripts, exhibits &amp; analysis</div>
-    <div class="masthead-meta">
-      <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
-      <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
-    </div>
+      <h1>IN <span>v.</span> Richard Allen</h1>
+        <div class="masthead-meta">
+          <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+          <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+        </div>
   </div>
   <nav class="site-nav">
     <div class="site-nav-inner">
