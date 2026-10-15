@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Required-->
+  <title>Preview Img Template</title>
+  <meta name="description" content="Preview image template and boiler plate meta tag info">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Preview Img Template">
+  <meta property="og:description" content="Preview image template and boiler plate meta tag info">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:site_name" content="All Eyes on Delphi">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Preview Img Template">
+  <meta name="twitter:description" content="Preview image template and boiler plate meta tag info">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/img/preview/home.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="manifest" href="icons/site.webmanifest">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--surface-page);
+    color: var(--text-body);
+  }
+  :root {
+    --paper:               #f2ede6;
+    --surface-page:        #F2F2F4;
+    --surface-card:        #F8F8F9;
+    --surface-elevated:    #EBEBED;
+    --cream:               #F2F2F4;
+    --sand:                #DCDCDF;
+    --red:                 #9b1c1c;
+    --lightBlue:           #4c7bd4;
+    --mediumBlue:          #2D5FBF;
+    --grayBlue:            #4A5A80;
+    --navyBlue:            #2D3A5C;
+    --darkBlue:            #0D1B3E;
+    /* rgba's */
+    --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+    --accent-border:       rgba(79, 142, 247, 0.35);
+    --darkBlue-muted:      rgba(45, 58, 92, 0.45);
+    --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+  }
+  .card {
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  /* ── Full-bleed background ── */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/Users/home/Documents/sites/rickallen/assets/img/hero-img.png');
+    background-size: cover;
+    background-position: center 52%;
+    background-repeat: no-repeat;
+  }
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(8, 5, 7, 0.80) 80%,
+      rgba(8, 5, 7, 0.85) 85%,
+      rgba(8, 5, 7, 0.90) 90%
+    );
+  }
+  /* ── Main content ── */
+  .main {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 23%;
+    padding-left: 6%;
+  }
+  .cover-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow-rule {
+    width: 45px;
+    height: 2px;
+    background: var(--peach);
+    flex-shrink: 0;
+    background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
+  }
+  .eyebrow-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: rgba(242, 242, 244, 0.7);
+  }
+  .lowercase {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    text-transform: lowercase;
+  }
+  .cover-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.0;
+  }
+  .cover-head span {
+    color: var(--red);
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="bg"></div>
+      <div class="bg-overlay"></div>
+
+    <div class="main">
+      <div class="cover-eyebrow">
+        <div class="eyebrow-rule"></div>
+        <div class="eyebrow-label">IN <span class="lowercase">v.</span> Richard Allen</div>
+      </div>
+      <div class="cover-head">The Case Against Rick</div>
+    </div>
+
+</body>
+</html>
