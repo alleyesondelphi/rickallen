@@ -47,6 +47,7 @@
       --sand:                #DCDCDF;
       --plum:                #0e0e0f;
       --carmine:             #7a3535;
+      --slate:               #485291;
       --ink:                 #0e0e0f;
       --surface-page:        #F2F2F4;
       --surface-card:        #F8F8F9;
@@ -99,6 +100,7 @@
       --carmine:             #cdc6bc;
       --ink:                 #f2ede6;
       --peach:               #c23535;
+      --filing-link:          #7e3e3e;
 
       --gold:               #d4a520;
       --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
@@ -352,7 +354,9 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .filing:last-child { border-bottom: none; }
+    .filing:last-child { 
+      border-bottom: none; 
+    }
     .filing-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -370,8 +374,8 @@
       font-weight: 600;
       text-underline-offset: 2px;
     }
-    .filing-link:hover { 
-      color: var(--ink); 
+    .filing-link:hover {
+      color: var(--ink);
     }
     .filing-bold {
       font-weight: 600;
@@ -582,8 +586,12 @@
         color: #2d2925;
       }
       :root:not([data-theme="light"]) .filing-note .filing-link,
-      :root:not([data-theme="light"]) .filing-note a { 
-        color: #7a3535; 
+      :root:not([data-theme="light"]) .filing-note a {
+        color: var(--slate);
+      }
+      :root:not([data-theme="light"]) .filing-note .filing-link:hover,
+      :root:not([data-theme="light"]) .filing-note a:hover {
+        color: #9292BE;
       }
       /* month card hover: editorial shadow, no ring */
       :root:not([data-theme="light"]) details.month-details:hover {
@@ -628,8 +636,12 @@
       color: #2d2925;
     }
     :root[data-theme="dark"] .filing-note .filing-link,
-    :root[data-theme="dark"] .filing-note a { 
-      color: #7a3535; 
+    :root[data-theme="dark"] .filing-note a {
+      color: var(--slate);
+    }
+    :root[data-theme="dark"] .filing-note .filing-link:hover,
+    :root[data-theme="dark"] .filing-note a:hover {
+      color: #9292BE;
     }
     :root[data-theme="dark"] details.month-details:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.28);
