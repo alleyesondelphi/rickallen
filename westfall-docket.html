@@ -499,7 +499,9 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 100%; left: 0; right: 0;
+        top: 100%; 
+        left: 0; 
+        right: 0;
         flex-direction: column;
         background: var(--surface-page);
         border-bottom: 1px solid var(--border-light);
@@ -572,7 +574,9 @@
     @media (prefers-color-scheme: dark) {
       /* active nav → gold */
       :root:not([data-theme="light"]) .nav-links a.active,
-      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
       /* filing-note: gold stripe + aged tint */
       :root:not([data-theme="light"]) .filing-note {
         background: #e0d8cc;
@@ -580,14 +584,18 @@
         color: #2d2925;
       }
       :root:not([data-theme="light"]) .filing-note .filing-link,
-      :root:not([data-theme="light"]) .filing-note a { color: #7a3535; }
+      :root:not([data-theme="light"]) .filing-note a { 
+        color: #7a3535; 
+      }
       /* month card hover: editorial shadow, no ring */
       :root:not([data-theme="light"]) details.month-details:hover {
         box-shadow: 0 6px 24px rgba(0,0,0,0.28);
         border-color: rgba(242, 237, 230, 0.13);
       }
       /* accordion triangle → gold */
-      :root:not([data-theme="light"]) summary.month-summary::before { color: #e0d8cc; }
+      :root:not([data-theme="light"]) summary.month-summary::before { 
+        color: #e0d8cc; 
+      }
       /* section dividers → visible warm paper line */
       :root:not([data-theme="light"]) .case-title-bar,
       :root:not([data-theme="light"]) details.month-details[open] > summary.month-summary {
@@ -597,9 +605,15 @@
       :root:not([data-theme="light"]) .filing {
         border-bottom-color: rgba(224, 216, 204, 0.14);
       }
-      :root:not([data-theme="light"]) .drive-icon { color: rgba(242, 237, 230, 0.40); }
-      :root:not([data-theme="light"]) .drive-card-cta { color: rgba(242, 237, 230, 0.75); }
-      :root:not([data-theme="light"]) .drive-card-cta:hover { color: #d94f4f; }
+      :root:not([data-theme="light"]) .drive-icon { 
+        color: rgba(242, 237, 230, 0.40); 
+      }
+      :root:not([data-theme="light"]) .drive-card-cta { 
+        color: rgba(242, 237, 230, 0.75); 
+      }
+      :root:not([data-theme="light"]) .drive-card-cta:hover { 
+        color: #d94f4f; 
+      }
       :root:not([data-theme="light"]) .drive-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 28px rgba(0,0,0,0.32);
@@ -607,19 +621,25 @@
       }
     }
     :root[data-theme="dark"] .nav-links a.active,
-    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
     :root[data-theme="dark"] .filing-note {
       background: #e0d8cc;
       border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
       color: #2d2925;
     }
     :root[data-theme="dark"] .filing-note .filing-link,
-    :root[data-theme="dark"] .filing-note a { color: #7a3535; }
+    :root[data-theme="dark"] .filing-note a { 
+      color: #7a3535; 
+    }
     :root[data-theme="dark"] details.month-details:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.28);
       border-color: rgba(242, 237, 230, 0.13);
     }
-    :root[data-theme="dark"] summary.month-summary::before { color: #e0d8cc; }
+    :root[data-theme="dark"] summary.month-summary::before { 
+      color: #e0d8cc; 
+    }
     :root[data-theme="dark"] .case-title-bar,
     :root[data-theme="dark"] details.month-details[open] > summary.month-summary {
       border-bottom-color: rgba(242, 237, 230, 0.22);
@@ -627,9 +647,15 @@
     :root[data-theme="dark"] .filing {
       border-bottom-color: rgba(224, 216, 204, 0.14);
     }
-    :root[data-theme="dark"] .drive-icon { color: rgba(242, 237, 230, 0.40); }
-    :root[data-theme="dark"] .drive-card-cta { color: rgba(242, 237, 230, 0.75); }
-    :root[data-theme="dark"] .drive-card-cta:hover { color: #d94f4f; }
+    :root[data-theme="dark"] .drive-icon { 
+      color: rgba(242, 237, 230, 0.40); 
+    }
+    :root[data-theme="dark"] .drive-card-cta { 
+      color: rgba(242, 237, 230, 0.75); 
+    }
+    :root[data-theme="dark"] .drive-card-cta:hover { 
+      color: #d94f4f; 
+    }
     :root[data-theme="dark"] .drive-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(0,0,0,0.32);
@@ -659,44 +685,34 @@
 
   <section class="content-section">
 
-    <div class="case-block" data-aos="fade-up">
-      <div class="case-title-bar">
-        <h2>State of Indiana v. Patrick Donovan Westfall &mdash; Trial Case (F6 Felony)</h2>
-      </div>
-      <div class="case-meta">
-        <div class="case-meta-item"><strong>Case Number:</strong> 54D01-2111-F6-003036</div>
-        <div class="case-meta-item"><strong>Court:</strong> Montgomery Superior Court 1</div>
-        <div class="case-meta-item"><strong>Judicial Officer:</strong> Heather L. Barajas</div>
-        <div class="case-meta-item"><strong>Context:</strong> Named as a third-party suspect in the defense Franks Memo in <em>State v. Richard Allen</em></div>
-      </div>
-    </div>
+    <div class="case-block">
 
-    <div class="case-block" data-aos="fade-up">
+    <div class="case-block">
       <div class="case-title-bar">
-        <h2>State of Indiana v. Patrick Donovan Westfall &mdash; Misdemeanor Case</h2>
+        <h2>Indiana vs. Westfall</h2>
       </div>
       <div class="case-meta">
         <div class="case-meta-item"><strong>Case Number:</strong> 54D01-2510-CM-003093</div>
         <div class="case-meta-item"><strong>Court:</strong> Montgomery Superior Court 1</div>
         <div class="case-meta-item"><strong>Judicial Officer:</strong> Heather L. Barajas</div>
-        <div class="case-meta-item"><strong>Charge:</strong> 35-47-4-6/MA &mdash; Unlawful Possession of a Firearm by a Domestic Battery Convict</div>
-        <div class="case-meta-item"><strong>Prosecutor:</strong> Andrew Lewis Salter (lead); Joseph Robert Buser</div>
-        <div class="case-meta-item"><strong>Filed:</strong> October 10, 2025</div>
+        <div class="case-meta-item"><strong>Charge:</strong> 35-47-4-6/MA Unlawful Possession of a Firearm by a Domestic Battery Convict</div>
+        <div class="case-meta-item"><strong>Prosecutor:</strong> Andrew Lewis Salter; Joseph Robert Buser</div>
+        <div class="case-meta-item"><strong>Filed:</strong> Oct. 10, 2025</div>
       </div>
     </div>
 
-    <div class="case-block" data-aos="fade-up">
+    <div class="case-block">
       <div class="case-title-bar">
-        <h2>Patrick Donovan Westfall v. State of Indiana &mdash; Direct Appeal</h2>
+        <h2>Direct Appeal</h2>
       </div>
       <div class="case-meta">
         <div class="case-meta-item"><strong>Case Number:</strong> 26A-CR-02690</div>
         <div class="case-meta-item"><strong>Court:</strong> Indiana Court of Appeals</div>
-        <div class="case-meta-item"><strong>Type:</strong> CR &mdash; Direct Appeal (Non Capital, Non-LWOP)</div>
-        <div class="case-meta-item"><strong>Lower Court Case:</strong> 54D01-2111-F6-003036 (Montgomery Superior Court 1)</div>
-        <div class="case-meta-item"><strong>Appellant Counsel:</strong> Denise Laureen Turner (#2952449, Retained)</div>
-        <div class="case-meta-item"><strong>Appellee Counsel:</strong> Theodore Edward Rokita, Office of the Attorney General</div>
-        <div class="case-meta-item"><strong>Filed:</strong> September 24, 2026</div>
+        <div class="case-meta-item"><strong>Type:</strong> Direct Appeal (Non Capital, Non-LWOP)</div>
+        <div class="case-meta-item"><strong>Lower Court Case:</strong> 54D01-2111-F6-003036</div>
+        <div class="case-meta-item"><strong>Appellant Counsel:</strong> Denise Laureen Turner</div>
+        <div class="case-meta-item"><strong>Appellee Counsel:</strong> Theodore Edward Rokita</div>
+        <div class="case-meta-item"><strong>Filed:</strong> Sept. 24, 2026</div>
         <div class="case-meta-item"><strong>Status:</strong> Pending (active)</div>
       </div>
     </div>
