@@ -74,8 +74,7 @@
         --carmine:             #cdc6bc;
         --ink:                 #f2ede6;
         --peach:               #c23535;
-
-      --gold:               #d4a520;
+        --gold:                #d4a520;
         --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
         --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
       }
@@ -95,8 +94,7 @@
       --carmine:             #cdc6bc;
       --ink:                 #f2ede6;
       --peach:               #c23535;
-
-      --gold:               #d4a520;
+      --gold:                #d4a520;
       --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
       --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
     }
@@ -481,7 +479,9 @@
     @media (prefers-color-scheme: dark) {
       /* active nav → gold */
       :root:not([data-theme="light"]) .nav-links a.active,
-      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
       /* filing-note: gold stripe + aged tint */
       :root:not([data-theme="light"]) .filing-note {
         background: #e0d8cc;
@@ -489,14 +489,18 @@
         color: #2d2925;
       }
       :root:not([data-theme="light"]) .filing-note .filing-link,
-      :root:not([data-theme="light"]) .filing-note a { color: #7a3535; }
+      :root:not([data-theme="light"]) .filing-note a { 
+        color: #7a3535; 
+      }
       /* month card hover: editorial shadow, no ring */
       :root:not([data-theme="light"]) details.month-details:hover {
         box-shadow: 0 6px 24px rgba(0,0,0,0.28);
         border-color: rgba(242, 237, 230, 0.13);
       }
       /* accordion triangle → gold */
-      :root:not([data-theme="light"]) summary.month-summary::before { color: #e0d8cc; }
+      :root:not([data-theme="light"]) summary.month-summary::before { 
+        color: #e0d8cc; 
+      }
       /* section dividers → visible warm paper line */
       :root:not([data-theme="light"]) .case-title-bar,
       :root:not([data-theme="light"]) details.month-details[open] > summary.month-summary {
@@ -508,19 +512,25 @@
       }
     }
     :root[data-theme="dark"] .nav-links a.active,
-    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
     :root[data-theme="dark"] .filing-note {
       background: #e0d8cc;
       border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
       color: #2d2925;
     }
     :root[data-theme="dark"] .filing-note .filing-link,
-    :root[data-theme="dark"] .filing-note a { color: #7a3535; }
+    :root[data-theme="dark"] .filing-note a { 
+      color: #7a3535; 
+    }
     :root[data-theme="dark"] details.month-details:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.28);
       border-color: rgba(242, 237, 230, 0.13);
     }
-    :root[data-theme="dark"] summary.month-summary::before { color: #e0d8cc; }
+    :root[data-theme="dark"] summary.month-summary::before { 
+      color: #e0d8cc; 
+    }
     :root[data-theme="dark"] .case-title-bar,
     :root[data-theme="dark"] details.month-details[open] > summary.month-summary {
       border-bottom-color: rgba(242, 237, 230, 0.22);
