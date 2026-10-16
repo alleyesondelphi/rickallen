@@ -1,398 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Search Guide — IN v. RA Court File Search</title>
+  <title>Search Guide | AEOD</title>
   <meta name="description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
-  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/search/guide.html">
-
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/search/guide">
+  <!-- Open Graph -->
   <meta property="og:title" content="Search Guide — IN v. RA Court File Search">
   <meta property="og:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/search/guide.html">
-  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/search/guide">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/search.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
-
+  <meta property="og:site_name" content="All Eyes on Delphi">
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Search Guide — IN v. RA Court File Search">
   <meta name="twitter:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
-  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/search.png">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/search.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <!-- Favicons -->
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/icon-16.png">
+  <link rel="manifest" href="../assets/icons/site.webmanifest">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <style>
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
     :root {
-      --bg: #0a0a0a;
-      --surface: #161616;
-      --surface-raised: #1c1c1c;
-      --border: #222222;
-      --border-light: #333333;
-      --gold: #e8e8e8;
-      --gold-dim: #888888;
-      --gold-bright: #ffffff;
-      --text: #e8e8e8;
-      --text-dim: #888888;
-      --text-faint: #555555;
+      --peach:               #9b1c1c;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0e0e0f;
+      --carmine:             #7a3535;
+      --ink:                 #0e0e0f;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0e0e0f;
+      --text-body:           #2d2925;
+      --text-label:          #6b6560;
+      --text-muted:          rgba(45, 41, 37, 0.45);
+      --accent:              #9b1c1c;
+      --accent-border:       rgba(155, 28, 28, 0.40);
+      --border-light:        rgba(14, 14, 15, 0.12);
+      --border-mid:          rgba(14, 14, 15, 0.06);
+      --gold:                #b8860b;
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #121212;
+        --surface-card:        #1c1c1c;
+        --surface-elevated:    #242424;
+        --text-heading:        #f2ede6;
+        --text-body:           #cac3b9;
+        --text-label:          #9b8c7e;
+        --text-muted:          rgba(202, 195, 185, 0.90);
+        --accent:              #c23535;
+        --accent-border:       rgba(155, 28, 28, 0.35);
+        --border-light:        rgba(242, 237, 230, 0.08);
+        --border-mid:          rgba(255, 255, 255, 0.03);
+        --carmine:             #cdc6bc;
+        --ink:                 #f2ede6;
+        --peach:               #c23535;
+        --gold:                #d4a520;
+        --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
     }
-
+    :root[data-theme="dark"] {
+      --surface-page:        #121212;
+      --surface-card:        #1c1c1c;
+      --surface-elevated:    #242424;
+      --text-heading:        #f2ede6;
+      --text-body:           #cac3b9;
+      --text-label:          #9b8c7e;
+      --text-muted:          rgba(202, 195, 185, 0.90);
+      --accent:              #c23535;
+      --accent-border:       rgba(155, 28, 28, 0.35);
+      --border-light:        rgba(242, 237, 230, 0.08);
+      --border-mid:          rgba(255, 255, 255, 0.03);
+      --carmine:             #cdc6bc;
+      --ink:                 #f2ede6;
+      --peach:               #c23535;
+      --gold:                #d4a520;
+      --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-
-    .header {
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 1.5rem 1.5rem;
-      text-align: center;
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
     }
-
-    .header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--gold);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.3rem;
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
     }
-
-    .header .subtitle {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
+      color: #fff; letter-spacing: 0.05em; text-transform: uppercase;
+      text-decoration: none; transition: color 0.3s;
     }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 0.8rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--gold-dim);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .site-nav.scrolled .nav-brand { color: var(--ink); }
+    .nav-toggle {
+      display: none; background: none; border: none; font-size: 20px; line-height: 1;
+      cursor: pointer; padding: 4px; color: rgba(255,255,255,0.8); margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { color: var(--ink); }
+    .nav-links { list-style: none; display: flex; gap: 40px; }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: rgba(255,255,255,0.62); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: var(--peach); }
+    .site-nav.scrolled .nav-links a { color: var(--text-label); }
+    .site-nav.scrolled .nav-links a:hover { color: var(--ink); }
+    .site-nav.scrolled .nav-links a.active { color: var(--accent); }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative; height: 52vh; min-height: 360px; overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+    }
+    .masthead::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.72) 60%,rgba(0,0,0,0.92) 90%,rgba(0,0,0,1) 100%);
+    }
+    .masthead-text { position: absolute; bottom: 56px; left: 5vw; z-index: 2; }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase; color: rgba(242,237,230,0.68);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: ''; width: 22px; height: 1.5px; flex-shrink: 0;
+      background: linear-gradient(to left, rgb(129,46,46), rgb(159,74,74), rgb(150,91,91));
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 600; color: #fff; line-height: 0.95;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section { max-width: 800px; margin: 0 auto; padding: 56px 5vw 88px; }
+    .case-block {
+      background: var(--surface-card); border: 1px solid var(--border-mid);
+      overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar { padding: 18px 28px; border-bottom: 1px solid var(--border-light); }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif; font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800; color: var(--text-heading);
+    }
+    .case-body { padding: 28px; }
+    .case-body p { font-size: 14px; line-height: 1.75; color: var(--text-body); margin-bottom: 16px; }
+    .case-body p:last-child { margin-bottom: 0; }
+    .case-body ul { list-style: none; margin: 8px 0 16px; }
+    .case-body ul li {
+      position: relative; padding-left: 18px; font-size: 13.5px;
+      line-height: 1.7; color: var(--text-body); margin-bottom: 8px;
+    }
+    .case-body ul li::before {
+      content: '·'; position: absolute; left: 0;
+      color: var(--accent); font-weight: 700;
+    }
+    .case-body ul li:last-child { margin-bottom: 0; }
+    /* ── Stat row ── */
+    .stat-row { display: flex; gap: 12px; margin: 0 0 20px; flex-wrap: wrap; }
+    .stat-box {
+      background: var(--surface-elevated); border: 1px solid var(--border-light);
+      border-left: 3px solid var(--accent-border);
+      padding: 14px 18px; flex: 1; min-width: 130px;
+    }
+    .stat-box .val {
+      font-family: 'IBM Plex Mono', monospace; font-size: 1.1rem; font-weight: 500;
+      color: var(--text-heading);
+    }
+    .stat-box .label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+      color: var(--text-label); letter-spacing: 0.08em; text-transform: uppercase;
+      margin-top: 4px;
+    }
+    /* ── Example block ── */
+    .example-block {
+      background: var(--surface-elevated); border: 1px solid var(--border-light);
+      border-left: 3px solid var(--accent-border);
+      padding: 16px 20px; margin: 12px 0 20px;
+    }
+    .example-block .ex-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .example-block .ex-query {
+      font-size: 14px; font-style: italic; color: var(--text-heading);
+      line-height: 1.5; font-weight: 500;
+    }
+    .example-block .ex-note {
+      font-size: 12px; color: var(--text-label); margin-top: 8px; line-height: 1.5;
+    }
+    code {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+      background: var(--surface-elevated); border: 1px solid var(--border-light);
+      padding: 2px 6px; color: var(--text-heading);
+    }
+    .divider {
+      height: 1px; background: var(--border-light); margin: 0;
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .footer-social { display: flex; gap: 20px; }
+    .footer-social a {
+      color: var(--text-muted); font-size: 15px; text-decoration: none;
       transition: color 0.2s;
     }
-
-    .back-link:hover {
-      color: var(--gold-bright);
-    }
-
-    .guide-container {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
-
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 1.35rem;
-      color: var(--gold);
-      margin-top: 2.5rem;
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.02em;
-    }
-
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.75;
-      color: var(--text-dim);
-      font-size: 0.9rem;
-    }
-
-    .lead {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--gold-dim);
-      margin: 2rem 0;
-      opacity: 0.5;
-    }
-
-    code {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.15rem 0.4rem;
-      border-radius: 2px;
-      color: var(--gold-bright);
-    }
-
-    .example-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold-dim);
-      padding: 1rem 1.2rem;
-      margin: 1rem 0 1.5rem;
-      border-radius: 2px;
-    }
-
-    .example-block .label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--text-faint);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .example-block .query {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .example-block .note {
-      font-size: 0.78rem;
-      color: var(--text-faint);
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
-
-    .stat-row {
-      display: flex;
-      gap: 1rem;
-      margin: 1rem 0 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .stat-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-right: 2px solid var(--gold-dim);
-      padding: 0.7rem 1rem;
-      flex: 1;
-      min-width: 140px;
-    }
-
-    .stat-box .val {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .stat-box .label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--text-faint);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 0.2rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0.5rem 0 1.5rem;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-
-    ul li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: var(--gold-dim);
-      font-weight: 700;
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .footer p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--text-faint);
-      letter-spacing: 0.05em;
-      margin-bottom: 0;
-    }
-
-    .footer a {
-      color: var(--gold-dim);
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: var(--gold);
-    }
-
-    @media (max-width: 600px) {
-      .header { padding: 1.5rem 1rem 1rem; }
-      .header h1 { font-size: 1.4rem; }
-      .guide-container { padding: 1.5rem 1rem 3rem; }
-      h2 { font-size: 1.2rem; }
+    .footer-social a:hover { color: var(--carmine); }
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .nav-toggle { display: block; }
+      .site-nav, .site-nav.scrolled { padding: 12px 16px; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px; gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 8px 0; border-bottom: 1px solid var(--border-mid); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-links a { font-size: 10px !important; color: var(--text-label) !important; }
+      .nav-links a.active { color: var(--accent) !important; }
+      .masthead { height: 40vh; min-height: 280px; }
+      .masthead-text { left: 16px; bottom: 40px; }
+      .content-section { padding: 32px 16px 56px; }
+      .case-body { padding: 20px 16px; }
       .stat-row { flex-direction: column; }
     }
   </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .nav-links a.active,
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+      :root:not([data-theme="light"]) .case-title-bar { border-bottom-color: rgba(242,237,230,0.22); }
+      :root:not([data-theme="light"]) .example-block { border-left-color: rgba(194,53,53,0.4); }
+      :root:not([data-theme="light"]) .stat-box { border-right-color: rgba(194,53,53,0.4); }
+    }
+    :root[data-theme="dark"] .nav-links a.active,
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+    :root[data-theme="dark"] .case-title-bar { border-bottom-color: rgba(242,237,230,0.22); }
+    :root[data-theme="dark"] .example-block { border-left-color: rgba(194,53,53,0.4); }
+    :root[data-theme="dark"] .stat-box { border-right-color: rgba(194,53,53,0.4); }
+  </style>
 </head>
-
 <body>
 
-<header class="header">
-  <h1>Search Guide</h1>
-  <div class="subtitle">Indiana v. Richard M. Allen — Court File Search</div>
-  <a href="index.html" class="back-link">← Back to search</a>
-</header>
+  <nav class="site-nav" id="siteNav">
+    <a href="../index" class="nav-brand">All Eyes on Delphi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index">Home</a></li>
+      <li><a href="index">Search</a></li>
+      <li><a href="guide" class="active">Search Guide</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+  </nav>
 
-<div class="guide-container">
-
-  <h2>What This Is</h2>
-
-  <p class="lead">This tool lets you search across the publicly available court filings from <em>Indiana v. Richard M. Allen</em> using natural language queries. Instead of opening documents one at a time, you can ask a question and the system finds the most relevant passages across every indexed filing.</p>
-
-  <div class="stat-row">
-    <div class="stat-box">
-      <div class="val">18,435</div>
-      <div class="label">Indexed chunks</div>
-    </div>
-    <div class="stat-box">
-      <div class="val">667</div>
-      <div class="label">Court filings</div>
-    </div>
-    <div class="stat-box">
-      <div class="val">Oct '22 – Dec '25</div>
-      <div class="label">Date range</div>
+  <div class="masthead">
+    <img class="masthead-img" src="../assets/img/hero-img.png" alt="Search Guide">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Search Guide</h1>
     </div>
   </div>
 
-  <p>The indexed documents include motions, orders, transcripts, hearing records, exhibits, and other filings from the public docket. Documents that are sealed, redacted, or image-only (scanned without OCR) are not included in the search results.</p>
+  <div class="content-section">
 
-  <div class="divider"></div>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>What This Is</h2></div>
+      <div class="case-body">
+        <p>This tool lets you search across the publicly available court filings from <em>Indiana v. Richard M. Allen</em> using natural language queries. Instead of opening documents one at a time, you can ask a question and the system finds the most relevant passages across every indexed filing.</p>
+        <div class="stat-row">
+          <div class="stat-box"><div class="val">18,435</div><div class="label">Indexed chunks</div></div>
+          <div class="stat-box"><div class="val">667</div><div class="label">Court filings</div></div>
+          <div class="stat-box"><div class="val">Oct '22 – Dec '25</div><div class="label">Date range</div></div>
+        </div>
+        <p>The indexed documents include motions, orders, transcripts, hearing records, exhibits, and other filings from the public docket. Documents that are sealed, redacted, or image-only (scanned without OCR) are not included in the search results.</p>
+      </div>
+    </div>
 
-  <h2>How It Works</h2>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>How It Works</h2></div>
+      <div class="case-body">
+        <p>This is a semantic search engine, not a keyword search. It understands meaning, not just exact words. When you type a query, the system converts it into a mathematical representation and compares it against every document chunk in the database, returning the closest matches by meaning.</p>
+        <p>This means you can search for concepts, not just terms. A query like "defense arguments about the bullet" will find relevant passages even if those passages don't contain the exact word "bullet" — they might say "round," "cartridge," "projectile," or "firearms evidence."</p>
+        <p>Each result shows the source filing, date, a relevance score, and a link to the original document on Google Drive.</p>
+      </div>
+    </div>
 
-  <p>This is a semantic search engine, not a keyword search. It understands meaning, not just exact words. When you type a query, the system converts it into a mathematical representation and compares it against every document chunk in the database, returning the closest matches by meaning.</p>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>Search Tips</h2></div>
+      <div class="case-body">
+        <p>Natural language works best. Ask questions or describe what you're looking for in plain English.</p>
+        <div class="example-block">
+          <div class="ex-label">Good query</div>
+          <div class="ex-query">What did the defense argue about the unspent bullet?</div>
+          <div class="ex-note">Finds testimony, closing arguments, and motions related to the bullet evidence.</div>
+        </div>
+        <div class="example-block">
+          <div class="ex-label">Good query</div>
+          <div class="ex-query">confessions at Westville Correctional</div>
+          <div class="ex-note">Surfaces references to Allen's statements while incarcerated.</div>
+        </div>
+        <div class="example-block">
+          <div class="ex-label">Good query</div>
+          <div class="ex-query">motion to disqualify Judge Gull</div>
+          <div class="ex-note">Finds the defense filings and court orders related to recusal arguments.</div>
+        </div>
+        <div class="example-block">
+          <div class="ex-label">Less effective</div>
+          <div class="ex-query">McLeland 2023</div>
+          <div class="ex-note">Too sparse. Try instead: "McLeland motion to seal" or "prosecution arguments about public access."</div>
+        </div>
+        <p>General guidance:</p>
+        <ul>
+          <li>Use full phrases and questions rather than single keywords</li>
+          <li>Include context — "search warrant for Whiteman Drive" works better than just "search warrant"</li>
+          <li>The relevance percentage is a rough guide — anything above 50% is usually on point, below 40% may be tangential</li>
+          <li>Adjust the results count (3, 5, 10, or 15) to see more or fewer matches</li>
+          <li>Click "Expand" to see the full text of a result, or "View Source" to open the original filing</li>
+        </ul>
+      </div>
+    </div>
 
-  <p>This means you can search for concepts, not just terms. A query like "defense arguments about the bullet" will find relevant passages even if those passages don't contain the exact word "bullet" — they might say "round," "cartridge," "projectile," or "firearms evidence."</p>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>What's Indexed</h2></div>
+      <div class="case-body">
+        <p>The search covers text extracted from 667 PDF filings downloaded from the public Google Drive case file archive. This includes:</p>
+        <ul>
+          <li>Court orders and rulings</li>
+          <li>Defense and prosecution motions</li>
+          <li>Hearing and trial transcripts</li>
+          <li>Affidavits and search warrants</li>
+          <li>Appellate filings</li>
+          <li>Exhibits (text-based only — images and scanned pages without embedded text are not searchable)</li>
+        </ul>
+        <p>Approximately 300 files in the collection are image-only PDFs (scanned documents, photographs, handwritten letters) that couldn't be text-extracted. These are still available through the case file archive but won't appear in search results.</p>
+      </div>
+    </div>
 
-  <p>Each result shows the source filing, date, a relevance score, and a link to the original document on Google Drive.</p>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>Limitations</h2></div>
+      <div class="case-body">
+        <ul>
+          <li>This is a search tool, not legal analysis. Results are document excerpts, not conclusions.</li>
+          <li>Sealed and confidential filings are not included.</li>
+          <li>Some document text may have extraction artifacts (spacing issues, broken words) from PDF conversion.</li>
+          <li>The search API may take a few seconds to respond on the first query if the server has been idle.</li>
+          <li>Results show document chunks (roughly paragraph-length passages), not full documents. Use the "View Source" link to read the complete filing.</li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="divider"></div>
+    <div class="case-block">
+      <div class="case-title-bar"><h2>About</h2></div>
+      <div class="case-body">
+        <p>This tool was built as a proof of concept for document intelligence applied to public court records. The underlying technology — semantic vector search over extracted document text — is designed to be adaptable to any large collection of court filings.</p>
+        <p>All documents are sourced from publicly available court records. This project is not affiliated with the court, any party to the case, or any legal organization.</p>
+      </div>
+    </div>
 
-  <h2>Search Tips</h2>
-
-  <p>Natural language works best. Ask questions or describe what you're looking for in plain English.</p>
-
-  <div class="example-block">
-    <div class="label">Good queries</div>
-    <div class="query">What did the defense argue about the unspent bullet?</div>
-    <div class="note">Finds testimony, closing arguments, and motions related to the bullet evidence.</div>
   </div>
 
-  <div class="example-block">
-    <div class="label">Good queries</div>
-    <div class="query">confessions at Westville Correctional</div>
-    <div class="note">Surfaces references to Allen's statements while incarcerated.</div>
-  </div>
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">𝕏</a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">▶</a>
+    </div>
+  </footer>
 
-  <div class="example-block">
-    <div class="label">Good queries</div>
-    <div class="query">motion to disqualify Judge Gull</div>
-    <div class="note">Finds the defense filings and court orders related to recusal arguments.</div>
-  </div>
-
-  <div class="example-block">
-    <div class="label">Less effective</div>
-    <div class="query">McLeland 2023</div>
-    <div class="note">Too sparse. Try instead: "McLeland motion to seal" or "prosecution arguments about public access."</div>
-  </div>
-
-  <p>General guidance:</p>
-  <ul>
-    <li>Use full phrases and questions rather than single keywords</li>
-    <li>Include context — "search warrant for Whiteman Drive" works better than just "search warrant"</li>
-    <li>The relevance percentage is a rough guide — anything above 50% is usually on point, below 40% may be tangential</li>
-    <li>Adjust the results count (3, 5, 10, or 15) to see more or fewer matches</li>
-    <li>Click "Expand" to see the full text of a result, or "View Source" to open the original filing</li>
-  </ul>
-
-  <div class="divider"></div>
-
-  <h2>What's Indexed</h2>
-
-  <p>The search covers text extracted from 667 PDF filings downloaded from the public Google Drive case file archive. This includes:</p>
-
-  <ul>
-    <li>Court orders and rulings</li>
-    <li>Defense and prosecution motions</li>
-    <li>Hearing and trial transcripts</li>
-    <li>Affidavits and search warrants</li>
-    <li>Appellate filings</li>
-    <li>Exhibits (text-based only — images and scanned pages without embedded text are not searchable)</li>
-  </ul>
-
-  <p>Approximately 300 files in the collection are image-only PDFs (scanned documents, photographs, handwritten letters) that couldn't be text-extracted. These are still available through the case file archive but won't appear in search results.</p>
-
-  <div class="divider"></div>
-
-  <h2>Limitations</h2>
-
-  <ul>
-    <li>This is a search tool, not legal analysis. Results are document excerpts, not conclusions.</li>
-    <li>Sealed and confidential filings are not included.</li>
-    <li>Some document text may have extraction artifacts (spacing issues, broken words) from PDF conversion.</li>
-    <li>The search API may take a few seconds to respond on the first query if the server has been idle.</li>
-    <li>Results show document chunks (roughly paragraph-length passages), not full documents. Use the "View Source" link to read the complete filing.</li>
-  </ul>
-
-  <div class="divider"></div>
-
-  <h2>About</h2>
-
-  <p>This tool was built as a proof of concept for document intelligence applied to public court records. The underlying technology — semantic vector search over extracted document text — is designed to be adaptable to any large collection of court filings.</p>
-
-  <p>All documents are sourced from publicly available court records. This project is not affiliated with the court, any party to the case, or any legal organization.</p>
-
-</div>
-
-<footer class="footer">
-  <p>Documents sourced from public court records · <a href="https://alleyesondelphi.github.io/rickallen" target="_blank">@alleyesondelphi | GitHub</a></p>
-</footer>
+  <script>
+    const nav = document.getElementById('siteNav');
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+    if (toggle) toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+  </script>
 
 </body>
 </html>
