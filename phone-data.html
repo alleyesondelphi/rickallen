@@ -52,7 +52,7 @@
       --text-label:          #4A5A80;
       --text-muted:          rgba(45, 58, 92, 0.45);
       --accent:              #2D5FBF;
-      --accent-border:       rgba(79, 142, 247, 0.35);
+      --accent-border:       rgba(155, 28, 28, 0.40);
       --border-light:        rgba(46, 54, 80, 0.18);
       --border-mid:          rgba(46, 54, 80, 0.10);
       --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
@@ -60,40 +60,44 @@
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --surface-page:        #0E0E10;
-        --surface-card:        #1A1A1E;
-        --surface-elevated:    #242428;
-        --text-heading:        #EAEAEC;
-        --text-body:           #9898A4;
+        --surface-page:        #141210;
+        --surface-card:        #1e1b17;
+        --surface-elevated:    #272319;
+        --text-heading:        #f2ede6;
+        --text-body:           #b8b0a4;
         --text-label:          #9292BE;
-        --text-muted:          rgba(152, 152, 164, 0.95);
-        --accent:              #4F8EF7;
-        --accent-border:       rgba(79, 142, 247, 0.30);
-        --border-light:        rgba(255, 255, 255, 0.07);
-        --border-mid:          rgba(255, 255, 255, 0.04);
-        --carmine:             #9292BE;
-        --ink:                 #EAEAEC;
-        --peach:               #4F8EF7;
-        --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+        --text-muted:          rgba(184, 176, 164, 0.90);
+        --accent:              #c23535;
+        --accent-border:       rgba(155, 28, 28, 0.35);
+        --border-light:        rgba(242, 237, 230, 0.08);
+        --border-mid:          rgba(242, 237, 230, 0.04);
+        --carmine:             #cdc6bc;
+        --ink:                 #f2ede6;
+        --peach:               #c23535;
+
+      --gold:               #d4a520;
+        --nav-scrolled-bg:     rgba(20, 18, 14, 0.96);
         --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
       }
     }
     :root[data-theme="dark"] {
-      --surface-page:        #0E0E10;
-      --surface-card:        #1A1A1E;
-      --surface-elevated:    #242428;
-      --text-heading:        #EAEAEC;
-      --text-body:           #9898A4;
+      --surface-page:        #141210;
+      --surface-card:        #1e1b17;
+      --surface-elevated:    #272319;
+      --text-heading:        #f2ede6;
+      --text-body:           #b8b0a4;
       --text-label:          #9292BE;
-      --text-muted:          rgba(152, 152, 164, 0.65);
-      --accent:              #4F8EF7;
-      --accent-border:       rgba(79, 142, 247, 0.30);
-      --border-light:        rgba(255, 255, 255, 0.07);
-      --border-mid:          rgba(255, 255, 255, 0.04);
-      --carmine:             #9292BE;
-      --ink:                 #EAEAEC;
-      --peach:               #4F8EF7;
-      --nav-scrolled-bg:     rgba(14, 14, 16, 0.96);
+      --text-muted:          rgba(184, 176, 164, 0.65);
+      --accent:              #c23535;
+      --accent-border:       rgba(155, 28, 28, 0.35);
+      --border-light:        rgba(242, 237, 230, 0.08);
+      --border-mid:          rgba(242, 237, 230, 0.04);
+      --carmine:             #cdc6bc;
+      --ink:                 #f2ede6;
+      --peach:               #c23535;
+
+      --gold:               #d4a520;
+      --nav-scrolled-bg:     rgba(20, 18, 14, 0.96);
       --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
     }
     html { 
@@ -224,7 +228,7 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--peach);
+      color: rgba(242, 237, 230, 0.68);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -234,7 +238,7 @@
       content: '';
       width: 22px;
       height: 1.5px;
-      background: var(--peach);
+      background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
       flex-shrink: 0;
     }
     .masthead-title {
@@ -257,7 +261,7 @@
     .case-block {
       background: var(--surface-card);
       border: 1px solid var(--border-mid);
-      border-radius: 10px;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
       margin-bottom: 32px;
@@ -298,7 +302,7 @@
     details.month-details {
       background: var(--surface-card);
       border: 1px solid var(--border-mid);
-      border-radius: 10px;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
       margin-bottom: 16px;
@@ -356,7 +360,7 @@
       padding: 12px 18px;
       background: var(--surface-elevated);
       border-left: 3px solid var(--accent);
-      border-radius: 0 6px 6px 0;
+      border-radius: 0;
       font-size: 13px;
       line-height: 1.75;
       color: var(--text-body);
@@ -374,7 +378,7 @@
       padding: 12px 18px;
       background: var(--surface-elevated);
       border-left: 3px solid var(--accent);
-      border-radius: 0 6px 6px 0;
+      border-radius: 0;
       font-size: 13px;
       line-height: 1.75;
       color: var(--text-body);
@@ -506,6 +510,34 @@
         object-fit: contain; 
         object-position: center 50%; 
       }
+    }
+  </style>
+  <style>
+    /* dark mode: gold accents */
+    @media (prefers-color-scheme: dark) {
+      /* active nav */
+      :root:not([data-theme="light"]) .nav-links a.active,
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+      /* filing-note: gold left stripe + aged tint bg */
+      :root:not([data-theme="light"]) .filing-note {
+        border-left-color: var(--gold);
+        background: rgba(224, 216, 204, 0.10);
+      }
+      /* month card hover: editorial shadow only, no red ring */
+      :root:not([data-theme="light"]) details.month-details:hover {
+        box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+        border-color: rgba(242, 237, 230, 0.13);
+      }
+    }
+    :root[data-theme="dark"] .nav-links a.active,
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { color: var(--gold); }
+    :root[data-theme="dark"] .filing-note {
+      border-left-color: var(--gold);
+      background: rgba(224, 216, 204, 0.10);
+    }
+    :root[data-theme="dark"] details.month-details:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+      border-color: rgba(242, 237, 230, 0.13);
     }
   </style>
 </head>
