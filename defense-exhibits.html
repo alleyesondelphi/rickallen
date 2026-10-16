@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
   <title>Defense Exhibits | AEOD</title>
   <meta name="description" content="Defense exhibit list and available exhibits entered or offered during pretrial hearings and trial.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/defense-exhibits">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Defense Exhibits">
   <meta property="og:description" content="Defense exhibit list and available exhibits entered or offered during pretrial hearings and trial.">
   <meta property="og:type" content="website">
@@ -31,354 +30,719 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #9b1c1c;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0e0e0f;
+      --carmine:             #7a3535;
+      --ink:                 #0e0e0f;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0e0e0f;
+      --text-body:           #2d2925;
+      --text-label:          #6b6560;
+      --text-muted:          rgba(45, 41, 37, 0.45);
+      --accent:              #9b1c1c;
+      --accent-border:       rgba(155, 28, 28, 0.40);
+      --border-light:        rgba(14, 14, 15, 0.12);
+      --border-mid:          rgba(14, 14, 15, 0.06);
+      --gold:                #b8860b;
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #121212;
+        --surface-card:        #1c1c1c;
+        --surface-elevated:    #242424;
+        --text-heading:        #f2ede6;
+        --text-body:           #cac3b9;
+        --text-label:          #9b8c7e;
+        --text-muted:          rgba(202, 195, 185, 0.90);
+        --accent:              #c23535;
+        --accent-border:       rgba(155, 28, 28, 0.35);
+        --border-light:        rgba(242, 237, 230, 0.08);
+        --border-mid:          rgba(255, 255, 255, 0.03);
+        --carmine:             #cdc6bc;
+        --ink:                 #f2ede6;
+        --peach:               #c23535;
+        --gold:                #d4a520;
+        --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #121212;
+      --surface-card:        #1c1c1c;
+      --surface-elevated:    #242424;
+      --text-heading:        #f2ede6;
+      --text-body:           #cac3b9;
+      --text-label:          #9b8c7e;
+      --text-muted:          rgba(202, 195, 185, 0.90);
+      --accent:              #c23535;
+      --accent-border:       rgba(155, 28, 28, 0.35);
+      --border-light:        rgba(242, 237, 230, 0.08);
+      --border-mid:          rgba(255, 255, 255, 0.03);
+      --carmine:             #cdc6bc;
+      --ink:                 #f2ede6;
+      --peach:               #c23535;
+      --gold:                #d4a520;
+      --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.70) 60%,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, 0.68);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case block ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-body {
+      padding: 28px;
+    }
+    /* ── Exhibit thumbnail grid ── */
+    .exhibit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .exhibit-thumb {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .exhibit-thumb:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      border-color: var(--accent-border);
+      transform: translateY(-2px);
+    }
+    .exhibit-thumb img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+    }
+    .exhibit-thumb-label {
+      padding: 7px 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-label);
+      background: var(--surface-elevated);
+      border-top: 1px solid var(--border-mid);
+    }
+    /* ── Related links ── */
+    .related-links {
+      padding: 20px 28px;
+      border-top: 1px solid var(--border-light);
+      font-size: 13px;
+      line-height: 2;
+    }
+    .related-links h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .related-links ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+    }
+    .related-links a {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+      text-decoration: underline;
+    }
+    .related-links a:hover { 
+      color: var(--ink); 
+    }
+    /* ── Drive note ── */
+    .drive-note {
+      padding: 16px 28px;
+      font-size: 13px;
+      color: var(--text-body);
+      border-top: 1px solid var(--border-light);
+    }
+    .drive-note a {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .drive-note a:hover { 
+      color: var(--ink); 
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .exhibit-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .exhibit-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+      }
+      .case-body { 
+        padding: 20px 16px;
+      }
+    }
+  </style>
+  <style>
+    /* dark mode: gold accents */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .nav-links a.active,
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
+      :root:not([data-theme="light"]) .case-title-bar,
+      :root:not([data-theme="light"]) .related-links,
+      :root:not([data-theme="light"]) .drive-note {
+        border-top-color: rgba(242, 237, 230, 0.22);
+        border-bottom-color: rgba(242, 237, 230, 0.22);
+      }
+      :root:not([data-theme="light"]) .exhibit-thumb:hover {
+        box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+        border-color: rgba(242, 237, 230, 0.14);
+      }
+    }
+    :root[data-theme="dark"] .nav-links a.active,
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
+    :root[data-theme="dark"] .case-title-bar,
+    :root[data-theme="dark"] .related-links,
+    :root[data-theme="dark"] .drive-note {
+      border-top-color: rgba(242, 237, 230, 0.22);
+      border-bottom-color: rgba(242, 237, 230, 0.22);
+    }
+    :root[data-theme="dark"] .exhibit-thumb:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+      border-color: rgba(242, 237, 230, 0.14);
+    }
+  </style>
 </head>
 
-<body class="index-page">
+<body>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="defense-exhibits" class="active">Defense Exhibits</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+  </nav>
+
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Defense Exhibits">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Defense Exhibits</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
-    </a>
+  <div class="content-section">
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
-    </div>
-
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Section -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Defense Exhibits</h1>
+    <div class="case-block">
+      <div class="case-title-bar">
+        <h2>Defense Exhibit Thumbnails</h2>
       </div>
-    </div><!-- End Page Title -->
-
-    <!-- Defense Exhibits Section -->
-    <section id="exhibit-details" class="exhibit-details section">
-
-      <!-- defense exhibits section container -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <!-- defense slider -->
-            <div class="exhibit-slider swiper init-swiper">
-
-              <!-- defense slider + swiper script container -->
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script><!-- end of defense slider + swiper script container -->
-
-              <!-- defense slider + swiper items container -->
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/15fzvM1JrEjXQUlmS-Op6HAmMaZCDlGQs/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/A.jpg" alt="Exhibit A"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1U0XmMm8IbzZNrodUiu4eHigzEuz_XrCw/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/C.jpg" alt="Exhibit C"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1s1BOYOxYD-QYheObwAqxC9m1s-C4Zyhz/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/D.jpg" alt="Exhibit D"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1HyyhbL2euf2uv_SLqLw8gu_ePeul70EY/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/N.jpg" alt="Exhibit N"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1TYYN-jYk_feXkOIWVYFQ0SYAJXYYUVYZ/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/O.jpg" alt="Exhibit O"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1BqViCKpe2osSGScru3aq-BDUjSuLpCbQ/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/P.jpg" alt="Exhibit P"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1V6RPvYAYepU-Ae8B7WAkzifYIlK3Y9PK/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/Q.jpg" alt="Exhibit Q"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1Z0XAHSgo6isGCcxJw0PzaSwNPt-m6CyH/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/R.jpg" alt="Exhibit R"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1FnkrB6jcTVowro2HKWT1r9yCMc38Z64k/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/S.jpg" alt="Exhibit S"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1dgeR2X4ITDxnMIzctblmwuaN3bZ5VwGi/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/T.jpg" alt="Exhibit T"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1WgkNIY4x-F93f9RWJC2UBRyXzrJ7GbtS/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/U.jpg" alt="Exhibit U"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1dgThA2jJ7g6YaHlebFTPGQ_1rTJMIMsY/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/V.jpg" alt="Exhibit V"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1yLQodKNvXBB4Nd5sZCf0-JMRI_mhNcfI/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/X.jpg" alt="Exhibit X"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1qVdMAkfPHgSBJhUWHs9DGhsZUw_VZ3-c/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/Y.jpg" alt="Exhibit Y"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1t_Auub99-50Kf4t7Cq06EdNLgvtYDwwv/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/Z.jpg" alt="Exhibit Z"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1YBR7csHlSnGa9VGafWAJ4kkapRIAm6se/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/BB.jpg" alt="Exhibit BB"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1MP6KtVNIBGdlL70FPhmg9uf-QW6NdVxQ/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/CC.jpg" alt="Exhibit CC"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1tpxGzMUGYI4qMbO5AMaEWMF_8NQM7DXH/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/DD.jpg" alt="Exhibit DD"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1W62gXzoAtPN-Cb2DET4E5dEqaLZu8-c0/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/EE.jpg" alt="Exhibit EE"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/11ow3AsfE8OaqlfnbQLp08UhznJ90KE_w/view?usp=drive_link" target="_blank"></a><img src="assets/defense-exhibits/FF.jpg" alt="Exhibit FF"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1yF74efKctdinX_rIupxzF-xEI2kqlSJB/view?usp=drive_link" target="_blank"></a><img src="assets/defense-exhibits/GG.jpg" alt="Exhibit GG"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1KWuk3jrwIqIBn4KGdZFVwGXYqNJE129O/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/HH.jpg" alt="Exhibit HH"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1aujSbUgVbK8A29sojMdgrvCcFzvjNyUB/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/II.jpg" alt="Exhibit II"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1Qn3nPzp2xduehvsA4t73Z8Gal8CPutxm/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/JJ.jpg" alt="Exhibit JJ"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1K-9tM1fsqAAZtPV2_l8_VeD8q8LSW_Xd/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/KK.jpg" alt="Exhibit KK"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1CrYIKvoXpodxSBiAxbzD8Mxsp4TzEKNe/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/LL.jpg" alt="Exhibit LL"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1Q4wjRpMgLMPDZK74-LmeITzuXu4g60pY/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/MM.jpg" alt="Exhibit MM"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1HqMK-9bXFDBKjHSKNtE_TtSgdZ8osBJh/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/NN.jpg" alt="Exhibit NN"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1Hj4kVfvAGihJG1l_oJYObXNiSvEz3gff/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/OO.jpg" alt="Exhibit OO"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/19HC6vOo67YdrdWa4mYYrM8rvAcW-cs82/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/PP.jpg" alt="Exhibit PP"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1U-6vxoDEmLBWWzvkY-aP-w-TWJUnbckz/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/QQ.jpg" alt="Exhibit QQ"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1ZXpo1CUWkZ-nCayUWfB8PPT1zP1lNxe4/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/RR.jpg" alt="Exhibit RR"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1GiGdx_unbD-FOlvOoJW35EhIiuh4-Pv3/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/SS.jpg" alt="Exhibit SS"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1NelNbyZwDy-nXM9BCNicoI1siehQp8iE/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/TT.jpg" alt="Exhibit TT"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1MCs9Y1d_b3u4hHbstZuqU4-ex7mREkTl/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/VV.jpg" alt="Exhibit VV"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/19NLY03UeodkbQlH4KwFdTyF9R9B_-iHb/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/YY.jpg" alt="Exhibit YY"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1HqSRGk86FypQQjMd1n7Jqi2TcO-h-kv8/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/ZZ.jpg" alt="Exhibit ZZ"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1as8_KNj3HEkCihbZysvceGdL3QiRgVWk/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/AAA.jpg" alt="Exhibit AAA"></a>
-              </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1kqKDG4-jDxtam0OLZy9ySuY8kT6iva-A/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/BBB.jpg" alt="Exhibit BBB"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1EWfecxoQTFwN8bWLQQQbrne-k2057JTU/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/CCC.jpg" alt="Exhibit CCC"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1olDWFYAE4qjrgBymv-zZtD_Szmiqv3Md/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/EEE.jpg" alt="Exhibit EEE"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1PhzFUYsXvnBOKu8qGVfyC-mZF-1ikgKu/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/PPP.jpg" alt="Exhibit FFF"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1iQbmu9r_3rSamfss46L5qpJ2Of7u8X6j/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/GGG.jpg" alt="Exhibit GGG"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1a8izjXQV6o72p5Z2KJ203vFbwYVbcBc1/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/KKK.jpg" alt="Exhibit KKK"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1RAlxzh5zNsG6BgIVxGbpIbkKGV3ZK7mB/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/LLL.jpg" alt="Exhibit LLL"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1-zJNbPQnZKtWTDwQYK9W9SFdzLE-u7rB/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/MMM.jpg" alt="Exhibit MMM"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1XLsDGRox20M4_TGk_FqorJDDG4a_4YjY/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/NNN.jpg" alt="Exhibit NNN"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1aj1b_qHP3TytgLK9pUugRu9uGyvhnr8Q/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/PPP.jpg" alt="Exhibit PPP"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-                <div class="swiper-slide">
-                  <a href="https://drive.google.com/file/d/1QEQwZTnwQZLevfUePgWmVPUkACHN3LFH/view?usp=drive_link" target="_blank"><img src="assets/defense-exhibits/QQQ.jpg" alt="Exhibit QQQ"></a>
-                </div><!-- end of defense slider + swiper item -->
-
-              </div><!-- end of defense slider + swiper items container -->
-              
-              <div class="swiper-pagination">
-              </div>
-            
-            </div><!-- end of defense row slider + swiper script containers -->
-
-          <!-- page links -->
-            <div class="exhibit-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Trial Exhibits</h3>
-              <ul>
-                <li><strong>State PDF Exhibits</strong>: <a href="state-exhibits" target="_blank">here</a>.</li>
-                <li><strong>State video exhibits</strong>: <a href="state-video-exhibits" target="_blank">here</a>.</li>
-                <li><strong>State audio exhibits</strong>: <a href="state-audio-exhibits" target="_blank">here</a>.</li>
-                <li><strong>All pretrial and trial exhibits </strong>: <a href="exhibits" target="_blank">here</a>.</li>
-            </div>
-
-            <!-- direct download links -->
-            <div class="exhibit-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Links to download the exhibits</h2>
-              <p>
-                If you would like to download the exhibits directly, you can find the State Exhibits folder <a href="https://drive.google.com/drive/folders/1dgynfEQ58mRW69JjUMH1Wjko6ZK7sqSV?usp=drive_link" target="_blank">here</a> and the Defense Exhibits folder <a href="https://drive.google.com/drive/folders/1RN0gsC19Ctz8RjfKnhNyJ6HmY65n21c_?usp=drive_link" target="_blank">here</a>.
-              </p>
-            </div>
-
-
-      </div><!-- end of defense exhibits section container -->
-
-    </section><!-- End of Defense Exhibits Section -->
-
-  </main><!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="case-body">
+        <div class="exhibit-grid">
+          <a href="https://drive.google.com/file/d/15fzvM1JrEjXQUlmS-Op6HAmMaZCDlGQs/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/A.jpg" alt="Exhibit A">
+            <div class="exhibit-thumb-label">Exhibit A</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1U0XmMm8IbzZNrodUiu4eHigzEuz_XrCw/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/C.jpg" alt="Exhibit C">
+            <div class="exhibit-thumb-label">Exhibit C</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1s1BOYOxYD-QYheObwAqxC9m1s-C4Zyhz/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/D.jpg" alt="Exhibit D">
+            <div class="exhibit-thumb-label">Exhibit D</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1HyyhbL2euf2uv_SLqLw8gu_ePeul70EY/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/N.jpg" alt="Exhibit N">
+            <div class="exhibit-thumb-label">Exhibit N</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1TYYN-jYk_feXkOIWVYFQ0SYAJXYYUVYZ/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/O.jpg" alt="Exhibit O">
+            <div class="exhibit-thumb-label">Exhibit O</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1BqViCKpe2osSGScru3aq-BDUjSuLpCbQ/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/P.jpg" alt="Exhibit P">
+            <div class="exhibit-thumb-label">Exhibit P</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1V6RPvYAYepU-Ae8B7WAkzifYIlK3Y9PK/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/Q.jpg" alt="Exhibit Q">
+            <div class="exhibit-thumb-label">Exhibit Q</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1Z0XAHSgo6isGCcxJw0PzaSwNPt-m6CyH/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/R.jpg" alt="Exhibit R">
+            <div class="exhibit-thumb-label">Exhibit R</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1FnkrB6jcTVowro2HKWT1r9yCMc38Z64k/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/S.jpg" alt="Exhibit S">
+            <div class="exhibit-thumb-label">Exhibit S</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1dgeR2X4ITDxnMIzctblmwuaN3bZ5VwGi/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/T.jpg" alt="Exhibit T">
+            <div class="exhibit-thumb-label">Exhibit T</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1WgkNIY4x-F93f9RWJC2UBRyXzrJ7GbtS/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/U.jpg" alt="Exhibit U">
+            <div class="exhibit-thumb-label">Exhibit U</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1dgThA2jJ7g6YaHlebFTPGQ_1rTJMIMsY/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/V.jpg" alt="Exhibit V">
+            <div class="exhibit-thumb-label">Exhibit V</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1yLQodKNvXBB4Nd5sZCf0-JMRI_mhNcfI/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/X.jpg" alt="Exhibit X">
+            <div class="exhibit-thumb-label">Exhibit X</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1qVdMAkfPHgSBJhUWHs9DGhsZUw_VZ3-c/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/Y.jpg" alt="Exhibit Y">
+            <div class="exhibit-thumb-label">Exhibit Y</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1t_Auub99-50Kf4t7Cq06EdNLgvtYDwwv/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/Z.jpg" alt="Exhibit Z">
+            <div class="exhibit-thumb-label">Exhibit Z</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1YBR7csHlSnGa9VGafWAJ4kkapRIAm6se/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/BB.jpg" alt="Exhibit BB">
+            <div class="exhibit-thumb-label">Exhibit BB</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1MP6KtVNIBGdlL70FPhmg9uf-QW6NdVxQ/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/CC.jpg" alt="Exhibit CC">
+            <div class="exhibit-thumb-label">Exhibit CC</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1tpxGzMUGYI4qMbO5AMaEWMF_8NQM7DXH/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/DD.jpg" alt="Exhibit DD">
+            <div class="exhibit-thumb-label">Exhibit DD</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1W62gXzoAtPN-Cb2DET4E5dEqaLZu8-c0/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/EE.jpg" alt="Exhibit EE">
+            <div class="exhibit-thumb-label">Exhibit EE</div>
+          </a>
+          <a href="https://drive.google.com/file/d/11ow3AsfE8OaqlfnbQLp08UhznJ90KE_w/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/FF.jpg" alt="Exhibit FF">
+            <div class="exhibit-thumb-label">Exhibit FF</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1yF74efKctdinX_rIupxzF-xEI2kqlSJB/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/GG.jpg" alt="Exhibit GG">
+            <div class="exhibit-thumb-label">Exhibit GG</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1KWuk3jrwIqIBn4KGdZFVwGXYqNJE129O/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/HH.jpg" alt="Exhibit HH">
+            <div class="exhibit-thumb-label">Exhibit HH</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1aujSbUgVbK8A29sojMdgrvCcFzvjNyUB/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/II.jpg" alt="Exhibit II">
+            <div class="exhibit-thumb-label">Exhibit II</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1Qn3nPzp2xduehvsA4t73Z8Gal8CPutxm/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/JJ.jpg" alt="Exhibit JJ">
+            <div class="exhibit-thumb-label">Exhibit JJ</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1K-9tM1fsqAAZtPV2_l8_VeD8q8LSW_Xd/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/KK.jpg" alt="Exhibit KK">
+            <div class="exhibit-thumb-label">Exhibit KK</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1CrYIKvoXpodxSBiAxbzD8Mxsp4TzEKNe/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/LL.jpg" alt="Exhibit LL">
+            <div class="exhibit-thumb-label">Exhibit LL</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1Q4wjRpMgLMPDZK74-LmeITzuXu4g60pY/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/MM.jpg" alt="Exhibit MM">
+            <div class="exhibit-thumb-label">Exhibit MM</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1HqMK-9bXFDBKjHSKNtE_TtSgdZ8osBJh/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/NN.jpg" alt="Exhibit NN">
+            <div class="exhibit-thumb-label">Exhibit NN</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1Hj4kVfvAGihJG1l_oJYObXNiSvEz3gff/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/OO.jpg" alt="Exhibit OO">
+            <div class="exhibit-thumb-label">Exhibit OO</div>
+          </a>
+          <a href="https://drive.google.com/file/d/19HC6vOo67YdrdWa4mYYrM8rvAcW-cs82/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/PP.jpg" alt="Exhibit PP">
+            <div class="exhibit-thumb-label">Exhibit PP</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1U-6vxoDEmLBWWzvkY-aP-w-TWJUnbckz/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/QQ.jpg" alt="Exhibit QQ">
+            <div class="exhibit-thumb-label">Exhibit QQ</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1ZXpo1CUWkZ-nCayUWfB8PPT1zP1lNxe4/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/RR.jpg" alt="Exhibit RR">
+            <div class="exhibit-thumb-label">Exhibit RR</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1GiGdx_unbD-FOlvOoJW35EhIiuh4-Pv3/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/SS.jpg" alt="Exhibit SS">
+            <div class="exhibit-thumb-label">Exhibit SS</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1NelNbyZwDy-nXM9BCNicoI1siehQp8iE/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/TT.jpg" alt="Exhibit TT">
+            <div class="exhibit-thumb-label">Exhibit TT</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1MCs9Y1d_b3u4hHbstZuqU4-ex7mREkTl/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/VV.jpg" alt="Exhibit VV">
+            <div class="exhibit-thumb-label">Exhibit VV</div>
+          </a>
+          <a href="https://drive.google.com/file/d/19NLY03UeodkbQlH4KwFdTyF9R9B_-iHb/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/YY.jpg" alt="Exhibit YY">
+            <div class="exhibit-thumb-label">Exhibit YY</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1HqSRGk86FypQQjMd1n7Jqi2TcO-h-kv8/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/ZZ.jpg" alt="Exhibit ZZ">
+            <div class="exhibit-thumb-label">Exhibit ZZ</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1as8_KNj3HEkCihbZysvceGdL3QiRgVWk/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/AAA.jpg" alt="Exhibit AAA">
+            <div class="exhibit-thumb-label">Exhibit AAA</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1kqKDG4-jDxtam0OLZy9ySuY8kT6iva-A/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/BBB.jpg" alt="Exhibit BBB">
+            <div class="exhibit-thumb-label">Exhibit BBB</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1EWfecxoQTFwN8bWLQQQbrne-k2057JTU/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/CCC.jpg" alt="Exhibit CCC">
+            <div class="exhibit-thumb-label">Exhibit CCC</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1olDWFYAE4qjrgBymv-zZtD_Szmiqv3Md/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/EEE.jpg" alt="Exhibit EEE">
+            <div class="exhibit-thumb-label">Exhibit EEE</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1PhzFUYsXvnBOKu8qGVfyC-mZF-1ikgKu/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/PPP.jpg" alt="Exhibit FFF">
+            <div class="exhibit-thumb-label">Exhibit FFF</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1iQbmu9r_3rSamfss46L5qpJ2Of7u8X6j/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/GGG.jpg" alt="Exhibit GGG">
+            <div class="exhibit-thumb-label">Exhibit GGG</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1a8izjXQV6o72p5Z2KJ203vFbwYVbcBc1/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/KKK.jpg" alt="Exhibit KKK">
+            <div class="exhibit-thumb-label">Exhibit KKK</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1RAlxzh5zNsG6BgIVxGbpIbkKGV3ZK7mB/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/LLL.jpg" alt="Exhibit LLL">
+            <div class="exhibit-thumb-label">Exhibit LLL</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1-zJNbPQnZKtWTDwQYK9W9SFdzLE-u7rB/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/MMM.jpg" alt="Exhibit MMM">
+            <div class="exhibit-thumb-label">Exhibit MMM</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1XLsDGRox20M4_TGk_FqorJDDG4a_4YjY/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/NNN.jpg" alt="Exhibit NNN">
+            <div class="exhibit-thumb-label">Exhibit NNN</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1aj1b_qHP3TytgLK9pUugRu9uGyvhnr8Q/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/PPP.jpg" alt="Exhibit PPP">
+            <div class="exhibit-thumb-label">Exhibit PPP</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1QEQwZTnwQZLevfUePgWmVPUkACHN3LFH/view?usp=drive_link" target="_blank" class="exhibit-thumb">
+            <img src="assets/defense-exhibits/QQQ.jpg" alt="Exhibit QQQ">
+            <div class="exhibit-thumb-label">Exhibit QQQ</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="drive-note">
+        Download folders: <a href="https://drive.google.com/drive/folders/1dgynfEQ58mRW69JjUMH1Wjko6ZK7sqSV?usp=drive_link" target="_blank">State Exhibits</a> &nbsp;&middot;&nbsp; <a href="https://drive.google.com/drive/folders/1RN0gsC19Ctz8RjfKnhNyJ6HmY65n21c_?usp=drive_link" target="_blank">Defense Exhibits</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">𝕏</a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">▶</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
 
 </body>
-
 </html>

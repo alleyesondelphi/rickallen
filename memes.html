@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Required Info -->
-  <title>Memes | IN v. RA</title>
+  <title>Crebin Memes | AEOD</title>
   <meta name="description" content="Welcome to Crebin ✨🦩🦩🦩🦩🦩">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/memes">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Crebin Memes">
   <meta property="og:description" content="Welcome to Crebin ✨🦩🦩🦩🦩🦩">
   <meta property="og:type" content="website">
@@ -15,12 +14,13 @@
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/memes.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="IN v. RA | All Eyes on Delphi">
+  <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Crebin Memes">
   <meta name="twitter:description" content="Welcome to Crebin ✨🦩🦩🦩🦩🦩">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/memes.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
   <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
@@ -30,318 +30,693 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #9b1c1c;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0e0e0f;
+      --carmine:             #7a3535;
+      --ink:                 #0e0e0f;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0e0e0f;
+      --text-body:           #2d2925;
+      --text-label:          #6b6560;
+      --text-muted:          rgba(45, 41, 37, 0.45);
+      --accent:              #9b1c1c;
+      --accent-border:       rgba(155, 28, 28, 0.40);
+      --border-light:        rgba(14, 14, 15, 0.12);
+      --border-mid:          rgba(14, 14, 15, 0.06);
+      --gold:                #b8860b;
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #121212;
+        --surface-card:        #1c1c1c;
+        --surface-elevated:    #242424;
+        --text-heading:        #f2ede6;
+        --text-body:           #cac3b9;
+        --text-label:          #9b8c7e;
+        --text-muted:          rgba(202, 195, 185, 0.90);
+        --accent:              #c23535;
+        --accent-border:       rgba(155, 28, 28, 0.35);
+        --border-light:        rgba(242, 237, 230, 0.08);
+        --border-mid:          rgba(255, 255, 255, 0.03);
+        --carmine:             #cdc6bc;
+        --ink:                 #f2ede6;
+        --peach:               #c23535;
+        --gold:                #d4a520;
+        --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #121212;
+      --surface-card:        #1c1c1c;
+      --surface-elevated:    #242424;
+      --text-heading:        #f2ede6;
+      --text-body:           #cac3b9;
+      --text-label:          #9b8c7e;
+      --text-muted:          rgba(202, 195, 185, 0.90);
+      --accent:              #c23535;
+      --accent-border:       rgba(155, 28, 28, 0.35);
+      --border-light:        rgba(242, 237, 230, 0.08);
+      --border-mid:          rgba(255, 255, 255, 0.03);
+      --carmine:             #cdc6bc;
+      --ink:                 #f2ede6;
+      --peach:               #c23535;
+      --gold:                #d4a520;
+      --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.70) 60%,
+        rgba(0,0,0,0.90) 90%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, 0.68);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case block ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-body {
+      padding: 28px;
+    }
+    /* ── Nav cards ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .media-card {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      border-radius: 0;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .media-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      border-color: var(--accent-border);
+    }
+    .media-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .media-card-label {
+      padding: 10px 14px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-label);
+      background: var(--surface-elevated);
+      border-top: 1px solid var(--border-mid);
+    }
+    /* ── Meme gallery (masonry columns) ── */
+    .meme-gallery {
+      columns: 3;
+      column-gap: 16px;
+    }
+    .meme-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+    }
+    .meme-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* ── Drive link note ── */
+    .drive-note {
+      padding: 16px 28px;
+      font-size: 13px;
+      color: var(--text-body);
+      border-top: 1px solid var(--border-light);
+    }
+    .drive-note a {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .drive-note a:hover { 
+      color: var(--ink); 
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .nav-toggle { display: block; }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; min-height: 340px; 
+      }
+      .masthead-text { 
+        left: 20px; bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .media-grid { 
+        grid-template-columns: 1fr; 
+      }
+      .meme-gallery { 
+        columns: 2; 
+      }
+      .case-body { 
+        padding: 20px 16px; 
+      }
+    }
+    @media (max-width: 480px) {
+      .meme-gallery { columns: 1; }
+    }
+  </style>
+  <style>
+    /* dark mode: gold accents */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .nav-links a.active,
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
+      :root:not([data-theme="light"]) .case-title-bar {
+        border-bottom-color: rgba(242, 237, 230, 0.22);
+      }
+      :root:not([data-theme="light"]) .drive-note {
+        border-top-color: rgba(242, 237, 230, 0.22);
+      }
+      :root:not([data-theme="light"]) .media-card:hover {
+        box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+        border-color: rgba(242, 237, 230, 0.14);
+      }
+    }
+    :root[data-theme="dark"] .nav-links a.active,
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
+    :root[data-theme="dark"] .case-title-bar {
+      border-bottom-color: rgba(242, 237, 230, 0.22);
+    }
+    :root[data-theme="dark"] .drive-note {
+      border-top-color: rgba(242, 237, 230, 0.22);
+    }
+    :root[data-theme="dark"] .media-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+      border-color: rgba(242, 237, 230, 0.14);
+    }
+  </style>
 </head>
 
-<body class="index-page">
+<body>
 
-  <!-- Header Section -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    
-    <!-- side menu toggle -->
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    
-    <!-- side menu logo image -->
-    <div class="profile-img">
-      <img src="assets/img/avi.png" alt="" class="img-fluid rounded-circle">
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="memes" class="active">Memes</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+  </nav>
+
+  <div class="masthead">
+    <img class="masthead-img" src="assets/memes/memes.jpg" alt="Crebin Memes">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Memes 🌈</h1>
     </div>
+  </div>
 
-    <!-- side menu tagline -->
-    <a href="index" class="logo d-flex align-items-center justify-content-center">
-      
-    </a>
+  <div class="content-section">
 
-    <!-- side menu social links -->
-    <div class="social-links text-center">
-      <a href="https://www.x.com/alleyesondelphi" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.youtube.com/alleyesondelphi" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-      <a href="https://www.reddit.com/r/DelphiDocs/comments/1g2q71c/delphidocs_resources_overview/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="reddit" target="_blank"><i class="bi bi-reddit"></i></a>
-    </div>
-
-    <!-- side menu navigation -->
-    <nav id="navmenu" class="navmenu">
-
-      <!-- page links -->
-      <ul>
-        <li><a href="index" class="active" target="_blank"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="trial-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Trial Docket</a></li>
-        <li><a href="exhibits" target="_blank"><i class="bi bi-collection navicon"></i>Exhibits</a></li>
-        <li><a href="transcripts" target="_blank"><i class="bi bi-text-paragraph navicon"></i> Court Transcripts</a></li>
-        <li><a href="appellate-docket" target="_blank"><i class="bi bi-list-ul navicon"></i> Appellate Docket</a></li>
-        <li><a href="timeline" target="_blank"><i class="bi bi-list-ul navicon"></i> Timeline</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank"><i class="bi bi-menu-button navicon"></i> Google Drive</a></li>
-      </ul>
-        
-    </nav><!-- end of side menu navigation -->
-
-  </header><!-- End of Header Secion -->
-
-  <!-- Main Section -->
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Crebin</h1>
+    <div class="case-block">
+      <div class="case-title-bar">
+        <h2>🌈 Welcome to Crebin 🌈</h2>
       </div>
-    </div><!-- End Page Title -->
+      <div class="case-body">
+        <div class="media-grid">
+          <a href="https://drive.google.com/drive/folders/1MWROWhDgvMkd52N2eqjvPw1_c9cPK3uv?usp=drive_link" target="_blank" class="media-card">
+            <img src="assets/gifs/crebin-folder.gif" alt="Crebin Drive Folder">
+            <div class="media-card-label">Drive Folder</div>
+          </a>
+          <a href="gifs" class="media-card">
+            <img src="assets/gifs/gifs.gif" alt="Gifs">
+            <div class="media-card-label">Gifs</div>
+          </a>
+          <a href="mp4s" class="media-card">
+            <img src="assets/gifs/mp4s.gif" alt="MP4s">
+            <div class="media-card-label">MP4s</div>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    <!-- memes wrapper -->
-    <div id="wrapper">
+    <div class="case-block">
+      <div class="case-title-bar">
+        <h2>Meme Gallery</h2>
+      </div>
+      <div class="case-body">
+        <div class="meme-gallery">
+          <div class="meme-item"><img src="assets/memes/A-sports-beat-reporter.jpg" alt="A sports beat reporter"></div>
+          <div class="meme-item"><img src="assets/memes/Admit-the-sketches-are-not-Richard-Allen.jpg" alt="Admit the sketches are not Richard Allen"></div>
+          <div class="meme-item"><img src="assets/memes/Andy-Baldwin-askin-the-State-for-missing-evidence.jpg" alt="Andy Baldwin askin the State for missing evidence"></div>
+          <div class="meme-item"><img src="assets/memes/Ang-Money.jpg" alt="Ang Money"></div>
+          <div class="meme-item"><img src="assets/memes/Angry-Mingo.jpg" alt="Angry Mingo"></div>
+          <div class="meme-item"><img src="assets/memes/Asshole.jpg" alt="Asshole"></div>
+          <div class="meme-item"><img src="assets/memes/Banana-G.jpg" alt="Banana G"></div>
+          <div class="meme-item"><img src="assets/memes/Beware-of-Doug.jpg" alt="Beware of Doug"></div>
+          <div class="meme-item"><img src="assets/memes/Beyond-parody.jpg" alt="Beyond parody"></div>
+          <div class="meme-item"><img src="assets/memes/BFFs-4-Lyfe-in-Crebin.jpg" alt="BFFs 4 Lyfe in Crebin"></div>
+          <div class="meme-item"><img src="assets/memes/Big-Jer-be-like.jpg" alt="Big Jer be like"></div>
+          <div class="meme-item"><img src="assets/memes/Big-Jer.jpg" alt="Big Jer"></div>
+          <div class="meme-item"><img src="assets/memes/Bob-Motta-I-am-once-again-asking-you-to-attack-the-timeline.jpg" alt="Bob Motta: I am once again asking you to attack the timeline"></div>
+          <div class="meme-item"><img src="assets/memes/Bob-was-right.jpg" alt="Bob was right"></div>
+          <div class="meme-item"><img src="assets/memes/Bradley.jpg" alt="Bradley"></div>
+          <div class="meme-item"><img src="assets/memes/Bridge-Guy-sketches-were-framed.jpg" alt="Bridge Guy sketches were framed"></div>
+          <div class="meme-item"><img src="assets/memes/Bullshit-Dr-and-Shank-St.jpg" alt="Bullshit Drive and Shank Street"></div>
+          <div class="meme-item"><img src="assets/memes/But-he-confessed.jpg" alt="But he confessed"></div>
+          <div class="meme-item"><img src="assets/memes/Carter-snake-ass.jpg" alt="Carter snake ass"></div>
+          <div class="meme-item"><img src="assets/memes/Coffindaffy-template.jpg" alt="Coffindaffy template"></div>
+          <div class="meme-item"><img src="assets/memes/Crebin-bat-signal.jpg" alt="Crebin bat signal"></div>
+          <div class="meme-item"><img src="assets/memes/Crebin.jpg" alt="Crebin"></div>
+          <div class="meme-item"><img src="assets/memes/Cut-the-rhetoric-Doug-have-a-seat.jpg" alt="Cut the rhetoric Doug, have a seat"></div>
+          <div class="meme-item"><img src="assets/memes/DB-are-you-confused.jpg" alt="DB are you confused?"></div>
+          <div class="meme-item"><img src="assets/memes/DB-go-fund-me.png" alt="DB's Gofundme"></div>
+          <div class="meme-item"><img src="assets/memes/DB-is-there-no-one-you-won't-simp-for.jpg" alt="DB is there no one you won't simp for?"></div>
+          <div class="meme-item"><img src="assets/memes/DB-Netflix-Cover-Photo.png" alt="DB's Netflix cover photo"></div>
+          <div class="meme-item"><img src="assets/memes/DB-you-literally-sent-me-LISK-and-said-look-at-this-compared-to-Delphi.jpg" alt="DB you literally sent me LISK and said look at this compared to Delphi"></div>
+          <div class="meme-item"><img src="assets/memes/Debate-pervert-fallacy.jpg" alt="Debate pervert fallacy"></div>
+          <div class="meme-item"><img src="assets/memes/Defense-attacking-the-timeline.jpg" alt="Defense attacking the timeline"></div>
+          <div class="meme-item"><img src="assets/memes/Delphi-Cover-Up.jpg" alt="Delphi cover-up"></div>
+          <div class="meme-item"><img src="assets/memes/Dicholas.jpg" alt="Dicholas"></div>
+          <div class="meme-item"><img src="assets/memes/Did-Kathy-find-that-tip-sheet-we-talked-about.jpg" alt="Did Kathy find that tip sheet we talked about?"></div>
+          <div class="meme-item"><img src="assets/memes/Dipshit-1-and-Dipshit-2.jpg" alt="Dipshit 1 and Dipshit 2"></div>
+          <div class="meme-item"><img src="assets/memes/Doug-crawlin-over-hot-shards-of-glass.jpg" alt="Doug crawlin over hot shards of glass"></div>
+          <div class="meme-item"><img src="assets/memes/Dumb-shit-flow-chart.jpg" alt="Dumbshit flow chart"></div>
+          <div class="meme-item"><img src="assets/memes/Everywhere-I go-I-see-his-face.jpg" alt="Everywhere I go, I see his face"></div>
+          <div class="meme-item"><img src="assets/memes/Fien-Rong.jpg" alt="Fien's Rong tank from PostPunkMama"></div>
+          <div class="meme-item"><img src="assets/memes/Free-Chloe.jpg" alt="#FreeChloe"></div>
+          <div class="meme-item"><img src="assets/memes/Fuck-that-timeline-Motta-out.jpg" alt="Fuck that timeline. Motta out."></div>
+          <div class="meme-item"><img src="assets/memes/Fucking-nailed-it.jpg" alt="Fucking nailed it."></div>
+          <div class="meme-item"><img src="assets/memes/Gays-for-due-process.jpg" alt="Gays for Due Process"></div>
+          <div class="meme-item"><img src="assets/memes/Gray-knows-whats-up-u-Rick-Allen-lovers.jpg" alt="Gray knows what's up u Rick Allen lovers"></div>
+          <div class="meme-item"><img src="assets/memes/Grinch-Sheet.jpg" alt="Grinch Sheet"></div>
+          <div class="meme-item"><img src="assets/memes/Hammy-bc-Paula-noticed-it.jpg" alt="Hammy, bc Paula noticed it."></div>
+          <div class="meme-item"><img src="assets/memes/I-believe-in-a-God-of-justice-and-righteousness" alt="I believe in a God of justice and righteousness"></div>
+          <div class="meme-item"><img src="assets/memes/Have-you-seen-the-shack.jpg" alt="Have you seen the shack?"></div>
+          <div class="meme-item"><img src="assets/memes/He-was-in-such-a-rush-he-forgot-to-leave-his-DNA.jpg" alt="He was in such a rush he forgot to leave his DNA"></div>
+          <div class="meme-item"><img src="assets/memes/Hell-is-empty-the-devils-are-here.jpg" alt="Hell is empty, all the devils are here."></div>
+          <div class="meme-item"><img src="assets/memes/Holeman-is-lying.jpg" alt="Holeman is lying"></div>
+          <div class="meme-item"><img src="assets/memes/Holy-Fuck.jpg" alt="Holy Fck. The worst timeline."></div>
+          <div class="meme-item"><img src="assets/memes/I-believe-in-YT-supremacy.jpg" alt="I believe in YouTube supremacy"></div>
+          <div class="meme-item"><img src="assets/memes/I-dont-do-a-court-in-your-bedroom-Dont-do-a-sleep-in-my-courtroom.jpg" alt="I don't do a court in your bedroom. Don't do a sleep in my courtroom."></div>
+          <div class="meme-item"><img src="assets/memes/I-feel-bad-for-you.jpg" alt="Prof: I feel bad for you. Andy: I don't think about you at all."></div>
+          <div class="meme-item"><img src="assets/memes/I-have-a-Kbar-in-my-Amazon-cart.jpg" alt="I have a Kbar in my Amazon cart"></div>
+          <div class="meme-item"><img src="assets/memes/I-heard-Camper-is-pro-pros.png" alt="I heard camper is pro-pros"></div>
+          <div class="meme-item"><img src="assets/memes/If-you-don't-like-our-justice-system.jpg" alt="If you don't like our justice system, you can get out!"></div>
+          <div class="meme-item"><img src="assets/memes/Im-a-human-lie-detector.jpg" alt="I'm a human lie detector"></div>
+          <div class="meme-item"><img src="assets/memes/Im-a-Richard-Allen-lover-too.jpg" alt="I'm a Richard Allen lover too"></div>
+          <div class="meme-item"><img src="assets/memes/I-am-a-whole-ass-adult.jpg" alt="I am a whole ass adult"></div>
+          <div class="meme-item"><img src="assets/memes/IMHO-and-in-order-to-get-a-fair-hearing.jpg" alt="IMHO...And in order to get a fair hearing"></div>
+          <div class="meme-item"><img src="assets/memes/Interviews-down-the-blackholeman.png" alt="Interviews down the blackholeman"></div>
+          <div class="meme-item"><img src="assets/memes/Iraqi-war-vet.jpg" alt="Anthony Greeno: Iraqi war vet"></div>
+          <div class="meme-item"><img src="assets/memes/Is-this-crazy-old-lady-bald.jpg" alt="Torsoul: Is this crazy, old lady bald?"></div>
+          <div class="meme-item"><img src="assets/memes/Is-this-McLelands-case.png" alt="Is this McLeland's case?"></div>
+          <div class="meme-item"><img src="assets/memes/Is-this-violence.jpg" alt="Prof &amp; Adrienne: Is satire violence?"></div>
+          <div class="meme-item"><img src="assets/memes/IVE-ACQUIRED-SCREENSHOTS-OF-PEOPLE-SHITPOSTING-ONLINE.jpg" alt="I've acquired screenshots of people shitposting online."></div>
+          <div class="meme-item"><img src="assets/memes/Jerry-Holeman-blood-gang-sign.jpg" alt="Jerry Holeman blood gang sign"></div>
+          <div class="meme-item"><img src="assets/memes/Jerry-Holeman-is-not-a-liar.jpg" alt="Jerry Holeman, on fire, is not a liar."></div>
+          <div class="meme-item"><img src="assets/memes/Jerry-is-on-the-Ogre-spectrum.png" alt="Jerry is on the Ogre spectrum"></div>
+          <div class="meme-item"><img src="assets/memes/Solid-persons-of-interest-in-Flora-fatal-fire.jpg" alt="Jerry Holeman: Solid person of interest in the Flora Fire"></div>
+          <div class="meme-item"><img src="assets/memes/JLR-Holeman.jpg" alt="JLR showing his viewers a picture of Jerry Holeman"></div>
+          <div class="meme-item"><img src="assets/memes/JOURNALISM.jpg" alt="Andy Baldwin: JOURNALISM."></div>
+          <div class="meme-item"><img src="assets/memes/Judgey-and-Woman-tude.jpg" alt="Judgey and Woman's tude"></div>
+          <div class="meme-item"><img src="assets/memes/Judgey-bat-signal.jpg" alt="Judgey bat signal"></div>
+          <div class="meme-item"><img src="assets/memes/Justice-for-the-psychic.png" alt="Chelsea: Justice for the psychic."></div>
+          <div class="meme-item"><img src="assets/memes/Kathy-Shank-brought-a-tip-that-was-cleared.jpg" alt="Kathy Shank brought a tip that was cleared"></div>
+          <div class="meme-item"><img src="assets/memes/Kek-in.jpg" alt="Kek Kevin"></div>
+          <div class="meme-item"><img src="assets/memes/Leave-these-women-alone-I-MRC-are-the-unhinged.png" alt="Leave these women alone, I, MRC are the unhinged"></div>
+          <div class="meme-item"><img src="assets/memes/Lets-leave-Fien-alone.jpg" alt="Let's leave Fien alone."></div>
+          <div class="meme-item"><img src="assets/memes/Line-cutters.jpg" alt="Line cutters"></div>
+          <div class="meme-item"><img src="assets/memes/Link-LET-ME-ON.jpg" alt="Ausbrooke: Link LET ME ON!"></div>
+          <div class="meme-item"><img src="assets/memes/LuiBG.jpg" alt="LuiBG"></div>
+          <div class="meme-item"><img src="assets/memes/Magic-bullet.jpg" alt="Bridge Guy behind Abby ejects magic bullet"></div>
+          <div class="meme-item"><img src="assets/memes/Max-Baker.jpg" alt="Max Baker to Nick McLeland: And you could have not objected."></div>
+          <div class="meme-item"><img src="assets/memes/Max-if-youre-watching-marry-me.jpg" alt="Woman: Max if you're watching marry me"></div>
+          <div class="meme-item"><img src="assets/memes/McLeland-when-he-thinks-he-did-a-clap-back-to-Cronic.jpg" alt="McLeland, when he thinks he did a clapback to Cronic."></div>
+          <div class="meme-item"><img src="assets/memes/Me-looking-for-how-the-fucks.jpg" alt="Me looking for the how-the-fucks"></div>
+          <div class="meme-item"><img src="assets/memes/Me-looking-for-the-Apple-forum.jpg" alt="Me looking for the Apple forum"></div>
+          <div class="meme-item"><img src="assets/memes/Merrily-on-high.jpg" alt="Dick: Merrily on high"></div>
+          <div class="meme-item"><img src="assets/memes/Mission-Accomplished.jpg" alt="Dick: Mission Accomplished"></div>
+          <div class="meme-item"><img src="assets/memes/Murder-Sheet-book-summary.jpg" alt="Murder Sheet book summary"></div>
+          <div class="meme-item"><img src="assets/memes/My-favorite-Gray-line-is.jpg" alt="My favorite Gray line is: We are currently at zero."></div>
+          <div class="meme-item"><img src="assets/memes/My-mom-understands-how-much-I-hate-Murder-Sheet..jpg" alt="My mom understands how much I hate Murder Sheet."></div>
+          <div class="meme-item"><img src="assets/memes/My-Research.jpg" alt="Tom Webster: My Research: [white van]"></div>
+          <div class="meme-item"><img src="assets/memes/Nancy-on-location.jpg" alt="Nancy Grace on location"></div>
+          <div class="meme-item"><img src="assets/memes/Ned-Slanders.jpg" alt="Nick aka Ned Slanders"></div>
+          <div class="meme-item"><img src="assets/memes/New-suspect-racking-gun.jpg" alt="New suspect racking gun"></div>
+          <div class="meme-item"><img src="assets/memes/Nick-McLeland-giving-his-opening-statement.jpg" alt="Nick McLeland giving his opening statement"></div>
+          <div class="meme-item"><img src="assets/memes/Nicks-hair-plugs-wrestlin-MullinS.jpg" alt="Nick's hairplugs wrestlin MullinS"></div>
+          <div class="meme-item"><img src="assets/memes/No-cameras-no-wonder.jpg" alt="No cameras, no wonder!"></div>
+          <div class="meme-item"><img src="assets/memes/Objection-to-what-his-mother-used-to-do.jpg" alt="Objection to what his mother used to do"></div>
+          <div class="meme-item"><img src="assets/memes/Oh-I-didnt-know-pings-were-reliable.jpg" alt="Judgey: Oh I didn't know pings were reliable ??"></div>
+          <div class="meme-item"><img src="assets/memes/Omg Tim look I found a team photo of the jurrs after lazer tag! (trust me).jpg" alt="Omg Tim look I found a team photo of the jurrs after lazer tag! (trust me)"></div>
+          <div class="meme-item"><img src="assets/memes/Omg-look-its-Gull-and-a-juror-at-a-Jason-bbq.jpg" alt="Omg look it's Gull and a juror at a Jason BBQ"></div>
+          <div class="meme-item"><img src="assets/memes/Oops-I-didnt-mean-to-lose-77-days-of-interviews.jpg" alt="Oops I didn't mean to lose 77 days of interviews."></div>
+          <div class="meme-item"><img src="assets/memes/Orion-tips.jpg" alt="Kathy Shank. Orion tips. Richard Allen cleared. 2+2=4."></div>
+          <div class="meme-item"><img src="assets/memes/Out-on-the-town-having-the-time-of-my-life-with-the-Delphi-juror.jpg" alt="Tim Froehling: Out on the town having the time of my life with the Delphi juror."></div>
+          <div class="meme-item"><img src="assets/memes/Patreon-Saint-of-shit-talkin-Jerry-Holeman.jpg" alt="Baldwin: Patreon Saint of shit-talkin Jerry Holeman."></div>
+          <div class="meme-item"><img src="assets/memes/people-on-here-will-tweet-anything.jpg" alt="People on here will tweet anything."></div>
+          <div class="meme-item"><img src="assets/memes/Permission-to-call-the-jury-chat-your-honor.png" alt="Permission to call the jury Chat your honor."></div>
+          <div class="meme-item"><img src="assets/memes/pov-holeman-before-saying-hes-just-matching-my-energy.jpg" alt="POV: Holeman before saying he's just matching my energy."></div>
+          <div class="meme-item"><img src="assets/memes/Preorder-my-book.png" alt="The Dark Side of The Murder Sheet, preorder my book."></div>
+          <div class="meme-item"><img src="assets/memes/Probable-Cause-granted.jpg" alt="Probable Cause granted"></div>
+          <div class="meme-item"><img src="assets/memes/Richard-Allen-is-innocent.jpg" alt="Turtleboy: Richard Allen is innocent"></div>
+          <div class="meme-item"><img src="assets/memes/Rick-was-a-Farmacist.jpg" alt="Rick obviously did it. He painted the F in libbys blood because he was a Farmacist."></div>
+          <div class="meme-item"><img src="assets/memes/Richard-Allens-Google-searches.jpg" alt="Richard Allen's Google searches"></div>
+          <div class="meme-item"><img src="assets/memes/RIP-Prof.jpg" alt="RIP Prof"></div>
+          <div class="meme-item"><img src="assets/memes/Rong.jpg" alt="Rong"></div>
+          <div class="meme-item"><img src="assets/memes/Ruhhlistic.png" alt="Jerry Holeman: This is ruhhlistic."></div>
+          <div class="meme-item"><img src="assets/memes/schizuationship.jpg" alt="schizuationship"></div>
+          <div class="meme-item"><img src="assets/memes/SCOIN-reinstates-Defense.jpg" alt="SCOIN reinstates Defense"></div>
+          <div class="meme-item"><img src="assets/memes/Self-promoter-a-man-of-many-tales.jpg" alt="Anthony Greeno: Self-promoter, man of many tales"></div>
+          <div class="meme-item"><img src="assets/memes/she-was-throwing-up-signs-left-and-right-though.jpg" alt="She was throwing up signs left and right though."></div>
+          <div class="meme-item"><img src="assets/memes/Shocked-Vinnie.png" alt="Shocked Vinnie"></div>
+          <div class="meme-item"><img src="assets/memes/Should-I-bully-CJ-more.jpg" alt="DB: Should I bully CJ more?"></div>
+          <div class="meme-item"><img src="assets/memes/So-you-agree-Rick-looks-like-a-victim.jpg" alt="So you agree, Rick looks like a victim"></div>
+          <div class="meme-item"><img src="assets/memes/Srs-question-did-I-kill-the-girls-Y-or-N.png" alt="Did I kill the girls? Y or N."></div>
+          <div class="meme-item"><img src="assets/memes/SRSLY-WHO-IS-BEHIND-ALL-THE-THREATS-AND-NARRATIVE-CONTROL.jpg" alt="Prof, dipshit lunatic."></div>
+          <div class="meme-item"><img src="assets/memes/Straight-Outta-Delphi.jpg" alt="Straight Outta Delphi"></div>
+          <div class="meme-item"><img src="assets/memes/Straight-to-Crebin.jpg" alt="Straight to Crebin"></div>
+          <div class="meme-item"><img src="assets/memes/Thank-you-my-son.png" alt="Elvis Fields: Thank you my son"></div>
+          <div class="meme-item"><img src="assets/memes/thats-not-my-job.jpg" alt="Karen Read foreman: That's not my job."></div>
+          <div class="meme-item"><img src="assets/memes/The-blue-ribbon-PIG-AWARD-goes-to.jpg" alt="The Blue Ribbon PIG AWARD goes to Jerry Holeman."></div>
+          <div class="meme-item"><img src="assets/memes/The-Delphi-Dirt.jpg" alt="The Delphi Dirt"></div>
+          <div class="meme-item"><img src="assets/memes/The-Ground.png" alt="The Ground grift"></div>
+          <div class="meme-item"><img src="assets/memes/The-Shack-a-Disney-fairytale.jpg" alt="The Shack, a Disney fairytale."></div>
+          <div class="meme-item"><img src="assets/memes/The-State-deserves-a-fair-trial-too.jpg" alt="Dicholas: The State deserves a fair trial too."></div>
+          <div class="meme-item"><img src="assets/memes/The-strategy-is-to-attack-the-timeline.jpg" alt="The strategy is to attack the timeline. Always has been."></div>
+          <div class="meme-item"><img src="assets/memes/The-tip.jpg" alt="The tip: Richard Allen Whiteman"></div>
+          <div class="meme-item"><img src="assets/memes/They-are-doing-things-like-a-3rd-world-banana-republic.jpg" alt="They are doing things like a third world Banana Republic."></div>
+          <div class="meme-item"><img src="assets/memes/They-made-me-Shrek-on-the-internet.png" alt="Jerry: They made me Shrek on the internet."></div>
+          <div class="meme-item"><img src="assets/memes/This-could-be-any-one-of-us.png" alt="This could be any one of us."></div>
+          <div class="meme-item"><img src="assets/memes/This-is-NOT-Dr-Monica-Wala" alt="This is NOT Dr. Monica Wala"></div>
+          <div class="meme-item"><img src="assets/memes/This-long-no-more-no-less.jpg" alt="Judge Gull: This long. No more, no less."></div>
+          <div class="meme-item"><img src="assets/memes/This-trial-is-about-3-things.jpg" alt="This trial is about three things: a murder, a man, and a miscarriage of justice."></div>
+          <div class="meme-item"><img src="assets/memes/Tiny-sized-man-throws-hissy-fit.jpg" alt="Tiny-sized man throws hissy fit"></div>
+          <div class="meme-item"><img src="assets/memes/Tobe-glow-up.jpg" alt="Tobe glow up"></div>
+          <div class="meme-item"><img src="assets/memes/Tomorrow-destroy-the-evidence.jpg" alt="Millhouse: Tomorrow &mdash; Destroy the evidence"></div>
+          <div class="meme-item"><img src="assets/memes/Trust-me-Tim.png" alt="Trust me Tim, dim."></div>
+          <div class="meme-item"><img src="assets/memes/Types-of-headaches.jpg" alt="Types of headaches: migraine, hypertension, stress, Judge Gull."></div>
+          <div class="meme-item"><img src="assets/memes/Ummmmmm.jpg" alt="Ummmmmm....."></div>
+          <div class="meme-item"><img src="assets/memes/We-thought-meth-might-go-away&quot;.jpg" alt="We thought meth might go away, Jerry Holeman said."></div>
+          <div class="meme-item"><img src="assets/memes/We-checked-no-heaven-for-bootlickers.jpg" alt="We checked, no heaven for bootlickers."></div>
+          <div class="meme-item"><img src="assets/memes/We-learn-all-our-gang-shit-from-the-government.jpg" alt="We learn all our gang shit from the government."></div>
+          <div class="meme-item"><img src="assets/memes/Were-from-Indianner.png" alt="We're from Indianerr"></div>
+          <div class="meme-item"><img src="assets/memes/When-I-was-younger-I-thought-cops-were.jpg" alt="When I was younger I thought cops were legally allowed to commit crimes"></div>
+          <div class="meme-item"><img src="assets/memes/Wheres-the-affidavit-NICK-flamingo.jpg" alt="Where's the affidavit for your claims NICK (flamingo)"></div>
+          <div class="meme-item"><img src="assets/memes/Wheres-the-affidavit-NICK-goose.jpg" alt="Where's the affidavit for your claims NICK (goose)"></div>
+          <div class="meme-item"><img src="assets/memes/Wheres-Turco.jpg" alt="Where's Turco?"></div>
+          <div class="meme-item"><img src="assets/memes/Who-among-us.jpg" alt="Who among us hasn't forgotten to check the Lost &amp; unFound"></div>
+          <div class="meme-item"><img src="assets/memes/Who-bonked-ya-Nick.jpg" alt="Who bonked ya Nick?"></div>
+          <div class="meme-item"><img src="assets/memes/Who-wore-it-better.jpg" alt="Who wore it better"></div>
+          <div class="meme-item"><img src="assets/memes/Woman-and-Judgey.jpg" alt="Woman and Judgey"></div>
+          <div class="meme-item"><img src="assets/memes/Woman-doin-a-folks-we-got-him.png" alt="Woman doin a folks, we got him."></div>
+          <div class="meme-item"><img src="assets/memes/Woman-stop-bullying-DB.jpg" alt="Woman stop bullying DB"></div>
+          <div class="meme-item"><img src="assets/memes/Yeah-they-keep-all-stock-ticker-views-usage-for-10-years-for-all-stock-ticker-websites-ever.png" alt="Yeah they keep all stock ticker view and usage for 10 years for all stock ticker websites ever."></div>
+          <div class="meme-item"><img src="assets/memes/You-know-Im-something-of-a-tool-marking-expert-myself.jpg" alt="You know I'm something of a tool marking expert myself"></div>
+          <div class="meme-item"><img src="assets/memes/You-know-what-they-say-about-a-big-desk.jpg" alt="You know what they say about a big desk..."></div>
+          <div class="meme-item"><img src="assets/memes/Youre-fucking guilty-and-Im-going-to-prove-it.jpg" alt="You're fucking guilty and I'm gonna prove it."></div>
+        </div>
+      </div>
+      <div class="drive-note">
+        Direct link to Google Drive Memes folder: <a href="https://drive.google.com/drive/folders/1QqSNgmTgjFxrMAVFakXWGzBTeHO76LQJ?usp=drive_link" target="_blank">open folder</a>
+      </div>
+    </div>
 
-      <!-- Memes Section -->
-      <section id="page-section" class="page-section section">
+  </div>
 
-        <!-- Section Title -->
-        <div class="container section-title">
-          
-          <!-- meme container -->
-          <div class="crebin embed-section">
-            <h2>🌈 Welcome to Crebin 🌈</h2>
-              <p><a href="https://drive.google.com/drive/folders/1MWROWhDgvMkd52N2eqjvPw1_c9cPK3uv?usp=drive_link" target="_blank"><img class="gif" src="assets/gifs/crebin-folder.gif" /></a></p>
-              <p><a href="gifs" target="_blank"><img class="gif" src="assets/gifs/gifs.gif" /></a></p>
-              <p><a href="mp4s" target="_blank"><img class="gif" src="assets/gifs/mp4s.gif" /></a></p>
-          
-                <!-- nested meme container -->
-                <div id="memes">
-                <h2>Memes</h2>
-                  
-                  <!-- row 1 -->
-                  <div class="row">
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">𝕏</a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">▶</a>
+    </div>
+  </footer>
 
-                    <!-- column 1 -->
-                    <div class="column">
-                      <img src="assets/memes/A-sports-beat-reporter.jpg" alt="A sports beat reporter"/>
-                      <img src="assets/memes/Admit-the-sketches-are-not-Richard-Allen.jpg" alt="Admit the sketches are not Richard Allen"/>
-                      <img src="assets/memes/Andy-Baldwin-askin-the-State-for-missing-evidence.jpg" alt="Andy Baldwin askin the State for missing evidence"/>
-                      <img src="assets/memes/Ang-Money.jpg" alt="Ang Money"/>
-                      <img src="assets/memes/Angry-Mingo.jpg" alt="Angry Mingo"/>
-                      <img src="assets/memes/Asshole.jpg" alt="Asshole"/>
-                      <img src="assets/memes/Banana-G.jpg" alt="Banana G"/>
-                      <img src="assets/memes/Beware-of-Doug.jpg" alt="Beware of Doug"/>
-                      <img src="assets/memes/Beyond-parody.jpg" alt="Beyond parody"/>
-                      <img src="assets/memes/BFFs-4-Lyfe-in-Crebin.jpg" alt="BFFs 4 Lyfe in Crebin"/>
-                      <img src="assets/memes/Big-Jer-be-like.jpg" alt="Big Jer be like"/>
-                      <img src="assets/memes/Big-Jer.jpg" alt="Big Jer"/>
-                      <img src="assets/memes/Bob-Motta-I-am-once-again-asking-you-to-attack-the-timeline.jpg" alt="Bob Motta: I am once again asking you to attack the timeline"/>
-                      <img src="assets/memes/Bob-was-right.jpg" alt="Bob was right"/>
-                      <img src="assets/memes/Bradley.jpg" alt="Bradley"/>
-                      <img src="assets/memes/Bridge-Guy-sketches-were-framed.jpg" alt="Bridge Guy sketches were framed"/>                      
-                      <img src="assets/memes/Bullshit-Dr-and-Shank-St.jpg" alt="Bullshit Drive and Shank Street"/>
-                      <img src="assets/memes/But-he-confessed.jpg" alt="But he confessed"/>
-                      <img src="assets/memes/Carter-snake-ass.jpg" alt="Carter snake ass"/>
-                      <img src="assets/memes/Coffindaffy-template.jpg" alt="Coffindaffy template"/>                      
-                      <img src="assets/memes/Crebin-bat-signal.jpg" alt="Crebin bat signal"/>
-                      <img src="assets/memes/Crebin.jpg" alt="Crebin jpeg"/>
-                      <img src="assets/memes/Cut-the-rhetoric-Doug-have-a-seat.jpg" alt="Cut the rhetoric Doug, have a seat"/>
-                      <img src="assets/memes/DB-are-you-confused.jpg" alt="DB are you confused?"/>                      
-                      <img src="assets/memes/DB-go-fund-me.png" alt="DB's Gofundme"/>
-                      <img src="assets/memes/DB-is-there-no-one-you-won't-simp-for.jpg" alt="DB is there no one you won't simp for?"/>
-                      <img src="assets/memes/DB-Netflix-Cover-Photo.png" alt="DB's Netflix cover photo"/>
-                      <img src="assets/memes/DB-you-literally-sent-me-LISK-and-said-look-at-this-compared-to-Delphi.jpg" alt="DB you literally sent me LISK and said look at this compared to Delphi"/>
-                      <img src="assets/memes/Debate-pervert-fallacy.jpg" alt="debate pervert fallacy"/>
-                      <img src="assets/memes/Defense-attacking-the-timeline.jpg" alt="Defense attacking the timeline"/>
-                      <img src="assets/memes/Delphi-Cover-Up.jpg" alt="Delphi cover-up"/>
-                      <img src="assets/memes/Dicholas.jpg" alt="Dicholas"/>                      
-                      <img src="assets/memes/Did-Kathy-find-that-tip-sheet-we-talked-about.jpg" alt="Did Kathy find that tip sheet we talked about?"/>
-                      <img src="assets/memes/Dipshit-1-and-Dipshit-2.jpg" alt="Dipshit 1 and Dipshit 2"/>
-                      <img src="assets/memes/Doug-crawlin-over-hot-shards-of-glass.jpg" alt="Doug crawlin over hot shards of glass"/>
-                      <img src="assets/memes/Dumb-shit-flow-chart.jpg" alt="Dumbshit flow chart"/>                      
-                      <img src="assets/memes/Everywhere-I go-I-see-his-face.jpg" alt="Everywhere I go, I see his face"/>
-                      <img src="assets/memes/Fien-Rong.jpg" alt="Fien's Rong tank from PostPunkMama"/>
-                      <img src="assets/memes/Free-Chloe.jpg" alt="#FreeChloe"/>                      
-                      <img src="assets/memes/Fuck-that-timeline-Motta-out.jpg" alt="Fuck that timeline. Motta out."/>
-                      <img src="assets/memes/Fucking-nailed-it.jpg" alt="Fucking nailed it."/>
-                      <img src="assets/memes/Gays-for-due-process.jpg" alt="Gays for Due Process"/>
-                      <img src="assets/memes/Gray-knows-whats-up-u-Rick-Allen-lovers.jpg" alt="Gray knows what's up u Rick Allen lovers"/>                      
-                      <img src="assets/memes/Grinch-Sheet.jpg" alt="Grinch Sheet"/>
-                      <img src="assets/memes/Hammy-bc-Paula-noticed-it.jpg" alt="Hammy, bc Paula noticed it."/>
-                      <img src="assets/memes/I-believe-in-a-God-of-justice-and-righteousness" alt="I believe in a God of justice and righteousness"/>                      
-                      <img src="assets/memes/Have-you-seen-the-shack.jpg" alt="Have you seen the shack?" /> 
-                      <img src="assets/memes/He-was-in-such-a-rush-he-forgot-to-leave-his-DNA.jpg" alt="He was in such a rush he forgot to leave his DNA" /> 
-                      <img src="assets/memes/Hell-is-empty-the-devils-are-here.jpg" alt="Hell is empty, all the devils are here." /> 
-                      <img src="assets/memes/Holeman-is-lying.jpg" alt="Holeman is lying" /> 
-                      <img src="assets/memes/Holy-Fuck.jpg" alt="Holy Fck. The worst timeline." />
-                      <img src="assets/memes/I-believe-in-YT-supremacy.jpg" alt="I believe in YouTube supremacy" /> 
-                      <img src="assets/memes/I-dont-do-a-court-in-your-bedroom-Dont-do-a-sleep-in-my-courtroom.jpg" alt="I don't do a court in your bedroom. Don't do a sleep in my courtroom." /> 
-                      <img src="assets/memes/I-feel-bad-for-you.jpg" alt="Prof: I feel bad for you. Andy: I don't think about you at all." /> 
-                      <img src="assets/memes/I-have-a-Kbar-in-my-Amazon-cart.jpg" alt="I have a Kbar in my Amazon cart" /> 
-                      <img src="assets/memes/I-heard-Camper-is-pro-pros.png" alt="I heard camper is pro-pros" /> 
-                      <img src="assets/memes/If-you-don't-like-our-justice-system.jpg" alt="If you don't like our justice system, you can get out!" /> 
-                      <img src="assets/memes/Im-a-human-lie-detector.jpg" alt="I'm a human lie detector" /> 
-                      <img src="assets/memes/Im-a-Richard-Allen-lover-too.jpg" alt="I'm a Richard Allen lover too, we are going to live happily ever after all of this" /> 
-                      <img src="assets/memes/I-am-a-whole-ass-adult.jpg" alt="I am a whole ass adult, and you are annoying af. Please, for the love of God, unfollow me. Holly unfollow me." /> 
-                      <img src="assets/memes/IMHO-and-in-order-to-get-a-fair-hearing.jpg" alt="IMHO...And in order to get a fair hearing they need to keep Judge Gull, Rockita, and McLeland BUT get a new suspect and release RA." /> 
-                      <img src="assets/memes/Interviews-down-the-blackholeman.png" alt="Interviews down the blackholeman" /> 
-                      <img src="assets/memes/Iraqi-war-vet.jpg" alt="Anthony Greeno: Iraqi war vet" /> 
-                      <img src="assets/memes/Is-this-crazy-old-lady-bald.jpg" alt="Torsoul: Is this crazy, old lady bald?" /> 
-                      <img src="assets/memes/Is-this-McLelands-case.png" alt="Catastrophy: Is this McLeland's case? " /> 
-                      <img src="assets/memes/Is-this-violence.jpg" alt="Prof & Adrienne: Is satire violence?" /> 
-                      <img src="assets/memes/IVE-ACQUIRED-SCREENSHOTS-OF-PEOPLE-SHITPOSTING-ONLINE.jpg" alt="I've acquired screenshots of people shitposting online. My archive will be delivered when my chaos dork gets his refill. Look into bro, I'm counting on you." /> 
-                      <img src="assets/memes/Jerry-Holeman-blood-gang-sign.jpg" alt="Jerry Holeman blood gang sign" /> 
-                      <img src="assets/memes/Jerry-Holeman-is-not-a-liar.jpg" alt="Jerry Holeman, on fire, is not a liar." /> 
-                      <img src="assets/memes/Jerry-is-on-the-Ogre-spectrum.png" alt="Jerry is on the Ogre spectrum" />
-                      <img src="assets/memes/Solid-persons-of-interest-in-Flora-fatal-fire.jpg" alt="Jerry Holeman says they have a 'Solid person of interest in the Flora Fire'" /> 
-                      <img src="assets/memes/JLR-Holeman.jpg" alt="JLR showing his viewers a picture of Jerry Holeman" />
-                      <img src="assets/memes/JOURNALISM.jpg" alt="Andres Baldwin: JOURNALISM. It's time for you guys to start being journalists." />
-                      <img src="assets/memes/Judgey-and-Woman-tude.jpg" alt="Judgey and Woman's tude prior to Hawg Heaven vs. Judgey and Woman's tude once we setenced a few to Hawg Heaven" />
-                      <img src="assets/memes/Judgey-bat-signal.jpg" alt="Judgey bat signal" />
-                      <img src="assets/memes/Justice-for-the-psychic.png" alt="Chelsea: Justice for the psychic. His guess on what happened is as good as any of the investigators at this point." />
-                      <img src="assets/memes/Kathy-Shank-brought-a-tip-that-was-cleared.jpg" alt="I think LE succumbed to tunnel vision and confirmation bias. Kathy Shank brought in a tip that was cleared all 'this is SUS don't ya think?!' to men who don't actually think much, and all it took was an insignificant change on an old fishing license to have those dummies spiralin." />
-                      <img src="assets/memes/Kek-in.jpg" alt="Kek Kevin" />
-                      <img src="assets/memes/Leave-these-women-alone-I-MRC-are-the-unhinged.png" alt="Leave these women alone, I, MRC are the unhinged" />
-                      <img src="assets/memes/Holy-Fuck.jpg" alt="Holy Fck" /> 
-                      <img src="assets/memes/Lets-leave-Fien-alone.jpg" alt="Let's leave Fien alone. He's forgotten more about this case than many will ever know." />
-                      <img src="assets/memes/Line-cutters.jpg" alt="Line cutters Kaitlyn Kendall from WRTV, Debra Jones from Dateline and someone from CBS. Kaitlyn said she didn't care and was cutting the line" />
-                      <img src="assets/memes/Link-LET-ME-ON.jpg" alt="Ausbrooke: Link LET ME ON! About ready to explode!" />
-                      <img src="assets/memes/LuiBG.jpg" alt="LuiBG" />
-                      <img src="assets/memes/Magic-bullet.jpg" alt="Bridge Guy behind Abby ejects magic bullet on the Weber's side (but it ends up on the Logans side)" />
-                      <img src="assets/memes/Max-Baker.jpg" alt="Max Baker to Nick McLeland: And you could have not objected." />
-                      <img src="assets/memes/Max-if-youre-watching-marry-me.jpg" alt="Woman: Max if you're watching marry me" />
-                      <img src="assets/memes/McLeland-when-he-thinks-he-did-a-clap-back-to-Cronic.jpg" alt="McLeland, when he thinks he did a clapback to Cronic." />
-                      <img src="assets/memes/Me-looking-for-how-the-fucks.jpg" alt="Me looking for the how-the-fucks to call of dogs I don't because Prof is threatening to burn everything down, again." />
-                      <img src="assets/memes/Me-looking-for-the-Apple-forum.jpg" alt="Me looking for the Apple forum that actually says what Cecil testified to." />
-                      <img src="assets/memes/Merrily-on-high.jpg" alt="Dick: Merrily on high" />
-                      <img src="assets/memes/Mission-Accomplished.jpg" alt="Dick: Mission Accomplished" />
-                      <img src="assets/memes/Murder-Sheet-book-summary.jpg" alt="Murder Sheet: I was gonna do a journalism but Ang from R&M painted a tunnel into a wall and I ran into it." />
-                      <img src="assets/memes/My-favorite-Gray-line-is.jpg" alt="My favorite Gray line is: We are currently at zero." />
-                      <img src="assets/memes/My-mom-understands-how-much-I-hate-Murder-Sheet..jpg" alt="Dahlia West: My mom understands how much I hate Murder Sheet. She understands I am honor-bound, in the name of Ron Logan, to throw hands at those douche-canoes if I encounter them in public. Still to this day she tries to quell my Righteous Anger at them. But she's prepared to pay my bail" />
-                      <img src="assets/memes/Holy-Fuck.jpg" alt="Holy Fck" />
-                      <img src="assets/memes/My-Research.jpg" alt="Tom Webster: My Research: [white van]" />
-                      <img src="assets/memes/Nancy-on-location.jpg" alt="Nancy Grace on location" />
-                      <img src="assets/memes/Ned-Slanders.jpg" alt="Nick aka Ned Slanders" />
-                      <img src="assets/memes/New-suspect-racking-gun.jpg" alt="New suspect racking gun" />
-                      <img src="assets/memes/Nick-McLeland-giving-his-opening-statement.jpg" alt="Nick McLeland giving his opening statement" />
-                      <img src="assets/memes/Nicks-hair-plugs-wrestlin-MullinS.jpg" alt="Nick's hairplugs wrestlin MullinS" />
-                      <img src="assets/memes/No-cameras-no-wonder.jpg" alt="No cameras, no wonder!" />
-                      <img src="assets/memes/Objection-to-what-his-mother-used-to-do.jpg" alt="CSI dude says they didn't take the girls' rectal temps bc they didn't want to lose potential evidence. Baldwin: You know, my mom used to put a thermometer under my armpit. Luttrull: Objection to what his mother used to do." />
-                      <img src="assets/memes/Oh-I-didnt-know-pings-were-reliable.jpg" alt="Judgey: Oh I didn't know pings were reliable ??" />
-                      <img src="assets/memes/Omg Tim look I found a team photo of the jurrs after lazer tag! (trust me).jpg" alt="Omg Tim look I found a team photo of the jurrs after lazer tag! (trust me)" />
-                      <img src="assets/memes/Omg-look-its-Gull-and-a-juror-at-a-Jason-bbq.jpg" alt="Omg look it's Gull and a juror at a Jason BBQ after ziplining. Jason makes the best daiquiris (trust me)" />
-                      <img src="assets/memes/Oops-I-didnt-mean-to-lose-77-days-of-interviews.jpg" alt="Oops I din't mean to lose 77 days of interviews. I just unplugged the DVR. What does memorialize mean? Sorry, I'm a boomer." />
-                      <img src="assets/memes/Orion-tips.jpg" alt="Kathy Shank. Orion tips. Richard Allen cleared. 2+2=4." />
-                      <img src="assets/memes/Out-on-the-town-having-the-time-of-my-life-with-the-Delphi-juror.jpg" alt="Tim Froehling: Out on the town having the time of my life with the Delphi juror. She's just out of frame, laughing too." />
-                      <img src="assets/memes/Patreon-Saint-of-shit-talkin-Jerry-Holeman.jpg" alt="Baldwin: Patreon Saint of shit-talkin Jerry Holeman." />
-                      <img src="assets/memes/people-on-here-will-tweet-anything.jpg" alt="People on here will tweet anything. Charlie Brown had hoes. No he didn't. That isn't true." />
-                      <img src="assets/memes/Permission-to-call-the-jury-chat-your-honor.png" alt="Permission to call the jury Chat your honor." />
-                      <img src="assets/memes/pov-holeman-before-saying-hes-just-matching-my-energy.jpg" alt="POV: Holeman before saying he's just matching my energy." />
-                      <img src="assets/memes/Preorder-my-book.png" alt="The Dark Side of The Murder Sheet, preorder my book." />
-                      <img src="assets/memes/Probable-Cause-granted.jpg" alt="Richard Allen: I saw a sedan and SUV parked at the farmer's entrance. Lt. Dan Dulin: Richard Allen said he parked at the old Farm Bureau building. Sheriff Liggett: Richard Allen parked at the old CPS building. Dicholas McLeland: k. Judge Diener: Probable Cause granted" />
-                      <img src="assets/memes/Richard-Allen-is-innocent.jpg" alt="Turtleboy: Richard Allen is innocent" />
-                      <img src="assets/memes/Rick-was-a-Farmacist.jpg" alt="Rick obviously did it. He painted the F in libbys blood because he was a Farmacist. (mic drop)" />
-                      <img src="assets/memes/Richard-Allens-Google-searches.jpg" alt="Richard Allen's Google searches" />
-                      <img src="assets/memes/RIP-Prof.jpg" alt="RIP Prof" />
-                      <img src="assets/memes/Rong.jpg" alt="Rong" />
-                      <img src="assets/memes/Ruhhlistic.png" alt="Jerry Holeman: This is ruhhlistic." />
-                      <img src="assets/memes/schizuationship.jpg" alt="schizuationship" />
-                      <img src="assets/memes/SCOIN-reinstates-Defense.jpg" alt="SCOIN reinstates Defense" />
-                      <img src="assets/memes/Self-promoter-a-man-of-many-tales.jpg" alt="Anthony Greeno: Self-promoter, man of many tales" />
-                      <img src="assets/memes/she-was-throwing-up-signs-left-and-right-though.jpg" alt="Delphi Docs: You should have waited a couple more emails before asking her out. MullinS: She was throwing up signs left and right though." />
-                      <img src="assets/memes/Shocked-Vinnie.png" alt="Shocked Vinnie" />
-                      <img src="assets/memes/Should-I-bully-CJ-more.jpg" alt="DB: Should I bully CJ more?" />
-                      <img src="assets/memes/So-you-agree-Rick-looks-like-a-victim.jpg" alt="So you agree, Rick looks like a victim" />
-                      <img src="assets/memes/Srs-question-did-I-kill-the-girls-Y-or-N.png" alt="Did I kill the girls? Y or N." />
-                      <img src="assets/memes/SRSLY-WHO-IS-BEHIND-ALL-THE-THREATS-AND-NARRATIVE-CONTROL.jpg" alt="Prof, dipshit lunatic." />
-                      <img src="assets/memes/Straight-Outta-Delphi.jpg" alt="Straight Outta Delphi" />
-                      <img src="assets/memes/Straight-to-Crebin.jpg" alt="Straight to Crebin" />
-                      <img src="assets/memes/Thank-you-my-son.png" alt="Elvis Fields: Thank you my son" />
-                      <img src="assets/memes/thats-not-my-job.jpg" alt="Karen Read foreman: That's not my job." />
-                      <img src="assets/memes/The-blue-ribbon-PIG-AWARD-goes-to.jpg" alt="The Blue Ribbon PIG AWARD goes to Jerry Holeman." />
-                      <img src="assets/memes/The-Delphi-Dirt.jpg" alt="The Delphi Dirt" />
-                      <img src="assets/memes/The-Ground.png" alt="The Ground grift" />
-                      <img src="assets/memes/The-Shack-a-Disney-fairytale.jpg" alt="The Shack, a Disney fairytale." />
-                      <img src="assets/memes/The-State-deserves-a-fair-trial-too.jpg" alt="Dicholas: The State deserves a fair trial too." />
-                      <img src="assets/memes/The-strategy-is-to-attack-the-timeline.jpg" alt="The strategy is to attack the timeline. Always has been." />
-                      <img src="assets/memes/The-tip.jpg" alt="The tip: Richard Allen Whiteman" />
-                      <img src="assets/memes/They-are-doing-things-like-a-3rd-world-banana-republic.jpg" alt="They are doing things like a third world Banana Republic." />
-                      <img src="assets/memes/They-made-me-Shrek-on-the-internet.png" alt="Jerry: They made me Shrek on the internet." />
-                      <img src="assets/memes/This-could-be-any-one-of-us.png" alt="This could be any one of us." />
-                      <img src="assets/memes/This-is-NOT-Dr-Monica-Wala" alt="Turbo (actual doofus and kinda slimy): This is NOT Dr. Monica Wala" />
-                      <img src="assets/memes/This-long-no-more-no-less.jpg" alt="Judge Gull: This long. No more, no less." />
-                      <img src="assets/memes/This-trial-is-about-3-things.jpg" alt="This trial is about three things: a murder, a man, and a miscarriage of justice." />
-                      <img src="assets/memes/Tiny-sized-man-throws-hissy-fit.jpg" alt="Tiny-sized man throws hissy fit" />
-                      <img src="assets/memes/Tobe-glow-up.jpg" alt="Tobe glow up" />
-                      <img src="assets/memes/Tomorrow-destroy-the-evidence.jpg" alt="Millhouse: Tomorrow &mdash; Destroy the evidence" />
-                      <img src="assets/memes/Trust-me-Tim.png" alt="Trust me Tim, dim." />
-                      <img src="assets/memes/Types-of-headaches.jpg" alt="Types of headaches: migraine, hypertension, stress, Judge Gull." />
-                      <img src="assets/memes/Ummmmmm.jpg" alt="Ummmmmm....." />
-                      <img src="assets/memes/We-thought-meth-might-go-away”.jpg" alt="We thought meth might go away because of the economy, Jerry Holeman said." />
-                      <img src="assets/memes/We-checked-no-heaven-for-bootlickers.jpg" alt="We checked, no heaven for bootlickers." />
-                      <img src="assets/memes/We-learn-all-our-gang-shit-from-the-government.jpg" alt="We learn all our gang shit from the government." />
-                      <img src="assets/memes/Were-from-Indianner.png" alt="We're from Indianerr" />
-                      <img src="assets/memes/When-I-was-younger-I-thought-cops-were.jpg" alt="When I was younger I thought cops were legally allowed to commit crimes and get away with it and then I got older and found out that wasn't true and then I got even older and found out it was" />
-                      <img src="assets/memes/Wheres-the-affidavit-NICK-flamingo.jpg" alt="Where's the affidavit for your claims NICK (flamingo)" />
-                      <img src="assets/memes/Wheres-the-affidavit-NICK-goose.jpg" alt="Where's the affidavit for your claims NICK (goose)" />
-                      <img src="assets/memes/Wheres-Turco.jpg" alt="Where's Turco?" />
-                      <img src="assets/memes/Who-among-us.jpg" alt="Who among us hasn't forgotten to check the Lost & unFound for the most crucial break in the case that we completely forgot about." />
-                      <img src="assets/memes/Who-bonked-ya-Nick.jpg" alt="Who bonked ya Nick?" />
-                      <img src="assets/memes/Who-wore-it-better.jpg" alt="Who wore it better" />
-                      <img src="assets/memes/Woman-and-Judgey.jpg" alt="Woman and Judgey" />
-                      <img src="assets/memes/Woman-doin-a-folks-we-got-him.png" alt="Woman doin a folks, we got him." />
-                      <img src="assets/memes/Woman-stop-bullying-DB.jpg" alt="Woman stop bullying DB" />
-                      <img src="assets/memes/Yeah-they-keep-all-stock-ticker-views-usage-for-10-years-for-all-stock-ticker-websites-ever.png" alt="Yeah they keep all stock ticker view and usage for 10 years for all stock ticker websites ever." />
-                      <img src="assets/memes/You-know-Im-something-of-a-tool-marking-expert-myself.jpg" alt="You know I'm something of a tool marking expert myself" />
-                      <img src="assets/memes/You-know-what-they-say-about-a-big-desk.jpg" alt="You know what they say about a big desk..." />
-                      <img src="assets/memes/Youre-fucking guilty-and-Im-going-to-prove-it.jpg" alt="You're fucking guilty and I'm gonna prove it." />
-
-                    </div><!-- end of column 12 -->
-
-                  </div><!-- end of row 6 -->
-
-        
-                </div><!-- end of nested meme container -->
-
-          </div><!-- end of memes containers -->
-
-        </div><!-- End of Section Title -->
-
-        <!-- You know what they say about a big desk -->
-        <div class="container section-title">
-          <p>Direct link to Google Drive Memes folder can be found <strong><a class="link" href="https://drive.google.com/drive/folders/1QqSNgmTgjFxrMAVFakXWGzBTeHO76LQJ?usp=drive_link" target="_blank">here</a></strong>.</p>
-        </div><!-- You know what they say about a big desk -->
-
-      </section><!-- End of Memes Section -->
-
-    </div><!-- end of memes wrapper -->
-
-  </main> <!-- End of Main Section -->
-
-  <!-- Footer Section -->
-  <footer id="footer" class="footer position-relative light-background">
-
-    <!-- footer container -->
-    <div class="container">
-      <div class="credits">All Eyes on Delphi</div>
-    </div><!-- end of footer container -->
-
-  </footer><!-- End of Footer Section -->
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script>
+    const nav = document.getElementById('siteNav');
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
 
 </body>
-
 </html>
