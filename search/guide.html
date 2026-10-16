@@ -7,7 +7,7 @@
   <meta name="description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/search/guide">
   <!-- Open Graph -->
-  <meta property="og:title" content="Search Guide — IN v. RA Court File Search">
+  <meta property="og:title" content="Search Guide | AEOD">
   <meta property="og:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/search/guide">
@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Search Guide — IN v. RA Court File Search">
+  <meta name="twitter:title" content="Search Guide | AEOD">
   <meta name="twitter:description" content="How to use the Indiana v. Richard M. Allen court file search tool.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/search.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
@@ -50,7 +50,7 @@
       --surface-elevated:    #EBEBED;
       --text-heading:        #0e0e0f;
       --text-body:           #2d2925;
-      --text-label:          #6b6560;
+      --text-label:          #7a3535;
       --text-muted:          rgba(45, 41, 37, 0.45);
       --accent:              #9b1c1c;
       --accent-border:       rgba(155, 28, 28, 0.40);
@@ -100,7 +100,9 @@
       --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
       --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
     }
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; 
+    }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--surface-page);
@@ -110,8 +112,13 @@
     }
     /* ── Nav ── */
     .site-nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
+      position: fixed; 
+      top: 0; left: 0; 
+      right: 0; 
+      z-index: 100;
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
       padding: 22px 5vw;
       transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
       border-bottom: 1px solid transparent;
@@ -119,181 +126,369 @@
     .site-nav.scrolled {
       padding: 14px 5vw;
       background: var(--nav-scrolled-bg);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px); 
+      -webkit-backdrop-filter: blur(12px);
       border-bottom-color: var(--border-light);
       box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
     }
     .nav-brand {
-      font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
-      color: #fff; letter-spacing: 0.05em; text-transform: uppercase;
-      text-decoration: none; transition: color 0.3s;
-    }
-    .site-nav.scrolled .nav-brand { color: var(--ink); }
-    .nav-toggle {
-      display: none; background: none; border: none; font-size: 20px; line-height: 1;
-      cursor: pointer; padding: 4px; color: rgba(255,255,255,0.8); margin-left: auto;
+      font-family: 'IBM Plex Mono', monospace; 
+      font-size: 12px; 
+      font-weight: 500;
+      color: #fff; 
+      letter-spacing: 0.05em; 
+      text-transform: uppercase;
+      text-decoration: none; 
       transition: color 0.3s;
     }
-    .site-nav.scrolled .nav-toggle { color: var(--ink); }
-    .nav-links { list-style: none; display: flex; gap: 40px; }
-    .nav-links a {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500;
-      letter-spacing: 0.10em; text-transform: uppercase;
-      color: rgba(255,255,255,0.62); text-decoration: none; transition: color 0.2s;
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
     }
-    .nav-links a:hover { color: #fff; }
-    .nav-links a.active { color: var(--peach); }
-    .site-nav.scrolled .nav-links a { color: var(--text-label); }
-    .site-nav.scrolled .nav-links a:hover { color: var(--ink); }
-    .site-nav.scrolled .nav-links a.active { color: var(--accent); }
+    .nav-toggle {
+      display: none; 
+      background: none; 
+      border: none; 
+      font-size: 20px; 
+      line-height: 1;
+      cursor: pointer; 
+      padding: 4px; 
+      color: rgba(255,255,255,0.8); 
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links { 
+      list-style: none; 
+      display: flex; gap: 40px; 
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace; 
+      font-size: 10px; 
+      font-weight: 500;
+      letter-spacing: 0.10em; 
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62); 
+      text-decoration: none; 
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
     /* ── Masthead ── */
     .masthead {
-      position: relative; height: 52vh; min-height: 360px; overflow: hidden;
+      position: relative; 
+      height: 52vh; 
+      min-height: 360px; 
+      overflow: hidden;
     }
     .masthead-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 40%;
+      position: absolute; 
+      inset: 0; 
+      width: 100%; 
+      height: 100%;
+      object-fit: cover; 
+      object-position: center 40%;
     }
     .masthead::after {
-      content: ''; position: absolute; inset: 0;
+      content: ''; position: absolute; 
+      inset: 0;
       background: linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.72) 60%,rgba(0,0,0,0.92) 90%,rgba(0,0,0,1) 100%);
     }
-    .masthead-text { position: absolute; bottom: 56px; left: 5vw; z-index: 2; }
+    .masthead-text { 
+      position: absolute; 
+      bottom: 56px; 
+      left: 5vw; 
+      z-index: 2; 
+    }
     .masthead-kicker {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500;
-      letter-spacing: 0.22em; text-transform: uppercase; color: rgba(242,237,230,0.68);
-      margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+      font-family: 'IBM Plex Mono', monospace; 
+      font-size: 11px; 
+      font-weight: 500;
+      letter-spacing: 0.22em; 
+      text-transform: uppercase; 
+      color: rgba(242,237,230,0.68);
+      margin-bottom: 12px; 
+      display: flex; 
+      align-items: center; 
+      gap: 10px;
     }
     .masthead-kicker::before {
-      content: ''; width: 22px; height: 1.5px; flex-shrink: 0;
+      content: ''; 
+      width: 22px; 
+      height: 1.5px; flex-shrink: 0;
       background: linear-gradient(to left, rgb(129,46,46), rgb(159,74,74), rgb(150,91,91));
     }
     .masthead-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-      font-weight: 600; color: #fff; line-height: 0.95;
-      text-transform: uppercase; letter-spacing: 0.02em;
+      font-weight: 600; 
+      color: #fff; 
+      line-height: 0.95;
+      text-transform: uppercase; 
+      letter-spacing: 0.02em;
       text-shadow: 0 2px 24px rgba(36,22,32,0.5);
     }
     /* ── Content ── */
-    .content-section { max-width: 800px; margin: 0 auto; padding: 56px 5vw 88px; }
+    .content-section { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 56px 5vw 88px; 
+    }
     .case-block {
-      background: var(--surface-card); border: 1px solid var(--border-mid);
-      overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      background: var(--surface-card); 
+      border: 1px solid var(--border-mid);
+      overflow: hidden; 
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
       margin-bottom: 32px;
     }
-    .case-title-bar { padding: 18px 28px; border-bottom: 1px solid var(--border-light); }
+    .case-title-bar { 
+      padding: 18px 28px; 
+      border-bottom: 1px solid var(--border-light); 
+    }
     .case-title-bar h2 {
-      font-family: 'Raleway', sans-serif; font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-      font-weight: 800; color: var(--text-heading);
-    }
-    .case-body { padding: 28px; }
-    .case-body p { font-size: 14px; line-height: 1.75; color: var(--text-body); margin-bottom: 16px; }
-    .case-body p:last-child { margin-bottom: 0; }
-    .case-body ul { list-style: none; margin: 8px 0 16px; }
-    .case-body ul li {
-      position: relative; padding-left: 18px; font-size: 13.5px;
-      line-height: 1.7; color: var(--text-body); margin-bottom: 8px;
-    }
-    .case-body ul li::before {
-      content: '·'; position: absolute; left: 0;
-      color: var(--accent); font-weight: 700;
-    }
-    .case-body ul li:last-child { margin-bottom: 0; }
-    /* ── Stat row ── */
-    .stat-row { display: flex; gap: 12px; margin: 0 0 20px; flex-wrap: wrap; }
-    .stat-box {
-      background: var(--surface-elevated); border: 1px solid var(--border-light);
-      border-left: 3px solid var(--accent-border);
-      padding: 14px 18px; flex: 1; min-width: 130px;
-    }
-    .stat-box .val {
-      font-family: 'IBM Plex Mono', monospace; font-size: 1.1rem; font-weight: 500;
+      font-family: 'Raleway', sans-serif; 
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800; 
       color: var(--text-heading);
     }
+    .case-body { 
+      padding: 28px; 
+    }
+    .case-body p { 
+      font-size: 14px; 
+      line-height: 1.75; 
+      color: var(--text-body); 
+      margin-bottom: 16px; 
+    }
+    .case-body p:last-child { 
+      margin-bottom: 0; 
+    }
+    .case-body ul { 
+      list-style: none; 
+      margin: 8px 0 16px; 
+    }
+    .case-body ul li {
+      position: relative; 
+      padding-left: 18px; 
+      font-size: 13.5px;
+      line-height: 1.7; 
+      color: var(--text-body); 
+      margin-bottom: 8px;
+    }
+    .case-body ul li::before {
+      content: '·'; 
+      position: absolute; 
+      left: 0;
+      color: var(--accent); 
+      font-weight: 700;
+    }
+    .case-body ul li:last-child { 
+      margin-bottom: 0; 
+    }
+    /* ── Stat row ── */
+    .stat-row { 
+      display: flex; 
+      gap: 12px; 
+      margin: 0 0 20px; 
+      flex-wrap: wrap; 
+    }
+    .stat-box {
+      background: #d9d0c0;
+      border: 1px solid rgba(122, 53, 53, 0.18);
+      border-left: 3px solid transparent;
+      border-image: linear-gradient(to bottom, rgb(100, 28, 28), rgb(155, 55, 55), rgb(120, 65, 65)) 1;
+      padding: 14px 18px; 
+      flex: 1; 
+      min-width: 130px;
+    }
+    .stat-box .val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1a1714;
+    }
     .stat-box .label {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
-      color: var(--text-label); letter-spacing: 0.08em; text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: #5a3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-top: 4px;
     }
     /* ── Example block ── */
     .example-block {
-      background: var(--surface-elevated); border: 1px solid var(--border-light);
-      border-left: 3px solid var(--accent-border);
-      padding: 16px 20px; margin: 12px 0 20px;
+      background: #d9d0c0;
+      border: 1px solid rgba(122, 53, 53, 0.18);
+      border-left: 3px solid transparent;
+      border-image: linear-gradient(to bottom, rgb(100, 28, 28), rgb(155, 55, 55), rgb(120, 65, 65)) 1;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
     }
     .example-block .ex-label {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
-      color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: rgba(45, 41, 37, 0.55);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       margin-bottom: 8px;
+      font-weight: 800;
     }
     .example-block .ex-query {
-      font-size: 14px; font-style: italic; color: var(--text-heading);
-      line-height: 1.5; font-weight: 500;
+      font-size: 14px;
+      font-style: italic;
+      color: #1a1714;
+      line-height: 1.5;
+      font-weight: 500;
     }
     .example-block .ex-note {
-      font-size: 12px; color: var(--text-label); margin-top: 8px; line-height: 1.5;
+      font-size: 12px;
+      color: #5a3a2a;
+      margin-top: 8px;
+      line-height: 1.5;
     }
     code {
-      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-      background: var(--surface-elevated); border: 1px solid var(--border-light);
-      padding: 2px 6px; color: var(--text-heading);
+      font-family: 'IBM Plex Mono', monospace; 
+      font-size: 12px;
+      background: var(--surface-elevated); 
+      border: 1px solid var(--border-light);
+      padding: 2px 6px; 
+      color: var(--text-heading);
     }
     .divider {
-      height: 1px; background: var(--border-light); margin: 0;
+      height: 1px; 
+      background: var(--border-light);
+      margin: 0;
     }
     /* ── Footer ── */
     .site-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px; padding: 24px 5vw;
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      flex-wrap: wrap; 
+      gap: 12px; 
+      padding: 24px 5vw;
       border-top: 1px solid var(--border-light);
     }
     .footer-brand {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+      font-family: 'IBM Plex Mono', monospace; 
+      font-size: 11px;
+      letter-spacing: 0.1em; 
+      text-transform: uppercase; 
+      color: var(--text-muted);
     }
-    .footer-social { display: flex; gap: 20px; }
+    .footer-social { 
+      display: flex; 
+      gap: 20px; 
+    }
     .footer-social a {
-      color: var(--text-muted); font-size: 15px; text-decoration: none;
+      color: var(--text-muted); 
+      font-size: 15px; 
+      text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-social a:hover { color: var(--carmine); }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
     /* ── Responsive ── */
     @media (max-width: 720px) {
-      .nav-toggle { display: block; }
-      .site-nav, .site-nav.scrolled { padding: 12px 16px; }
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
       .nav-links {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        flex-direction: column; background: var(--surface-page);
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column; 
+        background: var(--surface-page);
         border-bottom: 1px solid var(--border-light);
-        padding: 12px 20px 16px; gap: 0;
+        padding: 12px 20px 16px; 
+        gap: 0;
         box-shadow: 0 4px 16px rgba(36,22,32,0.08);
       }
-      .nav-links.open { display: flex; }
-      .nav-links li { padding: 8px 0; border-bottom: 1px solid var(--border-mid); }
-      .nav-links li:last-child { border-bottom: none; }
-      .nav-links a { font-size: 10px !important; color: var(--text-label) !important; }
-      .nav-links a.active { color: var(--accent) !important; }
-      .masthead { height: 40vh; min-height: 280px; }
-      .masthead-text { left: 16px; bottom: 40px; }
-      .content-section { padding: 32px 16px 56px; }
-      .case-body { padding: 20px 16px; }
-      .stat-row { flex-direction: column; }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .masthead { 
+        height: 40vh; 
+        min-height: 280px; 
+      }
+      .masthead-text { 
+        left: 16px; 
+        bottom: 40px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-body { 
+        padding: 20px 16px; 
+      }
+      .stat-row { 
+        flex-direction: column; 
+      }
     }
   </style>
   <style>
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) .nav-links a.active,
-      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { color: var(--gold); }
-      :root:not([data-theme="light"]) .case-title-bar { border-bottom-color: rgba(242,237,230,0.22); }
-      :root:not([data-theme="light"]) .example-block { border-left-color: rgba(194,53,53,0.4); }
-      :root:not([data-theme="light"]) .stat-box { border-right-color: rgba(194,53,53,0.4); }
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
+      :root:not([data-theme="light"]) .case-title-bar { 
+        border-bottom-color: rgba(242,237,230,0.22); 
+      }
+      :root:not([data-theme="light"]) .example-block { 
+        border-left-color: rgba(194,53,53,0.4); 
+      }
+      :root:not([data-theme="light"]) .stat-box {
+        border-left-color: rgba(194,53,53,0.4);
+      }
     }
     :root[data-theme="dark"] .nav-links a.active,
-    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { color: var(--gold); }
-    :root[data-theme="dark"] .case-title-bar { border-bottom-color: rgba(242,237,230,0.22); }
-    :root[data-theme="dark"] .example-block { border-left-color: rgba(194,53,53,0.4); }
-    :root[data-theme="dark"] .stat-box { border-right-color: rgba(194,53,53,0.4); }
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
+    :root[data-theme="dark"] .case-title-bar { 
+      border-bottom-color: rgba(242,237,230,0.22); 
+    }
+    :root[data-theme="dark"] .example-block { 
+      border-left-color: rgba(194,53,53,0.4); 
+    }
+    :root[data-theme="dark"] .stat-box {
+      border-left-color: rgba(194,53,53,0.4);
+    }
   </style>
 </head>
 <body>
@@ -326,7 +521,7 @@
         <div class="stat-row">
           <div class="stat-box"><div class="val">18,435</div><div class="label">Indexed chunks</div></div>
           <div class="stat-box"><div class="val">667</div><div class="label">Court filings</div></div>
-          <div class="stat-box"><div class="val">Oct '22 – Dec '25</div><div class="label">Date range</div></div>
+          <div class="stat-box"><div class="val">2022 – 2025</div><div class="label">Date range</div></div>
         </div>
         <p>The indexed documents include motions, orders, transcripts, hearing records, exhibits, and other filings from the public docket. Documents that are sealed, redacted, or image-only (scanned without OCR) are not included in the search results.</p>
       </div>
@@ -336,7 +531,7 @@
       <div class="case-title-bar"><h2>How It Works</h2></div>
       <div class="case-body">
         <p>This is a semantic search engine, not a keyword search. It understands meaning, not just exact words. When you type a query, the system converts it into a mathematical representation and compares it against every document chunk in the database, returning the closest matches by meaning.</p>
-        <p>This means you can search for concepts, not just terms. A query like "defense arguments about the bullet" will find relevant passages even if those passages don't contain the exact word "bullet" — they might say "round," "cartridge," "projectile," or "firearms evidence."</p>
+        <p>This means you can search for concepts, not just terms. A query like "defense arguments about the bullet" will find relevant passages even if those passages don't contain the exact word "bullet"; they might say "round," "cartridge," "projectile," or "firearms evidence."</p>
         <p>Each result shows the source filing, date, a relevance score, and a link to the original document on Google Drive.</p>
       </div>
     </div>
@@ -368,8 +563,8 @@
         <p>General guidance:</p>
         <ul>
           <li>Use full phrases and questions rather than single keywords</li>
-          <li>Include context — "search warrant for Whiteman Drive" works better than just "search warrant"</li>
-          <li>The relevance percentage is a rough guide — anything above 50% is usually on point, below 40% may be tangential</li>
+          <li>Include context: "search warrant for Whiteman Drive" works better than just "search warrant"</li>
+          <li>The relevance percentage is a rough guide. Anything above 50% is usually on point; below 40% may be tangential</li>
           <li>Adjust the results count (3, 5, 10, or 15) to see more or fewer matches</li>
           <li>Click "Expand" to see the full text of a result, or "View Source" to open the original filing</li>
         </ul>
@@ -386,7 +581,7 @@
           <li>Hearing and trial transcripts</li>
           <li>Affidavits and search warrants</li>
           <li>Appellate filings</li>
-          <li>Exhibits (text-based only — images and scanned pages without embedded text are not searchable)</li>
+          <li>Exhibits (text-based only; images and scanned pages without embedded text are not searchable)</li>
         </ul>
         <p>Approximately 300 files in the collection are image-only PDFs (scanned documents, photographs, handwritten letters) that couldn't be text-extracted. These are still available through the case file archive but won't appear in search results.</p>
       </div>
@@ -408,7 +603,7 @@
     <div class="case-block">
       <div class="case-title-bar"><h2>About</h2></div>
       <div class="case-body">
-        <p>This tool was built as a proof of concept for document intelligence applied to public court records. The underlying technology — semantic vector search over extracted document text — is designed to be adaptable to any large collection of court filings.</p>
+        <p>This tool was built as a proof of concept for document intelligence applied to public court records. The underlying technology (semantic vector search over extracted document text) is designed to be adaptable to any large collection of court filings.</p>
         <p>All documents are sourced from publicly available court records. This project is not affiliated with the court, any party to the case, or any legal organization.</p>
       </div>
     </div>
