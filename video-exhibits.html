@@ -42,23 +42,23 @@
       padding: 0;
     }
     :root {
-      --peach:               #2D5FBF;
+      --peach:               #9b1c1c;
       --cream:               #F2F2F4;
       --sand:                #DCDCDF;
-      --plum:                #0D1B3E;
-      --carmine:             #4A5A80;
-      --ink:                 #0D1B3E;
+      --plum:                #0e0e0f;
+      --carmine:             #7a3535;
+      --ink:                 #0e0e0f;
       --surface-page:        #F2F2F4;
       --surface-card:        #F8F8F9;
       --surface-elevated:    #EBEBED;
-      --text-heading:        #0D1B3E;
-      --text-body:           #2D3A5C;
-      --text-label:          #4A5A80;
-      --text-muted:          rgba(45, 58, 92, 0.45);
-      --accent:              #2D5FBF;
+      --text-heading:        #0e0e0f;
+      --text-body:           #2d2925;
+      --text-label:          #7a3535;
+      --text-muted:          rgba(45, 41, 37, 0.45);
+      --accent:              #9b1c1c;
       --accent-border:       rgba(155, 28, 28, 0.40);
-      --border-light:        rgba(46, 54, 80, 0.18);
-      --border-mid:          rgba(46, 54, 80, 0.10);
+      --border-light:        rgba(14, 14, 15, 0.12);
+      --border-mid:          rgba(14, 14, 15, 0.06);
       --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
       --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
     }
@@ -624,6 +624,8 @@
         border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
         color: #2d2925;
       }
+      :root:not([data-theme="light"]) .filing-note .filing-link,
+      :root:not([data-theme="light"]) .filing-note a { color: #7a3535; }
       /* month card hover: editorial shadow, no ring */
       :root:not([data-theme="light"]) details.month-details:hover {
         box-shadow: 0 6px 24px rgba(0,0,0,0.28);
@@ -656,6 +658,8 @@
       border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
       color: #2d2925;
     }
+    :root[data-theme="dark"] .filing-note .filing-link,
+    :root[data-theme="dark"] .filing-note a { color: #7a3535; }
     :root[data-theme="dark"] details.month-details:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.28);
       border-color: rgba(242, 237, 230, 0.13);
@@ -682,6 +686,7 @@
 
   <nav class="site-nav" id="siteNav">
     <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index">Home</a></li>
       <li><a href="video-exhibits" class="active">Video Exhibits</a></li>
@@ -748,6 +753,9 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => { links.classList.toggle('open'); });
   </script>
 </body>
 </html>
