@@ -33,15 +33,18 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   body {
     width: 700px;
     height: 700px;
     font-family: 'Inter', sans-serif;
+    background: #f0e8dc;
+    overflow: hidden;
+    position: relative;
   }
   :root {
     --paper:               #f2ede6;
@@ -56,54 +59,119 @@
     --grayBlue:            #4A5A80;
     --navyBlue:            #2D3A5C;
     --darkBlue:            #0D1B3E;
-    /* rgba's */
     --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
     --accent-border:       rgba(79, 142, 247, 0.35);
     --darkBlue-muted:      rgba(45, 58, 92, 0.45);
     --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
   }
-  /* ── Main content ── */
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #0a0a0a;
+  /* ── Top label ── */
+  .top-label {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
     text-align: center;
-  }
-  .cover-head-1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 250px;
-    font-weight: 600;
-    color: var(--paper);
-    text-transform: uppercase;
-  }
-  .cover-head-2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 150px;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
-    color: var(--red);
-    text-transform: lowercase;
-    margin-top: -12%;
-    margin-bottom: -11%;
+    font-size: 28px;
+    color: #9b1c1c;
+    letter-spacing: 0.28em;
   }
-  .cover-head-3 {
+  /* ── Top double rule ── */
+  .rule-top {
+    position: absolute;
+    top: 84px;
+    left: 35px;
+    right: 35px;
+    z-index: 2;
+  }
+  .rule-top::before {
+    content: '';
+    display: block;
+    height: 9px;
+    background: #0e0e0f;
+    margin-bottom: 4px;
+  }
+  .rule-top::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background: #0e0e0f;
+  }
+  /* ── AE headline ── */
+  .headline {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 250px;
-    font-weight: 600;
-    color: var(--paper);
-    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 420px;
+    line-height: 1;
+    color: #0e0e0f;
+    z-index: 1;
   }
+  /* ── Bottom double rule ── */
+  .rule-bottom {
+    position: absolute;
+    top: 437px;
+    left: 35px;
+    right: 35px;
+    z-index: 2;
+  }
+  .rule-bottom::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: #0e0e0f;
+    margin-bottom: 5px;
+  }
+  .rule-bottom::after {
+    content: '';
+    display: block;
+    height: 9px;
+    background: #0e0e0f;
+  }
+  /* ── Red accent band ── */
+  .red-band {
+    position: absolute;
+    top: 459px;
+    left: 35px;
+    right: 35px;
+    height: 17px;
+    background: #9b1c1c;
+  }
+  /* ── Dateline ── */
+  .dateline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 46px;
+    color: #5a3535;
+    letter-spacing: 0.13em;
+  }
+  .dateline-1 { 
+    top: 538px; 
+  }
+  .dateline-2 { 
+    top: 604px; 
+    font-size: 22px;
+    }
 </style>
 </head>
 <body>
 
-    <div class="main">
-
-      <div class="cover-head-1">IN</div>
-      <div class="cover-head-2">vs.</div>
-      <div class="cover-head-3">RA</div>
-    
-    </div>
+    <div class="top-label">ALL EYES ON DELPHI</div>
+    <div class="rule-top"></div>
+    <div class="headline">AE</div>
+    <div class="rule-bottom"></div>
+    <div class="red-band"></div>
+    <div class="dateline dateline-1">IN vs. Rick Allen</div>
+    <div class="dateline dateline-2">alleyesondelphi.github.io/rickallen</div>
 
 </body>
 </html>
