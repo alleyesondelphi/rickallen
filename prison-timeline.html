@@ -1,618 +1,2859 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Prison Timeline | AEOD</title>
-  <meta name="description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
-  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/prison-timeline">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Prison Timeline">
-  <meta property="og:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/prison-timeline">
-  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="All Eyes on Delphi">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prison Timeline">
-  <meta name="twitter:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
-  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
-  <meta name="twitter:creator" content="@alleyesondelphi">
-  <!-- Favicons -->
-  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
-  <link rel="manifest" href="assets/icons/site.webmanifest">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    :root {
-      --peach:               #9b1c1c;
-      --cream:               #F2F2F4;
-      --sand:                #DCDCDF;
-      --plum:                #0e0e0f;
-      --carmine:             #7a3535;
-      --ink:                 #0e0e0f;
-      --surface-page:        #F2F2F4;
-      --surface-card:        #F8F8F9;
-      --surface-elevated:    #EBEBED;
-      --text-heading:        #0e0e0f;
-      --text-body:           #2d2925;
-      --text-label:          #7a3535;
-      --text-muted:          rgba(45, 41, 37, 0.45);
-      --accent:              #9b1c1c;
-      --accent-border:       rgba(155, 28, 28, 0.40);
-      --border-light:        rgba(14, 14, 15, 0.12);
-      --border-mid:          rgba(14, 14, 15, 0.06);
-      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
-      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --surface-page:        #121212;
-        --surface-card:        #1c1c1c;
-        --surface-elevated:    #242424;
-        --text-heading:        #f2ede6;
-        --text-body:           #cac3b9;
-        --text-label:          #9292BE;
-        --text-muted:          rgba(202, 195, 185, 0.90);
-        --accent:              #c23535;
-        --accent-border:       rgba(155, 28, 28, 0.35);
-        --border-light:        rgba(242, 237, 230, 0.08);
-        --border-mid:          rgba(255, 255, 255, 0.03);
-        --carmine:             #cdc6bc;
-        --ink:                 #f2ede6;
-        --peach:               #c23535;
-        --gold:                #d4a520;
-        --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
-        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
-      }
-    }
-    :root[data-theme="dark"] {
-      --surface-page:        #121212;
-      --surface-card:        #1c1c1c;
-      --surface-elevated:    #242424;
-      --text-heading:        #f2ede6;
-      --text-body:           #cac3b9;
-      --text-label:          #9292BE;
-      --text-muted:          rgba(184, 176, 164, 0.65);
-      --accent:              #c23535;
-      --accent-border:       rgba(155, 28, 28, 0.35);
-      --border-light:        rgba(242, 237, 230, 0.08);
-      --border-mid:          rgba(255, 255, 255, 0.03);
-      --carmine:             #cdc6bc;
-      --ink:                 #f2ede6;
-      --peach:               #c23535;
-      --gold:                #d4a520;
-      --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
-      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
-    }
-    html { 
-      scroll-behavior: smooth; 
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--surface-page);
-      color: var(--text-body);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    /* ── Nav ── */
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 5vw;
-      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
-      border-bottom: 1px solid transparent;
-    }
-    .site-nav.scrolled {
-      padding: 14px 5vw;
-      background: var(--nav-scrolled-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom-color: var(--border-light);
-      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
-    }
-    .nav-brand {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      color: #fff;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .site-nav.scrolled .nav-brand { 
-      color: var(--ink); 
-    }
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 20px;
-      line-height: 1;
-      cursor: pointer;
-      padding: 4px;
-      color: rgba(255,255,255,0.8);
-      margin-left: auto;
-      transition: color 0.3s;
-    }
-    .site-nav.scrolled .nav-toggle { 
-      color: var(--ink); 
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-    }
-    .nav-links a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.62);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { 
-      color: #fff; 
-    }
-    .nav-links a.active { 
-      color: var(--peach); 
-    }
-    .site-nav.scrolled .nav-links a { 
-      color: var(--text-label); 
-    }
-    .site-nav.scrolled .nav-links a:hover { 
-      color: var(--ink); 
-    }
-    .site-nav.scrolled .nav-links a.active { 
-      color: var(--accent); 
-    }
-    /* ── Masthead ── */
-    .masthead {
-      position: relative;
-      height: 80vh;
-      min-height: 520px;
-      overflow: hidden;
-    }
-    .masthead-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center 52%;
-    }
-    .masthead::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.52)  0%,
-        rgba(0, 0, 0, 0.18) 45%,
-        rgba(0, 0, 0, 0.38) 100%
-      );
-    }
-    .masthead-text {
-      position: absolute;
-      bottom: 72px;
-      left: 5vw;
-      z-index: 2;
-    }
-    .masthead-kicker {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(242, 237, 230, 0.68);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .masthead-kicker::before {
-      content: '';
-      width: 22px;
-      height: 1.5px;
-      background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
-      flex-shrink: 0;
-    }
-    .masthead-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 600;
-      color: #ffffff;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
-    }
-    /* ── Content ── */
-    .content-section {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 56px 5vw 88px;
-    }
-    /* ── Case info card ── */
-    .case-block {
-      background: var(--surface-card);
-      border: 1px solid var(--border-mid);
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
-      margin-bottom: 32px;
-    }
-    .case-title-bar {
-      padding: 18px 28px;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .case-title-bar h2 {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-      font-weight: 800;
-      color: var(--text-heading);
-    }
-    .case-meta {
-      padding: 24px 28px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 40px;
-    }
-    .case-meta-item {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .case-meta-item strong {
-      color: var(--text-heading);
-      font-weight: 600;
-    }
-    /* ── Month sections (collapsible) ── */
-    details.month-details {
-      background: var(--surface-card);
-      border: 1px solid var(--border-mid);
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
-      margin-bottom: 16px;
-      transition: box-shadow 0.3s;
-    }
-    details.month-details:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
-    }
-    summary.month-summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      user-select: none;
-      background: var(--surface-card);
-      border-bottom: 1px solid transparent;
-    }
-    details.month-details[open] > summary.month-summary {
-      border-bottom-color: var(--border-light);
-    }
-    summary.month-summary::-webkit-details-marker { 
-      display: none; 
-    }
-    summary.month-summary::before {
-      content: '▼';
-      display: inline-flex;
-      width: 18px;
-      color: var(--accent);
-      font-size: 11px;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-    details.month-details:not([open]) > summary.month-summary::before {
-      transform: rotate(-90deg);
-    }
-    summary.month-summary h2 {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-      font-weight: 800;
-      color: var(--text-heading);
-      margin: 0;
-    }
-    /* ── Document items ── */
-    .doc-item {
-      padding: 20px 28px;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .doc-item:last-child { 
-      border-bottom: none; 
-    }
-    .doc-note {
-      margin-bottom: 14px;
-      padding: 12px 18px;
-      background: var(--surface-elevated);
-      border-left: 3px solid var(--accent);
-      border-radius: 0;
-      font-size: 13px;
-      line-height: 1.75;
-      color: var(--text-body);
-    }
-    .pdf-embed {
-      width: 100%;
-      aspect-ratio: 11 / 8.5;
-      border: none;
-      border-radius: 6px;
-      background: var(--surface-elevated);
-    }
-    /* ── Footer ── */
-    .site-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 24px 5vw;
-      border-top: 1px solid var(--border-light);
-    }
-    .footer-brand {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .footer-social {
-      display: flex;
-      gap: 20px;
-    }
-    .footer-social a {
-      color: var(--text-muted);
-      font-size: 15px;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-social a:hover { 
-      color: var(--carmine); 
-    }
-    /* ── Responsive ── */
-    @media (max-width: 900px) {
-      .case-meta { 
-        grid-template-columns: 1fr; 
-        gap: 8px; 
-      }
-    }
-    @media (max-width: 720px) {
-      .nav-toggle { 
-        display: block; 
-      }
-      .site-nav, .site-nav.scrolled { 
-        padding: 12px 16px; 
-      }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; 
-        left: 0; 
-        right: 0;
-        flex-direction: column;
-        background: var(--surface-page);
-        border-bottom: 1px solid var(--border-light);
-        padding: 12px 20px 16px;
-        gap: 0;
-        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
-      }
-      .nav-links.open { 
-        display: flex; 
-      }
-      .nav-links li { 
-        padding: 8px 0; 
-        border-bottom: 1px solid var(--border-mid); 
-      }
-      .nav-links li:last-child { 
-        border-bottom: none; 
-      }
-      .nav-links a { 
-        font-size: 10px !important; 
-        letter-spacing: 0.08em !important; 
-        color: var(--text-label) !important; 
-      }
-      .nav-links a.active { 
-        color: var(--accent) !important; 
-      }
-      .nav-links a:hover { 
-        color: var(--ink) !important; 
-      }
-      .masthead { 
-        height: 55vh; 
-        min-height: 340px; 
-      }
-      .masthead-img { 
-        object-fit: cover; 
-        object-position: center top; 
-      }
-      .masthead-text { 
-        left: 20px; 
-        bottom: 52px; 
-      }
-      .content-section { 
-        padding: 32px 16px 56px; 
-      }
-      .case-meta { 
-        padding: 18px 20px; 
-      }
-      .doc-item { 
-        padding: 16px 20px; 
-      }
-      .doc-note { 
-        padding: 10px 14px; 
-        font-size: 12px; 
-      }
-      .pdf-embed { 
-        aspect-ratio: 8.5 / 11; 
-      }
-    }
-    @media (max-width: 450px) {
-      .masthead-img { 
-        object-fit: contain; 
-        object-position: center 50%; 
-      }
-    }
-  </style>
-  <style>
-    /* dark mode: gold accents */
-    @media (prefers-color-scheme: dark) {
-      /* active nav → gold */
-      :root:not([data-theme="light"]) .nav-links a.active,
-      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
-        color: var(--gold); 
-      }
-      /* filing-note: gold stripe + aged tint */
-      :root:not([data-theme="light"]) .filing-note {
-        background: #e0d8cc;
-        border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
-        color: #2d2925;
-      }
-      :root:not([data-theme="light"]) .filing-note .filing-link,
-      :root:not([data-theme="light"]) .filing-note a { 
-        color: #7a3535; 
-      }
-      /* month card hover: editorial shadow, no ring */
-      :root:not([data-theme="light"]) details.month-details:hover {
-        box-shadow: 0 6px 24px rgba(0,0,0,0.28);
-        border-color: rgba(242, 237, 230, 0.13);
-      }
-      /* accordion triangle → gold */
-      :root:not([data-theme="light"]) summary.month-summary::before { 
-        color: #e0d8cc; 
-      }
-      /* section dividers → visible warm paper line */
-      :root:not([data-theme="light"]) .case-title-bar,
-      :root:not([data-theme="light"]) details.month-details[open] > summary.month-summary {
-        border-bottom-color: rgba(242, 237, 230, 0.22);
-      }
-      /* filing row separators → warmer aged-tint line */
-      :root:not([data-theme="light"]) .filing {
-        border-bottom-color: rgba(224, 216, 204, 0.14);
-      }
-    }
-    :root[data-theme="dark"] .nav-links a.active,
-    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
-      color: var(--gold); 
-    }
-    :root[data-theme="dark"] .filing-note {
-      background: #e0d8cc;
-      border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
-      color: #2d2925;
-    }
-    :root[data-theme="dark"] .filing-note .filing-link,
-    :root[data-theme="dark"] .filing-note a { 
-      color: #7a3535; 
-    }
-    :root[data-theme="dark"] details.month-details:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
-      border-color: rgba(242, 237, 230, 0.13);
-    }
-    :root[data-theme="dark"] summary.month-summary::before { 
-      color: #e0d8cc; 
-    }
-    :root[data-theme="dark"] .case-title-bar,
-    :root[data-theme="dark"] details.month-details[open] > summary.month-summary {
-      border-bottom-color: rgba(242, 237, 230, 0.22);
-    }
-    :root[data-theme="dark"] .filing {
-      border-bottom-color: rgba(224, 216, 204, 0.14);
-    }
-  </style>
+ <meta charset="utf-8">
+ <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ <title>Prison Timeline | AEOD</title>
+ <meta name="description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+ <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/prison/timeline">
+ <!-- Open Graph -->
+ <meta property="og:title" content="Rick's phone calls, confessions, Haldol injections, doctors' notes, and prison conditions.">
+ <meta property="og:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/prison/timeline">
+ <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:site_name" content="All Eyes on Delphi">
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Rick's phone calls, confessions, Haldol injections, doctors' notes, and prison conditions.">
+ <meta name="twitter:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+ <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
+ <meta name="twitter:creator" content="@alleyesondelphi">
+ <!-- Favicons -->
+ <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+ <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
+ <link rel="manifest" href="assets/icons/site.webmanifest">
+ <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+ <!-- Styles-->
+ <style>
+  *, *::before, *::after { 
+   box-sizing: border-box; 
+   margin: 0; 
+   padding: 0; 
+  }
+  :root {
+   --ink:  #0e0e0f;
+   --paper: #f2ede6;
+   --aged:  #e0d8cc;
+   --red:  #9b1c1c;
+   --gold:  #b28a26;
+   --steel: #3a4a5c;
+   --muted: #6b6560;
+  }
+  html { 
+   scroll-behavior: smooth; 
+  }
+  body {
+   background: var(--paper);
+   color: var(--ink);
+   font-family: 'Source Serif 4', Georgia, serif;
+   font-size: 15px;
+   line-height: 1.65;
+   -webkit-font-smoothing: antialiased;
+   overflow-x: hidden;
+  }
+  a { 
+   color: inherit; 
+   text-decoration: none; 
+  }
+  /* ── MASTHEAD ── */
+  .masthead {
+   background: var(--ink);
+   color: var(--paper);
+   padding: clamp(28px, 5vw, 44px) 24px 0;
+   position: relative;
+   overflow: hidden;
+  }
+  .masthead::before {
+   content: '';
+   position: absolute;
+   top: 0; left: 0; right: 0;
+   height: 2px;
+   background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
+  }
+  .masthead-inner {
+   max-width: 1050px;
+   margin: 0 auto;
+  }
+  .masthead-rule {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: clamp(7.5px, 1.5vw, 9.5px);
+   letter-spacing: 0.1em;
+   color: #888;
+   margin-top: -2%;
+  }
+  .masthead h1 {
+   font-family: 'Playfair Display', serif;
+   font-size: clamp(26px, 4vw, 46px);
+   font-weight: 500;
+   line-height: 1.1;
+   color: var(--paper);
+  }
+  .masthead h1 span {
+   font-weight: 400;
+   color: #999;
+  }
+  .masthead-subtitle {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: clamp(9px, 1.5vw, 11px);
+   letter-spacing: 0.1em;
+   color: #888;
+   margin-top: 8px;
+   margin-bottom: 6px;
+  }
+  .masthead-meta {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: clamp(9px, 1.5vw, 11px);
+   letter-spacing: 0.08em;
+   color: #888;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0 16px;
+   margin-top: 8px;
+  }
+  .masthead-meta a {
+   color: #aaa;
+  }
+  .masthead-meta a:hover {
+   color: #c35f5f;
+   text-decoration: underline;
+  }
+  .masthead-sub {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: clamp(9px, 1.8vw, 11px);
+   color: #888;
+   letter-spacing: 0.12em;
+   margin-top: 14px;
+   padding-bottom: 12px;
+   display: flex;
+   flex-wrap: nowrap;
+   gap: clamp(10px, 2.5vw, 22px);
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   scrollbar-width: none;
+  }
+  .masthead-sub::-webkit-scrollbar { display: none; }
+  .masthead-link {
+   color: #bbb;
+   white-space: nowrap;
+   text-decoration: underline;
+   text-underline-offset: 3px;
+   text-decoration-color: rgba(255,255,255,0.25);
+  }
+  .masthead-link:hover { color: #f17070; }
+  .masthead-link.active { color: var(--paper); }
+  /* ── FILTER BAR (sticky) ── */
+  .filter-bar {
+   background: var(--ink);
+   border-top:  1px solid rgba(255,255,255,0.07);
+   border-bottom: 1px solid rgba(255,255,255,0.07);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+  }
+  .filter-inner {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 24px;
+  }
+  .filter-tabs {
+   display: flex;
+   flex-wrap: nowrap;
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   scrollbar-width: none;
+  }
+  .filter-tabs::-webkit-scrollbar { 
+   display: none; 
+  }
+  .filter-btn {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 9.5px;
+   font-weight: 500;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: #888;
+   background: none;
+   border: none;
+   border-bottom: 2px solid transparent;
+   padding: 10px 14px;
+   cursor: pointer;
+   white-space: nowrap;
+   transition: color 0.15s, border-color 0.15s;
+   flex-shrink: 0;
+  }
+  .filter-btn:hover { 
+   color: var(--paper); 
+  }
+  .filter-btn.active { 
+   color: var(--paper); 
+   border-bottom-color: #666; 
+  }
+  .filter-btn.active.legal { 
+   border-bottom-color: #5a9ad9; 
+  }
+  .filter-btn.active.medical { 
+   border-bottom-color: #5a9a6a; 
+  }
+  .filter-btn.active.phone { 
+   border-bottom-color: var(--gold); 
+  }
+  .filter-btn.active.confession { 
+   border-bottom-color: #c23535; 
+  }
+  .filter-btn.active.prison { 
+   border-bottom-color: #9a70c0; 
+  }
+  .filter-btn.active.le { 
+   border-bottom-color: #c08040; 
+  }
+  .filter-btn.active.media { 
+   border-bottom-color: #5898a0; 
+  }
+  .filter-btn.active.question { 
+   border-bottom-color: var(--gold); 
+  }
+  /* search row */
+  .search-row {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   padding: 8px 0 9px;
+   border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  #search { 
+   background: rgba(255,255,255,0.06);
+   border: 1px solid rgba(255,255,255,0.20);
+   color: var(--paper);
+   padding: 5px 10px;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 11px;
+   letter-spacing: 0.04em;
+   outline: none;
+   flex: 1;
+   max-width: 320px;
+   transition: border-color 0.2s;
+  }
+  #search::placeholder { 
+   color: #888; 
+  }
+  #search:focus { 
+   border-color: rgba(155,28,28,0.5); 
+  }
+  /* jump links */
+  .jump-row {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 4px;
+   padding: 7px 0 9px;
+   border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .jump-row a {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 9px;
+   letter-spacing: 0.06em;
+   color: #999;
+   border: 1px solid rgba(255,255,255,0.15);
+   padding: 2px 7px;
+   text-decoration: none;
+   transition: color 0.15s, border-color 0.15s;
+  }
+  .jump-row a:hover { 
+   color: var(--paper); 
+   border-color: rgba(155,28,28,0.5); 
+  }
+  /* ── MAIN ── */
+  .main {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 32px 24px 80px;
+  }
+  /* ── MONTH GROUP ── */
+  .month-section { }
+  .month-section.hidden { 
+   display: none; 
+  }
+  .month-head {
+   display: flex;
+   align-items: baseline;
+   gap: 14px;
+   padding: 28px 0 10px;
+   border-bottom: 1px solid var(--aged);
+   margin-bottom: 2px;
+  }
+  .month-head h2 {
+   font-family: 'Playfair Display', serif;
+   font-size: 18px;
+   font-weight: 700;
+   color: var(--ink);
+  }
+  .month-rule { 
+   flex: 1; 
+  }
+  /* ── ENTRY ── */
+  .entry {
+   display: flex;
+   gap: 0;
+   padding: 10px 0;
+   border-bottom: 1px solid var(--aged);
+  }
+  .entry:hover { 
+   background: rgba(14,14,15,0.02); 
+  }
+  .entry.hidden { 
+   display: none !important; 
+  }
+  .e-date {
+   width: 88px;
+   min-width: 88px;
+   flex-shrink: 0;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 11px;
+   color: var(--muted);
+   padding-top: 2px;
+   letter-spacing: 0.03em;
+  }
+  .e-bar {
+   width: 2px;
+   min-width: 2px;
+   flex-shrink: 0;
+   border-radius: 1px;
+   margin: 3px 0;
+   opacity: 0.6;
+   align-self: stretch;
+  }
+  .e-body {
+   flex: 1;
+   padding-left: 14px;
+   min-width: 0;
+  }
+  .e-tags {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 4px;
+   margin-bottom: 5px;
+  }
+  .tag {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 8px;
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   padding: 2px 5px;
+   border: 1px solid;
+  }
+  .tag.legal { 
+   color: #1a4a7a; 
+   background: rgba(26,74,122,0.06); 
+   border-color: rgba(26,74,122,0.20); 
+  }
+  .tag.medical { 
+   color: #1a5a2a; 
+   background: rgba(26,90,42,0.06);  
+   border-color: rgba(26,90,42,0.20); 
+  }
+  .tag.phone { 
+   color: #7a6010; 
+   background: rgba(178,138,38,0.06); 
+   border-color: rgba(178,138,38,0.25); 
+  }
+  .tag.confession { 
+   color: var(--red); 
+   background: rgba(155,28,28,0.05); 
+   border-color: rgba(155,28,28,0.20); 
+  }
+  .tag.prison { 
+   color: #5a3a8a; 
+   background: rgba(90,58,138,0.06); 
+   border-color: rgba(90,58,138,0.20); 
+  }
+  .tag.le { 
+   color: #7a5020; 
+   background: rgba(122,80,32,0.06); 
+   border-color: rgba(122,80,32,0.20); 
+  }
+  .tag.media { 
+   color: #2a6870; 
+   background: rgba(42,104,112,0.06); 
+   border-color: rgba(42,104,112,0.20); 
+  }
+  .tag.question { 
+   color: #7a6010; 
+   background: rgba(178,138,38,0.07); 
+   border-color: rgba(178,138,38,0.30); 
+  }
+  .e-title {
+   font-size: 14px;
+   color: var(--ink);
+   line-height: 1.5;
+  }
+  .e-source {
+   margin-top: 3px;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 10px;
+   color: var(--muted);
+   font-style: italic;
+  }
+  .expand-btn {
+   background: none;
+   border: none;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 10px;
+   color: var(--muted);
+   cursor: pointer;
+   padding: 3px 0;
+   margin-top: 3px;
+   display: inline-block;
+   letter-spacing: 0.04em;
+   transition: color 0.15s;
+  }
+  .expand-btn:hover { 
+   color: var(--red); 
+  }
+  .e-detail {
+   display: none;
+   margin-top: 8px;
+   padding: 12px 16px;
+   background: rgba(14,14,15,0.03);
+   border-left: 3px solid var(--aged);
+   font-size: 13px;
+   line-height: 1.7;
+   color: var(--ink);
+  }
+  .e-detail.open { 
+   display: block; 
+  }
+  .e-detail p { 
+   margin-bottom: 6px; 
+  }
+  .e-detail p:last-child { 
+   margin-bottom: 0; 
+  }
+  .e-detail .q { 
+   color: var(--red); 
+   font-style: italic; 
+  }
+  .e-detail .g { 
+   color: #1a5a2a; 
+  }
+  .e-detail strong { 
+   font-weight: 600; 
+  }
+  /* ── STUB ── */
+  .part-note {
+   text-align: center;
+   padding: 28px 0 12px;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 10px;
+   letter-spacing: 0.15em;
+   color: var(--muted);
+   text-transform: uppercase;
+   border-top: 1px solid var(--aged);
+   margin-top: 20px;
+  }
+  .coming-soon {
+   border: 1px solid var(--aged);
+   padding: 32px 24px;
+   text-align: center;
+   margin: 16px 0 48px;
+   background: rgba(255,255,255,0.4);
+  }
+  .coming-soon strong {
+   display: block;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 11px;
+   font-weight: 500;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: var(--steel);
+   margin-bottom: 6px;
+  }
+  .coming-soon p { 
+   font-size: 13px; 
+   color: var(--muted); 
+  }
+  /* ── NO RESULTS ── */
+  #no-results {
+   display: none;
+   text-align: center;
+   padding: 60px 24px;
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 12px;
+   color: var(--muted);
+  }
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+   .masthead {
+    padding: 28px 20px 0;
+   }
+   .masthead-rule {
+    font-size: 10px;
+   }
+   .masthead h1 {
+    font-size: 28px;
+    margin-top: 4px;
+   }
+   .masthead-subtitle {
+    font-size: 11px;
+   }
+   .masthead-meta {
+    font-size: 11px;
+    margin-top: 10px;
+   }
+   .masthead-sub {
+    font-size: 11px;
+    gap: 16px;
+   }
+   .filter-inner { 
+    padding: 0 16px; 
+   }
+   .main { 
+    padding: 24px 16px 60px; 
+   }
+   .e-date { 
+    width: 56px; 
+    min-width: 56px; 
+    font-size: 10px; 
+   }
+   .filter-btn { 
+    padding: 11px 10px; 
+    font-size: 9px; 
+    min-height: 44px; 
+   }
+   .jump-row a { 
+    padding: 5px 8px; 
+   }
+  }
+  @media (max-width: 400px) {
+   .e-date { 
+    display: none; 
+   }
+  }
+.tx { 
+ font-size: .85rem; 
+ border-left: 3px solid var(--aged); 
+ padding: .5rem .75rem; 
+ margin: .5rem 0; 
+}
+.tx p { 
+ margin: .2rem 0; 
+ line-height: 1.4; 
+}
+.audio-link {
+ color: var(--red);
+ font-size: .8rem;
+ text-decoration: none;
+ font-weight: 600;
+ display: inline-flex;
+ align-items: center;
+ gap: 5px;
+}
+.audio-link::before {
+ content: '';
+ display: inline-block;
+ width: 14px;
+ height: 14px;
+ flex-shrink: 0;
+ background-color: currentColor;
+ -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3C/svg%3E");
+ mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3C/svg%3E");
+ -webkit-mask-size: contain;
+ mask-size: contain;
+ -webkit-mask-repeat: no-repeat;
+ mask-repeat: no-repeat;
+}
+.audio-link:hover {
+ text-decoration: underline;
+}
+details summary { 
+ cursor: pointer; 
+ color: var(--muted); 
+ font-size: .8rem;
+ margin-top: .4rem; 
+ user-select: none; 
+}
+details[open] summary { 
+ margin-bottom: .4rem; 
+}
+/* ── HALDOL LOG ── */
+.filter-btn.active.haldol { 
+ border-bottom-color: #5a9a6a; 
+}
+.filter-btn.active.conf-log {
+ border-bottom-color: #c23535;
+}
+.filter-btn.active.guard-log {
+ border-bottom-color: #a07840;
+}
+.conf-src { 
+ white-space: nowrap; 
+ font-family: 'IBM Plex Mono', monospace; 
+ font-size: .73rem; 
+ color: var(--muted); 
+}
+.conf-quote { 
+ font-style: italic; 
+}
+@media (max-width: 600px) {
+ .conf-src { 
+  font-size: .65rem; 
+ }
+}
+#haldol-panel { 
+ background: var(--paper); 
+}
+.haldol-inner {
+ max-width: 1100px;
+ margin: 0 auto;
+ padding: 36px 24px 48px;
+}
+.haldol-kicker {
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: 10px;
+ letter-spacing: .12em;
+ text-transform: uppercase;
+ color: var(--red);
+ font-weight: 500;
+ margin-bottom: 6px;
+}
+.haldol-title {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(20px, 3vw, 28px);
+ font-weight: 700;
+ margin-bottom: 4px;
+}
+.haldol-byline {
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: 10px;
+ letter-spacing: .06em;
+ color: var(--muted);
+ margin-bottom: 24px;
+}
+.haldol-table-wrap { 
+ overflow-x: auto; 
+}
+.haldol-table {
+ width: 100%;
+ border-collapse: collapse;
+ font-size: .85rem;
+}
+.haldol-table thead tr { 
+ border-bottom: 2px solid var(--ink); 
+}
+.haldol-table th {
+ text-align: left;
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: 9px;
+ letter-spacing: .1em;
+ text-transform: uppercase;
+ color: var(--muted);
+ padding: 6px 12px 6px 0;
+ white-space: nowrap;
+}
+.haldol-table tbody tr { 
+ border-bottom: 1px solid var(--aged); 
+}
+.haldol-table tbody tr:last-child { 
+ border-bottom: none; 
+}
+.haldol-table td {
+ padding: 9px 12px 9px 0;
+ vertical-align: top;
+ line-height: 1.45;
+}
+.hc-date {
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: .78rem;
+ white-space: nowrap;
+ font-variant-numeric: tabular-nums;
+}
+.hc-date a { 
+ color: var(--steel); 
+ border-bottom: 1px solid var(--aged); 
+}
+.hc-date a:hover { 
+ border-color: var(--steel); }
+.hc-dose { 
+ font-variant-numeric: tabular-nums; 
+ white-space: nowrap; 
+}
+.haldol-table:not(.guard-table) td:nth-child(4) {
+ white-space: nowrap;
+}
+.guard-table td:nth-child(1),
+.guard-table th:nth-child(1) { 
+ white-space: nowrap; 
+}
+.guard-table td:nth-child(2),
+.guard-table th:nth-child(2) { 
+ white-space: nowrap; 
+}
+.guard-table td:nth-child(3),
+.guard-table th:nth-child(3) { 
+ white-space: nowrap; 
+}
+.guard-table td:nth-child(4) {
+ white-space: normal;
+ word-break: break-word;
+ overflow-wrap: break-word;
+}
+.hdot {
+ display: inline-block;
+ width: 8px; 
+ height: 8px;
+ border-radius: 50%;
+ margin-right: 6px;
+ vertical-align: middle;
+ flex-shrink: 0;
+}
+.hnote {
+ display: block;
+ font-size: .68rem;
+ font-style: italic;
+ color: var(--muted);
+ margin-top: 2px;
+ line-height: 1.35;
+}
+.htag {
+ display: inline-block;
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: .62rem;
+ letter-spacing: .06em;
+ text-transform: uppercase;
+ padding: 1px 5px;
+ border-radius: 2px;
+ font-weight: 600;
+ vertical-align: middle;
+ margin-left: 4px;
+ background: var(--red);
+ color: #fff;
+}
+.htag-unk { 
+ background: var(--aged); 
+ color: var(--muted); 
+}
+.haldol-footnote {
+ margin-top: 16px;
+ font-size: .75rem;
+ font-style: italic;
+ color: var(--muted);
+ border-top: 1px solid var(--aged);
+ padding-top: 12px;
+ line-height: 1.6;
+}
+.hmeta {
+ display: none;
+}
+.guard-type-badge { 
+ display: none; 
+}
+@media (max-width: 600px) {
+ .haldol-table-wrap { 
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+ }
+ .haldol-table { 
+  font-size: .92rem; }
+ .haldol-table th { 
+  font-size: .7rem; 
+  padding-bottom: 8px; 
+ }
+ .haldol-table td { 
+  padding: 10px 10px 10px 0; 
+ }
+ .hc-date { 
+  font-size: .82rem; 
+ }
+ .hc-dose {
+  font-size: .82rem;
+ }
+ /* conf-table mobile: card layout - date + source on one line, note below */
+ .conf-table, .conf-table tbody { 
+  display: block; 
+ }
+ .conf-table thead { 
+  display: none; 
+ }
+ .conf-table tr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--aged);
+  gap: 0 8px;
+ }
+ .conf-table tbody tr:last-child { 
+  border-bottom: none; 
+ }
+ .conf-table td { 
+  display: inline; 
+  padding: 0; 
+  border: none; 
+  white-space: nowrap; 
+ }
+ .conf-table td:nth-child(1) { 
+  order: 1; 
+  font-family: 'IBM Plex Mono', monospace; 
+  font-size: .78rem; 
+  color: var(--muted); 
+ }
+ .conf-table td:nth-child(2) { 
+  order: 2; 
+  font-size: .82rem; 
+  color: var(--muted); 
+ }
+ .conf-table td:nth-child(3) { 
+  order: 3; 
+  flex: 0 0 100%; 
+  white-space: normal; 
+  word-break: break-word; 
+  overflow-wrap: break-word; 
+  padding-top: 4px; 
+  font-size: .85rem; 
+  line-height: 1.45; 
+ }
+ /* guard-table mobile: card layout - date+guard on one line, note below */
+ .guard-table, .guard-table tbody { 
+  display: block; 
+ }
+ .guard-table thead { 
+  display: none; 
+ }
+ .guard-table tr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--aged);
+  gap: 0 8px;
+ }
+ .guard-table tbody tr:last-child { 
+  border-bottom: none; 
+ }
+ .guard-table td { 
+  display: inline; 
+  padding: 0; 
+  border: none; 
+  white-space: nowrap; 
+ }
+ .guard-table td:nth-child(1) { 
+  order: 1; 
+  font-family: 'IBM Plex Mono', monospace; 
+  font-size: .78rem; 
+  color: var(--muted); 
+ }
+ .guard-table td:nth-child(2) { 
+  order: 2; 
+  font-weight: 500; 
+ }
+ .guard-table td:nth-child(3) { 
+  display: none; 
+ }
+ .guard-table td:nth-child(4) { 
+  order: 3; 
+  flex: 0 0 100%; 
+  white-space: normal; 
+  word-break: break-word; 
+  overflow-wrap: break-word; 
+  padding-top: 4px; 
+  font-size: .85rem; 
+  line-height: 1.45; 
+ }
+ .guard-type-badge { 
+  display: inline-block; 
+  font-family: 'IBM Plex Mono', monospace; 
+  font-size: .65rem; 
+  text-transform: uppercase;
+  letter-spacing: .06em; 
+  font-weight: 600; 
+  color: var(--ink); 
+  background: var(--aged); 
+  border-radius: 2px; 
+  padding: 1px 5px; 
+  margin-right: 6px; 
+  vertical-align: middle; 
+ }
+}
+</style>
 </head>
 <body>
 
-  <nav class="site-nav" id="siteNav">
-    <a href="index" class="nav-brand">All Eyes on Delphi</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index">Home</a></li>
-      <li><a href="prison-timeline" class="active">Prison Timeline</a></li>
-      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
-    </ul>
+<!-- MASTHEAD -->
+<div class="masthead">
+ <div class="masthead-inner">
+  <div class="masthead-rule">Westville / Wabash Valley</div>
+  <h1>Prison Timeline <span>&amp; Shtfckry</span></h1>
+  <div class="masthead-meta">
+   <span><a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a></span>
+   <span><a href='https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link' target="_blank">Google Drive</a></span>
+  </div>
+  <nav class="masthead-sub" aria-label="Site navigation">
+   <a href="../index.html" class="masthead-link">Home</a>
+   <a href="../the-appeal.html" class="masthead-link">The Appeal</a>
+   <a href="../the-panel.html" class="masthead-link">The Panel</a>
+   <a href="../the-jury.html" class="masthead-link">The Jury</a>
+   <a href="../juror-thread.html" class="masthead-link">Juror Thread</a>
+   <a href="../lucy-lou.html" class="masthead-link">Lucy Lou</a>
+   <a href="../prison-timeline.html" class="masthead-link active">Prison Timeline</a>
+   <a href="../whos-who.html" class="masthead-link">Who's Who</a>
   </nav>
+ </div>
+</div>
 
-  <div class="masthead">
-    <img class="masthead-img" src="assets/img/hero-img.png" alt="Prison Timeline">
-    <div class="masthead-text">
-      <p class="masthead-kicker">IN v. Richard Allen</p>
-      <h1 class="masthead-title">Prison Timeline</h1>
-    </div>
+<!-- FILTER BAR (sticky) -->
+<div class="filter-bar">
+ <div class="filter-inner">
+  <div class="filter-tabs">
+   <button class="filter-btn all active" data-cat="all">All</button>
+   <button class="filter-btn legal"   data-cat="legal">Legal</button>
+   <button class="filter-btn medical"  data-cat="medical">Medical</button>
+   <button class="filter-btn phone"   data-cat="phone">Phone Calls</button>
+   <button class="filter-btn confession" data-cat="confession">Confessions</button>
+   <button class="filter-btn prison"   data-cat="prison">Prison Conditions</button>
+   <button class="filter-btn le"     data-cat="le">Law Enforcement</button>
+   <button class="filter-btn media"   data-cat="media">Media</button>
+   <button class="filter-btn question"  data-cat="question">Open Questions</button>
+   <button class="filter-btn haldol"   data-cat="haldol">Haldol Log</button>
+   <button class="filter-btn conf-log" data-cat="conf-log">Confession Reference</button>
+   <button class="filter-btn guard-log" data-cat="guard-log">Guard Logs</button>
   </div>
-
-  <div class="content-section">
-
-    <details class="month-details" open>
-      <summary class="month-summary"><h2>Known Haldol Injections</h2></summary>
-      <div class="doc-item">
-        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
-          <iframe src="https://drive.google.com/file/d/1NjrVxZM5RJeQQIVaITH4P3kPgaLJIza0/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
-        </div>
-      </div>
-    </details>
-
-    <details class="month-details" open>
-      <summary class="month-summary"><h2>Prison Timeline</h2></summary>
-      <div class="doc-item">
-        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
-          <iframe src="https://drive.google.com/file/d/1MNwgzyB8Szcm_lcYBtTrECxV_qxC4z2u/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
-        </div>
-      </div>
-    </details>
-
-    <details class="month-details" open>
-      <summary class="month-summary"><h2>All the obvi Vry Srsly "confessions"</h2></summary>
-      <div class="doc-item">
-        <div class="doc-note">All known confessions and Haldol / psychosis related reports.</div>
-        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
-          <iframe src="https://drive.google.com/file/d/1vfb0Q1TvSpNsL_z-TtwKqtbOkw4cdpmv/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
-        </div>
-      </div>
-    </details>
-
+  <div class="search-row">
+   <input type="search" id="search" placeholder="Search entries…" autocomplete="off">
   </div>
+  <div class="jump-row" id="jump-nav"></div>
+ </div>
+</div>
 
-  <footer class="site-footer">
-    <span class="footer-brand">All Eyes on Delphi</span>
-    <div class="footer-social">
-      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-    </div>
-  </footer>
+<!-- TIMELINE -->
+<main class="main">
+ <div id="timeline"></div>
+ <div id="no-results">No entries match your filter or search.</div>
+</main>
 
-  <script>
-    const nav = document.getElementById('siteNav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    if (toggle) toggle.addEventListener('click', () => { links.classList.toggle('open'); });
-  </script>
+<!-- CONFESSION LOG -->
+<section id="conf-log-panel" style="display:none">
+ <div class="haldol-inner">
+  <div class="haldol-header">
+   <div class="haldol-kicker">Richard Allen · Westville CF</div>
+   <h2 class="haldol-title">Confession &amp; Denial Reference</h2>
+   <div class="haldol-byline">Sources: Wala/Martin clinical notes, correctional officer logs, GTL call transcripts, DOC video, defense visit records &nbsp;·&nbsp; Nov 2022 – Feb 2024</div>
+  </div>
+  <div class="haldol-table-wrap">
+   <table class="haldol-table conf-table">
+    <thead>
+     <tr>
+      <th>Date</th>
+      <th>Source</th>
+      <th>Note</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td class="hc-date">11/03/2022</td>
+      <td class="conf-src">Primeau</td>
+      <td>RA on psychotropic meds (Prozac) since age 25; hospitalized for depression in 2019. Symptom Acuteness: Code D.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">11/14/2022</td>
+      <td class="conf-src">GTL / KA</td>
+      <td class="conf-quote">"If it gets too hard just tell them to come and get me and bring me to you and I'll tell them whatever they want me to tell them cuz whatever it is they want me to say I'll just say it."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">11/21/2022</td>
+      <td class="conf-src">Wala</td>
+      <td>RA communicated that he didn't do this and would never admit to something he didn't do.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">11/22/2022</td>
+      <td class="conf-src">Wala</td>
+      <td>RA communicated that it was good to know the evidence didn't point to him.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">12/06/2022</td>
+      <td class="conf-src">Wala</td>
+      <td>RA communicated that he was an innocent man but felt like he had already been convicted.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">01/24/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA signed a consent for Prozac (again).</td>
+     </tr>
+     <tr>
+      <td class="hc-date">Pre-Apr 2023</td>
+      <td class="conf-src">Inmate snitches</td>
+      <td>Lacy Patton Jr.: RA allegedly "confessed" to molesting girls and shooting them. Jason Elliot: snitches spread "confessions" to general population, then to families.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/03/2023</td>
+      <td class="conf-src">GTL / KA (3:12 am)</td>
+      <td class="conf-quote">"I don't know how much longer I'm going to be lucid."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/03/2023</td>
+      <td class="conf-src">GTL / KA (5:14 am)</td>
+      <td class="conf-quote">"I think I did." / "I wish I could say I didn't. I don't know." / "I just wish they'd kill me or let me apologize to the families at least."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/03/2023</td>
+      <td class="conf-src">GTL / KA (8:45 am)</td>
+      <td class="conf-quote">"I killed Abby. I killed Abby and Libby." / "Yes I did." / "I don't know why." / "No I mean I evidently did it." / "Because maybe I did."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/05/2023</td>
+      <td class="conf-src">C/O Drang</td>
+      <td>RA slipped a yellow envelope requesting to confess; later added "for killing A.W. and L.G."; then added he wants to apologize to the families.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/05/2023</td>
+      <td class="conf-src">Wala</td>
+      <td class="conf-quote">"I killed A.W. and L.G. I'm sorry." RA said he made sure they were dead so they wouldn't suffer; knew his intentions were sexual; thought they were 18-19 but could have been as young as 11; said he was selfish and a coward.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/07/2023</td>
+      <td class="conf-src">C/O Clemons</td>
+      <td class="conf-quote">"I, Richard Matthew Allen, killed A.W. and L.G. all by myself, nobody helped me." / "Dear Lord, forgive me for molesting A.W., L.G., and Chris." / "I want to confess, I know a lot."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/07/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>Wala told RA he had confessed. RA asked what he confessed to. Wala thinks RA is feigning.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/08/2023</td>
+      <td class="conf-src">C/O Early</td>
+      <td class="conf-quote">"I am ready to confess" (pacing). "I swear to God, I killed A.W. and L.G. Fuck me running."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/09/2023</td>
+      <td class="conf-src">C/O Miller</td>
+      <td class="conf-quote">"I killed A.W. and L.G." (while flushing paper down toilet). "I only killed them to give my family more time to live." / "Can't stop the bomb put in me." RA was crying, shouting at his shadow.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/10/2023</td>
+      <td class="conf-src">C/O Smith</td>
+      <td class="conf-quote">RA licked the window of his door: "Kathy, I did it. I'm guilty. Run, Kathy, run. I did it."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/13/2023</td>
+      <td class="conf-src">Martin / guards</td>
+      <td>Martin "offered" Haldol to RA while he was being video recorded making statements about his crime. RA declined. During transport RA screamed, asked for "mommy" and "daddy," rambled about suicide and time travel, claimed to be both the stupidest and smartest person ever.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/14/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>TRC Committee reviewed notes for approx. 1 month and agreed RA was psychotic. <strong>First involuntary Haldol injection: 5 mg lactate IM.</strong> Martin: "that's how I started him on medication."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/17/2023</td>
+      <td class="conf-src">Wala</td>
+      <td class="conf-quote">"I'm afraid I lied so much. I'm afraid the longer I make this go on - " (didn't complete thought). "The last thing I remember is I fell asleep and kept activating nuclear war after my death and destroyed earth."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/18/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>RA still presented as psychotic. Switch to Haldol decanoate 50 mg IM (1x/30 days). Martin monitoring whether medication addresses psychosis diagnosis.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/20/2023</td>
+      <td class="conf-src">Wala / C/O Fisher</td>
+      <td>Wala: RA's "cognitive issues have worsened." Fisher: "RA claims he wants to talk to the warden and confess he is guilty."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">4/22/2023</td>
+      <td class="conf-src">C/O Smith</td>
+      <td class="conf-quote">"I killed those two girls, so I have to kill myself." Smith noted RA seemed to have trouble remembering, or "almost saying it doesn't matter."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/23/2023</td>
+      <td class="conf-src">C/O Roberts</td>
+      <td class="conf-quote">"I killed A.W. and L.G. My wife wasn't involved. I would like to confess."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/25/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>RA not very communicative. RA still presenting as psychotic.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">4/26/2023</td>
+      <td class="conf-src">C/O Roberts</td>
+      <td class="conf-quote">"Can I talk? Can you listen? I killed A.W. and L.G." RA told Roberts his grandpa molested him; asked Roberts to read him his last rites. RA was hitting his head on the wall for an extended period.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/28/2023</td>
+      <td class="conf-src">DOC video 10152</td>
+      <td>During shower transport: RA spoke incoherently, repeatedly said "there is a god," asked to be euthanized, said he was King Michael, claimed he started WWIII, tried to save his family and Donald Trump, sang hymns, asked to be cryogenically frozen. Feces on his face.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">04/29/2023</td>
+      <td class="conf-src">C/O Fisher</td>
+      <td class="conf-quote">RA said he was going to rape the girls but panicked and killed them instead. Claimed he used a box cutter and left it in the CVS trash. Repeatedly asked for a doctor from Delphi; asked for water to write a confession.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/01/2023</td>
+      <td class="conf-src">C/O Early</td>
+      <td class="conf-quote">"Can I confess to the warden and Dr. Wala?" RA was mimicking officer's movements; asking for World War III; eating a Bible.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/02/2023</td>
+      <td class="conf-src">Wala</td>
+      <td class="conf-quote">"I killed A.W. and L.G. I will kill everyone. I will wipe out the whole world after I die." / "I killed myself by killing my entire family and best friends." Mentions starting WWIII.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/02/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>RA is returning to baseline?</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/03/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA gave detailed crime narrative: started Feb 13, 2017 with parents in morning; bought a 6-pack, drank three beers; bundled up, went to the trail, laid in wait; saw the girls, followed them onto the bridge; doing something with his gun when bullet fell out; ordered them down the hill; thought they were older; saw a van which scared him; crossed a creek and "cut their necks"; covered bodies with tree branches; exited keeping off trails; returned to vehicle parked by nearby building. Kept repeating he didn't want to miss Easter.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/04/2023</td>
+      <td class="conf-src">Defense</td>
+      <td>RA was in mental and physical state of deterioration; nearly non-communicative.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/09/2023</td>
+      <td class="conf-src">Wala</td>
+      <td class="conf-quote">"I just want to sign my confession."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/10/2023</td>
+      <td class="conf-src">GTL / KA (call 1)</td>
+      <td class="conf-quote">"I need you to know that I did this." / "I killed Abby and Libby dear."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/10/2023</td>
+      <td class="conf-src">GTL / KA (call 2)</td>
+      <td class="conf-quote">"I cannot stop. I've got somebody here listening to me right now dear." / "I killed Abby and Libby dear."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/10/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>Wala notes: "Brief psychotic disorder with related stressors."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/17/2023</td>
+      <td class="conf-src">GTL / JA (mom)</td>
+      <td class="conf-quote">"I wouldn't sit here and tell you I did it if I didn't." / "So if I did do it then you guys don't love me anymore?"</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/18/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>Decided to give slight increase in Haldol dose. Note: Martin recorded RA showed "no evidence of psychosis" - yet administered second decanoate injection (50 mg IM).</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/18/2023</td>
+      <td class="conf-src">C/O Fisher</td>
+      <td class="conf-quote">RA said he killed A.W. and L.G.; said the girls were "screaming." RA had a small gash over his head from head-banging. After putting feces on his face: "I won't be doing that again."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/22/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA was having breaks of psychotic reactions to stress.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/25/2023</td>
+      <td class="conf-src">DOC video</td>
+      <td>RA paced for two hours; banged front and back of his head on metal door for about an hour. Despite visible goose egg on his head, no one checked on him.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">05/26/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA had two black eyes. Appeared to be self-harming.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/5/2023</td>
+      <td class="conf-src">Martin</td>
+      <td>Emergent involuntary injection due to head-banging self-harm (2:39 p.m.). "This is an additional shot to stop him from head banging."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/05/2023</td>
+      <td class="conf-src">GTL / KA</td>
+      <td class="conf-quote">"You know that I done it right?"</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/08/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA suffering physiological symptoms: trembling, knees buckling, stuttering.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/11/2023</td>
+      <td class="conf-src">GTL / KA</td>
+      <td class="conf-quote">"I did it. Do you still love me?"</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/18/2023</td>
+      <td class="conf-src">C/O Roberts</td>
+      <td class="conf-quote">"Why are you doing this? Do you know God? Do you know why I'm here? I killed A.W. and L.G."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/20/2023</td>
+      <td class="conf-src">Martin</td>
+      <td class="conf-quote">RA said he "would like to apologize to the families of" - he said "his victims."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/20/2023</td>
+      <td class="conf-src">DOC video 1201</td>
+      <td>Guards carried a catatonic, drooling Allen to the infirmary.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">06/23/2023</td>
+      <td class="conf-src">C/O Roberts</td>
+      <td class="conf-quote">"Do I make you mad? Have I told you about my wife? I killed A.W. and L.G. Should I lay down?" RA also said he molested Dawn, A.W., L.G., Chris, and Kevin.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">07/26/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA had bulging eyes.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">08/03/2023</td>
+      <td class="conf-src">Wala</td>
+      <td class="conf-quote">"I don't feel well. It feels my heart is going to quit. I had a heart attack before." RA denied intent to harm himself; indicated being confused and not knowing what was rational anymore.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">08/08/2023</td>
+      <td class="conf-src">C/O Smith → LE</td>
+      <td class="conf-quote">Smith told LE that RA said: "If I fucked those girls, I fucked them. If I killed them, I killed them."</td>
+     </tr>
+     <tr>
+      <td class="hc-date">08/17/2023</td>
+      <td class="conf-src">C/O Miller → LE</td>
+      <td>RA started refusing meals in March; stopped talking in a sensical manner; went through a "personality switch." RA said he didn't believe someone had turned him in; said he probably killed his family and grandkids; told Miller to kill him so his family could still be alive; said he was sorry for everyone he killed, "as if to say he killed many others." RA was pacing, hitting walls, crying, singing, yelling curse words.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">08/19/2023</td>
+      <td class="conf-src">Defense</td>
+      <td>RA stated he was once shot with a taser through a closed and locked prison cell door.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">11/22/2023</td>
+      <td class="conf-src">Wala</td>
+      <td>RA proclaiming innocence. RA communicated he had "already been sentenced." RA identified as having serious mental illness from a clinical standpoint. MDT notes: RA met psychiatric threshold for SMI; designated safekeeper in DOC due to court order.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">12/22/2023</td>
+      <td class="conf-src">RA (reported)</td>
+      <td>RA expressed concern he was receiving unknown medications; said he did not always receive the same type, number, size, or color of pills, and had not recently seen a physician.</td>
+     </tr>
+     <tr>
+      <td class="hc-date">02/04/2024</td>
+      <td class="conf-src">C/O Bedwell</td>
+      <td>RA took medication; lying down and crying (Code 8). Bedwell initially logged only that RA was lying down and mumbling. After a visit from Mullin, he added that RA was "mumbling about killing the girls." <em>Log was amended after the fact.</em></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
 
+<!-- HALDOL LOG -->
+<section id="haldol-panel" style="display:none">
+ <div class="haldol-inner">
+  <div class="haldol-header">
+   <div class="haldol-kicker">Richard Allen · Westville CF</div>
+   <h2 class="haldol-title">Known Haldol Injections</h2>
+   <div class="haldol-byline">Sources: Wala nursing notes, Martin visit records, GTL call logs</div>
+  </div>
+  <div class="haldol-table-wrap">
+   <table class="haldol-table">
+    <thead>
+     <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Dose</th>
+      <th>Form</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1ODymtNEfOGdSnVUfiYxQtFgkduQ_Dv1Ga4MUm3Nq3Ew/" target="_blank" rel="noopener">4/14/2023</a></td>
+      <td><span class="hdot" style="background:var(--steel)"></span>Haldol lactate<span class="hmeta">5 mg &middot; IM 1x/day</span></td>
+      <td class="hc-dose">5 mg</td>
+      <td>IM &middot; 1x/day</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1KMqdZhvygsAJMDJzx4pnGNciT_BJdCyEa1MT2MzKKuM/" target="_blank" rel="noopener">4/15/2023</a></td>
+      <td><span class="hdot" style="background:var(--steel)"></span>Haldol lactate<span class="hmeta">5 mg &middot; IM 1x/day</span></td>
+      <td class="hc-dose">5 mg</td>
+      <td>IM &middot; 1x/day</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1A9EMcLyf80NpUMFl5McCtKYspD5FuBPIikzl4727JPM/" target="_blank" rel="noopener">4/16/2023</a></td>
+      <td><span class="hdot" style="background:var(--steel)"></span>Haldol lactate<span class="hmeta">5 mg &middot; IM 1x/day</span></td>
+      <td class="hc-dose">5 mg</td>
+      <td>IM &middot; 1x/day</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1YCLqbY0nwBZag8jBf-OJNz0IMUa89bJ88mJkNmOxCQg/" target="_blank" rel="noopener">4/17/2023</a></td>
+      <td><span class="hdot" style="background:var(--steel)"></span>Haldol lactate<span class="hmeta">5 mg &middot; IM 1x/day</span></td>
+      <td class="hc-dose">5 mg</td>
+      <td>IM &middot; 1x/day</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1HxBL2Mgvh7dgQfCERL6UOdSzs-kqoxoM-IrB44XkdVg/" target="_blank" rel="noopener">4/18/2023</a></td>
+      <td><span class="hdot" style="background:var(--gold)"></span>Haldol decanoate<span class="hmeta">50 mg &middot; IM 1x/30 days</span></td>
+      <td class="hc-dose">50 mg</td>
+      <td>IM &middot; 1x/30 days</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1WYNvrZpUQU2x5fwtfXoUGP24V69oXgt9_dz-5aEh3P4/" target="_blank" rel="noopener">5/8/2023</a></td>
+      <td>
+       <span class="hdot" style="background:var(--muted)"></span>Oral Haldol<span class="hmeta">unknown dose &middot; oral</span>
+       <span class="hnote">"slightly higher dose than I would normally have done" &mdash; Dr. Martin</span>
+      </td>
+      <td class="hc-dose">unknown</td>
+      <td>Oral</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1IODGRChuNNz1ZEKl7kvEZO9rwIBL9cYrvoBHl0epmuI/" target="_blank" rel="noopener">5/18/2023</a></td>
+      <td><span class="hdot" style="background:var(--gold)"></span>Haldol decanoate<span class="hmeta">50 mg &middot; IM 1x/30 days</span></td>
+      <td class="hc-dose">50 mg</td>
+      <td>IM &middot; 1x/30 days</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/18Ix2vL21_7Om0c30vQ1j95D8psSHviNpmqGbxU-2A-E/" target="_blank" rel="noopener">6/5/2023</a></td>
+      <td>
+       <span class="hdot" style="background:var(--red)"></span>Haldol <span class="htag">emergent</span><span class="hmeta">unknown dose &middot; IM</span>
+       <span class="hnote">Involuntary injection; RA self-harming by head banging, 2:39 p.m.</span>
+      </td>
+      <td class="hc-dose">unknown</td>
+      <td>IM</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1IvUizsCJXp35bOi7FNd5IM_ek30PcQKIYt4W2A3hOB0/" target="_blank" rel="noopener">6/17/2023</a></td>
+      <td><span class="hdot" style="background:var(--gold)"></span>Haldol decanoate<span class="hmeta">50 mg &middot; IM 1x/30 days</span></td>
+      <td class="hc-dose">50 mg</td>
+      <td>IM &middot; 1x/30 days</td>
+     </tr>
+     <tr>
+      <td class="hc-date"><a href="https://docs.google.com/document/d/1cDPEdiyitPRzYirit9Bpq-V80-cE-iyqokSimGP3VNU/" target="_blank" rel="noopener">6/25/2023</a></td>
+      <td>
+       <span class="hdot" style="background:#8a7060"></span>Haldol <span class="htag htag-unk">unknown</span><span class="hmeta">unknown dose &middot; unknown form</span>
+      </td>
+      <td class="hc-dose">unknown</td>
+      <td>unknown</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <p class="haldol-footnote">Rozzi confirmed RA received Haldol on 6/5 and 6/25. Dr. Martin continued oral Haldol after 6/20/2023; dose unspecified. A 15 mg Haldol mention in records is not tied to the oral Haldol series.</p>
+ </div>
+</section>
+
+<!-- GUARD LOG -->
+<section id="guard-log-panel" style="display:none">
+ <div class="haldol-inner">
+  <div class="haldol-header">
+   <div class="haldol-kicker">Richard Allen · Westville CF</div>
+   <h2 class="haldol-title">Guard Log Sheets &amp; LE Guard Interviews</h2>
+   <div class="haldol-byline">Sources: Correctional officer log sheets, LE interviews with guards &nbsp;·&nbsp; Apr 2023 – Mar 2024</div>
+  </div>
+  <div class="haldol-table-wrap">
+   <table class="haldol-table guard-table">
+    <thead>
+     <tr>
+      <th>Date</th>
+      <th>Guard</th>
+      <th>Type</th>
+      <th>Note</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>Apr 4, 2023</td>
+      <td>Ethan Drang</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> Slipped yellow envelope through cuff port requesting to confess for killing A.W. and L.G. (State's Exhibit 292).</td>
+     </tr>
+     <tr>
+      <td>Apr 7, 2023</td>
+      <td>Michael Clemons</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> 'I, Richard Matthew Allen, killed A.W. and L.G. all by myself, nobody helped me.' / 'I'm not crazy, I'm only acting like I'm crazy.'</td>
+     </tr>
+     <tr>
+      <td>Apr 7, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> RA praying 'forgive me for molesting A.W., L.G., and Chris.'</td>
+     </tr>
+     <tr>
+      <td>Apr 8, 2023</td>
+      <td>James Early</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> RA pacing, 'I swear to God, I killed A.W. and L.G.' Drinking toilet water mixed with hot sauce.</td>
+     </tr>
+     <tr>
+      <td>Apr 9, 2023</td>
+      <td>John Miller</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> Multiple confessions while flushing paper. 'I hope I burn in hell for what I did.' / 'I only killed them to give my family more time to live.'</td>
+     </tr>
+     <tr>
+      <td>Apr 10, 2023</td>
+      <td>Raymond Smith</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> (3:24 a.m.) 'Kathy, I did it. I'm guilty. Run, Kathy, run.'</td>
+     </tr>
+     <tr>
+      <td>Apr 13, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> RA rolling on ground.</td>
+     </tr>
+     <tr>
+      <td>Apr 20, 2023</td>
+      <td>Brandon Fisher</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> RA asks to confess.</td>
+     </tr>
+     <tr>
+      <td>Apr 22, 2023</td>
+      <td>Raymond Smith</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> 'I killed those two girls, so I have to kill myself.'</td>
+     </tr>
+     <tr>
+      <td>Apr 23, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> 'I killed A.W. and L.G. My wife wasn't involved. I would like to confess.'</td>
+     </tr>
+     <tr>
+      <td>Apr 26, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> 'Can I talk? Can you listen? I killed A.W. and L.G.' RA says grandfather molested him. Asked Roberts to read last rites. Hitting head on wall.</td>
+     </tr>
+     <tr>
+      <td>Apr 29, 2023</td>
+      <td>Brandon Fisher</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> RA said he killed two girls with a box cutter stolen from CVS. 'Was going to rape them, but not scare them, and then he panicked and killed them instead.' Girls were screaming.</td>
+     </tr>
+     <tr>
+      <td>May 1, 2023</td>
+      <td>James Early</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> (8:50 a.m.) RA mimicking Early, asking 'Can I confess to the warden and Dr. Wala?' Later saluting staff, asking about WWIII. Drinking toilet water; smearing feces.</td>
+     </tr>
+     <tr>
+      <td>May 18, 2023</td>
+      <td>Brandon Fisher</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> (8:15 p.m.) RA said he killed A.W. and L.G. with box cutter from CVS. Girls were 'screaming.'</td>
+     </tr>
+     <tr>
+      <td>Jun 18, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> (3:30 p.m.) 'I killed A.W. and L.G.' RA says he molested Dawn, A.W., L.G., a person named Chris, and someone named Kevin. RA 'accepted what was happening to him.'</td>
+     </tr>
+     <tr>
+      <td>Jun 23, 2023</td>
+      <td>Michael Roberts</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> (3:15 p.m.) 'I killed A.W. and L.G.' RA again says he molested Dawn, A.W., L.G., Chris, and Kevin.</td>
+     </tr>
+     <tr>
+      <td>Aug 8, 2023</td>
+      <td>Raymond Smith</td>
+      <td>LE interview</td>
+      <td><span class="guard-type-badge">[LE interview]</span> 'If I fucked those girls, I fucked them. If I killed them, I killed them.' Smith noted RA was polite, slept a lot. Last time Smith heard RA say anything about the case was April 2023 or maybe early June - definitely not July.</td>
+     </tr>
+     <tr>
+      <td>Aug 9, 2023</td>
+      <td>Michael Clemons</td>
+      <td>LE interview</td>
+      <td><span class="guard-type-badge">[LE interview]</span> RA said 'I'm not crazy, I'm only acting like I'm crazy' (responding to other inmates yelling at him).</td>
+     </tr>
+     <tr>
+      <td>Aug 9, 2023</td>
+      <td>Michael Roberts</td>
+      <td>LE interview</td>
+      <td><span class="guard-type-badge">[LE interview]</span> RA only acted up when his lawyers came.</td>
+     </tr>
+     <tr>
+      <td>Aug 17, 2023</td>
+      <td>John Miller</td>
+      <td>LE interview</td>
+      <td><span class="guard-type-badge">[LE interview]</span> RA went through 'a personality switch that you have not ever seen.' RA said he probably killed his family and grandkids. RA told Miller he molested his sister. RA said girls were screaming. RA told Miller to kill him so his family could still be alive. RA hit the door with his head, cried, sang, and yelled out curse words.</td>
+     </tr>
+     <tr>
+      <td>Feb 4, 2024</td>
+      <td>Jason Bedwell</td>
+      <td>Log sheet</td>
+      <td><span class="guard-type-badge">[Log sheet]</span> 10:00 a.m.: 'Overheard Inmate Allen say he was sorry for killing the girls.' 9:45 a.m.: RA lying down and crying (Code 8). Bedwell notes RA was 'lying down the entire time between 6 a.m. and noon for the most part' throughout his watch period.</td>
+     </tr>
+     <tr>
+      <td>Mar 15, 2024</td>
+      <td>Jason Bedwell</td>
+      <td>LE statement</td>
+      <td><span class="guard-type-badge">[LE statement]</span> Bedwell told LE that RA was curled up in a fetal position when he said 'I am sorry for what I did' and added 'for killing those girls' - even though his log sheet didn't say either of those things.</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<script>
+const ENTRIES = [
+
+// SEPTEMBER 2022
+{ date:"2022-09-21",
+ cats:["le"],
+ title:"Kathy Shank finds RA's cleared tip; The Tina Garrison is prepared; Dan Dulin submits internal report re: his 2017 audio interview with RA.",
+ src:"Internal report re: Dulin 2017 interview with RA (V13 p. 159); Tina Garrison report (V6 p. 244); Search Warrant; PCA; Shank Testimony (V13 p. 157)"
+},
+{ date:"2022-09-24",
+ cats:["media"],
+ title:"Liz Barnsley tweet: rumors of arrest circulating in true crime community."
+},
+{ date:"2022-09-25",
+ cats:["media","le"],
+ title:"Fox59: Delphi Murders latest - State police say 'nothing imminent.' Doug Carter calls rumors 'nonsense'; ISP Lafayette releases statement calling it 'false.'",
+ src:"Fox59 article"
+},
+// OCTOBER 2022
+{ date:"2022-10-13",
+ cats:["le"],
+ title:"RA interrogation #1 (Richard Allen). Kathy Allen interview #1.",
+ src:"Richard Allen Oct 13 interview #1; Kathy Allen Oct 13 interview #1"
+},
+{ date:"2022-10-13",
+ cats:["legal","le"],
+ title:"Liggett files Affidavit for Search Warrant. Judge Diener issues Search Warrant Order. Liggett files Search Warrant Return.",
+ src:"Affidavit for Search Warrant; Search Warrant Order; Search Warrant Return"
+},
+{ date:"2022-10-14",
+ cats:["le"],
+ title:"RA's gun sent to ISP Laboratory (Indianapolis) to firearms examiner Melissa Oberg 'to be matched.'"
+},
+{ date:"2022-10-19",
+ cats:["le"],
+ title:"Master Trooper Jay Harper receives Melissa Oberg's Certificates of Analysis from ISP Laboratory Division.",
+ src:"Certificates of Analysis"
+},
+{ date:"2022-10-26",
+ cats:["le","legal"],
+ title:"RA interrogation #2; buccal swab collected. Holeman books RA into Carroll County Jail.",
+ src:"RA Oct 26 interrogation #2; RA buccal swab Oct 26"
+},
+{ date:"2022-10-27",
+ cats:["legal"],
+ title:"McLeland files Verified Request to Prohibit Public Access, Probable Cause Affidavit, and Charges. Kathy Allen hires Brett Gibson.",
+ src:"Verified Request; PCA (App. V.II p. 103); Charges (App. V.II p. 101)"
+},
+{ date:"2022-10-27",
+ cats:["legal","le"],
+ title:"Gibson contacts Carroll County Sheriff's Office (email + call). McLeland calls Gibson to arrange meeting with RA. Gibson meets RA at Carroll County Jail; calls Kathy to confirm RA will be charged next day.",
+ src:"Gibson emails/calls CCSO"
+},
+{ date:"2022-10-28",
+ cats:["legal"],
+ title:"Initial Hearing held. Judge Diener: Order finding PC and setting bond, Pre-Omnibus Order, Order Sealing Court Records, Order on Initial Hearing.",
+ src:"Order; Pre-Omnibus Order; Sealing Order (App. V.II p. 100); Order on Initial Hearing (App. V.II p. 112)"
+},
+{ date:"2022-10-28",
+ cats:["legal"],
+ title:"Gibson meets with RA at Carroll County Jail following initial hearing.",
+ src:"Gibson account"
+},
+{ date:"2022-10-31",
+ cats:["medical"],
+ title:"Wala - Westville Intake Evaluation. RA: no prior psychiatric history, no history of mental illness, no substance use disorder.",
+ src:"Wala Intake Evaluation Oct 31, 2022"
+},
+{ date:"2022-11-01",
+ cats:["medical","prison"],
+ title:"Wala visit: RA's cell has no natural light, no window to outside. Expressing paranoia, feels others can read his mind, feels he is being observed constantly.",
+ src:"Wala visit Nov 1, 2022"
+},
+{ date:"2022-11-03",
+ cats:["medical","prison"],
+ title:"Wala visit: RA afraid of being poisoned, not eating. Suicidal ideation - placed on suicide watch. Diagnoses: MDD (recurrent, severe, with psychotic features), GAD.",
+ src:"Wala visit Nov 3, 2022"
+},
+{ date:"2022-11-07",
+ cats:["legal"],
+ title:"Rozzi files Motion for Safekeeping.",
+ src:"Rozzi Motion for Safekeeping (App. V.II p. 116)"
+},
+{ date:"2022-11-08",
+ cats:["medical","prison"],
+ title:"Wala visit: IDOC code places SMI patients in solitary for 30 days; exceptions for extreme danger. Wala: RA does not meet that threshold.",
+ src:"Wala visit Nov 8, 2022"
+},
+{ date:"2022-11-09",
+ cats:["legal"],
+ title:"RA's handwritten letter begging Court for counsel finally filed.",
+ src:"RA letter to Court Nov 9, 2022"
+},
+{ date:"2022-11-09",
+ cats:["medical","prison"],
+ title:"Wala visit. Inmates taunting RA: 'Baby killer, we're going to kill you.'",
+ src:"Wala visit Nov 9, 2022"
+},
+{ date:"2022-11-10",
+ cats:["medical","prison"],
+ title:"Wala visit. RA refused to come out at first. Told RA not to speak about his case. RA exercising, reading, maintaining ADLs.",
+ src:"Wala visit Nov 10, 2022"
+},
+{ date:"2022-11-14",
+ cats:["legal"],
+ title:"Judge Gull appoints Bradley Rozzi (lead) and Andrew Baldwin (co-counsel) as contract Public Defenders.",
+ src:"Order (App. V.II p. 125); Rozzi Appearance (App. V.II p. 123); Baldwin Appearance (App. V.II p. 124)"
+},
+{ date:"2022-11-14",
+ cats:["phone","confession"],
+ title:"Phone call: RA to Kathy Allen (GTL tablet, Westville CF).",
+ detail:"<p><a href='https://drive.google.com/file/d/1Nrdrm24lQvAhLZ9N8ldIDldUiks1z6A1/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><p>RA: &quot;It gets to a point that it's too much, just tell them to come and get me and I'll tell them whatever they want me to tell them cuz whatever it is they want me to say I'll just say it.&quot;</p><p>RA: &quot;Every time I talk to you I feel like it's going to be the last time I get to talk to you.&quot;</p><p>RA: &quot;Nobody loves me anymore.&quot;</p><details><summary>Full transcript</summary><div class='tx'><p><em>Mechanical Voice: An inmate at the Indiana Department of Corrections Westville Correctional Facility</em></p><p><b>KA:</b> Hey. Are you there?</p><p><b>RA:</b> Hey. Yeah.</p><p><b>RA:</b> I'm sorry hun I'm trying to keep this together.</p><p><b>KA:</b> I know hun.</p><p><b>RA:</b> I don't I don't want to upset you anymore. All I want to do is be able to help you. Okay?</p><p><b>KA:</b> Yeah yeah.</p><p><b>RA:</b> So I'm not saying anything but if it gets to a point that it's too much you just need to call the investigators and tell them to come and get me and bring me to you and I'll tell them whatever they want me to tell them cuz whatever it is they want me to say I'll just say it.</p><p><b>KA:</b> No no no.</p><p><b>RA:</b> I wanna be able to make this with you and for everybody else I'm because of this. I love you too much</p><p><b>KA:</b> I know I know.</p><p><b>RA:</b> And every time I talk to you I feel like it's going to be the last time I get to talk to you.</p><p><b>KA:</b> I know I wish I could hug you.</p><p><b>RA:</b> I can't explain what's been going on. I don't want you to worry about me.</p><p><b>KA:</b> Yeah.</p><p><b>RA:</b> I'm a man and I'll take care of myself but I'm worried about you.</p><p><b>KA:</b> I know.</p><p><b>RA:</b> So and you let everybody else know how fucking much I love you.</p><p><b>KA:</b> You need to hang in there honey okay.</p><p><b>RA:</b> Will you just let everybody know how much I love–</p><p><b>KA:</b> Of course I will they already know hun.</p><p><b>RA:</b> No they don't.</p><p><b>KA:</b> Yes they do.</p><p><b>RA:</b> Nobody loves me anymore.</p><p><b>KA:</b> Stop. That's not true.</p><p><b>RA:</b> I'm sorry I'm sorry.</p><p><b>RA:</b> I know what you told me. I know what you told me and I believe you.</p><p><b>KA:</b> Yes.</p><p><b>RA:</b> I just knowing I'm never going to see you again or at least it feels that way. I'm just saying if it gets too hard just tell them to come and get me and bring me to see you and I'll tell them whatever they want me to say.</p><p><b>KA:</b> No.</p><p><b>RA:</b> Okay. I don't need you to try and be strong for me okay. If you need to be weak, you need to be held, you take care of yourself okay.</p><p><em>You have 1 minute remaining</em></p><p><b>RA:</b> just one more thing I fucked up for ya. I just love you so much babe.</p><p><b>KA:</b> I love you too honey.</p><p><b>RA:</b> just know that if anything happens I'll see you in the next lifetime. I pray I swear I will okay?</p><p><b>KA:</b> Okay.</p><p><b>RA:</b> You take care of the family for me I love you all.</p><p><b>KA:</b> I love you too sweetheart.</p></div></details>",
+ src:"Phone call RA to KA, Nov 14, 2022"
+},
+{ date:"2022-11-16",
+ cats:["legal"],
+ title:"Judge Gull issues Transport Order.",
+ src:"Transport Order (App. V.II p. 126)"
+},
+{ date:"2022-11-18",
+ cats:["medical"],
+ title:"Wala - Intake No Medical Services form. Diagnoses confirmed: MDD + GAD.",
+ src:"Wala intake Nov 18, 2022"
+},
+{ date:"2022-11-21",
+ cats:["legal"],
+ title:"Baldwin files Petition to Let Bail.",
+ src:"Petition to Let Bail (App. V.II p. 130)"
+},
+{ date:"2022-11-28",
+ cats:["medical"],
+ title:"Wala visit: RA concerned about extortion of family. Cell conditions. Dr. Frank Bell provides Bible to Kathy Allen for RA.",
+ src:"Wala visit Nov 28, 2022"
+},
+{ date:"2022-12-01",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Dec 1, 2022"
+},
+{ date:"2022-12-05",
+ cats:["legal"],
+ title:"Bail Hearing held.",
+ src:"Bail Hearing Dec 5, 2022"
+},
+{ date:"2022-12-08",
+ cats:["legal"],
+ title:"Judge Gull Order denying bail. Case proceeds.",
+ src:"Gull Order Dec 8, 2022"
+},
+{ date:"2022-12-12",
+ cats:["legal"],
+ title:"Omnibus Hearing. Discovery requests. McLeland files State's Response to Petition for Bail.",
+ src:"Omnibus Hearing Dec 12, 2022"
+},
+{ date:"2022-12-15",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Dec 15, 2022"
+},
+{ date:"2022-12-22",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Dec 22, 2022"
+},
+{ date:"2022-12-29",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Dec 29, 2022"
+},
+{ date:"2023-01-05",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Jan 5, 2023"
+},
+{ date:"2023-01-12",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Jan 12, 2023"
+},
+{ date:"2023-01-19",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Jan 19, 2023"
+},
+{ date:"2023-01-26",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Jan 26, 2023"
+},
+{ date:"2023-02-09",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Feb 9, 2023"
+},
+{ date:"2023-02-16",
+ cats:["medical"],
+ title:"Wala visit.",
+ src:"Wala visit Feb 16, 2023"
+},
+{ date:"2023-02-16",
+ cats:["legal"],
+ title:"Judge Gull issues Order.",
+ src:"Gull Order Feb 16, 2023"
+},
+{ date:"2023-02-23",
+ cats:["legal"],
+ title:"Judge Gull Order setting trial date and other case management matters.",
+ src:"Gull Order Feb 23, 2023"
+},
+{ date:"2023-02-28",
+ cats:["medical"],
+ title:"Wala's 4th of 4 weekly visits in February.",
+ src:"Wala weekly visit, Feb 2023 #4"
+},
+// MARCH 2023
+{ date:"2023-03-01",
+ cats:["medical","prison"],
+ title:"March 2023: Daily mental health monitoring continues. RA on suicide watch. Weekly Wala visits throughout month.",
+ src:"Wala weekly visits, March 2023"
+},
+{ date:"2023-03-01",
+ cats:["le","confession"],
+ title:"State subpoenas WCF records. Holeman and Harshman begin monitoring RA phone calls via GTL.",
+ src:"State subpoenas; GTL monitoring"
+},
+{ date:"2023-03-07",
+ cats:["medical"],
+ title:"Wala's 1st of 4 weekly visits in March.",
+ src:"Wala weekly visit, Mar 2023 #1"
+},
+{ date:"2023-03-14",
+ cats:["medical"],
+ title:"Wala's 2nd of 4 weekly visits in March.",
+ src:"Wala weekly visit, Mar 2023 #2"
+},
+{ date:"2023-03-21",
+ cats:["medical","prison"],
+ title:"Wala's 3rd visit. RA reports mental health issues, not feeling right. Reports accepting God.",
+ src:"Wala weekly visit, Mar 2023 #3"
+},
+{ date:"2023-03-24",
+ cats:["legal","prison"],
+ title:"Defense delivers approximately 1,000 pages of police reports/discovery to WCF for RA to review.",
+ src:"Defense delivery of discovery materials to WCF"
+},
+{ date:"2023-03-28",
+ cats:["medical"],
+ title:"Wala's 4th of 4 weekly visits in March.",
+ src:"Wala weekly visit, Mar 2023 #4"
+},
+// APRIL 2023
+{ date:"2023-04-01",
+ cats:["medical","legal"],
+ title:"Wala visit - IPAS settlement; RA designated SMI; Brief Psychotic Disorder diagnosis; safekeeper status formalized. Wala's social media posts deemed improper.",
+ src:"Wala visit Apr 1, 2023"
+},
+{ date:"2023-04-02",
+ cats:["phone"],
+ title:"Phone call RA to JA (mom): RA accepted Jesus Christ as savior on March 21. Mentions Bible received from Dr. Frank via Kathy.",
+ detail:"<p><a href='https://drive.google.com/file/d/1rb7fNJrtK2O73CW8wme-G1MYMeU8bbPl/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><details><summary>Full transcript</summary><div class='tx'><p><b>RA:</b> Hey.</p><p><b>JA:</b> Good to hear from you.</p><p><b>RA:</b> Been trying to get a hold of Kathy all morning.</p><p><b>JA:</b> Yeah there were tornadoes and everything.</p><p><b>RA:</b> Did Kathy tell you that I told her the other day that I accepted the Lord Jesus Christ as my savior?</p><p><b>JA:</b> Oh no. That's so wonderful.</p><p><b>RA:</b> God's really important to me right now.</p><p><b>RA:</b> I didn't accept God into my life until March 21st of 2023.</p><p><b>RA:</b> I wouldn't have read the Bible if Kathy hadn't sent it to me.</p><p><b>JA:</b> She's been trying for a long time to get one to ya.</p><p><b>RA:</b> I wanted her to thank Dr. Frank for saving my life.</p><p><b>RA:</b> I know he is not going to let this last forever.</p><p><b>JA:</b> I just think God's going to work a miracle through all this.</p><p><b>RA:</b> Yeah I think he already has.</p><p><b>JA:</b> I love you hun.</p><p><b>RA:</b> I love you too Mom. Bye.</p></div></details>",
+ src:"Phone call RA to JA, Apr 2, 2023"
+},
+{ date:"2023-04-03",
+ cats:["phone","prison"],
+ title:"3:12 a.m. phone call RA to JA (mom) and MA (dad): 'They've just about killed me. Mentally I feel like I'm in Guantanamo Bay. I've been mentally tortured for the last five and a half, six months.' Warns family about potential extortion.",
+ detail:"<details><summary>Full transcript</summary><div class='tx'><p><b>RA:</b> Hey, Mom.</p><p><b>JA:</b> Uh, uh-huh.</p><p><b>RA:</b> I need to talk to Dad.</p><p><b>MA:</b> What's up? Hey, Rick.</p><p><b>RA:</b> I'm sorry if I woke you up, but I don't know how much longer I'm going to be lucid. I wanted to talk to you because you're the strongest person I know.</p><p><b>RA:</b> I feel like they just about killed me. Mentally I feel like I'm in Guantanamo Bay, Cuba.</p><p><b>RA:</b> I've been mentally tortured for the last five and a half, six months.</p><p><b>RA:</b> I don't know if the coffee or Kool-Aid has drugs in it anymore.</p><p><b>RA:</b> I am on camera 24 hours a day, 7 days a week - so anything I say or do should have been on camera.</p><p><b>RA:</b> I'm not going to make phone calls to them anymore - it's because I don't know what I'm going to say going forward.</p><p><b>RA:</b> Do not let somebody get you to pay for an attorney. They're not going to extort money from you guys.</p><p><b>MA:</b> I'm proud of you, Rick. I love you too.</p><p><b>RA:</b> I love you, Daddy.</p></div></details>",
+ src:"Phone call RA to JA/MA, Apr 3, 2023 (3:12am)"
+},
+{ date:"2023-04-03",
+ cats:["confession","phone"],
+ title:"5:14 a.m. phone call RA to KA. Beginning of call excluded from public access per court rules. Remaining transcript: 'I think I did.' / 'I wish I could say I didn't. I don't know.' / 'I just wish they'd kill me or let me apologize to the families at least.'",
+ detail:"<p>Call begins with RA and KA. Initial portion excluded from public access per Rules on Access to Court Records.</p><details><summary>Full transcript (partial - beginning excluded)</summary><div class='tx'><p><em>[Beginning of call excluded from public access per court rules on access to court records]</em></p><p><b>RA:</b> I think I did.</p><p><b>KA:</b> No. No. You didn't. They are screwing with you there, and I'm trying to get to the bottom of it. There's something wrong.</p><p><b>RA:</b> I wish I could say I didn't. I don't know.</p><p><b>KA:</b> You don't know. See, exactly. There's something wrong. They're screwing with you, trying to get you to say things and trying to mess with your mind.</p><p><b>RA:</b> I just wish they'd kill me or let me apologize to the families at least.</p><p><b>KA:</b> Dear, don't talk any more. Just don't talk any more, okay?</p><p><b>KA:</b> Don't talk any more. I need to get a hold of somebody there.</p></div></details>",
+ src:"Phone call RA to KA, Apr 3, 2023 (5:14am)"
+},
+{ date:"2023-04-03",
+ cats:["phone","medical","confession"],
+ title:"Phone call RA to KA (8:45 a.m.) - 'I killed Abby. I killed Abby and Libby.' / 'Yes I did.' / 'I think I did.' / 'I just wish they would kill me or let me apologize to the families.' KA: 'They're messing with your mind.'",
+ detail:"<p><a href='https://drive.google.com/file/d/1xrk_17uA1vMP5tBMoH-34JYuctM5P1d7/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><details><summary>Full transcript</summary><div class='tx'><p><b>KA:</b> Honey?</p><p><b>RA:</b> Yeah</p><p><b>KA:</b> Are you there?</p><p><b>RA:</b> Yes babe.</p><p><b>KA:</b> What's going on?</p><p><b>RA:</b> I just wanted to apologize to ya.</p><p><b>KA:</b> What's going on sweetheart?</p><p><b>RA:</b> I did it.</p><p><b>KA:</b> You did what?</p><p><b>RA:</b> I did it. I killed Abby. I killed Abby and Libby.</p><p><b>KA:</b> No you didn't.</p><p><b>RA:</b> Yes I did.</p><p><b>KA:</b> No you didn't dear.</p><p><b>RA:</b> Yes I did.</p><p><b>KA:</b> Don't say that.</p><p><b>RA:</b> I don't know why.</p><p><b>KA:</b> No you didn't dear. You're not feeling well. There's something wrong. They've messed up your meds or something there.</p><p><b>RA:</b> No I mean I evidently did it.</p><p><b>KA:</b> No you didn't. Why would you say that?</p><p><b>RA:</b> Because maybe I did.</p><p><b>KA:</b> No you didn't dear.</p><p><b>RA:</b> I think I did.</p><p><b>KA:</b> No you didn't. They are screwing with you. They are messing with your mind.</p><p><b>RA:</b> Did dad tell you I called?</p><p><b>KA:</b> Yeah.</p><p><b>RA:</b> What did I say to him?</p><p><b>KA:</b> Maybe they have done something to your food or they've done something to your meds. There's something wrong. Don't you ever say you did anything cuz I know you didn't.</p><p><b>RA:</b> I think I did.</p><p><b>KA:</b> No you didn't. Why would you say that?</p><p><b>RA:</b> Cuz I think I did.</p><p><b>KA:</b> No you didn't dear you know you didn't.</p><p><b>RA:</b> I wish I could say I didn't. I don't know.</p><p><b>KA:</b> You don't know see exactly there's something wrong. They're screwing with you. They're trying to get you to say things. They're trying to mess with your mind.</p><p><b>RA:</b> I just wish they would kill me or let me apologize to the families at least.</p><p><b>KA:</b> Dear. Don't talk anymore. Just don't talk anymore okay?</p><p><b>KA:</b> Don't talk anymore. I need to get a hold of somebody there.</p></div></details>",
+ src:"Phone call RA to KA, Apr 3, 2023 (8:45am)"
+},
+{ date:"2023-04-03",
+ cats:["legal","prison","medical"],
+ title:"Defense WCF visit (Baldwin, Rozzi, Max Baker). Guards videotape attorney-client meetings. Defense observes steep mental decline - apparent schizophrenic/delusional behavior.",
+ src:"Defense WCF visit Apr 3, 2023"
+},
+{ date:"2023-04-03",
+ cats:["confession","prison"],
+ title:"Snitch inmates: Lacy Patton Jr. tells LE that RA confessed to molesting girls and shooting them. Jason Elliott spreads confessions to general population.",
+ src:"Lacy Patton Jr.; Jason Elliott statements"
+},
+{ date:"2023-04-04",
+ cats:["medical","prison","confession"],
+ title:"Wala visit. Snitch inmate posted RA's mom's phone call to YouTube. Companions replaced with guards. RA started confessing to staff after receiving discovery.",
+ src:"Wala visit Apr 4, 2023"
+},
+{ date:"2023-04-05",
+ cats:["confession","prison"],
+ title:"Ethan Drang log - RA slipped yellow envelope through cuff port requesting to confess for killing A.W. and L.G. (State's Exhibit 292).",
+ src:"Drang log; State's Exhibit 292"
+},
+{ date:"2023-04-05",
+ cats:["confession","medical"],
+ title:"Wala visit - RA: 'I killed A.W. and L.G. I'm sorry.' Sexual intent noted. Thought victims were 18–19 but 'maybe as young as 11.' Haldol shots begin.",
+ src:"Wala visit Apr 5, 2023"
+},
+{ date:"2023-04-05",
+ cats:["legal"],
+ title:"Rozzi files Emergency Motion to Modify Safekeeping Order.",
+ src:"Rozzi Emergency Motion to Modify Safekeeping Order"
+},
+{ date:"2023-04-06",
+ cats:["legal","prison"],
+ title:"State meets with Warden re emergency motion. Galipeau affidavit re RA breaking tablet. No face-to-face visits authorized.",
+ src:"State meeting with Warden; Galipeau affidavit"
+},
+{ date:"2023-04-07",
+ cats:["confession","prison"],
+ title:"Clemons log - RA: 'I, Richard Matthew Allen, killed A.W. and L.G. all by myself, nobody helped me.' / 'I'm not crazy, I'm only acting like I'm crazy.'",
+ src:"Clemons log, Apr 7, 2023"
+},
+{ date:"2023-04-07",
+ cats:["confession","prison"],
+ title:"Roberts log - RA praying 'forgive me for molesting A.W., L.G., and Chris.'",
+ src:"Roberts log, Apr 7, 2023"
+},
+{ date:"2023-04-07",
+ cats:["medical"],
+ title:"Wala visit - warned RA not to confess. RA verbalized memory loss. Wala thought RA was feigning.",
+ src:"Wala visit Apr 7, 2023"
+},
+{ date:"2023-04-08",
+ cats:["confession","prison","medical"],
+ title:"Early log - RA pacing, 'I swear to God, I killed A.W. and L.G.' Drinking toilet water mixed with hot sauce.",
+ src:"Early log, Apr 8, 2023"
+},
+{ date:"2023-04-09",
+ cats:["confession","prison"],
+ title:"Miller log - multiple confessions while flushing paper. 'I hope I burn in hell for what I did.' / 'I only killed them to give my family more time to live.'",
+ src:"Miller log, Apr 9, 2023"
+},
+{ date:"2023-04-10",
+ cats:["confession","prison","medical"],
+ title:"Smith log (3:24 a.m.) - 'Kathy, I did it. I'm guilty. Run, Kathy, run.'",
+ src:"Smith log Apr 10"
+},
+{ date:"2023-04-10",
+ cats:["medical"],
+ title:"Wala visit - RA naked, cell in poor condition. Wala notes confessions began around same time as discovery delivery in early April.",
+ src:"Wala visit Apr 10, 2023"
+},
+{ date:"2023-04-11",
+ cats:["prison","le"],
+ title:"Letter from Robert Baston - guards calling RA 'kid killer,' threatening him. Warden witnessed but did nothing.",
+ src:"Baston letter, Apr 11, 2023"
+},
+{ date:"2023-04-12",
+ cats:["medical","confession","prison"],
+ title:"Wala visit - RA declined medication. Being video recorded while making confessions. Wala uncertain whether psychosis or feigning.",
+ src:"Wala visit Apr 12, 2023"
+},
+{ date:"2023-04-13",
+ cats:["prison","confession"],
+ title:"DOC Video 980 (4:00 a.m.) - RA naked and confused, clutching sink, told guards 'not to believe his last confession.'",
+ src:"DOC Video 980, Apr 13, 2023"
+},
+{ date:"2023-04-13",
+ cats:["prison","medical"],
+ title:"Roberts log - RA rolling on ground.",
+ src:"Roberts log, Apr 13, 2023"
+},
+{ date:"2023-04-13",
+ cats:["medical"],
+ title:"Martin's 4th visit - RA had feces on him, hallucinations, talking to voices. Emergency committee agrees RA psychotic. Medication chosen: Haldol.",
+ src:"Martin visit #4 of 18; emergency committee decision"
+},
+{ date:"2023-04-13",
+ cats:["medical"],
+ title:"Wala visit - 'Psychotic symptoms are clear.'",
+ src:"Wala visit Apr 13, 2023"
+},
+{ date:"2023-04-13",
+ cats:["medical"],
+ title:"Dr. Dwenger first contacted re RA.",
+ src:"Dr. Dwenger first contact, Apr 13, 2023"
+},
+{ date:"2023-04-14",
+ cats:["legal","medical"],
+ title:"McLeland files Verified Request to Prohibit Public Access; State's Response to Emergency Motion. Haldol lactate 5 mg IM daily begins.",
+ src:"McLeland filings Apr 14; Haldol lactate order"
+},
+{ date:"2023-04-14",
+ cats:["medical"],
+ title:"Wala visit - RA refusing meals, significant weight loss. Still on Prozac.",
+ src:"Wala visit Apr 14, 2023"
+},
+{ date:"2023-04-17",
+ cats:["prison"],
+ title:"DOC Video 1002 - inmate yelled 'kill yourself Richard Allen' during transport.",
+ src:"DOC Video 1002, Apr 17, 2023"
+},
+{ date:"2023-04-17",
+ cats:["prison","medical"],
+ title:"DOC Video 1007 (14:55) - during forced injection transport, RA screamed incoherently, asked for 'mommy' and 'daddy,' claimed to be both stupidest and smartest person ever.",
+ src:"DOC Video 1007, Apr 17, 2023"
+},
+{ date:"2023-04-17",
+ cats:["medical","confession"],
+ title:"Wala visit - RA reporting repeated nightmares. 'I'm afraid I lied so much.' Described 'becoming separated from reality.' Bizarre delusions: nuclear war, death.",
+ detail:"<p>'I'm afraid I lied so much' - direct recantation of prior confessions, spoken while receiving forced Haldol injections.</p>",
+ src:"Wala visit Apr 17, 2023"
+},
+{ date:"2023-04-18",
+ cats:["medical"],
+ title:"Martin's 5th visit - RA still psychotic. Switched from Haldol lactate to Haldol decanoate 50 mg IM every 30 days.",
+ src:"Martin visit #5 of 18; Haldol decanoate order"
+},
+{ date:"2023-04-18",
+ cats:["legal"],
+ title:"Rozzi files Indiana Tort Claim Notice.",
+ src:"Rozzi Indiana Tort Claim Notice"
+},
+{ date:"2023-04-20",
+ cats:["medical","confession","legal"],
+ title:"Wala visit - cognitive issues worsened. Brandon Fisher log: RA asks to confess. McLeland files subpoenas for WCF audio/video and records.",
+ src:"Wala visit Apr 20; Fisher log Apr 20; McLeland subpoenas"
+},
+{ date:"2023-04-21",
+ cats:["legal","prison"],
+ title:"Defense WCF visit (Baldwin, Max Baker). DOC Video M2U01026: guard walking RA on leash; guard removes patch from uniform.",
+ src:"Defense WCF visit Apr 21; DOC Video M2U01026"
+},
+{ date:"2023-04-22",
+ cats:["confession","prison"],
+ title:"Smith log - 'I killed those two girls, so I have to kill myself.'",
+ src:"Smith log, Apr 22, 2023"
+},
+{ date:"2023-04-23",
+ cats:["confession","prison"],
+ title:"Roberts log - 'I killed A.W. and L.G. My wife wasn't involved. I would like to confess.'",
+ src:"Roberts log, Apr 23, 2023"
+},
+{ date:"2023-04-25",
+ cats:["medical"],
+ title:"Martin's 6th visit - RA not communicative, chanting 'Delphi.' Eating/sleeping better. No hallucinations. Still psychotic but improving.",
+ src:"Martin visit #6 of 18"
+},
+{ date:"2023-04-26",
+ cats:["confession","prison","medical"],
+ title:"Roberts log - 'Can I talk? Can you listen? I killed A.W. and L.G.' RA says grandfather molested him. Asked Roberts to read last rites. Hitting head on wall.",
+ src:"Roberts log, Apr 26, 2023"
+},
+{ date:"2023-04-28",
+ cats:["prison","medical"],
+ title:"DOC Video 10152 - RA incoherent during shower transport, asked to be euthanized, claimed to be King Michael, said he started WWIII.",
+ src:"DOC Video 10152, Apr 28, 2023"
+},
+{ date:"2023-04-28",
+ cats:["medical","prison","le"],
+ title:"Wala visit - RA lying naked, flushing Bible down toilet. IDOC Internal Affairs interview re Sgt. Brandon Williams. Robert Baston moved to B-pod after reporting Williams for trafficking contraband.",
+ src:"Wala visit Apr 28; IDOC IA interview"
+},
+{ date:"2023-04-29",
+ cats:["confession","prison"],
+ title:"Fisher log - KEY CONFESSION: RA said he killed two girls in Delphi with a box cutter stolen from CVS. 'Was going to rape them, but not scare them, and then he panicked and killed them instead.' Girls were screaming.",
+ src:"Fisher log, Apr 29, 2023"
+},
+// MAY 2023
+{ date:"2023-05-01",
+ cats:["legal"],
+ title:"McLeland signs for certified letter from Todd Click.",
+ src:"McLeland certified letter receipt, May 1, 2023"
+},
+{ date:"2023-05-01",
+ cats:["confession","prison","medical"],
+ title:"Early log (8:50 a.m.) - RA mimicking Officer Early, asking 'Can I confess to the warden and Dr. Wala?' Later saluting staff, asking about World War III. Drinking toilet water; smearing feces.",
+ src:"Early log, May 1, 2023"
+},
+{ date:"2023-05-02",
+ cats:["medical"],
+ title:"Martin's 7th visit - RA coherent, Martin claims 'return to baseline.'",
+ src:"Martin visit #7 of 18"
+},
+{ date:"2023-05-02",
+ cats:["medical","confession"],
+ title:"Wala visit - RA at constant observation. 'I killed A.W. and L.G. I will kill everyone.' WWIII mentions. Diagnosis: Brief Psychotic Disorder with marked stressors.",
+ src:"Wala visit May 2, 2023"
+},
+{ date:"2023-05-03",
+ cats:["confession","medical"],
+ title:"Wala visit - RA confesses full crime narrative: saw parents morning of Feb 13; bought 6-pack, drank 3 beers; followed girls to bridge; 'I think that's where the bullet fell out'; ordered them down the hill; intended to rape but saw van; crossed creek, cut necks; covered bodies with branches; returned to vehicle via off-trail route.",
+ src:"Wala visit May 3, 2023"
+},
+{ date:"2023-05-03",
+ cats:["prison","le"],
+ title:"Robert Baston letter - Sgt. Brandon Williams ordered mattress put in urine in Baston's cell; slammed Baston to floor, broke foot/ankle; stabbed elbow with ink pen through stab-vest.",
+ src:"Baston letter May 3, 2023"
+},
+{ date:"2023-05-03",
+ cats:["legal"],
+ title:"Rozzi files Verified Request To Prohibit Access to Court Record, Motion To Reconsider And Request For Due Process Hearing. Judge Gull issues two Orders directing records production to McLeland.",
+ src:"Rozzi motions May 3; Gull Orders May 3"
+},
+{ date:"2023-05-04",
+ cats:["legal","prison"],
+ title:"Defense WCF visit (Rozzi, Max Baker). RA nearly non-communicative. RA claimed 'they were going to kill him' referring to 'guys with the Odin patches.' Entire 1-hour visit videotaped.",
+ src:"Defense WCF visit May 4, 2023"
+},
+{ date:"2023-05-05",
+ cats:["medical"],
+ title:"Wala visit - suicide watch level changed from constant to close (15-minute checks).",
+ src:"Wala visit May 5, 2023"
+},
+{ date:"2023-05-08",
+ cats:["medical"],
+ title:"Martin's 8th visit - RA coherent, getting adequate sleep and eating. No evidence of psychosis. Haldol oral dose given.",
+ src:"Martin visit #8 of 18"
+},
+{ date:"2023-05-09",
+ cats:["le"],
+ title:"INVEST Lead-DIN-2736 re Lead-DIN-167 re Ron Logan.",
+ src:"INVEST leads re Ron Logan"
+},
+{ date:"2023-05-09",
+ cats:["confession","medical"],
+ title:"Wala's notes - RA: 'I just want to sign my confession.' Wala told RA to discuss with attorneys. RA: 'I want to snap my neck/kill myself.'",
+ src:"Wala notes May 9, 2023"
+},
+{ date:"2023-05-10",
+ cats:["confession","phone"],
+ title:"Phone calls RA to KA (5:03 a.m. and 11:13 a.m.) - 'I need you to know that I did this.' / 'I killed Abby and Libby dear.' / 'I cannot stop. I've got somebody here listening to me right now dear.'",
+ detail:"<p><a href='https://drive.google.com/file/d/1jTJi8X8o2_Sx_KaGaC53gmK8Zqk5rmEq/view?usp=drive_link' target='_blank' class='audio-link'>Listen to 5:03 a.m. call</a> &nbsp; <a href='https://drive.google.com/file/d/1W5NsR-Md3GtTkNsb9Tay6rphcbAbRPpa/view?usp=drive_link' target='_blank' class='audio-link'>Listen to 11:13 a.m. call</a></p><p>Two calls same morning. Wala present for one call and stepped out.</p><details><summary>Full transcripts</summary><div class='tx'><p><strong>5:03 a.m. call</strong></p><p><b>KA:</b> Hello? Are you there?</p><p><b>RA:</b> I am.</p><p><b>RA:</b> I might be now.</p><p><b>RA:</b> I think maybe I'm losing my mind but I'm not sure.</p><p><b>RA:</b> So Brad and uh…so I can trust Brad and Andy then?</p><p><b>KA:</b> Yes you can sweetheart yes. They're our lawyers honey.</p><p><b>RA:</b> Well I need to tell you something anyway.</p><p><b>KA:</b> Are you sure you want to talk to me over the phone?</p><p><b>RA:</b> I think I have to.</p><p><b>RA:</b> I need you to know that I did this.</p><p><b>KA:</b> What? No. No you didn't dear. There's no way. There's no way.</p><p><b>RA:</b> Do you still love me?</p><p><b>KA:</b> Dear there's no way. Okay?</p><p><b>RA:</b> I hope you still love me.</p><p><b>KA:</b> I always am going to love you honey but no you have not done anything. And I think you are not well so you don't need to be saying you did something you didn't do.</p><p><b>RA:</b> I had a dream that I needed to let you go and I didn't know how to let you go.</p><p><b>KA:</b> Well then you're dreaming stuff again, okay? That's all it is.</p><p><b>RA:</b> But I have to let you know that I did it hun.</p><p><b>KA:</b> Dear. No you didn't. There's no way. There's no way.</p><p><strong>11:13 a.m. call</strong></p><p><b>RA:</b> I need to know if you still love me baby.</p><p><b>KA:</b> Yes dear.</p><p><b>RA:</b> I may only be able to see you one last time. Do you understand what I'm saying?</p><p><b>KA:</b> No. You're not well sweetheart.</p><p><b>RA:</b> It's true honey. I did it dear.</p><p><b>KA:</b> Stop.</p><p><b>RA:</b> I cannot stop. I've got somebody here listening to me right now dear.</p><p><b>KA:</b> No. You didn't. There's no way.</p><p><b>RA:</b> I killed Abby and Libby dear.</p><p><b>KA:</b> No you didn't. Stop. Stop saying that.</p><p><b>KA:</b> Who's with you? Who's with you? You need to stop talking. If there's no– if your lawyer's not there you need to stop talking.</p></div></details>",
+ src:"Phone call RA to KA, May 10, 2023 (11:15am); Wala visit May 10"
+},
+{ date:"2023-05-11",
+ cats:["medical"],
+ title:"Wala visit - RA preoccupied, ruminating, depressed and paranoid.",
+ src:"Wala visit May 11, 2023"
+},
+{ date:"2023-05-12",
+ cats:["le","confession"],
+ title:"LE interviews at WCF: Holeman, Mullin, Davies, Harshman interview corrections officers and inmates. LE followed up on box cutter/CVS claim. Some guards told Holeman RA asserted innocence but Holeman 'didn't recall.'",
+ src:"LE interviews at WCF, May 12, 2023"
+},
+{ date:"2023-05-15",
+ cats:["legal"],
+ title:"Rozzi files Verified Motion For Temporary Restraining Order And Preliminary Injunction.",
+ src:"Rozzi TRO Motion, May 15, 2023"
+},
+{ date:"2023-05-15",
+ cats:["prison","le"],
+ title:"DOC Video M2U01106 (approx.) - guard deployed taser striking RA's hands at cuff port. RA was securely locked in cell; no safety threat posed. No use-of-force check-off sheet completed.",
+ src:"DOC Video M2U01106"
+},
+{ date:"2023-05-17",
+ cats:["medical"],
+ title:"Wala visit - slight increase in disorganized thinking and paranoia.",
+ src:"Wala visit May 17, 2023"
+},
+{ date:"2023-05-17",
+ cats:["phone","confession"],
+ title:"Phone call RA to JA (mom) - 'So did Kathy tell you that I did it?' / 'I'm just worried that you guys aren't going to love me because of the fact that I said that I did it.'",
+ detail:"<p><a href='https://drive.google.com/file/d/1nq-M7KAdbRCrmM03sJiZs_-zNAWFttQB/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><details><summary>Full transcript</summary><div class='tx'><p><b>RA:</b> So did Kathy tell you that I did it?</p><p><b>JA:</b> We're not going to discuss this okay?</p><p><b>RA:</b> I'm just worried that you guys aren't going to love me because of the fact that I said that I did it.</p><p><b>JA:</b> Ricky I just know you're not in a good place right now and I'm praying for you and we will always love you. No matter what. But just saying it doesn't mean you did it.</p><p><b>RA:</b> Well it does when I did.</p><p><b>JA:</b> Rick don't talk like this. I think they're just messing with you.</p><p><b>RA:</b> No mom they're not. I love you though.</p><p><b>JA:</b> What are you doing? I love you too hun. I just know you don't have it in you to do something like that.</p><p><b>RA:</b> Mom. I wouldn't sit here and tell you I did it if I didn't.</p><p><b>JA:</b> Well if they're messing with your meds and all that yeah you would. But we're not going to discuss the case anymore.</p><p><b>RA:</b> So if I did do it then you guys don't love me anymore?</p><p><b>JA:</b> I will always love you no matter what.</p><p><b>RA:</b> Okay.</p><p><b>JA:</b> There's nothing that would make me ever stop loving you.</p><p><b>RA:</b> That's good to know.</p><p><b>JA:</b> Are they letting you call again?</p><p><b>RA:</b> Well right now I am.</p><p><b>JA:</b> Okay hun. I love you.</p><p><b>RA:</b> Yeah tell everybody else I love them.</p></div></details>",
+ src:"Phone call RA to JA, May 17, 2023"
+},
+{ date:"2023-05-18",
+ cats:["medical"],
+ title:"Martin's 9th visit. Second Haldol decanoate injection 50 mg IM.",
+ src:"Martin visit #9 of 18; Haldol decanoate injection #2"
+},
+{ date:"2023-05-18",
+ cats:["confession","prison","medical"],
+ title:"Brandon Fisher log (8:15 p.m.) - RA said he killed A.W. and L.G. with box cutter from CVS. Girls were 'screaming.'",
+ src:"Fisher log, May 18, 2023"
+},
+{ date:"2023-05-18",
+ cats:["prison","le"],
+ title:"DOC Video M2U01136 - Sgt. Randy Jones deployed taser; no use-of-force sheet. RA securely locked in cell.",
+ src:"DOC Video M2U01136"
+},
+{ date:"2023-05-19",
+ cats:["legal"],
+ title:"Baldwin files Motion To Convert Bail Hearing Into Suppression Hearing. Rozzi files Subpoena to inspect IDOC.",
+ src:"Baldwin motions May 19; Rozzi IDOC subpoena"
+},
+{ date:"2023-05-22",
+ cats:["medical"],
+ title:"Wala visit - RA having 'breaks of psychotic reactions to stress.'",
+ src:"Wala visit May 22, 2023"
+},
+{ date:"2023-05-23",
+ cats:["medical"],
+ title:"Martin's 10th visit - psychotic symptoms appeared May 8–9 but disappeared. RA coherent.",
+ src:"Martin visit #10 of 18"
+},
+{ date:"2023-05-25",
+ cats:["prison","medical"],
+ title:"DOC Video - RA paced for two hours, banged front and back of head on metal door for about one hour. Visible goose egg. No one checked on him.",
+ src:"DOC Video, May 25, 2023"
+},
+{ date:"2023-05-25",
+ cats:["legal"],
+ title:"Judge Gull Order - grants State's motion to quash subpoena for mental health records; denies quash for audio/video recordings and phone calls.",
+ src:"Gull Order May 25, 2023"
+},
+{ date:"2023-05-26",
+ cats:["medical","prison"],
+ title:"Wala visit - RA had two black eyes. Appeared to Wala that RA was self-harming.",
+ src:"Wala visit May 26, 2023"
+},
+{ date:"2023-05-30",
+ cats:["legal","prison"],
+ title:"Defense WCF visit (Baldwin, Rozzi, Max Baker, Kathy Allen). Sgt. Jones stationed within 15 feet/earshot of RA and his wife entire time. No privacy afforded.",
+ src:"Defense WCF visit May 30, 2023"
+},
+{ date:"2023-05-30",
+ cats:["medical"],
+ title:"Martin's 11th visit - no evidence of psychosis.",
+ src:"Martin visit #11 of 18"
+},
+{ date:"2023-06-05",
+ cats:["medical","prison"],
+ title:"Emergent involuntary Haldol injection (2:39 p.m.) - RA self-harming by head banging.",
+ src:"Involuntary Haldol injection, Jun 5, 2023"
+},
+{ date:"2023-06-05",
+ cats:["phone","confession"],
+ title:"Phone call RA to KA - 'You know that I done it right?' / KA tries not to discuss it / conversation about Bible and prison conditions.",
+ detail:"<p><a href='https://drive.google.com/file/d/1jP2UDhJ3AzqDIp6-1nq8ehAge1VLAtnx/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><details><summary>Full transcript</summary><div class='tx'><p><b>KA:</b> Hey. You still there?</p><p><b>RA:</b> Hey. You still there?</p><p><b>KA:</b> Yeah I'm here. Need to get you some coffee.</p><p><b>RA:</b> I hate spending that money when I don't even know where it came from.</p><p><b>RA:</b> Everything's weird in here anymore.</p><p><b>RA:</b> I feel like I've lost my mind gone to hell or something.</p><p><b>RA:</b> You know that I done it right?</p><p><b>KA:</b> Dear I don't want to talk about that okay? I want to have a good conversation between us.</p><p><b>RA:</b> Of course it does.</p><p><b>RA:</b> Just don't feel like anybody's willing to be honest with me anymore.</p><p><b>RA:</b> Like everybody's afraid to hurt my feelings or something.</p><p><b>KA:</b> I think people have to be very careful when they talk. We all do.</p><p><b>KA:</b> The demons are fighting hard to get ya.</p><p><b>RA:</b> I know. I feel like they've already gotten me. I'm already in hell.</p><p><b>KA:</b> Well your soul doesn't need to be. With God not anybody else's.</p></div></details>",
+ src:"Phone call RA to KA, Jun 5, 2023"
+},
+{ date:"2023-06-06",
+ cats:["medical"],
+ title:"Martin's 12th visit.",
+ src:"Martin visit #12 of 18"
+},
+{ date:"2023-06-06",
+ cats:["legal"],
+ title:"Defense files Motion for Ex Parte Determination of Defendant's Motion for Appointment of Experts.",
+ src:"Defense motion Jun 6, 2023"
+},
+{ date:"2023-06-07",
+ cats:["legal"],
+ title:"Rozzi files Motion for Order on Continuing Disclosure of Defendant's Mental Health Records.",
+ src:"Rozzi motion Jun 7, 2023"
+},
+{ date:"2023-06-08",
+ cats:["medical"],
+ title:"Wala visit - RA's depression at its peak. Physiological symptoms: trembling, knees buckling, stuttering.",
+ src:"Wala visit Jun 8, 2023"
+},
+{ date:"2023-06-08",
+ cats:["legal","media"],
+ title:"Murder Sheet files Limited Appearance and Verified Request For Access To A Court Record.",
+ src:"Murder Sheet appearance Jun 8, 2023"
+},
+{ date:"2023-06-09",
+ cats:["legal"],
+ title:"Rozzi files Subpoena for Inmate Robert Baston to appear at June 15 hearing.",
+ src:"Rozzi subpoena, Jun 9, 2023"
+},
+{ date:"2023-06-11",
+ cats:["phone","confession"],
+ title:"Phone call RA to KA - 'I did it. Do you still love me?' / 'You don't have anything to do with it.' / 'I didn't want to do this. I'm sorry.' / 'I guess I'm just going to have to stop calling.'",
+ detail:"<p><a href='https://drive.google.com/file/d/1TEnDKnrPbvKuibUeLSOAYk3DOCR4mVax/view?usp=drive_link' target='_blank' class='audio-link'>Listen to audio</a></p><details><summary>Full transcript</summary><div class='tx'><p><b>KA:</b> Hello?</p><p><b>RA:</b> Hello?</p><p><b>KA:</b> Hey.</p><p><b>RA:</b> Hey.</p><p><b>KA:</b> Hi.</p><p><b>RA:</b> I get it. Kathy?</p><p><b>KA:</b> What?</p><p><b>RA:</b> I did it. Do you still love me?</p><p><b>KA:</b> Yes dear but you didn't do it.</p><p><b>RA:</b> Why do you say that?</p><p><b>KA:</b> Why do you say it?</p><p><b>RA:</b> I don't want to upset you.</p><p><b>KA:</b> I'm already upset.</p><p><b>RA:</b> I'm sorry. I don't know what I'm doing– feel like I've lost my mind.</p><p><b>KA:</b> Honey you can't call me and talk like this okay? You're killin me.</p><p><b>RA:</b> I'm so sorry baby.</p><p><b>KA:</b> I can't talk to you right now.</p><p><b>RA:</b> I didn't want to do this. [inaudible] I'm sorry. You're not going to do anything to yourself are ya?</p><p><b>KA:</b> No.</p><p><b>RA:</b> Probably going to have to– probably gonna have to [inaudible] now.</p><p><b>KA:</b> Stop. You can't be calling me and talking like this.</p><p><b>RA:</b> You don't have anything to do with it.</p><p><b>KA:</b> It doesn't matter.</p><p><b>RA:</b> Why are you so mad at me?</p><p><b>KA:</b> I'm not mad I'm upset. I'm not broken. [inaudible]</p><p><b>RA:</b> I can't tell you what's been going through my mind. Feel like I'm already in hell. Was waiting on the Bible from you but. I don't understand what's going on.</p><p><b>KA:</b> Neither do I.</p><p><b>RA:</b> I guess I'm just going to have to stop calling. I'm sorry. Okay?</p><p><b>KA:</b> You can't call me if you're going to talk like that.</p><p><b>RA:</b> I'm going to talk like what?</p><p><b>KA:</b> I can't talk–</p><p><em>Thank you for using GTL</em></p></div></details>",
+ src:"Phone call RA to KA, Jun 11, 2023"
+},
+{ date:"2023-06-12",
+ cats:["legal"],
+ title:"Judge Gull issues Transport Order re Subpoena for Inmate Robert Baston to appear June 15.",
+ src:"Gull Transport Order Jun 12, 2023"
+},
+{ date:"2023-06-13",
+ cats:["medical"],
+ title:"Martin's 13th visit.",
+ src:"Martin visit #13 of 18"
+},
+{ date:"2023-06-13",
+ cats:["legal"],
+ title:"Rozzi files Motion In Limine Regarding Ballistics. McLeland files State's Objection to Continuing Disclosure of Mental Health Records, Verified Request to Prohibit Public Access re Suppression Motion, and State's Objection to Motion to Suppress.",
+ src:"Rozzi/McLeland filings Jun 13, 2023"
+},
+{ date:"2023-06-15",
+ cats:["legal"],
+ title:"Record of Proceedings At Hearing Held on Safekeeping Order; Record of Ex Parte Hearing.",
+ src:"Record of Proceedings Jun 15, 2023 (V2 p. 80); Ex Parte Proceedings Jun 15, 2023 (V2 p. 244)"
+},
+{ date:"2023-06-16",
+ cats:["legal"],
+ title:"Judge Gull Order - grants motion for continuing disclosure of RA's mental health records. Orders IDOC and all agencies to release any and all mental health records to Defense attorneys Rozzi and Baldwin without requiring RA's consent.",
+ src:"Gull Order Jun 16, 2023; Defense Ex Parte Motion"
+},
+{ date:"2023-06-17",
+ cats:["medical"],
+ title:"Third Haldol decanoate injection 50 mg IM.",
+ src:"Haldol decanoate injection #3, Jun 17, 2023"
+},
+{ date:"2023-06-17",
+ cats:["legal","le"],
+ title:"Email from Defense to McLeland re L.G.'s phone data.",
+ src:"Defense email re LG phone data, Jun 17, 2023"
+},
+{ date:"2023-06-18",
+ cats:["confession","prison"],
+ title:"Roberts log (3:30 p.m.) - 'I killed A.W. and L.G.' RA says he molested Dawn, A.W., L.G., a person named Chris, and someone named Kevin. RA 'accepted what was happening to him.'",
+ src:"Roberts log, Jun 18, 2023"
+},
+{ date:"2023-06-19",
+ cats:["legal"],
+ title:"Appearance by Attorneys in Civil Case; Motion to Quash Subpoena or Enter Protective Order.",
+ src:"Civil appearance; motion to quash Jun 19, 2023"
+},
+{ date:"2023-06-20",
+ cats:["prison","medical"],
+ title:"DOC Video 1201 (15:30–16:50) - guards carried a catatonic, drooling RA to infirmary. Medical professional discussed cholesterol and blood pressure rather than RA's non-responsiveness. RA stared blankly when asked date or season.",
+ src:"DOC Video 1201, Jun 20, 2023"
+},
+{ date:"2023-06-20",
+ cats:["medical","confession"],
+ title:"Martin's 14th visit - RA: 'I would like to apologize to the families of his victims.' Several self-inflicted contusions on face. Martin stops Haldol decanoate (not psychotic for 7 weeks). RA lost 50 pounds in prison per Martin's testimony.",
+ src:"Martin visit #14 of 18; DOC Video RA in wheelchair"
+},
+{ date:"2023-06-20",
+ cats:["legal"],
+ title:"Judge Gull Order - trial set January 8–26, 2024; jury selection in Allen County, trial in Carroll County. Safekeeping hearing evidence taken under advisement. DOC has stopped remote filming attorney meetings.",
+ src:"Gull Order Jun 20, 2023"
+},
+{ date:"2023-06-23",
+ cats:["confession","prison"],
+ title:"Roberts log (3:15 p.m.) - 'I killed A.W. and L.G.' RA again says he molested Dawn, A.W., L.G., Chris, and Kevin.",
+ src:"Roberts log, Jun 23, 2023"
+},
+{ date:"2023-06-25",
+ cats:["medical"],
+ title:"Haldol injection (dose/form unknown per Rozzi). Dr. Martin continued oral Haldol after June 20 but did not specify dose.",
+ src:"Rozzi statement; Martin testimony; Known Haldol injections log"
+},
+{ date:"2023-06-28",
+ cats:["legal","media"],
+ title:"Judge Gull transparency order - unsealing pleadings; most pleadings previously sealed now available to public at allensuperiorcourt.us/Delphi. Defense Ex Parte motions and Transport Orders remain sealed.",
+ src:"Gull transparency order Jun 28, 2023"
+},
+{ date:"2023-06-29",
+ cats:["legal"],
+ title:"Defense files Motion for Order on Visitation with Inmate.",
+ src:"Defense motion re visitation Jun 29, 2023"
+},
+// JULY 2023
+{ date:"2023-07-11",
+ cats:["medical"],
+ title:"Wala visit - mental health being restored to normal state. Wala theorizes RA might finally be adjusting to incarceration.",
+ src:"Wala visit Jul 11, 2023"
+},
+{ date:"2023-07-18",
+ cats:["legal"],
+ title:"Judge Gull quashes IDOC subpoena (from May 19) - finds request unreasonable and oppressive, beyond scope of discovery.",
+ src:"Gull Order Jul 18, 2023"
+},
+{ date:"2023-07-19",
+ cats:["legal"],
+ title:"Judge Gull Order on Motion to Reconsider Safekeeping - upholds safekeeping order. Finds evidence did not support many defense allegations. States RA is treated more favorably than other inmates. Court confident DOC will move RA if a more appropriate facility exists.",
+ src:"Gull Order Jul 19, 2023"
+},
+{ date:"2023-07-26",
+ cats:["medical"],
+ title:"Wala visit (1:01 p.m.) - RA has bulging eyes.",
+ src:"Wala visit Jul 26, 2023"
+},
+// AUGUST 2023
+{ date:"2023-08-01",
+ cats:["le","phone"],
+ title:"August–December 2023: Suicide watch status continues. Holeman listened to 'a few' RA phone calls himself during this period.",
+ src:"LE phone monitoring Aug–Dec 2023"
+},
+{ date:"2023-08-03",
+ cats:["medical"],
+ title:"Wala visit - RA says 'I want to go to Heaven.' Feels like he's dying, heart might quit. Fears dying before saying goodbye to family. RA: 'Part of me thinks I do' (want to die). Denied specific plan. Confused about what's rational. RA received replacement tablet in June 2023 (~2 weeks before Safekeeping Hearing).",
+ src:"Wala visit Aug 3, 2023"
+},
+{ date:"2023-08-04",
+ cats:["legal","prison"],
+ title:"Rozzi and Max Baker interview inmate Robert Baston.",
+ src:"Rozzi/Baker interview Baston, Aug 4, 2023"
+},
+{ date:"2023-08-08",
+ cats:["le","confession"],
+ title:"LE interviews guards. Raymond Smith told Mullin RA said: 'If I fucked those girls, I fucked them. If I killed them, I killed them.' Smith noted RA was polite, slept a lot. Last time Smith heard RA say anything about the case was April 2023 or maybe early June - definitely not July.",
+ src:"LE guard interviews, Aug 8, 2023"
+},
+{ date:"2023-08-09",
+ cats:["le","confession","question"],
+ title:"LE interviews guards. Michael Clemons told Mullin RA said 'I'm not crazy, I'm only acting like I'm crazy' (responding to other inmates yelling at him). Michael Roberts told Mullin RA only acted up when his lawyers came.",
+ detail:"",
+ src:"LE guard interviews, Aug 9, 2023"
+},
+{ date:"2023-08-16",
+ cats:["medical"],
+ title:"Wala visit (5:17 p.m.) - RA's eyes no longer protruding as they had been for weeks or months.",
+ src:"Wala visit Aug 16, 2023"
+},
+{ date:"2023-08-17",
+ cats:["legal"],
+ title:"Defense WCF visit (Baldwin, Rozzi). Sgt. Robinson transporting RA. Defense visited WCF on August 17 and again on August 25 - both times after notifying State about Odinist ties to case. Sgt. Robinson had Odin patches on August 17 but not on August 25.",
+ src:"Defense WCF visit Aug 17, 2023"
+},
+{ date:"2023-08-17",
+ cats:["le","confession"],
+ title:"LE interviews guards (Aug 17) - John Miller told Mullin: RA went through 'a personality switch that you have not ever seen.' RA said he probably killed his family and grandkids. RA told Miller he molested his sister. RA said girls were screaming. RA told Miller to kill him so his family could still be alive. RA hit the door with his head, cried, sang, and yelled out curse words.",
+ src:"Miller statement to Mullin, Aug 17, 2023"
+},
+{ date:"2023-08-25",
+ cats:["legal","prison","question"],
+ title:"Defense WCF visit (Baldwin, Rozzi). Guard: Sgt. Robinson. Rozzi observes that Sgt. Robinson no longer had a patch on his chest - unlike the August 17 visit.",
+ detail:"",
+ src:"Defense WCF visit Aug 25, 2023"
+},
+// SEPTEMBER 2023
+{ date:"2023-08-01",
+ cats:["le","question"],
+ title:"August 2023: Unified Command learns of breach of protected discovery in Baldwin's office. Instead of plugging the leak, State begins exploiting it to spy on Defense. Fig.solves later confesses to helping State for 'a few months.'",
+ detail:"",
+ src:"Discovery breach / Fig.solves Aug 2023"
+},
+{ date:"2023-09-06",
+ cats:["legal"],
+ title:"Email from McLeland to Defense re missing Purdue Professor.",
+ src:"McLeland email re Purdue Professor, Sep 6, 2023"
+},
+{ date:"2023-09-08",
+ cats:["legal"],
+ title:"eDiscovery Notice turned over.",
+ src:"eDiscovery Notice Sep 8, 2023"
+},
+{ date:"2023-09-13",
+ cats:["legal"],
+ title:"Rozzi files Amended Motion to Suppress Fruits of Search of 1967 North Whiteman Drive and Motion for Broadcasting Order.",
+ src:"Rozzi motions Sep 13, 2023"
+},
+{ date:"2023-09-18",
+ cats:["legal"],
+ title:"Baldwin and Rozzi file Motion For Franks Hearing. Rozzi files Verified Motion for Immediate Transfer of Custody.",
+ src:"Baldwin/Rozzi Franks Motion; Rozzi Transfer Motion Sep 18, 2023"
+},
+{ date:"2023-09-19",
+ cats:["le"],
+ title:"Jeffrey Turco interview (September 19, 2023).",
+ src:"Jeffrey Turco interview Sep 19, 2023"
+},
+{ date:"2023-09-22",
+ cats:["le"],
+ title:"Holeman Report re Jeffrey Turco interview.",
+ src:"Holeman Report re Turco, Sep 22, 2023"
+},
+{ date:"2023-09-25",
+ cats:["legal"],
+ title:"McLeland files: Verified Request to Prohibit Public Access; Motion to Seal All Future Pleadings; Motion for Leave to Subpoena Third-Party Records re RA's medical records; Subpoena Duces Tecum re medical records; Motion re mental health records; Subpoena Duces Tecum re mental health records; State's Second Objection to Motion to Suppress. Notice of Non-Party News Media Access in Support of Broadcasting Order also filed.",
+ src:"McLeland filings Sep 25, 2023"
+},
+{ date:"2023-09-27",
+ cats:["legal"],
+ title:"Discovery Notice turned over.",
+ src:"Discovery Notice Sep 27, 2023"
+},
+// OCTOBER 2023
+{ date:"2023-10-01",
+ cats:["medical","prison"],
+ title:"October 2023: Suicide watch continues. As of October 2023, Wala still conducting sessions with RA in the cage.",
+ src:"Suicide Watch October 2023"
+},
+{ date:"2023-10-02",
+ cats:["legal"],
+ title:"Baldwin and Rozzi file Motion for Discovery Deadline and Supplemental Motion for Franks Hearing.",
+ src:"Defense motions Oct 2, 2023"
+},
+{ date:"2023-10-03",
+ cats:["legal","le"],
+ title:"Baldwin and Rozzi file Defendant's Additional Franks Notice. LE interviews: Brandon Fisher tells Mullin recorder had problems at 'the very back end' of the interview so 'we continued.'",
+ src:"Defense Franks Notice; Fisher LE interview Oct 3, 2023"
+},
+{ date:"2023-10-04",
+ cats:["legal"],
+ title:"Email from Defense to Court re trial dates. Email from Defense to McLeland re Purdue Report.",
+ src:"Defense emails Oct 4, 2023"
+},
+{ date:"2023-10-06",
+ cats:["legal"],
+ title:"Discovery Notice turned over. Email from Defense re leaked information.",
+ src:"Discovery Notice; Defense leak email Oct 6, 2023"
+},
+{ date:"2023-10-07",
+ cats:["legal"],
+ title:"Rozzi files two Motions to Quash Subpoenas Duces Tecum re RA's medical records and mental health records directed at Westville CF.",
+ src:"Rozzi Motions to Quash Oct 7, 2023"
+},
+{ date:"2023-10-08",
+ cats:["legal"],
+ title:"Email from Court re leaked information.",
+ src:"Court email re leaked info Oct 8, 2023"
+},
+{ date:"2023-10-09",
+ cats:["legal"],
+ title:"Mitch Westerman meets with Andrew Baldwin.",
+ src:"Westerman/Baldwin meeting Oct 9, 2023"
+},
+{ date:"2023-10-10",
+ cats:["legal"],
+ title:"Phone conference re leaked information. McLeland files two State's Responses to Defense Verified Motion for Immediate Transfer. Judge Gull issues Order.",
+ src:"Phone conference; McLeland filings; Gull Order Oct 10, 2023"
+},
+{ date:"2023-10-11",
+ cats:["legal"],
+ title:"Letter from Richard Allen to the Court.",
+ src:"RA letter to Court Oct 11, 2023"
+},
+{ date:"2023-10-12",
+ cats:["legal"],
+ title:"Letters from McLeland and Rozzi to the Court. Emails between Trial Court and Counsel. Judge Gull issues Transport Order and Order (hearing set for October 19; purpose to discuss October 31 hearing and recently arisen matters).",
+ src:"Gull Orders Oct 12, 2023"
+},
+{ date:"2023-10-17",
+ cats:["legal","media"],
+ title:"Judge Gull Order - authorizes recording and broadcasting of October 19 hearing by news media with pool coverage restrictions.",
+ src:"Gull Order re media coverage Oct 17, 2023"
+},
+{ date:"2023-10-19",
+ cats:["legal"],
+ title:"Status hearing (Oct 19, 2023). Baldwin and Rozzi advise Court they are withdrawing. Court accepts withdrawal and disqualifies them. New counsel: Robert Scremin and William Lebrato appointed as Contract Public Defenders. Mitch Westerman affidavit filed. Franks Motions remain unresolved. Discovery ordered turned over to State for successor counsel. Trial remained set October 31.",
+ detail:"<p>Judge Gull Order: Motion for Broadcasting Order denied as overbroad. Motion to Quash Subpoenas (for RA's medical and mental health records) granted - State not entitled to such records. Verified Motion for Immediate Transfer denied. Baldwin and Rozzi appear pro bono as of Oct 30, 2023.</p>",
+ src:"Record of Status Hearing Oct 19 (V3 p. 30); Record of In Camera Proceedings Oct 19 (V3 p. 4); Gull Order Oct 19"
+},
+{ date:"2023-10-24",
+ cats:["legal"],
+ title:"Judge Gull issues Transport Order.",
+ src:"Gull Transport Order Oct 24, 2023"
+},
+{ date:"2023-10-27",
+ cats:["legal"],
+ title:"Judge Gull Orders: (1) Rozzi Oct 25–26 filings ordered stricken from the record (Rozzi no longer counsel of record). (2) Court appoints Robert Scremin and William Lebrato as Contract Public Defenders. (3) Court denies media coverage of October 31 hearing due to unauthorized filming on October 19. Robert Scremin files Appearance.",
+ src:"Gull Orders Oct 27, 2023"
+},
+{ date:"2023-10-30",
+ cats:["legal"],
+ title:"Lebrato, Rozzi, Baldwin, and Luttrull file Appearances. Maggie Smith, Cara Wieneke, and Jessie Cook file Verified Petition for Writ of Mandamus and Prohibition (Case No. 23S-OR-00302). Chief Justice Loretta Rush issues Order.",
+ src:"Appearances; Writ Petition 23S-OR-00302; Rush Order Oct 30, 2023"
+},
+{ date:"2023-10-31",
+ cats:["legal"],
+ title:"Hearing held (Oct 31). Discovery Notice turned over. Scremin files Motion for Continuance of Jury Trial. Hennessy files Motion to Withdraw and Verified Supplementation of Record.",
+ src:"Hearing Oct 31 (V3 p. 34); Discovery Notice; Scremin/Hennessy motions"
+},
+// NOVEMBER 2023
+{ date:"2023-11-01",
+ cats:["legal"],
+ title:"Judge Gull Order - confirms Scremin and Lebrato as appointed counsel. Disqualifies Baldwin and Rozzi over objections. Trial set October 15–November 1, 2024; jury selection in Allen County. Former counsel to return discovery to State by end of week.",
+ src:"Gull Orders Nov 1, 2023"
+},
+{ date:"2023-11-14",
+ cats:["legal"],
+ title:"Judge Gull Order - orders Clerk to place 118 previously unsealed documents on CCS. Orders unsealing of June 20 Sheriff filing and July 5 DOC inmate letter. Franks Motion filed Sept 18 marked confidential pending redacted version. New counsel to adopt or replace prior pleadings.",
+ src:"Gull Order Nov 14, 2023"
+},
+{ date:"2023-11-19",
+ cats:["legal","prison","question"],
+ title:"Defense WCF visit (Lebrato, Scremin, Suzanne Moller). Guard: Sgt. Jones. Jones observed with 'Odin's Spear' face tattoo under right eye and Nordic/Odinist arm tattoos. RA reports being tased through a closed and locked prison cell door. RA foregoes showers and recreation to avoid guard inconvenience. Sgt. Robinson has transported RA to most attorney visits.",
+ detail:"<p>RA shackled in Hannibal Lecter-style restraints (ankle shackles + handcuffs secured to waist belt by chains). Attorney-client meeting room observed through windows; deadbolt prevented door from closing. In Scremin's 25 years of practice, he has never conducted a legal consultation in this fashion. Assessment: 'effectively representing RA was a fiction.'</p>",
+ src:"Defense WCF visit Nov 19, 2023"
+},
+{ date:"2023-11-22",
+ cats:["medical","prison","question"],
+ title:"Discharge plan report - references RA's suicide watch for the past six months. RA was proclaiming his innocence and told Wala he had 'already been sentenced' for the crime. RA diagnosed with abrupt onset of psychosis; psychotic process confirmed occurring April–June 2023 as basis for involuntary injections. MDT notes reference 'stress-induced psychosis' and 'vegetative symptoms of depression.' RA met psychiatric threshold for SMI but was designated safekeeper due to court order.",
+ detail:"",
+ src:"Discharge plan report Nov 22, 2023"
+},
+// DECEMBER 2023
+{ date:"2023-12-01",
+ cats:["prison"],
+ title:"RA transferred to Wabash Valley Correctional Facility (WVCF) in December 2023.",
+ src:"RA transfer to Wabash Valley CF, Dec 2023"
+},
+{ date:"2023-12-06",
+ cats:["legal"],
+ title:"Theodore Rokita files Notice to Court Regarding Transfer of Defendant.",
+ src:"Rokita notice re transfer Dec 6, 2023"
+},
+{ date:"2023-12-07",
+ cats:["legal"],
+ title:"Discovery Notice turned over.",
+ src:"Discovery Notice Dec 7, 2023"
+},
+{ date:"2023-12-11",
+ cats:["legal"],
+ title:"Chief Justice Loretta Rush issues Notice of Hearing on Case No. 23S-OR-00311 (oral argument January 18, 2024). Loretta Rush issues Published Order Denying Writ of Mandamus and Prohibition for Case No. 23S-OR-00302.",
+ src:"Rush orders Dec 11, 2023"
+},
+{ date:"2023-12-22",
+ cats:["legal","prison"],
+ title:"Defense visit at Wabash Valley CF (Lebrato, Scremin, Susan Moller). Access took nearly an hour - power outage required gates to be manually cranked. RA held in solitary confinement, no recreational time, no outside access, no window. Defense met RA through an 8-inch iron flap in a solid iron door. Counsel prohibited from approaching within six feet. RA receiving medications he doesn't recognize - different type, number, size, or color of pills each time. No physician visit in weeks.",
+ detail:"<p>Scremin assessment: 'The prison's visitation arrangement created an environment wherein effectively representing RA was a fiction.' 'Based upon counsel's observations and experience, RA is not being treated similar to other pre-trial detainees being held in county jails.' Counsel determined Wabash Valley would 'seriously, if not fatally, impact counsel's ability to effectively represent him.'</p>",
+ src:"Defense WVCF visit Dec 22, 2023"
+},
+// JANUARY 2024
+{ date:"2024-01-12",
+ cats:["legal"],
+ title:"Scremin files Motion to Transfer.",
+ src:"Scremin Motion to Transfer Jan 12, 2024"
+},
+// FEBRUARY 2024
+{ date:"2024-02-04",
+ cats:["prison","confession"],
+ title:"Jason Bedwell log - 10:00 a.m.: 'Overheard Inmate Allen say he was sorry for killing the girls.' 9:45 a.m.: RA lying down and crying (Code 8). Bedwell notes RA was 'lying down the entire time between 6 a.m. and noon for the most part' throughout his watch period.",
+ src:"Bedwell log Feb 4, 2024"
+},
+// MARCH 2024
+{ date:"2024-03-15",
+ cats:["le","confession","question"],
+ title:"Jason Bedwell statement to LE (March 15, 2024) - Bedwell told LE that RA was curled up in a fetal position when he said 'I am sorry for what I did' and added 'for killing those girls' - even though his log sheet didn't say either of those things.",
+ detail:"",
+ src:"Bedwell LE statement Mar 15, 2024"
+},
+// AUGUST 2024
+{ date:"2024-08-08",
+ cats:["le","confession"],
+ title:"Harshman report re Wala (August 2024) - Harshman reviews RA's statements in Wala's report for first time. Identifies May 3, 2023 narrative (saw parents; bought 6-pack; bundled up; laid in wait; followed girls to bridge; bullet fell out; ordered them down the hill; saw van; crossed creek; cut necks; covered bodies; returned via off-trail route) as first report containing specific crime detail. Harshman flags van detail - says only the killer, A.W., and L.G. would have known about a van. Harshman runs BMV check on Brad Weber; finds Weber owned a 2000 Ford Econoline van. Weber's work records show he clocked in at 5:41 a.m. and clocked out at 2:02 p.m. on February 13, 2017. Phone data from L.G.'s phone confirms video taken at 2:13; Apple Health metadata shows phone's last movement at 2:32:39.",
+ detail:"",
+ src:"Harshman report re Wala, Aug 8, 2024"
+},
+// OCTOBER 2024
+{ date:"2024-10-10",
+ cats:["prison"],
+ title:"Richard Allen transferred to Cass County Jail.",
+ src:"RA transfer to Cass County Jail, Oct 10, 2024"
+},
+// DECEMBER 2024
+{ date:"2024-12-13",
+ cats:["legal"],
+ title:"Presentence Investigation Report filed. Judge Gull issues Order re inadvertent disclosure of PSI to media personnel (Christensen, Meek, Byron), orders them to destroy all documents.",
+ src:"PSI filed; Gull Order Dec 13, 2024"
+},
+{ date:"2024-12-16",
+ cats:["legal"],
+ title:"Judge Gull Order - directs Defense to file Sentencing Memorandum by December 18 at 5:00 p.m.",
+ src:"Gull Order Dec 16, 2024"
+},
+{ date:"2024-12-19",
+ cats:["legal"],
+ title:"Baldwin files Defendant's Motion to Preserve Evidence. Rozzi files Motion to Refer to State Public Defender for Appointment of Appellate Counsel.",
+ src:"Defense motions Dec 19, 2024"
+},
+{ date:"2024-12-20",
+ cats:["legal","prison"],
+ title:"Sentencing Hearing. RA sentenced to maximum 130 years in prison. Judge Gull issues Sentencing Order, Abstract of Judgment, and corrected Abstract. McLeland files Motion to Seal Crime Scene and Autopsy Photos. Baldwin files Sentencing Memorandum. Richard Allen transferred from Cass County Jail.",
+ src:"Sentencing Hearing Dec 20, 2024 (V22 p. 2); RA transfer from Cass County"
+},
+{ date:"2024-12-23",
+ cats:["legal"],
+ title:"Judge Gull issues corrected Abstract of Judgment.",
+ src:"Gull Order Dec 23, 2024"
+},
+{ date:"2024-12-30",
+ cats:["legal"],
+ title:"Amy Karozos files Motion for Authorization to Appoint Two Appellate Attorneys. Judge Gull: (1) Motion to Preserve Evidence denied as vague; jury venire records preserved. (2) Motion to Seal Crime Scene/Autopsy Photos granted: crime scene photos, autopsy photos/reports, and all medical and mental health records ordered sealed. (3) Praecipe for Transcript referred to appellate counsel.",
+ src:"Karozos motion; Gull Orders Dec 30, 2024"
+},
+// JANUARY 2025
+{ date:"2025-01-03",
+ cats:["legal"],
+ title:"Judge Gull Order denying Verified Request for Hearing on Motion to Preserve and Produce Specific Evidence as premature.",
+ src:"Gull Order Jan 3, 2025"
+},
+{ date:"2025-01-08",
+ cats:["legal"],
+ title:"Amy Karozos files Acceptance of Appointment and Formal Notice of Appointment of Outside Counsel.",
+ src:"Karozos acceptance Jan 8, 2025"
+},
+{ date:"2025-01-09",
+ cats:["legal"],
+ title:"Judge Gull files Order of Record Concurring in Appointment.",
+ src:"Gull Order Jan 9, 2025"
+},
+{ date:"2025-01-20",
+ cats:["legal"],
+ title:"Andrew Baldwin files Limited Appearance. Auger files Motion for Hearing on Motion to Correct Error. Baldwin files Defendant's Verified Motion to Correct Error, Motion to Correct Abstract of Judgment, and Motion to Preserve Specific Evidence.",
+ src:"Defense motions Jan 20, 2025"
+},
+// FEBRUARY 2025
+{ date:"2025-02-04",
+ cats:["legal"],
+ title:"McLeland files State's Response to Motion to Correct Error.",
+ src:"McLeland response Feb 4, 2025"
+},
+{ date:"2025-02-12",
+ cats:["legal"],
+ title:"Andrew Baldwin meets with Ricci Davis.",
+ src:"Baldwin/Davis meeting Feb 12, 2025"
+},
+{ date:"2025-02-14",
+ cats:["legal","prison"],
+ title:"Judge Gull Orders: (1) Motion to Correct Error denied. (2) Motion to Correct Abstract of Judgment denied. (3) Motion to Preserve Specific Evidence denied, Court lacks authority to order State and all agencies to preserve 'any and all' evidence. Richard Allen transferred to Pendleton Correctional Facility.",
+ src:"Gull Orders Feb 14, 2025; RA transfer to Pendleton"
+},
+{ date:"2025-02-15",
+ cats:["legal"],
+ title:"Ricci Davis letter to Max Lewis.",
+ src:"Davis letter Feb 15, 2025"
+},
+{ date:"2025-02-19",
+ cats:["legal"],
+ title:"Andrew Baldwin files Limited Appearance and Verified Request for Hearing on Motion to Preserve and Produce Specific Evidence.",
+ src:"Baldwin filings Feb 19, 2025"
+},
+{ date:"2025-02-24",
+ cats:["legal"],
+ title:"Baldwin files Addendum to Verified Motion to Preserve and Produce Specific Evidence. Judge Gull Order - Motion for Hearing on Motion to Correct Error denied without hearing.",
+ src:"Baldwin filing; Gull Order Feb 24, 2025"
+},
+{ date:"2025-02-28",
+ cats:["legal"],
+ title:"McLeland files State's Response to Defendant's Motion to Preserve and Produce Specific Evidence.",
+ src:"McLeland response Feb 28, 2025"
+},
+// MARCH 2025
+{ date:"2025-03-04",
+ cats:["legal"],
+ title:"Andrew Baldwin files Appearance and Richard Allen's Verified Reply Memorandum to State's Response to Preserve and Produce and Request for Sanctions.",
+ src:"Baldwin filings Mar 4, 2025"
+},
+{ date:"2025-03-11",
+ cats:["legal"],
+ title:"Jennifer Auger files Appearance. Auger files Defendant's Motion to Reconsider Denial of Motion to Correct Error. Mark Leeman and Stacey Uliana file Appearance and Notice of Appeal.",
+ src:"Auger/Leeman/Uliana filings; Notice of Appeal Mar 11, 2025"
+},
+{ date:"2025-03-12",
+ cats:["legal"],
+ title:"Sharon Milburn files Notice of Completion of Clerk's Record.",
+ src:"Notice of Completion of Clerk's Record Mar 12, 2025"
+},
+{ date:"2025-03-17",
+ cats:["legal"],
+ title:"Appearance by Deputy Attorney General.",
+ src:"Deputy AG appearance Mar 17, 2025"
+},
+// APRIL 2025
+{ date:"2025-04-11",
+ cats:["legal","media"],
+ title:"Judge Gull unseals 101 Confidential Orders.",
+ src:"Gull unseals 101 orders Apr 11, 2025"
+},
+{ date:"2025-04-22",
+ cats:["legal"],
+ title:"Chief Judge Altice issues Order granting court reporter extension; transcript due June 9, 2025.",
+ src:"Altice Order Apr 22, 2025"
+},
+// MAY 2025
+{ date:"2025-05-23",
+ cats:["legal"],
+ title:"Stacey Uliana files Appearance and Supplemental Request for Transcript with trial court.",
+ src:"Uliana filings May 23, 2025"
+},
+{ date:"2025-05-26",
+ cats:["legal"],
+ title:"Judge Gull Order - refers Uliana's Supplemental Request for Transcript to Court Reporter.",
+ src:"Gull Order May 26, 2025"
+},
+// JUNE 2025
+{ date:"2025-06-03",
+ cats:["legal"],
+ title:"Court Reporter Jodie Williams files second Motion for Extension of Time to File Transcript.",
+ src:"Williams extension motion Jun 3, 2025"
+},
+{ date:"2025-06-06",
+ cats:["legal"],
+ title:"Chief Judge Altice issues second Order granting extension, transcript now due July 9, 2025.",
+ src:"Altice Order Jun 6, 2025"
+},
+// JULY 2025
+{ date:"2025-07-02",
+ cats:["legal"],
+ title:"Court Reporter Jodie Williams notifies parties that transcript has been prepared, certified, and is complete pursuant to Appellate Rule 11(A).",
+ src:"Williams transcript completion notice Jul 2, 2025"
+},
+{ date:"2025-07-22",
+ cats:["legal","prison","media"],
+ title:"Attorneys file appeal of RA's conviction and sentence in Carroll Circuit Court in March. RA confirmed transferred from Indiana to an out-of-state facility in Oklahoma. Appeals attorney Stacey Uliana: Allen's transfer to Oklahoma will impede his team's ability to consult with him during the appeals process, which she says is essential in a case of his size.",
+ src:"RA transfer to Oklahoma; The Indiana Lawyer, Jul 22, 2025"
+},
+{ date:"2025-07-29",
+ cats:["legal"],
+ title:"Leeman files Appellant's Verified Motion for Extension of Time to File Appellant's Brief.",
+ src:"Leeman extension motion Jul 29, 2025"
+},
+// AUGUST 2025
+{ date:"2025-08-04",
+ cats:["legal"],
+ title:"Chief Judge Altice issues Order granting extension; Appellant's brief due September 5, 2025.",
+ src:"Altice Order Aug 4, 2025"
+},
+
+];
+
+// ── CONSTANTS ────────────────────────────────────────────────────────────────
+const CAT_LABEL = { legal:"Legal", medical:"Medical", phone:"Phone", confession:"Confession", prison:"Prison", le:"Law Enf.", media:"Media", question:"Open Q." };
+const CAT_COLOR = { legal:"#2a5a9a", medical:"#2a6a3a", phone:"#9a7020", confession:"#9b1c1c", prison:"#6a4a9a", le:"#8a5a2a", media:"#2a7080", question:"#9a7020" };
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+function monthKey(d){ return d.slice(0,7); }
+function fmtDate(d){
+ const mo=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ const [,m,day]=d.split("-");
+ return `${mo[+m-1]} ${+day}`;
+}
+function fmtMonth(mk){
+ const mo=["January","February","March","April","May","June","July","August","September","October","November","December"];
+ const [y,m]=mk.split("-");
+ return `${mo[+m-1]} ${y}`;
+}
+function shortMonth(mk){
+ const mo=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ const [y,m]=mk.split("-");
+ return `${mo[+m-1]}'${y.slice(2)}`;
+}
+
+// ── BUILD ────────────────────────────────────────────────────────────────────
+function buildTimeline(){
+ const months={}, order=[];
+ ENTRIES.forEach(e=>{
+  const mk=monthKey(e.date);
+  if(!months[mk]){ months[mk]=[]; order.push(mk); }
+  months[mk].push(e);
+ });
+
+ const jn=document.getElementById("jump-nav");
+ order.forEach(mk=>{
+  const a=document.createElement("a");
+  a.href=`#m-${mk}`;
+  a.textContent=shortMonth(mk);
+  jn.appendChild(a);
+ });
+
+ const tl=document.getElementById("timeline");
+ order.forEach(mk=>{
+  const sec=document.createElement("div");
+  sec.className="month-section";
+  sec.id=`m-${mk}`;
+
+  const head=document.createElement("div");
+  head.className="month-head";
+  head.innerHTML=`<h2>${fmtMonth(mk)}</h2><div class="month-rule"></div>`;
+  sec.appendChild(head);
+
+  months[mk].forEach(e=>{
+   const el=document.createElement("div");
+   el.className="entry";
+   el.dataset.cats=e.cats.join(" ");
+   el.dataset.text=(e.title+" "+(e.detail||"")+" "+(e.src||"")).toLowerCase();
+
+   const barColor=CAT_COLOR[e.cats[0]]||"#888";
+   const tags=e.cats.map(c=>`<span class="tag ${c}">${CAT_LABEL[c]}</span>`).join("");
+   const srcHtml=e.src?`<div class="e-source">${e.src}</div>`:"";
+   const detailHtml=e.detail?`<button class="expand-btn">▸ details</button><div class="e-detail"></div>`:"";
+
+   el.innerHTML=`
+    <div class="e-date">${fmtDate(e.date)}</div>
+    <div class="e-bar" style="background:${barColor}"></div>
+    <div class="e-body">
+     <div class="e-tags">${tags}</div>
+     <div class="e-title">${e.title}</div>
+     ${srcHtml}${detailHtml}
+    </div>`;
+
+   if(e.detail){
+    const btn=el.querySelector(".expand-btn");
+    const det=el.querySelector(".e-detail");
+    det.dataset.src=e.detail;
+    btn.addEventListener("click",()=>{
+     if(det.dataset.src){det.innerHTML=det.dataset.src;delete det.dataset.src;}
+     det.classList.toggle("open");
+     btn.textContent=det.classList.contains("open")?"▾ collapse":"▸ details";
+    });
+   }
+   sec.appendChild(el);
+  });
+
+  tl.appendChild(sec);
+ });
+
+}
+
+// ── FILTER + SEARCH ──────────────────────────────────────────────────────────
+let activeCat="all", searchTerm="";
+
+function applyFilters(){
+ document.querySelectorAll(".entry").forEach(el=>{
+  const catOk=activeCat==="all"||el.dataset.cats.includes(activeCat);
+  const srchOk=!searchTerm||el.dataset.text.includes(searchTerm);
+  el.classList.toggle("hidden",!catOk||!srchOk);
+ });
+ document.querySelectorAll(".month-section").forEach(sec=>{
+  sec.classList.toggle("hidden",sec.querySelectorAll(".entry:not(.hidden)").length===0);
+ });
+ document.getElementById("no-results").style.display=
+  document.querySelectorAll(".entry:not(.hidden)").length===0?"block":"none";
+}
+
+const haldolPanel=document.getElementById("haldol-panel");
+const confLogPanel=document.getElementById("conf-log-panel");
+const guardLogPanel=document.getElementById("guard-log-panel");
+const mainEl=document.querySelector(".main");
+
+function hideAllPanels(){
+ haldolPanel.style.display="none";
+ confLogPanel.style.display="none";
+ guardLogPanel.style.display="none";
+}
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  if(btn.dataset.cat==="haldol"){
+   hideAllPanels();
+   haldolPanel.style.display="block";
+   mainEl.style.display="none";
+   document.getElementById("no-results").style.display="none";
+  } else if(btn.dataset.cat==="conf-log"){
+   hideAllPanels();
+   confLogPanel.style.display="block";
+   mainEl.style.display="none";
+   document.getElementById("no-results").style.display="none";
+  } else if(btn.dataset.cat==="guard-log"){
+   hideAllPanels();
+   guardLogPanel.style.display="block";
+   mainEl.style.display="none";
+   document.getElementById("no-results").style.display="none";
+  } else {
+   hideAllPanels();
+   mainEl.style.display="";
+   activeCat=btn.dataset.cat;
+   applyFilters();
+  }
+ });
+});
+
+document.getElementById("search").addEventListener("input",e=>{
+ searchTerm=e.target.value.toLowerCase().trim();
+ applyFilters();
+});
+
+buildTimeline();
+</script>
 </body>
 </html>

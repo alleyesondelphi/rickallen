@@ -8,7 +8,7 @@
   <meta name="description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-panel">
   <!-- Open Graph -->
-  <meta property="og:title" content="The Panel | Vaidik · Brown · Altice">
+  <meta property="og:title" content="Profiles, criminal opinion records, and panel dynamics">
   <meta property="og:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-panel">
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Panel | Vaidik · Brown · Altice">
+  <meta name="twitter:title" content="Profiles, criminal opinion records, and panel dynamics">
   <meta name="twitter:description" content="Who decides Richard Allen's appeal? Profiles, criminal opinion records, and panel dynamics for the three Indiana COA judges assigned to 25A-CR-591.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview-img/the-panel.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
@@ -70,9 +70,13 @@
   .masthead {
     background: var(--ink);
     color: var(--paper);
-    padding: 40px 48px 32px;
+    padding: clamp(28px, 5vw, 44px) 24px 0;
     position: relative;
     overflow: hidden;
+  }
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .masthead::before {
     content: '';
@@ -80,7 +84,7 @@
     top: 0; 
     left: 0; 
     right: 0;
-    height: 3px;
+    height: 1px;
     background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
   }
   .masthead-rule {
@@ -124,12 +128,29 @@
     color: #888;
     letter-spacing: 0.12em;
     margin-top: 14px;
+    padding-bottom: 12px;
     display: flex;
-    gap: clamp(12px, 3vw, 24px);
-    flex-wrap: wrap;
+    gap: clamp(10px, 2.5vw, 22px);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  .masthead-sub span { 
-    color: #bbb; 
+  .masthead-sub::-webkit-scrollbar { 
+    display: none; 
+  }
+  .masthead-link {
+    color: #bbb;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255,255,255,0.25);
+  }
+  .masthead-link:hover { 
+    color: #f17070; 
+  }
+  .masthead-link.active { 
+    color: var(--paper); 
   }
   /* LAYOUT */
   .container {
@@ -589,15 +610,22 @@
     .site-nav a { 
       font-size: 9px !important; 
     }
-    .masthead h1 { 
-      font-size: 26px; 
+    .masthead-rule {
+      font-size: 10px;
     }
-    .masthead-sub { 
-      gap: 10px; 
+    .masthead h1 {
+      font-size: 34px;
+      margin-top: 4px;
     }
-    .masthead-sub span { 
-      font-size: 8px; 
-      letter-spacing: 0.08em; 
+    .masthead-meta {
+      font-size: 11px;
+      margin-top: 10px;
+    }
+    .masthead-sub {
+      font-size: 11px;
+      gap: 16px;
+      margin-top: 12px;
+      padding-bottom: 14px;
     }
     .container { 
       padding: 0 14px 48px; 
@@ -854,17 +882,26 @@
 </nav>
 
 <div class="masthead">
-  <div class="masthead-rule">Case No. 25A-CR-00591</div>
+  <div class="masthead-inner">
+    <div class="masthead-rule">Case No. 25A-CR-00591</div>
     <h1>The <span>Three-Judge </span>Panel</h1>
-      <div class="masthead-meta">
-        <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
-        <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
-      </div>
-</div>
-
-<div class="site-nav" style="background: var(--ink); border-top: 1px solid #222; padding: 10px 48px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; justify-content: center;">
-  <a href="https://alleyesondelphi.github.io/rickallen/" class="appeal-nav-home">← All Eyes on Delphi</a>
-  <a href="https://alleyesondelphi.github.io/rickallen/the-appeal" class="appeal-nav-panel">The Appeal · Issue-by-Issue →</a>
+    <div class="masthead-meta">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+      <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+    </div>
+    <nav class="masthead-sub" aria-label="Site navigation">
+      <a href="index.html" class="masthead-link">Home</a>
+      <a href="timeline.html" class="masthead-link">Timeline</a>
+      <a href="prison/timeline.html" class="masthead-link">Prison Timeline</a>
+      <a href="trial-docket.html" class="masthead-link">Trial Docket</a>
+      <a href="transcripts.html" class="masthead-link">Transcripts</a>
+      <a href="state-exhibits.html" class="masthead-link">State Exhibits</a>
+      <a href="defense-exhibits.html" class="masthead-link">Defense Exhibits</a>
+      <a href="the-appeal.html" class="masthead-link">Appeal</a>
+      <a href="the-panel.html" class="masthead-link active">The Panel</a>
+      <a href="whos-who.html" class="masthead-link">Who's Who</a>
+    </nav>
+  </div>
 </div>
 
 <div class="container">

@@ -5,11 +5,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- Required Info -->
   <title>Richard Allen Appeal | AEOD</title>
-  <meta name="description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
+  <meta name="description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated: Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-appeal">
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="Richard Allen Appeal | Issue-By-Issue Comparison">
-  <meta property="og:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
+  <meta property="og:title" content="Issue-by-issue analysis of the Allen v. State appeal">
+  <meta property="og:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated: Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-appeal">
   <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/the-appeal.png">
@@ -18,8 +18,8 @@
   <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Richard Allen Appeal | Issue-By-Issue Comparison"> 
-  <meta name="twitter:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated — Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
+  <meta name="twitter:title" content="Issue-by-issue analysis of the Allen v. State appeal"> 
+  <meta name="twitter:description" content="Issue-by-issue analysis of the Allen v. State appeal (IN COA 25A-CR-591). All three briefs integrated: Appellant, Appellee, and Reply. After the Reply Brief, the State still has no answer on Glossip v. Oklahoma (2025), cumulative error, the Issue II.D fruit test, or the ISP's own 2019 reversal.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/the-appeal.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
   <!-- Favicons -->
@@ -64,7 +64,9 @@
   .masthead {
     background: var(--ink);
     color: var(--paper);
-    padding: 40px 48px 32px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: clamp(28px, 5vw, 44px) calc(50vw - 50% + 24px) 0;
     position: relative;
     overflow: hidden;
   }
@@ -74,27 +76,30 @@
     top: 0; 
     left: 0; 
     right: 0;
-    height: 3px;
+    height: 2px;
     background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
+  }
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .masthead-rule {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: clamp(7.5px, 1.5vw, 9.5px);
     letter-spacing: 0.1em;
-    color: #666;
-    margin-bottom: 1%;
+    color: #888;
+    margin-top:-2%;
   }
   .masthead h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 46px);
-    font-weight: 700;
+    font-size: clamp(26px, 4vw, 46px);
+    font-weight: 500;
     line-height: 1.1;
-    margin-bottom: 10px;
   }
   .masthead h1 span {
     font-style: normal;
     font-weight: 400;
-    color: #aaa;
+    color: #999;
   }
   .masthead-meta {
     font-family: 'IBM Plex Mono', monospace;
@@ -104,6 +109,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0 15px;
+    margin-top: 1.5%;
   } 
   .masthead-meta a { 
     color: #aaa; 
@@ -114,16 +120,36 @@
   }
   .masthead-sub {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-size: clamp(9px, 1.8vw, 11px);
     color: #888;
     letter-spacing: 0.12em;
     margin-top: 14px;
+    padding-bottom: 12px;
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: clamp(10px, 2.5vw, 22px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  .masthead-sub span { 
-    color: #bbb; 
+  .masthead-sub::-webkit-scrollbar { 
+    display: none; 
+  }
+  .masthead-sub a { 
+    white-space: nowrap; 
+  }
+  .masthead-link {
+    color: #bbb;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255,255,255,0.25);
+  }
+  .masthead-link:hover {
+    color: #f17070;
+  }
+  .masthead-link.active {
+    color: var(--paper);
   }
   /* LAYOUT */
   .container {
@@ -414,8 +440,28 @@
     color: var(--gold); 
   }
   @media (max-width: 700px) {
-    .issue-body { 
-      grid-template-columns: 1fr; 
+    .masthead {
+      padding: 28px 20px 0;
+    }
+    .masthead-rule {
+      font-size: 10px;
+    }
+    .masthead h1 {
+      font-size: 34px;
+      margin-top: 4px;
+    }
+    .masthead-meta {
+      font-size: 11px;
+      margin-top: 10px;
+    }
+    .masthead-sub {
+      font-size: 11px;
+      gap: 16px;
+      margin-top: 12px;
+      padding-bottom: 14px;
+    }
+    .issue-body {
+      grid-template-columns: 1fr;
     }
     .col + .col { 
       border-left: none; 
@@ -429,9 +475,6 @@
     }
     .pca-flag { 
       font-size: 9px; 
-    }
-    .masthead { 
-      padding: 28px 20px 24px; 
     }
     .container { 
       padding: 0 16px 48px; 
@@ -495,7 +538,7 @@
       scroll-margin-top: 60px; 
     }
     .masthead-sub { 
-      gap: 12px; 
+      gap: 1px; 
     }
     .masthead-sub span { 
       font-size: 9px; 
@@ -602,19 +645,41 @@
   <a href="#filings-latest">Latest Filings</a>
 </nav>
 
-<div class="masthead">
-  <div class="masthead-rule">Case No. 25A-CR-591</div>
-    <h1>Allen <span>v.</span> State of Indiana</h1>
-      <div class="masthead-meta">
-        <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
-        <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
-      </div>
-</div>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-rule">Richard Allen vs. IN</div>
+    <h1>The <span>Appeal</span></h1>
+    <div class="masthead-meta">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
+      <a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a>
+    </div>
+    <nav class="masthead-sub" aria-label="Site navigation">
+      <a href="index.html" class="masthead-link">Home</a>
+      <a href="timeline.html" class="masthead-link">Timeline</a>
+      <a href="prison/timeline.html" class="masthead-link">Prison Timeline</a>
+      <a href="trial-docket.html" class="masthead-link">Trial Docket</a>
+      <a href="transcripts.html" class="masthead-link">Transcripts</a>
+      <a href="state-exhibits.html" class="masthead-link">State Exhibits</a>
+      <a href="defense-exhibits.html" class="masthead-link">Defense Exhibits</a>
+      <a href="the-appeal.html" class="masthead-link active">Appeal</a>
+      <a href="whos-who.html" class="masthead-link">Who's Who</a>
+    </nav>
+  </div>
 
-<div style="background: var(--ink); border-top: 1px solid #222; padding: 10px 48px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
-  <a href="https://alleyesondelphi.github.io/rickallen/" class="appeal-nav-home">← All Eyes on Delphi</a>
-  <a href="https://alleyesondelphi.github.io/rickallen/the-panel" class="appeal-nav-panel">The Panel · Judges →</a>
-</div>
+  <!-- Mobile sticky jump navigation -->
+<nav class="mobile-jump" aria-label="Jump to section">
+  <a href="#toa-allen">Allen TOA</a>
+  <a href="#toa-state">State TOA</a>
+  <a href="#toa-reply">Reply Brief</a>
+  <a href="#issue-i">Issue I</a>
+  <a href="#issue-ii">Issue II</a>
+  <a href="#issue-iii">Issue III</a>
+  <a href="#issue-iv">Issue IV</a>
+  <a href="#bottom">Bottom Line</a>
+  <a href="#filings-latest">Latest Filings</a>
+</nav>
+</header>
+
 
 <div class="container">
 
@@ -711,7 +776,9 @@
       margin-bottom: -1px;
       border-radius: 0;
     }
-    #toa-allen .ta-tab:hover { color: var(--ink); }
+    #toa-allen .ta-tab:hover { 
+      color: var(--ink); 
+    }
     #toa-allen .ta-tab.ta-active {
       background: var(--ink);
       color: var(--paper);
@@ -723,7 +790,9 @@
       background: #fff;
       padding: 24px;
     }
-    #toa-allen .ta-panel.ta-hidden { display: none; }
+    #toa-allen .ta-panel.ta-hidden { 
+      display: none; 
+    }
     #toa-allen .ta-meta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -753,7 +822,10 @@
       position: relative;
       overflow: hidden;
     }
-    #toa-allen .ta-bar-fill { height: 100%; min-width: 2px; }
+    #toa-allen .ta-bar-fill { 
+      height: 100%; 
+      min-width: 2px; 
+    }
     #toa-allen .ta-bar-n {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -781,7 +853,9 @@
       border-radius: 0;
       line-height: 1.4;
     }
-    #toa-allen .ta-fbtn:hover { color: var(--ink); border-color: var(--ink); }
+    #toa-allen .ta-fbtn:hover { 
+      color: var(--ink); border-color: var(--ink); 
+    }
     #toa-allen .ta-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -859,7 +933,9 @@
       color: var(--warn);
       line-height: 1.7;
     }
-    #toa-allen .ta-vs-note strong { color: var(--ink); }
+    #toa-allen .ta-vs-note strong { 
+      color: var(--ink); 
+    }
     #toa-allen .ta-vs-section-hd {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -878,7 +954,9 @@
       border-bottom: 1px solid rgba(0,0,0,0.06);
       flex-wrap: wrap;
     }
-    #toa-allen .ta-vs-shared-row:last-child { border-bottom: none; }
+    #toa-allen .ta-vs-shared-row:last-child { 
+      border-bottom: none; 
+    }
     #toa-allen .ta-vs-shared-name {
       font-family: 'Playfair Display', serif;
       font-size: 13px;
@@ -897,7 +975,9 @@
       position: relative;
       line-height: 1.5;
     }
-    #toa-allen .ta-gaps-list li:last-child { border-bottom: none; }
+    #toa-allen .ta-gaps-list li:last-child { 
+      border-bottom: none; 
+    }
     #toa-allen .ta-gaps-list li::before {
       content: '—';
       position: absolute;
@@ -907,7 +987,9 @@
       font-size: 11px;
     }
     /* oddities tab */
-    #toa-allen .ta-odd-section { margin-bottom: 24px; }
+    #toa-allen .ta-odd-section { 
+      margin-bottom: 24px; 
+    }
     #toa-allen .ta-odd-section-hd {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -952,14 +1034,32 @@
         padding: 12px 16px;
       }
       #toa-allen .ta-hdr-label,
-      #toa-allen .ta-hdr-count { white-space: normal; word-break: break-word; }
-      #toa-allen .ta-panel { padding: 16px; }
-      #toa-allen .ta-bar-row { flex-wrap: wrap; gap: 4px; }
-      #toa-allen .ta-bar-label { width: 100%; font-size: 9.5px; }
-      #toa-allen .ta-bar-track { flex: 1 0 calc(100% - 34px); }
-      #toa-allen .ta-grid { grid-template-columns: 1fr; }
-      #toa-allen .ta-odd-item { padding: 12px 14px; }
-      #toa-allen .ta-vs-shared-row { flex-direction: column; gap: 3px; }
+      #toa-allen .ta-hdr-count { 
+        white-space: normal; 
+        word-break: break-word; 
+      }
+      #toa-allen .ta-panel { 
+        padding: 16px; }
+      #toa-allen .ta-bar-row { 
+        flex-wrap: wrap; 
+        gap: 4px; }
+      #toa-allen .ta-bar-label { 
+        width: 100%;
+        font-size: 9.5px; 
+      }
+      #toa-allen .ta-bar-track { 
+        flex: 1 0 calc(100% - 34px); 
+      }
+      #toa-allen .ta-grid { 
+        grid-template-columns: 1fr; 
+      }
+      #toa-allen .ta-odd-item { 
+        padding: 12px 14px; 
+      }
+      #toa-allen .ta-vs-shared-row { 
+        flex-direction: column; 
+        gap: 3px; 
+      }
     }
   </style>
 
@@ -1308,7 +1408,9 @@
       margin-bottom: -1px;
       border-radius: 0;
     }
-    #toa-state .ts-tab:hover { color: var(--ink); }
+    #toa-state .ts-tab:hover { 
+      color: var(--ink); 
+    }
     #toa-state .ts-tab.ts-active {
       background: var(--ink);
       color: var(--paper);
@@ -1320,7 +1422,9 @@
       background: #fff;
       padding: 24px;
     }
-    #toa-state .ts-panel.ts-hidden { display: none; }
+    #toa-state .ts-panel.ts-hidden { 
+      display: none; 
+    }
     #toa-state .ts-meta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -1350,7 +1454,10 @@
       position: relative;
       overflow: hidden;
     }
-    #toa-state .ts-bar-fill { height: 100%; min-width: 2px; }
+    #toa-state .ts-bar-fill { 
+      height: 100%; 
+      min-width: 2px; 
+    }
     #toa-state .ts-bar-n {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -1378,7 +1485,10 @@
       border-radius: 0;
       line-height: 1.4;
     }
-    #toa-state .ts-fbtn:hover { color: var(--ink); border-color: var(--ink); }
+    #toa-state .ts-fbtn:hover { 
+      color: var(--ink); 
+      border-color: var(--ink); 
+    }
     #toa-state .ts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -1445,7 +1555,9 @@
       background: #fff;
       padding: 13px 15px;
     }
-    #toa-state .ts-odd-section { margin-bottom: 24px; }
+    #toa-state .ts-odd-section { 
+      margin-bottom: 24px; 
+    }
     #toa-state .ts-odd-section-hd {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -1490,13 +1602,29 @@
         padding: 12px 16px;
       }
       #toa-state .ts-hdr-label,
-      #toa-state .ts-hdr-count { white-space: normal; word-break: break-word; }
-      #toa-state .ts-panel { padding: 16px; }
-      #toa-state .ts-bar-row { flex-wrap: wrap; gap: 4px; }
-      #toa-state .ts-bar-label { width: 100%; font-size: 9.5px; }
-      #toa-state .ts-bar-track { flex: 1 0 calc(100% - 34px); }
-      #toa-state .ts-grid { grid-template-columns: 1fr; }
-      #toa-state .ts-odd-item { padding: 12px 14px; }
+      #toa-state .ts-hdr-count { 
+        white-space: normal; 
+        word-break: break-word; 
+      }
+      #toa-state .ts-panel { 
+        padding: 16px; }
+      #toa-state .ts-bar-row { 
+        flex-wrap: wrap; 
+        gap: 4px; 
+      }
+      #toa-state .ts-bar-label { 
+        width: 100%; 
+        font-size: 9.5px; 
+      }
+      #toa-state .ts-bar-track { 
+        flex: 1 0 calc(100% - 34px);
+      }
+      #toa-state .ts-grid { 
+        grid-template-columns: 1fr; 
+      }
+      #toa-state .ts-odd-item { 
+        padding: 12px 14px; 
+      }
     }
   </style>
 
@@ -1768,7 +1896,10 @@
 
   <div id="toa-reply">
   <style>
-    #toa-reply { font-family: 'Source Serif 4', Georgia, serif; margin-bottom: 0; }
+    #toa-reply { 
+      font-family: 'Source Serif 4', Georgia, serif; 
+      margin-bottom: 0; 
+  }
     #toa-reply .tr-hdr {
       background: var(--red);
       color: #fff;
@@ -1804,7 +1935,9 @@
       border-left-width: 4px;
       border-top: none;
     }
-    #toa-reply .tr-note strong { color: var(--ink); }
+    #toa-reply .tr-note strong { 
+      color: var(--ink); 
+    }
     #toa-reply .tr-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1818,7 +1951,9 @@
       border-bottom: 1px solid var(--aged);
       background: #fff;
     }
-    #toa-reply .tr-card:nth-child(even) { background: #fafaf9; }
+    #toa-reply .tr-card:nth-child(even) { 
+      background: #fafaf9; 
+    }
     #toa-reply .tr-status {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
@@ -1829,9 +1964,20 @@
       display: inline-block;
       border: 1px solid;
     }
-    .tr-status-new { color: var(--gap-red); border-color: var(--gap-red); }
-    .tr-status-unanswered { color: #1a7a3a; border-color: #1a7a3a; background: #f0faf3; }
-    .tr-status-fix { color: var(--gold); border-color: var(--gold); background: #fdf8ec; }
+    .tr-status-new { 
+      color: var(--gap-red); 
+      border-color: var(--gap-red); 
+    }
+    .tr-status-unanswered { 
+      color: #1a7a3a; 
+      border-color: #1a7a3a; 
+      background: #f0faf3; 
+    }
+    .tr-status-fix { 
+      color: var(--gold); 
+      border-color: var(--gold); 
+      background: #fdf8ec; 
+    }
     #toa-reply .tr-name {
       font-family: 'Playfair Display', serif;
       font-size: 14px;
@@ -1859,12 +2005,25 @@
       margin-top: 6px;
     }
     @media (max-width: 700px) {
-      #toa-reply .tr-hdr { grid-template-columns: 1fr; gap: 5px; padding: 12px 16px; }
+      #toa-reply .tr-hdr { 
+        grid-template-columns: 1fr; 
+        gap: 5px; 
+        padding: 12px 16px; 
+      }
       #toa-reply .tr-hdr-label,
-      #toa-reply .tr-hdr-count { white-space: normal; word-break: break-word; }
-      #toa-reply .tr-grid { grid-template-columns: 1fr; }
-      #toa-reply .tr-card { padding: 14px 16px; }
-      #toa-reply .tr-note { padding: 12px 16px; }
+      #toa-reply .tr-hdr-count { 
+        white-space: normal; 
+        word-break: break-word; 
+      }
+      #toa-reply .tr-grid { 
+        grid-template-columns: 1fr; 
+      }
+      #toa-reply .tr-card { 
+        padding: 14px 16px; 
+      }
+      #toa-reply .tr-note { 
+        padding: 12px 16px; 
+      }
     }
   </style>
 

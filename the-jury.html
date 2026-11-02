@@ -6,8 +6,8 @@
   <title>The Jury | AEOD</title>
   <meta name="description" content="Juror analysis for the State of Indiana v. Richard Allen case.">
   <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/the-jury">
-  <!-- OG -->
-  <meta property="og:title" content="The Jury">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Juror analysis for the State of Indiana v. Richard Allen case.">
   <meta property="og:description" content="Juror analysis for the State of Indiana v. Richard Allen case.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/the-jury">
@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="All Eyes on Delphi">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Jury">
+  <meta name="twitter:title" content="Juror analysis for the State of Indiana v. Richard Allen case.">
   <meta name="twitter:description" content="Juror analysis for the State of Indiana v. Richard Allen case.">
   <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/the-jury.png">
   <meta name="twitter:creator" content="@alleyesondelphi">
@@ -91,7 +91,7 @@ a:hover {
   top: 0; 
   left: 0; 
   right: 0;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to right, #5c1a1a, #8b2727, #b93434);
 }
 .masthead-rule {
@@ -552,7 +552,24 @@ strong {
 }
 @media (max-width: 700px) {
   .masthead {
-    padding: 28px 16px 22px;
+    padding: 28px 20px 0;
+  }
+  .masthead-rule {
+    font-size: 10px;
+  }
+  .masthead h1 {
+    font-size: 34px;
+    margin-top: 4px;
+  }
+  .masthead-meta {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    gap: 16px;
+    margin-top: 12px;
+    padding-bottom: 14px;
   }
   .container {
     padding: 0 14px 48px;
@@ -747,7 +764,9 @@ details.block-expand .block-body {
   }
 }
 /* ── TABS ── */
-.tab-group { margin-bottom: 16px; }
+.tab-group { 
+  margin-bottom: 16px; 
+}
 .tab-nav {
   display: flex;
   border-bottom: 2px solid var(--aged);

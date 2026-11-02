@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Prison Timeline | AEOD</title>
+  <meta name="description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <link rel="canonical" href="https://alleyesondelphi.github.io/rickallen/prison-timeline">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prison Timeline">
+  <meta property="og:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alleyesondelphi.github.io/rickallen/prison-timeline">
+  <meta property="og:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="All Eyes on Delphi">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prison Timeline">
+  <meta name="twitter:description" content="Comprehensive summary of Richard Allen's confinement, doctors' notes, phone calls, confessions, and all known Haldol injections.">
+  <meta name="twitter:image" content="https://alleyesondelphi.github.io/rickallen/assets/preview/prison-timeline.png">
+  <meta name="twitter:creator" content="@alleyesondelphi">
+  <!-- Favicons -->
+  <link href="https://alleyesondelphi.github.io/rickallen/assets/icons/favicon.ico" rel="icon" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alleyesondelphi.github.io/rickallen/assets/icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --peach:               #9b1c1c;
+      --cream:               #F2F2F4;
+      --sand:                #DCDCDF;
+      --plum:                #0e0e0f;
+      --carmine:             #7a3535;
+      --ink:                 #0e0e0f;
+      --surface-page:        #F2F2F4;
+      --surface-card:        #F8F8F9;
+      --surface-elevated:    #EBEBED;
+      --text-heading:        #0e0e0f;
+      --text-body:           #2d2925;
+      --text-label:          #7a3535;
+      --text-muted:          rgba(45, 41, 37, 0.45);
+      --accent:              #9b1c1c;
+      --accent-border:       rgba(155, 28, 28, 0.40);
+      --border-light:        rgba(14, 14, 15, 0.12);
+      --border-mid:          rgba(14, 14, 15, 0.06);
+      --nav-scrolled-bg:     rgba(242, 242, 244, 0.96);
+      --nav-scrolled-shadow: rgba(13, 15, 20, 0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --surface-page:        #121212;
+        --surface-card:        #1c1c1c;
+        --surface-elevated:    #242424;
+        --text-heading:        #f2ede6;
+        --text-body:           #cac3b9;
+        --text-label:          #9292BE;
+        --text-muted:          rgba(202, 195, 185, 0.90);
+        --accent:              #c23535;
+        --accent-border:       rgba(155, 28, 28, 0.35);
+        --border-light:        rgba(242, 237, 230, 0.08);
+        --border-mid:          rgba(255, 255, 255, 0.03);
+        --carmine:             #cdc6bc;
+        --ink:                 #f2ede6;
+        --peach:               #c23535;
+        --gold:                #d4a520;
+        --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+        --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+    :root[data-theme="dark"] {
+      --surface-page:        #121212;
+      --surface-card:        #1c1c1c;
+      --surface-elevated:    #242424;
+      --text-heading:        #f2ede6;
+      --text-body:           #cac3b9;
+      --text-label:          #9292BE;
+      --text-muted:          rgba(184, 176, 164, 0.65);
+      --accent:              #c23535;
+      --accent-border:       rgba(155, 28, 28, 0.35);
+      --border-light:        rgba(242, 237, 230, 0.08);
+      --border-mid:          rgba(255, 255, 255, 0.03);
+      --carmine:             #cdc6bc;
+      --ink:                 #f2ede6;
+      --peach:               #c23535;
+      --gold:                #d4a520;
+      --nav-scrolled-bg:     rgba(18, 18, 18, 0.97);
+      --nav-scrolled-shadow: rgba(0, 0, 0, 0.40);
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface-page);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 5vw;
+      transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav.scrolled {
+      padding: 14px 5vw;
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-light);
+      box-shadow: 0 1px 12px var(--nav-scrolled-shadow);
+    }
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-brand { 
+      color: var(--ink); 
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-left: auto;
+      transition: color 0.3s;
+    }
+    .site-nav.scrolled .nav-toggle { 
+      color: var(--ink); 
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { 
+      color: #fff; 
+    }
+    .nav-links a.active { 
+      color: var(--peach); 
+    }
+    .site-nav.scrolled .nav-links a { 
+      color: var(--text-label); 
+    }
+    .site-nav.scrolled .nav-links a:hover { 
+      color: var(--ink); 
+    }
+    .site-nav.scrolled .nav-links a.active { 
+      color: var(--accent); 
+    }
+    /* ── Masthead ── */
+    .masthead {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .masthead-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center 52%;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.52)  0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.38) 100%
+      );
+    }
+    .masthead-text {
+      position: absolute;
+      bottom: 72px;
+      left: 5vw;
+      z-index: 2;
+    }
+    .masthead-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, 0.68);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .masthead-kicker::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: linear-gradient(to left, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91));
+      flex-shrink: 0;
+    }
+    .masthead-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(36,22,32,0.5);
+    }
+    /* ── Content ── */
+    .content-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+    /* ── Case info card ── */
+    .case-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    .case-title-bar {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-title-bar h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .case-meta {
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+    .case-meta-item {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .case-meta-item strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    /* ── Month sections (collapsible) ── */
+    details.month-details {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s;
+    }
+    details.month-details:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    summary.month-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      background: var(--surface-card);
+      border-bottom: 1px solid transparent;
+    }
+    details.month-details[open] > summary.month-summary {
+      border-bottom-color: var(--border-light);
+    }
+    summary.month-summary::-webkit-details-marker { 
+      display: none; 
+    }
+    summary.month-summary::before {
+      content: '▼';
+      display: inline-flex;
+      width: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    details.month-details:not([open]) > summary.month-summary::before {
+      transform: rotate(-90deg);
+    }
+    summary.month-summary h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+    /* ── Document items ── */
+    .doc-item {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .doc-item:last-child { 
+      border-bottom: none; 
+    }
+    .doc-note {
+      margin-bottom: 14px;
+      padding: 12px 18px;
+      background: var(--surface-elevated);
+      border-left: 3px solid var(--accent);
+      border-radius: 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+    .pdf-embed {
+      width: 100%;
+      aspect-ratio: 11 / 8.5;
+      border: none;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+    }
+    /* ── Footer ── */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 5vw;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { 
+      color: var(--carmine); 
+    }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .case-meta { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { 
+        display: block; 
+      }
+      .site-nav, .site-nav.scrolled { 
+        padding: 12px 16px; 
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-page);
+        border-bottom: 1px solid var(--border-light);
+        padding: 12px 20px 16px;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(36,22,32,0.08);
+      }
+      .nav-links.open { 
+        display: flex; 
+      }
+      .nav-links li { 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--border-mid); 
+      }
+      .nav-links li:last-child { 
+        border-bottom: none; 
+      }
+      .nav-links a { 
+        font-size: 10px !important; 
+        letter-spacing: 0.08em !important; 
+        color: var(--text-label) !important; 
+      }
+      .nav-links a.active { 
+        color: var(--accent) !important; 
+      }
+      .nav-links a:hover { 
+        color: var(--ink) !important; 
+      }
+      .masthead { 
+        height: 55vh; 
+        min-height: 340px; 
+      }
+      .masthead-img { 
+        object-fit: cover; 
+        object-position: center top; 
+      }
+      .masthead-text { 
+        left: 20px; 
+        bottom: 52px; 
+      }
+      .content-section { 
+        padding: 32px 16px 56px; 
+      }
+      .case-meta { 
+        padding: 18px 20px; 
+      }
+      .doc-item { 
+        padding: 16px 20px; 
+      }
+      .doc-note { 
+        padding: 10px 14px; 
+        font-size: 12px; 
+      }
+      .pdf-embed { 
+        aspect-ratio: 8.5 / 11; 
+      }
+    }
+    @media (max-width: 450px) {
+      .masthead-img { 
+        object-fit: contain; 
+        object-position: center 50%; 
+      }
+    }
+  </style>
+  <style>
+    /* dark mode: gold accents */
+    @media (prefers-color-scheme: dark) {
+      /* active nav → gold */
+      :root:not([data-theme="light"]) .nav-links a.active,
+      :root:not([data-theme="light"]) .site-nav.scrolled .nav-links a.active { 
+        color: var(--gold); 
+      }
+      /* filing-note: gold stripe + aged tint */
+      :root:not([data-theme="light"]) .filing-note {
+        background: #e0d8cc;
+        border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
+        color: #2d2925;
+      }
+      :root:not([data-theme="light"]) .filing-note .filing-link,
+      :root:not([data-theme="light"]) .filing-note a { 
+        color: #7a3535; 
+      }
+      /* month card hover: editorial shadow, no ring */
+      :root:not([data-theme="light"]) details.month-details:hover {
+        box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+        border-color: rgba(242, 237, 230, 0.13);
+      }
+      /* accordion triangle → gold */
+      :root:not([data-theme="light"]) summary.month-summary::before { 
+        color: #e0d8cc; 
+      }
+      /* section dividers → visible warm paper line */
+      :root:not([data-theme="light"]) .case-title-bar,
+      :root:not([data-theme="light"]) details.month-details[open] > summary.month-summary {
+        border-bottom-color: rgba(242, 237, 230, 0.22);
+      }
+      /* filing row separators → warmer aged-tint line */
+      :root:not([data-theme="light"]) .filing {
+        border-bottom-color: rgba(224, 216, 204, 0.14);
+      }
+    }
+    :root[data-theme="dark"] .nav-links a.active,
+    :root[data-theme="dark"] .site-nav.scrolled .nav-links a.active { 
+      color: var(--gold); 
+    }
+    :root[data-theme="dark"] .filing-note {
+      background: #e0d8cc;
+      border-image: linear-gradient(to bottom, rgb(129, 46, 46), rgb(159, 74, 74), rgb(150, 91, 91)) 1;
+      color: #2d2925;
+    }
+    :root[data-theme="dark"] .filing-note .filing-link,
+    :root[data-theme="dark"] .filing-note a { 
+      color: #7a3535; 
+    }
+    :root[data-theme="dark"] details.month-details:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+      border-color: rgba(242, 237, 230, 0.13);
+    }
+    :root[data-theme="dark"] summary.month-summary::before { 
+      color: #e0d8cc; 
+    }
+    :root[data-theme="dark"] .case-title-bar,
+    :root[data-theme="dark"] details.month-details[open] > summary.month-summary {
+      border-bottom-color: rgba(242, 237, 230, 0.22);
+    }
+    :root[data-theme="dark"] .filing {
+      border-bottom-color: rgba(224, 216, 204, 0.14);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" id="siteNav">
+    <a href="index" class="nav-brand">All Eyes on Delphi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index">Home</a></li>
+      <li><a href="prison-timeline" class="active">Prison Timeline</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link" target="_blank">Google Drive</a></li>
+    </ul>
+  </nav>
+
+  <div class="masthead">
+    <img class="masthead-img" src="assets/img/hero-img.png" alt="Prison Timeline">
+    <div class="masthead-text">
+      <p class="masthead-kicker">IN v. Richard Allen</p>
+      <h1 class="masthead-title">Prison Timeline</h1>
+    </div>
+  </div>
+
+  <div class="content-section">
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Known Haldol Injections</h2></summary>
+      <div class="doc-item">
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1NjrVxZM5RJeQQIVaITH4P3kPgaLJIza0/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>Prison Timeline</h2></summary>
+      <div class="doc-item">
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1MNwgzyB8Szcm_lcYBtTrECxV_qxC4z2u/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
+
+    <details class="month-details" open>
+      <summary class="month-summary"><h2>All the obvi Vry Srsly "confessions"</h2></summary>
+      <div class="doc-item">
+        <div class="doc-note">All known confessions and Haldol / psychosis related reports.</div>
+        <div class="pdf-embed" style="aspect-ratio: 11/8.5;">
+          <iframe src="https://drive.google.com/file/d/1vfb0Q1TvSpNsL_z-TtwKqtbOkw4cdpmv/preview" width="100%" height="100%" style="border:none;border-radius:6px;" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-brand">All Eyes on Delphi</span>
+    <div class="footer-social">
+      <a href="https://www.x.com/alleyesondelphi" target="_blank" aria-label="X / Twitter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/alleyesondelphi" target="_blank" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+  </script>
+
+</body>
+</html>
