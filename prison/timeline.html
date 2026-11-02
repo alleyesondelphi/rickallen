@@ -97,11 +97,11 @@
       font-size: clamp(26px, 4vw, 44px);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 1%;
+      margin: 1% 0;
     }
     .masthead-subtitle {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: clamp(9px, 1.5vw, 11px);
       letter-spacing: 0.1em;
       color: #888;
       margin-top: 8px;
@@ -109,13 +109,14 @@
     }
     .masthead-meta {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: clamp(9px, 1.5vw, 11px);
       letter-spacing: 0.08em;
       color: #888;
       display: flex-end;
       flex-wrap: wrap;
       gap: 0 16px;
       text-align: right;
+      margin-top: -0.5%;
     }
     .masthead-meta a { 
       color: #aaa; 
@@ -465,19 +466,14 @@
     }
     /* ── MOBILE ── */
     @media (max-width: 600px) {
-      .masthead { 
-        padding: 24px 16px 20px; 
+      .masthead {
+        padding: 24px 16px 20px;
       }
       .masthead h1 {
-      margin-top: 3%;
+        margin-top: 3%;
       }
-      .masthead-meta { 
-        flex-direction: row; 
-        gap: 15px;
-        margin-top: -2%;
-      }
-      .masthead-meta a { 
-        font-size: 9px; 
+      .masthead-meta {
+        margin-top: -1%;
       }
       .filter-inner { 
         padding: 0 16px; 
