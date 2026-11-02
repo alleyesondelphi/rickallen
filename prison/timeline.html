@@ -85,27 +85,37 @@
     }
     .masthead-rule {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      font-size: 8.5px;
+      letter-spacing: 0.2em;
       color: #999;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
       text-transform: uppercase;
+      text-align: right;
     }
     .masthead h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(26px, 4vw, 44px);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 10px;
+      margin-bottom: 1%;
+    }
+    .masthead-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-top: 8px;
+      margin-bottom: 6px;
     }
     .masthead-meta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.08em;
       color: #888;
-      display: flex;
+      display: flex-end;
       flex-wrap: wrap;
       gap: 0 16px;
+      text-align: right;
     }
     .masthead-meta a { 
       color: #aaa; 
@@ -458,9 +468,16 @@
       .masthead { 
         padding: 24px 16px 20px; 
       }
+      .masthead h1 {
+      margin-top: 3%;
+      }
       .masthead-meta { 
-        flex-direction: column; 
-        gap: 2px; 
+        flex-direction: row; 
+        gap: 15px;
+        margin-top: -2%;
+      }
+      .masthead-meta a { 
+        font-size: 9px; 
       }
       .filter-inner { 
         padding: 0 16px; 
@@ -693,12 +710,12 @@ details[open] summary {
 <!-- MASTHEAD -->
 <div class="masthead">
   <div class="masthead-inner">
-    <div class="masthead-rule">08C01-2210-MR-1 &nbsp;|&nbsp; 25A-CR-591e</div>
-    <h1>Prison Timeline</h1>
+    <div class="masthead-rule">Westville  / Wabash Valley</div>
     <div class="masthead-meta">
       <a href="https://www.x.com/alleyesondelphi" target="_blank">@alleyesondelphi</a>
       <a href='https://drive.google.com/drive/folders/1NXDYqQ3PAi7KhMC8AjW_2fhSLk9HV11X?usp=drive_link' target="_blank">Google Drive</a>
     </div>
+    <h1>Prison Timeline &amp; Shtfckry</h1>
   </div>
 </div>
 
@@ -1148,7 +1165,7 @@ details[open] summary {
 const ENTRIES = [
 
 // SEPTEMBER 2022
-{ date:"2022-09-21", cats:["le"], title:"Kathy Shank finds RA's cleared tip; Dan Dulin submits internal report re: his 2017 audio interview with RA.", src:"Internal report re: Dulin 2017 interview with RA" },
+{ date:"2022-09-21", cats:["le"], title:"Kathy Shank finds RA's cleared tip; The Tina Garrison is prepared; Dan Dulin submits internal report re: his 2017 audio interview with RA.", src:"Internal report re: Dulin 2017 interview with RA" },
 { date:"2022-09-24", cats:["media"], title:"Liz Barnsley tweet: rumors of arrest circulating in true crime community." },
 { date:"2022-09-25", cats:["media","le"], title:"Fox59: Delphi Murders latest — State police say 'nothing imminent.' Doug Carter calls rumors 'nonsense'; ISP Lafayette releases statement calling it 'false.'", src:"Fox59 article" },
 
