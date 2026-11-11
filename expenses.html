@@ -306,6 +306,14 @@
       font-weight: 600;
       color: var(--text-heading);
     }
+    .filing-link {
+      color: var(--carmine);
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+    .filing-link:hover { 
+      color: var(--ink); 
+    }
     /* ── Collapsible sections ── */
     details.month-details {
       background: var(--surface-card);
@@ -371,6 +379,72 @@
       height: 100%;
       border: none;
       border-radius: 6px;
+    }
+     /* ── Drive card ── */
+    .drive-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-mid);
+      border-radius: 0;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      margin-top: 5%;
+    }
+    .drive-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px var(--accent-border);
+    }
+    .drive-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 0;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .drive-card-body { 
+      flex: 1; 
+    }
+    .drive-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .drive-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .drive-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .drive-card-cta:hover {
+      color: var(--ink);
+    }
+    .drive-card:hover .drive-card-cta {
+      color: var(--ink);
+      gap: 10px;
     }
     /* ── Footer ── */
     .site-footer {
@@ -565,14 +639,31 @@
     <img class="masthead-img" src="assets/img/hero-img.png" alt="Defense Expenses">
     <div class="masthead-text">
       <p class="masthead-kicker">IN v. Richard Allen</p>
-      <h1 class="masthead-title">Defense Expenses</h1>
+      <h1 class="masthead-title">Expenses</h1>
     </div>
   </div>
 
   <div class="content-section">
+    
+    <!-- Case Summary Card -->
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar">
+        <h2>Trial Court Expenses</h2>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-item"><strong>Case Number:</strong> 08C01-2210-MR-000001</div>
+        <div class="case-meta-item"><strong>Court:</strong> Carroll County Circuit Court</div>
+        <div class="case-meta-item"><strong>Case Type:</strong> MR – Murder</div>
+        <div class="case-meta-item"><strong>Special Judge:</strong> Frances C. Gull</div>
+        <div class="case-meta-item"><strong>Counsel for Defendant:</strong> Bradley Rozzi, Andrew Baldwin, Jennifer Auger</div>
+        <div class="case-meta-item"><strong>Briefly Counsel for Defendant:</strong> William Lebrato, Robert Scremin</div>
+        <div class="case-meta-item"><strong>Prosecutors:</strong> Dicholas  McLeland, Shane Evans; Special Prosecutors James "Jim" Luttrull and Stacy Diener</div>
+        <div class="case-meta-item"><strong>Case Decided:</strong> <a class="filing-link" href="https://public.courts.in.gov/mycase/#/vw/CaseSummary/eyJ2Ijp7IkNhc2VUb2tlbiI6ImRKRjlYdDVHS25TOFNyYW91anEtMDJNQkkzTTR6d3cxM3J0UjU0U0tONzAxIn19" target="_blank">Dec 20, 2024</a></div>
+      </div>
+    </div><!-- / .case-block-->
 
     <!-- Unsealed Confidential Orders -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Unsealed Confidential Orders</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -582,7 +673,7 @@
     </details>
 
     <!-- Granted Requests -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Granted Requests</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -592,7 +683,7 @@
     </details>
 
     <!-- A Different Breakdown -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>A Different Breakdown</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -602,7 +693,7 @@
     </details>
 
     <!-- Motion for Parity in Resources -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Motion for Parity in Resources</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -612,7 +703,7 @@
     </details>
 
     <!-- Statements from Richard Allen's Attorneys -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Statements from Richard Allen's Attorneys</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -622,7 +713,7 @@
     </details>
 
     <!-- Experts for Richard Allen -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Experts for Richard Allen</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -632,7 +723,7 @@
     </details>
 
     <!-- Fundraiser -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Fundraiser</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -642,7 +733,7 @@
     </details>
 
     <!-- Taken Under Advisement, Disallowed, and/or Denied -->
-    <details class="month-details" open>
+    <details class="month-details">
       <summary class="month-summary"><h2>Taken Under Advisement, Disallowed, and/or Denied Requests</h2></summary>
       <div class="doc-item">
         <div class="pdf-embed">
@@ -651,7 +742,45 @@
       </div>
     </details>
 
-  </div>
+    <!-- Appellate Court Expenses -->
+
+    <!-- Case Summary Card -->
+    <div class="case-block" data-aos="fade-up">
+      <div class="case-title-bar">
+        <h2>Appellate Court Expenses</h2>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-item"><strong>Case Number:</strong> 25A-CR-00591</div>
+        <div class="case-meta-item"><strong>Notice of Appeal Filed:</strong> Mar 11, 2025</div>
+        <div class="case-meta-item"><strong>Court:</strong> Indiana Court of Appeals</div>
+        <div class="case-meta-item"><strong>Case Type:</strong> CR – Direct Appeals</div>
+        <div class="case-meta-item"><strong>Judges:</strong> <a class="filing-link" href="" target="_blank">Altice, Brown, Vaidik</a></div>
+        <div class="case-meta-item"><strong>Counsel for Appellant:</strong> Mark Leeman, Stacy Uliana</div>
+        <div class="case-meta-item"><strong>Counsel for Appellee:</strong> Angela Sanchez, Ellen Meilaender, Jodi Stein</div>
+        <div class="case-meta-item"><strong>Status:</strong> <a class="filing-link" href="https://public.courts.in.gov/mycase/#/vw/CaseSummary/eyJ2Ijp7IkNhc2VUb2tlbiI6IjY1bUFwU2Y5QXQzb0M4NzU1OWE2ZWR6UGtZdlcwRzhVYlQ0bU9iTWh6MDQxIn19" target="_blank">Pending</a></div>
+      </div>
+    </div><!-- / .case-block-->
+
+    <details class="month-details">
+      <summary class="month-summary"><h2>Appellate Attorneys</h2></summary>
+      <div class="doc-item">
+        <div class="pdf-embed">
+          <iframe src="https://drive.google.com/file/d/1lMOcobPMulTB8P5HfTxQsgyKjQ7Dp2VW/preview" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </details>
+  
+    <!-- Google Drive Card -->
+    <a class="drive-card" href="https://drive.google.com/drive/folders/1MX2Nxpkk74UiAjDCsG6q6f50QvcTbe6H?usp=drive_link" target="_blank" data-aos="fade-up">
+      <div class="drive-icon"><i class="bi bi-folder2-open"></i></div>
+        <div class="drive-card-body">
+          <h3 class="drive-card-title">Google Drive</h3>
+          <p class="drive-card-desc">Folder of spreadsheets, orders, etc.</p>
+        </div>
+        <span class="drive-card-cta">Open Drive <i class="bi bi-arrow-right"></i></span>
+    </a>
+
+  </div><!--/content-section -->
 
   <footer class="site-footer">
     <span class="footer-brand">All Eyes on Delphi</span>
